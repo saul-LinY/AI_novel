@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#202521" />
+    <meta name="description" content="AI novel - 基于 Pi 的互动分支小说 Demo" />
+    <title>AI novel</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/vendor/lucide.js" defer></script>
+    <script src="/app.js" type="module"></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="app-header">
+        <button class="icon-button mobile-only" id="branch-toggle" type="button" aria-label="打开故事分支" title="故事分支">
+          <i data-lucide="git-branch"></i>
+        </button>
+
+        <a class="brand" href="/" aria-label="AI novel 首页">
+          <span class="brand-mark"><i data-lucide="book-open-text"></i></span>
+          <span class="brand-copy">
+            <strong>AI novel</strong>
+            <small id="story-subtitle">互动小说</small>
+          </span>
+        </a>
+
+        <div class="header-actions">
+          <span class="runtime-status" id="runtime-status">
+            <span class="status-dot"></span>
+            <span>连接中</span>
+          </span>
+          <button class="icon-button" id="reset-story" type="button" aria-label="重置故事" title="重置故事">
+            <i data-lucide="rotate-ccw"></i>
+          </button>
+          <button class="icon-button mobile-only" id="state-toggle" type="button" aria-label="打开当前状态" title="当前状态">
+            <i data-lucide="panel-right"></i>
+          </button>
+        </div>
+      </header>
+
+      <main class="workspace">
+        <aside class="side-panel branch-panel" id="branch-panel" aria-label="故事分支">
+          <div class="panel-heading">
+            <div>
+              <span class="panel-kicker">STORY PATHS</span>
+              <h2>故事分支</h2>
+            </div>
+            <button class="icon-button mobile-close" data-close-panel type="button" aria-label="关闭故事分支" title="关闭">
+              <i data-lucide="x"></i>
+            </button>
+          </div>
+          <div class="branch-list" id="branch-list"></div>
+          <div class="branch-footer">
+            <i data-lucide="cloud-check"></i>
+            <span>故事已保存</span>
+          </div>
+        </aside>
+
+        <section class="story-panel" aria-label="故事正文">
+          <div class="story-scroll" id="story-scroll">
+            <figure class="scene-visual">
+              <img src="/assets/rain-hotel.png" alt="暴雨夜里的青岚旅店大堂，楼梯尽头站着模糊人影" />
+              <figcaption class="scene-caption">
+                <span id="scene-eyebrow">第一幕</span>
+                <strong id="scene-title">雨夜来客</strong>
+              </figcaption>
+            </figure>
+
+            <header class="story-heading">
+              <div>
+                <span class="story-label" id="story-location">青岚旅店</span>
+                <h1 id="story-title">雨夜来客</h1>
+              </div>
+              <span class="turn-counter" id="turn-counter">序章</span>
+            </header>
+
+            <div class="story-timeline" id="story-timeline" aria-live="polite">
+              <div class="loading-state">
+                <span class="loading-line"></span>
+                <span class="loading-line short"></span>
+              </div>
+            </div>
+
+            <section class="choices-section" id="choices-section" aria-label="下一步行动">
+              <div class="section-heading">
+                <span>下一步</span>
+                <i data-lucide="corner-down-right"></i>
+              </div>
+              <div class="choice-list" id="choice-list"></div>
+            </section>
+          </div>
+
+          <form class="composer" id="action-form">
+            <div class="composer-field">
+              <textarea id="action-input" rows="1" maxlength="300" placeholder="描述你接下来要做什么…" aria-label="下一步行动"></textarea>
+              <span class="composer-count" id="composer-count">0 / 300</span>
+            </div>
+            <button class="send-button" id="send-action" type="submit" aria-label="继续故事" title="继续故事">
+              <i data-lucide="arrow-up"></i>
+            </button>
+            <button class="stop-button" id="stop-action" type="button" aria-label="停止生成" title="停止生成" hidden>
+              <i data-lucide="square"></i>
+            </button>
+          </form>
+        </section>
+
+        <aside class="side-panel state-panel" id="state-panel" aria-label="当前状态">
+          <div class="panel-heading">
+            <div>
+              <span class="panel-kicker">CURRENT STATE</span>
+              <h2>当前状态</h2>
+            </div>
+            <button class="icon-button mobile-close" data-close-panel type="button" aria-label="关闭当前状态" title="关闭">
+              <i data-lucide="x"></i>
+            </button>
+          </div>
+
+          <section class="state-block state-overview">
+            <div class="state-row">
+              <span><i data-lucide="map-pin"></i>地点</span>
+              <strong id="state-location">—</strong>
+            </div>
+            <div class="state-row">
+              <span><i data-lucide="clock-3"></i>时间</span>
+              <strong id="state-time">—</strong>
+            </div>
+          </section>
+
+          <section class="state-block">
+            <div class="state-title">
+              <span>重要人物</span>
+              <span class="state-count" id="character-count">0</span>
+            </div>
+            <div class="character-list" id="character-list"></div>
+          </section>
+
+          <section class="state-block">
+            <div class="state-title">
+              <span>随身物品</span>
+              <i data-lucide="briefcase-business"></i>
+            </div>
+            <div class="tag-list" id="inventory-list"></div>
+          </section>
+
+          <section class="state-block">
+            <div class="state-title">
+              <span>已知线索</span>
+              <i data-lucide="search"></i>
+            </div>
+            <div class="clue-list" id="clue-list"></div>
+          </section>
+
+          <section class="state-block">
+            <div class="state-title">
+              <span>未解问题</span>
+              <i data-lucide="circle-help"></i>
+            </div>
+            <div class="thread-list" id="thread-list"></div>
+          </section>
+        </aside>
+      </main>
+    </div>
+
+    <button class="panel-scrim" id="panel-scrim" type="button" aria-label="关闭侧栏" hidden></button>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
+
