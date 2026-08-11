@@ -12,7 +12,8 @@ import {
 } from "../vendor/pi/packages/coding-agent/dist/index.js";
 import { Type } from "typebox";
 import { generateDemoTurn } from "./demo-writer.js";
-import { applyTurnProposal, STORY_FACTS, STORY_ITEMS, STORY_LOCATIONS } from "./story-domain.js";
+import { compileTurnContext } from "./story-context.js";
+import { applyTurnProposal } from "./story-domain.js";
 
 const SYSTEM_PROMPT = `你是 AI novel 的互动小说叙事者。你要根据应用提供的准确世界状态，续写一个短小但有明确后果的中文故事回合。
 
@@ -40,39 +41,22 @@ function createResourceLoader() {
   };
 }
 
-function buildPrompt({ action, state, recentEvents }) {
-  const knownFacts = STORY_FACTS.filter((fact) => state.knownFactIds.includes(fact.id)).map((fact) => ({
-    id: fact.id,
-    text: fact.text,
-  }));
-  const hiddenFacts = STORY_FACTS.filter((fact) => !state.knownFactIds.includes(fact.id)).map((fact) => ({
-    id: fact.id,
-    discovery: fact.privateText,
-  }));
-  const worldState = {
-    timeMinutes: state.timeMinutes,
-    locationId: state.locationId,
-    locations: STORY_LOCATIONS,
-    inventory: state.inventory,
-    knownFacts,
-    hiddenFacts,
-    characters: state.characters,
-    threads: state.threads,
-    availableItems: STORY_ITEMS,
-  };
-  const recentStory = recentEvents.map((event) => ({ action: event.action, prose: event.prose }));
-
-  return `<accurate_world_state>\n${JSON.stringify(worldState, null, 2)}\n</accurate_world_state>\n\n<recent_story>\n${JSON.stringify(recentStory, null, 2)}\n</recent_story>\n\n<player_action>\n${action}\n</player_action>\n\n现在续写一个回合。正文必须先输出，然后调用 commit_story_turn。`;
+function buildPrompt({ action, modelContext }) {
+  const turnRequest = { modelContext, playerAction: action };
+  return `<turn_request>\n${JSON.stringify(turnRequest, null, 2)}\n</turn_request>\n\n只有 discoveryCandidates 中的隐藏线索允许在本回合被发现；若没有候选项，不得新增线索。现在续写一个回合。正文必须先输出，然后调用 commit_story_turn。`;
 }
 
-function validateProposal(proposal, state) {
+function validateProposal(proposal, state, options = {}) {
   if (!Array.isArray(proposal.choices) || proposal.choices.length < 2 || proposal.choices.length > 4) {
     throw new Error("必须给出 2 到 4 个下一步选项");
   }
+  const choiceIds = new Set();
   for (const choice of proposal.choices) {
-    if (!choice.label.trim() || !choice.action.trim()) throw new Error("选项标题和行动不能为空");
+    if (!choice.id.trim() || !choice.label.trim() || !choice.action.trim()) throw new Error("选项 ID、标题和行动不能为空");
+    if (choiceIds.has(choice.id)) throw new Error(`选项 ID 重复：${choice.id}`);
+    choiceIds.add(choice.id);
   }
-  applyTurnProposal(state, proposal);
+  applyTurnProposal(state, proposal, options);
 }
 
 export class PiStoryRuntime {
@@ -85,6 +69,8 @@ export class PiStoryRuntime {
     this.session = null;
     this.pendingProposal = null;
     this.activeState = null;
+    this.activeContext = null;
+    this.activeProse = "";
   }
 
   async initialize(store) {
@@ -141,6 +127,7 @@ export class PiStoryRuntime {
                 Type.Object({
                   threadId: Type.String(),
                   status: Type.Union([Type.Literal("open"), Type.Literal("resolved"), Type.Literal("failed")]),
+                  reason: Type.Optional(Type.String({ minLength: 1, maxLength: 120 })),
                 }),
                 { maxItems: 2 },
               ),
@@ -151,7 +138,10 @@ export class PiStoryRuntime {
         execute: async (_toolCallId, params) => {
           try {
             if (!this.activeState) throw new Error("当前没有待提交的故事回合");
-            validateProposal(params, this.activeState);
+            validateProposal(params, this.activeState, {
+              allowedFactIds: this.activeContext?.trace.discoveryCandidateIds ?? [],
+              prose: this.activeProse,
+            });
             this.pendingProposal = structuredClone(params);
             return {
               content: [{ type: "text", text: "本回合状态已通过校验。不要再输出正文。" }],
@@ -210,37 +200,55 @@ export class PiStoryRuntime {
   }
 
   async generateTurn(context, onDelta) {
-    if (this.mode === "demo" || !this.session) return generateDemoTurn({ ...context, onDelta });
+    const compiledContext = compileTurnContext(context);
+    if (this.mode === "demo" || !this.session) {
+      const result = await generateDemoTurn({ ...context, onDelta });
+      validateProposal(result.proposal, context.state, {
+        allowedFactIds: compiledContext.trace.discoveryCandidateIds,
+        prose: result.prose,
+      });
+      return { ...result, contextTrace: compiledContext.trace };
+    }
 
     await this.alignSession(context.piEntryId);
     this.pendingProposal = null;
     this.activeState = structuredClone(context.state);
+    this.activeContext = compiledContext;
+    this.activeProse = "";
     let prose = "";
     let collectText = true;
     const unsubscribe = this.session.subscribe((event) => {
       if (event.type !== "message_update" || event.assistantMessageEvent.type !== "text_delta" || !collectText) return;
       const text = event.assistantMessageEvent.delta;
       prose += text;
+      this.activeProse += text;
       onDelta(text);
     });
 
     try {
-      await this.session.prompt(buildPrompt(context));
+      await this.session.prompt(buildPrompt({ action: context.action, modelContext: compiledContext.modelContext }));
       if (!this.pendingProposal) {
         collectText = false;
         await this.session.prompt("刚才没有提交结构化结果。不要续写正文，只调用 commit_story_turn 提交选项和状态变化。");
       }
       if (!this.pendingProposal) throw new Error("模型没有提交可用的故事状态");
       if (!prose.trim()) throw new Error("模型没有生成故事正文");
+      validateProposal(this.pendingProposal, context.state, {
+        allowedFactIds: compiledContext.trace.discoveryCandidateIds,
+        prose,
+      });
       return {
         prose,
         proposal: this.pendingProposal,
         piEntryId: this.session.sessionManager.getLeafId(),
+        contextTrace: compiledContext.trace,
       };
     } finally {
       unsubscribe();
       this.pendingProposal = null;
       this.activeState = null;
+      this.activeContext = null;
+      this.activeProse = "";
     }
   }
 

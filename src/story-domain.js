@@ -22,28 +22,61 @@ export const STORY_FACTS = [
     id: "missing-key",
     text: "钥匙架上唯独缺少 207 号房的钥匙。",
     privateText: "207 号房钥匙在前台抽屉的夹层里。",
+    discovery: {
+      locationIds: ["lobby"],
+      actionTerms: ["钥匙", "抽屉", "前台"],
+      evidenceTerms: ["钥匙", "抽屉", "夹层"],
+    },
   },
   {
     id: "wet-footprints",
     text: "二楼走廊的湿脚印从 207 号房门口延伸到安全楼梯。",
     privateText: "脚印来自刚从内院上楼的人。",
+    discovery: {
+      locationIds: ["upstairs", "room-207"],
+      actionTerms: ["二楼", "楼梯", "207", "脚印"],
+      evidenceTerms: ["湿脚印", "脚印", "207"],
+    },
   },
   {
     id: "red-umbrella-owner",
     text: "门边的红伞并不属于前台林秋，而属于昨夜失踪的住客。",
     privateText: "林秋刻意把红伞留在显眼处，希望有人注意到它。",
+    discovery: {
+      locationIds: ["lobby"],
+      actionTerms: ["伞", "雨伞", "行李签"],
+      evidenceTerms: ["红伞", "陈默", "行李签"],
+    },
   },
   {
     id: "stopped-clock",
     text: "大堂挂钟停在 23:17，但旅店登记簿写着 23:40。",
     privateText: "停电发生在 23:17，有人事后补写了登记时间。",
+    discovery: {
+      locationIds: ["lobby"],
+      actionTerms: ["时间", "钟", "登记", "停电"],
+      evidenceTerms: ["23:17", "23:40", "挂钟", "登记簿"],
+    },
   },
   {
     id: "courtyard-route",
     text: "内院的旧铁梯可以绕过前台直接通往二楼。",
     privateText: "铁梯的扶手上留有新鲜的机油。",
+    discovery: {
+      locationIds: ["courtyard"],
+      actionTerms: ["内院", "雨棚", "铁梯", "梯子"],
+      evidenceTerms: ["铁梯", "梯子", "机油", "内院"],
+    },
   },
 ];
+
+export const STORY_ROUTES = {
+  lobby: ["upstairs", "office", "courtyard"],
+  upstairs: ["lobby", "room-207", "courtyard"],
+  "room-207": ["upstairs"],
+  office: ["lobby"],
+  courtyard: ["lobby", "upstairs"],
+};
 
 export function createInitialState() {
   return {
@@ -161,12 +194,16 @@ function assertKnownId(items, id, label) {
   }
 }
 
-export function applyTurnProposal(currentState, proposal) {
+export function applyTurnProposal(currentState, proposal, options = {}) {
   const nextState = clone(currentState);
   const delta = proposal.delta ?? {};
 
   if (delta.locationId !== undefined) {
     assertKnownId(STORY_LOCATIONS, delta.locationId, "地点");
+    const reachableLocations = STORY_ROUTES[currentState.locationId] ?? [];
+    if (delta.locationId !== currentState.locationId && !reachableLocations.includes(delta.locationId)) {
+      throw new Error(`无法从 ${currentState.locationId} 直接前往 ${delta.locationId}`);
+    }
     nextState.locationId = delta.locationId;
   }
 
@@ -192,12 +229,27 @@ export function applyTurnProposal(currentState, proposal) {
 
   for (const factId of delta.learnFactIds ?? []) {
     assertKnownId(STORY_FACTS, factId, "线索");
+    if (options.allowedFactIds && !options.allowedFactIds.includes(factId)) {
+      throw new Error(`本回合没有发现线索的条件：${factId}`);
+    }
+    const fact = STORY_FACTS.find((item) => item.id === factId);
+    if (![currentState.locationId, nextState.locationId].some((locationId) => fact.discovery.locationIds.includes(locationId))) {
+      throw new Error(`线索无法在当前场景发现：${factId}`);
+    }
+    if (options.prose && !fact.discovery.evidenceTerms.some((term) => options.prose.includes(term))) {
+      throw new Error(`正文没有呈现线索证据：${factId}`);
+    }
     if (!nextState.knownFactIds.includes(factId)) nextState.knownFactIds.push(factId);
   }
 
   for (const change of delta.relationshipChanges ?? []) {
     const character = nextState.characters[change.characterId];
     if (!character) throw new Error(`人物不存在：${change.characterId}`);
+    if (character.status !== "active") throw new Error(`无法改变非活跃人物的关系：${change.characterId}`);
+    if (![currentState.locationId, nextState.locationId].includes(character.locationId)) {
+      throw new Error(`人物不在本回合场景中：${change.characterId}`);
+    }
+    if (!change.reason?.trim()) throw new Error(`人物关系变化必须说明原因：${change.characterId}`);
     if (!Number.isInteger(change.amount) || change.amount < -2 || change.amount > 2) {
       throw new Error("人物关系每回合只能变化 -2 到 2");
     }
@@ -210,18 +262,31 @@ export function applyTurnProposal(currentState, proposal) {
     if (!["open", "resolved", "failed"].includes(update.status)) {
       throw new Error(`未知的剧情问题状态：${update.status}`);
     }
+    if (update.status !== "open" && !update.reason?.trim()) {
+      throw new Error(`收束剧情问题时必须说明原因：${update.threadId}`);
+    }
     thread.status = update.status;
+    if (update.status === "open") {
+      delete thread.resolutionReason;
+      delete thread.resolvedAtVersion;
+    } else {
+      thread.resolutionReason = update.reason.trim();
+      thread.resolvedAtVersion = currentState.version + 1;
+    }
   }
 
   nextState.version += 1;
   return nextState;
 }
 
-export function appendTurn(store, { branchId, action, prose, proposal, piEntryId = null }) {
+export function appendTurn(store, { branchId, action, prose, proposal, piEntryId = null, contextTrace = null }) {
   const branch = store.branches[branchId];
   if (!branch) throw new Error(`分支不存在：${branchId}`);
   const parentEvent = store.events[branch.headEventId];
-  const nextState = applyTurnProposal(parentEvent.stateAfter, proposal);
+  const nextState = applyTurnProposal(parentEvent.stateAfter, proposal, {
+    allowedFactIds: contextTrace?.discoveryCandidateIds,
+    prose,
+  });
   const eventId = randomUUID();
   const event = {
     id: eventId,
@@ -231,7 +296,11 @@ export function appendTurn(store, { branchId, action, prose, proposal, piEntryId
     prose: prose.trim(),
     choices: proposal.choices,
     memoryNotes: proposal.memoryNotes ?? [],
+    stateBeforeHash: stateHash(parentEvent.stateAfter),
+    stateAfterHash: stateHash(nextState),
     stateAfter: nextState,
+    contextTrace,
+    status: "committed",
     piEntryId,
     createdAt: new Date().toISOString(),
   };
@@ -277,10 +346,10 @@ export function serializeStore(store, runtimeMode) {
   const currentEvent = store.events[branch.headEventId];
   const state = currentEvent.stateAfter;
   const knownFacts = STORY_FACTS.filter((fact) => state.knownFactIds.includes(fact.id)).map(({ id, text }) => ({ id, text }));
-  const inventory = Object.entries(state.inventory).map(([id, count]) => ({
-    ...STORY_ITEMS.find((item) => item.id === id),
-    count,
-  }));
+  const inventory = Object.entries(state.inventory).map(([id, count]) => {
+    const item = STORY_ITEMS.find((candidate) => candidate.id === id);
+    return { id: item.id, name: item.name, count };
+  });
 
   return {
     story: {
@@ -317,10 +386,14 @@ export function serializeStore(store, runtimeMode) {
       hash: stateHash(state),
       time: formatStoryTime(state.timeMinutes),
       location: STORY_LOCATIONS.find((item) => item.id === state.locationId),
-      characters: Object.values(state.characters).map(({ goal, ...character }) => ({
-        ...character,
-        location: STORY_LOCATIONS.find((item) => item.id === character.locationId)?.name,
-      })),
+      characters: Object.values(state.characters).map(({ goal, ...character }) => {
+        const isActive = character.status === "active";
+        return {
+          ...character,
+          locationId: isActive ? character.locationId : null,
+          location: isActive ? STORY_LOCATIONS.find((item) => item.id === character.locationId)?.name : null,
+        };
+      }),
       inventory,
       knownFacts,
       threads: Object.values(state.threads),
