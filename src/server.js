@@ -114,12 +114,7 @@ export async function createAppServer(options = {}) {
           sendJson(response, 409, { error: "当前分支已经变化，请刷新后重试" });
           return;
         }
-        if (body.expectedHeadEventId && body.expectedHeadEventId !== branch.headEventId) {
-          sendJson(response, 409, { error: "故事已经产生新回合，请刷新后重试" });
-          return;
-        }
         const headEvent = store.events[branch.headEventId];
-        const generatedFromEventId = headEvent.id;
         const recentEvents = branch.eventIds.slice(-6).map((eventId) => store.events[eventId]);
 
         busy = true;
@@ -141,24 +136,16 @@ export async function createAppServer(options = {}) {
             },
             (text) => writeStreamEvent(response, { type: "delta", text }),
           );
-          await storyStore.commit((draft) => {
-            const currentBranch = draft.branches[branchId];
-            if (draft.currentBranchId !== branchId || currentBranch?.headEventId !== generatedFromEventId) {
-              throw new Error("生成期间故事分支已经变化，本回合未保存");
-            }
-            const event = appendTurn(draft, {
-              branchId,
-              action,
-              prose: result.prose,
-              proposal: result.proposal,
-              piEntryId: result.piEntryId,
-              contextTrace: result.contextTrace,
-            });
-            draft.story.piSessionFile = runtime.session?.sessionFile ?? draft.story.piSessionFile;
-            return event;
+          appendTurn(store, {
+            branchId,
+            action,
+            prose: result.prose,
+            proposal: result.proposal,
+            piEntryId: result.piEntryId,
           });
-          const committedStore = await storyStore.load();
-          writeStreamEvent(response, { type: "complete", story: serializeStore(committedStore, runtime.mode) });
+          store.story.piSessionFile = runtime.session?.sessionFile ?? store.story.piSessionFile;
+          await storyStore.save();
+          writeStreamEvent(response, { type: "complete", story: serializeStore(store, runtime.mode) });
         } catch (error) {
           console.error("[AI novel] turn failed", error);
           writeStreamEvent(response, { type: "error", error: error.message || "本回合生成失败" });
@@ -181,9 +168,10 @@ export async function createAppServer(options = {}) {
           return;
         }
         const body = await readJson(request);
-        const branch = await storyStore.commit((draft) => createBranch(draft, body.eventId, body.name));
-        const committedStore = await storyStore.load();
-        sendJson(response, 201, { branch, story: serializeStore(committedStore, runtime.mode) });
+        const store = await storyStore.load();
+        const branch = createBranch(store, body.eventId, body.name);
+        await storyStore.save();
+        sendJson(response, 201, { branch, story: serializeStore(store, runtime.mode) });
         return;
       }
 
@@ -193,9 +181,10 @@ export async function createAppServer(options = {}) {
           return;
         }
         const body = await readJson(request);
-        await storyStore.commit((draft) => selectBranch(draft, body.branchId));
-        const committedStore = await storyStore.load();
-        sendJson(response, 200, { story: serializeStore(committedStore, runtime.mode) });
+        const store = await storyStore.load();
+        selectBranch(store, body.branchId);
+        await storyStore.save();
+        sendJson(response, 200, { story: serializeStore(store, runtime.mode) });
         return;
       }
 

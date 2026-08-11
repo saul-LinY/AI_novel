@@ -21,7 +21,7 @@ export async function generateDemoTurn({ action, state, onDelta }) {
       ],
       delta: {
         timeAdvanceMinutes: 4,
-        learnFactIds: hasKnownFact(state, "red-umbrella-owner") ? [] : ["red-umbrella-owner"],
+        learnFactIds: ["red-umbrella-owner"],
         relationshipChanges: [{ characterId: "lin-qiu", amount: -1, reason: "主角发现了她想隐藏的关联" }],
       },
       memoryNotes: ["红伞属于失踪的陈默", "伞带里藏着沾有院墙青苔的行李签"],
@@ -40,7 +40,7 @@ export async function generateDemoTurn({ action, state, onDelta }) {
       delta: {
         timeAdvanceMinutes: 5,
         addItemIds: alreadyHasKey ? [] : ["room-207-key"],
-        learnFactIds: hasKnownFact(state, "missing-key") ? [] : ["missing-key"],
+        learnFactIds: ["missing-key"],
         relationshipChanges: [{ characterId: "lin-qiu", amount: -1, reason: "主角发现了被藏起的钥匙" }],
       },
       memoryNotes: ["207 号房钥匙被藏在前台抽屉夹层", "钥匙牌上粘着黑色木屑"],
@@ -57,7 +57,7 @@ export async function generateDemoTurn({ action, state, onDelta }) {
       delta: {
         locationId: "upstairs",
         timeAdvanceMinutes: 7,
-        learnFactIds: hasKnownFact(state, "wet-footprints") ? [] : ["wet-footprints"],
+        learnFactIds: ["wet-footprints"],
       },
       memoryNotes: ["二楼湿脚印从 207 号房通向安全门", "脚印并未经过大堂楼梯"],
     };
@@ -70,10 +70,7 @@ export async function generateDemoTurn({ action, state, onDelta }) {
         { id: "inspect-ledger", label: "检查登记簿纸张", action: "我仔细检查登记簿最后一页有没有被替换过。" },
         { id: "find-guard", label: "去找值夜保安", action: "我去内院找赵山核对昨晚的时间。" },
       ],
-      delta: {
-        timeAdvanceMinutes: 6,
-        learnFactIds: hasKnownFact(state, "stopped-clock") ? [] : ["stopped-clock"],
-      },
+      delta: { timeAdvanceMinutes: 6, learnFactIds: ["stopped-clock"] },
       memoryNotes: ["挂钟停在 23:17", "登记簿中的 23:40 可能是事后补写"],
     };
   } else {
@@ -97,3 +94,4 @@ export async function generateDemoTurn({ action, state, onDelta }) {
 
   return { prose, proposal, piEntryId: null };
 }
+

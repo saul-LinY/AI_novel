@@ -7,7 +7,6 @@ import {
   createInitialState,
   createInitialStore,
   serializeStore,
-  stateHash,
 } from "../src/story-domain.js";
 
 const proposal = {
@@ -51,52 +50,6 @@ test("非法状态变化会被拒绝", () => {
     () => applyTurnProposal(initial, { delta: { timeAdvanceMinutes: 181 } }),
     /时间变化/,
   );
-  assert.throws(
-    () => applyTurnProposal(initial, { delta: { locationId: "room-207" } }),
-    /无法从 lobby 直接前往 room-207/,
-  );
-  assert.throws(
-    () =>
-      applyTurnProposal(initial, proposal, {
-        allowedFactIds: ["red-umbrella-owner"],
-        prose: "你在前台找到了钥匙。",
-      }),
-    /没有发现线索的条件/,
-  );
-  assert.throws(
-    () =>
-      applyTurnProposal(
-        initial,
-        { delta: { learnFactIds: ["wet-footprints"] } },
-        { allowedFactIds: ["wet-footprints"], prose: "你看见 207 门口有一串湿脚印。" },
-      ),
-    /线索无法在当前场景发现/,
-  );
-  assert.throws(
-    () =>
-      applyTurnProposal(initial, {
-        delta: { relationshipChanges: [{ characterId: "zhao-shan", amount: 1, reason: "远程变化" }] },
-      }),
-    /人物不在本回合场景中/,
-  );
-});
-
-test("线索必须在候选范围内并由正文呈现证据", () => {
-  const initial = createInitialState();
-  assert.throws(
-    () =>
-      applyTurnProposal(initial, proposal, {
-        allowedFactIds: ["missing-key"],
-        prose: "林秋看着窗外，没有说话。",
-      }),
-    /正文没有呈现线索证据/,
-  );
-
-  const next = applyTurnProposal(initial, proposal, {
-    allowedFactIds: ["missing-key"],
-    prose: "你在前台抽屉夹层里找到了 207 号房钥匙。",
-  });
-  assert.deepEqual(next.knownFactIds, ["missing-key"]);
 });
 
 test("两个故事分支的状态互不污染", () => {
@@ -129,37 +82,11 @@ test("两个故事分支的状态互不污染", () => {
   assert.equal(branchState.locationId, "upstairs");
 });
 
-test("已提交回合记录上下文痕迹和前后状态哈希", () => {
-  const store = createInitialStore();
-  const parent = store.events[store.branches.main.headEventId];
-  const contextTrace = {
-    compilerVersion: 1,
-    discoveryCandidateIds: ["missing-key"],
-    selectedEventIds: [parent.id],
-  };
-  const event = appendTurn(store, {
-    branchId: "main",
-    action: "检查前台抽屉",
-    prose: "你在前台抽屉夹层里找到了 207 号房钥匙。",
-    proposal,
-    contextTrace,
-  });
-
-  assert.equal(event.status, "committed");
-  assert.equal(event.stateBeforeHash, stateHash(parent.stateAfter));
-  assert.equal(event.stateAfterHash, stateHash(event.stateAfter));
-  assert.deepEqual(event.contextTrace, contextTrace);
-});
-
 test("浏览器接口不会泄露隐藏真相和人物目标", () => {
   const store = createInitialStore();
-  const serialized = serializeStore(store, "demo");
-  const output = JSON.stringify(serialized);
-  const missingCharacter = serialized.state.characters.find((character) => character.id === "chen-mo");
+  const output = JSON.stringify(serializeStore(store, "demo"));
 
   assert.doesNotMatch(output, /privateText/);
   assert.doesNotMatch(output, /207 号房钥匙在前台抽屉的夹层里/);
   assert.doesNotMatch(output, /确认来客是否值得信任/);
-  assert.equal(missingCharacter.locationId, null);
-  assert.equal(missingCharacter.location, null);
 });

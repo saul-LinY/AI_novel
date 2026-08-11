@@ -240,11 +240,7 @@ async function submitAction(action) {
     const response = await fetch("/api/turn", {
       method: "POST",
       headers: { "content-type": "application/json" },
-      body: JSON.stringify({
-        action: normalized,
-        branchId: story.currentBranchId,
-        expectedHeadEventId: story.branches.find((branch) => branch.id === story.currentBranchId)?.headEventId,
-      }),
+      body: JSON.stringify({ action: normalized, branchId: story.currentBranchId }),
     });
     if (!response.ok) {
       const error = await response.json();
