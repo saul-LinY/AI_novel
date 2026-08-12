@@ -111,6 +111,19 @@ function renderRuntimeStatus() {
   elements.runtimeStatus.title = isPi ? "使用 Pi 和当前已配置模型" : "使用内置演示剧情";
 }
 
+async function syncRuntimeStatus() {
+  if (!story) return;
+  try {
+    const health = await requestJson("/api/health");
+    if (health.mode !== story.runtimeMode) {
+      story.runtimeMode = health.mode;
+      renderRuntimeStatus();
+    }
+  } catch {
+    // The existing story remains usable after a temporary server restart.
+  }
+}
+
 function renderBranches() {
   elements.branchList.innerHTML = story.branches
     .map((branch) => {
@@ -226,7 +239,7 @@ function appendPendingEntry(action) {
   return entry.querySelector(".story-prose");
 }
 
-async function submitAction(action) {
+async function submitAction(action, choiceId = null) {
   const normalized = action.trim();
   if (!normalized || generating) return;
   generating = true;
@@ -240,7 +253,7 @@ async function submitAction(action) {
     const response = await fetch("/api/turn", {
       method: "POST",
       headers: { "content-type": "application/json" },
-      body: JSON.stringify({ action: normalized, branchId: story.currentBranchId }),
+      body: JSON.stringify({ action: normalized, choiceId, branchId: story.currentBranchId }),
     });
     if (!response.ok) {
       const error = await response.json();
@@ -255,7 +268,12 @@ async function submitAction(action) {
     const processLine = (line) => {
       if (!line.trim()) return;
       const event = JSON.parse(line);
-      if (event.type === "delta") {
+      if (event.type === "start") {
+        if (event.mode && event.mode !== story.runtimeMode) {
+          story.runtimeMode = event.mode;
+          renderRuntimeStatus();
+        }
+      } else if (event.type === "delta") {
         pendingProse.textContent += event.text;
         elements.storyScroll.scrollTop = elements.storyScroll.scrollHeight;
       } else if (event.type === "complete") {
@@ -311,7 +329,7 @@ elements.choiceList.addEventListener("click", (event) => {
   const button = event.target.closest("[data-choice-id]");
   if (!button || !story) return;
   const choice = story.events.at(-1)?.choices.find((item) => item.id === button.dataset.choiceId);
-  if (choice) submitAction(choice.action);
+  if (choice) submitAction(choice.action, choice.id);
 });
 
 elements.branchList.addEventListener("click", async (event) => {
@@ -379,6 +397,11 @@ elements.stateToggle.addEventListener("click", () => openPanel("state"));
 elements.panelScrim.addEventListener("click", closePanels);
 document.querySelectorAll("[data-close-panel]").forEach((button) => button.addEventListener("click", closePanels));
 mobilePanels.addEventListener("change", closePanels);
+window.addEventListener("focus", syncRuntimeStatus);
+document.addEventListener("visibilitychange", () => {
+  if (document.visibilityState === "visible") syncRuntimeStatus();
+});
+setInterval(syncRuntimeStatus, 15_000);
 
 async function initialize() {
   refreshIcons();
