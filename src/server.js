@@ -5,6 +5,7 @@ import { dirname, extname, join, normalize, resolve } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { appendTurn, createBranch, selectBranch, serializeStore } from "./story-domain.js";
 import { PiStoryRuntime } from "./pi-story-runtime.js";
+import { validateTurnQuality } from "./story-quality.js";
 import { StoryStore } from "./story-store.js";
 
 const sourceDir = dirname(fileURLToPath(import.meta.url));
@@ -115,6 +116,14 @@ export async function createAppServer(options = {}) {
           return;
         }
         const headEvent = store.events[branch.headEventId];
+        const choiceId = typeof body.choiceId === "string" ? body.choiceId : null;
+        if (choiceId) {
+          const selectedChoice = headEvent.choices.find((choice) => choice.id === choiceId);
+          if (!selectedChoice || selectedChoice.action !== action) {
+            sendJson(response, 409, { error: "这个选项已经不属于当前回合，请重新选择" });
+            return;
+          }
+        }
         const recentEvents = branch.eventIds.slice(-6).map((eventId) => store.events[eventId]);
 
         busy = true;
@@ -130,12 +139,14 @@ export async function createAppServer(options = {}) {
           const result = await runtime.generateTurn(
             {
               action,
+              choiceId,
               state: headEvent.stateAfter,
               recentEvents,
               piEntryId: headEvent.piEntryId,
             },
             (text) => writeStreamEvent(response, { type: "delta", text }),
           );
+          validateTurnQuality({ action, prose: result.prose, proposal: result.proposal, recentEvents });
           appendTurn(store, {
             branchId,
             action,

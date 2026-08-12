@@ -1,6 +1,7 @@
 import { mkdir, readFile, rename, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { createInitialStore } from "./story-domain.js";
+import { collapseRepeatedProse } from "./story-quality.js";
 
 export class StoryStore {
   constructor(rootDir) {
@@ -13,6 +14,15 @@ export class StoryStore {
     if (this.data) return this.data;
     try {
       this.data = JSON.parse(await readFile(this.filePath, "utf8"));
+      let repaired = false;
+      for (const event of Object.values(this.data.events ?? {})) {
+        const prose = collapseRepeatedProse(event.prose);
+        if (prose !== event.prose) {
+          event.prose = prose;
+          repaired = true;
+        }
+      }
+      if (repaired) await this.save();
     } catch (error) {
       if (error.code !== "ENOENT") throw error;
       this.data = createInitialStore();
@@ -35,4 +45,3 @@ export class StoryStore {
     return this.data;
   }
 }
-
