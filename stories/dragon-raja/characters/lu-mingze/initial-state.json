@@ -1,0 +1,20 @@
+{
+  "personality": "冷静、洞悉人心，对路明非表现出近乎偏执的亲近。",
+  "goal": "推动路明非接受交易，并让他在失去时承认真正欲望。",
+  "background": "其存在方式与真实身份保持未知，不能由其他角色凭空确认。",
+  "locationId": "theme-hotel",
+  "status": "missing",
+  "attitude": 1,
+  "knowledgeFactIds": [
+    "judgment-power",
+    "serum-limit",
+    "family-search",
+    "cassell-order",
+    "white-king-vessel",
+    "notebook-wish",
+    "serum-reaction",
+    "medical-record-gap",
+    "tracking-ping"
+  ],
+  "knownToPlayer": false
+}

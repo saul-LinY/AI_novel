@@ -1,0 +1,14 @@
+{
+  "personality": "专业、敏捷，有幽默感，对任务之外的人仍保留同情。",
+  "goal": "按幕后计划保证路明非活到关键选择，同时尽量保护无辜者。",
+  "background": "受秘密团队调度的执行者，与苏恩曦长期合作。",
+  "locationId": "tokyo-street",
+  "status": "active",
+  "attitude": 0,
+  "knowledgeFactIds": [
+    "cassell-order",
+    "tracking-ping",
+    "white-king-vessel"
+  ],
+  "knownToPlayer": true
+}

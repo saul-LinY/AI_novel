@@ -1,0 +1,22 @@
+{
+  "id": "chu-zihang",
+  "name": "楚子航",
+  "aliases": [],
+  "role": "卡塞尔学院执行部成员",
+  "selectable": false,
+  "onboardingVisible": true,
+  "tagline": "协助凯撒建立安全撤离路线，同时寻找白王计划与绘梨衣之间的真实联系。",
+  "publicSummary": "东京任务成员，拥有高危言灵·君焰。与凯撒竞争但在任务中保持有效合作。",
+  "traits": [
+    "关键人物",
+    "东京任务"
+  ],
+  "appearance": "黑发、神情冷静的中国青年，穿深色行动服，危险时会显露灼金色瞳孔。",
+  "abilities": [
+    "言灵·君焰",
+    "战术分析",
+    "近身战斗"
+  ],
+  "speech": "陈述事实和判断，极少用夸张修辞，关心通常表现为行动。",
+  "image": null
+}

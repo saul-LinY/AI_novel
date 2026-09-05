@@ -1,0 +1,14 @@
+{
+  "personality": "敏感、骄傲、带有表演性，仇恨哥哥却仍渴望被理解。",
+  "goal": "向源稚生追讨过去，并摆脱王将对自己的控制。",
+  "background": "源稚生的弟弟，以风间琉璃身份成为猛鬼众的重要人物。",
+  "locationId": "red-well",
+  "status": "active",
+  "attitude": -1,
+  "knowledgeFactIds": [
+    "family-search",
+    "medical-record-gap",
+    "white-king-vessel"
+  ],
+  "knownToPlayer": true
+}

@@ -1,0 +1,18 @@
+{
+  "id": "sky-observatory",
+  "name": "东京高空展望台",
+  "description": "高空展望台俯瞰东京灯火，落地玻璃映出人物与城市；开阔景观放大自由感，也让接近的警灯和追踪路线无处隐藏。",
+  "defaultStateId": "default",
+  "fallbackImage": "/assets/scenes/dragon-raja/fallback.png",
+  "states": [
+    {
+      "id": "default",
+      "title": "城市灯火",
+      "description": "高空展望台俯瞰东京灯火，落地玻璃映出人物与城市；开阔景观放大自由感，也让接近的警灯和追踪路线无处隐藏。",
+      "image": {
+        "src": "/assets/scenes/dragon-raja/sky-observatory.png",
+        "alt": "东京高空展望台的环境画面"
+      }
+    }
+  ]
+}

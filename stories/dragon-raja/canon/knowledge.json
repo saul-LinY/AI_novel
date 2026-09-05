@@ -1,0 +1,93 @@
+{
+  "initialByCharacterId": {
+    "lu-mingfei": [
+      "judgment-power",
+      "serum-limit",
+      "cassell-order",
+      "notebook-wish"
+    ],
+    "erii": [
+      "judgment-power",
+      "serum-limit",
+      "family-search",
+      "notebook-wish"
+    ],
+    "gen-chisei": [
+      "judgment-power",
+      "serum-limit",
+      "family-search",
+      "notebook-wish",
+      "medical-record-gap"
+    ],
+    "caesar": [
+      "judgment-power",
+      "serum-limit",
+      "cassell-order",
+      "tracking-ping"
+    ],
+    "chu-zihang": [
+      "judgment-power",
+      "serum-limit",
+      "cassell-order",
+      "medical-record-gap"
+    ],
+    "tachibana-masamune": [
+      "judgment-power",
+      "serum-limit",
+      "family-search",
+      "cassell-order",
+      "white-king-vessel",
+      "notebook-wish",
+      "serum-reaction",
+      "medical-record-gap",
+      "tracking-ping"
+    ],
+    "gen-chinu": [
+      "family-search",
+      "medical-record-gap",
+      "white-king-vessel"
+    ],
+    "lu-mingze": [
+      "judgment-power",
+      "serum-limit",
+      "family-search",
+      "cassell-order",
+      "white-king-vessel",
+      "notebook-wish",
+      "serum-reaction",
+      "medical-record-gap",
+      "tracking-ping"
+    ],
+    "uesugi-yue": [
+      "judgment-power",
+      "serum-limit",
+      "family-search"
+    ],
+    "sakura-yabuki": [
+      "judgment-power",
+      "serum-limit",
+      "family-search",
+      "medical-record-gap"
+    ],
+    "mai-sakatoku": [
+      "cassell-order",
+      "tracking-ping",
+      "white-king-vessel"
+    ],
+    "sue-enxi": [
+      "cassell-order",
+      "tracking-ping",
+      "white-king-vessel"
+    ]
+  },
+  "protectedTerms": [
+    {
+      "truthId": "white-king-vessel",
+      "terms": [
+        "白王容器",
+        "赫尔佐格",
+        "橘政宗就是赫尔佐格"
+      ]
+    }
+  ]
+}

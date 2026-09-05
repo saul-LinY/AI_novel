@@ -1,0 +1,24 @@
+{
+  "id": "gen-chinu",
+  "name": "源稚女",
+  "aliases": [
+    "风间琉璃"
+  ],
+  "role": "猛鬼众龙王",
+  "selectable": false,
+  "onboardingVisible": true,
+  "tagline": "在被抛弃的记忆与重新被承认的愿望之间行动",
+  "publicSummary": "与源稚生有深刻旧怨的猛鬼众核心人物，能以风间琉璃的身份活动。",
+  "traits": [
+    "舞台感",
+    "复仇",
+    "渴望和解"
+  ],
+  "appearance": "容貌精致的年轻日本男性，风间琉璃身份常着华丽戏服或考究正装。",
+  "abilities": [
+    "高纯度皇血",
+    "言灵·梦貘"
+  ],
+  "speech": "措辞华丽而锋利，情绪越深越显得从容。",
+  "image": null
+}

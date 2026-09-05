@@ -1,0 +1,25 @@
+{
+  "id": "lu-mingfei",
+  "name": "路明非",
+  "aliases": [],
+  "role": "卡塞尔学院 S 级学生",
+  "selectable": true,
+  "onboardingVisible": true,
+  "tagline": "总觉得自己是局外人，却总在最后关头被别人需要",
+  "publicSummary": "看起来普通、习惯用自嘲躲开尴尬的中国少年。东京任务把一个无法被世界正常接纳的女孩交到他手里；扮演路明非意味着你最接近绘梨衣，也最容易把害怕承担误认为替她着想。",
+  "traits": [
+    "临场应变",
+    "共情",
+    "隐藏潜力"
+  ],
+  "appearance": "年轻的中国男生，黑色短发，身形偏瘦，五官不张扬，常穿被东京雨水打皱的深色夹克、T 恤和长裤。",
+  "abilities": [
+    "临场应变",
+    "无法按常规解释的潜力"
+  ],
+  "speech": "常用自嘲和玩笑缓冲恐惧，真正承诺时句子反而短。",
+  "image": {
+    "src": "/assets/onboarding/dragon-raja/lu-mingfei.png",
+    "alt": "黑发、神情普通而疲惫的路明非"
+  }
+}

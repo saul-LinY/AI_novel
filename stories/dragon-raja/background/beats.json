@@ -1,0 +1,363 @@
+[
+  {
+    "id": "beat-01",
+    "order": 1,
+    "comicPageId": "comic-tokyo-arrival",
+    "location": "东京上空与机场",
+    "characterIds": [
+      "lu-mingfei",
+      "caesar",
+      "chu-zihang",
+      "gen-chisei"
+    ],
+    "cause": "卡塞尔学院向东京派出行动小组。",
+    "event": "卡塞尔三人组抵达东京。任务刚开始，城市已经用台风、停运和沉默提醒他们：日本分部不会只是向导。",
+    "effect": "礼节周到的会面没有消除戒心。凯撒与源稚生第一次把合作条件摆到桌面上。",
+    "visualContinuity": [
+      "保持东京上空与机场的天气、光线与空间方向连续",
+      "沿用本页人物造型和随身物品，不凭空改变服装或伤势",
+      "下一页必须承接本页造成的关系或风险变化"
+    ],
+    "sourceStatus": "current-adaptation"
+  },
+  {
+    "id": "beat-02",
+    "order": 2,
+    "comicPageId": "comic-genji-meeting",
+    "location": "源氏重工",
+    "characterIds": [
+      "lu-mingfei",
+      "caesar",
+      "chu-zihang",
+      "gen-chisei"
+    ],
+    "cause": "卡塞尔三人组抵达东京。任务刚开始，城市已经用台风、停运和沉默提醒他们：日本分部不会只是向导。",
+    "event": "礼节周到的会面没有消除戒心。凯撒与源稚生第一次把合作条件摆到桌面上。",
+    "effect": "绘梨衣住在源氏重工深处。家族称她为家主，她的生活却被房门、药物和监控划得很小。",
+    "visualContinuity": [
+      "保持源氏重工的天气、光线与空间方向连续",
+      "沿用本页人物造型和随身物品，不凭空改变服装或伤势",
+      "下一页必须承接本页造成的关系或风险变化"
+    ],
+    "sourceStatus": "current-adaptation"
+  },
+  {
+    "id": "beat-03",
+    "order": 3,
+    "comicPageId": "comic-erii-room",
+    "location": "绘梨衣的房间",
+    "characterIds": [
+      "erii",
+      "gen-chisei"
+    ],
+    "cause": "礼节周到的会面没有消除戒心。凯撒与源稚生第一次把合作条件摆到桌面上。",
+    "event": "绘梨衣住在源氏重工深处。家族称她为家主，她的生活却被房门、药物和监控划得很小。",
+    "effect": "绘梨衣不能随意开口。她的言灵会把一句话变成死亡命令，这也是家族保护她、畏惧她并使用她的理由。",
+    "visualContinuity": [
+      "保持绘梨衣的房间的天气、光线与空间方向连续",
+      "沿用本页人物造型和随身物品，不凭空改变服装或伤势",
+      "下一页必须承接本页造成的关系或风险变化"
+    ],
+    "sourceStatus": "current-adaptation"
+  },
+  {
+    "id": "beat-04",
+    "order": 4,
+    "comicPageId": "comic-judgment",
+    "location": "蛇岐八家训练场",
+    "characterIds": [
+      "erii",
+      "gen-chisei"
+    ],
+    "cause": "绘梨衣住在源氏重工深处。家族称她为家主，她的生活却被房门、药物和监控划得很小。",
+    "event": "绘梨衣不能随意开口。她的言灵会把一句话变成死亡命令，这也是家族保护她、畏惧她并使用她的理由。",
+    "effect": "源稚生想把妹妹留在安全处，家族却需要上杉家主的力量。爱与职责在他身上从来没有真正分开。",
+    "visualContinuity": [
+      "保持蛇岐八家训练场的天气、光线与空间方向连续",
+      "沿用本页人物造型和随身物品，不凭空改变服装或伤势",
+      "下一页必须承接本页造成的关系或风险变化"
+    ],
+    "sourceStatus": "current-adaptation"
+  },
+  {
+    "id": "beat-05",
+    "order": 5,
+    "comicPageId": "comic-siblings",
+    "location": "源氏重工医疗层",
+    "characterIds": [
+      "erii",
+      "gen-chisei",
+      "tachibana-masamune"
+    ],
+    "cause": "绘梨衣不能随意开口。她的言灵会把一句话变成死亡命令，这也是家族保护她、畏惧她并使用她的理由。",
+    "event": "源稚生想把妹妹留在安全处，家族却需要上杉家主的力量。爱与职责在他身上从来没有真正分开。",
+    "effect": "卡塞尔与蛇岐八家的联合行动进入危险水域。计划需要双方互信，而互信恰好是他们最缺少的东西。",
+    "visualContinuity": [
+      "保持源氏重工医疗层的天气、光线与空间方向连续",
+      "沿用本页人物造型和随身物品，不凭空改变服装或伤势",
+      "下一页必须承接本页造成的关系或风险变化"
+    ],
+    "sourceStatus": "current-adaptation"
+  },
+  {
+    "id": "beat-06",
+    "order": 6,
+    "comicPageId": "comic-underwater-mission",
+    "location": "深海与指挥船",
+    "characterIds": [
+      "lu-mingfei",
+      "caesar",
+      "chu-zihang",
+      "gen-chisei",
+      "erii"
+    ],
+    "cause": "源稚生想把妹妹留在安全处，家族却需要上杉家主的力量。爱与职责在他身上从来没有真正分开。",
+    "event": "卡塞尔与蛇岐八家的联合行动进入危险水域。计划需要双方互信，而互信恰好是他们最缺少的东西。",
+    "effect": "水下目标、尸守与错误情报同时出现。绘梨衣被投入战斗，联合行动也在混乱中失去最后的信任。",
+    "visualContinuity": [
+      "保持深海与指挥船的天气、光线与空间方向连续",
+      "沿用本页人物造型和随身物品，不凭空改变服装或伤势",
+      "下一页必须承接本页造成的关系或风险变化"
+    ],
+    "sourceStatus": "current-adaptation"
+  },
+  {
+    "id": "beat-07",
+    "order": 7,
+    "comicPageId": "comic-mission-collapse",
+    "location": "风雨中的海面",
+    "characterIds": [
+      "lu-mingfei",
+      "caesar",
+      "chu-zihang",
+      "gen-chisei",
+      "erii"
+    ],
+    "cause": "卡塞尔与蛇岐八家的联合行动进入危险水域。计划需要双方互信，而互信恰好是他们最缺少的东西。",
+    "event": "水下目标、尸守与错误情报同时出现。绘梨衣被投入战斗，联合行动也在混乱中失去最后的信任。",
+    "effect": "任务结束没有带来安全。卡塞尔小组与日本分部公开决裂，昔日接待他们的车队变成搜索者。",
+    "visualContinuity": [
+      "保持风雨中的海面的天气、光线与空间方向连续",
+      "沿用本页人物造型和随身物品，不凭空改变服装或伤势",
+      "下一页必须承接本页造成的关系或风险变化"
+    ],
+    "sourceStatus": "current-adaptation"
+  },
+  {
+    "id": "beat-08",
+    "order": 8,
+    "comicPageId": "comic-break-with-family",
+    "location": "源氏重工出口",
+    "characterIds": [
+      "lu-mingfei",
+      "caesar",
+      "chu-zihang",
+      "gen-chisei"
+    ],
+    "cause": "水下目标、尸守与错误情报同时出现。绘梨衣被投入战斗，联合行动也在混乱中失去最后的信任。",
+    "event": "任务结束没有带来安全。卡塞尔小组与日本分部公开决裂，昔日接待他们的车队变成搜索者。",
+    "effect": "绘梨衣从监控里看见路明非被追捕。她第一次没有等待哥哥回来，而是自己打开了门。",
+    "visualContinuity": [
+      "保持源氏重工出口的天气、光线与空间方向连续",
+      "沿用本页人物造型和随身物品，不凭空改变服装或伤势",
+      "下一页必须承接本页造成的关系或风险变化"
+    ],
+    "sourceStatus": "current-adaptation"
+  },
+  {
+    "id": "beat-09",
+    "order": 9,
+    "comicPageId": "comic-erii-leaves",
+    "location": "绘梨衣的房间与电梯",
+    "characterIds": [
+      "erii",
+      "gen-chisei"
+    ],
+    "cause": "任务结束没有带来安全。卡塞尔小组与日本分部公开决裂，昔日接待他们的车队变成搜索者。",
+    "event": "绘梨衣从监控里看见路明非被追捕。她第一次没有等待哥哥回来，而是自己打开了门。",
+    "effect": "路明非与同伴失散，在东京雨夜里撞见离家出走的绘梨衣。两个人都没有准备好照顾另一个人。",
+    "visualContinuity": [
+      "保持绘梨衣的房间与电梯的天气、光线与空间方向连续",
+      "沿用本页人物造型和随身物品，不凭空改变服装或伤势",
+      "下一页必须承接本页造成的关系或风险变化"
+    ],
+    "sourceStatus": "current-adaptation"
+  },
+  {
+    "id": "beat-10",
+    "order": 10,
+    "comicPageId": "comic-rain-encounter",
+    "location": "东京雨夜街区",
+    "characterIds": [
+      "lu-mingfei",
+      "erii"
+    ],
+    "cause": "绘梨衣从监控里看见路明非被追捕。她第一次没有等待哥哥回来，而是自己打开了门。",
+    "event": "路明非与同伴失散，在东京雨夜里撞见离家出走的绘梨衣。两个人都没有准备好照顾另一个人。",
+    "effect": "主题旅馆隔开了追捕，却隔不开尴尬和责任。路明非开始意识到绘梨衣把选择交给了自己。",
+    "visualContinuity": [
+      "保持东京雨夜街区的天气、光线与空间方向连续",
+      "沿用本页人物造型和随身物品，不凭空改变服装或伤势",
+      "下一页必须承接本页造成的关系或风险变化"
+    ],
+    "sourceStatus": "current-adaptation"
+  },
+  {
+    "id": "beat-11",
+    "order": 11,
+    "comicPageId": "comic-hotel-hiding",
+    "location": "东京主题旅馆",
+    "characterIds": [
+      "lu-mingfei",
+      "erii"
+    ],
+    "cause": "路明非与同伴失散，在东京雨夜里撞见离家出走的绘梨衣。两个人都没有准备好照顾另一个人。",
+    "event": "主题旅馆隔开了追捕，却隔不开尴尬和责任。路明非开始意识到绘梨衣把选择交给了自己。",
+    "effect": "凯撒要求路明非把绘梨衣带离日本，源稚生则寻找妹妹。双方都在说保护，却给出完全相反的方向。",
+    "visualContinuity": [
+      "保持东京主题旅馆的天气、光线与空间方向连续",
+      "沿用本页人物造型和随身物品，不凭空改变服装或伤势",
+      "下一页必须承接本页造成的关系或风险变化"
+    ],
+    "sourceStatus": "current-adaptation"
+  },
+  {
+    "id": "beat-12",
+    "order": 12,
+    "comicPageId": "comic-conflicting-orders",
+    "location": "旅馆与两处指挥点",
+    "characterIds": [
+      "lu-mingfei",
+      "erii",
+      "caesar",
+      "gen-chisei"
+    ],
+    "cause": "主题旅馆隔开了追捕，却隔不开尴尬和责任。路明非开始意识到绘梨衣把选择交给了自己。",
+    "event": "凯撒要求路明非把绘梨衣带离日本，源稚生则寻找妹妹。双方都在说保护，却给出完全相反的方向。",
+    "effect": "最后一支血清把浪漫变成可计算的时间。继续藏匿、回家或撤离都必须先承认绘梨衣的身体边界。",
+    "visualContinuity": [
+      "保持旅馆与两处指挥点的天气、光线与空间方向连续",
+      "沿用本页人物造型和随身物品，不凭空改变服装或伤势",
+      "下一页必须承接本页造成的关系或风险变化"
+    ],
+    "sourceStatus": "current-adaptation"
+  },
+  {
+    "id": "beat-13",
+    "order": 13,
+    "comicPageId": "comic-serum-countdown",
+    "location": "东京主题旅馆",
+    "characterIds": [
+      "lu-mingfei",
+      "erii"
+    ],
+    "cause": "凯撒要求路明非把绘梨衣带离日本，源稚生则寻找妹妹。双方都在说保护，却给出完全相反的方向。",
+    "event": "最后一支血清把浪漫变成可计算的时间。继续藏匿、回家或撤离都必须先承认绘梨衣的身体边界。",
+    "effect": "他们混进上班人群，像两个没有任务也没有家族的人。普通生活的细节第一次成为故事本身。",
+    "visualContinuity": [
+      "保持东京主题旅馆的天气、光线与空间方向连续",
+      "沿用本页人物造型和随身物品，不凭空改变服装或伤势",
+      "下一页必须承接本页造成的关系或风险变化"
+    ],
+    "sourceStatus": "current-adaptation"
+  },
+  {
+    "id": "beat-14",
+    "order": 14,
+    "comicPageId": "comic-ordinary-morning",
+    "location": "东京电车与快餐店",
+    "characterIds": [
+      "lu-mingfei",
+      "erii"
+    ],
+    "cause": "最后一支血清把浪漫变成可计算的时间。继续藏匿、回家或撤离都必须先承认绘梨衣的身体边界。",
+    "event": "他们混进上班人群，像两个没有任务也没有家族的人。普通生活的细节第一次成为故事本身。",
+    "effect": "绘梨衣熟悉游戏规则，却不熟悉赢了以后该怎样庆祝。路明非第一次看见她不作为武器的胜负心。",
+    "visualContinuity": [
+      "保持东京电车与快餐店的天气、光线与空间方向连续",
+      "沿用本页人物造型和随身物品，不凭空改变服装或伤势",
+      "下一页必须承接本页造成的关系或风险变化"
+    ],
+    "sourceStatus": "current-adaptation"
+  },
+  {
+    "id": "beat-15",
+    "order": 15,
+    "comicPageId": "comic-arcade",
+    "location": "东京游戏厅",
+    "characterIds": [
+      "lu-mingfei",
+      "erii"
+    ],
+    "cause": "他们混进上班人群，像两个没有任务也没有家族的人。普通生活的细节第一次成为故事本身。",
+    "event": "绘梨衣熟悉游戏规则，却不熟悉赢了以后该怎样庆祝。路明非第一次看见她不作为武器的胜负心。",
+    "effect": "在东京高处，绘梨衣把未完成的愿望写满一页。她没有要求永远，只要求下一步不要再由别人替她决定。",
+    "visualContinuity": [
+      "保持东京游戏厅的天气、光线与空间方向连续",
+      "沿用本页人物造型和随身物品，不凭空改变服装或伤势",
+      "下一页必须承接本页造成的关系或风险变化"
+    ],
+    "sourceStatus": "current-adaptation"
+  },
+  {
+    "id": "beat-16",
+    "order": 16,
+    "comicPageId": "comic-city-lights",
+    "location": "东京高空展望台",
+    "characterIds": [
+      "lu-mingfei",
+      "erii"
+    ],
+    "cause": "绘梨衣熟悉游戏规则，却不熟悉赢了以后该怎样庆祝。路明非第一次看见她不作为武器的胜负心。",
+    "event": "在东京高处，绘梨衣把未完成的愿望写满一页。她没有要求永远，只要求下一步不要再由别人替她决定。",
+    "effect": "源稚生发现治疗记录有缺口，凯撒也无法证明学院的撤离能提供长期治疗。两套保护方案都开始露出裂缝。",
+    "visualContinuity": [
+      "保持东京高空展望台的天气、光线与空间方向连续",
+      "沿用本页人物造型和随身物品，不凭空改变服装或伤势",
+      "下一页必须承接本页造成的关系或风险变化"
+    ],
+    "sourceStatus": "current-adaptation"
+  },
+  {
+    "id": "beat-17",
+    "order": 17,
+    "comicPageId": "comic-truth-gaps",
+    "location": "源氏重工与卡塞尔安全屋",
+    "characterIds": [
+      "gen-chisei",
+      "tachibana-masamune",
+      "caesar",
+      "chu-zihang"
+    ],
+    "cause": "在东京高处，绘梨衣把未完成的愿望写满一页。她没有要求永远，只要求下一步不要再由别人替她决定。",
+    "event": "源稚生发现治疗记录有缺口，凯撒也无法证明学院的撤离能提供长期治疗。两套保护方案都开始露出裂缝。",
+    "effect": "血清只剩最后一支，旅馆位置即将暴露。现在轮到玩家决定：离开日本、返回家族、继续藏匿，还是冒险追查治疗记录背后的真相。",
+    "visualContinuity": [
+      "保持源氏重工与卡塞尔安全屋的天气、光线与空间方向连续",
+      "沿用本页人物造型和随身物品，不凭空改变服装或伤势",
+      "下一页必须承接本页造成的关系或风险变化"
+    ],
+    "sourceStatus": "current-adaptation"
+  },
+  {
+    "id": "beat-18",
+    "order": 18,
+    "comicPageId": "comic-choice-handoff",
+    "location": "东京主题旅馆",
+    "characterIds": [
+      "lu-mingfei",
+      "erii",
+      "caesar",
+      "gen-chisei"
+    ],
+    "cause": "源稚生发现治疗记录有缺口，凯撒也无法证明学院的撤离能提供长期治疗。两套保护方案都开始露出裂缝。",
+    "event": "血清只剩最后一支，旅馆位置即将暴露。现在轮到玩家决定：离开日本、返回家族、继续藏匿，还是冒险追查治疗记录背后的真相。",
+    "effect": "玩家从这里接管人物的下一步选择。",
+    "visualContinuity": [
+      "保持东京主题旅馆的天气、光线与空间方向连续",
+      "沿用本页人物造型和随身物品，不凭空改变服装或伤势",
+      "桌上的血清、本子和手机必须延续到互动开场"
+    ],
+    "sourceStatus": "current-adaptation"
+  }
+]

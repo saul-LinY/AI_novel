@@ -3,12 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "A Pi-powered interactive branching novel demo",
+  "description": "A Pi-powered interactive branching novel",
   "engines": {
     "node": ">=22.19.0"
   },
   "scripts": {
     "setup": "node scripts/setup-local-pi.js",
+    "imagegen": "node scripts/imagegen.js",
     "pi:build": "npm run build:offline --prefix vendor/pi",
     "dev": "node --watch src/server.js",
     "start": "node src/server.js",

@@ -1,0 +1,24 @@
+{
+  "id": "tachibana-masamune",
+  "name": "橘政宗",
+  "aliases": [
+    "大家长"
+  ],
+  "role": "蛇岐八家大家长",
+  "selectable": false,
+  "onboardingVisible": true,
+  "tagline": "以父亲般的姿态维持秩序，掌握着最危险的隐瞒",
+  "publicSummary": "蛇岐八家的大家长，是源稚生信赖的长辈，也是绘梨衣治疗体系的最高知情者。",
+  "traits": [
+    "温和权威",
+    "信息控制",
+    "长期布局"
+  ],
+  "appearance": "头发灰白、仪态克制的年长男性，常穿整洁和服或深色正装。",
+  "abilities": [
+    "家族权威",
+    "医学与血统研究知识"
+  ],
+  "speech": "语气平稳慈祥，习惯用家族责任包装命令。",
+  "image": null
+}

@@ -1,0 +1,18 @@
+{
+  "id": "theme-hotel",
+  "name": "东京主题旅馆",
+  "description": "清晨的东京主题旅馆套房，厚重窗帘、深色木墙和黑色石桌形成临时避难所；桌上能放置血清、本子与手机，门外走廊是持续威胁。",
+  "defaultStateId": "default",
+  "fallbackImage": "/assets/scenes/dragon-raja/fallback.png",
+  "states": [
+    {
+      "id": "default",
+      "title": "借来的安全",
+      "description": "清晨的东京主题旅馆套房，厚重窗帘、深色木墙和黑色石桌形成临时避难所；桌上能放置血清、本子与手机，门外走廊是持续威胁。",
+      "image": {
+        "src": "/assets/scenes/dragon-raja/theme-hotel.png",
+        "alt": "东京主题旅馆的环境画面"
+      }
+    }
+  ]
+}

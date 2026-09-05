@@ -1,0 +1,1092 @@
+[
+  {
+    "id": "comic-tokyo-arrival",
+    "title": "风雨入境",
+    "caption": "卡塞尔三人组抵达东京。任务刚开始，城市已经用台风、停运和沉默提醒他们：日本分部不会只是向导。",
+    "panels": [
+      {
+        "id": "p1",
+        "scene": "客机穿过台风云层",
+        "lines": [
+          {
+            "speaker": "旁白",
+            "text": "东京在云层下发亮，像一块浸在黑水里的电路板。"
+          }
+        ]
+      },
+      {
+        "id": "p2",
+        "scene": "机舱内，凯撒确认任务简报",
+        "lines": [
+          {
+            "speaker": "凯撒",
+            "text": "落地以后，先把学院给的版本忘掉一半。"
+          },
+          {
+            "speaker": "路明非",
+            "text": "剩下一半够我们活着回去吗？"
+          }
+        ]
+      },
+      {
+        "id": "p3",
+        "scene": "楚子航望向舷窗",
+        "lines": [
+          {
+            "speaker": "楚子航",
+            "text": "日本分部没有确认接机人。"
+          }
+        ]
+      },
+      {
+        "id": "p4",
+        "scene": "机场到达口，黑衣车队停下",
+        "lines": [
+          {
+            "speaker": "源稚生",
+            "text": "欢迎来到东京。接下来请遵守我们的规则。"
+          }
+        ]
+      }
+    ],
+    "image": {
+      "src": "/assets/onboarding/dragon-raja/comic-01.png",
+      "alt": "多格漫画第 1 页：风雨入境"
+    }
+  },
+  {
+    "id": "comic-genji-meeting",
+    "title": "源氏重工",
+    "caption": "礼节周到的会面没有消除戒心。凯撒与源稚生第一次把合作条件摆到桌面上。",
+    "panels": [
+      {
+        "id": "p1",
+        "scene": "源氏重工大厅，黑衣成员列队",
+        "lines": [
+          {
+            "speaker": "路明非",
+            "text": "这不像接待，更像把我们送进刀鞘。"
+          }
+        ]
+      },
+      {
+        "id": "p2",
+        "scene": "会议桌两端，凯撒与源稚生对视",
+        "lines": [
+          {
+            "speaker": "凯撒",
+            "text": "学院需要完整资料。"
+          },
+          {
+            "speaker": "源稚生",
+            "text": "家族只会交出任务必需的部分。"
+          }
+        ]
+      },
+      {
+        "id": "p3",
+        "scene": "楚子航观察墙上的监控",
+        "lines": [
+          {
+            "speaker": "楚子航",
+            "text": "这里所有门都需要内部权限。"
+          }
+        ]
+      },
+      {
+        "id": "p4",
+        "scene": "电梯数字停在禁止楼层",
+        "lines": [
+          {
+            "speaker": "旁白",
+            "text": "这栋楼里还有一个名字，没有出现在任何任务简报上。"
+          }
+        ]
+      }
+    ],
+    "image": {
+      "src": "/assets/onboarding/dragon-raja/comic-02.png",
+      "alt": "多格漫画第 2 页：源氏重工"
+    }
+  },
+  {
+    "id": "comic-erii-room",
+    "title": "高楼里的女孩",
+    "caption": "绘梨衣住在源氏重工深处。家族称她为家主，她的生活却被房门、药物和监控划得很小。",
+    "panels": [
+      {
+        "id": "p1",
+        "scene": "安静房间里，绘梨衣独自打游戏",
+        "lines": [
+          {
+            "speaker": "游戏屏幕",
+            "text": "对战结束。"
+          }
+        ]
+      },
+      {
+        "id": "p2",
+        "scene": "源稚生带着药盒进门",
+        "lines": [
+          {
+            "speaker": "源稚生",
+            "text": "今天感觉怎么样？"
+          }
+        ]
+      },
+      {
+        "id": "p3",
+        "scene": "绘梨衣在本子上写字递给哥哥",
+        "lines": [
+          {
+            "speaker": "绘梨衣",
+            "text": "还想再玩一局。"
+          }
+        ]
+      },
+      {
+        "id": "p4",
+        "scene": "源稚生看向锁着的窗",
+        "lines": [
+          {
+            "speaker": "源稚生",
+            "text": "吃完药。我下次给你带新的游戏。"
+          }
+        ]
+      },
+      {
+        "id": "p5",
+        "scene": "门重新合上，绘梨衣望向东京",
+        "lines": [
+          {
+            "speaker": "旁白",
+            "text": "他承诺了下一次，却没有说下一次什么时候来。"
+          }
+        ]
+      }
+    ],
+    "image": {
+      "src": "/assets/onboarding/dragon-raja/comic-03.png",
+      "alt": "多格漫画第 3 页：高楼里的女孩"
+    }
+  },
+  {
+    "id": "comic-judgment",
+    "title": "言灵·审判",
+    "caption": "绘梨衣不能随意开口。她的言灵会把一句话变成死亡命令，这也是家族保护她、畏惧她并使用她的理由。",
+    "panels": [
+      {
+        "id": "p1",
+        "scene": "训练场警报亮起，失控目标撞破隔离门",
+        "lines": [
+          {
+            "speaker": "警报",
+            "text": "隔离失效。"
+          }
+        ]
+      },
+      {
+        "id": "p2",
+        "scene": "家族成员后退，源稚生挡在前方",
+        "lines": [
+          {
+            "speaker": "源稚生",
+            "text": "所有人退出她的领域。"
+          }
+        ]
+      },
+      {
+        "id": "p3",
+        "scene": "绘梨衣握刀，瞳色加深",
+        "lines": [
+          {
+            "speaker": "绘梨衣",
+            "text": "……"
+          }
+        ]
+      },
+      {
+        "id": "p4",
+        "scene": "无形切线越过空间，目标停止",
+        "lines": [
+          {
+            "speaker": "旁白",
+            "text": "她没有提高声音，世界却服从了。"
+          }
+        ]
+      },
+      {
+        "id": "p5",
+        "scene": "战斗结束，绘梨衣重新拿起本子",
+        "lines": [
+          {
+            "speaker": "绘梨衣",
+            "text": "可以回房间了吗？"
+          }
+        ]
+      }
+    ],
+    "image": {
+      "src": "/assets/onboarding/dragon-raja/comic-04.png",
+      "alt": "多格漫画第 4 页：言灵·审判"
+    }
+  },
+  {
+    "id": "comic-siblings",
+    "title": "哥哥与家主",
+    "caption": "源稚生想把妹妹留在安全处，家族却需要上杉家主的力量。爱与职责在他身上从来没有真正分开。",
+    "panels": [
+      {
+        "id": "p1",
+        "scene": "医疗室，医生收走绘梨衣的血样",
+        "lines": [
+          {
+            "speaker": "源稚生",
+            "text": "采血量为什么又增加了？"
+          }
+        ]
+      },
+      {
+        "id": "p2",
+        "scene": "橘政宗合上记录",
+        "lines": [
+          {
+            "speaker": "橘政宗",
+            "text": "为了让她稳定，这是必要的。"
+          }
+        ]
+      },
+      {
+        "id": "p3",
+        "scene": "绘梨衣隔着玻璃看哥哥争执",
+        "lines": [
+          {
+            "speaker": "绘梨衣",
+            "text": "哥哥在生气。"
+          }
+        ]
+      },
+      {
+        "id": "p4",
+        "scene": "源稚生回到门外，恢复平静",
+        "lines": [
+          {
+            "speaker": "源稚生",
+            "text": "没有。只是工作。"
+          }
+        ]
+      },
+      {
+        "id": "p5",
+        "scene": "治疗记录里留下一段空白",
+        "lines": [
+          {
+            "speaker": "旁白",
+            "text": "有些问题被家族的礼节盖住了。"
+          }
+        ]
+      }
+    ],
+    "image": {
+      "src": "/assets/onboarding/dragon-raja/comic-05.png",
+      "alt": "多格漫画第 5 页：哥哥与家主"
+    }
+  },
+  {
+    "id": "comic-underwater-mission",
+    "title": "海底任务",
+    "caption": "卡塞尔与蛇岐八家的联合行动进入危险水域。计划需要双方互信，而互信恰好是他们最缺少的东西。",
+    "panels": [
+      {
+        "id": "p1",
+        "scene": "潜水器下降，黑水吞没灯光",
+        "lines": [
+          {
+            "speaker": "凯撒",
+            "text": "保持通信。任何异常立即上报。"
+          }
+        ]
+      },
+      {
+        "id": "p2",
+        "scene": "路明非盯着声呐",
+        "lines": [
+          {
+            "speaker": "路明非",
+            "text": "下面的东西是不是太多了？"
+          }
+        ]
+      },
+      {
+        "id": "p3",
+        "scene": "楚子航确认设备读数",
+        "lines": [
+          {
+            "speaker": "楚子航",
+            "text": "不是噪点。它们在靠近。"
+          }
+        ]
+      },
+      {
+        "id": "p4",
+        "scene": "地面指挥室收到中断信号",
+        "lines": [
+          {
+            "speaker": "源稚生",
+            "text": "切换备用线路。"
+          }
+        ]
+      },
+      {
+        "id": "p5",
+        "scene": "绘梨衣从屏幕前站起",
+        "lines": [
+          {
+            "speaker": "绘梨衣",
+            "text": "Sakura 在下面。"
+          }
+        ]
+      }
+    ],
+    "image": {
+      "src": "/assets/onboarding/dragon-raja/comic-06.png",
+      "alt": "多格漫画第 6 页：海底任务"
+    }
+  },
+  {
+    "id": "comic-mission-collapse",
+    "title": "计划崩塌",
+    "caption": "水下目标、尸守与错误情报同时出现。绘梨衣被投入战斗，联合行动也在混乱中失去最后的信任。",
+    "panels": [
+      {
+        "id": "p1",
+        "scene": "尸守群逼近潜水器",
+        "lines": [
+          {
+            "speaker": "凯撒",
+            "text": "准备弃艇。"
+          }
+        ]
+      },
+      {
+        "id": "p2",
+        "scene": "绘梨衣站在风雨中的甲板",
+        "lines": [
+          {
+            "speaker": "源稚生",
+            "text": "等我的命令。"
+          }
+        ]
+      },
+      {
+        "id": "p3",
+        "scene": "她看见屏幕中的求救信号",
+        "lines": [
+          {
+            "speaker": "绘梨衣",
+            "text": "……"
+          }
+        ]
+      },
+      {
+        "id": "p4",
+        "scene": "审判掠过海面，尸守被切断",
+        "lines": [
+          {
+            "speaker": "旁白",
+            "text": "她救了所有人，也让所有人再次想起她能毁掉什么。"
+          }
+        ]
+      },
+      {
+        "id": "p5",
+        "scene": "凯撒与源稚生隔着通信争执",
+        "lines": [
+          {
+            "speaker": "凯撒",
+            "text": "你们隐瞒了风险。"
+          },
+          {
+            "speaker": "源稚生",
+            "text": "学院也一样。"
+          }
+        ]
+      }
+    ],
+    "image": {
+      "src": "/assets/onboarding/dragon-raja/comic-07.png",
+      "alt": "多格漫画第 7 页：计划崩塌"
+    }
+  },
+  {
+    "id": "comic-break-with-family",
+    "title": "合作破裂",
+    "caption": "任务结束没有带来安全。卡塞尔小组与日本分部公开决裂，昔日接待他们的车队变成搜索者。",
+    "panels": [
+      {
+        "id": "p1",
+        "scene": "源氏重工会议室，证据被锁入保险柜",
+        "lines": [
+          {
+            "speaker": "楚子航",
+            "text": "他们在销毁行动记录。"
+          }
+        ]
+      },
+      {
+        "id": "p2",
+        "scene": "凯撒把文件推回桌面",
+        "lines": [
+          {
+            "speaker": "凯撒",
+            "text": "到此为止。我们自己查。"
+          }
+        ]
+      },
+      {
+        "id": "p3",
+        "scene": "源稚生下令封锁出口",
+        "lines": [
+          {
+            "speaker": "源稚生",
+            "text": "没有家族许可，你们不能离开。"
+          }
+        ]
+      },
+      {
+        "id": "p4",
+        "scene": "电梯门开启，双方同时拔出武器",
+        "lines": [
+          {
+            "speaker": "路明非",
+            "text": "我就知道接机车队不是福利。"
+          }
+        ]
+      },
+      {
+        "id": "p5",
+        "scene": "三人冲入东京雨夜",
+        "lines": [
+          {
+            "speaker": "旁白",
+            "text": "合作结束了，东京却没有出口。"
+          }
+        ]
+      }
+    ],
+    "image": {
+      "src": "/assets/onboarding/dragon-raja/comic-08.png",
+      "alt": "多格漫画第 8 页：合作破裂"
+    }
+  },
+  {
+    "id": "comic-erii-leaves",
+    "title": "小怪兽出走",
+    "caption": "绘梨衣从监控里看见路明非被追捕。她第一次没有等待哥哥回来，而是自己打开了门。",
+    "panels": [
+      {
+        "id": "p1",
+        "scene": "房间屏幕闪过路明非的通缉画面",
+        "lines": [
+          {
+            "speaker": "绘梨衣",
+            "text": "Sakura 被追。"
+          }
+        ]
+      },
+      {
+        "id": "p2",
+        "scene": "她把药、交流本和小黄鸭装进包",
+        "lines": [
+          {
+            "speaker": "旁白",
+            "text": "她只带了自己认为重要的东西。"
+          }
+        ]
+      },
+      {
+        "id": "p3",
+        "scene": "守卫拦在电梯前",
+        "lines": [
+          {
+            "speaker": "守卫",
+            "text": "家主，请回房间。"
+          }
+        ]
+      },
+      {
+        "id": "p4",
+        "scene": "绘梨衣在本子上写下一句",
+        "lines": [
+          {
+            "speaker": "绘梨衣",
+            "text": "我要出去。"
+          }
+        ]
+      },
+      {
+        "id": "p5",
+        "scene": "电梯向下，源稚生的未接来电亮起",
+        "lines": [
+          {
+            "speaker": "旁白",
+            "text": "这是她第一次离开家，不是为了执行命令。"
+          }
+        ]
+      }
+    ],
+    "image": {
+      "src": "/assets/onboarding/dragon-raja/comic-09.png",
+      "alt": "多格漫画第 9 页：小怪兽出走"
+    }
+  },
+  {
+    "id": "comic-rain-encounter",
+    "title": "雨夜相遇",
+    "caption": "路明非与同伴失散，在东京雨夜里撞见离家出走的绘梨衣。两个人都没有准备好照顾另一个人。",
+    "panels": [
+      {
+        "id": "p1",
+        "scene": "路明非躲进便利店檐下检查手机",
+        "lines": [
+          {
+            "speaker": "路明非",
+            "text": "没信号、没钱、还被黑道追。东京旅游项目挺全。"
+          }
+        ]
+      },
+      {
+        "id": "p2",
+        "scene": "绘梨衣隔着雨幕站在街对面",
+        "lines": [
+          {
+            "speaker": "路明非",
+            "text": "你怎么会在这里？"
+          }
+        ]
+      },
+      {
+        "id": "p3",
+        "scene": "她把本子举到胸前",
+        "lines": [
+          {
+            "speaker": "绘梨衣",
+            "text": "来找 Sakura。"
+          }
+        ]
+      },
+      {
+        "id": "p4",
+        "scene": "远处黑色车辆转入街口",
+        "lines": [
+          {
+            "speaker": "路明非",
+            "text": "先走。解释可以等我不喘的时候。"
+          }
+        ]
+      },
+      {
+        "id": "p5",
+        "scene": "两人挤进人群",
+        "lines": [
+          {
+            "speaker": "旁白",
+            "text": "一个逃离学院，一个逃离家族。他们暂时只有同一条路。"
+          }
+        ]
+      }
+    ],
+    "image": {
+      "src": "/assets/onboarding/dragon-raja/comic-10.png",
+      "alt": "多格漫画第 10 页：雨夜相遇"
+    }
+  },
+  {
+    "id": "comic-hotel-hiding",
+    "title": "临时藏身处",
+    "caption": "主题旅馆隔开了追捕，却隔不开尴尬和责任。路明非开始意识到绘梨衣把选择交给了自己。",
+    "panels": [
+      {
+        "id": "p1",
+        "scene": "旅馆前台，路明非局促地办理入住",
+        "lines": [
+          {
+            "speaker": "路明非",
+            "text": "一间房。我们只是躲雨。"
+          }
+        ]
+      },
+      {
+        "id": "p2",
+        "scene": "房间里，绘梨衣认真研究陌生设施",
+        "lines": [
+          {
+            "speaker": "绘梨衣",
+            "text": "这里不是家。"
+          }
+        ]
+      },
+      {
+        "id": "p3",
+        "scene": "路明非把食物推到她面前",
+        "lines": [
+          {
+            "speaker": "路明非",
+            "text": "不是家更好，家里不会送薯条。"
+          }
+        ]
+      },
+      {
+        "id": "p4",
+        "scene": "绘梨衣写下称呼",
+        "lines": [
+          {
+            "speaker": "绘梨衣",
+            "text": "Sakura 是好人。"
+          }
+        ]
+      },
+      {
+        "id": "p5",
+        "scene": "路明非看着那行字沉默",
+        "lines": [
+          {
+            "speaker": "旁白",
+            "text": "被人相信，比被人追捕更让他无处可逃。"
+          }
+        ]
+      }
+    ],
+    "image": {
+      "src": "/assets/onboarding/dragon-raja/comic-11.png",
+      "alt": "多格漫画第 11 页：临时藏身处"
+    }
+  },
+  {
+    "id": "comic-conflicting-orders",
+    "title": "两边的命令",
+    "caption": "凯撒要求路明非把绘梨衣带离日本，源稚生则寻找妹妹。双方都在说保护，却给出完全相反的方向。",
+    "panels": [
+      {
+        "id": "p1",
+        "scene": "加密手机接通安全屋",
+        "lines": [
+          {
+            "speaker": "凯撒",
+            "text": "带她来会合点。学院会安排离境。"
+          }
+        ]
+      },
+      {
+        "id": "p2",
+        "scene": "路明非压低声音",
+        "lines": [
+          {
+            "speaker": "路明非",
+            "text": "她离不开家族的药。你的计划里有药吗？"
+          }
+        ]
+      },
+      {
+        "id": "p3",
+        "scene": "源氏重工指挥层，源稚生标记搜索区",
+        "lines": [
+          {
+            "speaker": "源稚生",
+            "text": "找到以后不要动武。先把血清送过去。"
+          }
+        ]
+      },
+      {
+        "id": "p4",
+        "scene": "绘梨衣从门后看见路明非挂断电话",
+        "lines": [
+          {
+            "speaker": "绘梨衣",
+            "text": "哥哥要我回去吗？"
+          }
+        ]
+      },
+      {
+        "id": "p5",
+        "scene": "路明非没有立刻回答",
+        "lines": [
+          {
+            "speaker": "旁白",
+            "text": "隐瞒可以换来几分钟平静，也会花掉一点信任。"
+          }
+        ]
+      }
+    ],
+    "image": {
+      "src": "/assets/onboarding/dragon-raja/comic-12.png",
+      "alt": "多格漫画第 12 页：两边的命令"
+    }
+  },
+  {
+    "id": "comic-serum-countdown",
+    "title": "药物倒计时",
+    "caption": "最后一支血清把浪漫变成可计算的时间。继续藏匿、回家或撤离都必须先承认绘梨衣的身体边界。",
+    "panels": [
+      {
+        "id": "p1",
+        "scene": "清晨，绘梨衣的手指轻微颤抖",
+        "lines": [
+          {
+            "speaker": "路明非",
+            "text": "你不舒服？"
+          }
+        ]
+      },
+      {
+        "id": "p2",
+        "scene": "药盒打开，只剩一支针剂",
+        "lines": [
+          {
+            "speaker": "绘梨衣",
+            "text": "还能走。"
+          }
+        ]
+      },
+      {
+        "id": "p3",
+        "scene": "路明非查看说明和时间",
+        "lines": [
+          {
+            "speaker": "路明非",
+            "text": "能走和应该走不是一回事。"
+          }
+        ]
+      },
+      {
+        "id": "p4",
+        "scene": "绘梨衣把针剂推回去",
+        "lines": [
+          {
+            "speaker": "绘梨衣",
+            "text": "今天以后再用。"
+          }
+        ]
+      },
+      {
+        "id": "p5",
+        "scene": "窗外第一班电车驶过",
+        "lines": [
+          {
+            "speaker": "旁白",
+            "text": "她想把最后的安全留给明天，先拥有一个今天。"
+          }
+        ]
+      }
+    ],
+    "image": {
+      "src": "/assets/onboarding/dragon-raja/comic-13.png",
+      "alt": "多格漫画第 13 页：药物倒计时"
+    }
+  },
+  {
+    "id": "comic-ordinary-morning",
+    "title": "普通的早晨",
+    "caption": "他们混进上班人群，像两个没有任务也没有家族的人。普通生活的细节第一次成为故事本身。",
+    "panels": [
+      {
+        "id": "p1",
+        "scene": "拥挤电车里，路明非护住绘梨衣的本子",
+        "lines": [
+          {
+            "speaker": "路明非",
+            "text": "别松手，下错站我可找不到你。"
+          }
+        ]
+      },
+      {
+        "id": "p2",
+        "scene": "绘梨衣抓住他的袖口",
+        "lines": [
+          {
+            "speaker": "绘梨衣",
+            "text": "不会丢。"
+          }
+        ]
+      },
+      {
+        "id": "p3",
+        "scene": "快餐店里，她研究菜单图片",
+        "lines": [
+          {
+            "speaker": "绘梨衣",
+            "text": "每个都可以选？"
+          }
+        ]
+      },
+      {
+        "id": "p4",
+        "scene": "路明非数着零钱",
+        "lines": [
+          {
+            "speaker": "路明非",
+            "text": "理论上可以，经济上只能两个。"
+          }
+        ]
+      },
+      {
+        "id": "p5",
+        "scene": "两人分享餐盘",
+        "lines": [
+          {
+            "speaker": "旁白",
+            "text": "世界没有因此变好，但他们暂时不用拯救世界。"
+          }
+        ]
+      }
+    ],
+    "image": {
+      "src": "/assets/onboarding/dragon-raja/comic-14.png",
+      "alt": "多格漫画第 14 页：普通的早晨"
+    }
+  },
+  {
+    "id": "comic-arcade",
+    "title": "游戏厅",
+    "caption": "绘梨衣熟悉游戏规则，却不熟悉赢了以后该怎样庆祝。路明非第一次看见她不作为武器的胜负心。",
+    "panels": [
+      {
+        "id": "p1",
+        "scene": "街机屏幕亮起，两人并肩操作",
+        "lines": [
+          {
+            "speaker": "路明非",
+            "text": "先说好，输了不能用言灵。"
+          }
+        ]
+      },
+      {
+        "id": "p2",
+        "scene": "绘梨衣连续取胜",
+        "lines": [
+          {
+            "speaker": "绘梨衣",
+            "text": "Sakura 很弱。"
+          }
+        ]
+      },
+      {
+        "id": "p3",
+        "scene": "路明非故作严肃",
+        "lines": [
+          {
+            "speaker": "路明非",
+            "text": "这是照顾新手的战略性失误。"
+          }
+        ]
+      },
+      {
+        "id": "p4",
+        "scene": "绘梨衣第一次明显地笑",
+        "lines": [
+          {
+            "speaker": "旁白",
+            "text": "她的笑没有触发任何危险。"
+          }
+        ]
+      },
+      {
+        "id": "p5",
+        "scene": "门外，搜索者从人群中经过",
+        "lines": [
+          {
+            "speaker": "旁白",
+            "text": "普通的一天仍然借来的。"
+          }
+        ]
+      }
+    ],
+    "image": {
+      "src": "/assets/onboarding/dragon-raja/comic-15.png",
+      "alt": "多格漫画第 15 页：游戏厅"
+    }
+  },
+  {
+    "id": "comic-city-lights",
+    "title": "城市灯火",
+    "caption": "在东京高处，绘梨衣把未完成的愿望写满一页。她没有要求永远，只要求下一步不要再由别人替她决定。",
+    "panels": [
+      {
+        "id": "p1",
+        "scene": "高空展望台，东京铺在脚下",
+        "lines": [
+          {
+            "speaker": "绘梨衣",
+            "text": "世界很大。"
+          }
+        ]
+      },
+      {
+        "id": "p2",
+        "scene": "愿望清单上还有许多空格",
+        "lines": [
+          {
+            "speaker": "路明非",
+            "text": "以后还能再来。"
+          }
+        ]
+      },
+      {
+        "id": "p3",
+        "scene": "绘梨衣看着他写下回答",
+        "lines": [
+          {
+            "speaker": "绘梨衣",
+            "text": "以后是一起吗？"
+          }
+        ]
+      },
+      {
+        "id": "p4",
+        "scene": "路明非握着笔，没有落下",
+        "lines": [
+          {
+            "speaker": "旁白",
+            "text": "承诺只需要几个字，后果却比东京更大。"
+          }
+        ]
+      },
+      {
+        "id": "p5",
+        "scene": "远处警灯沿街道接近",
+        "lines": [
+          {
+            "speaker": "路明非",
+            "text": "我们先离开这里。"
+          }
+        ]
+      }
+    ],
+    "image": {
+      "src": "/assets/onboarding/dragon-raja/comic-16.png",
+      "alt": "多格漫画第 16 页：城市灯火"
+    }
+  },
+  {
+    "id": "comic-truth-gaps",
+    "title": "被遮住的真相",
+    "caption": "源稚生发现治疗记录有缺口，凯撒也无法证明学院的撤离能提供长期治疗。两套保护方案都开始露出裂缝。",
+    "panels": [
+      {
+        "id": "p1",
+        "scene": "源稚生调出采血记录",
+        "lines": [
+          {
+            "speaker": "源稚生",
+            "text": "这些样本去了哪里？"
+          }
+        ]
+      },
+      {
+        "id": "p2",
+        "scene": "橘政宗避开问题",
+        "lines": [
+          {
+            "speaker": "橘政宗",
+            "text": "现在最重要的是把她带回来。"
+          }
+        ]
+      },
+      {
+        "id": "p3",
+        "scene": "安全屋里，凯撒向学院追问",
+        "lines": [
+          {
+            "speaker": "凯撒",
+            "text": "没有医疗保障，我不会把这叫撤离。"
+          }
+        ]
+      },
+      {
+        "id": "p4",
+        "scene": "楚子航标出记录中的空白",
+        "lines": [
+          {
+            "speaker": "楚子航",
+            "text": "两边都在隐瞒同一段时间。"
+          }
+        ]
+      },
+      {
+        "id": "p5",
+        "scene": "三个地点的屏幕同时指向会合区域",
+        "lines": [
+          {
+            "speaker": "旁白",
+            "text": "所有路线正在同一个地方相撞。"
+          }
+        ]
+      }
+    ],
+    "image": {
+      "src": "/assets/onboarding/dragon-raja/comic-17.png",
+      "alt": "多格漫画第 17 页：被遮住的真相"
+    }
+  },
+  {
+    "id": "comic-choice-handoff",
+    "title": "选择之前",
+    "caption": "血清只剩最后一支，旅馆位置即将暴露。现在轮到玩家决定：离开日本、返回家族、继续藏匿，还是冒险追查治疗记录背后的真相。",
+    "panels": [
+      {
+        "id": "p1",
+        "scene": "旅馆桌面：血清、愿望清单和加密手机",
+        "lines": [
+          {
+            "speaker": "旁白",
+            "text": "能争取的时间已经可以用一支针剂衡量。"
+          }
+        ]
+      },
+      {
+        "id": "p2",
+        "scene": "凯撒发来会合坐标",
+        "lines": [
+          {
+            "speaker": "凯撒",
+            "text": "撤离窗口只剩一次。"
+          }
+        ]
+      },
+      {
+        "id": "p3",
+        "scene": "源稚生发来私人消息",
+        "lines": [
+          {
+            "speaker": "源稚生",
+            "text": "先给她用药。回不回来，让她自己回答。"
+          }
+        ]
+      },
+      {
+        "id": "p4",
+        "scene": "绘梨衣把本子推到桌中央",
+        "lines": [
+          {
+            "speaker": "绘梨衣",
+            "text": "这次我想一起决定。"
+          }
+        ]
+      },
+      {
+        "id": "p5",
+        "scene": "门外电梯停下，脚步声靠近",
+        "lines": [
+          {
+            "speaker": "旁白",
+            "text": "故事从这里不再只有一种结局。"
+          }
+        ]
+      }
+    ],
+    "image": {
+      "src": "/assets/onboarding/dragon-raja/comic-18.png",
+      "alt": "多格漫画第 18 页：选择之前"
+    }
+  }
+]

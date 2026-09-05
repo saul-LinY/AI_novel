@@ -1,0 +1,24 @@
+{
+  "id": "lu-mingze",
+  "name": "路鸣泽",
+  "aliases": [
+    "小魔鬼"
+  ],
+  "role": "路明非意识边界中的神秘男孩",
+  "selectable": false,
+  "onboardingVisible": true,
+  "tagline": "总在代价最昂贵的时候提供看似唯一的选择",
+  "publicSummary": "只在路明非最孤独或最危险的时候出现，力量、目的和身份都无法被正常规则解释。",
+  "traits": [
+    "交易",
+    "洞察",
+    "危险援助"
+  ],
+  "appearance": "衣着讲究的少年，面容与路明非有微妙相似，神态远比年龄沉静。",
+  "abilities": [
+    "以生命比例为代价的力量交换",
+    "非常规领域干预"
+  ],
+  "speech": "亲昵、从容，像早已知道回答，关键条件从不含糊。",
+  "image": null
+}

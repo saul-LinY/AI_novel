@@ -1,0 +1,1923 @@
+{
+  "schemaVersion": 1,
+  "id": "dragon-raja",
+  "version": 1,
+  "title": "龙族",
+  "subtitle": "东京出走 · 绘梨衣线",
+  "premise": "东京的追捕尚未结束，路明非与上杉绘梨衣获得了一段短暂的自由。卡塞尔学院要带走她，蛇岐八家要把她接回去，而绘梨衣的身体已经没有多少等待的时间。",
+  "playerCharacterId": "lu-mingfei",
+  "visual": {
+    "src": "/assets/onboarding/dragon-raja/comic-01.png",
+    "alt": "东京雨夜中，路明非与绘梨衣被隐秘战争包围"
+  },
+  "onboarding": {
+    "mode": "comic-role-select",
+    "version": 2,
+    "comicPages": [
+      {
+        "id": "comic-tokyo-arrival",
+        "title": "风雨入境",
+        "caption": "卡塞尔三人组抵达东京。任务刚开始，城市已经用台风、停运和沉默提醒他们：日本分部不会只是向导。",
+        "panels": [
+          {
+            "id": "p1",
+            "scene": "客机穿过台风云层",
+            "lines": [
+              {
+                "speaker": "旁白",
+                "text": "东京在云层下发亮，像一块浸在黑水里的电路板。"
+              }
+            ]
+          },
+          {
+            "id": "p2",
+            "scene": "机舱内，凯撒确认任务简报",
+            "lines": [
+              {
+                "speaker": "凯撒",
+                "text": "落地以后，先把学院给的版本忘掉一半。"
+              },
+              {
+                "speaker": "路明非",
+                "text": "剩下一半够我们活着回去吗？"
+              }
+            ]
+          },
+          {
+            "id": "p3",
+            "scene": "楚子航望向舷窗",
+            "lines": [
+              {
+                "speaker": "楚子航",
+                "text": "日本分部没有确认接机人。"
+              }
+            ]
+          },
+          {
+            "id": "p4",
+            "scene": "机场到达口，黑衣车队停下",
+            "lines": [
+              {
+                "speaker": "源稚生",
+                "text": "欢迎来到东京。接下来请遵守我们的规则。"
+              }
+            ]
+          }
+        ],
+        "image": {
+          "src": "/assets/onboarding/dragon-raja/comic-01.png",
+          "alt": "多格漫画第 1 页：风雨入境"
+        }
+      },
+      {
+        "id": "comic-genji-meeting",
+        "title": "源氏重工",
+        "caption": "礼节周到的会面没有消除戒心。凯撒与源稚生第一次把合作条件摆到桌面上。",
+        "panels": [
+          {
+            "id": "p1",
+            "scene": "源氏重工大厅，黑衣成员列队",
+            "lines": [
+              {
+                "speaker": "路明非",
+                "text": "这不像接待，更像把我们送进刀鞘。"
+              }
+            ]
+          },
+          {
+            "id": "p2",
+            "scene": "会议桌两端，凯撒与源稚生对视",
+            "lines": [
+              {
+                "speaker": "凯撒",
+                "text": "学院需要完整资料。"
+              },
+              {
+                "speaker": "源稚生",
+                "text": "家族只会交出任务必需的部分。"
+              }
+            ]
+          },
+          {
+            "id": "p3",
+            "scene": "楚子航观察墙上的监控",
+            "lines": [
+              {
+                "speaker": "楚子航",
+                "text": "这里所有门都需要内部权限。"
+              }
+            ]
+          },
+          {
+            "id": "p4",
+            "scene": "电梯数字停在禁止楼层",
+            "lines": [
+              {
+                "speaker": "旁白",
+                "text": "这栋楼里还有一个名字，没有出现在任何任务简报上。"
+              }
+            ]
+          }
+        ],
+        "image": {
+          "src": "/assets/onboarding/dragon-raja/comic-02.png",
+          "alt": "多格漫画第 2 页：源氏重工"
+        }
+      },
+      {
+        "id": "comic-erii-room",
+        "title": "高楼里的女孩",
+        "caption": "绘梨衣住在源氏重工深处。家族称她为家主，她的生活却被房门、药物和监控划得很小。",
+        "panels": [
+          {
+            "id": "p1",
+            "scene": "安静房间里，绘梨衣独自打游戏",
+            "lines": [
+              {
+                "speaker": "游戏屏幕",
+                "text": "对战结束。"
+              }
+            ]
+          },
+          {
+            "id": "p2",
+            "scene": "源稚生带着药盒进门",
+            "lines": [
+              {
+                "speaker": "源稚生",
+                "text": "今天感觉怎么样？"
+              }
+            ]
+          },
+          {
+            "id": "p3",
+            "scene": "绘梨衣在本子上写字递给哥哥",
+            "lines": [
+              {
+                "speaker": "绘梨衣",
+                "text": "还想再玩一局。"
+              }
+            ]
+          },
+          {
+            "id": "p4",
+            "scene": "源稚生看向锁着的窗",
+            "lines": [
+              {
+                "speaker": "源稚生",
+                "text": "吃完药。我下次给你带新的游戏。"
+              }
+            ]
+          },
+          {
+            "id": "p5",
+            "scene": "门重新合上，绘梨衣望向东京",
+            "lines": [
+              {
+                "speaker": "旁白",
+                "text": "他承诺了下一次，却没有说下一次什么时候来。"
+              }
+            ]
+          }
+        ],
+        "image": {
+          "src": "/assets/onboarding/dragon-raja/comic-03.png",
+          "alt": "多格漫画第 3 页：高楼里的女孩"
+        }
+      },
+      {
+        "id": "comic-judgment",
+        "title": "言灵·审判",
+        "caption": "绘梨衣不能随意开口。她的言灵会把一句话变成死亡命令，这也是家族保护她、畏惧她并使用她的理由。",
+        "panels": [
+          {
+            "id": "p1",
+            "scene": "训练场警报亮起，失控目标撞破隔离门",
+            "lines": [
+              {
+                "speaker": "警报",
+                "text": "隔离失效。"
+              }
+            ]
+          },
+          {
+            "id": "p2",
+            "scene": "家族成员后退，源稚生挡在前方",
+            "lines": [
+              {
+                "speaker": "源稚生",
+                "text": "所有人退出她的领域。"
+              }
+            ]
+          },
+          {
+            "id": "p3",
+            "scene": "绘梨衣握刀，瞳色加深",
+            "lines": [
+              {
+                "speaker": "绘梨衣",
+                "text": "……"
+              }
+            ]
+          },
+          {
+            "id": "p4",
+            "scene": "无形切线越过空间，目标停止",
+            "lines": [
+              {
+                "speaker": "旁白",
+                "text": "她没有提高声音，世界却服从了。"
+              }
+            ]
+          },
+          {
+            "id": "p5",
+            "scene": "战斗结束，绘梨衣重新拿起本子",
+            "lines": [
+              {
+                "speaker": "绘梨衣",
+                "text": "可以回房间了吗？"
+              }
+            ]
+          }
+        ],
+        "image": {
+          "src": "/assets/onboarding/dragon-raja/comic-04.png",
+          "alt": "多格漫画第 4 页：言灵·审判"
+        }
+      },
+      {
+        "id": "comic-siblings",
+        "title": "哥哥与家主",
+        "caption": "源稚生想把妹妹留在安全处，家族却需要上杉家主的力量。爱与职责在他身上从来没有真正分开。",
+        "panels": [
+          {
+            "id": "p1",
+            "scene": "医疗室，医生收走绘梨衣的血样",
+            "lines": [
+              {
+                "speaker": "源稚生",
+                "text": "采血量为什么又增加了？"
+              }
+            ]
+          },
+          {
+            "id": "p2",
+            "scene": "橘政宗合上记录",
+            "lines": [
+              {
+                "speaker": "橘政宗",
+                "text": "为了让她稳定，这是必要的。"
+              }
+            ]
+          },
+          {
+            "id": "p3",
+            "scene": "绘梨衣隔着玻璃看哥哥争执",
+            "lines": [
+              {
+                "speaker": "绘梨衣",
+                "text": "哥哥在生气。"
+              }
+            ]
+          },
+          {
+            "id": "p4",
+            "scene": "源稚生回到门外，恢复平静",
+            "lines": [
+              {
+                "speaker": "源稚生",
+                "text": "没有。只是工作。"
+              }
+            ]
+          },
+          {
+            "id": "p5",
+            "scene": "治疗记录里留下一段空白",
+            "lines": [
+              {
+                "speaker": "旁白",
+                "text": "有些问题被家族的礼节盖住了。"
+              }
+            ]
+          }
+        ],
+        "image": {
+          "src": "/assets/onboarding/dragon-raja/comic-05.png",
+          "alt": "多格漫画第 5 页：哥哥与家主"
+        }
+      },
+      {
+        "id": "comic-underwater-mission",
+        "title": "海底任务",
+        "caption": "卡塞尔与蛇岐八家的联合行动进入危险水域。计划需要双方互信，而互信恰好是他们最缺少的东西。",
+        "panels": [
+          {
+            "id": "p1",
+            "scene": "潜水器下降，黑水吞没灯光",
+            "lines": [
+              {
+                "speaker": "凯撒",
+                "text": "保持通信。任何异常立即上报。"
+              }
+            ]
+          },
+          {
+            "id": "p2",
+            "scene": "路明非盯着声呐",
+            "lines": [
+              {
+                "speaker": "路明非",
+                "text": "下面的东西是不是太多了？"
+              }
+            ]
+          },
+          {
+            "id": "p3",
+            "scene": "楚子航确认设备读数",
+            "lines": [
+              {
+                "speaker": "楚子航",
+                "text": "不是噪点。它们在靠近。"
+              }
+            ]
+          },
+          {
+            "id": "p4",
+            "scene": "地面指挥室收到中断信号",
+            "lines": [
+              {
+                "speaker": "源稚生",
+                "text": "切换备用线路。"
+              }
+            ]
+          },
+          {
+            "id": "p5",
+            "scene": "绘梨衣从屏幕前站起",
+            "lines": [
+              {
+                "speaker": "绘梨衣",
+                "text": "Sakura 在下面。"
+              }
+            ]
+          }
+        ],
+        "image": {
+          "src": "/assets/onboarding/dragon-raja/comic-06.png",
+          "alt": "多格漫画第 6 页：海底任务"
+        }
+      },
+      {
+        "id": "comic-mission-collapse",
+        "title": "计划崩塌",
+        "caption": "水下目标、尸守与错误情报同时出现。绘梨衣被投入战斗，联合行动也在混乱中失去最后的信任。",
+        "panels": [
+          {
+            "id": "p1",
+            "scene": "尸守群逼近潜水器",
+            "lines": [
+              {
+                "speaker": "凯撒",
+                "text": "准备弃艇。"
+              }
+            ]
+          },
+          {
+            "id": "p2",
+            "scene": "绘梨衣站在风雨中的甲板",
+            "lines": [
+              {
+                "speaker": "源稚生",
+                "text": "等我的命令。"
+              }
+            ]
+          },
+          {
+            "id": "p3",
+            "scene": "她看见屏幕中的求救信号",
+            "lines": [
+              {
+                "speaker": "绘梨衣",
+                "text": "……"
+              }
+            ]
+          },
+          {
+            "id": "p4",
+            "scene": "审判掠过海面，尸守被切断",
+            "lines": [
+              {
+                "speaker": "旁白",
+                "text": "她救了所有人，也让所有人再次想起她能毁掉什么。"
+              }
+            ]
+          },
+          {
+            "id": "p5",
+            "scene": "凯撒与源稚生隔着通信争执",
+            "lines": [
+              {
+                "speaker": "凯撒",
+                "text": "你们隐瞒了风险。"
+              },
+              {
+                "speaker": "源稚生",
+                "text": "学院也一样。"
+              }
+            ]
+          }
+        ],
+        "image": {
+          "src": "/assets/onboarding/dragon-raja/comic-07.png",
+          "alt": "多格漫画第 7 页：计划崩塌"
+        }
+      },
+      {
+        "id": "comic-break-with-family",
+        "title": "合作破裂",
+        "caption": "任务结束没有带来安全。卡塞尔小组与日本分部公开决裂，昔日接待他们的车队变成搜索者。",
+        "panels": [
+          {
+            "id": "p1",
+            "scene": "源氏重工会议室，证据被锁入保险柜",
+            "lines": [
+              {
+                "speaker": "楚子航",
+                "text": "他们在销毁行动记录。"
+              }
+            ]
+          },
+          {
+            "id": "p2",
+            "scene": "凯撒把文件推回桌面",
+            "lines": [
+              {
+                "speaker": "凯撒",
+                "text": "到此为止。我们自己查。"
+              }
+            ]
+          },
+          {
+            "id": "p3",
+            "scene": "源稚生下令封锁出口",
+            "lines": [
+              {
+                "speaker": "源稚生",
+                "text": "没有家族许可，你们不能离开。"
+              }
+            ]
+          },
+          {
+            "id": "p4",
+            "scene": "电梯门开启，双方同时拔出武器",
+            "lines": [
+              {
+                "speaker": "路明非",
+                "text": "我就知道接机车队不是福利。"
+              }
+            ]
+          },
+          {
+            "id": "p5",
+            "scene": "三人冲入东京雨夜",
+            "lines": [
+              {
+                "speaker": "旁白",
+                "text": "合作结束了，东京却没有出口。"
+              }
+            ]
+          }
+        ],
+        "image": {
+          "src": "/assets/onboarding/dragon-raja/comic-08.png",
+          "alt": "多格漫画第 8 页：合作破裂"
+        }
+      },
+      {
+        "id": "comic-erii-leaves",
+        "title": "小怪兽出走",
+        "caption": "绘梨衣从监控里看见路明非被追捕。她第一次没有等待哥哥回来，而是自己打开了门。",
+        "panels": [
+          {
+            "id": "p1",
+            "scene": "房间屏幕闪过路明非的通缉画面",
+            "lines": [
+              {
+                "speaker": "绘梨衣",
+                "text": "Sakura 被追。"
+              }
+            ]
+          },
+          {
+            "id": "p2",
+            "scene": "她把药、交流本和小黄鸭装进包",
+            "lines": [
+              {
+                "speaker": "旁白",
+                "text": "她只带了自己认为重要的东西。"
+              }
+            ]
+          },
+          {
+            "id": "p3",
+            "scene": "守卫拦在电梯前",
+            "lines": [
+              {
+                "speaker": "守卫",
+                "text": "家主，请回房间。"
+              }
+            ]
+          },
+          {
+            "id": "p4",
+            "scene": "绘梨衣在本子上写下一句",
+            "lines": [
+              {
+                "speaker": "绘梨衣",
+                "text": "我要出去。"
+              }
+            ]
+          },
+          {
+            "id": "p5",
+            "scene": "电梯向下，源稚生的未接来电亮起",
+            "lines": [
+              {
+                "speaker": "旁白",
+                "text": "这是她第一次离开家，不是为了执行命令。"
+              }
+            ]
+          }
+        ],
+        "image": {
+          "src": "/assets/onboarding/dragon-raja/comic-09.png",
+          "alt": "多格漫画第 9 页：小怪兽出走"
+        }
+      },
+      {
+        "id": "comic-rain-encounter",
+        "title": "雨夜相遇",
+        "caption": "路明非与同伴失散，在东京雨夜里撞见离家出走的绘梨衣。两个人都没有准备好照顾另一个人。",
+        "panels": [
+          {
+            "id": "p1",
+            "scene": "路明非躲进便利店檐下检查手机",
+            "lines": [
+              {
+                "speaker": "路明非",
+                "text": "没信号、没钱、还被黑道追。东京旅游项目挺全。"
+              }
+            ]
+          },
+          {
+            "id": "p2",
+            "scene": "绘梨衣隔着雨幕站在街对面",
+            "lines": [
+              {
+                "speaker": "路明非",
+                "text": "你怎么会在这里？"
+              }
+            ]
+          },
+          {
+            "id": "p3",
+            "scene": "她把本子举到胸前",
+            "lines": [
+              {
+                "speaker": "绘梨衣",
+                "text": "来找 Sakura。"
+              }
+            ]
+          },
+          {
+            "id": "p4",
+            "scene": "远处黑色车辆转入街口",
+            "lines": [
+              {
+                "speaker": "路明非",
+                "text": "先走。解释可以等我不喘的时候。"
+              }
+            ]
+          },
+          {
+            "id": "p5",
+            "scene": "两人挤进人群",
+            "lines": [
+              {
+                "speaker": "旁白",
+                "text": "一个逃离学院，一个逃离家族。他们暂时只有同一条路。"
+              }
+            ]
+          }
+        ],
+        "image": {
+          "src": "/assets/onboarding/dragon-raja/comic-10.png",
+          "alt": "多格漫画第 10 页：雨夜相遇"
+        }
+      },
+      {
+        "id": "comic-hotel-hiding",
+        "title": "临时藏身处",
+        "caption": "主题旅馆隔开了追捕，却隔不开尴尬和责任。路明非开始意识到绘梨衣把选择交给了自己。",
+        "panels": [
+          {
+            "id": "p1",
+            "scene": "旅馆前台，路明非局促地办理入住",
+            "lines": [
+              {
+                "speaker": "路明非",
+                "text": "一间房。我们只是躲雨。"
+              }
+            ]
+          },
+          {
+            "id": "p2",
+            "scene": "房间里，绘梨衣认真研究陌生设施",
+            "lines": [
+              {
+                "speaker": "绘梨衣",
+                "text": "这里不是家。"
+              }
+            ]
+          },
+          {
+            "id": "p3",
+            "scene": "路明非把食物推到她面前",
+            "lines": [
+              {
+                "speaker": "路明非",
+                "text": "不是家更好，家里不会送薯条。"
+              }
+            ]
+          },
+          {
+            "id": "p4",
+            "scene": "绘梨衣写下称呼",
+            "lines": [
+              {
+                "speaker": "绘梨衣",
+                "text": "Sakura 是好人。"
+              }
+            ]
+          },
+          {
+            "id": "p5",
+            "scene": "路明非看着那行字沉默",
+            "lines": [
+              {
+                "speaker": "旁白",
+                "text": "被人相信，比被人追捕更让他无处可逃。"
+              }
+            ]
+          }
+        ],
+        "image": {
+          "src": "/assets/onboarding/dragon-raja/comic-11.png",
+          "alt": "多格漫画第 11 页：临时藏身处"
+        }
+      },
+      {
+        "id": "comic-conflicting-orders",
+        "title": "两边的命令",
+        "caption": "凯撒要求路明非把绘梨衣带离日本，源稚生则寻找妹妹。双方都在说保护，却给出完全相反的方向。",
+        "panels": [
+          {
+            "id": "p1",
+            "scene": "加密手机接通安全屋",
+            "lines": [
+              {
+                "speaker": "凯撒",
+                "text": "带她来会合点。学院会安排离境。"
+              }
+            ]
+          },
+          {
+            "id": "p2",
+            "scene": "路明非压低声音",
+            "lines": [
+              {
+                "speaker": "路明非",
+                "text": "她离不开家族的药。你的计划里有药吗？"
+              }
+            ]
+          },
+          {
+            "id": "p3",
+            "scene": "源氏重工指挥层，源稚生标记搜索区",
+            "lines": [
+              {
+                "speaker": "源稚生",
+                "text": "找到以后不要动武。先把血清送过去。"
+              }
+            ]
+          },
+          {
+            "id": "p4",
+            "scene": "绘梨衣从门后看见路明非挂断电话",
+            "lines": [
+              {
+                "speaker": "绘梨衣",
+                "text": "哥哥要我回去吗？"
+              }
+            ]
+          },
+          {
+            "id": "p5",
+            "scene": "路明非没有立刻回答",
+            "lines": [
+              {
+                "speaker": "旁白",
+                "text": "隐瞒可以换来几分钟平静，也会花掉一点信任。"
+              }
+            ]
+          }
+        ],
+        "image": {
+          "src": "/assets/onboarding/dragon-raja/comic-12.png",
+          "alt": "多格漫画第 12 页：两边的命令"
+        }
+      },
+      {
+        "id": "comic-serum-countdown",
+        "title": "药物倒计时",
+        "caption": "最后一支血清把浪漫变成可计算的时间。继续藏匿、回家或撤离都必须先承认绘梨衣的身体边界。",
+        "panels": [
+          {
+            "id": "p1",
+            "scene": "清晨，绘梨衣的手指轻微颤抖",
+            "lines": [
+              {
+                "speaker": "路明非",
+                "text": "你不舒服？"
+              }
+            ]
+          },
+          {
+            "id": "p2",
+            "scene": "药盒打开，只剩一支针剂",
+            "lines": [
+              {
+                "speaker": "绘梨衣",
+                "text": "还能走。"
+              }
+            ]
+          },
+          {
+            "id": "p3",
+            "scene": "路明非查看说明和时间",
+            "lines": [
+              {
+                "speaker": "路明非",
+                "text": "能走和应该走不是一回事。"
+              }
+            ]
+          },
+          {
+            "id": "p4",
+            "scene": "绘梨衣把针剂推回去",
+            "lines": [
+              {
+                "speaker": "绘梨衣",
+                "text": "今天以后再用。"
+              }
+            ]
+          },
+          {
+            "id": "p5",
+            "scene": "窗外第一班电车驶过",
+            "lines": [
+              {
+                "speaker": "旁白",
+                "text": "她想把最后的安全留给明天，先拥有一个今天。"
+              }
+            ]
+          }
+        ],
+        "image": {
+          "src": "/assets/onboarding/dragon-raja/comic-13.png",
+          "alt": "多格漫画第 13 页：药物倒计时"
+        }
+      },
+      {
+        "id": "comic-ordinary-morning",
+        "title": "普通的早晨",
+        "caption": "他们混进上班人群，像两个没有任务也没有家族的人。普通生活的细节第一次成为故事本身。",
+        "panels": [
+          {
+            "id": "p1",
+            "scene": "拥挤电车里，路明非护住绘梨衣的本子",
+            "lines": [
+              {
+                "speaker": "路明非",
+                "text": "别松手，下错站我可找不到你。"
+              }
+            ]
+          },
+          {
+            "id": "p2",
+            "scene": "绘梨衣抓住他的袖口",
+            "lines": [
+              {
+                "speaker": "绘梨衣",
+                "text": "不会丢。"
+              }
+            ]
+          },
+          {
+            "id": "p3",
+            "scene": "快餐店里，她研究菜单图片",
+            "lines": [
+              {
+                "speaker": "绘梨衣",
+                "text": "每个都可以选？"
+              }
+            ]
+          },
+          {
+            "id": "p4",
+            "scene": "路明非数着零钱",
+            "lines": [
+              {
+                "speaker": "路明非",
+                "text": "理论上可以，经济上只能两个。"
+              }
+            ]
+          },
+          {
+            "id": "p5",
+            "scene": "两人分享餐盘",
+            "lines": [
+              {
+                "speaker": "旁白",
+                "text": "世界没有因此变好，但他们暂时不用拯救世界。"
+              }
+            ]
+          }
+        ],
+        "image": {
+          "src": "/assets/onboarding/dragon-raja/comic-14.png",
+          "alt": "多格漫画第 14 页：普通的早晨"
+        }
+      },
+      {
+        "id": "comic-arcade",
+        "title": "游戏厅",
+        "caption": "绘梨衣熟悉游戏规则，却不熟悉赢了以后该怎样庆祝。路明非第一次看见她不作为武器的胜负心。",
+        "panels": [
+          {
+            "id": "p1",
+            "scene": "街机屏幕亮起，两人并肩操作",
+            "lines": [
+              {
+                "speaker": "路明非",
+                "text": "先说好，输了不能用言灵。"
+              }
+            ]
+          },
+          {
+            "id": "p2",
+            "scene": "绘梨衣连续取胜",
+            "lines": [
+              {
+                "speaker": "绘梨衣",
+                "text": "Sakura 很弱。"
+              }
+            ]
+          },
+          {
+            "id": "p3",
+            "scene": "路明非故作严肃",
+            "lines": [
+              {
+                "speaker": "路明非",
+                "text": "这是照顾新手的战略性失误。"
+              }
+            ]
+          },
+          {
+            "id": "p4",
+            "scene": "绘梨衣第一次明显地笑",
+            "lines": [
+              {
+                "speaker": "旁白",
+                "text": "她的笑没有触发任何危险。"
+              }
+            ]
+          },
+          {
+            "id": "p5",
+            "scene": "门外，搜索者从人群中经过",
+            "lines": [
+              {
+                "speaker": "旁白",
+                "text": "普通的一天仍然借来的。"
+              }
+            ]
+          }
+        ],
+        "image": {
+          "src": "/assets/onboarding/dragon-raja/comic-15.png",
+          "alt": "多格漫画第 15 页：游戏厅"
+        }
+      },
+      {
+        "id": "comic-city-lights",
+        "title": "城市灯火",
+        "caption": "在东京高处，绘梨衣把未完成的愿望写满一页。她没有要求永远，只要求下一步不要再由别人替她决定。",
+        "panels": [
+          {
+            "id": "p1",
+            "scene": "高空展望台，东京铺在脚下",
+            "lines": [
+              {
+                "speaker": "绘梨衣",
+                "text": "世界很大。"
+              }
+            ]
+          },
+          {
+            "id": "p2",
+            "scene": "愿望清单上还有许多空格",
+            "lines": [
+              {
+                "speaker": "路明非",
+                "text": "以后还能再来。"
+              }
+            ]
+          },
+          {
+            "id": "p3",
+            "scene": "绘梨衣看着他写下回答",
+            "lines": [
+              {
+                "speaker": "绘梨衣",
+                "text": "以后是一起吗？"
+              }
+            ]
+          },
+          {
+            "id": "p4",
+            "scene": "路明非握着笔，没有落下",
+            "lines": [
+              {
+                "speaker": "旁白",
+                "text": "承诺只需要几个字，后果却比东京更大。"
+              }
+            ]
+          },
+          {
+            "id": "p5",
+            "scene": "远处警灯沿街道接近",
+            "lines": [
+              {
+                "speaker": "路明非",
+                "text": "我们先离开这里。"
+              }
+            ]
+          }
+        ],
+        "image": {
+          "src": "/assets/onboarding/dragon-raja/comic-16.png",
+          "alt": "多格漫画第 16 页：城市灯火"
+        }
+      },
+      {
+        "id": "comic-truth-gaps",
+        "title": "被遮住的真相",
+        "caption": "源稚生发现治疗记录有缺口，凯撒也无法证明学院的撤离能提供长期治疗。两套保护方案都开始露出裂缝。",
+        "panels": [
+          {
+            "id": "p1",
+            "scene": "源稚生调出采血记录",
+            "lines": [
+              {
+                "speaker": "源稚生",
+                "text": "这些样本去了哪里？"
+              }
+            ]
+          },
+          {
+            "id": "p2",
+            "scene": "橘政宗避开问题",
+            "lines": [
+              {
+                "speaker": "橘政宗",
+                "text": "现在最重要的是把她带回来。"
+              }
+            ]
+          },
+          {
+            "id": "p3",
+            "scene": "安全屋里，凯撒向学院追问",
+            "lines": [
+              {
+                "speaker": "凯撒",
+                "text": "没有医疗保障，我不会把这叫撤离。"
+              }
+            ]
+          },
+          {
+            "id": "p4",
+            "scene": "楚子航标出记录中的空白",
+            "lines": [
+              {
+                "speaker": "楚子航",
+                "text": "两边都在隐瞒同一段时间。"
+              }
+            ]
+          },
+          {
+            "id": "p5",
+            "scene": "三个地点的屏幕同时指向会合区域",
+            "lines": [
+              {
+                "speaker": "旁白",
+                "text": "所有路线正在同一个地方相撞。"
+              }
+            ]
+          }
+        ],
+        "image": {
+          "src": "/assets/onboarding/dragon-raja/comic-17.png",
+          "alt": "多格漫画第 17 页：被遮住的真相"
+        }
+      },
+      {
+        "id": "comic-choice-handoff",
+        "title": "选择之前",
+        "caption": "血清只剩最后一支，旅馆位置即将暴露。现在轮到玩家决定：离开日本、返回家族、继续藏匿，还是冒险追查治疗记录背后的真相。",
+        "panels": [
+          {
+            "id": "p1",
+            "scene": "旅馆桌面：血清、愿望清单和加密手机",
+            "lines": [
+              {
+                "speaker": "旁白",
+                "text": "能争取的时间已经可以用一支针剂衡量。"
+              }
+            ]
+          },
+          {
+            "id": "p2",
+            "scene": "凯撒发来会合坐标",
+            "lines": [
+              {
+                "speaker": "凯撒",
+                "text": "撤离窗口只剩一次。"
+              }
+            ]
+          },
+          {
+            "id": "p3",
+            "scene": "源稚生发来私人消息",
+            "lines": [
+              {
+                "speaker": "源稚生",
+                "text": "先给她用药。回不回来，让她自己回答。"
+              }
+            ]
+          },
+          {
+            "id": "p4",
+            "scene": "绘梨衣把本子推到桌中央",
+            "lines": [
+              {
+                "speaker": "绘梨衣",
+                "text": "这次我想一起决定。"
+              }
+            ]
+          },
+          {
+            "id": "p5",
+            "scene": "门外电梯停下，脚步声靠近",
+            "lines": [
+              {
+                "speaker": "旁白",
+                "text": "故事从这里不再只有一种结局。"
+              }
+            ]
+          }
+        ],
+        "image": {
+          "src": "/assets/onboarding/dragon-raja/comic-18.png",
+          "alt": "多格漫画第 18 页：选择之前"
+        }
+      }
+    ],
+    "characterProfiles": [
+      {
+        "characterId": "lu-mingfei",
+        "name": "路明非",
+        "role": "卡塞尔学院 S 级学生",
+        "tagline": "总觉得自己是局外人，却总在最后关头被别人需要",
+        "summary": "看起来普通、习惯用自嘲躲开尴尬的中国少年。东京任务把一个无法被世界正常接纳的女孩交到他手里；扮演路明非意味着你最接近绘梨衣，也最容易把害怕承担误认为替她着想。",
+        "traits": [
+          "临场应变",
+          "共情",
+          "隐藏潜力"
+        ],
+        "image": {
+          "src": "/assets/onboarding/dragon-raja/lu-mingfei.png",
+          "alt": "黑发、神情普通而疲惫的路明非"
+        }
+      },
+      {
+        "characterId": "erii",
+        "name": "上杉绘梨衣",
+        "role": "蛇岐八家上杉家主",
+        "tagline": "被当作最强的武器，却只想学会普通地生活",
+        "summary": "拥有暗红长发和深玫瑰红眼睛，常穿红白巫女服，以小本子交流。她的言灵“审判”极其危险，血统也需要药物稳定；扮演绘梨衣意味着自由第一次属于你，但每次行动都必须面对身体与力量的边界。",
+        "traits": [
+          "言灵·审判",
+          "敏锐直觉",
+          "书写交流"
+        ],
+        "image": {
+          "src": "/assets/onboarding/dragon-raja/erii.png",
+          "alt": "暗红长发、红白巫女服的上杉绘梨衣"
+        }
+      },
+      {
+        "characterId": "gen-chisei",
+        "name": "源稚生",
+        "role": "蛇岐八家少主",
+        "tagline": "想保护妹妹，也背负着整个家族的秩序",
+        "summary": "黑发、神情克制的年轻家主，常穿剪裁利落的黑色西装或长风衣。他知道绘梨衣的身体状况，也清楚她失控的后果；扮演源稚生意味着你拥有家族资源，却必须承认保护和囚禁之间只有很窄的界线。",
+        "traits": [
+          "家族指挥",
+          "皇血",
+          "冷静决断"
+        ],
+        "image": {
+          "src": "/assets/onboarding/dragon-raja/gen-chisei.png",
+          "alt": "黑发、穿黑色长风衣的源稚生"
+        }
+      },
+      {
+        "characterId": "caesar",
+        "name": "凯撒·加图索",
+        "role": "卡塞尔学院学生会主席",
+        "tagline": "擅长制定胜利方案，却不能替别人定义自由",
+        "summary": "高大、金发、蓝眼，带着显眼的自信和贵族气质。作为东京任务的现场领导者，他掌握卡塞尔的撤离资源与战术情报；扮演凯撒意味着你能组织救援，却必须决定任务目标是否高于绘梨衣本人的选择。",
+        "traits": [
+          "战术领导",
+          "言灵·镰鼬",
+          "资源调度"
+        ],
+        "image": {
+          "src": "/assets/onboarding/dragon-raja/caesar.png",
+          "alt": "金发蓝眼、穿白色战术外套的凯撒"
+        }
+      }
+    ],
+    "roleSelection": {
+      "title": "这一次，你替谁作出选择？",
+      "body": "四个身份掌握不同事实，也承担不同责任。未选择的人会继续按照原著中的性格与立场行动。",
+      "roles": [
+        {
+          "characterId": "lu-mingfei",
+          "hook": "从陪伴绘梨衣的人出发，在她的信任、卡塞尔的命令和自己的退缩之间选择。",
+          "strengths": [
+            "最接近绘梨衣",
+            "行动不易被双方预判"
+          ],
+          "pressure": "你能带她走，却不一定敢承诺走到最后。",
+          "image": {
+            "src": "/assets/onboarding/dragon-raja/lu-mingfei.png",
+            "alt": "黑发、神情普通而疲惫的路明非"
+          }
+        },
+        {
+          "characterId": "erii",
+          "hook": "第一次亲自决定去哪里、相信谁，以及是否接受别人以保护之名替你安排命运。",
+          "strengths": [
+            "压倒性的战斗力",
+            "能直接表达自己的愿望"
+          ],
+          "pressure": "你的声音和身体都可能失控，时间不是站在你这边。",
+          "image": {
+            "src": "/assets/onboarding/dragon-raja/erii.png",
+            "alt": "暗红长发、红白巫女服的上杉绘梨衣"
+          }
+        },
+        {
+          "characterId": "gen-chisei",
+          "hook": "调动蛇岐八家寻找妹妹，同时判断家族内部究竟还有谁值得信任。",
+          "strengths": [
+            "掌握家族网络",
+            "清楚绘梨衣的治疗需求"
+          ],
+          "pressure": "把她带回去可能救命，也可能把她重新交给真正的危险。",
+          "image": {
+            "src": "/assets/onboarding/dragon-raja/gen-chisei.png",
+            "alt": "黑发、穿黑色长风衣的源稚生"
+          }
+        },
+        {
+          "characterId": "caesar",
+          "hook": "从卡塞尔指挥者的视角组织撤离，并决定任务是否应该服从当事人的意愿。",
+          "strengths": [
+            "战术情报",
+            "撤离与联络资源"
+          ],
+          "pressure": "最合理的方案未必是绘梨衣愿意付出代价的方案。",
+          "image": {
+            "src": "/assets/onboarding/dragon-raja/caesar.png",
+            "alt": "金发蓝眼、穿白色战术外套的凯撒"
+          }
+        }
+      ]
+    }
+  },
+  "opening": {
+    "action": "在追踪收紧前决定绘梨衣的下一站",
+    "prose": "窗帘缝里透进东京清晨的灰光。绘梨衣把愿望清单压在桌上，旁边只剩最后一支稳定血统的药。加密电话上，凯撒的撤离要求和源稚生的寻人信息先后亮起。你们得到了一天像普通人的时间，现在必须决定这一天之后怎么办。",
+    "choices": [
+      {
+        "id": "check-erii-condition",
+        "label": "确认身体状况",
+        "action": "我先确认绘梨衣现在的身体状况和最后一支药还能争取多少时间。"
+      },
+      {
+        "id": "answer-caesar",
+        "label": "回复凯撒",
+        "action": "我接通凯撒的加密联络，要求他把撤离方案和风险完整说清楚。"
+      },
+      {
+        "id": "ask-erii",
+        "label": "先问绘梨衣",
+        "action": "我把几条可能的路写在本子上，先问绘梨衣自己想去哪里。"
+      }
+    ]
+  },
+  "playableRoles": {
+    "characterIds": [
+      "lu-mingfei",
+      "erii",
+      "gen-chisei",
+      "caesar"
+    ],
+    "configs": [
+      {
+        "characterId": "lu-mingfei",
+        "locationId": "theme-hotel",
+        "initialInventory": [
+          {
+            "itemId": "erii-notebook",
+            "count": 1
+          },
+          {
+            "itemId": "encrypted-phone",
+            "count": 1
+          }
+        ],
+        "opening": {
+          "action": "路明非决定是否继续替绘梨衣承担下一步",
+          "prose": "绘梨衣坐在窗边，把一张画着东京灯火的纸推给你。她相信你会明白。手机里，凯撒要你带她去安全点；走廊外的电梯刚刚停过一次，可能是普通客人，也可能是蛇岐八家的搜索者。桌上最后一支药让所有浪漫都带着期限。",
+          "choices": [
+            {
+              "id": "lu-ask-choice",
+              "label": "让她选择",
+              "action": "我在本子上写下离开日本、回到哥哥身边和继续追查三种可能，请绘梨衣先选。"
+            },
+            {
+              "id": "lu-contact-caesar",
+              "label": "核实撤离",
+              "action": "我联系凯撒，确认安全点、离境方式和他们能否继续提供稳定血统的药。"
+            },
+            {
+              "id": "lu-check-hallway",
+              "label": "检查追踪",
+              "action": "我先从猫眼和监控死角检查走廊，判断这里是否已经暴露。"
+            }
+          ]
+        },
+        "relationshipOverrides": [
+          {
+            "characterId": "erii",
+            "attitude": 3
+          },
+          {
+            "characterId": "caesar",
+            "attitude": 1
+          },
+          {
+            "characterId": "gen-chisei",
+            "attitude": -1
+          }
+        ]
+      },
+      {
+        "characterId": "erii",
+        "locationId": "theme-hotel",
+        "initialInventory": [
+          {
+            "itemId": "wish-notebook",
+            "count": 1
+          },
+          {
+            "itemId": "serum-ampoule",
+            "count": 1
+          },
+          {
+            "itemId": "yellow-duck",
+            "count": 1
+          }
+        ],
+        "opening": {
+          "action": "绘梨衣第一次亲自决定离开房间以后去哪里",
+          "prose": "你把本子翻到新的一页。Sakura 正在看手机，他不想让你看见自己害怕的样子。药盒里只剩一支针剂，窗外有你还没去过的东京，也有哥哥派来寻找你的人。过去总有人替你决定什么时候战斗、什么时候回房间，这一次所有人都在等你写下答案。",
+          "choices": [
+            {
+              "id": "erii-write-wish",
+              "label": "写下愿望",
+              "action": "我在本子上写下我真正想去的地方和愿意承担的代价，递给路明非。"
+            },
+            {
+              "id": "erii-check-serum",
+              "label": "检查药物",
+              "action": "我先检查自己的手、声音和药物，判断还能安全行动多久。"
+            },
+            {
+              "id": "erii-sense-search",
+              "label": "感知追兵",
+              "action": "我保持沉默，走到门边分辨外面的脚步和杀意。"
+            }
+          ]
+        },
+        "relationshipOverrides": [
+          {
+            "characterId": "lu-mingfei",
+            "attitude": 3
+          },
+          {
+            "characterId": "gen-chisei",
+            "attitude": 2
+          },
+          {
+            "characterId": "caesar",
+            "attitude": 0
+          }
+        ]
+      },
+      {
+        "characterId": "gen-chisei",
+        "locationId": "genji-command",
+        "initialInventory": [
+          {
+            "itemId": "family-terminal",
+            "count": 1
+          },
+          {
+            "itemId": "serum-case",
+            "count": 1
+          }
+        ],
+        "opening": {
+          "action": "源稚生决定怎样找回绘梨衣而不再次把她当作武器",
+          "prose": "东京地图铺满整面屏幕，搜索队已经把可能的藏身区缩小到三个。医疗组提醒你，绘梨衣离开稳定治疗越久越危险；家族干部则不断要求把上杉家主立即带回。你知道她为什么会走，也知道橘政宗对治疗记录的解释存在空白。找到她只是第一步，下一句该对她说什么更难。",
+          "choices": [
+            {
+              "id": "gen-audit-medical",
+              "label": "核查治疗记录",
+              "action": "我暂停强制搜索，先调出绘梨衣的完整治疗记录，核对橘政宗隐去的部分。"
+            },
+            {
+              "id": "gen-send-message",
+              "label": "发送私人留言",
+              "action": "我绕过家族命令系统，给绘梨衣和路明非发送一条只说明药物风险、不要求立刻回来的私人留言。"
+            },
+            {
+              "id": "gen-search-softly",
+              "label": "缩小搜索范围",
+              "action": "我让樱调取公共交通与药店记录，只定位他们，不允许搜索队强行接触。"
+            }
+          ]
+        },
+        "relationshipOverrides": [
+          {
+            "characterId": "erii",
+            "attitude": 2
+          },
+          {
+            "characterId": "lu-mingfei",
+            "attitude": -1
+          },
+          {
+            "characterId": "caesar",
+            "attitude": -1
+          }
+        ]
+      },
+      {
+        "characterId": "caesar",
+        "locationId": "cassell-safehouse",
+        "initialInventory": [
+          {
+            "itemId": "satellite-phone",
+            "count": 1
+          },
+          {
+            "itemId": "evacuation-file",
+            "count": 1
+          },
+          {
+            "itemId": "field-kit",
+            "count": 1
+          }
+        ],
+        "opening": {
+          "action": "凯撒调整撤离计划并决定是否尊重绘梨衣的选择",
+          "prose": "安全屋桌上摊着东京地图和撤离文件。楚子航已经标出蛇岐八家的搜索圈，路明非却迟迟没有确认会合。学院的命令很清楚：带上杉绘梨衣离开日本。可你同样清楚，她不是任务物品，而现有撤离方案也没有解决她对血清的依赖。一个漂亮的计划还缺少最重要的答案。",
+          "choices": [
+            {
+              "id": "caesar-secure-serum",
+              "label": "先解决药物",
+              "action": "我先动用安全屋渠道寻找可验证的血清或医疗支持，再谈撤离。"
+            },
+            {
+              "id": "caesar-call-lu",
+              "label": "直接说明风险",
+              "action": "我联系路明非，完整说明撤离路线、暴露点和我无法保证的部分。"
+            },
+            {
+              "id": "caesar-question-order",
+              "label": "追问学院",
+              "action": "我要求学院说明为何必须带走绘梨衣，以及他们对她真实身份知道多少。"
+            }
+          ]
+        },
+        "relationshipOverrides": [
+          {
+            "characterId": "lu-mingfei",
+            "attitude": 1
+          },
+          {
+            "characterId": "erii",
+            "attitude": 0
+          },
+          {
+            "characterId": "gen-chisei",
+            "attitude": -1
+          },
+          {
+            "characterId": "chu-zihang",
+            "attitude": 2
+          }
+        ]
+      }
+    ]
+  },
+  "narration": {
+    "viewpoint": "第二人称限知视角，只呈现当前可扮演角色能够观察、获知或合理推断的内容",
+    "style": "现代都市幻想与青春悲剧并置；日常场景保留轻微笨拙和幽默，危险场景克制而有压迫感。核心始终是孤独的人怎样回应信任、自由和责任，不模仿或复写原著句子。",
+    "rules": [
+      "人物性格、关系和超自然能力遵守《龙族III：黑月之潮》的既定设定",
+      "绘梨衣通常以本子、动作和表情交流，主动开口必须承担言灵失控风险",
+      "源稚生真心保护绘梨衣，但他的家族责任会限制选择，不能写成单纯反派",
+      "路明非可以勇敢、退缩或犯错，但不能无代价地变成全知全能英雄",
+      "幽默不能消解绘梨衣的主体性，恋爱也不能自动治愈血统问题",
+      "不得复刻原著段落、名句或官方改编镜头，所有正文均重新表达"
+    ]
+  },
+  "world": {
+    "timeMinutes": 480,
+    "locationId": "theme-hotel",
+    "rules": [
+      "现代东京的公共交通、监控和城市秩序正常运行",
+      "混血种的言灵能力有明确边界，不能随意创造新能力",
+      "言灵·审判会对领域内未获豁免的生命施加致命切割，使用越强风险越高",
+      "绘梨衣的血统长期依赖蛇岐八家提供的药物稳定，最后一支药不会凭空增加",
+      "蛇岐八家、卡塞尔学院与猛鬼众各自行动，信息不会自动共享",
+      "任何人都不能直接控制另一名角色的选择或内心"
+    ]
+  },
+  "locations": [
+    {
+      "id": "theme-hotel",
+      "name": "东京主题旅馆",
+      "description": "路明非与绘梨衣暂时藏身的房间，安全、药物和信任都只够维持很短时间。"
+    },
+    {
+      "id": "tokyo-street",
+      "name": "东京街区",
+      "description": "电车、便利店、游戏厅和密集人流构成的普通城市，也是多方搜索最容易交汇的地方。"
+    },
+    {
+      "id": "sky-observatory",
+      "name": "东京高空展望台",
+      "description": "能俯瞰城市灯火的高处，绘梨衣把未完成的愿望留在这里。"
+    },
+    {
+      "id": "genji-command",
+      "name": "源氏重工指挥层",
+      "description": "蛇岐八家调度搜索、医疗和城市监控的中心。"
+    },
+    {
+      "id": "cassell-safehouse",
+      "name": "卡塞尔安全屋",
+      "description": "凯撒与楚子航整理情报并准备撤离的临时据点。"
+    },
+    {
+      "id": "rendezvous",
+      "name": "临时会合点",
+      "description": "卡塞尔撤离路线与蛇岐八家搜索圈即将重合的地下停车区。"
+    },
+    {
+      "id": "red-well",
+      "name": "藏骸之井",
+      "description": "埋藏白王秘密的危险区域，原著悲剧最终汇聚之处。"
+    }
+  ],
+  "items": [
+    {
+      "id": "erii-notebook",
+      "name": "绘梨衣的交流本",
+      "description": "记录短句、图画和两人交流痕迹的小本子。"
+    },
+    {
+      "id": "wish-notebook",
+      "name": "东京愿望清单",
+      "description": "绘梨衣写下想去之处和普通愿望的本子。"
+    },
+    {
+      "id": "yellow-duck",
+      "name": "小黄鸭玩偶",
+      "description": "绘梨衣随身带着的黄色玩偶。"
+    },
+    {
+      "id": "serum-ampoule",
+      "name": "最后一支血清",
+      "description": "能够暂时稳定绘梨衣血统的针剂，只有一次使用机会。"
+    },
+    {
+      "id": "encrypted-phone",
+      "name": "加密手机",
+      "description": "可以接收凯撒与蛇岐八家的有限联络，也可能暴露位置。"
+    },
+    {
+      "id": "family-terminal",
+      "name": "家族终端",
+      "description": "能够调度蛇岐八家搜索网络和调阅内部记录。"
+    },
+    {
+      "id": "serum-case",
+      "name": "医疗血清箱",
+      "description": "源稚生调取的稳定血统药物，运输需要时间且记录存在疑点。"
+    },
+    {
+      "id": "satellite-phone",
+      "name": "卫星电话",
+      "description": "凯撒与学院及路明非保持低带宽联络的设备。"
+    },
+    {
+      "id": "evacuation-file",
+      "name": "撤离方案",
+      "description": "包含会合点、离境窗口和已知暴露风险。"
+    },
+    {
+      "id": "field-kit",
+      "name": "卡塞尔行动包",
+      "description": "装有通信、急救和短时隐蔽装备。"
+    }
+  ],
+  "initialInventory": [
+    {
+      "itemId": "erii-notebook",
+      "count": 1
+    },
+    {
+      "itemId": "encrypted-phone",
+      "count": 1
+    }
+  ],
+  "facts": [
+    {
+      "id": "judgment-power",
+      "kind": "core",
+      "truth": "绘梨衣拥有序列号 111 的高危言灵“审判”，声音和意志能对领域内目标下达致命的切割命令。",
+      "revealText": "绘梨衣的声音本身可能触发言灵·审判，开口不是安全的普通交流。"
+    },
+    {
+      "id": "serum-limit",
+      "kind": "core",
+      "truth": "绘梨衣的血统极不稳定，需要蛇岐八家长期提供专用药物压制，离开治疗越久失控风险越高。",
+      "revealText": "绘梨衣依赖专用药物稳定血统，现有药物只能再争取有限时间。"
+    },
+    {
+      "id": "family-search",
+      "kind": "core",
+      "truth": "源稚生组织搜索的直接目标是找回妹妹、恢复治疗并避免她失控，并不知道橘政宗利用她的完整计划。",
+      "revealText": "源稚生的搜索首先是为了让绘梨衣活下来，但把她带回家族并不等于消除所有危险。"
+    },
+    {
+      "id": "cassell-order",
+      "kind": "core",
+      "truth": "凯撒和楚子航希望路明非把绘梨衣带离日本，既为了保护她，也为了阻止她成为白王计划的关键。",
+      "revealText": "卡塞尔的撤离要求同时包含保护与任务目的，无法保证绘梨衣从此安全。"
+    },
+    {
+      "id": "white-king-vessel",
+      "kind": "core",
+      "truth": "橘政宗即赫尔佐格，长期把绘梨衣培养为抽取并承载白王之血的容器，送回其控制范围会把她推向真正的死亡风险。",
+      "revealText": "隐藏在治疗与家族命令背后的计划，是把绘梨衣当作白王复生的容器。",
+      "knowledgeGateTerms": [
+        "白王容器",
+        "赫尔佐格",
+        "橘政宗就是赫尔佐格"
+      ]
+    },
+    {
+      "id": "notebook-wish",
+      "kind": "clue",
+      "truth": "绘梨衣的清单写的不是战斗目标，而是普通的城市体验与和信任之人继续同行。",
+      "revealText": "绘梨衣想争取的是普通生活和亲自选择下一站的权利。"
+    },
+    {
+      "id": "serum-reaction",
+      "kind": "clue",
+      "truth": "绘梨衣手指轻微颤抖、眼底颜色加深，是药效减弱与血统失稳的早期表现。",
+      "revealText": "绘梨衣已经出现药效减弱的早期征兆。"
+    },
+    {
+      "id": "medical-record-gap",
+      "kind": "clue",
+      "truth": "橘政宗控制的治疗记录缺少多次采血去向，血清批次也与家族医疗库存对不上。",
+      "revealText": "绘梨衣的治疗记录存在被人为隐藏的采血与药物缺口。"
+    },
+    {
+      "id": "tracking-ping",
+      "kind": "clue",
+      "truth": "加密手机一次短暂握手已经让蛇岐八家把搜索范围缩小到旅馆周边。",
+      "revealText": "刚才的联络暴露了大致区域，搜索者正在接近。"
+    }
+  ],
+  "characters": [
+    {
+      "id": "lu-mingfei",
+      "name": "路明非",
+      "role": "卡塞尔学院 S 级学生",
+      "personality": "自嘲、敏感，常在需要承诺时退缩，却无法真正放下向他求助的人；具体选择只由玩家决定。",
+      "goal": "让绘梨衣活下来，并弄清自己愿意为她的选择承担到哪一步。",
+      "appearance": "年轻的中国男生，黑色短发，身形偏瘦，五官不张扬，常穿被东京雨水打皱的深色夹克、T 恤和长裤。",
+      "background": "卡塞尔学院评定的 S 级学生，东京任务成员。外表和日常能力都显得普通，但在绝境中拥有无法按常规解释的潜力。",
+      "locationId": "theme-hotel",
+      "status": "active",
+      "attitude": 0,
+      "knowledgeFactIds": [
+        "judgment-power",
+        "serum-limit",
+        "cassell-order",
+        "notebook-wish"
+      ],
+      "knownToPlayer": true
+    },
+    {
+      "id": "erii",
+      "name": "上杉绘梨衣",
+      "role": "蛇岐八家上杉家主",
+      "personality": "单纯而敏锐，对普通世界缺乏经验，但有清楚的喜恶与选择，不是被动等待拯救的道具。",
+      "goal": "和信任的人继续看自己从未见过的世界，并第一次决定自己的去处。",
+      "appearance": "暗红色柔顺长发、深玫瑰红眼睛，常穿白衣绯袴的巫女服；出走后也会选择白色裙装，以白色发带束发。",
+      "background": "蛇岐八家内三家之一的上杉家主，拥有高危言灵·审判。长期被保护和监控，以本子交流并依赖药物稳定血统。",
+      "locationId": "theme-hotel",
+      "status": "active",
+      "attitude": 3,
+      "knowledgeFactIds": [
+        "judgment-power",
+        "serum-limit",
+        "family-search",
+        "notebook-wish"
+      ],
+      "knownToPlayer": true
+    },
+    {
+      "id": "gen-chisei",
+      "name": "源稚生",
+      "role": "蛇岐八家少主",
+      "personality": "克制、疲惫而有责任感，真心爱护妹妹，却习惯用家族秩序解决无法承受的私人问题。",
+      "goal": "在绘梨衣失控前找到她，同时查清家族内部对治疗记录的隐瞒。",
+      "appearance": "黑色短发、面容冷峻的日本青年，常穿黑色西装或长风衣，姿态利落而疏离。",
+      "background": "蛇岐八家年轻的领导者与绘梨衣的哥哥，拥有皇血和强大战力，背负家族战争及保护妹妹的双重责任。",
+      "locationId": "genji-command",
+      "status": "active",
+      "attitude": -1,
+      "knowledgeFactIds": [
+        "judgment-power",
+        "serum-limit",
+        "family-search",
+        "notebook-wish",
+        "medical-record-gap"
+      ],
+      "knownToPlayer": true
+    },
+    {
+      "id": "caesar",
+      "name": "凯撒·加图索",
+      "role": "卡塞尔学院学生会主席",
+      "personality": "自信、骄傲、重视承诺，擅长把危机变成计划，但不接受学院或家族把人简单当作资源。",
+      "goal": "让东京行动成员与绘梨衣脱离多方追捕，并确认学院命令没有隐去关键代价。",
+      "appearance": "高大的欧洲青年，金色长发、冰蓝色眼睛，穿白色战术外套或剪裁考究的行动装。",
+      "background": "卡塞尔学生会主席和东京任务现场领导者，拥有言灵·镰鼬，能通过声音与气流建立广域侦察。",
+      "locationId": "cassell-safehouse",
+      "status": "active",
+      "attitude": 1,
+      "knowledgeFactIds": [
+        "judgment-power",
+        "serum-limit",
+        "cassell-order",
+        "tracking-ping"
+      ],
+      "knownToPlayer": true
+    },
+    {
+      "id": "chu-zihang",
+      "name": "楚子航",
+      "role": "卡塞尔学院执行部成员",
+      "personality": "寡言、精确，习惯先确认事实和可执行路线，对同伴的承诺比口头态度更可靠。",
+      "goal": "协助凯撒建立安全撤离路线，同时寻找白王计划与绘梨衣之间的真实联系。",
+      "appearance": "黑发、神情冷静的中国青年，穿深色行动服，危险时会显露灼金色瞳孔。",
+      "background": "东京任务成员，拥有高危言灵·君焰。与凯撒竞争但在任务中保持有效合作。",
+      "locationId": "cassell-safehouse",
+      "status": "active",
+      "attitude": 1,
+      "knowledgeFactIds": [
+        "judgment-power",
+        "serum-limit",
+        "cassell-order",
+        "medical-record-gap"
+      ],
+      "knownToPlayer": true
+    }
+  ],
+  "threads": [
+    {
+      "id": "freedom-thread",
+      "title": "让绘梨衣亲自决定自己的去处",
+      "status": "open",
+      "knownToPlayer": true
+    },
+    {
+      "id": "serum-thread",
+      "title": "在药效耗尽前获得可信的治疗",
+      "status": "open",
+      "knownToPlayer": true
+    },
+    {
+      "id": "trust-thread",
+      "title": "判断卡塞尔与蛇岐八家谁隐瞒了关键代价",
+      "status": "open",
+      "knownToPlayer": true
+    },
+    {
+      "id": "white-king-thread",
+      "title": "找出绘梨衣被追逐的真正原因",
+      "status": "open",
+      "knownToPlayer": false
+    }
+  ],
+  "stages": [
+    {
+      "id": "see-countdown",
+      "role": "expose",
+      "title": "看见倒计时",
+      "purpose": "确认追踪、药效或治疗记录中至少一项正在逼近的危险。",
+      "requiredGoalCount": 1,
+      "goals": [
+        {
+          "id": "find-immediate-risk",
+          "title": "发现一项足以改变计划的危险",
+          "completion": {
+            "factIdsAny": [
+              "serum-reaction",
+              "medical-record-gap",
+              "tracking-ping",
+              "white-king-vessel"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "name-the-choice",
+      "role": "first-choice",
+      "title": "谁来决定",
+      "purpose": "明确绘梨衣本人的愿望与当前角色愿意承担的责任。",
+      "requiredGoalCount": 1,
+      "goals": [
+        {
+          "id": "hear-erii",
+          "title": "让绘梨衣的选择真正进入计划",
+          "completion": {
+            "factIdsAny": [
+              "notebook-wish"
+            ]
+          }
+        },
+        {
+          "id": "declare-priority",
+          "title": "明确安全、自由或任务的优先顺序",
+          "completion": {
+            "evidenceAllowed": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "pay-for-time",
+      "role": "gain-loss",
+      "title": "为时间付费",
+      "purpose": "让藏匿、治疗、调查或撤离消耗药物、时间、位置安全或人物信任。",
+      "requiredGoalCount": 1,
+      "goals": [
+        {
+          "id": "accept-real-cost",
+          "title": "承担一项不可忽略的现实代价",
+          "completion": {
+            "evidenceAllowed": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "irreversible-route",
+      "role": "major-test",
+      "title": "不可逆的路线",
+      "purpose": "在离开日本、返回家族、继续藏匿或追查幕后计划之间作出不能轻易撤回的决定。",
+      "requiredGoalCount": 1,
+      "goals": [
+        {
+          "id": "choose-erii-route",
+          "title": "决定绘梨衣的去处并面对直接阻力",
+          "completion": {
+            "evidenceAllowed": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "answer-loneliness",
+      "role": "consequence",
+      "title": "孤独者的回答",
+      "purpose": "结算绘梨衣的生命与自由、角色的责任以及各方信任，说明这次陪伴是否真正尊重了她。",
+      "requiredGoalCount": 1,
+      "goals": [
+        {
+          "id": "settle-erii-fate",
+          "title": "完整结算选择、代价与长期后果",
+          "completion": {
+            "evidenceAllowed": true
+          }
+        }
+      ]
+    }
+  ],
+  "foreshadows": [
+    {
+      "id": "wish-seed",
+      "seedFactId": "notebook-wish",
+      "pointsToFactIds": [
+        "family-search",
+        "cassell-order"
+      ]
+    },
+    {
+      "id": "serum-seed",
+      "seedFactId": "serum-reaction",
+      "pointsToFactIds": [
+        "serum-limit"
+      ]
+    },
+    {
+      "id": "record-seed",
+      "seedFactId": "medical-record-gap",
+      "pointsToFactIds": [
+        "white-king-vessel"
+      ]
+    },
+    {
+      "id": "signal-seed",
+      "seedFactId": "tracking-ping",
+      "pointsToFactIds": [
+        "family-search"
+      ]
+    }
+  ],
+  "ending": {
+    "allowedTypes": [
+      "normal",
+      "failure",
+      "early",
+      "deviation"
+    ],
+    "constraints": [
+      "原著路线中路明非最终选择把绘梨衣送回蛇岐八家；沿此路线应标为 normal，并继续结算这一决定如何把她带向藏骸之井的悲剧",
+      "若玩家改变绘梨衣回归、赫尔佐格计划或原著主要人物命运，应标为 deviation，而不是假装仍是原著结局",
+      "药物、追踪、言灵和人物已知信息必须守恒，不能用突然出现的万能治疗或援军解决危机",
+      "任何结局都必须交代绘梨衣是否活着、是否拥有选择权，以及当前角色为决定付出的长期代价",
+      "不能用爱情自动治愈血统，也不能把牺牲写成证明感情的唯一方式",
+      "失败结局仍需尊重人物动机，不能把源稚生、凯撒或路明非简化为推动悲剧的工具"
+    ]
+  }
+}

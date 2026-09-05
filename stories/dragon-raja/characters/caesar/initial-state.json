@@ -1,0 +1,15 @@
+{
+  "personality": "自信、骄傲、重视承诺，擅长把危机变成计划，但不接受学院或家族把人简单当作资源。",
+  "goal": "让东京行动成员与绘梨衣脱离多方追捕，并确认学院命令没有隐去关键代价。",
+  "background": "卡塞尔学生会主席和东京任务现场领导者，拥有言灵·镰鼬，能通过声音与气流建立广域侦察。",
+  "locationId": "cassell-safehouse",
+  "status": "active",
+  "attitude": 1,
+  "knowledgeFactIds": [
+    "judgment-power",
+    "serum-limit",
+    "cassell-order",
+    "tracking-ping"
+  ],
+  "knownToPlayer": true
+}

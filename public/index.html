@@ -3,33 +3,114 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#202521" />
-    <meta name="description" content="AI novel - 基于 Pi 的互动分支小说 Demo" />
+    <meta name="theme-color" content="#04060c" />
+    <meta name="description" content="《龙族：东京出走》——基于 Pi 的互动分支小说实验" />
+    <link rel="icon" href="data:," />
     <title>AI novel</title>
     <link rel="stylesheet" href="/styles.css" />
     <script src="/vendor/lucide.js" defer></script>
+    <script src="/ambient.js" defer></script>
     <script src="/app.js" type="module"></script>
   </head>
   <body>
-    <div class="app-shell">
+    <div class="atmosphere" aria-hidden="true">
+      <canvas id="starfield"></canvas>
+      <div class="nebula nebula-a"></div>
+      <div class="nebula nebula-b"></div>
+      <div class="nebula nebula-c"></div>
+      <div class="grid-veil"></div>
+      <div class="grain"></div>
+      <div class="cursor-aura"></div>
+      <div class="vignette"></div>
+    </div>
+
+    <section class="gateway" id="gateway" aria-label="档案馆入口">
+      <div class="gate-portal" aria-hidden="true">
+        <figure class="portal-view">
+          <img src="/assets/onboarding/dragon-raja/comic-01.png" alt="" />
+        </figure>
+        <div class="portal-light"></div>
+      </div>
+      <div class="gate" aria-hidden="true">
+        <div class="gate-panel gate-left"></div>
+        <div class="gate-panel gate-right"></div>
+        <div class="gate-embers" id="gate-embers"></div>
+        <div class="gate-seam"></div>
+      </div>
+      <div class="gateway-frame" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+      <div class="gateway-inner">
+        <span class="gateway-kicker">Interactive Fiction Experiment</span>
+        <h1 class="gateway-title" id="gateway-title">龙族</h1>
+        <p class="gateway-tagline">东京给了两个孤独的人短暂的普通生活。<br />天亮以后，你要决定自由、责任与生命该怎样排序。</p>
+        <button class="gateway-enter" id="gateway-enter" type="button">
+          <span>进入东京出走</span>
+          <i data-lucide="arrow-right"></i>
+        </button>
+        <div class="gateway-meta">
+          <span>单故事实验</span>
+          <span>分支自动存档</span>
+          <span>由 Pi 实时书写</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="onboarding" id="onboarding" aria-label="故事前情" hidden>
+      <header class="onboarding-header">
+        <span class="onboarding-header-spacer" aria-hidden="true"></span>
+        <div class="onboarding-heading">
+          <strong id="onboarding-story-title">故事前情</strong>
+          <span id="onboarding-progress-label">1 / 7</span>
+        </div>
+        <button class="onboarding-skip" id="onboarding-skip" type="button">跳过前情</button>
+      </header>
+
+      <main class="onboarding-stage" id="onboarding-stage">
+        <figure class="onboarding-media">
+          <img id="onboarding-image" alt="" />
+        </figure>
+        <article class="onboarding-copy">
+          <span class="onboarding-kicker" id="onboarding-kicker">故事背景</span>
+          <h1 id="onboarding-title">正在载入</h1>
+          <p id="onboarding-body"></p>
+        </article>
+      </main>
+
+      <main class="immersive-onboarding" id="immersive-onboarding" hidden aria-live="polite"></main>
+
+      <footer class="onboarding-controls">
+        <button class="onboarding-control previous" id="onboarding-previous" type="button" aria-label="上一页" title="上一页">
+          <i data-lucide="arrow-left"></i>
+        </button>
+        <div class="onboarding-dots" id="onboarding-dots" aria-label="前情进度"></div>
+        <button class="onboarding-control next" id="onboarding-next" type="button">
+          <span id="onboarding-next-label">继续</span>
+          <i data-lucide="arrow-right"></i>
+        </button>
+      </footer>
+    </section>
+
+    <div class="app-shell" id="app-shell" hidden>
       <header class="app-header">
         <button class="icon-button mobile-only" id="branch-toggle" type="button" aria-label="打开故事分支" title="故事分支">
           <i data-lucide="git-branch"></i>
         </button>
 
-        <a class="brand" href="/" aria-label="AI novel 首页">
+        <span class="brand">
           <span class="brand-mark"><i data-lucide="book-open-text"></i></span>
           <span class="brand-copy">
             <strong>AI novel</strong>
             <small id="story-subtitle">互动小说</small>
           </span>
-        </a>
+        </span>
 
         <div class="header-actions">
-          <span class="runtime-status" id="runtime-status">
+          <span class="runtime-status" title="Pi 和当前配置的模型已连接">
             <span class="status-dot"></span>
-            <span>连接中</span>
+            <span>PI ONLINE</span>
           </span>
+          <button class="icon-button" id="onboarding-replay" type="button" aria-label="回看故事前情" title="回看故事前情">
+            <i data-lucide="images"></i>
+          </button>
           <button class="icon-button" id="reset-story" type="button" aria-label="重置故事" title="重置故事">
             <i data-lucide="rotate-ccw"></i>
           </button>
@@ -59,18 +140,18 @@
 
         <section class="story-panel" aria-label="故事正文">
           <div class="story-scroll" id="story-scroll">
-            <figure class="scene-visual">
-              <img src="/assets/rain-hotel.png" alt="暴雨夜里的青岚旅店大堂，楼梯尽头站着模糊人影" />
+            <figure class="scene-visual" id="scene-visual" hidden>
+              <img id="scene-image" alt="" />
               <figcaption class="scene-caption">
-                <span id="scene-eyebrow">第一幕</span>
-                <strong id="scene-title">雨夜来客</strong>
+                <span id="scene-eyebrow">序章</span>
+                <strong id="scene-title">互动小说</strong>
               </figcaption>
             </figure>
 
             <header class="story-heading">
               <div>
-                <span class="story-label" id="story-location">青岚旅店</span>
-                <h1 id="story-title">雨夜来客</h1>
+                <span class="story-label" id="story-location">正在载入</span>
+                <h1 id="story-title">互动小说</h1>
               </div>
               <span class="turn-counter" id="turn-counter">序章</span>
             </header>
@@ -166,4 +247,3 @@
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
   </body>
 </html>
-

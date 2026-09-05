@@ -1,0 +1,18 @@
+{
+  "id": "rendezvous",
+  "name": "临时会合点",
+  "description": "地下停车区连接城市道路、货运电梯和撤离车辆，多方路线在混凝土柱与监控盲区间交错；任何会合都可能同时变成包围。",
+  "defaultStateId": "default",
+  "fallbackImage": "/assets/scenes/dragon-raja/fallback.png",
+  "states": [
+    {
+      "id": "default",
+      "title": "路线交汇",
+      "description": "地下停车区连接城市道路、货运电梯和撤离车辆，多方路线在混凝土柱与监控盲区间交错；任何会合都可能同时变成包围。",
+      "image": {
+        "src": "/assets/scenes/dragon-raja/rendezvous.png",
+        "alt": "临时会合点的环境画面"
+      }
+    }
+  ]
+}

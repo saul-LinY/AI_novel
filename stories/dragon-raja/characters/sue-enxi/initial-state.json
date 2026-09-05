@@ -1,0 +1,14 @@
+{
+  "personality": "务实、精于计算，嘴上计较成本但不会轻易放弃队友。",
+  "goal": "让幕后计划按节点推进，并降低行动人员无法承受的损失。",
+  "background": "与酒德麻衣配合的远程后勤和情报人员。",
+  "locationId": "cassell-safehouse",
+  "status": "active",
+  "attitude": 0,
+  "knowledgeFactIds": [
+    "cassell-order",
+    "tracking-ping",
+    "white-king-vessel"
+  ],
+  "knownToPlayer": true
+}

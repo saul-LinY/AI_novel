@@ -1,0 +1,15 @@
+{
+  "personality": "沉着克制，以行动表达关心，对源稚生忠诚但并非没有判断。",
+  "goal": "帮助源稚生控制局势，并保护他不被家族责任吞没。",
+  "background": "蛇岐八家执行成员和源稚生的秘书，是其最可靠的现场协作者。",
+  "locationId": "genji-command",
+  "status": "active",
+  "attitude": 1,
+  "knowledgeFactIds": [
+    "judgment-power",
+    "serum-limit",
+    "family-search",
+    "medical-record-gap"
+  ],
+  "knownToPlayer": true
+}

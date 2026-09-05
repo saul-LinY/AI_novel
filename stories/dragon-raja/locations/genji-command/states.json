@@ -1,0 +1,18 @@
+{
+  "id": "genji-command",
+  "name": "源氏重工指挥层",
+  "description": "源氏重工高层指挥区，长桌、城市监控墙、医疗记录终端和封闭电梯共同体现家族秩序；这里适合调度，也适合隐藏信息。",
+  "defaultStateId": "default",
+  "fallbackImage": "/assets/scenes/dragon-raja/fallback.png",
+  "states": [
+    {
+      "id": "default",
+      "title": "家族中枢",
+      "description": "源氏重工高层指挥区，长桌、城市监控墙、医疗记录终端和封闭电梯共同体现家族秩序；这里适合调度，也适合隐藏信息。",
+      "image": {
+        "src": "/assets/scenes/dragon-raja/genji-command.png",
+        "alt": "源氏重工指挥层的环境画面"
+      }
+    }
+  ]
+}

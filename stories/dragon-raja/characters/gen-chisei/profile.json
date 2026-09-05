@@ -1,0 +1,26 @@
+{
+  "id": "gen-chisei",
+  "name": "源稚生",
+  "aliases": [],
+  "role": "蛇岐八家少主",
+  "selectable": true,
+  "onboardingVisible": true,
+  "tagline": "想保护妹妹，也背负着整个家族的秩序",
+  "publicSummary": "黑发、神情克制的年轻家主，常穿剪裁利落的黑色西装或长风衣。他知道绘梨衣的身体状况，也清楚她失控的后果；扮演源稚生意味着你拥有家族资源，却必须承认保护和囚禁之间只有很窄的界线。",
+  "traits": [
+    "家族指挥",
+    "皇血",
+    "冷静决断"
+  ],
+  "appearance": "黑色短发、面容冷峻的日本青年，常穿黑色西装或长风衣，姿态利落而疏离。",
+  "abilities": [
+    "皇血",
+    "家族指挥",
+    "近身战斗"
+  ],
+  "speech": "语气克制简洁，习惯先说明责任与风险，很少公开私人软弱。",
+  "image": {
+    "src": "/assets/onboarding/dragon-raja/gen-chisei.png",
+    "alt": "黑发、穿黑色长风衣的源稚生"
+  }
+}

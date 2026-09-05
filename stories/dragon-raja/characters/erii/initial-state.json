@@ -1,0 +1,15 @@
+{
+  "personality": "单纯而敏锐，对普通世界缺乏经验，但有清楚的喜恶与选择，不是被动等待拯救的道具。",
+  "goal": "和信任的人继续看自己从未见过的世界，并第一次决定自己的去处。",
+  "background": "蛇岐八家内三家之一的上杉家主，拥有高危言灵·审判。长期被保护和监控，以本子交流并依赖药物稳定血统。",
+  "locationId": "theme-hotel",
+  "status": "active",
+  "attitude": 3,
+  "knowledgeFactIds": [
+    "judgment-power",
+    "serum-limit",
+    "family-search",
+    "notebook-wish"
+  ],
+  "knownToPlayer": true
+}

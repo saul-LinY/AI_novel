@@ -1,0 +1,223 @@
+{
+  "nodes": [
+    {
+      "id": "see-countdown",
+      "role": "expose",
+      "title": "看见倒计时",
+      "purpose": "确认追踪、药效或治疗记录中至少一项正在逼近的危险。",
+      "prerequisites": [],
+      "expectedResults": [
+        "玩家理解继续停留并非没有代价",
+        "至少一条危机从背景变成可行动的信息"
+      ],
+      "blockConditions": [
+        "玩家主动切断全部追踪且获得新的安全药物来源"
+      ],
+      "compatibleRejoinNodeIds": [
+        "own-the-choice",
+        "pay-for-time"
+      ],
+      "requiredGoalCount": 1,
+      "goals": [
+        {
+          "id": "find-immediate-risk",
+          "title": "发现一项足以改变计划的危险",
+          "completion": {
+            "factIdsAny": [
+              "serum-reaction",
+              "medical-record-gap",
+              "tracking-ping",
+              "white-king-vessel"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "own-the-choice",
+      "role": "choice",
+      "title": "谁来决定",
+      "purpose": "明确绘梨衣本人的愿望与当前角色愿意承担的责任。",
+      "prerequisites": [
+        "see-countdown"
+      ],
+      "expectedResults": [
+        "绘梨衣的意愿成为计划约束",
+        "当前角色表明安全、自由或任务的优先级"
+      ],
+      "blockConditions": [
+        "绘梨衣失去表达能力且没有可信代理人"
+      ],
+      "compatibleRejoinNodeIds": [
+        "pay-for-time",
+        "investigate-the-gap"
+      ],
+      "requiredGoalCount": 1,
+      "goals": [
+        {
+          "id": "hear-erii",
+          "title": "让绘梨衣的选择真正进入计划",
+          "completion": {
+            "factIdsAny": [
+              "notebook-wish"
+            ]
+          }
+        },
+        {
+          "id": "declare-priority",
+          "title": "明确安全、自由或任务的优先顺序",
+          "completion": {
+            "evidenceAllowed": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "pay-for-time",
+      "role": "cost",
+      "title": "为时间付费",
+      "purpose": "让藏匿、治疗、调查或撤离消耗药物、时间、位置安全或人物信任。",
+      "prerequisites": [
+        "own-the-choice"
+      ],
+      "expectedResults": [
+        "至少一项资源或关系发生真实变化",
+        "不存在免费的完美拖延"
+      ],
+      "blockConditions": [
+        "玩家已经选择立即结束东京路线"
+      ],
+      "compatibleRejoinNodeIds": [
+        "investigate-the-gap",
+        "irreversible-route"
+      ],
+      "requiredGoalCount": 1,
+      "goals": [
+        {
+          "id": "accept-real-cost",
+          "title": "承担一项不可忽略的现实代价",
+          "completion": {
+            "evidenceAllowed": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "investigate-the-gap",
+      "role": "investigation",
+      "title": "治疗记录的缺口",
+      "purpose": "让至少一方发现保护方案背后存在被隐瞒的采血、药物或身份风险。",
+      "prerequisites": [
+        "pay-for-time"
+      ],
+      "expectedResults": [
+        "橘政宗控制的信息开始失去可信度",
+        "玩家获得选择路线所需但不完整的真相"
+      ],
+      "blockConditions": [
+        "玩家永久销毁记录并拒绝其他调查来源"
+      ],
+      "compatibleRejoinNodeIds": [
+        "irreversible-route",
+        "red-well-convergence"
+      ],
+      "requiredGoalCount": 1,
+      "goals": [
+        {
+          "id": "trace-medical-gap",
+          "title": "确认治疗体系中存在人为隐瞒",
+          "completion": {
+            "factIdsAny": [
+              "medical-record-gap",
+              "white-king-vessel"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "irreversible-route",
+      "role": "commitment",
+      "title": "不可逆的路线",
+      "purpose": "在离开日本、返回家族、继续藏匿或追查幕后计划之间作出不能轻易撤回的决定。",
+      "prerequisites": [
+        "own-the-choice"
+      ],
+      "expectedResults": [
+        "路线产生直接阻力",
+        "角色承担选择而不是等待所有信息完美"
+      ],
+      "blockConditions": [
+        "局势已被上一节点推入无法选择的灾难"
+      ],
+      "compatibleRejoinNodeIds": [
+        "red-well-convergence",
+        "answer-loneliness"
+      ],
+      "requiredGoalCount": 1,
+      "goals": [
+        {
+          "id": "choose-erii-route",
+          "title": "决定绘梨衣的去处并面对直接阻力",
+          "completion": {
+            "evidenceAllowed": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "red-well-convergence",
+      "role": "climax",
+      "title": "红井之前",
+      "purpose": "让家族、卡塞尔与幕后计划的冲突在仍然合乎当前因果的位置汇合。",
+      "prerequisites": [
+        "irreversible-route"
+      ],
+      "expectedResults": [
+        "白王计划被阻止、改变或按原著方向发生",
+        "主要人物的立场转化为行动"
+      ],
+      "blockConditions": [
+        "玩家已使红井事件不可能发生"
+      ],
+      "compatibleRejoinNodeIds": [
+        "answer-loneliness"
+      ],
+      "requiredGoalCount": 1,
+      "goals": [
+        {
+          "id": "settle-red-well",
+          "title": "结算白王计划与绘梨衣命运的直接冲突",
+          "completion": {
+            "evidenceAllowed": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "answer-loneliness",
+      "role": "consequence",
+      "title": "孤独者的回答",
+      "purpose": "结算绘梨衣的生命与自由、角色的责任以及各方信任。",
+      "prerequisites": [
+        "irreversible-route"
+      ],
+      "expectedResults": [
+        "交代绘梨衣是否活着并拥有选择权",
+        "交代当前角色付出的长期代价"
+      ],
+      "blockConditions": [],
+      "compatibleRejoinNodeIds": [],
+      "requiredGoalCount": 1,
+      "goals": [
+        {
+          "id": "settle-erii-fate",
+          "title": "完整结算选择、代价与长期后果",
+          "completion": {
+            "evidenceAllowed": true
+          }
+        }
+      ]
+    }
+  ]
+}

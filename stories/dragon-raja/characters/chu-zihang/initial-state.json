@@ -1,0 +1,15 @@
+{
+  "personality": "寡言、精确，习惯先确认事实和可执行路线，对同伴的承诺比口头态度更可靠。",
+  "goal": "协助凯撒建立安全撤离路线，同时寻找白王计划与绘梨衣之间的真实联系。",
+  "background": "东京任务成员，拥有高危言灵·君焰。与凯撒竞争但在任务中保持有效合作。",
+  "locationId": "cassell-safehouse",
+  "status": "active",
+  "attitude": 1,
+  "knowledgeFactIds": [
+    "judgment-power",
+    "serum-limit",
+    "cassell-order",
+    "medical-record-gap"
+  ],
+  "knownToPlayer": true
+}

@@ -1,17 +1,20 @@
 # AI novel
 
-一个基于 Pi 的本地互动小说 Demo。玩家每回合输入行动，Pi 负责续写正文；应用自己保存时间、地点、人物关系、物品和线索，并在写入前检查状态是否合法。
+一个以 Pi 为运行基座的本地互动小说引擎。当前实验用《龙族：东京出走》验证“故事包 + 主 Agent + 情节、人物、环境三个子 Agent”的完整流程。
 
-项目内已经包含完整的 Pi v0.84.1 源码，位置是 `vendor/pi`。AI novel 直接加载这份源码的本地构建结果，不依赖项目外的 Pi 源码目录，也不使用 npm 下载的 `pi-coding-agent` 运行包。
+## 当前能力
 
-## 现在可以做什么
+- 开场依次展示前情提要、18 页漫画、4 个可选角色、8 个不可选 NPC 和角色确认。
+- 故事包拆分保存原著事实、角色知识、七节点主干、人物灵魂、地点说明和预生成场景图。
+- 四个角色共用一份 vendored Pi SDK 和一个模型运行时，但各自拥有独立 Session、提示词和工具契约。
+- 情节、人物、环境 Agent 并行提交结构化提案；主 Agent 合并冲突、完成连续性判断并输出唯一的最终正文。
+- 玩家合理阻止原著节点时，节点永久标为 `blocked`，剧情走替代路线并只接入兼容的后续节点；无法接回时进入偏离结局。
+- 每回合只加载当前分支摘要、最近 4 回合、涉及人物记忆、当前场景和相邻主干节点。
+- 正文按完整句子流式展示。已经显示的句子不会复核、改写或撤回；正文后的状态与记忆一次性原子提交。
+- 回合是服务端持久化作业。关闭浏览器不停止生成，刷新后通过事件序号继续；只有 `prepared` 前可以取消。
+- 只有用户明确保存平行路线时才创建物理分支，普通绕路只更新当前分支的路线状态。
 
-- 自由输入行动，或点击 2 到 4 个建议选项
-- 流式显示每回合正文
-- 查看当前地点、时间、人物、物品、线索和未解问题
-- 从任意历史回合创建分支，并在分支之间切换
-- 自动保存故事，刷新页面后继续
-- Pi 不可用时自动切换到内置演示剧情
+浏览器只收到玩家当前应当知道的人物、线索和状态。原著隐藏事实、NPC 私有知识、人物私有动机和内部主干条件不会通过故事接口返回。
 
 ## 运行
 
@@ -19,41 +22,54 @@
 
 ```bash
 npm run setup
-npm run dev
+npm start
 ```
 
-`npm run setup` 会依次安装 `vendor/pi` 的依赖、从项目内源码构建 Pi，再安装 AI novel 自身依赖。第一次运行需要能够访问 npm；以后源码和构建产物都留在 AI novel 目录内。
+默认读取 `~/.pi/agent` 中的模型和鉴权配置，四个角色统一使用 `pi-gateway/deepseek-v4-flash:cloud`。也可用 `PI_STORY_PROVIDER`、`PI_STORY_MODEL` 或各角色专属的 `PI_MAIN_MODEL`、`PI_PLOT_MODEL`、`PI_CHARACTER_MODEL`、`PI_ENVIRONMENT_MODEL` 覆盖。
 
-打开 <http://127.0.0.1:4317>。
+服务默认监听 `0.0.0.0:4317`，本机访问 <http://127.0.0.1:4317>。
 
-默认的 `auto` 模式会读取 `~/.pi/agent` 中现有的模型配置。模型配置可能包含密钥，因此不会自动复制进项目。若要把配置也放在项目目录，可以建立 `.pi/agent`，并这样启动：
+## 故事包
 
-```bash
-PI_AGENT_DIR="$PWD/.pi/agent" npm run dev
+故事包位于 `stories/<storyId>/`：
+
+```text
+manifest.json
+background/{summary.md,beats.json}
+comic/pages.json
+canon/{truths.json,knowledge.json}
+plot/spine.json
+characters/<character-id>/{profile.json,soul.md,initial-state.json}
+locations/<location-id>/{description.md,states.json,images/}
 ```
 
-也可以在启动时明确指定模式：
+`summary.md` 提供连贯前情，`beats.json` 把 18 页漫画连接为带因果和视觉锚点的事件链。`soul.md` 只保存稳定人格；经历、关系和身体状态进入分支存档。地点引用 `public/assets/scenes/<storyId>/` 中的预生成图片，运行时不生图。
 
-```bash
-AI_NOVEL_MODE=pi npm run dev
-AI_NOVEL_MODE=demo npm run dev
+## 存档
+
+schema v4 存档位于 `.ai-novel/stories/<storyId>/`。全局 `index.json` 只保存分支索引，每个显式分支独立保存：
+
+```text
+branches/<branch-id>/
+├── branch.json
+├── memory.md
+├── plot-state.json
+├── environment-state.json
+├── environment-state.memory.md
+├── characters/<character-id>/{state.json,memory.md}
+└── turns/<turn-id>/event.json
 ```
 
-- `pi`：必须成功连接 Pi 和已配置模型，否则启动失败。
-- `demo`：不调用模型，使用固定剧情，适合快速体验界面和分支功能。
-- `auto`：优先使用 Pi，配置不可用时回退到演示模式。
+旧 schema v2/v3 单文件存档会移动到 `.ai-novel/archive/`，不会静默删除。四个 Pi Session 位于 `.ai-novel/pi-sessions/<storyId>/`，持久化回合作业位于 `.ai-novel/stories/<storyId>/turn-jobs/`。
 
-可用环境变量见 [.env.example](./.env.example)。故事保存在 `.ai-novel/story.json`，Pi 会话保存在 `.ai-novel/pi-sessions/`。这两个目录都不会提交到 Git。
+## 回合接口
 
-## 这个 Demo 怎样使用 Pi
+- `POST /api/turn`：创建作业并返回 NDJSON 流。
+- `GET /api/turns/:turnId/stream?afterSeq=N`：精确重放缺失事件。
+- `POST /api/turns/:turnId/cancel`：仅在 `prepared` 前有效。
+- `GET /api/turns/active`：查询当前未结束作业。
 
-Pi 只负责模型调用、流式输出、会话树和上下文压缩。应用只向 Pi 开放一个 `commit_story_turn` 工具，不开放终端或文件工具。模型写完正文后，通过这个工具提出状态变化；应用检查无误后，才把正文和新状态一起保存。
-
-AI novel 的导入入口是 `vendor/pi/packages/coding-agent/dist/index.js`。若修改了 `vendor/pi` 中的源码，执行 `npm run pi:build` 后重启服务即可生效。
-
-故事分支同时保存在两处：应用保存可验证的世界状态，Pi 保存对应的对话分支。切换故事分支时，应用会把 Pi 会话移动到同一个历史节点，再从那里继续生成。
-
-首个 MVP 暂时不接 Mem0 或向量数据库。当前剧情、最近回合和 Pi 的上下文压缩足以验证核心玩法；等长程测试确认真的出现“找不到旧线索”后，再补长期记忆检索。
+事件顺序为 `start`、若干 `phase`、`prepared`、可选 `scene`、若干 `prose_delta`、`complete`。不可恢复错误通过正文之外的 `failed` 事件报告；`prepared` 后的可恢复故障保留作业和正文前缀，下次连接时继续。
 
 ## 测试
 
@@ -61,11 +77,10 @@ AI novel 的导入入口是 `vendor/pi/packages/coding-agent/dist/index.js`。�
 npm test
 ```
 
-测试覆盖状态增量、不合法状态、分支隔离，以及隐藏真相不泄露给浏览器。
+测试覆盖故事包引用、四 Session 并行、知识隔离、节点阻止与兼容回归、分支记忆隔离、场景切换、取消边界、断线重放、完整句缓冲、服务重启续写和完整正文后的原子提交。
 
-## 参考
+## Pi 参考
 
 - [项目内 Pi 源码](./vendor/pi)
 - [Pi 上游源码（v0.84.1）](https://github.com/earendil-works/pi/tree/v0.84.1)
 - [Pi SDK 文档](https://pi.dev/docs/latest/sdk)
-- [Pi Session Format](https://pi.dev/docs/latest/session-format)

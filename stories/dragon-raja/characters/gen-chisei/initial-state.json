@@ -1,0 +1,16 @@
+{
+  "personality": "克制、疲惫而有责任感，真心爱护妹妹，却习惯用家族秩序解决无法承受的私人问题。",
+  "goal": "在绘梨衣失控前找到她，同时查清家族内部对治疗记录的隐瞒。",
+  "background": "蛇岐八家年轻的领导者与绘梨衣的哥哥，拥有皇血和强大战力，背负家族战争及保护妹妹的双重责任。",
+  "locationId": "genji-command",
+  "status": "active",
+  "attitude": -1,
+  "knowledgeFactIds": [
+    "judgment-power",
+    "serum-limit",
+    "family-search",
+    "notebook-wish",
+    "medical-record-gap"
+  ],
+  "knownToPlayer": true
+}

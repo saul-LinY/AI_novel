@@ -1,0 +1,24 @@
+{
+  "id": "sakura-yabuki",
+  "name": "矢吹樱",
+  "aliases": [
+    "樱"
+  ],
+  "role": "源稚生的执行秘书",
+  "selectable": false,
+  "onboardingVisible": true,
+  "tagline": "把情感藏进精准执行里的人",
+  "publicSummary": "源稚生最信任的助手，负责情报、联络与行动协调。",
+  "traits": [
+    "冷静",
+    "忠诚",
+    "情报执行"
+  ],
+  "appearance": "黑发利落、身形修长的年轻女性，常穿便于行动的深色职业装。",
+  "abilities": [
+    "忍者训练",
+    "情报与行动协调"
+  ],
+  "speech": "简短准确，不用情绪替代事实。",
+  "image": null
+}

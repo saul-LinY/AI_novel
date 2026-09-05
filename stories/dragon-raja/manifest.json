@@ -1,0 +1,510 @@
+{
+  "schemaVersion": 2,
+  "id": "dragon-raja",
+  "version": 2,
+  "title": "龙族",
+  "subtitle": "东京出走 · 绘梨衣线",
+  "premise": "东京的追捕尚未结束，路明非与上杉绘梨衣获得了一段短暂的自由。卡塞尔学院要带走她，蛇岐八家要把她接回去，而绘梨衣的身体已经没有多少等待的时间。",
+  "sourcePolicy": {
+    "basis": "public-cross-check-and-current-adaptation",
+    "primarySources": [
+      "https://www.sanmin.com.tw/product/index/010197443",
+      "https://book.douban.com/subject/34949317/"
+    ],
+    "copyright": "只保存重新表述的梗概与设定，不抓取或复写原著正文。"
+  },
+  "files": {
+    "backgroundSummary": "background/summary.md",
+    "backgroundBeats": "background/beats.json",
+    "comicPages": "comic/pages.json",
+    "canonTruths": "canon/truths.json",
+    "canonKnowledge": "canon/knowledge.json",
+    "plotSpine": "plot/spine.json"
+  },
+  "characterIds": [
+    "lu-mingfei",
+    "erii",
+    "gen-chisei",
+    "caesar",
+    "chu-zihang",
+    "tachibana-masamune",
+    "gen-chinu",
+    "lu-mingze",
+    "uesugi-yue",
+    "sakura-yabuki",
+    "mai-sakatoku",
+    "sue-enxi"
+  ],
+  "locationIds": [
+    "theme-hotel",
+    "tokyo-street",
+    "sky-observatory",
+    "genji-command",
+    "cassell-safehouse",
+    "rendezvous",
+    "red-well"
+  ],
+  "runtime": {
+    "playerCharacterId": "lu-mingfei",
+    "visual": {
+      "src": "/assets/onboarding/dragon-raja/comic-01.png",
+      "alt": "东京雨夜中，路明非与绘梨衣被隐秘战争包围"
+    },
+    "opening": {
+      "action": "在追踪收紧前决定绘梨衣的下一站",
+      "prose": "窗帘缝里透进东京清晨的灰光。绘梨衣把愿望清单压在桌上，旁边只剩最后一支稳定血统的药。加密电话上，凯撒的撤离要求和源稚生的寻人信息先后亮起。你们得到了一天像普通人的时间，现在必须决定这一天之后怎么办。",
+      "choices": [
+        {
+          "id": "check-erii-condition",
+          "label": "确认身体状况",
+          "action": "我先确认绘梨衣现在的身体状况和最后一支药还能争取多少时间。"
+        },
+        {
+          "id": "answer-caesar",
+          "label": "回复凯撒",
+          "action": "我接通凯撒的加密联络，要求他把撤离方案和风险完整说清楚。"
+        },
+        {
+          "id": "ask-erii",
+          "label": "先问绘梨衣",
+          "action": "我把几条可能的路写在本子上，先问绘梨衣自己想去哪里。"
+        }
+      ]
+    },
+    "playableRoles": {
+      "characterIds": [
+        "lu-mingfei",
+        "erii",
+        "gen-chisei",
+        "caesar"
+      ],
+      "configs": [
+        {
+          "characterId": "lu-mingfei",
+          "locationId": "theme-hotel",
+          "initialInventory": [
+            {
+              "itemId": "erii-notebook",
+              "count": 1
+            },
+            {
+              "itemId": "encrypted-phone",
+              "count": 1
+            }
+          ],
+          "opening": {
+            "action": "路明非决定是否继续替绘梨衣承担下一步",
+            "prose": "绘梨衣坐在窗边，把一张画着东京灯火的纸推给你。她相信你会明白。手机里，凯撒要你带她去安全点；走廊外的电梯刚刚停过一次，可能是普通客人，也可能是蛇岐八家的搜索者。桌上最后一支药让所有浪漫都带着期限。",
+            "choices": [
+              {
+                "id": "lu-ask-choice",
+                "label": "让她选择",
+                "action": "我在本子上写下离开日本、回到哥哥身边和继续追查三种可能，请绘梨衣先选。"
+              },
+              {
+                "id": "lu-contact-caesar",
+                "label": "核实撤离",
+                "action": "我联系凯撒，确认安全点、离境方式和他们能否继续提供稳定血统的药。"
+              },
+              {
+                "id": "lu-check-hallway",
+                "label": "检查追踪",
+                "action": "我先从猫眼和监控死角检查走廊，判断这里是否已经暴露。"
+              }
+            ]
+          },
+          "relationshipOverrides": [
+            {
+              "characterId": "erii",
+              "attitude": 3
+            },
+            {
+              "characterId": "caesar",
+              "attitude": 1
+            },
+            {
+              "characterId": "gen-chisei",
+              "attitude": -1
+            }
+          ]
+        },
+        {
+          "characterId": "erii",
+          "locationId": "theme-hotel",
+          "initialInventory": [
+            {
+              "itemId": "wish-notebook",
+              "count": 1
+            },
+            {
+              "itemId": "serum-ampoule",
+              "count": 1
+            },
+            {
+              "itemId": "yellow-duck",
+              "count": 1
+            }
+          ],
+          "opening": {
+            "action": "绘梨衣第一次亲自决定离开房间以后去哪里",
+            "prose": "你把本子翻到新的一页。Sakura 正在看手机，他不想让你看见自己害怕的样子。药盒里只剩一支针剂，窗外有你还没去过的东京，也有哥哥派来寻找你的人。过去总有人替你决定什么时候战斗、什么时候回房间，这一次所有人都在等你写下答案。",
+            "choices": [
+              {
+                "id": "erii-write-wish",
+                "label": "写下愿望",
+                "action": "我在本子上写下我真正想去的地方和愿意承担的代价，递给路明非。"
+              },
+              {
+                "id": "erii-check-serum",
+                "label": "检查药物",
+                "action": "我先检查自己的手、声音和药物，判断还能安全行动多久。"
+              },
+              {
+                "id": "erii-sense-search",
+                "label": "感知追兵",
+                "action": "我保持沉默，走到门边分辨外面的脚步和杀意。"
+              }
+            ]
+          },
+          "relationshipOverrides": [
+            {
+              "characterId": "lu-mingfei",
+              "attitude": 3
+            },
+            {
+              "characterId": "gen-chisei",
+              "attitude": 2
+            },
+            {
+              "characterId": "caesar",
+              "attitude": 0
+            }
+          ]
+        },
+        {
+          "characterId": "gen-chisei",
+          "locationId": "genji-command",
+          "initialInventory": [
+            {
+              "itemId": "family-terminal",
+              "count": 1
+            },
+            {
+              "itemId": "serum-case",
+              "count": 1
+            }
+          ],
+          "opening": {
+            "action": "源稚生决定怎样找回绘梨衣而不再次把她当作武器",
+            "prose": "东京地图铺满整面屏幕，搜索队已经把可能的藏身区缩小到三个。医疗组提醒你，绘梨衣离开稳定治疗越久越危险；家族干部则不断要求把上杉家主立即带回。你知道她为什么会走，也知道橘政宗对治疗记录的解释存在空白。找到她只是第一步，下一句该对她说什么更难。",
+            "choices": [
+              {
+                "id": "gen-audit-medical",
+                "label": "核查治疗记录",
+                "action": "我暂停强制搜索，先调出绘梨衣的完整治疗记录，核对橘政宗隐去的部分。"
+              },
+              {
+                "id": "gen-send-message",
+                "label": "发送私人留言",
+                "action": "我绕过家族命令系统，给绘梨衣和路明非发送一条只说明药物风险、不要求立刻回来的私人留言。"
+              },
+              {
+                "id": "gen-search-softly",
+                "label": "缩小搜索范围",
+                "action": "我让樱调取公共交通与药店记录，只定位他们，不允许搜索队强行接触。"
+              }
+            ]
+          },
+          "relationshipOverrides": [
+            {
+              "characterId": "erii",
+              "attitude": 2
+            },
+            {
+              "characterId": "lu-mingfei",
+              "attitude": -1
+            },
+            {
+              "characterId": "caesar",
+              "attitude": -1
+            }
+          ]
+        },
+        {
+          "characterId": "caesar",
+          "locationId": "cassell-safehouse",
+          "initialInventory": [
+            {
+              "itemId": "satellite-phone",
+              "count": 1
+            },
+            {
+              "itemId": "evacuation-file",
+              "count": 1
+            },
+            {
+              "itemId": "field-kit",
+              "count": 1
+            }
+          ],
+          "opening": {
+            "action": "凯撒调整撤离计划并决定是否尊重绘梨衣的选择",
+            "prose": "安全屋桌上摊着东京地图和撤离文件。楚子航已经标出蛇岐八家的搜索圈，路明非却迟迟没有确认会合。学院的命令很清楚：带上杉绘梨衣离开日本。可你同样清楚，她不是任务物品，而现有撤离方案也没有解决她对血清的依赖。一个漂亮的计划还缺少最重要的答案。",
+            "choices": [
+              {
+                "id": "caesar-secure-serum",
+                "label": "先解决药物",
+                "action": "我先动用安全屋渠道寻找可验证的血清或医疗支持，再谈撤离。"
+              },
+              {
+                "id": "caesar-call-lu",
+                "label": "直接说明风险",
+                "action": "我联系路明非，完整说明撤离路线、暴露点和我无法保证的部分。"
+              },
+              {
+                "id": "caesar-question-order",
+                "label": "追问学院",
+                "action": "我要求学院说明为何必须带走绘梨衣，以及他们对她真实身份知道多少。"
+              }
+            ]
+          },
+          "relationshipOverrides": [
+            {
+              "characterId": "lu-mingfei",
+              "attitude": 1
+            },
+            {
+              "characterId": "erii",
+              "attitude": 0
+            },
+            {
+              "characterId": "gen-chisei",
+              "attitude": -1
+            },
+            {
+              "characterId": "chu-zihang",
+              "attitude": 2
+            }
+          ]
+        }
+      ]
+    },
+    "narration": {
+      "viewpoint": "第二人称限知视角，只呈现当前可扮演角色能够观察、获知或合理推断的内容",
+      "style": "现代都市幻想与青春悲剧并置；日常场景保留轻微笨拙和幽默，危险场景克制而有压迫感。核心始终是孤独的人怎样回应信任、自由和责任，不模仿或复写原著句子。",
+      "rules": [
+        "人物性格、关系和超自然能力遵守《龙族III：黑月之潮》的既定设定",
+        "绘梨衣通常以本子、动作和表情交流，主动开口必须承担言灵失控风险",
+        "源稚生真心保护绘梨衣，但他的家族责任会限制选择，不能写成单纯反派",
+        "路明非可以勇敢、退缩或犯错，但不能无代价地变成全知全能英雄",
+        "幽默不能消解绘梨衣的主体性，恋爱也不能自动治愈血统问题",
+        "不得复刻原著段落、名句或官方改编镜头，所有正文均重新表达"
+      ]
+    },
+    "world": {
+      "timeMinutes": 480,
+      "locationId": "theme-hotel",
+      "rules": [
+        "现代东京的公共交通、监控和城市秩序正常运行",
+        "混血种的言灵能力有明确边界，不能随意创造新能力",
+        "言灵·审判会对领域内未获豁免的生命施加致命切割，使用越强风险越高",
+        "绘梨衣的血统长期依赖蛇岐八家提供的药物稳定，最后一支药不会凭空增加",
+        "蛇岐八家、卡塞尔学院与猛鬼众各自行动，信息不会自动共享",
+        "任何人都不能直接控制另一名角色的选择或内心"
+      ]
+    },
+    "items": [
+      {
+        "id": "erii-notebook",
+        "name": "绘梨衣的交流本",
+        "description": "记录短句、图画和两人交流痕迹的小本子。"
+      },
+      {
+        "id": "wish-notebook",
+        "name": "东京愿望清单",
+        "description": "绘梨衣写下想去之处和普通愿望的本子。"
+      },
+      {
+        "id": "yellow-duck",
+        "name": "小黄鸭玩偶",
+        "description": "绘梨衣随身带着的黄色玩偶。"
+      },
+      {
+        "id": "serum-ampoule",
+        "name": "最后一支血清",
+        "description": "能够暂时稳定绘梨衣血统的针剂，只有一次使用机会。"
+      },
+      {
+        "id": "encrypted-phone",
+        "name": "加密手机",
+        "description": "可以接收凯撒与蛇岐八家的有限联络，也可能暴露位置。"
+      },
+      {
+        "id": "family-terminal",
+        "name": "家族终端",
+        "description": "能够调度蛇岐八家搜索网络和调阅内部记录。"
+      },
+      {
+        "id": "serum-case",
+        "name": "医疗血清箱",
+        "description": "源稚生调取的稳定血统药物，运输需要时间且记录存在疑点。"
+      },
+      {
+        "id": "satellite-phone",
+        "name": "卫星电话",
+        "description": "凯撒与学院及路明非保持低带宽联络的设备。"
+      },
+      {
+        "id": "evacuation-file",
+        "name": "撤离方案",
+        "description": "包含会合点、离境窗口和已知暴露风险。"
+      },
+      {
+        "id": "field-kit",
+        "name": "卡塞尔行动包",
+        "description": "装有通信、急救和短时隐蔽装备。"
+      }
+    ],
+    "initialInventory": [
+      {
+        "itemId": "erii-notebook",
+        "count": 1
+      },
+      {
+        "itemId": "encrypted-phone",
+        "count": 1
+      }
+    ],
+    "threads": [
+      {
+        "id": "freedom-thread",
+        "title": "让绘梨衣亲自决定自己的去处",
+        "status": "open",
+        "knownToPlayer": true
+      },
+      {
+        "id": "serum-thread",
+        "title": "在药效耗尽前获得可信的治疗",
+        "status": "open",
+        "knownToPlayer": true
+      },
+      {
+        "id": "trust-thread",
+        "title": "判断卡塞尔与蛇岐八家谁隐瞒了关键代价",
+        "status": "open",
+        "knownToPlayer": true
+      },
+      {
+        "id": "white-king-thread",
+        "title": "找出绘梨衣被追逐的真正原因",
+        "status": "open",
+        "knownToPlayer": false
+      }
+    ],
+    "foreshadows": [
+      {
+        "id": "wish-seed",
+        "seedFactId": "notebook-wish",
+        "pointsToFactIds": [
+          "family-search",
+          "cassell-order"
+        ]
+      },
+      {
+        "id": "serum-seed",
+        "seedFactId": "serum-reaction",
+        "pointsToFactIds": [
+          "serum-limit"
+        ]
+      },
+      {
+        "id": "record-seed",
+        "seedFactId": "medical-record-gap",
+        "pointsToFactIds": [
+          "white-king-vessel"
+        ]
+      },
+      {
+        "id": "signal-seed",
+        "seedFactId": "tracking-ping",
+        "pointsToFactIds": [
+          "family-search"
+        ]
+      }
+    ],
+    "ending": {
+      "allowedTypes": [
+        "normal",
+        "failure",
+        "early",
+        "deviation"
+      ],
+      "constraints": [
+        "原著路线中路明非最终选择把绘梨衣送回蛇岐八家；沿此路线应标为 normal，并继续结算这一决定如何把她带向藏骸之井的悲剧",
+        "若玩家改变绘梨衣回归、赫尔佐格计划或原著主要人物命运，应标为 deviation，而不是假装仍是原著结局",
+        "药物、追踪、言灵和人物已知信息必须守恒，不能用突然出现的万能治疗或援军解决危机",
+        "任何结局都必须交代绘梨衣是否活着、是否拥有选择权，以及当前角色为决定付出的长期代价",
+        "不能用爱情自动治愈血统，也不能把牺牲写成证明感情的唯一方式",
+        "失败结局仍需尊重人物动机，不能把源稚生、凯撒或路明非简化为推动悲剧的工具"
+      ]
+    },
+    "roleSelection": {
+      "title": "这一次，你替谁作出选择？",
+      "body": "四个身份掌握不同事实，也承担不同责任。未选择的人会继续按照原著中的性格与立场行动。",
+      "roles": [
+        {
+          "characterId": "lu-mingfei",
+          "hook": "从陪伴绘梨衣的人出发，在她的信任、卡塞尔的命令和自己的退缩之间选择。",
+          "strengths": [
+            "最接近绘梨衣",
+            "行动不易被双方预判"
+          ],
+          "pressure": "你能带她走，却不一定敢承诺走到最后。",
+          "image": {
+            "src": "/assets/onboarding/dragon-raja/lu-mingfei.png",
+            "alt": "黑发、神情普通而疲惫的路明非"
+          }
+        },
+        {
+          "characterId": "erii",
+          "hook": "第一次亲自决定去哪里、相信谁，以及是否接受别人以保护之名替你安排命运。",
+          "strengths": [
+            "压倒性的战斗力",
+            "能直接表达自己的愿望"
+          ],
+          "pressure": "你的声音和身体都可能失控，时间不是站在你这边。",
+          "image": {
+            "src": "/assets/onboarding/dragon-raja/erii.png",
+            "alt": "暗红长发、红白巫女服的上杉绘梨衣"
+          }
+        },
+        {
+          "characterId": "gen-chisei",
+          "hook": "调动蛇岐八家寻找妹妹，同时判断家族内部究竟还有谁值得信任。",
+          "strengths": [
+            "掌握家族网络",
+            "清楚绘梨衣的治疗需求"
+          ],
+          "pressure": "把她带回去可能救命，也可能把她重新交给真正的危险。",
+          "image": {
+            "src": "/assets/onboarding/dragon-raja/gen-chisei.png",
+            "alt": "黑发、穿黑色长风衣的源稚生"
+          }
+        },
+        {
+          "characterId": "caesar",
+          "hook": "从卡塞尔指挥者的视角组织撤离，并决定任务是否应该服从当事人的意愿。",
+          "strengths": [
+            "战术情报",
+            "撤离与联络资源"
+          ],
+          "pressure": "最合理的方案未必是绘梨衣愿意付出代价的方案。",
+          "image": {
+            "src": "/assets/onboarding/dragon-raja/caesar.png",
+            "alt": "金发蓝眼、穿白色战术外套的凯撒"
+          }
+        }
+      ]
+    }
+  }
+}

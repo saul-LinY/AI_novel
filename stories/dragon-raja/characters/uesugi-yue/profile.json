@@ -1,0 +1,24 @@
+{
+  "id": "uesugi-yue",
+  "name": "上杉越",
+  "aliases": [
+    "越师傅"
+  ],
+  "role": "蛇岐八家前任影皇",
+  "selectable": false,
+  "onboardingVisible": true,
+  "tagline": "想过普通生活的旧皇，在太晚的时候面对自己的血脉",
+  "publicSummary": "在东京经营拉面摊的老人，过去与蛇岐八家有无法切断的联系。",
+  "traits": [
+    "隐退",
+    "强悍",
+    "迟来的责任"
+  ],
+  "appearance": "身材高大结实的老人，平日穿拉面店工作服，目光仍带旧日威势。",
+  "abilities": [
+    "皇血",
+    "丰富战斗经验"
+  ],
+  "speech": "粗粝直接，常以市井口吻掩饰沉重往事。",
+  "image": null
+}

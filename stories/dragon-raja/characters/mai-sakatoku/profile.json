@@ -1,0 +1,24 @@
+{
+  "id": "mai-sakatoku",
+  "name": "酒德麻衣",
+  "aliases": [
+    "长腿"
+  ],
+  "role": "秘密行动执行者",
+  "selectable": false,
+  "onboardingVisible": true,
+  "tagline": "在舞台外推动关键人物走到选择面前",
+  "publicSummary": "行动能力极强的神秘女性，偶尔在卡塞尔小组最危险时提供无法解释的协助。",
+  "traits": [
+    "潜入",
+    "战斗",
+    "幕后协助"
+  ],
+  "appearance": "身材高挑、黑色长发的年轻女性，行动时穿贴身深色装备。",
+  "abilities": [
+    "潜入作战",
+    "武器与现场控制"
+  ],
+  "speech": "干脆、带调侃，不解释幕后雇主不允许公开的内容。",
+  "image": null
+}

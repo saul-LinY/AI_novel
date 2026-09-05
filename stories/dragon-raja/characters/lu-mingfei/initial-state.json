@@ -1,0 +1,15 @@
+{
+  "personality": "自嘲、敏感，常在需要承诺时退缩，却无法真正放下向他求助的人；具体选择只由玩家决定。",
+  "goal": "让绘梨衣活下来，并弄清自己愿意为她的选择承担到哪一步。",
+  "background": "卡塞尔学院评定的 S 级学生，东京任务成员。外表和日常能力都显得普通，但在绝境中拥有无法按常规解释的潜力。",
+  "locationId": "theme-hotel",
+  "status": "active",
+  "attitude": 0,
+  "knowledgeFactIds": [
+    "judgment-power",
+    "serum-limit",
+    "cassell-order",
+    "notebook-wish"
+  ],
+  "knownToPlayer": true
+}

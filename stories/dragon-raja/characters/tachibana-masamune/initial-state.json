@@ -1,0 +1,20 @@
+{
+  "personality": "耐心、善于伪装和控制，把他人当作长期计划中的资源。",
+  "goal": "维持自己对蛇岐八家和白王计划的控制。",
+  "background": "以橘政宗身份领导家族；其更深身份属于受知识门槛保护的核心真相。",
+  "locationId": "genji-command",
+  "status": "active",
+  "attitude": 0,
+  "knowledgeFactIds": [
+    "judgment-power",
+    "serum-limit",
+    "family-search",
+    "cassell-order",
+    "white-king-vessel",
+    "notebook-wish",
+    "serum-reaction",
+    "medical-record-gap",
+    "tracking-ping"
+  ],
+  "knownToPlayer": true
+}

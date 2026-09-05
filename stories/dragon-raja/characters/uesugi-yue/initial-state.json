@@ -1,0 +1,14 @@
+{
+  "personality": "厌倦权力、外粗内细，害怕自己的血统再次伤害下一代。",
+  "goal": "保护自己的孩子并终结白王血统造成的灾难。",
+  "background": "蛇岐八家前任影皇，长期隐姓埋名经营拉面摊。",
+  "locationId": "tokyo-street",
+  "status": "active",
+  "attitude": 0,
+  "knowledgeFactIds": [
+    "judgment-power",
+    "serum-limit",
+    "family-search"
+  ],
+  "knownToPlayer": true
+}

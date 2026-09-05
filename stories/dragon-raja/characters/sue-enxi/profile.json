@@ -1,0 +1,24 @@
+{
+  "id": "sue-enxi",
+  "name": "苏恩曦",
+  "aliases": [
+    "薯片妞"
+  ],
+  "role": "秘密团队后勤与情报中枢",
+  "selectable": false,
+  "onboardingVisible": true,
+  "tagline": "用资金、屏幕和抱怨维持一场看不见的救援",
+  "publicSummary": "擅长远程调度资金、情报和路线的神秘后勤人员。",
+  "traits": [
+    "资源调度",
+    "网络情报",
+    "风险计算"
+  ],
+  "appearance": "年轻女性，常在堆满屏幕与零食的远程工作间指挥行动。",
+  "abilities": [
+    "资金与交通调度",
+    "网络情报分析"
+  ],
+  "speech": "语速快、抱怨具体，谈到成本和风险时极其清醒。",
+  "image": null
+}

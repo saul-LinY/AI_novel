@@ -1,0 +1,18 @@
+{
+  "id": "tokyo-street",
+  "name": "东京街区",
+  "description": "雨后东京街区，电车高架、便利店、游戏厅和密集行人共享同一视野；它既是普通生活的入口，也是监控与搜索最容易交汇的地方。",
+  "defaultStateId": "default",
+  "fallbackImage": "/assets/scenes/dragon-raja/fallback.png",
+  "states": [
+    {
+      "id": "default",
+      "title": "普通世界",
+      "description": "雨后东京街区，电车高架、便利店、游戏厅和密集行人共享同一视野；它既是普通生活的入口，也是监控与搜索最容易交汇的地方。",
+      "image": {
+        "src": "/assets/scenes/dragon-raja/tokyo-street.png",
+        "alt": "东京街区的环境画面"
+      }
+    }
+  ]
+}
