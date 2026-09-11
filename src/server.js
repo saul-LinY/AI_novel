@@ -289,6 +289,10 @@ export async function createAppServer(options = {}) {
           return;
         }
         const headEvent = store.events[branch.headEventId];
+        if (headEvent.stateAfter.status === "ended") {
+          sendJson(response, 409, { error: "这段故事已经结束，可以回看正文或重新开始" });
+          return;
+        }
         const choiceId = typeof body.choiceId === "string" ? body.choiceId : null;
         const selectedChoice = choiceId ? headEvent.choices?.find((choice) => choice.id === choiceId) : null;
         if (choiceId && !selectedChoice) {

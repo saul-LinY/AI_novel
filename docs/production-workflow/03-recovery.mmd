@@ -1,0 +1,27 @@
+flowchart LR
+  accept["受理并持久化deadline"] --> work["受控执行与租约"]
+  %% 允许提交：审核通过、租约和分支头有效、时间早于42秒。
+  work --> passed{"允许提交"}
+  passed -->|"是"| race{"谁先获胜"}
+  race -->|"提交获胜"| tx["原子写定稿 状态 终态"]
+  tx --> success["succeeded"]
+  race -->|"取消获胜"| cancelled["cancelled 原存档不变"]
+  passed -->|"否或到期"| revoke["撤销发布权并中止调用"]
+  revoke --> timeout["timed_out 或 quality_unmet"]
+  work -.-> disconnect["浏览器断线"]
+  disconnect --> query["按turnId查询原作业"]
+  query --> saved["返回原终态或剩余预算"]
+  work -.-> crash["Worker故障或重启"]
+  crash --> lease["新租约继承截止时间与计数"]
+  %% 仍可恢复：还在原截止时间内，存在有效检查点且剩余调用预算足够。
+  lease --> remaining{"仍可恢复"}
+  remaining -->|"有"| resume["只恢复未完成阶段"]
+  remaining -->|"无"| timeout
+  tx -.-> lostAck["提交成功但回包丢失"]
+  lostAck --> query
+  classDef stop fill:#FADBD8,stroke:#BB5550
+  classDef budget fill:#FFECBD,stroke:#B28A24
+  classDef good fill:#D6F3DF,stroke:#398455
+  class cancelled,timeout stop
+  class revoke,lease,remaining budget
+  class tx,success good

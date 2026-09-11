@@ -1,0 +1,33 @@
+flowchart LR
+  suggestion["选择当前建议行动"] --> trusted["允许尝试；仍可能失败或付出代价"]
+  free["自由输入角色行动"] --> knowledge{"命中尚未知晓的秘密词"}
+  knowledge -->|"是"| reject["说明行动不成立；不新增剧情与状态"]
+  knowledge -->|"否"| context["读取当前路线的状态与相关记忆"]
+  trusted --> context
+  memory["上下文：分支摘要、最近四轮、相关人物、场景与邻近剧情"] --> context
+  subgraph specialists["三种视角并行分析"]
+    plot["情节：行动因果、目标推进、绕路与回归"]
+    character["人物：人格、动机、关系、知识与反应"]
+    environment["环境：地点、时间、物品与场景"]
+  end
+  context --> plot & character & environment
+  plot & character & environment --> main["主创整合冲突，确定行动尝试与实际结果"]
+  main --> proposal["形成提案：结果、状态变化、后续选项与记忆"]
+  proposal --> valid{"提案有效且行动成立"}
+  valid -->|"行动不成立"| reject
+  valid -->|"校验失败"| correction["反馈问题；未获有效提案则结束本轮"]
+  valid -->|"是"| lock["确定本轮结果与场景"]
+  lock --> writing["唯一主创续写；逐句向读者展示"]
+  writing --> save["全文完成后保存剧情与状态"]
+  save --> next["进入下一轮或结局"]
+  plot -.-> detour["合理阻止原定事件：记录被阻止，转兼容后续或偏离结局"]
+  main -.-> agency["只决定尝试的后果；不替玩家决定内心和下一步"]
+  style specialists fill:#F2F7FF,stroke:#A9C5E8
+  classDef user fill:#C2E5FF,stroke:#3DADFF
+  classDef warn fill:#FFECBD,stroke:#FFC943
+  classDef fail fill:#FFCDC2,stroke:#FF7556
+  classDef good fill:#CDF4D3,stroke:#66D575
+  class suggestion,free,next user
+  class knowledge,valid,agency,detour warn
+  class reject,correction fail
+  class lock,save good

@@ -1,0 +1,22 @@
+flowchart LR
+  packageVersion["固定版本故事包"] --> state["分支头权威状态"]
+  ancestors["当前分支祖先事件"] --> state
+  state --> context["人物权限与因果检索"]
+  context --> candidate["候选计划 正文 状态变化"]
+  candidate --> audit["审核与版本哈希"]
+  audit --> transaction["单笔数据库事务"]
+  transaction --> event["事件与因果边"]
+  transaction --> snapshot["分支头与状态"]
+  transaction --> prose["正文与建议行动"]
+  transaction --> job["作业成功与结果事件"]
+  event -.-> summary["异步章节摘要与回顾"]
+  snapshot --> projection["服务端读者权限投影"]
+  prose --> projection
+  projection --> reader["阅读页"]
+  event -.-> fork["显式分支继承祖先链"]
+  classDef truth fill:#C2E5FF,stroke:#4385BE
+  classDef commit fill:#D6F3DF,stroke:#398455
+  classDef private fill:#FFECBD,stroke:#B28A24
+  class packageVersion,ancestors,state truth
+  class transaction,event,snapshot,prose,job commit
+  class candidate,audit private

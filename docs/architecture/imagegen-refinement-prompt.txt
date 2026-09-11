@@ -1,0 +1,17 @@
+Use case: precise-object-edit.
+Edit target: the attached AI novel architecture diagram. Keep all typography, Chinese labels, colors, module arrangement, four-agent structure, and bottom lifecycle. Correct ONLY misleading wiring and ownership labels. Maintain a crisp high-resolution flat engineering diagram.
+
+Required exact corrections:
+1. Completely REMOVE EVERY connector between the upper application region and the middle row of four inventory boxes. Specifically erase the green job-to-story-package path, the black runtime-to-business-save arrow, the purple and teal arrows to job/session storage, the diagonal arrow to Pi SDK, and the black domain-to-Pi-SDK arrow. These four bottom boxes are a dependency/storage inventory, not a connected call chain. Leave a clean whitespace gutter; add the small centered caption "依赖与存储清单（不表示调用顺序）" in that gutter. Do not add any replacement connectors between these regions.
+2. REMOVE the connector labelled "公开故事状态" pointing from "事件与分支" into the main Agent, and remove that label. Public serialized state is returned by server.js to the browser, never fed to the main Agent as this arrow implies.
+3. REMOVE the connector labelled "正文完成后提交" from the runtime boundary into the domain box, and remove that floating label. The server coordinates that operation, not the Agent. Add a small sentence INSIDE the "事件与分支" box, below its filename: "由 server.js 在正文完成后调用". Keep appendTurn / createBranch and serializeStore labels readable; increase that box height within its existing column if needed.
+4. KEEP these valid connectors: browser <-> HTTP, HTTP -> runtime, HTTP <-> turn-job manager, main Agent -> job manager labelled "阶段 / 场景 / 完整句", runtime <-> deterministic rules labelled "准备前预演校验", domain -> deterministic rules labelled "再次应用提案", and all three analysis-Agent inputs/outputs.
+5. In the "作业与会话" inventory box, add source ownership labels so the mapping is explicit, using these exact four lines:
+"TurnJobManager → turn-jobs/<turnId>/"
+"job.json + events.ndjson"
+"PiStoryRuntime → pi-sessions/<storyId>/"
+"四份 Pi Session"
+6. In the Pi SDK inventory, put "pi-gateway" below the dashed divider within the "外部服务" portion. The local portion reads "vendor/pi · v0.84.1" and "coding-agent → agent-core / pi-ai" and "共享 ModelRuntime". External portion reads "外部服务：pi-gateway" and "默认模型：deepseek-v4-flash:cloud".
+7. In the business-storage inventory add the short ownership line "server.js 调用 StoryStore.save" and keep the note "单文件原子替换；非跨文件事务".
+
+Keep all other contents exactly. No lines may overlap labels. Do not invent connectors. The result should emphasize verified relationships and let the inventory labels explain storage without ambiguous long wires.

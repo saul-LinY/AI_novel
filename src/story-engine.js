@@ -1,5 +1,6 @@
 import { Type } from "typebox";
 import Schema from "typebox/schema";
+import { CHOICE_PLAN_SCHEMA } from "./story-choice-policy.js";
 
 const clone = (value) => structuredClone(value);
 const referenceId = Type.String({ minLength: 1, maxLength: 120, pattern: "^[a-zA-Z0-9:_-]+$" });
@@ -113,6 +114,7 @@ export const TURN_PROPOSAL_SCHEMA = Type.Object({
     { maxItems: 4 },
   ),
   storyProgress: Type.Optional(storyProgressSchema),
+  choicePlan: Type.Optional(CHOICE_PLAN_SCHEMA),
   delta: Type.Object({
     locationId: Type.Optional(referenceId),
     sceneStateId: Type.Optional(referenceId),
@@ -316,6 +318,9 @@ function activateStage(state, storyPackage, targetId) {
 
 function applyStoryProgress(state, storyPackage, requestedProgress, ending) {
   const { stage, progress } = activeStage(state, storyPackage);
+  // Older saves may already have a completed final stage without an ending.
+  // Settling that ending must not append the same completion evidence again.
+  if (progress.status === "completed") return;
   const evidence = requestedProgress?.evidence?.trim();
 
   const blockCurrentNode = requestedProgress?.blockCurrentNode || requestedProgress?.failCurrentStage;

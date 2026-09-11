@@ -1,0 +1,28 @@
+flowchart LR
+  author["作者预先整理故事素材"] --> content["组成完整故事包"]
+  subgraph packageParts["01 故事包要准备什么"]
+    background["前情：背景摘要、因果事件链、漫画"]
+    people["人物：公开介绍、稳定人格、动机与初始状态"]
+    facts["事实：世界规则、核心真相、各角色已知信息"]
+    plot["剧情：主干目标、完成条件、兼容路线、伏笔与结局"]
+    places["环境：地点说明、场景状态、物品与预制配图"]
+    start["开局：可选身份、专属开场、初始关系与物品"]
+    styleGuide["叙事：视角、文风、写作规则与来源说明"]
+  end
+  content --> background & people & facts & plot & places & start & styleGuide
+  background & people & facts & plot & places & start & styleGuide --> assemble["加载并组合内容"]
+  assemble --> check{"结构和关联能对上"}
+  check -->|"否"| revise["指出缺项或错引；作者修正"]
+  revise --> content
+  check -->|"是"| ready["可运行故事包"]
+  ready --> publicPart["给读者：前情、人物介绍、选角与开场"]
+  ready --> privatePart["给创作流程：真相、知识边界、路线条件与人格"]
+  check -.-> checkNote["核对人物、地点、事实、目标与漫画对应关系"]
+  content -.-> limit["当前入口：加载现成故事包；自动从小说提取仍属规划"]
+  style packageParts fill:#F2F7FF,stroke:#A9C5E8
+  classDef info fill:#C2E5FF,stroke:#3DADFF
+  classDef warning fill:#FFECBD,stroke:#FFC943
+  classDef good fill:#CDF4D3,stroke:#66D575
+  class author,publicPart info
+  class privatePart,check,limit warning
+  class ready good

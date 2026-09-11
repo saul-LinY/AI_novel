@@ -1,0 +1,20 @@
+flowchart LR
+  files["TXT / MD / DOCX / v2故事包"] --> parse["格式检查与章节解析"]
+  parse --> spans["来源片段与稳定定位"]
+  spans --> extract["提取人物 事实 事件 规则"]
+  extract --> conflicts{"关键冲突或缺口"}
+  conflicts -->|"有"| author["作者核对来源并解决"]
+  conflicts -->|"无"| bible["确认开局 人格 知识与风格"]
+  author --> bible
+  bible --> build["编译故事包 v3"]
+  build --> test["多角色试演与质量评测"]
+  test --> pass{"达到发布门槛"}
+  pass -->|"否"| draft["保留草稿与问题清单"]
+  pass -->|"是"| publish["作者发布不可变版本"]
+  publish --> pin["新阅读会话固定包版本"]
+  classDef human fill:#C2E5FF,stroke:#4385BE
+  classDef good fill:#D6F3DF,stroke:#398455
+  classDef issue fill:#FFECBD,stroke:#B28A24
+  class author,bible human
+  class publish,pin good
+  class conflicts,draft issue

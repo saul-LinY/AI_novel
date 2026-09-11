@@ -1,0 +1,47 @@
+flowchart LR
+  action["同一次用户行动"] --> start["对齐当前分支；分别准备上下文"]
+  subgraph plotLane["情节 Agent：这次行动会怎样改变故事"]
+    plotInput["读取：行动、分支摘要、当前路线、相邻主干、既定事实与人物概况"]
+    plotCause["梳理行动到结果的因果链；判断目标能否推进"]
+    plotRoute["判断原定事件是否被阻止；建议主线、绕路或偏离"]
+    plotOutput["提交：因果链、推荐节点、回归条件、禁止结果与记忆建议"]
+    plotCheck["检查：当前节点一致；推荐与回归节点确实存在"]
+    plotLimit["边界：不决定人物内心，不改环境约束；不强行复活被阻止事件"]
+    plotInput --> plotCause --> plotRoute --> plotOutput --> plotCheck
+    plotRoute -.-> plotLimit
+  end
+  subgraph characterLane["人物 Agent：每个人为什么会这样反应"]
+    characterInput["读取：行动、最近四轮、相关人物人格、状态、经历与各自已知事实"]
+    characterMotive["依据人格、动机、关系和经历判断反应"]
+    characterKnowledge["限定各自知识；新观察不能倒填为既有知识"]
+    characterOutput["提交：可见反应、私下原因、当前意图、禁止行为与人物记忆建议"]
+    characterCheck["检查：人物和事实存在；所用事实属于该人物已知信息"]
+    characterLimit["边界：不决定主干，不创造资源；玩家内心与下一步由玩家决定"]
+    characterInput --> characterMotive --> characterKnowledge --> characterOutput --> characterCheck
+    characterKnowledge -.-> characterLimit
+  end
+  subgraph environmentLane["环境 Agent：行动在现场是否可行"]
+    environmentInput["读取：行动、当前地点与时间、物品、环境记忆、地点与场景目录"]
+    environmentFeasibility["判断移动、耗时、可用资源和现场限制"]
+    environmentScene["建议地点与场景状态；说明变化原因"]
+    environmentOutput["提交：地点、场景、耗时、可用资源、限制与环境记忆建议"]
+    environmentCheck["检查：地点存在；场景状态属于该地点"]
+    environmentLimit["边界：不替人物选择；只选已有场景与配图，运行时不生图"]
+    environmentInput --> environmentFeasibility --> environmentScene --> environmentOutput --> environmentCheck
+    environmentScene -.-> environmentLimit
+  end
+  start -->|"同时开始"| plotInput
+  start -->|"同时开始"| characterInput
+  start -->|"同时开始"| environmentInput
+  plotCheck & characterCheck & environmentCheck --> combine["三份有效报告到齐；交给主创统一裁决"]
+  combine --> proposal["主创解决冲突，形成最终提案并检查"]
+  proposal --> writing["提案通过后，由主创独自续写正文"]
+  style plotLane fill:#F8F5FF,stroke:#B9A0E8
+  style characterLane fill:#F5FBFF,stroke:#96C8ED
+  style environmentLane fill:#F1FEFD,stroke:#93CEC6
+  classDef inputColor fill:#C2E5FF,stroke:#3DADFF
+  classDef outputColor fill:#CDF4D3,stroke:#66D575
+  classDef boundaryColor fill:#FFECBD,stroke:#FFC943
+  class action,plotInput,characterInput,environmentInput inputColor
+  class plotOutput,characterOutput,environmentOutput,combine outputColor
+  class plotLimit,characterLimit,environmentLimit boundaryColor

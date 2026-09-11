@@ -8,7 +8,7 @@ import { createInitialStore } from "../src/story-domain.js";
 import { loadStoryPackage, resolvePlayableRole } from "../src/story-package.js";
 import { StoryStore } from "../src/story-store.js";
 import { TurnJobManager } from "../src/turn-job-manager.js";
-import { projectRoot, proposal, rejectedProposal } from "./helpers.js";
+import { projectRoot, proposal, rejectedProposal, ending } from "./helpers.js";
 
 class FakeRuntime {
   constructor({ dataDir }) {
@@ -216,6 +216,24 @@ test("拒绝行动不写事件，旧接口仍不暴露故事内部状态", async
   }).then((response) => response.text()));
   assert.equal(events.at(-1).type, "rejected");
   assert.equal((await fetch(`${baseUrl}/api/story`).then((response) => response.json())).events.length, 1);
+});
+
+test("已结束的存档拒绝新回合，不创建生成作业或调用模型", async (t) => {
+  const { app, baseUrl, runtimes } = await startTestServer(t);
+  await selectRole(baseUrl);
+  const store = await app.storyStore.load();
+  const head = store.events[store.branches[store.currentBranchId].headEventId];
+  head.stateAfter.status = "ended";
+  head.stateAfter.ending = ending("deviation");
+  head.choices = [];
+  await app.storyStore.save(store);
+  const response = await fetch(`${baseUrl}/api/turn`, {
+    method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ action: "继续吃早餐" }),
+  });
+  assert.equal(response.status, 409);
+  assert.match((await response.json()).error, /已经结束/);
+  assert.equal(app.jobs.activeJob(), null);
+  assert.equal(runtimes.at(-1).contexts.length, 0);
 });
 
 test("服务重启后从已展示的完整句继续，并只提交一次", async (t) => {

@@ -121,6 +121,10 @@ test("正文生成显式携带当前分支的紧邻上一段，并要求直接�
   assert.match(narrationPrompt, /<immediate_previous_prose>\n他站在门边等你，手还按在门把上。\n<\/immediate_previous_prose>/);
   assert.match(narrationPrompt, /不是背景摘要/);
   assert.match(narrationPrompt, /直接往后写/);
+  assert.match(narrationPrompt, /通常写成2到3个自然段/);
+  assert.match(narrationPrompt, /不单独复述玩家输入/);
+  assert.match(narrationPrompt, /不重新凑字数或段数/);
+  assert.doesNotMatch(narrationPrompt, /5到7个自然段/);
   assert.doesNotMatch(narrationPrompt, /更早的开场/);
 });
 
@@ -152,4 +156,25 @@ test("准确秘密在进入 Pi 前被拒绝，准备前取消会中止所有活�
   assert.equal(result.proposal.outcome.type, "action_not_allowed");
   assert.equal(await fake.runtime.abort(), true);
   for (const role of roles) assert.equal(fake.records[role].aborted, true);
+});
+
+test("主Agent在准备阶段拦截没有推进目标的推荐选项", () => {
+  const fake = runtimeWithFakeSessions();
+  fake.runtime.activeState = createInitialState(storyPackage);
+  assert.throws(() => fake.runtime.validateMainProposal(proposal()), /推进目标/);
+  assert.equal(fake.runtime.preparedLocked, false);
+});
+
+test("情节和主Agent收到未解线索的内容、真实阶段进度和近期选项", async () => {
+  const fake = runtimeWithFakeSessions();
+  const prompts = {};
+  fake.runtime.requestStructured = async (role, prompt) => { prompts[role] = prompt; return reports(role); };
+  fake.session("main").prompt = async () => fake.session("main").emitText("你向凯撒说明条件，等他表态。");
+  await fake.runtime.generateTurn(context({ recentEvents: [{ action: "开窗", prose: "你推开窗户。", choices: [{ id: "breakfast", label: "窗边吃早餐", action: "陪绘梨衣吃早餐" }] }] }));
+  for (const role of ["plot", "main"]) {
+    assert.match(prompts[role], /在药效耗尽前获得可信的治疗/);
+    assert.match(prompts[role], /completedGoalIds/);
+    assert.match(prompts[role], /窗边吃早餐/);
+  }
+  assert.match(prompts.main, /choicePlan/);
 });

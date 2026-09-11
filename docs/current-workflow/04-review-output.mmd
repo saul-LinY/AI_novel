@@ -1,0 +1,35 @@
+flowchart LR
+  subgraph current["04A 当前实际执行的检查与输出"]
+    reports["情节、人物、环境报告"] --> reportCheck["检查人物知识、地点、场景与剧情引用"]
+    reportCheck --> proposal["主创形成剧情提案"]
+    proposal --> modelCheck["主创判断人物、因果与前后连续性"]
+    modelCheck --> ruleCheck["硬检查：物品变动、目标证据、兼容路线、选项与结局"]
+    ruleCheck --> valid{"提案通过"}
+    valid -->|"否"| failed["反馈校验问题；无有效提案则不开始正文"]
+    valid -->|"是"| prose["生成正文并立即逐句展示"]
+    prose --> finish["全文结束；再检查状态变化与分支一致"]
+    finish --> saved["保存正文、选择、结果与分支记忆"]
+    saved --> visible["读者看到：正文、场景、已知人物与线索、持有物品"]
+    visible --> onward["未结束给出二至四个建议；也可自由输入"]
+    saved --> memory["更新剧情摘要、人物经历、环境记忆"]
+    memory --> next["供当前分支下一轮使用"]
+  end
+  subgraph missing["04B 已有规划，尚未接入当前流程"]
+    draft["候选正文先不展示"] --> audit["独立审查：设定一致、人物可信、因果连续、文风节奏"]
+    audit --> passed{"审查通过"}
+    passed -->|"是"| publish["保存并展示通过的定稿"]
+    passed -->|"否"| revise["预算内最多修订一次，再完整复查"]
+    revise --> retry{"复查通过"}
+    retry -->|"是"| publish
+    retry -->|"否或超时"| stop["结束本轮；保留原故事进度"]
+  end
+  prose -.-> gap["现状：已显示句子不撤回；没有独立成文质量门槛"]
+  gap -.->|"重构方案拟补足"| draft
+  style current fill:#F2F7FF,stroke:#A9C5E8
+  style missing fill:#FFF8E5,stroke:#E4C56E
+  classDef good fill:#CDF4D3,stroke:#66D575
+  classDef warn fill:#FFECBD,stroke:#FFC943
+  classDef fail fill:#FFCDC2,stroke:#FF7556
+  class saved,visible,publish good
+  class valid,gap,passed,retry warn
+  class failed,stop fail

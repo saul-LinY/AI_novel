@@ -1,0 +1,23 @@
+flowchart LR
+  candidate["候选正文与允许变化"] --> hard["引用 时间 物品 知识硬检查"]
+  hard --> semantic["人物 因果 连贯与选择审核"]
+  semantic --> prose["语言 对话 节奏与情感评分"]
+  %% 仅对本轮适用指标评分；N/A不作为高分，长程指标离线验收。
+  prose --> gate{"每项至少4分"}
+  gate -->|"是且无阻断"| runtime["本轮允许提交"]
+  gate -->|"否"| oneRepair["预算内一次修订或结束"]
+  corpus["固定脚本与隐藏测试集"] --> longRun["多角色与长程分支试演"]
+  longRun --> blind["双人盲评与分歧复核"]
+  blind --> dimensions["每个维度均达到优"]
+  dimensions --> slo["成功率 时延 成本 故障演练"]
+  slo --> release{"满足上线条件"}
+  release -->|"是"| rollout["小流量发布并监测"]
+  release -->|"否"| block["阻止发布并修复"]
+  runtime -.-> sample["提交后抽样与章节复盘"]
+  sample -.-> longRun
+  classDef checks fill:#C2E5FF,stroke:#4385BE
+  classDef good fill:#D6F3DF,stroke:#398455
+  classDef bad fill:#FADBD8,stroke:#BB5550
+  class semantic,prose,blind,dimensions checks
+  class runtime,rollout good
+  class block bad

@@ -1,0 +1,17 @@
+flowchart LR
+  importFiles["01 素材导入与核对"] --> packageBuild["编译并试演故事包"]
+  packageBuild --> release["作者发布固定版本"]
+  release --> reader["读者选角色并阅读"]
+  reader --> action["提交下一步行动"]
+  action --> boundedTurn["02 有限预算生成与审核"]
+  boundedTurn --> outcome{"结果"}
+  outcome -->|"通过"| commit["定稿和状态一起提交"]
+  outcome -->|"未通过或超时"| unchanged["结束本轮并保留原存档"]
+  commit --> next["阅读定稿并继续行动"]
+  unchanged --> adjust["修改行动或主动重试"]
+  classDef user fill:#C2E5FF,stroke:#4385BE
+  classDef pass fill:#D6F3DF,stroke:#398455
+  classDef fail fill:#FADBD8,stroke:#BB5550
+  class importFiles,reader,action,next,adjust user
+  class release,commit pass
+  class unchanged fail

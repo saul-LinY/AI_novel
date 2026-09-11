@@ -1,0 +1,79 @@
+Use case: infographic-diagram
+Asset type: Chinese software architecture diagram for an existing local interactive-novel codebase.
+Primary request: Generate a polished, technically exact, high-resolution raster architecture diagram for AI novel, based only on the following verified source architecture. Landscape, approximately 3:2, generous 3000-pixel-class resolution. This is an engineering documentation figure, not a marketing poster.
+
+Visual style: white background, crisp flat diagram, dark charcoal text, restrained blue for browser/HTTP, teal for agents, amber for validation, muted rose for durable data. Flat rectangular modules with small corners, thin orthogonal connectors and clear arrowheads. Strong hierarchy, spacious routing gutters, minimal icons. Chinese text must be sharp, accurate, and large enough to read. Source filenames in smaller monospaced text. No gradients, shadows, decorative art, characters, logos, 3D, textures, or watermark. Keep all content within canvas.
+
+Title (exact): "AI novel 项目架构"
+Subtitle (exact): "源码快照 97c6d9e · 单个 Node.js 服务 · 四个 Pi Session"
+Use three clearly separated horizontal regions: top application modules, middle persistence and dependencies, bottom turn lifecycle. The application region occupies about 65% of the canvas; the other two regions share the remainder.
+
+APPLICATION REGION:
+Left column, blue, title "浏览器":
+"public/index.html"
+"public/app.js · styles.css"
+"角色选择 / 小说阅读 / 行动输入"
+"分支切换 / 场景展示"
+Small separate note: "ambient.js：视觉动效"
+A two-way connector between browser and HTTP server is labelled "HTTP JSON / NDJSON". Arrows must be bidirectional here.
+
+Central service group with a thin boundary titled "Node.js 服务进程":
+A server module at its left: "HTTP 入口", "src/server.js", "接口路由 / 回合协调".
+A job module below it: "持久化回合作业", "turn-job-manager.js", "事件序号 / 重放 / 取消 / 恢复".
+Connect server to job manager. Connect server to the agent orchestration group.
+Agent orchestration group is central and largest, titled "PiStoryRuntime", filename "pi-story-runtime.js".
+Inside it:
+An input label "上下文组装 + 会话对齐" forks into THREE side-by-side equal modules:
+"情节 Agent", "因果 / 节点 / 替代路线", "submit_plot_analysis"
+"人物 Agent", "灵魂 / 知识 / 记忆", "submit_character_analysis"
+"环境 Agent", "地点 / 时间 / 场景", "submit_environment_analysis"
+Bracket or label over these three: "并行分析".
+Three distinct arrows from those three modules converge into ONE larger main module below:
+"主 Agent", "合并报告 → prepare_story_turn → 最终正文".
+The main agent uses the SAME main Session for preparation and narration. Do not draw a fifth agent.
+A note under the group: "四个独立 Session · 共享 ModelRuntime".
+An output connector back toward the job module is labelled "阶段 / 场景 / 完整句". The job manager sends stream events through server to browser.
+
+Right side of the same service boundary, amber, separate modules:
+"确定性规则引擎", "story-engine.js", "TypeBox 契约 / ID 引用 / 状态约束".
+Connect main agent and this engine with a bidirectional arrow labelled "准备前预演校验".
+Below engine:
+"事件与分支", "story-domain.js", "appendTurn / createBranch", "serializeStore：玩家可见投影".
+Connect server down/right to domain with a connector labelled "正文完成后提交".
+Connect domain up to rule engine with a connector labelled "再次应用提案".
+Connect domain toward server with a connector labelled "公开故事状态".
+Do not connect AI agents directly to branch-save files: the server/domain/store code performs committed writes.
+
+PERSISTENCE AND DEPENDENCIES REGION:
+Four horizontally arranged groups, clear labels, connectors from corresponding modules above where space allows.
+1. "故事包输入"
+"stories/dragon-raja/"
+"manifest + canon + plot + characters + locations"
+"story-package.js：加载 / 校验 / 哈希"
+Connect this source through story-package loader to the service/runtime. Small note "场景图片预生成，运行时只选图".
+2. "业务存档"
+"story-store.js → .ai-novel/stories/<id>/"
+"index.json / branches/<id>/"
+"事件快照 / 人物状态 / 分支记忆"
+Connect domain to store. Small amber note "单文件原子替换；非跨文件事务".
+3. "作业与会话"
+"turn-jobs/<turnId>/：job.json + events.ndjson"
+".ai-novel/pi-sessions/<storyId>/：四份会话"
+Connect job manager to job storage, runtime to Session storage. These are two distinct records, do not imply they are one database.
+4. "Pi SDK 与外部模型"
+"vendor/pi · v0.84.1"
+"coding-agent → agent-core / pi-ai"
+"ModelRuntime → pi-gateway"
+"默认模型：deepseek-v4-flash:cloud"
+A thin horizontal divider inside this block separates locally vendored SDK from external model gateway. Label the provider/model part "外部服务". Runtime calls the SDK/model provider. Do not put the external gateway inside the Node process boundary.
+
+TURN LIFECYCLE REGION:
+Title "单回合生命周期"
+A clean left-to-right sequence of six numbered stages:
+"1 玩家行动" → "2 三 Agent 并行" → "3 主 Agent 准备" → "4 prepared 锁定" → "5 完整句流式输出" → "6 事件与状态提交"
+Under stages 1-3, a bracket labelled "准备完成前可取消".
+Under stages 4-6, a bracket labelled "已展示正文保留；中断可续写".
+A small footer: "结构化隐藏状态在服务端过滤；正文语义仍依赖模型约束".
+
+Accuracy constraints:
+Exactly four logical agents, not four server processes, not one agent per character. Three analysis agents receive action context and return structured reports; only main agent writes final prose. No React, no Express, no Redis, no SQL database, no WebSocket, no vector database, no runtime image generation. NDJSON is over HTTP fetch streaming. Data persistence uses local JSON/Markdown/JSONL files. Do not claim cross-file ACID, fixed total context length, semantic secrecy guarantees, or a production distributed queue. Use labelled directional connectors without line/text overlap. Prefer omitting ornamental details to shrinking essential labels.

@@ -1,0 +1,25 @@
+flowchart LR
+  packageInput["01 故事包：预先整理的内容"] --> loadGate{"内容结构与引用有效"}
+  loadGate -->|"否"| fixPackage["修改故事包后重新加载"]
+  fixPackage --> packageInput
+  loadGate -->|"是"| guide["02 引导：前情、人物与身份"]
+  guide --> opening["阅读角色专属开场"]
+  opening --> input["03 选择建议行动或自由输入"]
+  input --> collaboration["情节、人物、环境共同分析"]
+  collaboration --> preparation["主创整合结果并检查提案"]
+  preparation --> allowed{"行动成立且提案有效"}
+  allowed -->|"行动不成立"| rejected["说明原因；不推进故事"]
+  rejected --> input
+  allowed -->|"是"| prose["04 按完整句子生成并展示正文"]
+  prose --> saved["正文完成后保存状态与记忆"]
+  saved --> output["看到新剧情、已知线索与后续选项"]
+  output --> ended{"到达结局"}
+  ended -->|"否"| input
+  ended -->|"是"| finish["结束当前路线；可另存平行分支"]
+  prose -.-> limitation["当前缺口：正文无独立审校，已显示内容不撤回"]
+  classDef human fill:#C2E5FF,stroke:#3DADFF
+  classDef good fill:#CDF4D3,stroke:#66D575
+  classDef warning fill:#FFECBD,stroke:#FFC943
+  class packageInput,guide,opening,input,output human
+  class saved,finish good
+  class loadGate,allowed,ended,limitation warning

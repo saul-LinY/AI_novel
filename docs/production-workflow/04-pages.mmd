@@ -1,0 +1,24 @@
+flowchart LR
+  library["故事库"] --> author["作者工作台"]
+  author --> importPage["导入中心"]
+  importPage --> conflictPage["设定与来源核对"]
+  conflictPage --> trial["试演与质量报告"]
+  trial --> releases["版本发布"]
+  library --> start["继续阅读或新建会话"]
+  start --> role["简短前情与角色选择"]
+  role --> read["正文阅读页"]
+  read --> action["建议行动或自由输入"]
+  action --> waiting["保留正文 显示阶段 可停止"]
+  waiting --> result{"回合结果"}
+  result -->|"成功"| continuation["追加定稿与下一步"]
+  result -->|"未完成"| recover["保留输入 修改或重试"]
+  read -.-> drawer["人物 线索 回顾 抽屉"]
+  read -.-> branch["历史节点与平行路线"]
+  branch --> fork["显式创建分支再继续"]
+  read -.-> settings["阅读设置与内容偏好"]
+  classDef reader fill:#D6F3DF,stroke:#398455
+  classDef creator fill:#C2E5FF,stroke:#4385BE
+  classDef pending fill:#FFECBD,stroke:#B28A24
+  class author,importPage,conflictPage,trial,releases creator
+  class read,continuation,drawer,branch,fork,settings reader
+  class waiting,recover pending

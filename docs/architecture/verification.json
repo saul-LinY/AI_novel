@@ -1,0 +1,32 @@
+{
+  "date": "2026-09-05",
+  "sourceCommit": "97c6d9e",
+  "nodeVersion": "v22.23.1",
+  "storyPackageHash": "b474f5ebec386a1c",
+  "testCommand": "npm test",
+  "tests": { "total": 34, "passed": 34, "failed": 0, "skipped": 0 },
+  "probes": [
+    {
+      "name": "concurrent-job-creation",
+      "method": "Invoke two real TurnJobManager.create calls concurrently in a temporary data directory.",
+      "results": ["fulfilled", "fulfilled"],
+      "nonterminalJobs": 2
+    },
+    {
+      "name": "restart-after-story-commit",
+      "method": "Persist a prepared job with completedTurn and its committed story event, then initialize createAppServer with a fake model runtime before the job has a terminal completion record.",
+      "savedHead": "committed-event",
+      "jobStatus": "paused",
+      "activeJob": "committed-but-unfinished",
+      "recoveryError": "故事分支在作业恢复前已经变化"
+    }
+  ],
+  "textModelCalls": false,
+  "playerSaveModified": false,
+  "imageGenerationMode": "built-in imagegen",
+  "limits": [
+    "Runtime and server tests use fake sessions or runtimes.",
+    "No browser visual QA or vendored Pi full-suite run.",
+    "No crash injection at every individual file-write boundary."
+  ]
+}

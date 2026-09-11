@@ -1,0 +1,20 @@
+{
+  "checks": [
+    "Entry opens role selection directly; all four previews preserve the save",
+    "Cover cast entry and keyboard previews preserve identity; the single mobile confirmation stays within reach",
+    "Role confirmation enters the matching story; desktop and mobile layouts fit",
+    "Drawers trap background focus; Escape restores focus; reading preferences persist",
+    "All seven real scene events replace the full-screen background without broken images",
+    "Six short paragraphs become two on screen without changing prose; reloads preserve grouping, zero paragraph gaps and first-line indentation",
+    "Late images cannot overwrite newer scenes; failed images fall back; rain animates and audio controls are absent",
+    "Streaming preserves completed paragraphs across split blank lines and save, without forcing a scroll to the bottom",
+    "Stopping a turn before preparation leaves the persisted story unchanged",
+    "Comic replay and layouts at 390px and 320px fit, including the largest reading text",
+    "Ending hides choices and input on small and desktop screens; reload offers replay and preserves the completed story",
+    "System reduced motion stops the animated weather canvas"
+  ],
+  "screenshots": "/tmp/novel-choice-ending-qa",
+  "errors": {
+    "errors": []
+  }
+}

@@ -1,0 +1,28 @@
+flowchart LR
+  input["行动与分支头"] --> context["程序装配权威上下文"]
+  context --> director["导演规划 ScenePlan"]
+  director --> rules{"硬规则通过"}
+  rules -->|"是"| character["人物复核"]
+  rules -->|"是"| writer["写手生成私有首稿"]
+  writer --> editor["成文审校与事实对照"]
+  character --> gate{"全部检查通过"}
+  editor --> gate
+  %% 可修订一次：首版失败，剩余至少21秒，包含18秒修订与3秒终态预算。
+  rules -->|"否"| budget{"可修订一次"}
+  gate -->|"否"| budget
+  gate -->|"是"| ready["绑定计划 正文 审核哈希"]
+  budget -->|"是"| revision["一次修订 最多再4次调用"]
+  revision --> recheck["新版本完整复核"]
+  recheck --> finalGate{"通过"}
+  finalGate -->|"是"| ready
+  finalGate -->|"否"| stop["结束 未提交"]
+  budget -->|"否"| stop
+  ready --> commit["事务提交后展示定稿"]
+  classDef model fill:#C2E5FF,stroke:#4385BE
+  classDef gateColor fill:#FFECBD,stroke:#B28A24
+  classDef good fill:#D6F3DF,stroke:#398455
+  classDef bad fill:#FADBD8,stroke:#BB5550
+  class director,character,writer,editor model
+  class budget,revision gateColor
+  class ready,commit good
+  class stop bad
