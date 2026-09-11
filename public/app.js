@@ -28,6 +28,8 @@ const elements = {
   resetStory: document.querySelector("#reset-story"),
   roleDock: document.querySelector("#role-dock"),
   relationshipList: document.querySelector("#relationship-list"),
+  relationshipGraph: document.querySelector("#relationship-graph"),
+  relationshipDetail: document.querySelector("#relationship-detail"),
   sceneEyebrow: document.querySelector("#scene-eyebrow"),
   sceneImage: document.querySelector("#scene-image"),
   sceneTitle: document.querySelector("#scene-title"),
@@ -605,6 +607,7 @@ function renderState() {
         return `<div class="relationship-item"><span>${escapeHtml(names.get(edge.from))}</span><i data-lucide="arrow-right"></i><span>${escapeHtml(names.get(edge.to))}</span><small>${escapeHtml(label)}</small></div>`;
       }).join("")
     : '<p class="empty-state">关系网还没有形成可见连接</p>';
+  renderRelationshipGraph(graph, visibleEdges, names);
 
   elements.inventoryList.innerHTML = story.state.inventory.length
     ? story.state.inventory
@@ -621,6 +624,67 @@ function renderState() {
         .map((thread) => `<div class="thread-item ${escapeHtml(thread.status)}">${escapeHtml(thread.title)}</div>`)
         .join("")
     : '<p class="empty-state">暂时没有已知问题</p>';
+}
+
+function renderRelationshipGraph(graph, edges, names) {
+  const host = elements.relationshipGraph;
+  if (!host) return;
+  const nodes = graph?.nodes?.filter((node) => names.has(node.id)) ?? [];
+  if (!nodes.length) { host.innerHTML = '<p class="empty-state graph-empty">关系网还没有形成可见人物</p>'; return; }
+  const width = 520;
+  const height = 380;
+  const positions = new Map();
+  const playerId = story?.story?.player?.id;
+  let selectedCenterId = playerId ?? nodes[0]?.id;
+  const centerNode = nodes.find((node) => node.id === selectedCenterId) ?? nodes[0];
+  if (centerNode) positions.set(centerNode.id, { x: width / 2, y: height / 2 });
+  const slots = [{ x: 105, y: 92 }, { x: 260, y: 66 }, { x: 415, y: 92 }, { x: 105, y: 288 }, { x: 260, y: 314 }, { x: 415, y: 288 }, { x: 75, y: 190 }, { x: 445, y: 190 }];
+  const arrange = () => { positions.clear(); const center = nodes.find((node) => node.id === selectedCenterId) ?? nodes[0]; positions.set(center.id, { x: width / 2, y: height / 2 }); const others = nodes.filter((node) => node.id !== center.id); others.forEach((node, i) => { const a = (i / Math.max(1, others.length)) * Math.PI * 2 - Math.PI / 2; const radius = Math.min(width, height) * .34; positions.set(node.id, { x: width / 2 + Math.cos(a) * radius, y: height / 2 + Math.sin(a) * radius }); }); };
+  arrange();
+  host.innerHTML = `<svg class="relationship-svg" viewBox="0 0 ${width} ${height}" role="img" aria-label="人物关系图谱"><g class="graph-edges"></g><g class="graph-nodes"></g></svg>`;
+  const svg = host.querySelector("svg");
+  const edgeLayer = svg.querySelector(".graph-edges");
+  const nodeLayer = svg.querySelector(".graph-nodes");
+  const renderEdges = () => {
+    edgeLayer.innerHTML = edges.map((edge) => {
+      const from = positions.get(edge.from); const to = positions.get(edge.to); if (!from || !to) return "";
+      const label = edge.type === "attitude" ? relationLabel(edge.value).label : "有联系";
+      const midX = (from.x + to.x) / 2; const midY = (from.y + to.y) / 2;
+      return `<g class="graph-edge"><line x1="${from.x}" y1="${from.y}" x2="${to.x}" y2="${to.y}"></line><rect x="${midX - 34}" y="${midY - 10}" width="68" height="20" rx="10"></rect><text x="${midX}" y="${midY + 4}">${escapeHtml(label)}</text><title>${escapeHtml(label)}</title></g>`;
+    }).join("");
+  };
+  const profiles = new Map((story?.story?.onboarding?.characterProfiles ?? []).map((profile) => [profile.id, profile.image?.src ?? profile.image]));
+  const renderNodes = () => {
+    nodeLayer.innerHTML = nodes.map((node) => {
+      const p = positions.get(node.id); const isPlayer = node.id === playerId; const person = story?.state?.characters?.find((item) => item.id === node.id); const portrait = profiles.get(node.id);
+      const avatar = portrait ? `<image href="${escapeHtml(portrait)}" x="-28" y="-48" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#avatar-clip-${escapeHtml(node.id.replaceAll(/[^a-zA-Z0-9_-]/g, "-"))})"></image>` : `<text class="graph-initial" y="-20">${escapeHtml((node.name || "?").slice(0, 1))}</text>`;
+      const clipId = `avatar-clip-${node.id.replaceAll(/[^a-zA-Z0-9_-]/g, "-")}`;
+      return `<g class="graph-node ${isPlayer ? "is-player" : ""}" data-node-id="${escapeHtml(node.id)}" transform="translate(${p.x},${p.y})" tabindex="0"><defs><clipPath id="${clipId}"><circle cx="0" cy="-20" r="28"></circle></clipPath></defs><rect class="graph-card" x="-64" y="-58" width="128" height="100" rx="18"></rect><circle class="graph-avatar-ring" cy="-20" r="30"></circle>${avatar}<text class="graph-name" y="26">${escapeHtml(node.name || "未命名")}</text>${person?.role ? `<text class="graph-role" y="42">${escapeHtml(person.role.slice(0, 9))}</text>` : ""}</g>`;
+    }).join("");
+    nodeLayer.querySelectorAll(".graph-node").forEach((el) => {
+      const id = el.dataset.nodeId;
+      const select = () => { selectedCenterId = id; arrange(); renderEdges(); renderNodes(); showGraphDetail(id, edges, names); };
+      el.addEventListener("click", select); el.addEventListener("keydown", (event) => { if (event.key === "Enter" || event.key === " ") { event.preventDefault(); select(); } });
+      el.addEventListener("pointerdown", (event) => {
+        event.preventDefault(); el.setPointerCapture(event.pointerId);
+        const move = (moveEvent) => { const rect = svg.getBoundingClientRect(); const x = ((moveEvent.clientX - rect.left) / rect.width) * width; const y = ((moveEvent.clientY - rect.top) / rect.height) * height; positions.set(id, { x: Math.max(30, Math.min(width - 30, x)), y: Math.max(30, Math.min(height - 30, y)) }); renderEdges(); renderNodes(); };
+        const up = () => { el.removeEventListener("pointermove", move); el.removeEventListener("pointerup", up); };
+        el.addEventListener("pointermove", move); el.addEventListener("pointerup", up, { once: true });
+      });
+    });
+  };
+  renderEdges(); renderNodes();
+}
+
+function showGraphDetail(id, edges, names) {
+  const character = story?.state?.characters?.find((item) => item.id === id);
+  if (!character || !elements.relationshipDetail) return;
+  const related = edges.filter((edge) => edge.from === id || edge.to === id).map((edge) => {
+    const other = names.get(edge.from === id ? edge.to : edge.from) ?? "未知人物";
+    return `${other}：${edge.type === "attitude" ? relationLabel(edge.value).label : "有联系"}`;
+  });
+  elements.relationshipDetail.hidden = false;
+  elements.relationshipDetail.innerHTML = `<strong>${escapeHtml(character.name)}</strong><span>${escapeHtml(character.role ?? "")}</span><span>状态：${escapeHtml(characterStatus(character))}</span><span>关系：${escapeHtml(related.join("；") || "暂无已知关系")}</span>`;
 }
 
 function renderScene(scene = story?.state?.scene) {

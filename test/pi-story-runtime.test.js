@@ -179,3 +179,86 @@ test("情节和主Agent收到未解线索的内容、真实阶段进度和近期
   }
   assert.match(prompts.main, /choicePlan/);
 });
+
+test("支线审核只约束 Agent 新增建议，玩家偏离主线可按因果结算", async () => {
+  const fake = runtimeWithFakeSessions();
+  const prompts = {};
+  fake.runtime.requestStructured = async (role, prompt) => { prompts[role] = prompt; return reports(role); };
+  fake.session("main").prompt = async () => fake.session("main").emitText("你决定离开。");
+  await fake.runtime.generateTurn(context({ action: "我决定离开，不再追查。" }));
+  for (const role of ["main", "plot"]) {
+    assert.match(prompts[role], /严格支线审核只针对 Agent 自行新增的支线/);
+    assert.match(prompts[role], /不得强制要求回归主线/);
+  }
+  assert.match(prompts.main, /ending.type 只能取 normal、failure、early、deviation/);
+  fake.runtime.activeState = context().state;
+  const playerRoute = { currentNodeId: "see-countdown", recommendedNodeId: "see-countdown", routeMode: "deviation", candidateChanges: [] };
+  assert.doesNotThrow(() => fake.runtime.validateReport("plot", playerRoute));
+  assert.throws(() => fake.runtime.validateReport("plot", { ...playerRoute, candidateChanges: [{ kind: "route_change", description: "Agent 新增的调查支线" }] }), /主线价值、回归节点和回归条件/);
+});
+
+// Exercise the actual Pi tool loop: schema rejection occurs before tool.execute.
+async function structuredLoop(responses, businessFailure = false) {
+  const { Agent } = await import("../vendor/pi/packages/agent/dist/index.js");
+  const { EventStream } = await import("../vendor/pi/packages/ai/dist/index.js");
+  const { TURN_PROPOSAL_SCHEMA } = await import("../src/story-engine.js");
+  const { prepareMainArguments } = await import("../src/pi-story-runtime.js");
+  const fake = runtimeWithFakeSessions();
+  let calls = 0;
+  let executions = 0;
+  const results = [];
+  const model = { id: "test", name: "test", api: "openai-completions", provider: "test", baseUrl: "http://unused.invalid", reasoning: false, input: ["text"], cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 }, contextWindow: 8192, maxTokens: 2048 };
+  const agent = new Agent({
+    initialState: { model, tools: [{
+      name: "prepare_story_turn", label: "准备回合", description: "test", parameters: TURN_PROPOSAL_SCHEMA,
+      prepareArguments: prepareMainArguments,
+      execute: async (_id, args) => {
+        executions += 1;
+        if (businessFailure) return { content: [{ type: "text", text: "校验失败：当前目标已经完成" }], details: { accepted: false }, isError: true };
+        fake.runtime.pendingReports.set("main", args);
+        return { content: [{ type: "text", text: "通过" }], details: { accepted: true }, terminate: true };
+      },
+    }] },
+    streamFn: () => {
+      const stream = new EventStream(event => event.type === "done", event => event.message);
+      const args = responses[Math.min(calls++, responses.length - 1)];
+      if (calls > 6) throw new Error("Test guard: tool loop did not stop");
+      queueMicrotask(() => stream.push({ type: "done", reason: "toolUse", message: {
+        role: "assistant", content: [{ type: "toolCall", id: `call-${calls}`, name: "prepare_story_turn", arguments: structuredClone(args) }],
+        api: model.api, provider: model.provider, model: model.id, stopReason: "toolUse", timestamp: Date.now(),
+        usage: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0, totalTokens: 0, cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0, total: 0 } },
+      } }));
+      return stream;
+    },
+  });
+  agent.subscribe(event => { if (event.type === "tool_execution_end") results.push(event); });
+  fake.runtime.sessions.set("main", { agent, subscribe: listener => agent.subscribe(listener), prompt: prompt => agent.prompt(prompt) });
+  return { ...fake, agent, results, counts: () => ({ calls, executions }) };
+}
+
+test("Pi 实际工具循环在参数连续三次错误后停止并保留具体原因", async () => {
+  const fake = await structuredLoop([{ ...proposal(), ending: { type: "tragic" } }]);
+  await assert.rejects(fake.runtime.requestStructured("main", "提交提案"), /连续 3 次校验失败.*ending.type.*tragic.*normal、failure、early、deviation/);
+  assert.deepEqual(fake.counts(), { calls: 3, executions: 0 });
+  assert.equal(fake.runtime.pendingReports.has("main"), false);
+  assert.equal(fake.runtime.activePhases.has("main"), false);
+  assert.equal(fake.agent.state.messages.filter(m => m.role === "toolResult").length, 3);
+});
+
+test("普通 schema 错误和业务校验失败都受三次上限约束", async () => {
+  for (const [args, business] of [[{}, false], [proposal(), true]]) {
+    const fake = await structuredLoop([args], business);
+    await assert.rejects(fake.runtime.requestStructured("main", "提交提案"), /连续 3 次校验失败/);
+    assert.equal(fake.counts().calls, 3);
+    assert.equal(fake.counts().executions, business ? 3 : 0);
+  }
+});
+
+test("主创收到明确错误后可修正通过，下一次请求重新计算次数", async () => {
+  const fake = await structuredLoop([{ ...proposal(), ending: { type: "sad" } }, proposal()]);
+  assert.deepEqual(await fake.runtime.requestStructured("main", "提交提案"), proposal());
+  assert.equal(fake.counts().calls, 2);
+  assert.match(fake.results[0].result.content[0].text, /不得自造类型/);
+  assert.deepEqual(await fake.runtime.requestStructured("main", "下一轮"), proposal());
+  assert.equal(fake.counts().calls, 3);
+});

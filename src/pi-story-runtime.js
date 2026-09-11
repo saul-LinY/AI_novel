@@ -15,6 +15,8 @@ import {
   applyTurnProposal,
   CHARACTER_AGENT_SCHEMA,
   ENVIRONMENT_AGENT_SCHEMA,
+  ENDING_TYPES,
+  ENDING_TYPE_GUIDANCE,
   findKnowledgeGate,
   isRejectedProposal,
   PLOT_AGENT_SCHEMA,
@@ -33,6 +35,16 @@ const DEFAULT_PROVIDER = "pi-gateway";
 const DEFAULT_MODEL = "deepseek-v4-flash:cloud";
 const MIN_PROSE_CHARS = 300;
 const MAX_PROSE_CHARS = 520;
+const MAX_STRUCTURED_FAILURES = 3;
+const BRANCH_REVIEW_POLICY = "严格支线审核只针对 Agent 自行新增的支线，不针对玩家主动偏离主线的行动。玩家明确选择及其合理后果按世界规则、已有状态和实际因果裁决，不得仅因偏离主线而拒绝，也不得强制要求回归主线。玩家行动及其必然后果写入因果分析，不要伪装成 candidateChanges 中由 Agent 新增的支线。没有兼容回归节点时，可按规则进入 deviation 等合法结局。";
+
+export function prepareMainArguments(args) {
+  const ending = args?.ending;
+  if (ending && !ENDING_TYPES.includes(ending.type)) {
+    throw new Error(`校验失败：ending.type 收到 ${JSON.stringify(ending.type) ?? "未填写"}。${ENDING_TYPE_GUIDANCE} 请依据实际后果重新选择合法类型，保留其余正确内容后再次提交。`);
+  }
+  return args;
+}
 
 const SYSTEM_PROMPTS = {
   main: `你是互动小说的主 Agent，也是唯一能接收玩家原始输入并输出最终正文的模型角色。
@@ -45,10 +57,13 @@ const SYSTEM_PROMPTS = {
 合理选择阻止原著节点时必须承认结果；只能接入更晚且兼容的节点，没有兼容节点就进入偏离结局。
 每回合结算玩家行动时让仍在行动的NPC、时间或已有风险作出合乎因果的回应，留下实际改变的局面。揭露阴谋不等于阻止阴谋，安排治疗不等于治疗完成，作出承诺不等于兑现；不得靠一句总结提前完成主干。
 ${CHOICE_POLICY}
+${BRANCH_REVIEW_POLICY}
+${ENDING_TYPE_GUIDANCE}
 prepare_story_turn 通过后，下一次要求写正文时只输出最终小说正文，不调用工具，不输出解释、标题、Markdown或状态列表。`,
   plot: `你是情节 Agent，只负责因果、主干节点、替代路线和最终结局可达性。
 你不写用户正文，不决定人物内心，不修改环境物理约束。玩家合理阻止节点时不得强行复活事件。
-识别当前未解问题、对手主动行动与机会代价，给下一次抉择留下具体压力。揭露阴谋不等于阻止阴谋，治疗计划不等于治愈，承诺不等于兑现；阶段完成必须有实际后果作证。不要把连续日常片段反复算成已完成目标的新进展。你可以提出支线创新点和候选情节变化，但不能把候选变化当成已发生事实；任何被采纳的分支最终都必须能够到达故事包允许的合法结局。
+识别当前未解问题、对手主动行动与机会代价，给下一次抉择留下具体压力。揭露阴谋不等于阻止阴谋，治疗计划不等于治愈，承诺不等于兑现；阶段完成必须有实际后果作证。不要把连续日常片段反复算成已完成目标的新进展。你可以提出支线创新点和候选情节变化，但不能把候选变化当成已发生事实。每个由 Agent 自行新增的支线候选都要说明它服务哪个主线目标、在哪个节点回归、回归需要什么条件；缺少这些内容的候选只能作为灵感记录。任何被采纳的分支最终都必须能够到达故事包允许的合法结局。
+${BRANCH_REVIEW_POLICY}
 分析完成后只调用 submit_plot_analysis；工具返回成功后立刻结束响应，不再解释或总结。`,
   character: `你是人物 Agent，只负责人物灵魂、知识边界、动机、关系、身体状态和经历记忆。
 人物只能根据自己知道的事实作出反应；玩家角色的内心和下一步只能由玩家决定。
@@ -147,7 +162,7 @@ function compactCharacter(character, includeSoul, memory = "") {
 
 function buildPlotPrompt(context, storyPackage) {
   const facts = storyPackage.facts.map(({ id, kind, truth }) => ({ id, kind, truth }));
-  return `<shared_context>\n${JSON.stringify(context.sharedContext?.domainContexts?.plot ?? {}, null, 2)}\n</shared_context>\n\n<choice_design_context>\n${JSON.stringify(choiceContext(context.state, storyPackage), null, 2)}\n</choice_design_context>\n\n<recent_story>\n${JSON.stringify(recentStory(context.recentEvents), null, 2)}\n</recent_story>\n\n<player_action>\n${context.action}\n</player_action>\n\n<branch_memory>\n${context.branchMemory || "尚无已提交回合。"}\n</branch_memory>\n\n<route_state>\n${JSON.stringify(context.state.storyProgress.route, null, 2)}\n</route_state>\n\n<spine_window>\n${JSON.stringify(currentSpineWindow(context.state, storyPackage), null, 2)}\n</spine_window>\n\n<canon_truths>\n${JSON.stringify(facts, null, 2)}\n</canon_truths>\n\n<characters>\n${JSON.stringify(Object.values(context.state.characters).map((character) => compactCharacter(character, false)), null, 2)}\n</characters>\n\n只调用 submit_plot_analysis，给出从玩家行动到结果的因果链，并判断当前节点是否被真正阻止、下一步如何让分支最终到达合法结局。candidateChanges 只能写候选建议，不是已发生事实。`;
+  return `<shared_context>\n${JSON.stringify(context.sharedContext?.domainContexts?.plot ?? {}, null, 2)}\n</shared_context>\n\n<choice_design_context>\n${JSON.stringify(choiceContext(context.state, storyPackage), null, 2)}\n</choice_design_context>\n\n<recent_story>\n${JSON.stringify(recentStory(context.recentEvents), null, 2)}\n</recent_story>\n\n<player_action>\n${context.action}\n</player_action>\n\n<branch_memory>\n${context.branchMemory || "尚无已提交回合。"}\n</branch_memory>\n\n<route_state>\n${JSON.stringify(context.state.storyProgress.route, null, 2)}\n</route_state>\n\n<spine_window>\n${JSON.stringify(currentSpineWindow(context.state, storyPackage), null, 2)}\n</spine_window>\n\n<canon_truths>\n${JSON.stringify(facts, null, 2)}\n</canon_truths>\n\n<characters>\n${JSON.stringify(Object.values(context.state.characters).map((character) => compactCharacter(character, false)), null, 2)}\n</characters>\n\n只调用 submit_plot_analysis，给出从玩家行动到结果的因果链，并判断当前节点是否被真正阻止、下一步如何让分支最终到达合法结局。${BRANCH_REVIEW_POLICY}candidateChanges 只能写 Agent 自行新增的候选建议，不是已发生事实。`;
 }
 
 function buildCharacterPrompt(context, storyPackage, ids) {
@@ -176,7 +191,7 @@ function buildMainPreparationPrompt(context, storyPackage, reports, ids) {
   const instruction = context.trustedChoice
     ? "这是上一回合提供的当前推荐行动，许可已成立，不得返回 action_not_allowed；只裁决执行后的实际结果。"
     : "这是玩家自由输入。结果式表达改成尝试；没有任何玩家手段、只要求 NPC 服从时才能 action_not_allowed。";
-  return `<shared_context>\n${JSON.stringify(context.sharedContext ?? {}, null, 2)}\n</shared_context>\n\n<choice_design_contract>\n${CHOICE_POLICY}\n</choice_design_contract>\n\n<choice_design_context>\n${JSON.stringify(choiceContext(context.state, storyPackage), null, 2)}\n</choice_design_context>\n\n<player_action>\n${context.action}\n</player_action>\n\n<hard_contract>\n玩家角色是 ${storyPackage.playerCharacterId}；npcIntents 绝不能包含玩家角色。\n工具参数的顶层骨架是 {normalizedAction,outcome,choices,choicePlan,storyProgress,delta,npcIntents,ending,memoryNotes,characterMemoryNotes,environmentMemoryNotes}。storyProgress 与 delta 平级，绝不能放进 delta。正常完成当前目标时只填 completeGoalIds，系统会自动进入下一节点；只有 blockCurrentNode=true 时才填 nextNodeId。\n已有事实直接用 learnFactIdsByCharacter 揭示，不要把它再包装成 generatedFacts。所有事实：${JSON.stringify(factCatalog)}。generatedFacts.relatedCoreFactIds 只能取：${JSON.stringify(coreFactIds)}。\noutcome.type 只能取 success、success_with_cost、failure_with_gain、failure、action_not_allowed。\n三个领域 Agent 的 candidateChanges 只是建议；只有你写进 delta、storyProgress、ending 或 memoryNotes 的变化才会提交。\n工具返回成功后立刻结束当前响应，不要提前写正文，不要解释。\n</hard_contract>\n\n<current_state>\n${JSON.stringify({ locationId: context.state.locationId, sceneStateId: context.state.sceneStateId, timeMinutes: context.state.timeMinutes, inventory: context.state.inventory, threads: Object.values(context.state.threads).map(({ id, title, status, knownToPlayer }) => ({ id, title, status, knownToPlayer })), storyProgress: { currentStageId: context.state.storyProgress.currentStageId, blockedNodeIds: context.state.storyProgress.blockedNodeIds, route: context.state.storyProgress.route } }, null, 2)}\n</current_state>\n\n<current_spine_node>\n${JSON.stringify(currentNode, null, 2)}\n</current_spine_node>\n\n<relevant_characters>\n${JSON.stringify(relevantCharacters, null, 2)}\n</relevant_characters>\n\n<agent_reports>\n${JSON.stringify(reports, null, 2)}\n</agent_reports>\n\n<recent_story>\n${JSON.stringify(recentStory(context.recentEvents), null, 2)}\n</recent_story>\n\n${instruction}\n只调用 prepare_story_turn。必须先解决三个报告间的冲突；正文中允许出现的事实、动作、台词方向、场景和状态变化都要在提案里确定。`;
+  return `<shared_context>\n${JSON.stringify(context.sharedContext ?? {}, null, 2)}\n</shared_context>\n\n<choice_design_contract>\n${CHOICE_POLICY}\n</choice_design_contract>\n\n<choice_design_context>\n${JSON.stringify(choiceContext(context.state, storyPackage), null, 2)}\n</choice_design_context>\n\n<player_action>\n${context.action}\n</player_action>\n\n<hard_contract>\n玩家角色是 ${storyPackage.playerCharacterId}；npcIntents 绝不能包含玩家角色。\n工具参数的顶层骨架是 {normalizedAction,outcome,choices,choicePlan,storyProgress,delta,npcIntents,ending,memoryNotes,characterMemoryNotes,environmentMemoryNotes}。storyProgress 与 delta 平级，绝不能放进 delta。正常完成当前目标时只填 completeGoalIds，系统会自动进入下一节点；只有 blockCurrentNode=true 时才填 nextNodeId。\n已有事实直接用 learnFactIdsByCharacter 揭示，不要把它再包装成 generatedFacts。所有事实：${JSON.stringify(factCatalog)}。generatedFacts.relatedCoreFactIds 只能取：${JSON.stringify(coreFactIds)}。\noutcome.type 只能取 success、success_with_cost、failure_with_gain、failure、action_not_allowed。\n${ENDING_TYPE_GUIDANCE}\n${BRANCH_REVIEW_POLICY}\n三个领域 Agent 的 candidateChanges 只是建议；只有你写进 delta、storyProgress、ending 或 memoryNotes 的变化才会提交。\nAgent 自行新增的支线采纳是高风险决定：不能因为“有趣”就采纳。只有当支线明确服务当前主线目标，或为主线增加不可替代的人物变化、冲突、线索或代价，并且已经写清回归节点和回归条件时，才允许写入提案。否则必须拒绝或延后，只保留在 memoryNotes 中。凡是采纳的 Agent 新增支线，必须在 storyProgress.detourSummary、rejoinTargetId、rejoinConditions 中留下可检查的回归计划，不能让支线自行发展成第二条主线；最终结局仍必须由故事包允许的主线或兼容偏离路线结算。\n工具返回成功后立刻结束当前响应，不要提前写正文，不要解释。\n</hard_contract>\n\n<current_state>\n${JSON.stringify({ locationId: context.state.locationId, sceneStateId: context.state.sceneStateId, timeMinutes: context.state.timeMinutes, inventory: context.state.inventory, threads: Object.values(context.state.threads).map(({ id, title, status, knownToPlayer }) => ({ id, title, status, knownToPlayer })), storyProgress: { currentStageId: context.state.storyProgress.currentStageId, blockedNodeIds: context.state.storyProgress.blockedNodeIds, route: context.state.storyProgress.route } }, null, 2)}\n</current_state>\n\n<current_spine_node>\n${JSON.stringify(currentNode, null, 2)}\n</current_spine_node>\n\n<relevant_characters>\n${JSON.stringify(relevantCharacters, null, 2)}\n</relevant_characters>\n\n<agent_reports>\n${JSON.stringify(reports, null, 2)}\n</agent_reports>\n\n<recent_story>\n${JSON.stringify(recentStory(context.recentEvents), null, 2)}\n</recent_story>\n\n${instruction}\n只调用 prepare_story_turn。必须先解决三个报告间的冲突；正文中允许出现的事实、动作、台词方向、场景和状态变化都要在提案里确定。`;
 }
 
 function buildNarrationPrompt(context, proposal, storyPackage, committedPrefix = "") {
@@ -284,6 +299,7 @@ export class PiStoryRuntime {
           label: toolConfig.label,
           description: `${toolConfig.label}。只接受当前分析阶段的结构化结果。`,
           parameters: toolConfig.schema,
+          prepareArguments: role === "main" ? prepareMainArguments : undefined,
           execute: async (_toolCallId, params) => {
             try {
               if (!this.activePhases.has(role)) throw new Error(`${role} Agent 当前不在提交阶段`);
@@ -341,7 +357,12 @@ export class PiStoryRuntime {
       if (report.currentNodeId !== this.activeState.storyProgress.currentStageId) throw new Error("情节 Agent 当前节点与分支状态不一致");
       if (!nodeIds.has(report.recommendedNodeId)) throw new Error(`情节 Agent 引用了不存在的节点：${report.recommendedNodeId}`);
       if (report.rejoinTargetId && !nodeIds.has(report.rejoinTargetId)) throw new Error(`回归节点不存在：${report.rejoinTargetId}`);
-      for (const change of report.candidateChanges ?? []) if (change.kind === "route_change" && !change.description) throw new Error("情节候选变化缺少说明");
+      for (const change of report.candidateChanges ?? []) {
+        if (change.kind === "route_change" && !change.description) throw new Error("情节候选变化缺少说明");
+        if (change.kind === "route_change" && (!change.mainlineService || !change.rejoinTargetId || !(change.rejoinConditions?.length))) {
+          throw new Error("Agent 新增支线的路线变化必须说明主线价值、回归节点和回归条件；玩家行动及其合理后果应写入因果分析，不属于新增支线候选");
+        }
+      }
     } else if (role === "character") {
       for (const id of report.involvedCharacterIds) if (!characterIds.has(id)) throw new Error(`人物不存在：${id}`);
       for (const reaction of report.reactions) {
@@ -391,18 +412,43 @@ export class PiStoryRuntime {
   async requestStructured(role, prompt) {
     this.pendingReports.delete(role);
     this.activePhases.add(role);
+    const session = this.sessions.get(role);
+    let failures = 0;
+    let failureLimitError = null;
+    const previousStop = session.agent.shouldStopAfterTurn;
+    session.agent.shouldStopAfterTurn = (turn, signal) => failureLimitError ? true : (previousStop?.(turn, signal) ?? false);
+    const unsubscribe = session.subscribe((event) => {
+      if (event.type !== "tool_execution_end" || event.toolName !== ROLE_TOOLS[role].name) return;
+      if (!event.isError && event.result?.details?.accepted !== false) {
+        failures = 0;
+        return;
+      }
+      failures += 1;
+      if (failures >= MAX_STRUCTURED_FAILURES) {
+        const feedback = (event.result?.content ?? []).filter((part) => part.type === "text").map((part) => part.text).join("\n").split("Received arguments:")[0].trim();
+        failureLimitError = new Error(`${ROLE_TOOLS[role].label}连续 ${MAX_STRUCTURED_FAILURES} 次校验失败，已停止本轮。最近一次错误：${feedback || "结构化结果未通过校验"}`);
+        // Abort synchronously: waiting for session.abort() inside its own event can deadlock.
+        session.agent.abort();
+      }
+    });
     try {
-      const session = this.sessions.get(role);
       await session.prompt(prompt);
       this.ensureNotCancelled();
+      if (failureLimitError) throw failureLimitError;
       if (!this.pendingReports.has(role)) {
         await session.prompt(`没有收到结构化结果。不要输出解释，只调用 ${ROLE_TOOLS[role].name}。`);
         this.ensureNotCancelled();
+        if (failureLimitError) throw failureLimitError;
       }
       const report = this.pendingReports.get(role);
       if (!report) throw new Error(`${role} Agent 没有提交可用结果`);
       return structuredClone(report);
+    } catch (error) {
+      this.ensureNotCancelled();
+      throw failureLimitError ?? error;
     } finally {
+      unsubscribe();
+      session.agent.shouldStopAfterTurn = previousStop;
       this.activePhases.delete(role);
     }
   }

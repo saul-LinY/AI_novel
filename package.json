@@ -13,6 +13,7 @@
     "pi:build": "npm run build:offline --prefix vendor/pi",
     "dev": "node --watch src/server.js",
     "start": "node src/server.js",
+    "console": "node src/console-server.js",
     "test": "node --test test/*.test.js"
   },
   "dependencies": {

@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Loop · 创作控制台</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" type="module"></script>
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="/" aria-label="Loop 创作控制台首页"><span class="brand-mark">↳</span><span>loop<span class="brand-caption">创作<br>控制台</span></span><span class="version">预览版</span></a>
+    <div class="project"><span class="project-icon">书</span><div><strong id="story-title">互动小说</strong><span>互动小说工作流</span></div><span class="local-label">本地</span></div>
+    <div class="sidebar-heading"><span>运行记录</span><span id="run-count">—</span></div>
+    <nav id="runs" aria-label="回合记录"><p class="loading">正在读取本地记录…</p></nav>
+    <div class="sidebar-footer"><span class="connection-dot"></span><span id="connection" role="status">连接本地记录</span></div>
+  </aside>
+  <main>
+    <header class="topbar"><div><span class="topbar-label">工作流</span><span class="breadcrumb-separator">/</span><span id="breadcrumb">运行详情</span></div><a href="http://127.0.0.1:4317" target="_blank" rel="noreferrer" class="reader-link">打开小说 <span aria-hidden="true">↗</span></a></header>
+    <div id="workspace"><div class="initial-state"><span class="empty-symbol">↳</span><h1>正在打开工作流</h1><p>读取每一步实际保存的内容</p></div></div>
+  </main>
+</body>
+</html>

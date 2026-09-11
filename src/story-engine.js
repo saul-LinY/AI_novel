@@ -6,6 +6,9 @@ const clone = (value) => structuredClone(value);
 const referenceId = Type.String({ minLength: 1, maxLength: 120, pattern: "^[a-zA-Z0-9:_-]+$" });
 const nonEmptyString = (maxLength = 500) => Type.String({ minLength: 1, maxLength });
 
+export const ENDING_TYPES = ["normal", "failure", "early", "deviation"];
+export const ENDING_TYPE_GUIDANCE = "ending.type 只能取 normal、failure、early、deviation：normal 表示完成主干并结算后果；failure 表示目标失败后结束；early 表示提前结束；deviation 表示无法回归主干的兼容偏离结局。悲剧、牺牲、圆满等是叙事情绪或内容，不是结局类型；写进结局描述，不得自造类型，也不得混用 outcome.type。结局仍须满足阶段进度与世界因果校验；本轮未结束故事时省略 ending。";
+
 export const OUTCOME_TYPES = [
   "success",
   "success_with_cost",
@@ -28,6 +31,9 @@ export const PLOT_AGENT_SCHEMA = Type.Object({
     kind: Type.Union([Type.Literal("branch_seed"), Type.Literal("causal_risk"), Type.Literal("route_change")]),
     description: nonEmptyString(300),
     evidence: nonEmptyString(240),
+    mainlineService: Type.Optional(nonEmptyString(240)),
+    rejoinTargetId: Type.Optional(referenceId),
+    rejoinConditions: Type.Optional(Type.Array(nonEmptyString(200), { maxItems: 6 })),
   }), { maxItems: 6 })),
 });
 
@@ -202,12 +208,7 @@ export const TURN_PROPOSAL_SCHEMA = Type.Object({
   ),
   ending: Type.Optional(
     Type.Object({
-      type: Type.Union([
-        Type.Literal("normal"),
-        Type.Literal("failure"),
-        Type.Literal("early"),
-        Type.Literal("deviation"),
-      ]),
+      type: Type.Unsafe({ type: "string", enum: ENDING_TYPES, description: ENDING_TYPE_GUIDANCE }),
       coreQuestionResponse: nonEmptyString(400),
       keyChoice: nonEmptyString(300),
       directConsequences: Type.Array(nonEmptyString(300), { minItems: 1, maxItems: 8 }),

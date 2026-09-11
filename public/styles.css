@@ -140,6 +140,7 @@ body.scene-only[data-view="story"] .world-shade { background: linear-gradient(0d
 .chapter-rule { display: block; width: 44px; height: 4px; background: var(--red); transform: skew(-25deg); }
 .story-prose { font-family: var(--serif); font-size: var(--reading-size); font-weight: 400; line-height: 1.95; color: #32332d; overflow-wrap: anywhere; }
 .story-segment-boundary { position: relative; }
+.story-segment-boundary:not(:first-child) { margin-top: 0; }
 .story-segment p { margin: 0; text-indent: 2em; white-space: pre-wrap; }
 .entry-meta:empty { display: none; }
 .choices-section { padding-top: 30px; }
