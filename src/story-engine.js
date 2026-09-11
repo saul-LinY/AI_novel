@@ -24,6 +24,11 @@ export const PLOT_AGENT_SCHEMA = Type.Object({
   rejoinConditions: Type.Array(nonEmptyString(240), { maxItems: 6 }),
   forbiddenOutcomes: Type.Array(nonEmptyString(240), { maxItems: 8 }),
   memoryNotes: Type.Array(nonEmptyString(200), { maxItems: 6 }),
+  candidateChanges: Type.Optional(Type.Array(Type.Object({
+    kind: Type.Union([Type.Literal("branch_seed"), Type.Literal("causal_risk"), Type.Literal("route_change")]),
+    description: nonEmptyString(300),
+    evidence: nonEmptyString(240),
+  }), { maxItems: 6 })),
 });
 
 export const CHARACTER_AGENT_SCHEMA = Type.Object({
@@ -37,6 +42,13 @@ export const CHARACTER_AGENT_SCHEMA = Type.Object({
   }), { maxItems: 12 }),
   forbiddenBehaviors: Type.Array(nonEmptyString(240), { maxItems: 10 }),
   memoryNotes: Type.Array(Type.Object({ characterId: referenceId, note: nonEmptyString(240) }), { maxItems: 12 }),
+  candidateChanges: Type.Optional(Type.Array(Type.Object({
+    kind: Type.Union([Type.Literal("relationship"), Type.Literal("knowledge"), Type.Literal("emotion"), Type.Literal("memory")]),
+    characterId: referenceId,
+    targetCharacterId: Type.Optional(referenceId),
+    description: nonEmptyString(300),
+    evidence: nonEmptyString(240),
+  }), { maxItems: 12 })),
 });
 
 export const ENVIRONMENT_AGENT_SCHEMA = Type.Object({
@@ -47,6 +59,13 @@ export const ENVIRONMENT_AGENT_SCHEMA = Type.Object({
   availableResources: Type.Array(nonEmptyString(180), { maxItems: 10 }),
   constraints: Type.Array(nonEmptyString(240), { minItems: 1, maxItems: 10 }),
   memoryNotes: Type.Array(nonEmptyString(200), { maxItems: 6 }),
+  candidateChanges: Type.Optional(Type.Array(Type.Object({
+    kind: Type.Union([Type.Literal("movement"), Type.Literal("resource"), Type.Literal("access"), Type.Literal("scene_state"), Type.Literal("time")]),
+    locationId: Type.Optional(referenceId),
+    itemId: Type.Optional(referenceId),
+    description: nonEmptyString(300),
+    evidence: nonEmptyString(240),
+  }), { maxItems: 10 })),
 });
 
 const generatedFactSchema = Type.Object({
@@ -134,6 +153,7 @@ export const TURN_PROPOSAL_SCHEMA = Type.Object({
       Type.Array(
         Type.Object({
           characterId: referenceId,
+          targetCharacterId: Type.Optional(referenceId),
           amount: Type.Integer({ minimum: -2, maximum: 2 }),
           reason: nonEmptyString(160),
         }),
@@ -234,6 +254,12 @@ export function createInitialState(storyPackage) {
     sceneStateId: storyPackage.locations.find((location) => location.id === storyPackage.world.locationId)?.defaultStateId ?? "default",
     inventory,
     generatedFacts: {},
+    relationshipGraph: {
+      nodes: storyPackage.characters.map(({ id, name }) => ({ id, name })),
+      edges: storyPackage.characters
+        .filter((character) => character.id !== storyPackage.playerCharacterId && character.attitude !== 0)
+        .map((character) => ({ from: character.id, to: storyPackage.playerCharacterId, type: "attitude", value: character.attitude })),
+    },
     characters: Object.fromEntries(
       storyPackage.characters.map((character) => [
         character.id,
@@ -459,6 +485,8 @@ function applyGeneratedContent(state, delta, storyPackage, eventId, recordedAtTi
       sourceEventId: eventId,
       introducedAtTimeMinutes: recordedAtTimeMinutes,
     };
+    state.relationshipGraph ??= { nodes: [], edges: [] };
+    state.relationshipGraph.nodes.push({ id, name: character.name });
   }
 }
 
@@ -568,8 +596,17 @@ export function applyTurnProposal(currentState, proposal, storyPackage, eventId 
 
   for (const change of delta.relationshipChanges ?? []) {
     assertReference(characterIds, change.characterId, "人物");
+    if (change.targetCharacterId) assertReference(characterIds, change.targetCharacterId, "关系目标人物");
     const character = next.characters[change.characterId];
-    character.attitude = Math.max(-5, Math.min(5, character.attitude + change.amount));
+    if (!change.targetCharacterId || change.targetCharacterId === storyPackage.playerCharacterId) {
+      character.attitude = Math.max(-5, Math.min(5, character.attitude + change.amount));
+    }
+    next.relationshipGraph ??= { nodes: Object.values(next.characters).map(({ id, name }) => ({ id, name })), edges: [] };
+    const from = change.characterId;
+    const to = change.targetCharacterId ?? storyPackage.playerCharacterId;
+    const edge = next.relationshipGraph.edges.find((item) => item.from === from && item.to === to && item.type === "attitude");
+    if (edge) edge.value = Math.max(-5, Math.min(5, edge.value + change.amount));
+    else next.relationshipGraph.edges.push({ from, to, type: "attitude", value: change.amount });
   }
 
   for (const update of delta.characterUpdates ?? []) {

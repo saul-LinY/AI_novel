@@ -39,6 +39,26 @@ test("合法状态增量生成新版本且不改动旧状态", () => {
   assert.equal(next.characters["erii"].attitude, initial.characters["erii"].attitude - 1);
 });
 
+test("主创提案可以原子更新人物关系图，并保留给前端的可见投影", () => {
+  const initial = createInitialState(dragonRaja);
+  const next = applyTurnProposal(
+    initial,
+    proposal({
+      delta: {
+        relationshipChanges: [{ characterId: "erii", targetCharacterId: "lu-mingze", amount: 1, reason: "共同承担风险" }],
+      },
+    }),
+    dragonRaja,
+    "relationship-turn",
+  );
+  assert.ok(next.relationshipGraph.edges.some((edge) => edge.from === "erii" && edge.to === "lu-mingze" && edge.value === 1));
+  const store = createInitialStore(dragonRaja);
+  store.events[store.branches.main.headEventId].stateAfter = next;
+  const visible = serializeStore(store, dragonRaja).state.relationshipGraph;
+  assert.ok(visible.nodes.some((node) => node.id === "erii"));
+  assert.equal(visible.edges.some((edge) => edge.from === "erii" && edge.to === "lu-mingze"), false);
+});
+
 test("知识门槛只拦截尚未获得的准确秘密", () => {
   const initial = createInitialState(dragonRaja);
   assert.deepEqual(findKnowledgeGate("我去找赫尔佐格", initial, dragonRaja), {

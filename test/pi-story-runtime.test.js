@@ -172,6 +172,7 @@ test("情节和主Agent收到未解线索的内容、真实阶段进度和近期
   fake.session("main").prompt = async () => fake.session("main").emitText("你向凯撒说明条件，等他表态。");
   await fake.runtime.generateTurn(context({ recentEvents: [{ action: "开窗", prose: "你推开窗户。", choices: [{ id: "breakfast", label: "窗边吃早餐", action: "陪绘梨衣吃早餐" }] }] }));
   for (const role of ["plot", "main"]) {
+    assert.match(prompts[role], /<shared_context>/);
     assert.match(prompts[role], /在药效耗尽前获得可信的治疗/);
     assert.match(prompts[role], /completedGoalIds/);
     assert.match(prompts[role], /窗边吃早餐/);

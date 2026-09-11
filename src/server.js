@@ -156,6 +156,7 @@ export async function createAppServer(options = {}) {
         proposal: result.proposal,
         piEntryIds: result.piEntryIds,
         agentReports: result.reports,
+        sharedContext: result.sharedContext,
         storyPackage,
       });
       nextStore.story.piSessionFiles = runtime.sessionFiles ?? nextStore.story.piSessionFiles;

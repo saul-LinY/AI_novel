@@ -152,6 +152,7 @@ export class StoryStore {
       timeMinutes: headState.timeMinutes,
       inventory: headState.inventory,
       threads: headState.threads,
+      relationshipGraph: headState.relationshipGraph,
       status: headState.status,
       ending: headState.ending,
     });

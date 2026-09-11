@@ -27,6 +27,7 @@ const elements = {
   panelScrim: document.querySelector("#panel-scrim"),
   resetStory: document.querySelector("#reset-story"),
   roleDock: document.querySelector("#role-dock"),
+  relationshipList: document.querySelector("#relationship-list"),
   sceneEyebrow: document.querySelector("#scene-eyebrow"),
   sceneImage: document.querySelector("#scene-image"),
   sceneTitle: document.querySelector("#scene-title"),
@@ -594,6 +595,16 @@ function renderState() {
         })
         .join("")
     : '<p class="empty-state">还没有认识重要人物</p>';
+
+  const graph = story.state.relationshipGraph;
+  const names = new Map((graph?.nodes ?? []).map((node) => [node.id, node.name]));
+  const visibleEdges = (graph?.edges ?? []).filter((edge) => names.has(edge.from) && names.has(edge.to));
+  elements.relationshipList.innerHTML = visibleEdges.length
+    ? visibleEdges.map((edge) => {
+        const label = edge.type === "attitude" ? relationLabel(edge.value).label : "有联系";
+        return `<div class="relationship-item"><span>${escapeHtml(names.get(edge.from))}</span><i data-lucide="arrow-right"></i><span>${escapeHtml(names.get(edge.to))}</span><small>${escapeHtml(label)}</small></div>`;
+      }).join("")
+    : '<p class="empty-state">关系网还没有形成可见连接</p>';
 
   elements.inventoryList.innerHTML = story.state.inventory.length
     ? story.state.inventory

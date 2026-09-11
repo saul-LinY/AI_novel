@@ -11,17 +11,17 @@
 | 02 | 引导与角色进入 | [查看](https://www.figma.com/board/bDLUgDFQaZveJfy21Y8YXw?node-id=10-496) | `02-onboarding.mmd` |
 | 03 | 用户行动与创作协作 | [查看](https://www.figma.com/board/bDLUgDFQaZveJfy21Y8YXw?node-id=10-500) | `03-turn-workflow.mmd` |
 | 04 | 审查、输出与记忆 | [查看](https://www.figma.com/board/bDLUgDFQaZveJfy21Y8YXw?node-id=10-504) | `04-review-output.mmd` |
-| 05 | 三个子 Agent 工作拆解 | [查看](https://www.figma.com/board/bDLUgDFQaZveJfy21Y8YXw?node-id=15-606) | `05-subagents.mmd` |
+| 05 | 完整 Agent Loop：共享信息、三类子 Agent、主创与状态回写 | [查看详细版](https://www.figma.com/board/bDLUgDFQaZveJfy21Y8YXw?node-id=37-760) | `05-subagents.mmd`、[`agent-loop.md`](agent-loop.md) |
 
-## 三个子 Agent 的职责拆解
+## 完整 Agent Loop
 
-新增视图 05 将每个子 Agent 按读取内容、判断任务、提交报告和实际校验展开，并附同一次用户行动的假设示例。
+视图 05 已从“三个子 Agent 的职责拆解”升级为完整闭环：用户行动经过共享信息筛选后，进入三个领域 Agent；它们提供素材并提出候选状态变化；主创 Agent 综合、裁决并写正文；确认结果再回写到各领域和共享世界状态。
 
 - 情节：根据行动、分支摘要、路线、邻近主干、既定事实和人物概况，提出因果链、推荐节点、回归条件、禁止结果与记忆建议。程序核对当前节点一致性及推荐节点存在性；最终路线兼容性和推进证据由主创提案的检查继续约束。
 - 人物：根据最近四轮和相关人物的人格、状态、经历、各自已知信息，提出可见反应、私下原因、当前意图、禁止行为和人物记忆建议。程序核对人物与事实存在，且使用的事实属于该人物已知信息。同一个人物 Agent 会分析多个人物，并非每人一个独立 Agent。
 - 环境：根据当前地点、时间、物品、环境记忆及地点场景目录，提出地点、场景、耗时、资源、限制和记忆建议。程序核对地点与场景的归属；可达性、耗时和资源合理性仍依赖模型判断及主创整合。
 
-三者并行提交建议，不直接写正文或更新存档。主创收到三份有效报告后解决冲突，形成并检查最终提案。报告里的记忆建议也不自动成为正式记忆。图中多个步骤用于拆解职责，不代表增加新的 Agent 或固定的多次模型调用。
+三者并行提交建议，不直接写正文。候选变化在主创确认前不成为正式事实；确认后由各领域 Agent 更新自己的状态，共享信息层合并为下一轮统一状态。情节支线允许偏离主线，但必须保持至少一个合法结局可达。完整的图文说明见 [`agent-loop.md`](agent-loop.md)。
 
 ## 读图时必须保留的区别
 
@@ -42,8 +42,8 @@
 - `src/pi-story-runtime.js`：三种分析、主创整合、提案准备与正文逐句展示。
 - `src/story-engine.js`：知识词拦截、提案约束、目标与路线、结局。
 - `src/server.js`：回合顺序、全文后提交与中断恢复。
-- `src/story-domain.js`：故事事件、分支记忆与读者可见内容。
+- `src/story-domain.js`：故事事件、分支记忆、关系图与读者可见内容。
 - `src/story-quality.js` 与全局引用搜索：现有质量检查函数没有接入运行链路。
 - `docs/production-workflow/REVIEW.zh-CN.md`：尚未落地的重构方案，仅用于图 04 黄色区。
 
-本次新增工作流文档与 FigJam 画布，未改变应用行为。
+本次同时把完整 Agent Loop 落到运行代码：新增共享信息层、候选变化字段、关系图状态与事件审计记录；完整实现说明见 [`agent-loop.md`](agent-loop.md)。

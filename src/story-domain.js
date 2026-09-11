@@ -67,6 +67,7 @@ export function appendTurn(
     proposal,
     piEntryIds = {},
     agentReports = null,
+    sharedContext = null,
     storyPackage,
   },
 ) {
@@ -90,6 +91,7 @@ export function appendTurn(
     turnResult: structuredClone(proposal),
     piEntryIds: structuredClone(piEntryIds),
     agentReports: agentReports ? structuredClone(agentReports) : null,
+    sharedContext: sharedContext ? structuredClone(sharedContext) : null,
     createdAt: new Date().toISOString(),
   };
   store.events[eventId] = event;
@@ -202,6 +204,17 @@ export function serializeStore(store, storyPackage) {
       status: character.status,
       present: character.locationId === state.locationId,
     }));
+  const visibleCharacterIds = new Set([storyPackage.playerCharacterId, ...visibleCharacters.map((character) => character.id)]);
+  const relationshipGraph = {
+    nodes: Object.values(state.characters)
+      .filter((character) => visibleCharacterIds.has(character.id))
+      .map(({ id, name }) => ({ id, name })),
+    edges: (state.relationshipGraph?.edges ?? Object.values(state.characters)
+      .filter((character) => character.id !== storyPackage.playerCharacterId && character.attitude !== 0)
+      .map((character) => ({ from: character.id, to: storyPackage.playerCharacterId, type: "attitude", value: character.attitude })))
+      .filter((edge) => visibleCharacterIds.has(edge.from) && visibleCharacterIds.has(edge.to))
+      .map(({ from, to, type, value }) => ({ from, to, type, value })),
+  };
   const currentLocation = locations[state.locationId] ?? null;
   const sceneState = currentLocation?.states.find((item) => item.id === state.sceneStateId)
     ?? currentLocation?.states.find((item) => item.id === currentLocation.defaultStateId)
@@ -267,6 +280,7 @@ export function serializeStore(store, storyPackage) {
           }
         : null,
       characters: visibleCharacters,
+      relationshipGraph,
       inventory: Object.entries(state.inventory).map(([id, count]) => ({
         id,
         name: items[id]?.name ?? id,
