@@ -44,7 +44,8 @@ test("console reads the correct round and preserves failed and accepted submissi
   assert.equal(list.runs.length, 1);
   assert.equal(list.runs[0].number, 1);
   const detail = await reader.detail("job");
-  assert.equal(detail.steps.length, 7);
+  assert.equal(detail.steps.length, 8);
+  assert.deepEqual(detail.steps.map((step) => step.id), ["shared", "environment", "character", "plot", "decision", "prose", "recorder", "commit"]);
   const environment = detail.steps.find((s) => s.id === "environment");
   assert.deepEqual(environment.attempts.map((a) => a.status), ["failed", "accepted"]);
   assert.equal(environment.attempts[0].feedback, "地点不存在");
@@ -81,6 +82,12 @@ test("standalone HTTP console is read only and handles an empty data directory",
   assert.equal((await fetch(`${origin}/api/console/runs/missing`)).status, 404);
   assert.equal((await fetch(`${origin}/api/console/runs`, { method: "POST" })).status, 405);
   assert.equal((await fetch(`${origin}/package.json`)).status, 404);
+  // Every module the console page imports must actually be served.
+  const app = await (await fetch(`${origin}/app.js`)).text();
+  for (const [, module] of app.matchAll(/from '\.\/([\w-]+\.js)'/g)) {
+    assert.equal((await fetch(`${origin}/${module}`)).status, 200, `${module} is not served`);
+  }
+  assert.equal((await fetch(`${origin}/api/console/performance`)).status, 200);
   assert.equal(await readFile(join(root, "index.json"), "utf8"), before);
   const empty = createConsoleReader({ dataDir: join(dataDir, "empty") });
   assert.deepEqual((await empty.list()).runs, []);
@@ -102,4 +109,49 @@ test("state diff keeps nested, added, removed, and array changes", () => {
   assert.deepEqual(stateChanges({ inventory: { key: 0 }, gone: true, facts: [] }, { inventory: { key: 1 }, added: "new", facts: ["door"] }), [
     { path: "inventory.key", before: 0, after: 1 }, { path: "gone", before: true, after: null }, { path: "facts", before: [], after: ["door"] }, { path: "added", before: null, after: "new" },
   ]);
+});
+
+test("telemetry becomes per-step metrics and a performance summary; older runs show none", async (t) => {
+  const { dataDir, save } = await fixture(t);
+  const reader = createConsoleReader({ dataDir });
+  const legacy = await reader.detail("job");
+  assert.equal(legacy.steps.find((s) => s.id === "environment").metrics, null);
+  assert.equal((await reader.performance()).turns.length, 0);
+
+  const usage = (total) => ({ input: total - 100, output: 100, cacheRead: 50, cacheWrite: 0, totalTokens: total, cost: 0 });
+  const call = (role, phase, durationMs, extra = {}) => ({ role, phase, durationMs, firstTokenMs: 200, usage: usage(1000), toolFailures: 0, autoRetries: 0, validationErrors: [], model: "m", outcome: "ok", ...extra });
+  const telemetry = {
+    version: 1, totalMs: 9000, marks: { prepared: 5000, firstProse: 6000, committed: 9000 },
+    calls: [call("environment", "analysis", 2000, { toolFailures: 1, validationErrors: ["地点不存在：nowhere"] }), call("character", "analysis", 2500), call("plot", "analysis", 3000), call("main", "prepare", 2000), call("main", "narration", 3000)],
+    totals: { usage: usage(5000) }, quality: { issues: [{ code: "too_short", severity: "minor" }] }, critic: null,
+  };
+  const event = JSON.parse(await readFile(join(dataDir, "stories/dragon-raja/branches/main/turns/turn/event.json"), "utf8"));
+  await save("branches/main/turns/turn/event.json", { ...event, telemetry });
+  const detail = await reader.detail("job");
+  const environment = detail.steps.find((s) => s.id === "environment").metrics;
+  assert.equal(environment.durationMs, 2000);
+  assert.equal(environment.toolFailures, 1);
+  assert.deepEqual(environment.validationErrors, ["地点不存在：nowhere"]);
+  assert.equal(detail.steps.find((s) => s.id === "decision").metrics.durationMs, 2000);
+  assert.equal(detail.steps.find((s) => s.id === "prose").metrics.durationMs, 3000);
+  const performance = await reader.performance();
+  assert.equal(performance.summary.totalP50, 9000);
+  assert.equal(performance.summary.firstProseP50, 6000);
+  assert.equal(performance.turns[0].byRole["main:narration"], 3000);
+  assert.equal(performance.turns[0].failures[0].role, "environment");
+});
+
+test("控制台读取提案闸门、写作简报、连续性记录与提交后的叙事账本，状态差异不含账本", async (t) => {
+  const { dataDir, save } = await fixture(t);
+  const narrative = { version: 1, turn: 1, arc: [{ turn: 1, beat: "reversal", tension: 7 }], ledger: [{ id: "L1-1", turn: 1, kind: "item", text: "钥匙到手", quote: "你找到了钥匙", characterIds: [], knownByIds: [], importance: 2, status: "active" }], openLoops: [], seeds: {}, continuityNotes: [] };
+  const gate = { mode: "enforce", bounces: 1, waived: [], checks: [{ id: "world", label: "世界因果", passed: true, issues: [], detail: "ok" }, { id: "pacing", label: "节奏曲线", passed: true, issues: [], detail: "开篇 → 反转7" }] };
+  await save("branches/main/turns/turn/event.json", { id: "turn", type: "turn", action: "找钥匙", branchId: "main", parentEventId: "opening", stateAfter: { locationId: "room", inventory: { key: 1 }, narrative }, piEntryIds: { environment: "leaf" }, prose: "你找到了钥匙。", proposalGate: gate, beatSheet: { beat: { type: "reversal", label: "反转", tension: 7 } }, continuityRecord: { source: "agent", entries: narrative.ledger }, turnResult: { outcome: { summary: "找到钥匙" } }, createdAt: "2026-09-11T01:01:00.000Z" });
+  const detail = await createConsoleReader({ dataDir }).detail("job");
+  assert.equal(detail.narrative.gate.bounces, 1);
+  assert.equal(detail.narrative.beatSheet.beat.type, "reversal");
+  assert.equal(detail.narrative.after.ledger[0].quote, "你找到了钥匙");
+  assert.equal(detail.steps.find((step) => step.id === "recorder").status, "complete");
+  const commit = detail.steps.find((step) => step.id === "commit").output;
+  assert.deepEqual(commit.changes, [{ path: "inventory.key", before: 0, after: 1 }]);
+  assert.equal(commit.stateAfter.narrative, undefined);
 });

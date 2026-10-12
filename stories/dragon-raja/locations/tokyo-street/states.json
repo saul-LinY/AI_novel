@@ -13,6 +13,24 @@
         "src": "/assets/scenes/dragon-raja/tokyo-street.png",
         "alt": "东京街区的环境画面"
       }
+    },
+    {
+      "id": "night",
+      "title": "雨夜街口",
+      "description": "暴雨中的东京街口，高架电车、便利店和游戏厅的霓虹在积水里碎成光斑，人群撑着伞挤过路口。",
+      "image": {
+        "src": "/assets/scenes/dragon-raja/tokyo-street-night.png",
+        "alt": "东京街区：雨夜街口"
+      }
+    },
+    {
+      "id": "search",
+      "title": "黑西装搜索",
+      "description": "街边停着黑色轿车，戴耳麦的黑西装在人群里逐一辨认面孔；普通的傍晚多了一层看不见的网。",
+      "image": {
+        "src": "/assets/scenes/dragon-raja/tokyo-street-search.png",
+        "alt": "东京街区：黑西装搜索"
+      }
     }
   ]
 }

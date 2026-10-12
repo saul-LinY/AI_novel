@@ -13,6 +13,24 @@
         "src": "/assets/scenes/dragon-raja/theme-hotel.png",
         "alt": "东京主题旅馆的环境画面"
       }
+    },
+    {
+      "id": "night",
+      "title": "雨夜套房",
+      "description": "夜里的主题旅馆套房：星空顶灯、鸭子台灯和雨痕斑驳的窗；桌上的药盒与本子在暖光里格外显眼。",
+      "image": {
+        "src": "/assets/scenes/dragon-raja/theme-hotel-night.png",
+        "alt": "东京主题旅馆：雨夜套房"
+      }
+    },
+    {
+      "id": "crisis",
+      "title": "走廊有人",
+      "description": "旅馆走廊尽头的电梯门打开，几道人影拉长在地毯上；门缝外的安静变成了逼近的脚步声。",
+      "image": {
+        "src": "/assets/scenes/dragon-raja/theme-hotel-crisis.png",
+        "alt": "东京主题旅馆：走廊有人"
+      }
     }
   ]
 }

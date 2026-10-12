@@ -47,8 +47,8 @@
   "runtime": {
     "playerCharacterId": "lu-mingfei",
     "visual": {
-      "src": "/assets/onboarding/dragon-raja/comic-01.png",
-      "alt": "东京雨夜中，路明非与绘梨衣被隐秘战争包围"
+      "src": "/assets/covers/dragon-raja-wide.png",
+      "alt": "雨夜东京天台上，绘梨衣回望城市，路明非站在她身后"
     },
     "opening": {
       "action": "在追踪收紧前决定绘梨衣的下一站",
@@ -57,17 +57,20 @@
         {
           "id": "check-erii-condition",
           "label": "确认身体状况",
-          "action": "我先确认绘梨衣现在的身体状况和最后一支药还能争取多少时间。"
+          "action": "我先确认绘梨衣现在的身体状况和最后一支药还能争取多少时间。",
+          "line": "你现在感觉怎么样？那支药……还能撑多久？"
         },
         {
           "id": "answer-caesar",
           "label": "回复凯撒",
-          "action": "我接通凯撒的加密联络，要求他把撤离方案和风险完整说清楚。"
+          "action": "我接通凯撒的加密联络，要求他把撤离方案和风险完整说清楚。",
+          "line": "凯撒，撤离方案和风险，你一条一条说清楚。"
         },
         {
           "id": "ask-erii",
           "label": "先问绘梨衣",
-          "action": "我把几条可能的路写在本子上，先问绘梨衣自己想去哪里。"
+          "action": "我把几条可能的路写在本子上，先问绘梨衣自己想去哪里。",
+          "line": "这几条路我都写下来了，你自己想去哪儿？"
         }
       ]
     },
@@ -99,17 +102,20 @@
               {
                 "id": "lu-ask-choice",
                 "label": "让她选择",
-                "action": "我在本子上写下离开日本、回到哥哥身边和继续追查三种可能，请绘梨衣先选。"
+                "action": "我在本子上写下离开日本、回到哥哥身边和继续追查三种可能，请绘梨衣先选。",
+                "line": "三条路我都写在这儿了，你先挑，我不改。"
               },
               {
                 "id": "lu-contact-caesar",
                 "label": "核实撤离",
-                "action": "我联系凯撒，确认安全点、离境方式和他们能否继续提供稳定血统的药。"
+                "action": "我联系凯撒，确认安全点、离境方式和他们能否继续提供稳定血统的药。",
+                "line": "凯撒，撤离我听你的，可她的药呢？你那边能不能接得上？"
               },
               {
                 "id": "lu-check-hallway",
                 "label": "检查追踪",
-                "action": "我先从猫眼和监控死角检查走廊，判断这里是否已经暴露。"
+                "action": "我先从猫眼和监控死角检查走廊，判断这里是否已经暴露。",
+                "line": "你先别出声，我去门口看看外面有没有人。"
               }
             ]
           },
@@ -152,17 +158,20 @@
               {
                 "id": "erii-write-wish",
                 "label": "写下愿望",
-                "action": "我在本子上写下我真正想去的地方和愿意承担的代价，递给路明非。"
+                "action": "我在本子上写下我真正想去的地方和愿意承担的代价，递给路明非。",
+                "line": "（把本子推过去）这是我想去的地方。我知道要付什么。"
               },
               {
                 "id": "erii-check-serum",
                 "label": "检查药物",
-                "action": "我先检查自己的手、声音和药物，判断还能安全行动多久。"
+                "action": "我先检查自己的手、声音和药物，判断还能安全行动多久。",
+                "line": "Sakura，等一下。我想先看看自己还能撑多久。"
               },
               {
                 "id": "erii-sense-search",
                 "label": "感知追兵",
-                "action": "我保持沉默，走到门边分辨外面的脚步和杀意。"
+                "action": "我保持沉默，走到门边分辨外面的脚步和杀意。",
+                "line": "（在本子上写）门外，有人。"
               }
             ]
           },
@@ -201,17 +210,20 @@
               {
                 "id": "gen-audit-medical",
                 "label": "核查治疗记录",
-                "action": "我暂停强制搜索，先调出绘梨衣的完整治疗记录，核对橘政宗隐去的部分。"
+                "action": "我暂停强制搜索，先调出绘梨衣的完整治疗记录，核对橘政宗隐去的部分。",
+                "line": "把她完整的治疗记录调给我，一页都不许少。"
               },
               {
                 "id": "gen-send-message",
                 "label": "发送私人留言",
-                "action": "我绕过家族命令系统，给绘梨衣和路明非发送一条只说明药物风险、不要求立刻回来的私人留言。"
+                "action": "我绕过家族命令系统，给绘梨衣和路明非发送一条只说明药物风险、不要求立刻回来的私人留言。",
+                "line": "绘梨衣，药撑不了太久。我不逼你回来，但你要知道这件事。"
               },
               {
                 "id": "gen-search-softly",
                 "label": "缩小搜索范围",
-                "action": "我让樱调取公共交通与药店记录，只定位他们，不允许搜索队强行接触。"
+                "action": "我让樱调取公共交通与药店记录，只定位他们，不允许搜索队强行接触。",
+                "line": "樱，只查交通和药店记录。找到人以后，谁都不许靠近她。"
               }
             ]
           },
@@ -254,17 +266,20 @@
               {
                 "id": "caesar-secure-serum",
                 "label": "先解决药物",
-                "action": "我先动用安全屋渠道寻找可验证的血清或医疗支持，再谈撤离。"
+                "action": "我先动用安全屋渠道寻找可验证的血清或医疗支持，再谈撤离。",
+                "line": "先别谈撤离。把能验证的血清给我找来，这是前提。"
               },
               {
                 "id": "caesar-call-lu",
                 "label": "直接说明风险",
-                "action": "我联系路明非，完整说明撤离路线、暴露点和我无法保证的部分。"
+                "action": "我联系路明非，完整说明撤离路线、暴露点和我无法保证的部分。",
+                "line": "路明非，我把路线和风险都告诉你，包括我保证不了的那部分。"
               },
               {
                 "id": "caesar-question-order",
                 "label": "追问学院",
-                "action": "我要求学院说明为何必须带走绘梨衣，以及他们对她真实身份知道多少。"
+                "action": "我要求学院说明为何必须带走绘梨衣，以及他们对她真实身份知道多少。",
+                "line": "学院为什么非要带走她？你们到底知道她什么？"
               }
             ]
           },
@@ -505,6 +520,66 @@
           }
         }
       ]
+    },
+    "art": {
+      "cover": {
+        "wide": {
+          "src": "/assets/covers/dragon-raja-wide.png",
+          "alt": "雨夜东京天台上，绘梨衣回望城市，路明非站在她身后"
+        },
+        "tall": {
+          "src": "/assets/covers/dragon-raja-tall.png",
+          "alt": "撑着透明伞的绘梨衣在雨巷中回头"
+        }
+      },
+      "tagline": "命运之外，还有一条路。",
+      "volumeLabel": "VOL. 01 — 东京出走",
+      "genreTags": [
+        "互动小说",
+        "都市幻想",
+        "龙族同人"
+      ],
+      "roleKeyArt": {
+        "lu-mingfei": {
+          "src": "/assets/roles/dragon-raja/lu-mingfei-key.png",
+          "alt": "雨夜便利店檐下握着手机的路明非"
+        },
+        "erii": {
+          "src": "/assets/roles/dragon-raja/erii-key.png",
+          "alt": "黎明站台上捧着笔记本的绘梨衣"
+        },
+        "gen-chisei": {
+          "src": "/assets/roles/dragon-raja/gen-chisei-key.png",
+          "alt": "监控墙前持刀伫立的源稚生"
+        },
+        "caesar": {
+          "src": "/assets/roles/dragon-raja/caesar-key.png",
+          "alt": "安全屋吊灯下俯身看地图的凯撒"
+        }
+      },
+      "endings": {
+        "normal": {
+          "src": "/assets/endings/dragon-raja/normal.png",
+          "alt": "雨中的路明非握着小黄鸭，望向源氏重工唯一亮着的红窗"
+        },
+        "deviation": {
+          "src": "/assets/endings/dragon-raja/deviation.png",
+          "alt": "日出时分，路明非与绘梨衣站在驶离东京湾的渡轮上"
+        },
+        "failure": {
+          "src": "/assets/endings/dragon-raja/failure.png",
+          "alt": "清晨空荡的旅馆房间，打开的药盒与遗落的白色发带"
+        },
+        "early": {
+          "src": "/assets/endings/dragon-raja/early.png",
+          "alt": "深夜空站台上，绘梨衣独自坐着，列车驶向远方"
+        }
+      },
+      "textures": {
+        "paper": "/assets/ui/paper.png",
+        "dossier": "/assets/ui/dossier.png",
+        "ink": "/assets/ui/ink-wash.png"
+      }
     }
   }
 }

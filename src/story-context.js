@@ -1,3 +1,5 @@
+import { narrativeDigest } from "./story-narrative.js";
+
 const clone = (value) => structuredClone(value);
 
 function normalize(value) {
@@ -54,6 +56,7 @@ export function buildSharedContext({
   branchMemory = "",
   characterMemories = {},
   environmentMemory = "",
+  longTermMemory = null,
 }) {
   const characters = Object.values(state.characters ?? {});
   const locations = storyPackage.locations ?? [];
@@ -146,11 +149,13 @@ export function buildSharedContext({
         activeCharacters: relevantCharacters.map((character) => ({ id: character.id, locationId: character.locationId, status: character.status })),
         worldRules: [...(storyPackage.world?.rules ?? [])],
         memory: environmentMemory,
+        longTermMemory: clone(longTermMemory?.environment ?? []),
       },
       character: {
         characters: relevantCharacters.map((character) => compactCharacter(character, characterMemories[character.id] ?? "")),
         relationshipGraph: { nodes: relevantCharacters.map(({ id, name }) => ({ id, name })), edges: relationshipEdges },
         facts: relevantFacts.map((fact) => ({ id: fact.id, kind: fact.kind, truth: fact.truth ?? fact.text, revealText: fact.revealText ?? fact.text })),
+        longTermMemoryByCharacter: Object.fromEntries(relevantCharacters.map((character) => [character.id, clone(longTermMemory?.characters?.[character.id] ?? [])])),
       },
       plot: {
         currentStage,
@@ -159,6 +164,7 @@ export function buildSharedContext({
         openThreads: relevantThreads,
         branchMemory,
         recentEvents: recentEvents.slice(-4).map((event) => ({ action: event.action, prose: event.prose, choices: event.choices ?? [], outcome: event.turnResult?.outcome ?? null })),
+        longTermMemory: clone(longTermMemory?.global ?? []),
       },
     },
     unknowns: [
@@ -166,6 +172,10 @@ export function buildSharedContext({
       ...(relevantItems.length === 0 && /拿|取|用|放|找|物品|道具/u.test(action) ? ["行动提到了物品，但共享状态中没有匹配条目"] : []),
     ],
     candidateChanges: [],
+    memoryTrace: longTermMemory?.trace ? clone(longTermMemory.trace) : null,
+    // Pacing directive, live foreshadowing, open loops and the prose-grounded
+    // fact ledger; each character only sees entries it witnessed.
+    narrative: narrativeDigest(state, storyPackage, { action, characterIds: [...characterIds] }),
   };
   return shared;
 }

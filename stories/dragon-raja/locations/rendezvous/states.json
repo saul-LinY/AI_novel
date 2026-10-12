@@ -13,6 +13,24 @@
         "src": "/assets/scenes/dragon-raja/rendezvous.png",
         "alt": "临时会合点的环境画面"
       }
+    },
+    {
+      "id": "ambush",
+      "title": "多路包围",
+      "description": "地下停车场里，撤离车辆的车灯刚亮，几条坡道上同时出现别的车灯；会合点正在变成包围圈。",
+      "image": {
+        "src": "/assets/scenes/dragon-raja/rendezvous-ambush.png",
+        "alt": "临时会合点：多路包围"
+      }
+    },
+    {
+      "id": "dawn",
+      "title": "黎明出口",
+      "description": "黎明时分，停车场出口的坡道上洒下晨光，一辆车门敞开的车安静地等着。",
+      "image": {
+        "src": "/assets/scenes/dragon-raja/rendezvous-dawn.png",
+        "alt": "临时会合点：黎明出口"
+      }
     }
   ]
 }

@@ -139,3 +139,113 @@ src/story-store.js
 ```
 
 `candidateChanges` 是三个领域报告新增的候选变化字段。它们会随事件保存，方便审查“Agent 当时建议了什么”；只有主创最终提案中的 `delta`、`storyProgress`、`ending` 和记忆字段会改变正式世界状态。项目用一次原子状态应用完成三个领域的确认回写，再由下一轮 `buildSharedContext` 重新汇总。前端序列化时会返回玩家可见人物的 `relationshipGraph`，隐藏人物和隐藏关系不会泄露。
+
+## 9. 2026-10 重设计：等待体验、质量与可观测
+
+一轮回合按下面的时间线运行（括号内是推给玩家的事件，全部只含玩家有权知道的内容）：
+
+```text
+提交行动 ─(start：行动立即回显)
+  ├─ 环境 / 人物 / 情节 并行分析 ─(agent_progress)
+  │     └─ 环境、人物报告一通过校验 ─(beat：一句感官描写，过滤秘密与私有动机)
+  ├─ 主创裁决 → 提案闸门（见第 10 节）─(prepared → scene → outcome)
+  ├─ 正文按写作简报流式写作 ─(prose_delta：按完整句)
+  │     ├─ [可选] 选项 Agent 与正文并行生成下一步选项 ─(phase: choosing)
+  │     └─ 句级守卫：重复句 / 超长立即截停在最后一句完整正文
+  ├─ 质量评估：整段重复自动折叠；enforce 模式下过短正文续写一次
+  ├─ 连续性记录员读取已发布正文 ─(phase: recording)
+  └─ 原子提交：世界状态 + 叙事账本 ─(phase: committing → complete)
+```
+
+### 配置（`.ai-novel/pipeline.json` 或环境变量）
+
+| 键 | 默认 | 环境变量 | 作用 |
+|---|---|---|---|
+| `beats` | `true` | `AI_NOVEL_BEATS=on/off` | 等待期推送感官描写 |
+| `outcomeSummary` | `true` | `AI_NOVEL_OUTCOME_SUMMARY` | `outcome` 事件附带结果摘要 |
+| `choices` | `inline` | `AI_NOVEL_CHOICES=inline/parallel` | `parallel` 时选项由选项 Agent 与正文并行生成，主创只给 `closingBeat` |
+| `narrative` | `enforce` | `AI_NOVEL_NARRATIVE=enforce/advise/off` | 提案闸门的节奏与伏笔校验：`enforce` 不通过时退回主创一次；`advise` 只记录；`off` 不生成写作简报 |
+| `recorder` | `agent` | `AI_NOVEL_RECORDER=agent/off` | 正文后由连续性记录员写事实账本；`off` 时只用确定性兜底记录 |
+| `quality` | `warn` | `AI_NOVEL_QUALITY=enforce/warn/off` | 正文质量评估的处理方式 |
+| `slimContext` | `true` | `AI_NOVEL_SLIM_CONTEXT` | 情节只拿相关原著真相；主创不重复整份共享上下文；正文只收提案投影 |
+| `recorderTimeoutMs` | `30000` | — | 记录员超时，超时改用确定性记录，照常提交 |
+| `maxResumes` | `5` | — | 正文续写的最大恢复次数，超过后作业失败 |
+
+非法值启动即报错，不会静默回退。原来的审稿 Agent（`critic`）已由连续性记录员取代：它除了修正与正文矛盾的记忆笔记，还负责写入可引用的事实账本。
+
+### 可靠性
+
+- 提交阶段的领域错误（提案无法应用、分支已变化）是永久错误：作业直接 `failed`（`code: COMMIT_REJECTED / BRANCH_CHANGED`），不会再被读者重连反复续写。
+- 只有模型请求和文件系统的临时错误才进入 `paused`，并受 `maxResumes` 限制。
+- 选项 Agent 连续 3 次校验失败时，用只引用玩家已知目标与线索的确定性选项兜底，并记入遥测。
+- 节奏与伏笔问题最多退回主创一次，且不计入 3 次结构化失败上限；仍未修正的问题记为 `narrative_waived` 警告放行，不会让回合失败。
+- 记录员失败或超时不阻塞提交：改用只摘录正文原文对白的确定性记录（`fallback_record`）。
+
+### 遥测
+
+每回合的 `telemetry` 写入作业（`job.json`）和存档事件，**不进入玩家事件流**（校验错误可能含隐藏事实 ID）：
+
+```text
+{ config, marks: { analyzed, prepared, firstProse, proseComplete, recorded, committed }, totalMs,
+  calls: [{ role, phase, durationMs, firstTokenMs, promptChars, toolFailures, autoRetries,
+            validationErrors[], usage{...}, model, stopReason, outcome }],
+  totals, quality: { issues[] }, record: { source, entries, openedLoops, closedLoops, seedsChecked, contradictions } }
+```
+
+对应代码：`src/pipeline-config.js`、`src/turn-telemetry.js`、`src/story-quality.js`、`src/pi-story-runtime.js`（`finishTurn`、`recordTurn`、`generateDeferredChoices`、`playerSafeText`）、`console/performance-view.js`。
+
+## 10. 后半段链路：精准记忆、跌宕节奏与伏笔
+
+从主创裁决到下一轮开始，链路围绕三本**随状态一起分支的账本**运转。它们保存在每个事件的 `stateAfter.narrative` 中，分支和回滚天然带走，不需要额外同步；当前分支的头部状态另存为 `branches/<id>/narrative-state.json` 便于查看。
+
+```text
+主创裁决（提案 + dramaturgy + foreshadowing）
+  ↓
+提案闸门
+  ├─ 世界因果：状态变化、阶段推进、推荐行动（必须通过）
+  ├─ 节奏曲线：不连续两回合同节拍或同张力、低张力三回合后必须升级、必须有价值翻转
+  ├─ 伏笔账本：只能回收已埋下且已在正文露面的伏笔；严重逾期必须处理；结局前全部收束
+  └─ 前文呼应：callbacks 只能引用仍有效的账本条目
+  ├─ 不成立 → 调整行动 / 结束本轮（不写入新事实）
+  └─ 节奏/伏笔未过 → 退回主创一次 → 仍未过则记为警告放行
+  ↓
+写作简报（beat sheet）：节拍、张力、价值翻转、转折点、结尾悬念、呼应原句、伏笔的表面细节
+  ↓
+主创写作（只见表面细节，不见伏笔真意，正文不会把伏笔说破）
+  ↓
+连续性记录员：从已发布正文逐字摘录事实、承诺、伏笔露面情况
+  ↓
+原子提交：世界 delta + 节奏曲线 + 伏笔状态 + 事实账本 + 未兑现事项，一次写入
+  ↓
+叙事账本 → 下一轮信息共享层：节奏指令 + 在场伏笔 + 未兑现事项 + 按人物视角裁剪的事实账本
+```
+
+### 三本账
+
+| 账本 | 内容 | 谁写 | 谁读 |
+|---|---|---|---|
+| 张力曲线 `arc` | 每回合的节拍、张力 1–10、价值翻转、转折点、结尾悬念 | 主创（经闸门） | 下一轮的节奏指令 |
+| 伏笔账本 `seeds` | 故事包伏笔（玩家得知种子事实即埋下、得知指向事实即回收）与 Agent 新埋伏笔（表面细节、真意、回收设想、回收窗口、强化记录、是否已在正文露面） | 主创埋下/强化/回收/放弃；记录员核对露面 | 情节 Agent 节奏建议、主创裁决、写作简报（仅表面） |
+| 事实账本 `ledger` + 未兑现事项 `openLoops` | 从正文逐字摘录的事实（每条带原句 `quote` 和知情人物 `knownByIds`）；承诺、威胁、疑问、计划、人情 | 记录员（引文校验通过才写入） | 主创、情节；人物 Agent 只收到各自亲历的条目；BM25 长期记忆按视角入库 |
+
+### 精准记忆的四道保证
+
+1. **以玩家读到的文字为准**：账本由记录员在正文发布后读取 `published_prose` 生成，提案里有但正文没写的事不入账。
+2. **逐字引文校验**：每条账本、每个未兑现事项、每次伏笔露面都必须给出正文中逐字存在的 `quote`，否则工具调用被拒，记录员修正后重交。
+3. **视角隔离**：账本条目记录 `knownByIds`（玩家角色自动加入），人物 Agent 和 BM25 角色视角只拿到自己亲历或被告知的条目，同场不自动共享秘密。
+4. **可取代而非覆盖**：后来的事实改变旧事实时，旧条目标为 `superseded` 并保留来源，`callbacks` 不能引用已被取代的条目。
+
+### 跌宕与伏笔的规则
+
+- 节奏指令由程序根据张力曲线确定性计算：同一节拍连续两回合、张力连续两回合持平、低张力（≤4）连续三回合属于**硬性约束**；连续顺利成功、高压持续、张力单调上升、高潮/后果阶段、伏笔到期或逾期、承诺悬置三回合以上属于**建议**。
+- 每个非拒绝回合必须给出价值翻转（`valueShift.from ≠ to`），没有翻转的回合不成立。
+- 转折点必须来自已有人物动机、已埋伏笔、未兑现事项或世界规则；情节 Agent 的 `pacing.twistIdeas` 也受同一约束。
+- Agent 新埋伏笔同时在场不超过 5 条；埋下后正文没露面的伏笔要先强化才能回收；超过回收窗口 2 回合且 2 回合没被触碰即为严重逾期，闸门要求本回合处理。
+- 主线伏笔（故事包 `foreshadows`）只有在玩家角色真正得知它指向的事实时才算回收，不能只在提案里宣称。
+- 推荐选项至少一项直接回应本回合的结尾悬念；有悬置的承诺、威胁或疑问时，给玩家去兑现、追问或化解它的选择。
+
+### 控制台
+
+工作流画布的后半段对应上面的链路：提案闸门（四项检查与退回次数）→ 写作简报 → 主创写作 → 连续性记录 → 原子提交 → 叙事账本，叙事账本用虚线回流到下一轮的信息共享。点开「叙事账本」节点可看到张力曲线、伏笔账本（含真意，作者视角）、未兑现事项和事实账本；「原子提交」的状态差异只显示世界状态，账本变化在「叙事账本」中查看。
+
+对应代码：`src/story-narrative.js`（账本、节奏指令、闸门、写作简报、记录校验与兜底）、`src/story-engine.js`（`applyTurnProposal` 调用 `applyNarrativeProposal`）、`src/story-domain.js`（`appendTurn` 原子写入记录）、`src/story-context.js`（`narrativeDigest`）、`src/memory/cards.js`（账本与未兑现事项入 BM25）、`console/narrative-view.js`。

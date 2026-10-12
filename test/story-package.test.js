@@ -36,9 +36,18 @@ for (const storyId of storyIds) {
       for (const item of [
         ...storyPackage.onboarding.comicPages,
         ...storyPackage.onboarding.characterProfiles,
+        ...storyPackage.onboarding.npcProfiles,
         ...storyPackage.onboarding.roleSelection.roles,
       ]) {
         await access(resolve(import.meta.dirname, "..", "public", item.image.src.replace(/^\//, "")));
+      }
+      // The prologue is public: it must never name a secret the player has not learned.
+      const comicText = JSON.stringify(storyPackage.onboarding.comicPages);
+      for (const { terms } of storyPackage.canonKnowledge.protectedTerms) {
+        for (const term of terms) assert.equal(comicText.includes(term), false, `漫画泄露了受保护信息：${term}`);
+      }
+      for (const fact of storyPackage.facts) {
+        for (const term of fact.knowledgeGateTerms ?? []) assert.equal(comicText.includes(term), false, `漫画泄露了受保护信息：${term}`);
       }
     } else {
       assert.equal(storyPackage.onboarding.slides.at(-1).kind, "handoff");
@@ -46,6 +55,11 @@ for (const storyId of storyIds) {
         await access(resolve(import.meta.dirname, "..", "public", slide.image.src.replace(/^\//, "")));
       }
     }
+    const art = storyPackage.art ?? {};
+    for (const image of [art.cover?.wide, art.cover?.tall, ...Object.values(art.roleKeyArt ?? {}), ...Object.values(art.endings ?? {})].filter(Boolean)) {
+      await access(resolve(import.meta.dirname, "..", "public", image.src.replace(/^\//, "")));
+    }
+    for (const type of storyPackage.ending.allowedTypes) if (art.endings) assert.ok(art.endings[type], `缺少结局插图：${type}`);
     for (const location of storyPackage.locations) {
       await access(resolve(import.meta.dirname, "..", "public", location.fallbackImage.replace(/^\//, "")));
       for (const scene of location.states) {

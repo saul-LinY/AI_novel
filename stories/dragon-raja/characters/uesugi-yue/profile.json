@@ -20,5 +20,8 @@
     "丰富战斗经验"
   ],
   "speech": "粗粝直接，常以市井口吻掩饰沉重往事。",
-  "image": null
+  "image": {
+    "src": "/assets/portraits/dragon-raja/uesugi-yue.png",
+    "alt": "上杉越的人物立绘"
+  }
 }

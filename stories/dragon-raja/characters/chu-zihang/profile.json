@@ -18,5 +18,8 @@
     "近身战斗"
   ],
   "speech": "陈述事实和判断，极少用夸张修辞，关心通常表现为行动。",
-  "image": null
+  "image": {
+    "src": "/assets/portraits/dragon-raja/chu-zihang.png",
+    "alt": "楚子航的人物立绘"
+  }
 }

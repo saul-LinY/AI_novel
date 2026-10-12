@@ -2,6 +2,7 @@ import { createServer } from "node:http";
 import { readFile, readdir, stat } from "node:fs/promises";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
+import { createMemoryInspector } from "./memory/console-memory.js";
 
 const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const roles = ["environment", "character", "plot", "main"];
@@ -37,6 +38,9 @@ function visibleMessage(entry) {
     toolCalls: Array.isArray(m.content) ? m.content.filter((c) => c.type === "toolCall").map(({ id, name, arguments: args }) => ({ id, name, arguments: args })) : [] };
 }
 
+// The narrative ledgers have their own view; the commit diff covers the world.
+const worldOnly = (state) => { if (!state || typeof state !== "object") return state; const { narrative: _narrative, ...world } = state; return world; };
+
 export function stateChanges(before, after, path = "") {
   if (JSON.stringify(before) === JSON.stringify(after)) return [];
   if (before && after && typeof before === "object" && typeof after === "object" && !Array.isArray(before) && !Array.isArray(after)) {
@@ -45,9 +49,28 @@ export function stateChanges(before, after, path = "") {
   return [{ path, before: before ?? null, after: after ?? null }];
 }
 
-export function createConsoleReader({ dataDir = join(projectRoot, ".ai-novel"), storyId = "dragon-raja" } = {}) {
+export function summarizeCalls(calls) {
+  const sum = (pick) => calls.reduce((total, call) => total + (pick(call) ?? 0), 0);
+  return {
+    durationMs: sum((call) => call.durationMs),
+    firstTokenMs: calls.find((call) => call.firstTokenMs != null)?.firstTokenMs ?? null,
+    tokens: sum((call) => call.usage?.totalTokens),
+    inputTokens: sum((call) => call.usage?.input),
+    outputTokens: sum((call) => call.usage?.output),
+    cacheRead: sum((call) => call.usage?.cacheRead),
+    cost: sum((call) => call.usage?.cost),
+    toolFailures: sum((call) => call.toolFailures),
+    autoRetries: sum((call) => call.autoRetries),
+    validationErrors: calls.flatMap((call) => call.validationErrors ?? []),
+    model: calls.find((call) => call.model)?.model ?? null,
+    outcome: calls.some((call) => call.outcome === "error") ? "error" : calls.at(-1)?.outcome ?? null,
+  };
+}
+
+export function createConsoleReader({ dataDir = join(projectRoot, ".ai-novel"), storyId = "dragon-raja", loadMemoryPackage } = {}) {
   const storyDir = join(dataDir, "stories", storyId);
   const sessionCache = new Map();
+  const inspectMemory = createMemoryInspector({ dataDir, storyId, projectRoot, loadPackage: loadMemoryPackage });
   async function sessionEntries(path) {
     if (!path) return [];
     let info;
@@ -86,7 +109,7 @@ export function createConsoleReader({ dataDir = join(projectRoot, ".ai-novel"), 
       }
     }
     runs.sort((a, b) => b.createdAt.localeCompare(a.createdAt));
-    return { story: { id: storyId, title: index.story.title, subtitle: index.story.subtitle }, currentBranchId: index.currentBranchId, branches: index.branches.map(({ id, name }) => ({ id, name })), runs, events, index };
+    return { story: { id: storyId, title: index.story.title, subtitle: index.story.subtitle }, currentBranchId: index.currentBranchId, branches: index.branches.map(({ id, name }) => ({ id, name })), branchRecords: branchRecords.filter(Boolean), runs, events, index };
   }
 
   async function trace(role, run, data) {
@@ -166,7 +189,7 @@ export function createConsoleReader({ dataDir = join(projectRoot, ".ai-novel"), 
     const mainMessages = traces.main.messages;
     const narrationStart = mainMessages.findIndex((m) => m.role === "user" && m.text.includes("<narration_contract>"));
     const steps = [{ id: "shared", title: "信息共享", description: "这一轮分别给三个 agent 的资料", kind: "程序处理", output: shared?.domainContexts ?? null,
-      input: shared ? { action: run.action, worldState: shared.worldState ?? parent?.stateAfter ?? null, relevant: shared.relevant ?? null, unknowns: shared.unknowns ?? [] } : null, inputNote: "保存的世界状态与筛选记录", status: status(shared, phase === "analyzing"), attempts: [] }];
+      input: shared ? { action: run.action, worldState: shared.worldState ?? parent?.stateAfter ?? null, relevant: shared.relevant ?? null, unknowns: shared.unknowns ?? [], ...(shared.narrative ? { narrative: shared.narrative } : {}) } : null, inputNote: "保存的世界状态、筛选记录与叙事摘要（节奏指令、伏笔、未兑现事项、按人物裁剪的事实账本）", status: status(shared, phase === "analyzing"), attempts: [] }];
     for (const role of roles.slice(0, 3)) {
       const output = result.reports?.[role] ?? traces[role].attempts.findLast((a) => a.status === "accepted")?.output ?? null;
       steps.push({ id: role, title: { environment: "环境 agent", character: "人物 agent", plot: "情节 agent" }[role],
@@ -176,11 +199,29 @@ export function createConsoleReader({ dataDir = join(projectRoot, ".ai-novel"), 
     steps.push({ id: "decision", title: "主创裁决", description: "综合三份报告，决定本轮最终结果", kind: "主创 agent", output: proposal,
       input: (narrationStart < 0 ? mainMessages : mainMessages.slice(0, narrationStart)).filter((m) => m.role === "user"), inputNote: "本轮实际输入消息 · 来自会话存档（不含未记录的系统提示词及历史上下文）", attempts: traces.main.attempts, model: traces.main.model, status: status(proposal, phase === "synthesizing") });
     const prose = result.prose || stream.filter((e) => e.type === "prose_delta").map((e) => e.text).join("") || null;
+    const narrative = {
+      gate: event?.proposalGate ?? job?.completedTurn?.gate ?? job?.prepared?.gate ?? null,
+      beatSheet: event?.beatSheet ?? job?.completedTurn?.beatSheet ?? null,
+      record: event?.continuityRecord ?? job?.completedTurn?.record ?? null,
+      before: parent?.stateAfter?.narrative ?? null,
+      after: event?.stateAfter?.narrative ?? null,
+    };
     steps.push({ id: "prose", title: "正文写作", description: "主创实际写出的小说正文", kind: "主创 agent", output: prose,
       input: narrationStart < 0 ? [] : mainMessages.slice(narrationStart).filter((m) => m.role === "user"), inputNote: "本轮实际写作与续写输入消息 · 来自会话存档", attempts: [], model: traces.main.model,
       status: result.prose ? "complete" : terminal.has(run.status) ? (prose ? "partial" : "stopped") : status(null, !!prose || ["narrating", "recovering"].includes(phase)) });
-    steps.push({ id: "commit", title: "状态保存", description: "实际写入存档、供下一轮使用的变化", kind: "程序处理", output: event ? { changes: parent ? stateChanges(parent.stateAfter, event.stateAfter) : null, stateAfter: event.stateAfter } : null,
+    steps.push({ id: "recorder", title: "连续性记录", description: "从已发布正文中逐字摘录事实、承诺与伏笔露面情况，写入事实账本", kind: "记录员 agent", output: narrative.record,
+      input: prose ? [{ text: prose }] : [], inputNote: "记录员只读取玩家实际看到的正文；它的会话不落盘，这里展示通过逐字引文校验后提交的记录。", attempts: [],
+      status: narrative.record ? "complete" : terminal.has(run.status) ? (run.status === "complete" ? "missing" : "stopped") : status(null, phase === "recording") });
+    steps.push({ id: "commit", title: "原子提交", description: "世界状态与叙事账本在同一次提交中写入存档", kind: "程序处理", output: event ? { changes: parent ? stateChanges(worldOnly(parent.stateAfter), worldOnly(event.stateAfter)) : null, stateAfter: worldOnly(event.stateAfter) } : null,
       input: proposal, inputNote: "主创提交的最终提案", attempts: [], status: status(event, phase === "committing") });
+    // Per-step metrics from the turn's telemetry (older runs have none).
+    const telemetry = event?.telemetry ?? job?.telemetry ?? null;
+    const stepCalls = { environment: ["environment"], character: ["character"], plot: ["plot"], decision: ["main:prepare"], prose: ["main:narration"], recorder: ["recorder"] };
+    for (const step of steps) {
+      const keys = stepCalls[step.id];
+      const calls = keys && telemetry ? telemetry.calls.filter((call) => keys.includes(call.role) || keys.includes(`${call.role}:${call.phase}`)) : [];
+      step.metrics = calls.length ? summarizeCalls(calls) : null;
+    }
     const names = {};
     const ambiguousNames = new Set(["default"]);
     function collect(value) {
@@ -196,21 +237,61 @@ export function createConsoleReader({ dataDir = join(projectRoot, ".ai-novel"), 
     const catalog = traces.environment.messages.find((m) => m.role === "user")?.text.match(/<location_catalog>\n([\s\S]*?)\n<\/location_catalog>/);
     if (catalog) { try { collect(JSON.parse(catalog[1])); } catch { /* IDs remain readable without a catalog. */ } }
     const { event: _event, job: _job, ...meta } = run;
-    return { ...meta, story: data.story, steps, names, error: stream.findLast((e) => ["failed", "error", "rejected", "cancelled"].includes(e.type))?.message ?? null,
+    return { ...meta, story: data.story, steps, names, telemetry, narrative, error: stream.findLast((e) => ["failed", "error", "rejected", "cancelled"].includes(e.type))?.message ?? null,
       timeline: stream.filter((e) => ["start", "phase", "prepared", "complete", "failed", "error", "rejected", "cancelled"].includes(e.type)).map(({ type, phase, createdAt, message }) => ({ type, phase, createdAt, message })) };
   }
-  return { list, detail };
+  async function performance(limit = 30) {
+    const data = await records();
+    const turns = data.runs
+      .filter((run) => (run.event?.telemetry ?? run.job?.telemetry))
+      .slice(0, limit)
+      .map((run) => {
+        const telemetry = run.event?.telemetry ?? run.job?.telemetry;
+        const byRole = {};
+        for (const call of telemetry.calls ?? []) {
+          const key = call.role === "main" ? `main:${call.phase}` : call.role;
+          byRole[key] = (byRole[key] ?? 0) + (call.durationMs ?? 0);
+        }
+        return {
+          id: run.id, number: run.number, action: run.action, status: run.status,
+          totalMs: telemetry.totalMs ?? null, firstProseMs: telemetry.marks?.firstProse ?? null, preparedMs: telemetry.marks?.prepared ?? null,
+          byRole, totals: telemetry.totals ?? null, quality: telemetry.quality?.issues ?? [], record: telemetry.record ?? null,
+          arc: (run.event?.stateAfter?.narrative?.arc ?? []).at(-1) ?? null,
+          failures: (telemetry.calls ?? []).flatMap((call) => call.validationErrors.map((error) => ({ role: call.role, error }))),
+          config: telemetry.config ?? null,
+        };
+      });
+    const values = (key) => turns.map((turn) => turn[key]).filter(Number.isFinite).sort((a, b) => a - b);
+    const pct = (list, q) => list.length ? list[Math.min(list.length - 1, Math.floor(q * list.length))] : null;
+    const total = values("totalMs");
+    const first = values("firstProseMs");
+    return { turns, summary: { count: turns.length, totalP50: pct(total, 0.5), totalP95: pct(total, 0.95), firstProseP50: pct(first, 0.5), firstProseP95: pct(first, 0.95) } };
+  }
+  async function memory(id = null) {
+    const data = await records();
+    const head = data.branchRecords?.find((branch) => branch.id === data.currentBranchId)?.headEventId;
+    const run = id ? data.runs.find((item) => item.id === id) : data.runs.find((item) => item.branchId === data.currentBranchId && item.event?.id === head) ?? null;
+    if (id && !run) return null;
+    return inspectMemory(data, run);
+  }
+  return { list, detail, memory, performance };
 }
 
 export function createConsoleServer(options = {}) {
   const reader = createConsoleReader(options);
-  const files = { "/": ["index.html", "text/html"], "/app.js": ["app.js", "text/javascript"], "/styles.css": ["styles.css", "text/css"] };
+  const files = { "/": ["index.html", "text/html"], "/app.js": ["app.js", "text/javascript"], "/memory-view.js": ["memory-view.js", "text/javascript"], "/performance-view.js": ["performance-view.js", "text/javascript"], "/narrative-view.js": ["narrative-view.js", "text/javascript"], "/styles.css": ["styles.css", "text/css"] };
   return createServer(async (request, response) => {
     const send = (code, data) => { response.writeHead(code, { "content-type": "application/json; charset=utf-8", "cache-control": "no-store" }); response.end(JSON.stringify(data)); };
     try {
       if (request.method !== "GET") return send(405, { error: "仅支持查看记录" });
       const url = new URL(request.url, "http://localhost");
       if (url.pathname === "/api/console/runs") return send(200, await reader.list());
+      if (url.pathname === "/api/console/memory") return send(200, await reader.memory());
+      if (url.pathname === "/api/console/performance") return send(200, await reader.performance());
+      if (url.pathname.startsWith("/api/console/memory/runs/")) {
+        const result = await reader.memory(decodeURIComponent(url.pathname.slice("/api/console/memory/runs/".length)));
+        return send(result ? 200 : 404, result ?? { error: "找不到这一轮记忆记录" });
+      }
       if (url.pathname.startsWith("/api/console/runs/")) {
         const detail = await reader.detail(decodeURIComponent(url.pathname.slice("/api/console/runs/".length)));
         return send(detail ? 200 : 404, detail ?? { error: "找不到这次运行记录" });

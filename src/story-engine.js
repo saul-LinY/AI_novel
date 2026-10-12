@@ -1,6 +1,7 @@
 import { Type } from "typebox";
 import Schema from "typebox/schema";
 import { CHOICE_PLAN_SCHEMA } from "./story-choice-policy.js";
+import { applyNarrativeProposal, createNarrativeState, DRAMATURGY_SCHEMA, FORESHADOWING_SCHEMA, PACING_ADVICE_SCHEMA } from "./story-narrative.js";
 
 const clone = (value) => structuredClone(value);
 const referenceId = Type.String({ minLength: 1, maxLength: 120, pattern: "^[a-zA-Z0-9:_-]+$" });
@@ -35,6 +36,7 @@ export const PLOT_AGENT_SCHEMA = Type.Object({
     rejoinTargetId: Type.Optional(referenceId),
     rejoinConditions: Type.Optional(Type.Array(nonEmptyString(200), { maxItems: 6 })),
   }), { maxItems: 6 })),
+  pacing: Type.Optional(PACING_ADVICE_SCHEMA),
 });
 
 export const CHARACTER_AGENT_SCHEMA = Type.Object({
@@ -48,6 +50,7 @@ export const CHARACTER_AGENT_SCHEMA = Type.Object({
   }), { maxItems: 12 }),
   forbiddenBehaviors: Type.Array(nonEmptyString(240), { maxItems: 10 }),
   memoryNotes: Type.Array(Type.Object({ characterId: referenceId, note: nonEmptyString(240) }), { maxItems: 12 }),
+  playerBeat: Type.Optional(nonEmptyString(80)),
   candidateChanges: Type.Optional(Type.Array(Type.Object({
     kind: Type.Union([Type.Literal("relationship"), Type.Literal("knowledge"), Type.Literal("emotion"), Type.Literal("memory")]),
     characterId: referenceId,
@@ -65,6 +68,7 @@ export const ENVIRONMENT_AGENT_SCHEMA = Type.Object({
   availableResources: Type.Array(nonEmptyString(180), { maxItems: 10 }),
   constraints: Type.Array(nonEmptyString(240), { minItems: 1, maxItems: 10 }),
   memoryNotes: Type.Array(nonEmptyString(200), { maxItems: 6 }),
+  playerBeat: Type.Optional(nonEmptyString(80)),
   candidateChanges: Type.Optional(Type.Array(Type.Object({
     kind: Type.Union([Type.Literal("movement"), Type.Literal("resource"), Type.Literal("access"), Type.Literal("scene_state"), Type.Literal("time")]),
     locationId: Type.Optional(referenceId),
@@ -135,6 +139,7 @@ export const TURN_PROPOSAL_SCHEMA = Type.Object({
       id: referenceId,
       label: nonEmptyString(40),
       action: nonEmptyString(240),
+      line: Type.Optional(nonEmptyString(120)),
     }),
     { maxItems: 4 },
   ),
@@ -219,11 +224,14 @@ export const TURN_PROPOSAL_SCHEMA = Type.Object({
     }),
   ),
   memoryNotes: Type.Array(nonEmptyString(200), { maxItems: 6 }),
+  closingBeat: Type.Optional(nonEmptyString(120)),
   characterMemoryNotes: Type.Optional(Type.Array(Type.Object({
     characterId: referenceId,
     note: nonEmptyString(240),
   }), { maxItems: 12 })),
   environmentMemoryNotes: Type.Optional(Type.Array(nonEmptyString(200), { maxItems: 6 })),
+  dramaturgy: Type.Optional(DRAMATURGY_SCHEMA),
+  foreshadowing: Type.Optional(FORESHADOWING_SCHEMA),
 });
 
 const turnProposalValidator = Schema.Compile(TURN_PROPOSAL_SCHEMA);
@@ -247,7 +255,7 @@ export function createInitialState(storyPackage) {
     completedGoalIds: [],
     evidence: [],
   }));
-  return {
+  const state = {
     version: 0,
     status: "playing",
     timeMinutes: storyPackage.world.timeMinutes,
@@ -285,6 +293,8 @@ export function createInitialState(storyPackage) {
     },
     ending: null,
   };
+  state.narrative = createNarrativeState(storyPackage, state);
+  return state;
 }
 
 export function findKnowledgeGate(action, state, storyPackage) {
@@ -495,7 +505,7 @@ export function isRejectedProposal(proposal) {
   return proposal.outcome.type === "action_not_allowed";
 }
 
-export function applyTurnProposal(currentState, proposal, storyPackage, eventId = "preview") {
+export function applyTurnProposal(currentState, proposal, storyPackage, eventId = "preview", { choicesDeferred = false } = {}) {
   schemaError(turnProposalValidator, proposal, "回合提案");
   if (proposal.delta.storyProgress !== undefined) throw new Error("storyProgress 必须是提案顶层字段，不能放进 delta");
   if (currentState.status !== "playing") throw new Error("故事已经结束");
@@ -515,6 +525,8 @@ export function applyTurnProposal(currentState, proposal, storyPackage, eventId 
 
   if (proposal.ending) {
     if (proposal.choices.length !== 0) throw new Error("结局回合不能继续提供行动选项");
+  } else if (choicesDeferred) {
+    if (proposal.choices.length !== 0 || proposal.choicePlan) throw new Error("本回合的推荐行动由选项 Agent 在正文开始后另行生成：choices 必须为空数组，省略 choicePlan，并填写 closingBeat");
   } else if (proposal.choices.length < 2 || proposal.choices.length > 4) {
     throw new Error("有效回合必须提供 2 到 4 个下一步选项");
   }
@@ -638,6 +650,7 @@ export function applyTurnProposal(currentState, proposal, storyPackage, eventId 
 
   applyStoryProgress(next, storyPackage, proposal.storyProgress, proposal.ending);
   applyEnding(next, proposal, storyPackage);
+  applyNarrativeProposal(next, currentState, proposal, { storyPackage, eventId });
   next.version += 1;
   return next;
 }

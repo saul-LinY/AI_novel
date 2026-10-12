@@ -7,7 +7,7 @@ import Schema from "typebox/schema";
 const idSchema = Type.String({ pattern: "^[a-z][a-z0-9-]{1,63}$" });
 const referenceId = Type.String({ minLength: 1, maxLength: 120, pattern: "^[a-zA-Z0-9:_-]+$" });
 const nonEmptyString = (maxLength = 500) => Type.String({ minLength: 1, maxLength });
-const choiceSchema = Type.Object({ id: idSchema, label: nonEmptyString(40), action: nonEmptyString(300) });
+const choiceSchema = Type.Object({ id: idSchema, label: nonEmptyString(40), action: nonEmptyString(300), line: Type.Optional(nonEmptyString(120)) });
 const imageSchema = Type.Object({
   src: nonEmptyString(240),
   alt: nonEmptyString(240),
@@ -53,6 +53,15 @@ export const STORY_PACKAGE_SCHEMA = Type.Object({
   premise: nonEmptyString(500),
   playerCharacterId: idSchema,
   visual: Type.Optional(imageSchema),
+  art: Type.Optional(Type.Object({
+    cover: Type.Optional(Type.Object({ wide: imageSchema, tall: Type.Optional(imageSchema) })),
+    tagline: Type.Optional(nonEmptyString(80)),
+    volumeLabel: Type.Optional(nonEmptyString(60)),
+    genreTags: Type.Optional(Type.Array(nonEmptyString(20), { maxItems: 5 })),
+    roleKeyArt: Type.Optional(Type.Record(Type.String(), imageSchema)),
+    endings: Type.Optional(Type.Record(Type.String(), imageSchema)),
+    textures: Type.Optional(Type.Record(Type.String(), nonEmptyString(240))),
+  })),
   sourcePolicy: Type.Object({
     basis: nonEmptyString(120),
     primarySources: Type.Array(nonEmptyString(300), { minItems: 1 }),
@@ -343,7 +352,7 @@ export async function loadStoryPackage(projectRoot, requestedId = "dragon-raja")
 }
 
 export function publicStoryMetadata(storyPackage) {
-  return { id: storyPackage.id, title: storyPackage.title, subtitle: storyPackage.subtitle, premise: storyPackage.premise, visual: storyPackage.visual ?? null, onboarding: storyPackage.onboarding };
+  return { id: storyPackage.id, title: storyPackage.title, subtitle: storyPackage.subtitle, premise: storyPackage.premise, visual: storyPackage.visual ?? null, art: storyPackage.art ?? null, onboarding: storyPackage.onboarding };
 }
 
 export function resolvePlayableRole(storyPackage, characterId) {

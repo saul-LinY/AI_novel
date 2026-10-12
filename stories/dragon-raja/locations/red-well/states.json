@@ -13,6 +13,15 @@
         "src": "/assets/scenes/dragon-raja/red-well.png",
         "alt": "藏骸之井的环境画面"
       }
+    },
+    {
+      "id": "awakened",
+      "title": "深井苏醒",
+      "description": "藏骸之井深处的岩壁透出暗红的脉络，钢架螺旋没入黑暗，积水在红光里微微震动。",
+      "image": {
+        "src": "/assets/scenes/dragon-raja/red-well-awakened.png",
+        "alt": "藏骸之井：深井苏醒"
+      }
     }
   ]
 }

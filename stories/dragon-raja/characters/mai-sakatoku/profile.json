@@ -20,5 +20,8 @@
     "武器与现场控制"
   ],
   "speech": "干脆、带调侃，不解释幕后雇主不允许公开的内容。",
-  "image": null
+  "image": {
+    "src": "/assets/portraits/dragon-raja/mai-sakatoku.png",
+    "alt": "酒德麻衣的人物立绘"
+  }
 }

@@ -20,5 +20,8 @@
     "网络情报分析"
   ],
   "speech": "语速快、抱怨具体，谈到成本和风险时极其清醒。",
-  "image": null
+  "image": {
+    "src": "/assets/portraits/dragon-raja/sue-enxi.png",
+    "alt": "苏恩曦的人物立绘"
+  }
 }

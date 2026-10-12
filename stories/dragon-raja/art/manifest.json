@@ -1,0 +1,322 @@
+{
+  "model": "gpt-image-2",
+  "style": "Art style: polished Japanese anime feature-film illustration, clean confident linework, detailed faces and hands, cinematic low-key lighting, cold blue night tones against warm amber neon, wet reflective Tokyo rain where relevant, desaturated ink-black palette with brass-gold (#c4a46c) highlights and vermilion red (#b8432d) accents, subtle film grain and ink-wash edges. Not photorealistic, not 3D render. No watermark, no signature, no logo.",
+  "groupStyles": {
+    "model-sheet": "Asset: character model sheet for a comic production. Plain warm-grey paper background. Show the SAME character three times side by side at equal scale: front view, three-quarter view, back view, full body, neutral standing pose, plus one small head close-up with a typical expression in the top-right corner. Absolutely no text, labels or captions.",
+    "comic": "Asset: one full Chinese manhua page, vertical 2:3. White page margins and thin white gutters between panels. Read top-to-bottom, left-to-right. Dialogue in clean white rounded speech balloons with crisp black Simplified Chinese text copied EXACTLY as given (do not add, drop or alter any character); narration in white rectangular caption boxes. Keep every character's design identical to the reference model sheets (hair, eyes, outfit, props). Keep lettering large and legible; no other text, no sound effects in English, no page numbers.",
+    "portrait": "Asset: square character portrait for a story dossier. Half-body, character centered, facing slightly toward camera, expressive face. Dark ink-wash background with a faint brass-gold circular dragon motif, soft rim light. No text.",
+    "key": "Asset: vertical character key art for a role-selection screen. Full body or three-quarter body, dramatic pose that expresses personality, set in a characteristic Tokyo location, strong silhouette, generous dark negative space at the top and bottom for UI overlay. No text.",
+    "scene": "Asset: wide establishing background plate for a visual novel, 3:2. No people in the foreground (distant silhouettes allowed), strong depth and atmosphere, composition leaves the lower third calmer for text overlay. No text, no signage with readable letters.",
+    "ending": "Asset: wide cinematic ending illustration for a visual novel, 3:2, emotionally resolved composition, generous negative space. No text.",
+    "cover": "Asset: book-cover key visual for an interactive novel. Iconic, poster-like composition with generous dark negative space for a title overlay. No text, no title, no letters.",
+    "ui": "Asset: seamless background texture for a UI. Subtle, low contrast, no objects, no text."
+  },
+  "jobs": [
+    {
+      "id": "sheet-lu-mingfei",
+      "group": "model-sheet",
+      "size": "1536x1024",
+      "refs": [
+        "public/assets/onboarding/dragon-raja/lu-mingfei.png"
+      ],
+      "output": "stories/dragon-raja/art/model-sheets/lu-mingfei.png",
+      "prompt": "Character: Lu Mingfei, 18-year-old Chinese male student, messy short black hair, slim build, plain but gentle face, slightly tired self-deprecating eyes. Outfit: navy-blue hooded zip jacket damp from rain, grey T-shirt, black trousers, white sneakers. Match the face and outfit of the reference portrait."
+    },
+    {
+      "id": "sheet-erii",
+      "group": "model-sheet",
+      "size": "1536x1024",
+      "refs": [
+        "public/assets/onboarding/dragon-raja/erii.png"
+      ],
+      "output": "stories/dragon-raja/art/model-sheets/erii.png",
+      "prompt": "Character: Uesugi Erii, 17-year-old girl, waist-length straight dark crimson hair, rose-red eyes, a white ribbon tying a side lock. Show TWO outfits: the left half shows her home outfit (white kimono top with red hakama, red cord knots), the right half shows her runaway outfit (simple white dress with a short beige jacket). She holds a small notebook and pen in both. Calm, quiet expression. Match the face of the reference portrait."
+    },
+    {
+      "id": "sheet-gen-chisei",
+      "group": "model-sheet",
+      "size": "1536x1024",
+      "refs": [
+        "public/assets/onboarding/dragon-raja/gen-chisei.png"
+      ],
+      "output": "stories/dragon-raja/art/model-sheets/gen-chisei.png",
+      "prompt": "Character: Gen Chisei (Minamoto Chisei), 24-year-old Japanese man, short black hair swept back, stern handsome face with tired eyes. Outfit: black suit, black shirt, long black coat with dark red lining, small family crest pin on left lapel. Match the reference portrait."
+    },
+    {
+      "id": "sheet-caesar",
+      "group": "model-sheet",
+      "size": "1536x1024",
+      "refs": [
+        "public/assets/onboarding/dragon-raja/caesar.png"
+      ],
+      "output": "stories/dragon-raja/art/model-sheets/caesar.png",
+      "prompt": "Character: Caesar Gattuso, 20-year-old tall European man, shoulder-length golden hair, ice-blue eyes, confident bearing. Outfit: white high-collar tactical long coat, black inner shirt, black gloves, black tactical boots. Match the reference portrait."
+    },
+    {
+      "id": "sheet-chu-zihang",
+      "group": "model-sheet",
+      "size": "1536x1024",
+      "output": "stories/dragon-raja/art/model-sheets/chu-zihang.png",
+      "prompt": "Character: Chu Zihang, 19-year-old Chinese young man, neat black hair, calm and taciturn, sharp eyes (show the close-up with glowing molten-gold irises). Outfit: dark charcoal tactical uniform, a long katana bag slung over his back, black boots."
+    },
+    {
+      "id": "sheet-tachibana",
+      "group": "model-sheet",
+      "size": "1536x1024",
+      "output": "stories/dragon-raja/art/model-sheets/tachibana-masamune.png",
+      "prompt": "Character: Tachibana Masamune, Japanese man in his sixties, neatly combed grey-white hair and a trimmed short grey beard, kind grandfatherly smile that is hard to read. Outfit: dark navy haori over a grey kimono, wooden prayer beads at the wrist."
+    },
+    {
+      "id": "cover-wide",
+      "group": "cover",
+      "size": "1536x1024",
+      "output": "public/assets/covers/dragon-raja-wide.png",
+      "prompt": "Uesugi Erii in her white dress and beige jacket stands on a rain-soaked Tokyo rooftop at night, seen from behind at three-quarter, holding her small notebook; her long crimson hair moves in the wind. Behind her, the vast neon city under a storm sky; far away a black skyscraper with a single red-lit window. Lu Mingfei stands a few steps behind her, small in frame, looking at her. A faint brass-gold dragon silhouette is hidden in the storm clouds. Keep the left 45% of the image dark and calm for a title overlay.",
+      "refs": [
+        "stories/dragon-raja/art/model-sheets/erii.png",
+        "stories/dragon-raja/art/model-sheets/lu-mingfei.png"
+      ]
+    },
+    {
+      "id": "cover-tall",
+      "group": "cover",
+      "size": "1024x1536",
+      "output": "public/assets/covers/dragon-raja-tall.png",
+      "prompt": "Vertical poster: Uesugi Erii in her white dress stands under a single transparent umbrella in a rain-soaked Tokyo alley at night, turning to look back toward the viewer, notebook held to her chest; neon reflections in puddles; above her the sky is dark with a faint brass-gold dragon silhouette in the clouds. Keep the top 35% dark and calm for a vertical title.",
+      "refs": [
+        "stories/dragon-raja/art/model-sheets/erii.png"
+      ]
+    },
+    {
+      "id": "key-lu-mingfei",
+      "group": "key",
+      "size": "1024x1536",
+      "output": "public/assets/roles/dragon-raja/lu-mingfei-key.png",
+      "prompt": "Lu Mingfei under a convenience-store awning in the night rain, soaked hoodie, half-smiling self-deprecatingly while gripping a phone tightly, neon reflections in puddles.",
+      "refs": [
+        "stories/dragon-raja/art/model-sheets/lu-mingfei.png"
+      ]
+    },
+    {
+      "id": "key-erii",
+      "group": "key",
+      "size": "1024x1536",
+      "output": "public/assets/roles/dragon-raja/erii-key.png",
+      "prompt": "Uesugi Erii in her white dress and beige jacket standing on an elevated train platform at dawn, holding her open notebook, wind lifting her crimson hair, a passing train blurred behind her.",
+      "refs": [
+        "stories/dragon-raja/art/model-sheets/erii.png"
+      ]
+    },
+    {
+      "id": "key-gen-chisei",
+      "group": "key",
+      "size": "1024x1536",
+      "output": "public/assets/roles/dragon-raja/gen-chisei-key.png",
+      "prompt": "Gen Chisei standing before a giant wall of surveillance screens in a dark command floor, long black coat, katana at his side, his reflection in the glass, a tired protective gaze.",
+      "refs": [
+        "stories/dragon-raja/art/model-sheets/gen-chisei.png"
+      ]
+    },
+    {
+      "id": "key-caesar",
+      "group": "key",
+      "size": "1024x1536",
+      "output": "public/assets/roles/dragon-raja/caesar-key.png",
+      "prompt": "Caesar Gattuso in his white tactical coat standing in a brick-walled safehouse lit by a single hanging lamp, leaning over a table of maps, confident commanding gaze toward the viewer.",
+      "refs": [
+        "stories/dragon-raja/art/model-sheets/caesar.png"
+      ]
+    },
+    {
+      "id": "portrait-chu-zihang",
+      "group": "portrait",
+      "size": "1024x1024",
+      "output": "public/assets/portraits/dragon-raja/chu-zihang.png",
+      "prompt": "Chu Zihang, calm and taciturn, molten-gold eyes faintly glowing, katana bag strap over shoulder.",
+      "refs": [
+        "stories/dragon-raja/art/model-sheets/chu-zihang.png"
+      ]
+    },
+    {
+      "id": "portrait-tachibana-masamune",
+      "group": "portrait",
+      "size": "1024x1024",
+      "output": "public/assets/portraits/dragon-raja/tachibana-masamune.png",
+      "prompt": "Tachibana Masamune, kind grandfatherly smile that does not reach his eyes, dark haori, prayer beads.",
+      "refs": [
+        "stories/dragon-raja/art/model-sheets/tachibana-masamune.png"
+      ]
+    },
+    {
+      "id": "portrait-lu-mingze",
+      "group": "portrait",
+      "size": "1024x1024",
+      "output": "public/assets/portraits/dragon-raja/lu-mingze.png",
+      "prompt": "Lu Mingze: a small CHILD, about 11 years old, short and slight with a round childlike face and big eyes, neat black hair, wearing a tiny black tuxedo with a bow tie, his feet do not reach the floor as he sits on a large ornate red velvet throne-like chair, a calm knowing smile far older than his age. He must clearly look like a young boy, not a teenager or adult."
+    },
+    {
+      "id": "portrait-gen-chinu",
+      "group": "portrait",
+      "size": "1024x1024",
+      "output": "public/assets/portraits/dragon-raja/gen-chinu.png",
+      "prompt": "Gen Chinu, a strikingly beautiful androgynous young Japanese man with long black hair, wearing an ornate red-and-gold kabuki costume, eyes lined with red, melancholic and dangerous."
+    },
+    {
+      "id": "portrait-uesugi-yue",
+      "group": "portrait",
+      "size": "1024x1024",
+      "output": "public/assets/portraits/dragon-raja/uesugi-yue.png",
+      "prompt": "Uesugi Yue, a big, broad-shouldered old man with a shaved head and thick brows, wearing a white ramen-chef uniform and headband, arms crossed, a gaze that still carries an emperor's authority."
+    },
+    {
+      "id": "portrait-sakura-yabuki",
+      "group": "portrait",
+      "size": "1024x1024",
+      "output": "public/assets/portraits/dragon-raja/sakura-yabuki.png",
+      "prompt": "Yabuki Sakura, a sleek young woman with short black hair, dark business suit, earpiece, composed and efficient expression."
+    },
+    {
+      "id": "portrait-mai-sakatoku",
+      "group": "portrait",
+      "size": "1024x1024",
+      "output": "public/assets/portraits/dragon-raja/mai-sakatoku.png",
+      "prompt": "Sakatoku Mai, a tall young woman with a long black high ponytail, wearing a sleek black stealth bodysuit, relaxed confident smile."
+    },
+    {
+      "id": "portrait-sue-enxi",
+      "group": "portrait",
+      "size": "1024x1024",
+      "output": "public/assets/portraits/dragon-raja/sue-enxi.png",
+      "prompt": "Sue Enxi, a young woman with short chestnut hair in an oversized hoodie, surrounded by glowing monitors and snack wrappers, chin resting on her hand with a sharp amused look."
+    },
+    {
+      "id": "scene-theme-hotel-night",
+      "group": "scene",
+      "size": "1536x1024",
+      "output": "public/assets/scenes/dragon-raja/theme-hotel-night.png",
+      "prompt": "The same kitschy Tokyo theme-hotel suite at night: starry ceiling lights, duck-shaped lamp, dark wood walls, black stone table with a medicine case and a notebook, heavy curtains half-open to a rainy neon window."
+    },
+    {
+      "id": "scene-theme-hotel-crisis",
+      "group": "scene",
+      "size": "1536x1024",
+      "output": "public/assets/scenes/dragon-raja/theme-hotel-crisis.png",
+      "prompt": "A Tokyo theme-hotel corridor at night seen through a door left ajar: elevator doors opening at the end, long shadows of approaching men, flickering ceiling light, red exit sign glow (no readable letters)."
+    },
+    {
+      "id": "scene-tokyo-street-night",
+      "group": "scene",
+      "size": "1536x1024",
+      "output": "public/assets/scenes/dragon-raja/tokyo-street-night.png",
+      "prompt": "A Tokyo street at night in heavy rain: elevated train tracks overhead, glowing convenience store, arcade lights, a sea of umbrellas, neon reflections in puddles."
+    },
+    {
+      "id": "scene-tokyo-street-search",
+      "group": "scene",
+      "size": "1536x1024",
+      "output": "public/assets/scenes/dragon-raja/tokyo-street-search.png",
+      "prompt": "A Tokyo shopping street at dusk with black sedans parked along the curb and black-suited searchers with earpieces scanning the crowd; tension in an otherwise ordinary scene."
+    },
+    {
+      "id": "scene-sky-observatory-dawn",
+      "group": "scene",
+      "size": "1536x1024",
+      "output": "public/assets/scenes/dragon-raja/sky-observatory-dawn.png",
+      "prompt": "A Tokyo observation deck at dawn: huge floor-to-ceiling glass, the city waking in pale gold and blue mist, Mount Fuji faint on the horizon, empty benches."
+    },
+    {
+      "id": "scene-genji-command-alert",
+      "group": "scene",
+      "size": "1536x1024",
+      "output": "public/assets/scenes/dragon-raja/genji-command-alert.png",
+      "prompt": "Genji Heavy Industries command floor in red alert: giant wall of surveillance screens with a city map and pulsing dots, empty long table, red emergency lighting."
+    },
+    {
+      "id": "scene-cassell-safehouse-night",
+      "group": "scene",
+      "size": "1536x1024",
+      "output": "public/assets/scenes/dragon-raja/cassell-safehouse-night.png",
+      "prompt": "A brick-walled safehouse at night: single hanging lamp over a table of maps and a satellite phone, gear cases, rain on blacked-out windows, a katana bag leaning on the wall."
+    },
+    {
+      "id": "scene-rendezvous-ambush",
+      "group": "scene",
+      "size": "1536x1024",
+      "output": "public/assets/scenes/dragon-raja/rendezvous-ambush.png",
+      "prompt": "An underground parking garage at night: concrete pillars, a freight elevator, an extraction van with headlights on, multiple sets of headlights approaching from different ramps, wet floor reflections."
+    },
+    {
+      "id": "scene-red-well-awakened",
+      "group": "scene",
+      "size": "1536x1024",
+      "output": "public/assets/scenes/dragon-raja/red-well-awakened.png",
+      "prompt": "A colossal ruined underground well beneath an industrial site: red emergency light, flooded steel scaffolding spiralling down into a dark abyss, faint glowing red veins in the rock, ominous."
+    },
+    {
+      "id": "scene-rendezvous-dawn",
+      "group": "scene",
+      "size": "1536x1024",
+      "output": "public/assets/scenes/dragon-raja/rendezvous-dawn.png",
+      "prompt": "The same underground parking exit ramp at dawn, a single van waiting with doors open, morning light spilling down the ramp, quiet and hopeful."
+    },
+    {
+      "id": "ending-normal",
+      "group": "ending",
+      "size": "1536x1024",
+      "output": "public/assets/endings/dragon-raja/normal.png",
+      "prompt": "Tragic canonical ending mood: Lu Mingfei stands alone in the rain outside Genji Heavy Industries holding Erii's yellow rubber duck and notebook, the tower's single red window above, heavy grief and resolve.",
+      "refs": [
+        "stories/dragon-raja/art/model-sheets/lu-mingfei.png"
+      ]
+    },
+    {
+      "id": "ending-deviation",
+      "group": "ending",
+      "size": "1536x1024",
+      "output": "public/assets/endings/dragon-raja/deviation.png",
+      "prompt": "A new path: Lu Mingfei and Erii (white dress) seen from behind on the deck of a ferry leaving Tokyo Bay at sunrise, the city skyline behind them, gulls, her crimson hair in the wind, hopeful but uncertain.",
+      "refs": [
+        "stories/dragon-raja/art/model-sheets/erii.png",
+        "stories/dragon-raja/art/model-sheets/lu-mingfei.png"
+      ]
+    },
+    {
+      "id": "ending-failure",
+      "group": "ending",
+      "size": "1536x1024",
+      "output": "public/assets/endings/dragon-raja/failure.png",
+      "prompt": "Failure ending mood: an empty theme-hotel room at dawn, the open medicine case with an empty slot, the notebook left on the table, a window open to grey rain, a single white ribbon on the floor."
+    },
+    {
+      "id": "ending-early",
+      "group": "ending",
+      "size": "1536x1024",
+      "output": "public/assets/endings/dragon-raja/early.png",
+      "prompt": "Early ending mood: Erii (white dress) sitting alone on an empty elevated train platform at night under a flickering light, notebook on her lap, a train departing into the distance.",
+      "refs": [
+        "stories/dragon-raja/art/model-sheets/erii.png"
+      ]
+    },
+    {
+      "id": "ui-paper",
+      "group": "ui",
+      "size": "1024x1024",
+      "output": "public/assets/ui/paper.png",
+      "prompt": "Seamless warm ink-black handmade paper texture with very subtle fibres and faint brass-gold flecks, extremely low contrast."
+    },
+    {
+      "id": "ui-dossier",
+      "group": "ui",
+      "size": "1024x1024",
+      "output": "public/assets/ui/dossier.png",
+      "prompt": "Seamless dark leather-and-linen dossier texture, deep brown-black, faint embossed cloud pattern, extremely low contrast."
+    },
+    {
+      "id": "ui-ink",
+      "group": "ui",
+      "size": "1024x1024",
+      "output": "public/assets/ui/ink-wash.png",
+      "prompt": "Abstract black ink wash diffusing in water on dark paper, soft brass-gold edges, wide empty areas, usable as a transition overlay."
+    }
+  ]
+}

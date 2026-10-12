@@ -30,6 +30,8 @@ class FakeRuntime {
     if (context.action === "等待取消") {
       await new Promise((_resolve, reject) => { this.rejectActive = reject; });
     }
+    handlers.onProgress?.({ role: "environment", status: "done", durationMs: 12 });
+    handlers.onBeat?.({ role: "environment", text: "雨从屋檐上连成线。" });
     handlers.onPhase?.("synthesizing");
     const turnProposal = proposal({
       delta: { timeAdvanceMinutes: 5, locationId: "tokyo-street", sceneStateId: "default" },
@@ -50,12 +52,17 @@ class FakeRuntime {
       piEntryIds: Object.fromEntries(Object.keys(this.sessionFiles).map((role) => [role, `${role}-prepared`])),
     };
     await handlers.onPrepared?.(prepared);
+    handlers.onOutcome?.({ outcomeType: "success", label: "如愿以偿", ending: false });
     handlers.onPhase?.("narrating");
     handlers.onSentence?.("第一句已经确定。");
     if (["断线继续", "提交前检查"].includes(context.action)) {
       await new Promise((resolve) => { this.releaseProse = resolve; });
     }
     handlers.onSentence?.("第二句也不会改写。");
+    if (context.action === "提交冲突") {
+      return { rejected: false, proposal: proposal({ choices: [] }), prose: "第一句已经确定。第二句也不会改写。", reports: prepared.reports, piEntryIds: prepared.piEntryIds };
+    }
+    handlers.telemetry?.calls.push({ role: "main", phase: "prepare", durationMs: 40, usage: { input: 10, output: 5, cacheRead: 0, cacheWrite: 0, totalTokens: 15, cost: 0 }, toolFailures: 0, autoRetries: 0, validationErrors: [] });
     return {
       rejected: false,
       proposal: turnProposal,
@@ -68,6 +75,7 @@ class FakeRuntime {
 
   async resumePreparedTurn(context, prepared, handlers = {}) {
     this.contexts.push({ ...context, resumed: true });
+    if (context.action === "一直失败") throw new Error("模型暂时不可用");
     handlers.onPhase?.("narrating");
     handlers.onSentence?.("恢复后的完整句。");
     return {
@@ -93,11 +101,12 @@ function parseNdjson(text) {
   return text.trim().split("\n").filter(Boolean).map((line) => JSON.parse(line));
 }
 
-async function startTestServer(t) {
+async function startTestServer(t, options = {}) {
   const dataDir = await mkdtemp(join(tmpdir(), "ai-novel-server-"));
   t.after(() => rm(dataDir, { recursive: true, force: true }));
   const runtimes = [];
   const app = await createAppServer({
+    memory: options.memory,
     projectRoot,
     dataDir,
     logger: { error() {} },
@@ -118,10 +127,67 @@ async function selectRole(baseUrl, characterId = "lu-mingfei") {
   return response.json();
 }
 
+class RecordingMemory {
+  constructor() { this.snapshots = []; this.queries = []; this.fail = false; }
+  enqueue(store) { this.snapshots.push(structuredClone(store)); }
+  async recall(input) {
+    this.queries.push(input);
+    if (this.fail) throw new Error('simulated memory outage');
+    return { global: [], environment: [], characters: {}, trace: { backend: 'bm25', sourceHeadEventId: input.store.branches[input.branchId].headEventId } };
+  }
+  status() { return { enabled: true, backend: 'bm25', healthy: !this.fail }; }
+  close() {}
+}
+
+test('记忆只在正文和状态保存后入库，读取发生在新回合生成前', async (t) => {
+  const memory = new RecordingMemory();
+  const { app, baseUrl, runtimes } = await startTestServer(t, { memory });
+  await selectRole(baseUrl);
+  const before = memory.snapshots.length;
+  const response = await fetch(baseUrl + '/api/turn', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ action: '提交前检查' }) });
+  const reader = response.body.getReader();
+  const decoder = new TextDecoder();
+  let text = '';
+  while (!text.includes('prose_delta')) { const item = await reader.read(); text += decoder.decode(item.value); }
+  assert.equal(memory.snapshots.length, before);
+  assert.equal(memory.queries.length, 1);
+  assert.equal(runtimes.at(-1).contexts[0].longTermMemory.trace.backend, 'bm25');
+  runtimes.at(-1).releaseProse();
+  while (true) { const item = await reader.read(); if (item.done) break; text += decoder.decode(item.value); }
+  assert.equal(parseNdjson(text).at(-1).type, 'complete');
+  assert.equal(memory.snapshots.at(-1).branches.main.eventIds.length, 2);
+  assert.equal((await app.storyStore.load()).branches.main.eventIds.length, 2);
+  assert.deepEqual(await fetch(baseUrl + '/api/memory/status').then((r) => r.json()), { enabled: true, backend: 'bm25', healthy: true });
+});
+
+test('拒绝行动不会进入长期记忆', async (t) => {
+  const memory = new RecordingMemory();
+  const { baseUrl } = await startTestServer(t, { memory });
+  await selectRole(baseUrl);
+  const before = memory.snapshots.length;
+  const response = await fetch(baseUrl + '/api/turn', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ action: '拒绝' }) });
+  assert.equal(parseNdjson(await response.text()).at(-1).type, 'rejected');
+  assert.equal(memory.snapshots.length, before);
+});
+
+test('记忆服务异常不破坏流式生成及正常存档', async (t) => {
+  const memory = new RecordingMemory(); memory.fail = true;
+  const { baseUrl } = await startTestServer(t, { memory });
+  await selectRole(baseUrl);
+  const response = await fetch(baseUrl + '/api/turn', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ action: '走进街区' }) });
+  const events = parseNdjson(await response.text());
+  assert.equal(events.at(-1).type, 'complete');
+  assert.equal(events.filter((event) => event.type === 'prose_delta').length, 2);
+});
+
 test("回合先准备场景，再按完整句流式追加，结束后才原子提交", async (t) => {
   const { baseUrl, runtimes } = await startTestServer(t);
   const health = await fetch(`${baseUrl}/api/health`).then((response) => response.json());
-  assert.deepEqual(health, { ok: true, busy: false, storyId: "dragon-raja" });
+  assert.equal(health.ok, true);
+  assert.equal(health.busy, false);
+  assert.equal(health.storyId, "dragon-raja");
+  assert.equal(health.pipeline.narrative, "enforce");
+  assert.equal(health.pipeline.recorder, "agent");
   const publicStory = await fetch(`${baseUrl}/api/story`).then((response) => response.json());
   assert.equal(publicStory.story.onboarding.comicPages.length, 18);
   assert.equal(publicStory.story.onboarding.npcProfiles.length, 8);
@@ -139,6 +205,10 @@ test("回合先准备场景，再按完整句流式追加，结束后才原子�
   assert.equal(types.indexOf("scene") < types.indexOf("prose_delta"), true);
   assert.deepEqual(events.filter((event) => event.type === "prose_delta").map((event) => event.text), ["第一句已经确定。", "第二句也不会改写。"]);
   assert.equal(types.includes("reviewing"), false);
+  assert.ok(types.indexOf("beat") < types.indexOf("prepared"));
+  assert.ok(types.indexOf("outcome") > types.indexOf("prepared") && types.indexOf("outcome") < types.indexOf("prose_delta"));
+  assert.ok(events.some((event) => event.type === "agent_progress" && event.role === "environment"));
+  assert.equal(events.some((event) => Object.hasOwn(event, "telemetry")), false, "遥测不能进入玩家事件流");
   assert.equal(events.at(-1).type, "complete");
   assert.equal(events.at(-1).story.events.length, 2);
   assert.equal(events.at(-1).story.state.scene.image.src, "/assets/scenes/dragon-raja/tokyo-street.png");
@@ -287,4 +357,93 @@ test("服务重启后从已展示的完整句继续，并只提交一次", async
   assert.equal(replay.filter((event) => event.type === "complete").length, 1);
   assert.equal(publicStory.events.length, 2);
   assert.equal(publicStory.events[1].prose, "重启前已经显示的句子。恢复后的完整句。");
+});
+
+test("提交被拒属于永久错误：作业失败且重连不会无限续写", async (t) => {
+  const { app, baseUrl, runtimes } = await startTestServer(t);
+  await selectRole(baseUrl);
+  const events = parseNdjson(await fetch(`${baseUrl}/api/turn`, {
+    method: "POST",
+    headers: { "content-type": "application/json" },
+    body: JSON.stringify({ action: "提交冲突", branchId: "main" }),
+  }).then((response) => response.text()));
+  const failed = events.at(-1);
+  assert.equal(failed.type, "failed");
+  assert.equal(failed.code, "COMMIT_REJECTED");
+  const job = app.jobs.get(failed.turnId);
+  assert.equal(job.status, "failed");
+  const replay = parseNdjson(await fetch(`${baseUrl}/api/turns/${failed.turnId}/stream?afterSeq=0`).then((response) => response.text()));
+  assert.equal(replay.filter((event) => event.type === "failed").length, 1);
+  assert.equal(runtimes.at(-1).contexts.filter((context) => context.resumed).length, 0);
+  const story = await fetch(`${baseUrl}/api/story`).then((response) => response.json());
+  assert.equal(story.events.length, 1);
+});
+
+test("遥测随回合写入作业与存档事件，但不出现在公开接口", async (t) => {
+  const { app, baseUrl } = await startTestServer(t);
+  await selectRole(baseUrl);
+  const events = parseNdjson(await fetch(`${baseUrl}/api/turn`, {
+    method: "POST",
+    headers: { "content-type": "application/json" },
+    body: JSON.stringify({ action: "走进街区", branchId: "main" }),
+  }).then((response) => response.text()));
+  const job = app.jobs.get(events[0].turnId);
+  assert.equal(job.telemetry.calls[0].role, "main");
+  assert.ok(job.telemetry.marks.prepared === undefined || job.telemetry.marks.prepared >= 0);
+  assert.ok(job.telemetry.marks.firstProse >= 0);
+  assert.ok(job.telemetry.totalMs >= 0);
+  const store = await app.storyStore.load();
+  const event = store.events[store.branches.main.headEventId];
+  assert.equal(event.telemetry.calls[0].usage.totalTokens, 15);
+  const publicStory = await fetch(`${baseUrl}/api/story`).then((response) => response.text());
+  assert.doesNotMatch(publicStory, /telemetry|totalTokens/);
+});
+
+test("正文恢复连续失败达到上限后转为失败，不再续写", async (t) => {
+  const dataDir = await mkdtemp(join(tmpdir(), "ai-novel-resume-cap-"));
+  t.after(() => rm(dataDir, { recursive: true, force: true }));
+  const basePackage = await loadStoryPackage(projectRoot, "dragon-raja");
+  const storyStore = new StoryStore(dataDir, basePackage);
+  const store = createInitialStore(resolvePlayableRole(basePackage, "lu-mingfei"));
+  await storyStore.save(store);
+  const jobs = new TurnJobManager(dataDir, "dragon-raja");
+  await jobs.initialize();
+  const job = await jobs.create({ turnId: "cap-turn", eventId: "cap-event", branchId: "main", headEventId: store.branches.main.headEventId, action: "一直失败", trustedChoice: false });
+  await jobs.setPrepared(job, { proposal: proposal(), scene: null, reports: {}, basePiEntryIds: {}, piEntryIds: {} });
+  job.resumeCount = 1;
+  await jobs.setStatus(job, "paused");
+  const app = await createAppServer({
+    projectRoot,
+    dataDir,
+    logger: { error() {} },
+    pipelineConfig: { beats: true, outcomeSummary: true, choices: "inline", narrative: "enforce", recorder: "agent", quality: "warn", slimContext: true, recorderTimeoutMs: 30000, maxResumes: 2 },
+    runtimeFactory: (args) => new FakeRuntime(args),
+  });
+  await new Promise((resolve) => app.server.listen(0, "127.0.0.1", resolve));
+  t.after(() => new Promise((resolve) => app.server.close(resolve)));
+  while (!["failed", "paused"].includes(app.jobs.get("cap-turn").status) || app.jobs.get("cap-turn").resumeCount < 2) {
+    await new Promise((resolve) => setTimeout(resolve, 5));
+  }
+  const final = app.jobs.get("cap-turn");
+  assert.equal(final.status, "failed");
+  assert.match(final.events.at(-1).message, /多次续写失败/);
+});
+
+test("推荐选项可以按对话说出：仍走可信路径，行动文本带上台词与原意图", async (t) => {
+  const { app, baseUrl, runtimes } = await startTestServer(t);
+  await selectRole(baseUrl);
+  const store = await app.storyStore.load();
+  const head = store.events[store.branches.main.headEventId];
+  head.choices = head.choices.map((choice, index) => index === 0 ? { ...choice, line: "你先挑，我不改。" } : choice);
+  await app.storyStore.save(store);
+  const choice = head.choices[0];
+  await fetch(`${baseUrl}/api/turn`, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ choiceId: choice.id, mode: "say", branchId: "main" }) }).then((r) => r.text());
+  const context = runtimes.at(-1).contexts.at(-1);
+  assert.equal(context.trustedChoice, true);
+  assert.equal(context.action, `我说：「你先挑，我不改。」（${choice.action}）`);
+  // A choice without a line falls back to its action even in 对话 mode.
+  const next = await app.storyStore.load();
+  const nextChoice = next.events[next.branches.main.headEventId].choices[0];
+  await fetch(`${baseUrl}/api/turn`, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ choiceId: nextChoice.id, mode: "say", branchId: "main" }) }).then((r) => r.text());
+  assert.equal(runtimes.at(-1).contexts.at(-1).action, nextChoice.action);
 });

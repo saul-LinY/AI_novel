@@ -1,3 +1,6 @@
+import { renderMemoryPanel } from './memory-view.js';
+import { metricChips, metricsDetail, renderPerformance } from './performance-view.js';
+import { renderGate, renderNarrativePanel } from './narrative-view.js';
 const $ = (selector, root = document) => root.querySelector(selector);
 const esc = (value) => String(value ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 const icons = {
@@ -8,6 +11,9 @@ const icons = {
   decision: '<path d="m12 3 9 9-9 9-9-9 9-9Z"/><path d="m8 12 3 3 5-6"/>',
   prose: '<path d="m15 5 4 4M4 20l4-1L20 7a2.8 2.8 0 0 0-4-4L4 15l-1 6ZM12 21h9"/>',
   commit: '<ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 4 16 4 16 0V5M4 12c0 4 16 4 16 0"/>',
+  brief: '<rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/>',
+  recorder: '<path d="M4 19V5a2 2 0 0 1 2-2h12v14H6a2 2 0 0 0-2 2Zm0 0a2 2 0 0 0 2 2h12"/><path d="M9 8h5M9 11h3"/>',
+  ledger: '<path d="M3 17l5-5 4 4 8-9"/><path d="M15 7h5v5"/>',
 };
 const icon = (id) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${icons[id] ?? icons.shared}</svg>`;
 const labels = {
@@ -23,11 +29,15 @@ const labels = {
   truth: "真实情况", revealText: "揭示内容", text: "内容", narrativePurpose: "叙事作用", currentStateId: "当前场景", states: "可用场景", progress: "进度", actionResult: "行动结果", prose: "正文", timeMinutes: "世界时间（分钟）", version: "版本",
   characterIds: "相关人物", locationIds: "相关地点", itemIds: "相关物品", factIds: "相关事实", threadIds: "相关支线", stageIds: "相关节点", generatedFacts: "新产生的事实", threads: "支线", relationships: "关系",
   learnFactIdsByCharacter: "人物新获知的事实", inventoryChanges: "物品变化", characterChanges: "人物变化", threadChanges: "支线变化", relationshipChanges: "关系变化", completeGoalIds: "完成的目标", blockCurrentNode: "阻止当前节点", nextNodeId: "下一节点", routeNote: "路线说明", eventId: "事件", currentStageId: "当前节点", blockedNodeIds: "被阻止的节点", stages: "节点进度",
+  narrative: "叙事摘要", directive: "节奏指令", arc: "张力曲线", seeds: "伏笔", ledger: "事实账本", ledgerByCharacter: "各人物亲历的账本", continuityNotes: "连续性提醒", hard: "硬性约束", advice: "建议", avoidBeats: "禁用节拍", flatTension: "持平的张力", mustEscalate: "必须升级", mustAddressSeedIds: "必须处理的伏笔", curve: "最近曲线", lastBeat: "上一节拍", lastTension: "上一张力", staleLoopIds: "悬置过久的事项", timing: "回收时机", surfaced: "正文已露面", reinforced: "强化次数", plantedTurn: "埋下回合", window: "回收窗口", age: "已过回合", origin: "来源", openedTurn: "开启回合", who: "相关人物", turn: "回合",
+  dramaturgy: "节奏设计", beat: "节拍", tension: "张力", valueShift: "价值翻转", axis: "价值维度", turningPoint: "转折点", hook: "结尾悬念", callbacks: "呼应的账本条目", foreshadowing: "伏笔处理", plant: "埋下", reinforce: "强化", payoff: "回收", retire: "放弃", seedId: "伏笔", surfaceDetail: "表面细节", hiddenMeaning: "真实含义", payoffIdea: "回收设想", payoffWindow: "回收窗口", howItPaysOff: "回收方式", detail: "细节", earlier: "前文", continuity: "连续性提醒", entries: "账本条目", quote: "正文原句", knownByIds: "知情人物", importance: "重要度", openLoops: "新增未兑现事项", closeLoops: "了结的事项", supersede: "被取代的条目", foreshadowCheck: "伏笔露面核对", appeared: "已出现", contradictions: "矛盾", problem: "问题", resolution: "了结方式", loopId: "事项", ledgerId: "账本条目", ownerIds: "相关人物", source: "来源", pacing: "节奏建议", twistIdeas: "反转点子", foreshadow: "伏笔建议", dropMemoryNoteIndexes: "删除的记忆笔记", error: "降级原因",
   keyChoice: "关键选择", coreQuestionResponse: "对故事核心问题的回应", directConsequences: "直接后果", longTermConsequences: "长期后果", costs: "代价", resolvedQuestions: "已解决的问题", unresolvedQuestions: "尚未解决的问题", label: "选项", actionText: "行动内容", risk: "风险", cost: "代价", mode: "方式", returnConditions: "回归条件", rejoinNodeId: "回归节点", completedGoalIds: "已完成目标", startedAtEventId: "开始于事件", completedAtEventId: "完成于事件", blockedAtEventId: "阻止于事件", completed: "已完成", blocked: "已阻止", flags: "标记", quantity: "数量", itemId: "物品", relatedCoreFactIds: "关联核心事实", sourceEventId: "来源事件", knownToCharacterIds: "知情人物", attitudeDelta: "态度变化", statusAfter: "变化后状态", triggers: "触发条件", goals: "目标", next: "后续节点", allowedEndings: "允许的结局", entryConditions: "进入条件", completionConditions: "完成条件", order: "顺序", purpose: "作用", allowDeviation: "允许偏离", blockedReason: "阻止原因",
 };
-const enums = { success: "成功", success_with_cost: "成功，但付出了代价", failure_with_gain: "失败，但有所收获", failure: "失败", action_not_allowed: "行动不成立", mainline: "主线", detour: "绕路", deviation: "偏离", active: "活跃", open: "未结束", closed: "已结束", relationship: "关系变化", knowledge: "知识变化", branch_seed: "支线创意", route_change: "路线变化", causal_risk: "因果风险", normal: "普通结局" };
+const enums = { not_yet: "未到窗口", due: "可回收", overdue: "已逾期", package: "故事包", planted: "已埋下", dormant: "休眠", paid_off: "已回收", retired: "已放弃", setup: "铺垫", complication: "施压", reversal: "反转", revelation: "揭示", climax: "高潮", release: "喘息", aftermath: "余波", agent: "记录员", deterministic: "确定性兜底", success: "成功", success_with_cost: "成功，但付出了代价", failure_with_gain: "失败，但有所收获", failure: "失败", action_not_allowed: "行动不成立", mainline: "主线", detour: "绕路", deviation: "偏离", active: "活跃", open: "未结束", closed: "已结束", relationship: "关系变化", knowledge: "知识变化", branch_seed: "支线创意", route_change: "路线变化", causal_risk: "因果风险", normal: "普通结局" };
 const statuses = { complete: "已完成", failed: "失败", cancelled: "已取消", rejected: "未成立", queued: "排队中", running: "进行中", prepared: "准备完成", recovering: "恢复中", paused: "已中断", waiting: "等待中", stopped: "未完成", missing: "未记录", partial: "部分正文" };
 const state = { listing: null, detail: null, selected: new URLSearchParams(location.search).get("run"), signature: "", busy: false };
+const requestedView = new URLSearchParams(location.search).get('view');
+Object.assign(state, { performance: null, view: requestedView === 'workflow' || requestedView === 'performance' ? requestedView : new URLSearchParams(location.search).has('node') ? 'workflow' : 'memory', memory: null, memoryKey: null, memoryRequest: 0, memoryScope: 'added', memoryOwner: 'all', memoryQuery: '', memoryLimit: 60 });
 function displayScalar(value, names = state.detail?.names ?? {}) {
   if (value == null) return '<span class="muted">无</span>';
   if (value === true || value === false) return `<span class="value-bool">${value ? "是" : "否"}</span>`;
@@ -71,42 +81,51 @@ function feedbackView(feedback) {
   if (marker < 0) return `<p class="feedback">${esc(feedback)}</p>`;
   return `<p class="feedback">${esc(feedback.slice(0, marker).trim())}</p><details class="validation-raw"><summary>查看完整校验返回</summary><pre class="raw-output">${esc(feedback)}</pre></details>`;
 }
+// Back half of the loop: the proposal gate checks causality, pacing,
+// foreshadowing and callbacks (bouncing pacing issues back once); narration
+// writes from a beat sheet; the recorder grounds memory in the published
+// prose; one atomic commit updates the world and the narrative ledger, which
+// feeds the next turn's pacing directive and ledger digest.
 const graphNodes = [
   { id: 'action', title: '用户行动', caption: '本轮故事的起点', x: 24, y: 205, w: 122, h: 76, color: 'shared' },
-  { id: 'shared', title: '信息共享', caption: '筛选并分发本轮上下文', x: 183, y: 197, w: 153, h: 92, color: 'shared' },
-  { id: 'plot', title: '情节 agent', caption: '因果影响、支线与候选变化', x: 385, y: 39, w: 193, h: 104, color: 'plot', domain: true },
+  { id: 'shared', title: '信息共享', caption: '上下文 + 节奏指令 + 账本摘要', x: 175, y: 197, w: 165, h: 92, color: 'shared' },
+  { id: 'plot', title: '情节 agent', caption: '因果、支线与节奏建议', x: 385, y: 39, w: 193, h: 104, color: 'plot', domain: true },
   { id: 'environment', title: '环境 agent', caption: '环境事实、限制与候选变化', x: 385, y: 190, w: 193, h: 104, color: 'environment', domain: true },
-  { id: 'character', title: '人物 agent', caption: '人物反应、依据与候选变化', x: 385, y: 341, w: 193, h: 104, color: 'character', domain: true },
+  { id: 'character', title: '人物 agent', caption: '依亲历账本作出反应', x: 385, y: 341, w: 193, h: 104, color: 'character', domain: true },
   { id: 'reports', title: '三份领域报告', caption: '候选变化尚未生效', x: 625, y: 202, w: 137, h: 82, color: 'shared' },
-  { id: 'decision', title: '主创裁决', caption: '解决冲突，决定最终结果', x: 807, y: 197, w: 153, h: 92, color: 'decision' },
-  { id: 'gate', title: '提案通过？', x: 1002, y: 211, w: 64, h: 64, color: 'decision', diamond: true },
-  { id: 'prose', title: '主创写作', caption: '承接上文，生成正文', x: 1114, y: 53, w: 146, h: 88, color: 'prose' },
-  { id: 'final', title: '最终正文与提案', caption: '正文 + 确认发生的变化', x: 1305, y: 53, w: 160, h: 88, color: 'decision' },
-  { id: 'commit', title: '各领域状态回写', caption: '环境 · 人物 · 情节', x: 1305, y: 207, w: 160, h: 88, color: 'commit' },
-  { id: 'world', title: '共享信息汇总', caption: '下一轮统一世界状态', x: 1114, y: 354, w: 160, h: 88, color: 'shared' },
+  { id: 'decision', title: '主创裁决', caption: '定结果、节拍、转折与伏笔', x: 807, y: 197, w: 153, h: 92, color: 'decision' },
+  { id: 'gate', title: '提案闸门', x: 1002, y: 211, w: 64, h: 64, color: 'decision', diamond: true },
+  { id: 'beatsheet', title: '写作简报', caption: '节拍 · 转折 · 悬念 · 伏笔', x: 1110, y: 53, w: 150, h: 88, color: 'decision', icon: 'brief' },
+  { id: 'prose', title: '主创写作', caption: '按简报承接上文', x: 1300, y: 53, w: 150, h: 88, color: 'prose' },
+  { id: 'recorder', title: '连续性记录', caption: '逐字摘录事实与伏笔', x: 1300, y: 205, w: 150, h: 88, color: 'ledger', icon: 'recorder' },
+  { id: 'commit', title: '原子提交', caption: '世界状态 + 叙事账本', x: 1300, y: 354, w: 150, h: 88, color: 'commit' },
+  { id: 'ledger', title: '叙事账本', caption: '张力 · 伏笔 · 事实 · 未兑现', x: 1110, y: 354, w: 150, h: 88, color: 'ledger', icon: 'ledger' },
   { id: 'next', title: '阅读结果 / 下一轮', caption: '查看正文，继续用户行动', x: 847, y: 354, w: 181, h: 88, color: 'prose' },
-  { id: 'rejected', title: '调整行动 / 结束本轮', caption: '未通过时不写入新事实', x: 1114, y: 214, w: 154, h: 74, color: 'rejected' },
+  { id: 'rejected', title: '调整行动 / 结束本轮', caption: '不成立时不写入新事实', x: 1110, y: 214, w: 150, h: 74, color: 'rejected' },
 ];
 const graphEdges = [
-  ['action','shared','M146 243H183'],
-  ['shared','plot','M336 243H358V91H385'],
-  ['shared','environment','M336 243H385'],
-  ['shared','character','M336 243H358V393H385'],
+  ['action','shared','M146 243H175'],
+  ['shared','plot','M340 243H360V91H385'],
+  ['shared','environment','M340 243H385'],
+  ['shared','character','M340 243H360V393H385'],
   ['plot','reports','M578 91H602V243H625'],
   ['environment','reports','M578 243H625'],
   ['character','reports','M578 393H602V243H625'],
   ['reports','decision','M762 243H807'],
   ['decision','gate','M960 243H989'],
-  ['gate','prose','M1034 198V97H1114'],
-  ['prose','final','M1260 97H1305'],
-  ['final','commit','M1385 141V207'],
-  ['commit','world','M1385 295V398H1274'],
-  ['world','next','M1114 398H1028'],
+  ['gate','decision','M1034 288V322H883V289', 'alternate'],
+  ['gate','beatsheet','M1034 198V97H1110'],
+  ['beatsheet','prose','M1260 97H1300'],
+  ['prose','recorder','M1375 141V205'],
+  ['recorder','commit','M1375 293V354'],
+  ['commit','ledger','M1300 398H1260'],
+  ['ledger','next','M1110 398H1028'],
   ['next','action','M938 442V478H85V281'],
-  ['gate','rejected','M1079 243H1114'],
-  ['rejected','action','M1114 251H1088V478H85V281'],
+  ['ledger','shared','M1185 442V498H257V289', 'feedback'],
+  ['gate','rejected','M1079 243H1110'],
+  ['rejected','action','M1110 251H1088V478H85V281', 'alternate'],
 ];
-const graphWidth = 1500, graphHeight = 505;
+const graphWidth = 1500, graphHeight = 525;
 Object.assign(statuses, { ready: '可查看', skipped: '未走此路径' });
 Object.assign(state, { node: new URLSearchParams(location.search).get('node'), manualNode: !!new URLSearchParams(location.search).get('node') });
 
@@ -124,14 +143,17 @@ function nodeData(id) {
     const reports = Object.fromEntries(['plot','environment','character'].map((key) => [key,get(key).output]));
     return { ...base, description: '三个领域给出的建议；这些候选变化尚未成为世界事实。', output: Object.values(reports).some(Boolean) ? reports : null, status: Object.values(reports).every(Boolean) ? 'complete' : stopped ? 'stopped' : 'waiting' };
   }
-  if (id === 'gate') return { ...base, description: '查看主创提案的校验结果及修改记录', input: proposal, attempts: get('decision').attempts,
-    output: proposal ? { '提案是否通过': proposal.outcome?.type !== 'action_not_allowed', '行动结果': proposal.outcome } : null,
+  const narrative = run.narrative ?? {};
+  if (id === 'gate') return { ...base, kind: '提案闸门', description: '世界因果与推荐行动必须通过；节奏曲线、伏笔账本与前文呼应不通过时退回主创修正一次，仍未修正则记为警告放行。', input: proposal, inputNote: '主创提交的提案；修改记录见下方。', attempts: get('decision').attempts,
+    output: narrative.gate ?? (proposal ? { '提案是否通过': proposal.outcome?.type !== 'action_not_allowed', '行动结果': proposal.outcome } : null),
+    html: narrative.gate ? renderGate(narrative.gate) : null,
     status: get('decision').status };
-  if (id === 'final') return { ...base, description: '把已保存的正文与最终提案放在一起查看；不是独立生成步骤。',
-    output: get('prose').output || proposal ? { '最终正文': get('prose').output, '最终提案': proposal } : null,
-    status: get('prose').status };
-  if (id === 'world') return { ...base, description: '状态回写后保存的统一世界状态；下一轮会以它为基础重新筛选上下文。',
-    output: committed?.stateAfter ?? null, input: proposal, status: get('commit').status };
+  if (id === 'beatsheet') return { ...base, kind: '程序处理', description: '由通过闸门的提案推导出的写作简报。只含伏笔的表面细节，不含真实含义，正文不会把伏笔说破。',
+    input: proposal ? { dramaturgy: proposal.dramaturgy ?? null, foreshadowing: proposal.foreshadowing ?? null } : null, inputNote: '提案中的节奏设计与伏笔处理',
+    output: narrative.beatSheet ?? null, status: narrative.beatSheet ? 'complete' : get('prose').status === 'running' ? 'complete' : stopped ? 'stopped' : 'waiting' };
+  if (id === 'ledger') return { ...base, kind: '叙事账本', description: '本轮提交后的张力曲线、伏笔账本、未兑现事项与事实账本。下一轮的信息共享层从这里生成节奏指令和按人物视角裁剪的账本摘要。',
+    input: null, inputNote: '', output: narrative.after ?? null, html: narrative.after ? renderNarrativePanel(narrative.after, run.names) : null,
+    status: narrative.after ? 'complete' : get('commit').status === 'complete' ? 'missing' : stopped ? 'stopped' : 'waiting' };
   if (id === 'next') return { ...base, description: '本轮供阅读的正文和后续选项。这里只查看结果，不会触发新一轮。',
     output: committed ? { '正文': get('prose').output, '后续选项': proposal?.choices ?? [], '结局': proposal?.ending ?? null } : null,
     status: committed ? 'ready' : 'waiting' };
@@ -142,9 +164,9 @@ function nodeData(id) {
 function graphHTML() {
   return `<div class="graph-scroll" aria-label="完整 Agent Loop 工作流" tabindex="0"><div class="graph-spacer"><div class="graph-world">
     <div class="parallel-area"><span>三个领域 · 并行分析</span></div>
-    <svg class="graph-edges" width="${graphWidth}" height="${graphHeight}" viewBox="0 0 ${graphWidth} ${graphHeight}" aria-hidden="true"><defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10" fill="none" stroke="context-stroke" stroke-width="1.5"/></marker></defs>${graphEdges.map(([from,to,d]) => `<path data-edge-from="${from}" data-edge-to="${to}" d="${d}" marker-end="url(#arrow)" class="${[from,to].includes('rejected') ? 'alternate' : ''}"/>`).join('')}</svg>
-    <span class="edge-label yes-label">是 · 继续写作</span><span class="edge-label no-label">否</span><span class="edge-label return-label">下一轮用户行动 · 继续循环</span>
-    ${graphNodes.map((n) => { const data = nodeData(n.id); return `<button data-node="${n.id}" style="left:${n.x}px;top:${n.y}px;width:${n.w}px;height:${n.h}px" class="graph-node ${n.color} ${n.diamond ? 'diamond' : ''} ${n.id === state.node ? 'selected' : ''} ${progress().active.includes(n.id) ? 'is-running' : ''} ${data.status === 'skipped' ? 'inactive' : ''}" aria-pressed="${n.id === state.node}" aria-label="查看${n.title}，${statuses[data.status] ?? data.status}">${n.diamond ? `<span>${n.title}</span>` : `<div class="node-top"><span class="node-icon">${icon(n.color === 'rejected' ? 'decision' : n.color)}</span><span class="node-status ${data.status}" title="${statuses[data.status]}">${data.status === 'complete' ? '✓ 已完成' : data.status === 'running' ? '● 运行中' : data.status === 'failed' ? '! 失败' : statuses[data.status] ?? data.status}</span></div><strong>${n.title}</strong><small>${n.caption}</small>${n.domain ? '<div class="node-stages">读取 <span>→</span> 分析 <span>→</span> 输出</div>' : ''}`}</button>`; }).join('')}
+    <svg class="graph-edges" width="${graphWidth}" height="${graphHeight}" viewBox="0 0 ${graphWidth} ${graphHeight}" aria-hidden="true"><defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10" fill="none" stroke="context-stroke" stroke-width="1.5"/></marker></defs>${graphEdges.map(([from,to,d,kind]) => `<path data-edge-from="${from}" data-edge-to="${to}" d="${d}" marker-end="url(#arrow)" class="${kind ?? ''}"/>`).join('')}</svg>
+    <span class="edge-label yes-label">通过 · 写作</span><span class="edge-label no-label">不成立</span><span class="edge-label bounce-label">节奏/伏笔未过 · 退回一次</span><span class="edge-label return-label">下一轮用户行动 · 继续循环</span><span class="edge-label feedback-label">叙事账本 → 下一轮节奏指令与账本摘要</span>
+    ${graphNodes.map((n) => { const data = nodeData(n.id); return `<button data-node="${n.id}" style="left:${n.x}px;top:${n.y}px;width:${n.w}px;height:${n.h}px" class="graph-node ${n.color} ${n.diamond ? 'diamond' : ''} ${n.id === state.node ? 'selected' : ''} ${progress().active.includes(n.id) ? 'is-running' : ''} ${data.status === 'skipped' ? 'inactive' : ''}" aria-pressed="${n.id === state.node}" aria-label="查看${n.title}，${statuses[data.status] ?? data.status}">${n.diamond ? `<span>${n.title}</span>` : `<div class="node-top"><span class="node-icon">${icon(n.icon ?? (n.color === 'rejected' ? 'decision' : n.color))}</span><span class="node-status ${data.status}" title="${statuses[data.status]}">${data.status === 'complete' ? '✓ 已完成' : data.status === 'running' ? '● 运行中' : data.status === 'failed' ? '! 失败' : statuses[data.status] ?? data.status}</span></div><strong>${n.title}</strong><small>${n.caption}</small>${metricChips(data.metrics)}${n.domain ? '<div class="node-stages">读取 <span>→</span> 分析 <span>→</span> 输出</div>' : ''}`}</button>`; }).join('')}
   </div></div></div>`;
 }
 function graphSelection() {
@@ -154,10 +176,10 @@ function graphSelection() {
 function progress() {
   const run = state.detail;
   const phase = run.timeline?.findLast((entry) => entry.type === 'phase')?.phase;
-  const phaseNames = { analyzing: '三个领域 agent 分析', synthesizing: '主创裁决', narrating: '正文写作', recovering: '正文续写', committing: '保存世界状态' };
-  const phaseNode = { analyzing: 'environment', synthesizing: 'decision', narrating: 'prose', recovering: 'prose', committing: 'commit' };
+  const phaseNames = { analyzing: '三个领域 agent 分析', synthesizing: '主创裁决与提案闸门', narrating: '正文写作', recovering: '正文续写', choosing: '生成推荐行动', recording: '连续性记录', committing: '原子提交' };
+  const phaseNode = { analyzing: 'environment', synthesizing: 'decision', narrating: 'prose', recovering: 'prose', choosing: 'prose', recording: 'recorder', committing: 'commit' };
   const active = run.steps.filter((step) => step.status === 'running').map((step) => step.id);
-  if (run.status === 'complete') return { text: '本轮已完成', detail: '正文与世界状态已保存', active: [], node: 'prose', status: 'complete' };
+  if (run.status === 'complete') return { text: '本轮已完成', detail: '正文、世界状态与叙事账本已保存', active: [], node: 'prose', status: 'complete' };
   if (['failed','rejected','cancelled','paused'].includes(run.status)) return { text: `${statuses[run.status]}${phaseNames[phase] ? ` · ${phaseNames[phase]}` : ''}`, detail: run.error ?? '本轮已停止运行', active: [], node: phaseNode[phase] ?? 'rejected', status: run.status };
   const titles = active.map((id) => run.steps.find((step) => step.id === id).title);
   return { text: titles.length ? `正在运行 · ${titles.join('、')}` : phaseNames[phase] ? `正在运行 · ${phaseNames[phase]}` : '等待开始', detail: '工作情况自动更新', active, node: active[0] ?? phaseNode[phase] ?? 'action', status: 'running' };
@@ -183,11 +205,12 @@ function renderInspector(preserve = false) {
   const latest = attempts.at(-1);
   const failures = attempts.filter(a=>a.status==='failed').length;
   let output = '';
-  if (data.output != null) output = data.id==='shared' ? readable(data.output) : renderOutput(data);
+  if (data.html) output = data.html;
+  else if (data.output != null) output = data.id==='shared' ? readable(data.output) : renderOutput(data);
   else if (latest) output = `<p class="work-pending">最近一次提交尚未通过校验。</p>${readable(latest.output)}`;
   else output = `<div class="no-output"><p>${data.status==='running' ? '正在工作，输出会自动显示在这里。' : data.status==='skipped' ? '本轮没有走到这条路径。' : data.status==='waiting' ? '等待上游步骤完成。' : '本轮没有产出这一步的内容。'}</p></div>`;
   const history = failures && attempts.length>1 ? `<details class="work-history" data-preserve="history"><summary>之前的提交记录（${attempts.length-1} 次）</summary>${attempts.slice(0,-1).map((a,i)=>`<details class="attempt" data-preserve="attempt-${i}"><summary>第 ${i+1} 次 · ${a.status==='accepted'?'校验通过':a.status==='failed'?'校验未通过':'等待校验'}</summary>${feedbackView(a.feedback)}${readable(a.output)}</details>`).join('')}</details>` : '';
-  $('#inspector').innerHTML = `<header class="work-header"><span class="step-icon ${graphNodes.find(n=>n.id===state.node)?.color ?? data.id}">${icon(graphNodes.find(n=>n.id===state.node)?.color ?? data.id)}</span><div><h2>${esc(data.title)}</h2><p>${esc(data.description ?? '')}</p></div>${badge(data.status)}</header><div id="work-content" class="work-content" role="region" aria-label="${esc(data.title)}的工作情况">${latest ? `<div class="work-submission">已提交 ${attempts.length} 次${latest.status==='accepted'?' · 最近一次校验通过':latest.status==='failed'?' · 最近一次校验未通过':' · 等待校验'}${failures ? `，其中 ${failures} 次未通过` : ''}</div>${latest.status==='failed'?feedbackView(latest.feedback):''}` : ''}<div class="work-columns">${inputHTML(data)}<section class="work-result" aria-labelledby="work-output-title"><h3 class="work-column-title" id="work-output-title">${data.id==='commit'||data.id==='world'?'保存结果':'工作输出'}</h3><div class="work-output">${output}</div>${history}</section></div></div>`;
+  $('#inspector').innerHTML = `<header class="work-header"><span class="step-icon ${graphNodes.find(n=>n.id===state.node)?.color ?? data.id}">${icon(graphNodes.find(n=>n.id===state.node)?.icon ?? graphNodes.find(n=>n.id===state.node)?.color ?? data.id)}</span><div><h2>${esc(data.title)}</h2><p>${esc(data.description ?? '')}</p></div>${badge(data.status)}</header><div id="work-content" class="work-content" role="region" aria-label="${esc(data.title)}的工作情况">${data.metrics !== undefined ? `<details class="work-metrics" data-preserve="metrics" ${data.metrics ? 'open' : ''}><summary>耗时与用量</summary>${metricsDetail(data.metrics)}</details>` : ''}${latest ? `<div class="work-submission">已提交 ${attempts.length} 次${latest.status==='accepted'?' · 最近一次校验通过':latest.status==='failed'?' · 最近一次校验未通过':' · 等待校验'}${failures ? `，其中 ${failures} 次未通过` : ''}</div>${latest.status==='failed'?feedbackView(latest.feedback):''}` : ''}<div class="work-columns">${inputHTML(data)}<section class="work-result" aria-labelledby="work-output-title"><h3 class="work-column-title" id="work-output-title">${data.id==='commit'||data.id==='ledger'?'保存结果':'工作输出'}</h3><div class="work-output">${output}</div>${history}</section></div></div>`;
   for (const key of open) { const element = [...document.querySelectorAll('#inspector [data-preserve]')].find(el=>el.dataset.preserve===key); if(element) element.open=true; }
   if (scroll !== null) window.scrollTo(0, scroll);
   $('#inspector').dataset.node=state.node;
@@ -199,6 +222,8 @@ function selectNode(id) {
   const url=new URL(location.href);url.searchParams.set('node',id);history.replaceState(null,'',url);
 }
 function renderDetail(preserve = false) {
+  if (state.view === 'memory') return renderMemoryScreen(preserve);
+  if (state.view === 'performance') return renderPerformanceScreen();
   const run=state.detail, current=progress();
   if (!state.manualNode || !graphNodes.some(n=>n.id===state.node)) state.node=current.node;
   const oldNode=$('#inspector')?.dataset.node;
@@ -210,6 +235,84 @@ function renderDetail(preserve = false) {
   renderInspector();graphSelection();resizeGraph();
   for(const key of open){const el=[...document.querySelectorAll('#inspector [data-preserve]')].find(el=>el.dataset.preserve===key);if(el)el.open=true;}
   if(preserve) window.scrollTo(0,oldScroll);
+}
+
+function updateConsoleURL() {
+  const url = new URL(location.href);
+  url.searchParams.set('view', state.view);
+  if (state.selected) url.searchParams.set('run', state.selected); else url.searchParams.delete('run');
+  if (state.view !== 'workflow') url.searchParams.delete('node');
+  history.replaceState(null, '', url);
+  document.querySelectorAll('[data-console-view]').forEach((button) => button.setAttribute('aria-selected', String(button.dataset.consoleView === state.view)));
+}
+
+function renderMemoryScreen(preserve = false) {
+  if (preserve && state.memoryComposing) return;
+  const scroll = preserve ? window.scrollY : 0;
+  const focus = document.activeElement?.id;
+  const selection = focus === 'memory-search' ? [document.activeElement.selectionStart, document.activeElement.selectionEnd] : null;
+  const opened = preserve ? [...document.querySelectorAll('[data-memory-preserve][open]')].map((element) => element.dataset.memoryPreserve) : [];
+  const run = state.detail;
+  $('#breadcrumb').textContent = run ? run.branchName + ' / 第 ' + String(run.number).padStart(2, '0') + ' 轮' : '初始状态';
+  $('#workspace').className = 'memory-workspace';
+  $('#workspace').innerHTML = '<div class="memory-heading"><div><div class="eyebrow">MEMORY / ' + esc(state.listing?.story.title ?? '互动小说') + '</div><h1>这一轮，故事记住了什么</h1><p>查看新增内容、角色归属，以及写作时真正用到的记忆。</p></div><div class="memory-round-stamp"><span>' + (run ? '第 ' + String(run.number).padStart(2, '0') + ' 轮' : '初始状态') + '</span><small>' + (run ? esc(statuses[run.status] ?? run.status) : '等待第一轮交互') + '</small></div></div>' + (run ? '<div class="action-strip memory-action"><span>本轮行动</span><p>' + esc(run.action) + '</p></div>' : '') + renderMemoryPanel(state.memory, { scope: state.memoryScope, owner: state.memoryOwner, query: state.memoryQuery, limit: state.memoryLimit });
+  for (const key of opened) { const element = [...document.querySelectorAll('[data-memory-preserve]')].find((item) => item.dataset.memoryPreserve === key); if (element) element.open = true; }
+  if (preserve && ['memory-search', 'memory-owner'].includes(focus)) {
+    const element = document.getElementById(focus); element?.focus({ preventScroll: true });
+    if (selection && element) element.setSelectionRange(...selection);
+  }
+  window.scrollTo(0, scroll);
+  updateConsoleURL();
+}
+
+async function loadMemory(preserve = false) {
+  const runId = state.selected;
+  const request = ++state.memoryRequest;
+  const key = runId ?? 'initial';
+  if (state.memoryKey !== key) {
+    if (key === 'initial') state.memoryScope = 'retained';
+    else if (state.memoryKey === 'initial') state.memoryScope = 'added';
+    state.memory = null; state.memoryKey = key; state.memorySignature = ''; state.memoryLimit = 60;
+    if (state.view === 'memory') renderMemoryScreen();
+  }
+  try {
+    const memory = await api(runId ? '/api/console/memory/runs/' + encodeURIComponent(runId) : '/api/console/memory');
+    if (request !== state.memoryRequest || state.selected !== runId) return;
+    const signature = JSON.stringify({ ...memory, index: memory.index ? { ...memory.index, checkedAt: null } : null });
+    const changed = signature !== state.memorySignature;
+    state.memory = memory; state.memorySignature = signature;
+    if (state.memoryOwner !== 'all' && !memory.owners?.some((owner) => owner.id === state.memoryOwner)) state.memoryOwner = 'all';
+    if (state.view === 'memory' && (changed || !preserve)) renderMemoryScreen(preserve);
+  } catch (error) {
+    if (request !== state.memoryRequest || state.view !== 'memory') return;
+    const target = $('#workspace .memory-loading') ?? $('#workspace');
+    target.innerHTML = '<div class="memory-empty"><h2>暂时无法读取记忆</h2><p>' + esc(error.message) + '</p><button type="button" class="export-button" data-memory-refresh>重新读取</button></div>';
+  }
+}
+
+function renderPerformanceScreen() {
+  $('#breadcrumb').textContent = '最近回合';
+  $('#workspace').className = 'memory-workspace';
+  $('#workspace').innerHTML = '<div class="memory-heading"><div><div class="eyebrow">PERFORMANCE / ' + esc(state.listing?.story.title ?? '互动小说') + '</div><h1>每一轮花在了哪里</h1><p>按 Agent 拆分的耗时、token 用量、校验失败与正文质量问题。点击一行查看该轮工作流。</p></div></div>' + renderPerformance(state.performance);
+  updateConsoleURL();
+}
+async function loadPerformance() {
+  try {
+    const data = await api('/api/console/performance');
+    const changed = JSON.stringify(data) !== JSON.stringify(state.performance);
+    state.performance = data;
+    if (state.view === 'performance' && changed) renderPerformanceScreen();
+  } catch (error) {
+    if (state.view === 'performance') $('#workspace').innerHTML = '<div class="memory-empty"><h2>暂时无法读取性能记录</h2><p>' + esc(error.message) + '</p></div>';
+  }
+}
+async function setConsoleView(view) {
+  state.view = view;
+  updateConsoleURL();
+  if (view === 'performance') { renderPerformanceScreen(); await loadPerformance(); return; }
+  if (view === 'memory') await loadMemory();
+  else if (state.detail) renderDetail();
+  else { state.signature = ''; await refresh(); }
 }
 
 async function api(path) {
@@ -227,7 +330,9 @@ async function selectRun(id) {
   try {
     const detail = await api(`/api/console/runs/${encodeURIComponent(id)}`);
     if (state.selected !== id) return;
-    state.detail = detail; state.signature = JSON.stringify(detail); renderDetail();
+    state.detail = detail; state.signature = JSON.stringify(detail);
+    updateConsoleURL();
+    if (state.view === 'memory') await loadMemory(); else renderDetail();
   } catch (error) {
     if (state.selected !== id) return;
     state.detail = null;
@@ -243,8 +348,11 @@ async function refresh(manual = false) {
     renderRuns();
     $("#connection").textContent = `已同步 · ${clockTime(state.listing.refreshedAt)}`;
     document.body.classList.remove("disconnected");
+    if (state.view === 'performance') await loadPerformance();
     if (!state.listing.runs.length) {
       state.selected = null; state.detail = null; state.signature = "";
+      updateConsoleURL();
+      if (state.view === 'memory') { await loadMemory(true); return; }
       $("#workspace").innerHTML = '<div class="initial-state"><span class="empty-symbol">↳</span><h1>等故事的第一步</h1><p>在小说页面进行一次行动，运行记录会自动出现在这里。</p><a class="export-button" href="http://127.0.0.1:4317" target="_blank" rel="noreferrer">打开小说 ↗</a></div>';
     } else if (!state.listing.runs.some((r) => r.id === state.selected)) {
       await selectRun(state.listing.runs[0].id);
@@ -256,6 +364,7 @@ async function refresh(manual = false) {
       if (state.selected === id && JSON.stringify(detail) !== state.signature) {
         state.detail = detail; state.signature = JSON.stringify(detail); renderDetail(true);
       }
+      if (state.selected === id && state.view === 'memory') await loadMemory(true);
     }
 
   } catch (error) {
@@ -266,14 +375,29 @@ async function refresh(manual = false) {
   } finally { state.busy = false; }
 }
 document.addEventListener('click', (event) => {
+  const view = event.target.closest('[data-console-view]');
+  if (view) return setConsoleView(view.dataset.consoleView);
+  const scope = event.target.closest('[data-memory-scope]');
+  if (scope) { state.memoryScope = scope.dataset.memoryScope; state.memoryLimit = 60; return renderMemoryScreen(true); }
+  const sourceRun = event.target.closest('[data-memory-run]');
+  if (sourceRun) return selectRun(sourceRun.dataset.memoryRun);
+  if (event.target.closest('[data-memory-more]')) { state.memoryLimit += 60; return renderMemoryScreen(true); }
+  if (event.target.closest('[data-memory-refresh]')) return loadMemory(true);
+  const perfRow = event.target.closest('.perf-row[data-run]');
+  if (perfRow) { state.view = 'workflow'; return selectRun(perfRow.dataset.run); }
   const run = event.target.closest('[data-run]');
   if (run) return selectRun(run.dataset.run);
   const node = event.target.closest('.graph-node[data-node]');
   if (node) return selectNode(node.dataset.node);
   if (event.target.closest('#retry-detail')) return selectRun(state.selected);
 });
+document.addEventListener('input', (event) => { if (event.target.matches('[data-memory-search]') && !event.isComposing && !state.memoryComposing) { state.memoryQuery = event.target.value; state.memoryLimit = 60; renderMemoryScreen(true); } });
+document.addEventListener('compositionstart', (event) => { if (event.target.matches('[data-memory-search]')) state.memoryComposing = true; });
+document.addEventListener('compositionend', (event) => { if (event.target.matches('[data-memory-search]')) { state.memoryComposing = false; state.memoryQuery = event.target.value; state.memoryLimit = 60; if (state.view === 'memory') renderMemoryScreen(true); } });
+document.addEventListener('change', (event) => { if (event.target.matches('[data-memory-owner]')) { state.memoryOwner = event.target.value; state.memoryLimit = 60; renderMemoryScreen(true); } });
 window.addEventListener('resize', resizeGraph);
 
+updateConsoleURL();
 await refresh();
 setInterval(() => { if (!document.hidden) refresh(); }, 3000);
 document.addEventListener("visibilitychange", () => { if (!document.hidden) refresh(); });

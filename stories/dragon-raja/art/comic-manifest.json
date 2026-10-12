@@ -1,0 +1,256 @@
+{
+  "model": "gpt-image-2",
+  "style": "Art style: polished Japanese anime feature-film illustration, clean confident linework, detailed faces and hands, cinematic low-key lighting, cold blue night tones against warm amber neon, wet reflective Tokyo rain where relevant, desaturated ink-black palette with brass-gold (#c4a46c) highlights and vermilion red (#b8432d) accents, subtle film grain and ink-wash edges. Not photorealistic, not 3D render. No watermark, no signature, no logo.",
+  "groupStyles": {
+    "comic": "Asset: one full Chinese manhua page, vertical 2:3. White page margins and thin white gutters between panels. Read top-to-bottom, left-to-right. Dialogue in clean white rounded speech balloons with crisp black Simplified Chinese text copied EXACTLY as given (do not add, drop or alter any character); narration in white rectangular caption boxes. Keep every character's design identical to the reference model sheets (hair, eyes, outfit, props). Keep lettering large and legible; no other text, no sound effects in English, no page numbers."
+  },
+  "jobs": [
+    {
+      "id": "comic-01",
+      "group": "comic",
+      "size": "1024x1536",
+      "refs": [
+        "stories/dragon-raja/art/model-sheets/lu-mingfei.png",
+        "stories/dragon-raja/art/model-sheets/caesar.png",
+        "stories/dragon-raja/art/model-sheets/chu-zihang.png",
+        "stories/dragon-raja/art/model-sheets/gen-chisei.png"
+      ],
+      "output": "public/assets/comic/dragon-raja/page-01.png",
+      "prompt": "Page 1 of 18 — \"风雨入境\". Setting: 东京上空与羽田机场, 台风夜. Continuity: 三人穿便装外套登机；源稚生黑西装黑风衣、撑黑伞。暴雨贯穿全页。\nLayout: 4 panels, a 2-row × 2 grid or 4 stacked tiers, varied panel sizes for rhythm.\nReference image 1: character model sheet for Lu Mingfei — keep this exact face, hair and outfit.\nReference image 2: character model sheet for Caesar Gattuso — keep this exact face, hair and outfit.\nReference image 3: character model sheet for Chu Zihang — keep this exact face, hair and outfit.\nReference image 4: character model sheet for Gen Chisei — keep this exact face, hair and outfit.\nPanel 1: Wide shot: an airliner descending through dark typhoon clouds, lightning, the glittering grid of Tokyo far below.\n  Caption box (narration): 「台风夜，东京在云层下发亮。」\nPanel 2: Airplane cabin interior: Caesar (blond) closes a black mission folder with a confident smirk; Lu Mingfei slumps in the next seat looking nervous.\n  Speech balloon from Caesar: 「落地以后，学院的简报先信一半。」\n  Speech balloon from Lu Mingfei: 「剩下一半够我们活着回去吗？」\nPanel 3: Close-up: Chu Zihang in profile beside a rain-streaked airplane window, calm sharp eyes.\n  Speech balloon from Chu Zihang: 「日本分部没有确认接机人。」\nPanel 4: Airport arrival curb at night in heavy rain: a row of identical black sedans, black-suited men holding umbrellas; Gen Chisei in front under a black umbrella, facing the three arriving students.\n  Speech balloon from Gen Chisei: 「欢迎来到东京。在这里，请遵守家族的规则。」"
+    },
+    {
+      "id": "comic-02",
+      "group": "comic",
+      "size": "1024x1536",
+      "refs": [
+        "stories/dragon-raja/art/model-sheets/lu-mingfei.png",
+        "stories/dragon-raja/art/model-sheets/caesar.png",
+        "stories/dragon-raja/art/model-sheets/chu-zihang.png",
+        "stories/dragon-raja/art/model-sheets/gen-chisei.png",
+        "public/assets/comic/dragon-raja/page-01.png"
+      ],
+      "after": "comic-01",
+      "output": "public/assets/comic/dragon-raja/page-02.png",
+      "prompt": "Page 2 of 18 — \"源氏重工\". Setting: 源氏重工大厦, 同一夜. Continuity: 承接上一页的黑色车队与雨夜；三人外套仍是湿的。\nLayout: 4 panels, a 2-row × 2 grid or 4 stacked tiers, varied panel sizes for rhythm.\nReference image 1: character model sheet for Lu Mingfei — keep this exact face, hair and outfit.\nReference image 2: character model sheet for Caesar Gattuso — keep this exact face, hair and outfit.\nReference image 3: character model sheet for Chu Zihang — keep this exact face, hair and outfit.\nReference image 4: character model sheet for Gen Chisei — keep this exact face, hair and outfit.\nReference image 5: the PREVIOUS comic page — match its rendering style, colour grading, lettering style and continuity; do not copy its layout.\nPanel 1: The black sedans arrive at the foot of a towering black skyscraper in the rain; two long rows of black-suited family members bow. Lu Mingfei steps out looking uneasy.\n  Speech balloon from Lu Mingfei: 「这不像接待，像把我们送进刀鞘。」\nPanel 2: Long dark conference table, city lights through glass wall: Caesar on one end leaning forward, Gen Chisei on the other end, sitting straight and cold.\n  Speech balloon from Caesar: 「学院需要完整的资料。」\n  Speech balloon from Gen Chisei: 「家族只交出任务必需的部分。」\nPanel 3: Chu Zihang glancing up at a ceiling security camera with a small red light; reflection of keycard locks on doors.\n  Speech balloon from Chu Zihang: 「每扇门都要内部权限。」\nPanel 4: Close-up of an elegant brass elevator button panel; one high-floor button is covered by a small red lock symbol and glows faintly. No readable numbers.\n  Caption box (narration): 「这栋楼里还有一个名字，不在任何简报上。」"
+    },
+    {
+      "id": "comic-03",
+      "group": "comic",
+      "size": "1024x1536",
+      "refs": [
+        "stories/dragon-raja/art/model-sheets/erii.png",
+        "stories/dragon-raja/art/model-sheets/gen-chisei.png",
+        "public/assets/comic/dragon-raja/page-02.png"
+      ],
+      "after": "comic-02",
+      "output": "public/assets/comic/dragon-raja/page-03.png",
+      "prompt": "Page 3 of 18 — \"高楼里的女孩\". Setting: 源氏重工深处·绘梨衣的房间, 同一夜. Continuity: 绘梨衣穿白衣绯袴巫女服；房间有游戏机、玩偶和装着栏杆的落地窗，窗外是雨夜东京。\nLayout: 5 panels, tiers of 1–2 panels, varied panel sizes for rhythm.\nReference image 1: character model sheet for Uesugi Erii — keep this exact face, hair and outfit.\nReference image 2: character model sheet for Gen Chisei — keep this exact face, hair and outfit.\nReference image 3: the PREVIOUS comic page — match its rendering style, colour grading, lettering style and continuity; do not copy its layout.\nPanel 1: Erii in her white-and-red miko outfit sits alone in a dim luxurious room playing a video game on a large screen with a controller; plush toys and game boxes around.\n  Caption box (narration): 「上锁的楼层里，上杉家主正在打游戏。」\nPanel 2: Gen Chisei opening the door, holding a small black medicine case, his face softer than before.\n  Speech balloon from Gen Chisei: 「今天感觉怎么样？」\nPanel 3: Erii holds up her small notebook toward her brother; her line appears as handwritten words in a square note box beside the notebook.\n  Erii's notebook note (square box with a small notebook icon): 「还想再玩一局。」\nPanel 4: Gen Chisei by a tall barred window with rainy Tokyo skyline, holding out the medicine case.\n  Speech balloon from Gen Chisei: 「先吃药。下次给你带新游戏。」\nPanel 5: Back view: Erii alone at the barred window looking at the rainy city; the door closed behind her; a security camera red dot in the corner.\n  Caption box (narration): 「他答应了下一次，却没说下一次是哪天。」"
+    },
+    {
+      "id": "comic-04",
+      "group": "comic",
+      "size": "1024x1536",
+      "refs": [
+        "stories/dragon-raja/art/model-sheets/erii.png",
+        "stories/dragon-raja/art/model-sheets/gen-chisei.png",
+        "public/assets/comic/dragon-raja/page-03.png"
+      ],
+      "after": "comic-03",
+      "output": "public/assets/comic/dragon-raja/page-04.png",
+      "prompt": "Page 4 of 18 — \"言灵·审判\". Setting: 源氏重工地下训练场, 次日. Continuity: 绘梨衣仍穿巫女服，手持长刀；源稚生黑西装、持刀挡在众人前。红色警报灯。\nLayout: 5 panels, tiers of 1–2 panels, varied panel sizes for rhythm.\nReference image 1: character model sheet for Uesugi Erii — keep this exact face, hair and outfit.\nReference image 2: character model sheet for Gen Chisei — keep this exact face, hair and outfit.\nReference image 3: the PREVIOUS comic page — match its rendering style, colour grading, lettering style and continuity; do not copy its layout.\nPanel 1: Underground training hall under red alarm lights: a feral dark scaled humanoid creature smashing through a heavy steel isolation door, debris flying.\n  Red alarm text box: 「隔离失效！」\nPanel 2: Black-suited family members backing away in fear; Gen Chisei steps forward with a drawn katana, arm out to hold others back.\n  Speech balloon from Gen Chisei: 「所有人，退出她的领域。」\nPanel 3: Extreme close-up of Erii's face: rose-red eyes deepening to glowing crimson, lips just parting, strands of crimson hair floating.\n  Caption box (narration): 「她只需要说一个字。」\nPanel 4: Dynamic wide shot: thin luminous invisible cutting lines slice across the hall; the creature freezes mid-leap. Tasteful, no gore.\n  Caption box (narration): 「她没有提高声音，世界却服从了。」\nPanel 5: Aftermath: Erii lowers her sword and lifts her notebook toward Gen Chisei with an innocent expression; her line in a square note box.\n  Erii's notebook note (square box with a small notebook icon): 「可以回房间了吗？」"
+    },
+    {
+      "id": "comic-05",
+      "group": "comic",
+      "size": "1024x1536",
+      "refs": [
+        "stories/dragon-raja/art/model-sheets/erii.png",
+        "stories/dragon-raja/art/model-sheets/gen-chisei.png",
+        "stories/dragon-raja/art/model-sheets/tachibana-masamune.png",
+        "public/assets/comic/dragon-raja/page-04.png"
+      ],
+      "after": "comic-04",
+      "output": "public/assets/comic/dragon-raja/page-05.png",
+      "prompt": "Page 5 of 18 — \"哥哥与家主\". Setting: 源氏重工医疗室, 同日. Continuity: 承接训练场之后；绘梨衣换回干净的巫女服坐在医疗室玻璃后。橘政宗穿深色和服羽织。\nLayout: 5 panels, tiers of 1–2 panels, varied panel sizes for rhythm.\nReference image 1: character model sheet for Uesugi Erii — keep this exact face, hair and outfit.\nReference image 2: character model sheet for Gen Chisei — keep this exact face, hair and outfit.\nReference image 3: character model sheet for Tachibana Masamune — keep this exact face, hair and outfit.\nReference image 4: the PREVIOUS comic page — match its rendering style, colour grading, lettering style and continuity; do not copy its layout.\nPanel 1: Clean white-and-black medical room: a masked doctor draws blood from Erii's arm into several vials; Gen Chisei stands watching, frowning.\n  Speech balloon from Gen Chisei: 「采血量为什么又增加了？」\nPanel 2: Tachibana Masamune, grey-haired elder in a dark haori, gently closes a medical file folder with a kind grandfatherly smile.\n  Speech balloon from Tachibana Masamune: 「为了让她稳定，这是必要的。」\nPanel 3: Through a glass partition: Erii watches the two men talking on the other side; her notebook note in a square box.\n  Erii's notebook note (square box with a small notebook icon): 「哥哥在生气。」\nPanel 4: Gen Chisei crouches beside Erii, composing a calm face for her.\n  Speech balloon from Gen Chisei: 「没有。只是工作。」\nPanel 5: Close-up: a medical log sheet with several blank rows (no readable text) and an elderly hand resting on it.\n  Caption box (narration): 「有些问题，被家族的礼节轻轻盖住了。」"
+    },
+    {
+      "id": "comic-06",
+      "group": "comic",
+      "size": "1024x1536",
+      "refs": [
+        "stories/dragon-raja/art/model-sheets/lu-mingfei.png",
+        "stories/dragon-raja/art/model-sheets/caesar.png",
+        "stories/dragon-raja/art/model-sheets/chu-zihang.png",
+        "stories/dragon-raja/art/model-sheets/gen-chisei.png",
+        "stories/dragon-raja/art/model-sheets/erii.png",
+        "public/assets/comic/dragon-raja/page-05.png"
+      ],
+      "after": "comic-05",
+      "output": "public/assets/comic/dragon-raja/page-06.png",
+      "prompt": "Page 6 of 18 — \"海底任务\". Setting: 东京湾外海与指挥船, 三日后·风暴夜. Continuity: 三人换上深色潜水作业服；指挥船上的绘梨衣巫女服外披透明雨衣。\nLayout: 5 panels, tiers of 1–2 panels, varied panel sizes for rhythm.\nReference image 1: character model sheet for Lu Mingfei — keep this exact face, hair and outfit.\nReference image 2: character model sheet for Caesar Gattuso — keep this exact face, hair and outfit.\nReference image 3: character model sheet for Chu Zihang — keep this exact face, hair and outfit.\nReference image 4: character model sheet for Gen Chisei — keep this exact face, hair and outfit.\nReference image 5: character model sheet for Uesugi Erii — keep this exact face, hair and outfit.\nReference image 6: the PREVIOUS comic page — match its rendering style, colour grading, lettering style and continuity; do not copy its layout.\nPanel 1: Night storm at sea: a large support ship lowering a small deep-sea submersible on a crane into black waves, floodlights.\n  Caption box (narration): 「联合行动那晚，台风还没有走远。」\nPanel 2: Cramped submersible cabin lit by instruments: Caesar, Lu Mingfei and Chu Zihang in dark diving work suits; Caesar speaks into a headset.\n  Speech balloon from Caesar: 「保持通信，有异常立刻上报。」\nPanel 3: Lu Mingfei staring at a green sonar screen covered with dozens of blips, sweating.\n  Speech balloon from Lu Mingfei: 「下面的东西……是不是太多了？」\nPanel 4: Chu Zihang checking instrument readings, eyes narrowing.\n  Speech balloon from Chu Zihang: 「不是噪点。它们在靠近。」\nPanel 5: Ship command room full of monitors: Gen Chisei (24-year-old, short BLACK hair swept back, black suit and long black coat — NOT grey-haired, NOT old) shouting an order into a headset; beside him Erii in her miko outfit with a clear raincoat, gazing at a monitor showing Lu Mingfei's face while writing in her notebook.\n  Speech balloon from Gen Chisei: 「切换备用线路！」\n  Caption box (narration): 「绘梨衣在本子上，给屏幕里的男生写下一个名字。」"
+    },
+    {
+      "id": "comic-07",
+      "group": "comic",
+      "size": "1024x1536",
+      "refs": [
+        "stories/dragon-raja/art/model-sheets/erii.png",
+        "stories/dragon-raja/art/model-sheets/gen-chisei.png",
+        "stories/dragon-raja/art/model-sheets/caesar.png",
+        "stories/dragon-raja/art/model-sheets/lu-mingfei.png",
+        "public/assets/comic/dragon-raja/page-06.png"
+      ],
+      "after": "comic-06",
+      "output": "public/assets/comic/dragon-raja/page-07.png",
+      "prompt": "Page 7 of 18 — \"计划崩塌\". Setting: 风暴海面与指挥船甲板, 同一夜. Continuity: 承接上一页的声呐光点；暴雨甲板，绘梨衣持刀站在船舷。\nLayout: 5 panels, tiers of 1–2 panels, varied panel sizes for rhythm.\nReference image 1: character model sheet for Uesugi Erii — keep this exact face, hair and outfit.\nReference image 2: character model sheet for Gen Chisei — keep this exact face, hair and outfit.\nReference image 3: character model sheet for Caesar Gattuso — keep this exact face, hair and outfit.\nReference image 4: character model sheet for Lu Mingfei — keep this exact face, hair and outfit.\nReference image 5: the PREVIOUS comic page — match its rendering style, colour grading, lettering style and continuity; do not copy its layout.\nPanel 1: Underwater: swarms of pale, skeletal dragon-like undead shapes rushing out of darkness toward the submersible's searchlights.\n  Speech balloon from Caesar: 「准备弃艇！」\nPanel 2: Storm-lashed ship deck at night: Erii in miko outfit stands at the railing gripping a katana, hair whipping; Gen Chisei behind her reaching out.\n  Speech balloon from Gen Chisei: 「等我的命令。」\nPanel 3: Close-up of Erii's eyes reflecting a blinking red distress beacon.\n  Caption box (narration): 「她没有等。」\nPanel 4: Epic wide shot: a luminous horizontal line sweeps across the stormy sea surface; dark silhouettes below the waves are cut and scattered. No gore.\n  Caption box (narration): 「她救下了所有人，也让所有人想起她能毁掉什么。」\nPanel 5: Split diagonal panel: left, soaked Caesar on a rescue boat shouting into a radio with Lu Mingfei behind him; right, Gen Chisei in the command room answering coldly.\n  Speech balloon from Caesar: 「你们隐瞒了风险。」\n  Speech balloon from Gen Chisei: 「学院也一样。」"
+    },
+    {
+      "id": "comic-08",
+      "group": "comic",
+      "size": "1024x1536",
+      "refs": [
+        "stories/dragon-raja/art/model-sheets/lu-mingfei.png",
+        "stories/dragon-raja/art/model-sheets/caesar.png",
+        "stories/dragon-raja/art/model-sheets/chu-zihang.png",
+        "stories/dragon-raja/art/model-sheets/gen-chisei.png",
+        "public/assets/comic/dragon-raja/page-07.png"
+      ],
+      "after": "comic-07",
+      "output": "public/assets/comic/dragon-raja/page-08.png",
+      "prompt": "Page 8 of 18 — \"合作破裂\". Setting: 源氏重工会议室与东京街头, 次日夜. Continuity: 回到第二页的会议室，同一张长桌；三人换回便装外套。结尾三人在雨夜街口分散。\nLayout: 5 panels, tiers of 1–2 panels, varied panel sizes for rhythm.\nReference image 1: character model sheet for Lu Mingfei — keep this exact face, hair and outfit.\nReference image 2: character model sheet for Caesar Gattuso — keep this exact face, hair and outfit.\nReference image 3: character model sheet for Chu Zihang — keep this exact face, hair and outfit.\nReference image 4: character model sheet for Gen Chisei — keep this exact face, hair and outfit.\nReference image 5: the PREVIOUS comic page — match its rendering style, colour grading, lettering style and continuity; do not copy its layout.\nPanel 1: The same long conference room as before: black-suited staff locking stacks of files into a steel safe; Chu Zihang watching from the doorway.\n  Speech balloon from Chu Zihang: 「他们在销毁行动记录。」\nPanel 2: Caesar slams a file back across the table toward Gen Chisei.\n  Speech balloon from Caesar: 「到此为止。我们自己查。」\nPanel 3: Gen Chisei standing, issuing an order; armed men moving to block the doors.\n  Speech balloon from Gen Chisei: 「没有家族许可，谁也不能离开。」\nPanel 4: Elevator doors slide open: family guards and Caesar/Chu draw weapons at the same time; Lu Mingfei caught in the middle with hands half-raised.\n  Speech balloon from Lu Mingfei: 「我就知道接机车队不是福利。」\nPanel 5: Wide high-angle shot: three small figures running out into a neon-lit rainy Tokyo intersection, black sedans with headlights closing in, the three splitting in different directions.\n  Caption box (narration): 「合作结束了。东京却没有出口。」"
+    },
+    {
+      "id": "comic-09",
+      "group": "comic",
+      "size": "1024x1536",
+      "refs": [
+        "stories/dragon-raja/art/model-sheets/erii.png",
+        "public/assets/comic/dragon-raja/page-08.png"
+      ],
+      "after": "comic-08",
+      "output": "public/assets/comic/dragon-raja/page-09.png",
+      "prompt": "Page 9 of 18 — \"小怪兽出走\". Setting: 绘梨衣的房间与电梯, 同一夜. Continuity: 回到第三页的房间；本页中段起绘梨衣换上白色连衣裙和米色短外套，背小背包——此后一直保持这身打扮。\nLayout: 5 panels, tiers of 1–2 panels, varied panel sizes for rhythm.\nReference image 1: character model sheet for Uesugi Erii — keep this exact face, hair and outfit.\nReference image 2: the PREVIOUS comic page — match its rendering style, colour grading, lettering style and continuity; do not copy its layout.\nPanel 1: Erii (miko outfit) in her dim room facing a monitor showing grainy surveillance footage of Lu Mingfei running in the rain; her notebook note in a square box.\n  Erii's notebook note (square box with a small notebook icon): 「他被追了。」\nPanel 2: Erii now wearing a simple white dress and short beige jacket, packing a small backpack: a black medicine case, her notebook, and a yellow rubber duck.\n  Caption box (narration): 「她只带上自己认为重要的东西。」\nPanel 3: A nervous black-suited guard bowing but blocking the elevator door in a corridor.\n  Speech balloon from the guard: 「家主，请回房间。」\nPanel 4: Erii holds up her notebook firmly; the guard sweats and steps aside.\n  Erii's notebook note (square box with a small notebook icon): 「我要出去。」\nPanel 5: Inside a descending elevator: Erii hugging her backpack, her phone screen glowing with a missed-call icon.\n  Caption box (narration): 「这是她第一次离开家，不是为了执行命令。」"
+    },
+    {
+      "id": "comic-10",
+      "group": "comic",
+      "size": "1024x1536",
+      "refs": [
+        "stories/dragon-raja/art/model-sheets/lu-mingfei.png",
+        "stories/dragon-raja/art/model-sheets/erii.png",
+        "public/assets/comic/dragon-raja/page-09.png"
+      ],
+      "after": "comic-09",
+      "output": "public/assets/comic/dragon-raja/page-10.png",
+      "prompt": "Page 10 of 18 — \"雨夜相遇\". Setting: 东京街区·便利店前, 同一夜. Continuity: 路明非湿透的深蓝连帽夹克；绘梨衣白裙米色外套、背小背包。霓虹雨夜。\nLayout: 5 panels, tiers of 1–2 panels, varied panel sizes for rhythm.\nReference image 1: character model sheet for Lu Mingfei — keep this exact face, hair and outfit.\nReference image 2: character model sheet for Uesugi Erii — keep this exact face, hair and outfit.\nReference image 3: the PREVIOUS comic page — match its rendering style, colour grading, lettering style and continuity; do not copy its layout.\nPanel 1: Soaked Lu Mingfei crouching under a glowing convenience-store awning at night, staring at his phone with no signal.\n  Speech balloon from Lu Mingfei: 「没信号、没钱、被黑道追。东京旅游项目真全。」\nPanel 2: Across a rainy neon street, Erii in her white dress and beige jacket stands still in the rain looking at him; Lu looks up, stunned.\n  Speech balloon from Lu Mingfei: 「……你怎么在这里？」\nPanel 3: Close-up: Erii holding her notebook against her chest, raindrops on her hair; her note in a square box.\n  Erii's notebook note (square box with a small notebook icon): 「来找 Sakura。」\nPanel 4: Lu Mingfei pointing at himself, bewildered; in the background black sedans with headlights turn into the street.\n  Speech balloon from Lu Mingfei: 「Sakura？……是在叫我？」\nPanel 5: Lu grabs Erii's wrist and the two run into a dense crowd of umbrellas under neon signs.\n  Speech balloon from Lu Mingfei: 「先走！解释等我喘过气再说。」"
+    },
+    {
+      "id": "comic-11",
+      "group": "comic",
+      "size": "1024x1536",
+      "refs": [
+        "stories/dragon-raja/art/model-sheets/lu-mingfei.png",
+        "stories/dragon-raja/art/model-sheets/erii.png",
+        "public/assets/comic/dragon-raja/page-10.png"
+      ],
+      "after": "comic-10",
+      "output": "public/assets/comic/dragon-raja/page-11.png",
+      "prompt": "Page 11 of 18 — \"临时藏身处\". Setting: 东京主题旅馆, 深夜. Continuity: 两人仍湿着；旅馆房间装饰俗艳可爱（星空灯、鸭子形台灯），窗外雨。\nLayout: 5 panels, tiers of 1–2 panels, varied panel sizes for rhythm.\nReference image 1: character model sheet for Lu Mingfei — keep this exact face, hair and outfit.\nReference image 2: character model sheet for Uesugi Erii — keep this exact face, hair and outfit.\nReference image 3: the PREVIOUS comic page — match its rendering style, colour grading, lettering style and continuity; do not copy its layout.\nPanel 1: Small kitschy themed hotel front desk with a tiny window; Lu Mingfei awkwardly paying with crumpled bills, Erii looking around curiously behind him.\n  Speech balloon from Lu Mingfei: 「一间房。我们……只是躲雨。」\nPanel 2: Colorful kitschy hotel room with starry ceiling lights and a duck-shaped lamp; Erii pressing buttons curiously; her note in a square box.\n  Erii's notebook note (square box with a small notebook icon): 「这里不是家。」\nPanel 3: Lu Mingfei sitting on the floor pushing a paper bag of fries toward her with a lopsided grin.\n  Speech balloon from Lu Mingfei: 「不是家更好，家里不送薯条。」\nPanel 4: Erii writing in her notebook and turning it to show him; her note in a square box.\n  Erii's notebook note (square box with a small notebook icon): 「Sakura 是好人。」\nPanel 5: Lu Mingfei silent, looking at the notebook, rain streaming down the window behind him.\n  Caption box (narration): 「被人相信，比被人追捕更让他无处可逃。」"
+    },
+    {
+      "id": "comic-12",
+      "group": "comic",
+      "size": "1024x1536",
+      "refs": [
+        "stories/dragon-raja/art/model-sheets/lu-mingfei.png",
+        "stories/dragon-raja/art/model-sheets/erii.png",
+        "stories/dragon-raja/art/model-sheets/caesar.png",
+        "stories/dragon-raja/art/model-sheets/gen-chisei.png",
+        "public/assets/comic/dragon-raja/page-11.png"
+      ],
+      "after": "comic-11",
+      "output": "public/assets/comic/dragon-raja/page-12.png",
+      "prompt": "Page 12 of 18 — \"两边的命令\". Setting: 主题旅馆·卡塞尔安全屋·源氏重工指挥层, 同一深夜. Continuity: 同一旅馆房间；凯撒在安全屋（裸露砖墙、地图）；源稚生在指挥层大屏前。\nLayout: 5 panels, tiers of 1–2 panels, varied panel sizes for rhythm.\nReference image 1: character model sheet for Lu Mingfei — keep this exact face, hair and outfit.\nReference image 2: character model sheet for Uesugi Erii — keep this exact face, hair and outfit.\nReference image 3: character model sheet for Caesar Gattuso — keep this exact face, hair and outfit.\nReference image 4: character model sheet for Gen Chisei — keep this exact face, hair and outfit.\nReference image 5: the PREVIOUS comic page — match its rendering style, colour grading, lettering style and continuity; do not copy its layout.\nPanel 1: Split panel: Lu Mingfei whispering into an encrypted phone in a small hotel bathroom; Caesar in a brick-walled safehouse with maps on the wall.\n  Speech balloon from Caesar: 「带她来会合点，学院安排离境。」\nPanel 2: Close-up of Lu Mingfei's worried face lit by the phone screen.\n  Speech balloon from Lu Mingfei: 「她离不开家族的药。你的计划里有药吗？」\nPanel 3: Command floor with a giant screen city map: Gen Chisei marking search zones, staff behind him.\n  Speech balloon from Gen Chisei: 「找到她以后不准动武。先把血清送过去。」\nPanel 4: Erii standing just outside the half-open bathroom door, holding up her notebook; her note in a square box.\n  Erii's notebook note (square box with a small notebook icon): 「哥哥要我回去吗？」\nPanel 5: Lu Mingfei holding the dark phone, not answering, eyes lowered.\n  Caption box (narration): 「隐瞒能换来几分钟平静，也会花掉一点信任。」"
+    },
+    {
+      "id": "comic-13",
+      "group": "comic",
+      "size": "1024x1536",
+      "refs": [
+        "stories/dragon-raja/art/model-sheets/lu-mingfei.png",
+        "stories/dragon-raja/art/model-sheets/erii.png",
+        "public/assets/comic/dragon-raja/page-12.png"
+      ],
+      "after": "comic-12",
+      "output": "public/assets/comic/dragon-raja/page-13.png",
+      "prompt": "Page 13 of 18 — \"药物倒计时\". Setting: 主题旅馆, 黎明. Continuity: 同一旅馆房间，窗外天色发青；药盒是第九页带出的黑色药盒。\nLayout: 5 panels, tiers of 1–2 panels, varied panel sizes for rhythm.\nReference image 1: character model sheet for Lu Mingfei — keep this exact face, hair and outfit.\nReference image 2: character model sheet for Uesugi Erii — keep this exact face, hair and outfit.\nReference image 3: the PREVIOUS comic page — match its rendering style, colour grading, lettering style and continuity; do not copy its layout.\nPanel 1: Pale dawn light: close-up of Erii's fingers trembling slightly as she holds her notebook; Lu Mingfei noticing.\n  Speech balloon from Lu Mingfei: 「你不舒服？」\nPanel 2: The black medicine case open on the bed, foam slots empty except for a single glass ampoule; Erii's note in a square box.\n  Erii's notebook note (square box with a small notebook icon): 「还能走。」\nPanel 3: Lu Mingfei holding the instruction leaflet, looking at the clock with a serious face.\n  Speech balloon from Lu Mingfei: 「能走和该走，不是一回事。」\nPanel 4: Erii gently pushing the ampoule back into the case and closing it; her note in a square box.\n  Erii's notebook note (square box with a small notebook icon): 「今天以后再用。」\nPanel 5: Through the window: the first morning train passing over an elevated track at dawn, the two silhouettes inside the room.\n  Caption box (narration): 「她想把最后的安全留给明天，先拥有一个今天。」"
+    },
+    {
+      "id": "comic-14",
+      "group": "comic",
+      "size": "1024x1536",
+      "refs": [
+        "stories/dragon-raja/art/model-sheets/lu-mingfei.png",
+        "stories/dragon-raja/art/model-sheets/erii.png",
+        "public/assets/comic/dragon-raja/page-13.png"
+      ],
+      "after": "comic-13",
+      "output": "public/assets/comic/dragon-raja/page-14.png",
+      "prompt": "Page 14 of 18 — \"普通的早晨\". Setting: 早高峰电车与快餐店, 早晨. Continuity: 承接上一页的早班电车；两人同样服装，绘梨衣背小背包。\nLayout: 5 panels, tiers of 1–2 panels, varied panel sizes for rhythm.\nReference image 1: character model sheet for Lu Mingfei — keep this exact face, hair and outfit.\nReference image 2: character model sheet for Uesugi Erii — keep this exact face, hair and outfit.\nReference image 3: the PREVIOUS comic page — match its rendering style, colour grading, lettering style and continuity; do not copy its layout.\nPanel 1: Packed rush-hour Tokyo train: Lu Mingfei bracing an arm to give Erii space, holding her notebook safe.\n  Speech balloon from Lu Mingfei: 「别松手，下错站我可找不到你。」\nPanel 2: Close-up: Erii's hand gripping Lu's jacket sleeve; her note in a square box.\n  Erii's notebook note (square box with a small notebook icon): 「不会丢。」\nPanel 3: Bright fast-food restaurant counter: Erii studying a picture menu (pictures only, no readable text) with wide eyes; her note in a square box.\n  Erii's notebook note (square box with a small notebook icon): 「每个都可以选？」\nPanel 4: Lu Mingfei counting a few coins in his palm with a pained smile.\n  Speech balloon from Lu Mingfei: 「理论上可以，经济上只能两个。」\nPanel 5: The two sitting by a sunny window sharing one tray of burgers and fries, Erii taking a careful bite.\n  Caption box (narration): 「世界没有因此变好，但他们暂时不用拯救世界。」"
+    },
+    {
+      "id": "comic-15",
+      "group": "comic",
+      "size": "1024x1536",
+      "refs": [
+        "stories/dragon-raja/art/model-sheets/lu-mingfei.png",
+        "stories/dragon-raja/art/model-sheets/erii.png",
+        "public/assets/comic/dragon-raja/page-14.png"
+      ],
+      "after": "comic-14",
+      "output": "public/assets/comic/dragon-raja/page-15.png",
+      "prompt": "Page 15 of 18 — \"游戏厅\". Setting: 东京街区·游戏厅, 午后. Continuity: 同一天午后；同样服装。结尾门外出现黑西装搜索者。\nLayout: 5 panels, tiers of 1–2 panels, varied panel sizes for rhythm.\nReference image 1: character model sheet for Lu Mingfei — keep this exact face, hair and outfit.\nReference image 2: character model sheet for Uesugi Erii — keep this exact face, hair and outfit.\nReference image 3: the PREVIOUS comic page — match its rendering style, colour grading, lettering style and continuity; do not copy its layout.\nPanel 1: Colorful arcade full of glowing cabinets: Lu Mingfei and Erii side by side at a fighting-game cabinet gripping joysticks.\n  Speech balloon from Lu Mingfei: 「先说好，输了不准用言灵。」\nPanel 2: Erii focused and winning, a victory flash on the screen (no text); her note in a square box.\n  Erii's notebook note (square box with a small notebook icon): 「Sakura 很弱。」\nPanel 3: Lu Mingfei with a mock-serious face, finger raised as if lecturing.\n  Speech balloon from Lu Mingfei: 「这是照顾新手的战略性失误。」\nPanel 4: Close-up: Erii smiling openly for the first time, warm arcade lights on her face.\n  Caption box (narration): 「她的笑没有触发任何危险。」\nPanel 5: View through the arcade's glass front door: black-suited searchers with earpieces walking past in the crowd outside.\n  Caption box (narration): 「普通的一天，终究是借来的。」"
+    },
+    {
+      "id": "comic-16",
+      "group": "comic",
+      "size": "1024x1536",
+      "refs": [
+        "stories/dragon-raja/art/model-sheets/lu-mingfei.png",
+        "stories/dragon-raja/art/model-sheets/erii.png",
+        "public/assets/comic/dragon-raja/page-15.png"
+      ],
+      "after": "comic-15",
+      "output": "public/assets/comic/dragon-raja/page-16.png",
+      "prompt": "Page 16 of 18 — \"城市灯火\". Setting: 东京高空展望台, 夜晚. Continuity: 同日夜晚；巨大落地窗外是东京灯海。结尾警灯沿街接近。\nLayout: 5 panels, tiers of 1–2 panels, varied panel sizes for rhythm.\nReference image 1: character model sheet for Lu Mingfei — keep this exact face, hair and outfit.\nReference image 2: character model sheet for Uesugi Erii — keep this exact face, hair and outfit.\nReference image 3: the PREVIOUS comic page — match its rendering style, colour grading, lettering style and continuity; do not copy its layout.\nPanel 1: Panoramic observation deck at night: Erii with her palms on the huge glass window, the endless glittering Tokyo cityscape below; her note in a square box.\n  Erii's notebook note (square box with a small notebook icon): 「世界很大。」\nPanel 2: Close-up of Erii's notebook page: a hand-drawn wish list with small doodles (duck, train, game controller) and many empty checkboxes; no readable words.\n  Speech balloon from Lu Mingfei: 「以后还能再来。」\nPanel 3: Erii looking up at Lu, holding her notebook toward him; her note in a square box.\n  Erii's notebook note (square box with a small notebook icon): 「以后是一起吗？」\nPanel 4: Lu Mingfei holding the pen above the notebook, hesitating, city lights reflected in the glass.\n  Caption box (narration): 「承诺只需要几个字，后果却比东京更大。」\nPanel 5: Looking down from the deck: red and blue police lights snaking along the streets toward the tower.\n  Speech balloon from Lu Mingfei: 「我们先离开这里。」"
+    },
+    {
+      "id": "comic-17",
+      "group": "comic",
+      "size": "1024x1536",
+      "refs": [
+        "stories/dragon-raja/art/model-sheets/gen-chisei.png",
+        "stories/dragon-raja/art/model-sheets/tachibana-masamune.png",
+        "stories/dragon-raja/art/model-sheets/caesar.png",
+        "stories/dragon-raja/art/model-sheets/chu-zihang.png",
+        "public/assets/comic/dragon-raja/page-16.png"
+      ],
+      "after": "comic-16",
+      "output": "public/assets/comic/dragon-raja/page-17.png",
+      "prompt": "Page 17 of 18 — \"被遮住的真相\". Setting: 源氏重工·卡塞尔安全屋, 同一夜. Continuity: 源氏重工的书房（和风、昏暗）与第十二页的砖墙安全屋交替出现。\nLayout: 5 panels, tiers of 1–2 panels, varied panel sizes for rhythm.\nReference image 1: character model sheet for Gen Chisei — keep this exact face, hair and outfit.\nReference image 2: character model sheet for Tachibana Masamune — keep this exact face, hair and outfit.\nReference image 3: character model sheet for Caesar Gattuso — keep this exact face, hair and outfit.\nReference image 4: character model sheet for Chu Zihang — keep this exact face, hair and outfit.\nReference image 5: the PREVIOUS comic page — match its rendering style, colour grading, lettering style and continuity; do not copy its layout.\nPanel 1: Dim Japanese-style study: Gen Chisei holding a printed record, confronting someone across a low table.\n  Speech balloon from Gen Chisei: 「这些样本，去了哪里？」\nPanel 2: Tachibana Masamune turning his face toward a paper screen window, calm, avoiding the question.\n  Speech balloon from Tachibana Masamune: 「现在最重要的，是把她带回来。」\nPanel 3: Brick-walled safehouse: Caesar arguing into a satellite phone, fist on the table.\n  Speech balloon from Caesar: 「没有医疗保障，我不会把这叫撤离。」\nPanel 4: Chu Zihang laying two documents side by side and circling the same blank section with a red pen.\n  Speech balloon from Chu Zihang: 「两边都在隐瞒同一段时间。」\nPanel 5: Three different screens (command floor, safehouse laptop, a phone) all showing a map with a pulsing dot on the same city block.\n  Caption box (narration): 「所有路线，正在同一个地方相撞。」"
+    },
+    {
+      "id": "comic-18",
+      "group": "comic",
+      "size": "1024x1536",
+      "refs": [
+        "stories/dragon-raja/art/model-sheets/lu-mingfei.png",
+        "stories/dragon-raja/art/model-sheets/erii.png",
+        "public/assets/comic/dragon-raja/page-17.png"
+      ],
+      "after": "comic-17",
+      "output": "public/assets/comic/dragon-raja/page-18.png",
+      "prompt": "Page 18 of 18 — \"选择之前\". Setting: 主题旅馆, 深夜. Continuity: 回到第十一页的旅馆房间；桌上摆着药盒、愿望清单和加密手机。\nLayout: 5 panels, tiers of 1–2 panels, varied panel sizes for rhythm.\nReference image 1: character model sheet for Lu Mingfei — keep this exact face, hair and outfit.\nReference image 2: character model sheet for Uesugi Erii — keep this exact face, hair and outfit.\nReference image 3: the PREVIOUS comic page — match its rendering style, colour grading, lettering style and continuity; do not copy its layout.\nPanel 1: Still-life on the hotel table under a warm lamp: the open medicine case with one ampoule, Erii's notebook open to the wish list, and a black encrypted phone.\n  Caption box (narration): 「能争取的时间，已经可以用一支针剂来衡量。」\nPanel 2: The encrypted phone lighting up with a map pin notification (no readable text); Lu Mingfei's hand reaching for it.\n  Speech balloon from Caesar: 「撤离窗口只剩一次。」\nPanel 3: Lu Mingfei reading a second message on his own phone, conflicted face lit by the screen.\n  Speech balloon from Gen Chisei: 「先给她用药。回不回来，让她自己回答。」\nPanel 4: Erii sliding her open notebook to the center of the table, looking straight at Lu with resolve; her note in a square box.\n  Erii's notebook note (square box with a small notebook icon): 「这次，我想一起决定。」\nPanel 5: Hotel corridor seen from inside the room's door peephole: elevator doors opening, shadows of approaching footsteps.\n  Caption box (narration): 「故事从这里，不再只有一种结局。」"
+    }
+  ]
+}

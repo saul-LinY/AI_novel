@@ -14,10 +14,32 @@
     "dev": "node --watch src/server.js",
     "start": "node src/server.js",
     "console": "node src/console-server.js",
-    "test": "node --test test/*.test.js"
+    "test": "node --test test/*.test.js",
+    "memory:setup": "node scripts/memory-local.js setup",
+    "memory:status": "node scripts/memory-local.js status",
+    "memory:probe": "node scripts/memory-local.js probe",
+    "memory:index": "node scripts/memory-local.js index",
+    "memory:eval": "node scripts/evaluate-bm25.js",
+    "build:frontend": "npm run build --workspace @ai-novel/frontend && node scripts/publish-frontend.js",
+    "prestart": "npm run build:frontend",
+    "predev": "npm run build:frontend",
+    "dev:frontend": "npm run dev --workspace @ai-novel/frontend",
+    "check:frontend": "npm run check --workspace @ai-novel/frontend",
+    "test:frontend": "node --experimental-strip-types --test test/frontend-*.test.mjs",
+    "test:ui": "npm run build:frontend && node test/immersive-ui.mjs",
+    "assets:optimize": "node scripts/optimize-assets.js",
+    "art:generate": "node scripts/generate-art.js stories/dragon-raja/art/manifest.json",
+    "art:comic": "node scripts/build-comic.js && node scripts/generate-art.js stories/dragon-raja/art/comic-manifest.json --concurrency 1"
   },
   "dependencies": {
     "lucide": "1.31.0",
     "typebox": "1.3.7"
+  },
+  "workspaces": [
+    "frontend"
+  ],
+  "devDependencies": {
+    "playwright-core": "^1.63.0",
+    "sharp": "^0.34.5"
   }
 }

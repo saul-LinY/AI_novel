@@ -27,7 +27,7 @@ Environment:
   OPENAI_API_KEY        Fallback API key
 `;
 
-function loadDotEnv() {
+export function loadDotEnv() {
   try {
     process.loadEnvFile(new URL('../.env', import.meta.url));
   } catch (error) {
@@ -124,7 +124,7 @@ function requireOption(options, property, flag) {
   }
 }
 
-function gatewayConfig(options) {
+export function gatewayConfig(options) {
   const baseUrl = (options.baseUrl ?? process.env.SUB2API_BASE_URL ?? '').replace(/\/+$/, '');
   const apiKey = options.apiKey ?? process.env.SUB2API_API_KEY ?? process.env.OPENAI_API_KEY ?? '';
 
@@ -157,7 +157,7 @@ async function parseApiResponse(response) {
   return body.data;
 }
 
-async function requestGenerate(options, config) {
+export async function requestGenerate(options, config) {
   const response = await fetch(`${config.baseUrl}/v1/images/generations`, {
     method: 'POST',
     headers: {
@@ -174,7 +174,7 @@ async function requestGenerate(options, config) {
   return parseApiResponse(response);
 }
 
-async function requestEdit(options, config) {
+export async function requestEdit(options, config) {
   const form = new FormData();
   form.set('model', options.model);
   form.set('prompt', options.prompt);
@@ -220,7 +220,7 @@ function outputPathFor(requestedPath, index, total) {
   return `${stem}-${index + 1}${extension || '.png'}`;
 }
 
-async function saveImage(result, outputPath) {
+export async function saveImage(result, outputPath) {
   await mkdir(path.dirname(outputPath), { recursive: true });
 
   if (result.b64_json) {

@@ -1,0 +1,279 @@
+{
+  "research_date": "2026-09-28",
+  "timezone": "Asia/Shanghai",
+  "local_project_commit": "91d59d32f69f5e22b9d484fd601507ee9e3e9615",
+  "method": "GitHub repository search and REST metadata; selected default-branch source snapshots; local static code inspection. No third-party applications or generation benchmarks executed.",
+  "primary_comparison_repositories": [
+    "Narcooo/inkos",
+    "zenstory-ai/oh-story-claudecode",
+    "YILING0013/AI_NovelGenerator",
+    "xiamuceer-j/MuMuAINovel",
+    "ExplosiveCoderflome/AI-Novel-Writing-Assistant",
+    "RhythmicWave/NovelForge",
+    "SillyTavern/SillyTavern"
+  ],
+  "repositories": [
+    {
+      "full_name": "zenstory-ai/oh-story-claudecode",
+      "stargazers_count": 7145,
+      "forks_count": 1015,
+      "pushed_at": "2026-09-27T09:33:24Z",
+      "default_branch": "main",
+      "archived": false,
+      "html_url": "https://github.com/zenstory-ai/oh-story-claudecode",
+      "size": 11425,
+      "description": "Claude Code / Codex / OpenCode agent skills for writing Chinese web novels (网文): 扫榜、拆文、写作、去AI味、封面全流程，长篇短篇都支持 | 13 skills for novel writing and long-form fiction with file-based continuity tracking. MI",
+      "license": "MIT",
+      "retrieved_at": "2026-09-28T07:14:14.984644+00:00",
+      "commit_sha": "4a50d5583590eb7f207037e35136c1168bc02201",
+      "commit_date": "2026-09-27T09:33:08Z",
+      "source_snapshot_files": [
+        {
+          "path": "docs/architecture.md",
+          "sha256": "14cf68875bcc4d96c0a984e0e364593f7fb642456bf310574ba9c4aacfc4c061",
+          "url": "https://github.com/zenstory-ai/oh-story-claudecode/blob/4a50d5583590eb7f207037e35136c1168bc02201/docs/architecture.md"
+        },
+        {
+          "path": "skills/story-long-write/references/tracking-transaction.md",
+          "sha256": "51577c811e75e3e3f4a4f60595e5a56440bc3ee361510a860ee473d45cf4ff7b",
+          "url": "https://github.com/zenstory-ai/oh-story-claudecode/blob/4a50d5583590eb7f207037e35136c1168bc02201/skills/story-long-write/references/tracking-transaction.md"
+        },
+        {
+          "path": "skills/story-long-write/references/workflow-chapter.md",
+          "sha256": "81349f6dea2c1da27e13b829c77f451f21d6ef1b1d90dcba9226499a1c07779d",
+          "url": "https://github.com/zenstory-ai/oh-story-claudecode/blob/4a50d5583590eb7f207037e35136c1168bc02201/skills/story-long-write/references/workflow-chapter.md"
+        },
+        {
+          "path": "skills/story-long-write/scripts/tracking_commit.py",
+          "sha256": "a20f1bd8d4bd560b8fcc5b85530f62684edb434630c39ba9ebebc13d560bfda0",
+          "url": "https://github.com/zenstory-ai/oh-story-claudecode/blob/4a50d5583590eb7f207037e35136c1168bc02201/skills/story-long-write/scripts/tracking_commit.py"
+        }
+      ]
+    },
+    {
+      "full_name": "mrigankad/Novel-OS",
+      "stargazers_count": 46,
+      "forks_count": 14,
+      "pushed_at": "2026-08-09T08:01:34Z",
+      "default_branch": "dev",
+      "archived": false,
+      "html_url": "https://github.com/mrigankad/Novel-OS",
+      "size": 13031,
+      "description": "Multi-agent AI framework that writes full-length novels with persistent story state, a deterministic continuity engine, and a five-role editorial pipeline.",
+      "license": "MIT",
+      "retrieved_at": "2026-09-28T07:14:17.465781+00:00",
+      "source_snapshot_files": []
+    },
+    {
+      "full_name": "ExplosiveCoderflome/AI-Novel-Writing-Assistant",
+      "stargazers_count": 3030,
+      "forks_count": 576,
+      "pushed_at": "2026-09-23T16:25:28Z",
+      "default_branch": "main",
+      "archived": false,
+      "html_url": "https://github.com/ExplosiveCoderflome/AI-Novel-Writing-Assistant",
+      "size": 45264,
+      "description": "面向长篇小说创作的 AI Native 开源系统，用 Agent、世界观、写法引擎、RAG 和整本生产工作流，帮助新手从一句灵感走到完整小说。AI-native engine for end-to-end novel creation — from idea to full chapters, with structured planning, worldbuilding, and agent-d",
+      "license": "NOASSERTION",
+      "retrieved_at": "2026-09-28T07:14:14.886990+00:00",
+      "commit_sha": "2c035ac70f2639be46b9e77feb60028181bf7b65",
+      "commit_date": "2026-09-23T14:26:35Z",
+      "source_snapshot_files": [
+        {
+          "path": "docs/wiki/rag/knowledge-and-context-assembly.md",
+          "sha256": "b57f150800e6b0c48a8c2ae60fe0ef3c7a0bff686a695abdd5a634bbddb51707",
+          "url": "https://github.com/ExplosiveCoderflome/AI-Novel-Writing-Assistant/blob/2c035ac70f2639be46b9e77feb60028181bf7b65/docs/wiki/rag/knowledge-and-context-assembly.md"
+        },
+        {
+          "path": "docs/wiki/workflows/chapter-production-chain.md",
+          "sha256": "4740e4da87f9ed54d8f1ec17af7a8221056a1b5b9cabffe368157b166d349977",
+          "url": "https://github.com/ExplosiveCoderflome/AI-Novel-Writing-Assistant/blob/2c035ac70f2639be46b9e77feb60028181bf7b65/docs/wiki/workflows/chapter-production-chain.md"
+        },
+        {
+          "path": "server/src/prompting/core/contextBudget.ts",
+          "sha256": "30ce3cffa44a7105bfcdf79f132b9a1d2a1c9948498d75f5e6d10bdd7bd5fcd7",
+          "url": "https://github.com/ExplosiveCoderflome/AI-Novel-Writing-Assistant/blob/2c035ac70f2639be46b9e77feb60028181bf7b65/server/src/prompting/core/contextBudget.ts"
+        },
+        {
+          "path": "server/src/services/novel/director/runtime/DirectorQualityLoopBudgetLedgerService.ts",
+          "sha256": "d367554dbdd09b07862d0cbd40cd73be17bc4d7b9372c55c9102c6df3656a246",
+          "url": "https://github.com/ExplosiveCoderflome/AI-Novel-Writing-Assistant/blob/2c035ac70f2639be46b9e77feb60028181bf7b65/server/src/services/novel/director/runtime/DirectorQualityLoopBudgetLedgerService.ts"
+        }
+      ]
+    },
+    {
+      "full_name": "YILING0013/AI_NovelGenerator",
+      "stargazers_count": 6133,
+      "forks_count": 1056,
+      "pushed_at": "2026-08-01T02:53:54Z",
+      "default_branch": "main",
+      "archived": false,
+      "html_url": "https://github.com/YILING0013/AI_NovelGenerator",
+      "size": 1274,
+      "description": "使用ai生成多章节的长篇小说，自动衔接上下文、伏笔",
+      "license": "AGPL-3.0",
+      "retrieved_at": "2026-09-28T07:14:14.790706+00:00",
+      "commit_sha": "f9aefef90b1493c579d7f72547efb4a3d8a0da25",
+      "commit_date": "2026-06-25T12:40:13Z",
+      "source_snapshot_files": [
+        {
+          "path": "README_zh-CN.md",
+          "sha256": "9803a56368f2204b89f38cce2552aa52ff67529ec11f151e9096c289cda03783",
+          "url": "https://github.com/YILING0013/AI_NovelGenerator/blob/f9aefef90b1493c579d7f72547efb4a3d8a0da25/README_zh-CN.md"
+        },
+        {
+          "path": "novel_generator/chapter.py",
+          "sha256": "af468d5cddc72e26d6eca1aa2dacf5daed2a26d8b4bdf3fc9d641109dc21e3c0",
+          "url": "https://github.com/YILING0013/AI_NovelGenerator/blob/f9aefef90b1493c579d7f72547efb4a3d8a0da25/novel_generator/chapter.py"
+        },
+        {
+          "path": "novel_generator/finalization.py",
+          "sha256": "ddcbca84770bf1072f6aa4c4c8c928a0cc39a7f7e4019dc4cde80f6f9bc55285",
+          "url": "https://github.com/YILING0013/AI_NovelGenerator/blob/f9aefef90b1493c579d7f72547efb4a3d8a0da25/novel_generator/finalization.py"
+        },
+        {
+          "path": "novel_generator/vectorstore_utils.py",
+          "sha256": "445aa56c80d8dfcbca0255082a278fbee25712956180a74a5f40217c1ee77051",
+          "url": "https://github.com/YILING0013/AI_NovelGenerator/blob/f9aefef90b1493c579d7f72547efb4a3d8a0da25/novel_generator/vectorstore_utils.py"
+        }
+      ]
+    },
+    {
+      "full_name": "xiamuceer-j/MuMuAINovel",
+      "stargazers_count": 3087,
+      "forks_count": 598,
+      "pushed_at": "2026-09-18T01:21:51Z",
+      "default_branch": "main",
+      "archived": false,
+      "html_url": "https://github.com/xiamuceer-j/MuMuAINovel",
+      "size": 14734,
+      "description": "一款基于 AI 的智能小说创作助手，帮助你轻松创作精彩故事",
+      "license": "GPL-3.0",
+      "retrieved_at": "2026-09-28T07:14:14.771208+00:00",
+      "commit_sha": "749186d40894b40b9fd0589791fec243d42e60c9",
+      "commit_date": "2026-09-18T01:21:42Z",
+      "source_snapshot_files": [
+        {
+          "path": "backend/app/services/chapter_context_service.py",
+          "sha256": "381d83e5d94d764339a6b6317602f184dd930aac0801dd6268f93d71e99048cb",
+          "url": "https://github.com/xiamuceer-j/MuMuAINovel/blob/749186d40894b40b9fd0589791fec243d42e60c9/backend/app/services/chapter_context_service.py"
+        },
+        {
+          "path": "backend/app/services/memory_service.py",
+          "sha256": "fa83322537c9165a4e7449fcaf312cf7ca02e8ae7d0181b751b0eff5d051980d",
+          "url": "https://github.com/xiamuceer-j/MuMuAINovel/blob/749186d40894b40b9fd0589791fec243d42e60c9/backend/app/services/memory_service.py"
+        }
+      ]
+    },
+    {
+      "full_name": "aiwaves-cn/RecurrentGPT",
+      "stargazers_count": 1001,
+      "forks_count": 158,
+      "pushed_at": "2024-05-15T03:35:35Z",
+      "default_branch": "main",
+      "archived": false,
+      "html_url": "https://github.com/aiwaves-cn/RecurrentGPT",
+      "size": 2526,
+      "description": "Official Code for Paper: RecurrentGPT: Interactive Generation of (Arbitrarily) Long Text",
+      "license": "GPL-3.0",
+      "retrieved_at": "2026-09-28T07:14:15.860821+00:00",
+      "commit_sha": "ea520e99f49072d152d61a68bac45f272a867596",
+      "commit_date": "2024-05-15T03:31:02Z",
+      "source_snapshot_files": [
+        {
+          "path": "README.md",
+          "sha256": "a4f82d05d29fd0a94141679cf662a5dbab0f9829378270c0eb6fd28b28b035ef",
+          "url": "https://github.com/aiwaves-cn/RecurrentGPT/blob/ea520e99f49072d152d61a68bac45f272a867596/README.md"
+        }
+      ]
+    },
+    {
+      "full_name": "Narcooo/inkos",
+      "stargazers_count": 10066,
+      "forks_count": 1846,
+      "pushed_at": "2026-09-27T09:13:32Z",
+      "default_branch": "master",
+      "archived": false,
+      "html_url": "https://github.com/Narcooo/inkos",
+      "size": 27851,
+      "description": "Story Creation AI Agent for novel, scripts, translation, interactive games, and IP content",
+      "license": "AGPL-3.0",
+      "retrieved_at": "2026-09-28T07:14:14.761380+00:00",
+      "commit_sha": "8fc2ae57080b9821257dee3e37cc677e2b6f389a",
+      "commit_date": "2026-09-26T00:56:40Z",
+      "source_snapshot_files": [
+        {
+          "path": "packages/core/src/harness/context-compiler.ts",
+          "sha256": "2dc389074c6ab15df7e098c729f9d85370f382a4e20a0d9ffd3f9432aeb3211b",
+          "url": "https://github.com/Narcooo/inkos/blob/8fc2ae57080b9821257dee3e37cc677e2b6f389a/packages/core/src/harness/context-compiler.ts"
+        },
+        {
+          "path": "packages/core/src/pipeline/chapter-review.ts",
+          "sha256": "b297f0e44d143339e5538206020af596fb277d53dd87d833a2ecfe3b546fad68",
+          "url": "https://github.com/Narcooo/inkos/blob/8fc2ae57080b9821257dee3e37cc677e2b6f389a/packages/core/src/pipeline/chapter-review.ts"
+        },
+        {
+          "path": "packages/core/src/play/play-reducer.ts",
+          "sha256": "802e91db8dff2b2455be682d9c9db8ac6ed6d6c27944c55835b774edc4431dd2",
+          "url": "https://github.com/Narcooo/inkos/blob/8fc2ae57080b9821257dee3e37cc677e2b6f389a/packages/core/src/play/play-reducer.ts"
+        },
+        {
+          "path": "packages/core/src/play/play-runner.ts",
+          "sha256": "d4347e1669cbdde59539555606235949d95518e924f43eb5a89739639664106d",
+          "url": "https://github.com/Narcooo/inkos/blob/8fc2ae57080b9821257dee3e37cc677e2b6f389a/packages/core/src/play/play-runner.ts"
+        },
+        {
+          "path": "packages/core/src/retrieval/local-search.ts",
+          "sha256": "003cac05cf9a66b7b714901e23653fd0e21c833e2e53f1d3070929da0ad64b27",
+          "url": "https://github.com/Narcooo/inkos/blob/8fc2ae57080b9821257dee3e37cc677e2b6f389a/packages/core/src/retrieval/local-search.ts"
+        },
+        {
+          "path": "packages/core/src/state/chapter-workspace.ts",
+          "sha256": "8a040f4271a050491dbfe5c9df3e99ac59674573cbc25c7304c7119ada05c528",
+          "url": "https://github.com/Narcooo/inkos/blob/8fc2ae57080b9821257dee3e37cc677e2b6f389a/packages/core/src/state/chapter-workspace.ts"
+        }
+      ]
+    },
+    {
+      "full_name": "SillyTavern/SillyTavern",
+      "stargazers_count": 33856,
+      "forks_count": 6378,
+      "pushed_at": "2026-09-23T21:19:13Z",
+      "default_branch": "release",
+      "archived": false,
+      "html_url": "https://github.com/SillyTavern/SillyTavern",
+      "size": 215797,
+      "description": "LLM Frontend for Power Users.",
+      "license": "AGPL-3.0",
+      "retrieved_at": "2026-09-28T07:14:18.409872+00:00",
+      "source_snapshot_files": []
+    },
+    {
+      "full_name": "RhythmicWave/NovelForge",
+      "stargazers_count": 1216,
+      "forks_count": 218,
+      "pushed_at": "2026-09-23T04:58:53Z",
+      "default_branch": "main",
+      "archived": false,
+      "html_url": "https://github.com/RhythmicWave/NovelForge",
+      "size": 13671,
+      "description": "AI辅助长篇小说创作，卡片式创作，支持基于 JSON Schema的结构化 AI 生成与上下文引用，可扩展性强。",
+      "license": "AGPL-3.0",
+      "retrieved_at": "2026-09-28T07:14:18.175123+00:00",
+      "commit_sha": "a485814411546b3980df0a1696a0fb6a043d56ce",
+      "commit_date": "2026-09-23T04:53:48Z",
+      "source_snapshot_files": [
+        {
+          "path": "README.md",
+          "sha256": "50bf43042a2ecef47840d2d747ca2d2fa6c58056dce86e9e74bdd037e3119889",
+          "url": "https://github.com/RhythmicWave/NovelForge/blob/a485814411546b3980df0a1696a0fb6a043d56ce/README.md"
+        },
+        {
+          "path": "backend/app/services/workflow/engine/async_executor.py",
+          "sha256": "720e005f6f97e7b9a8d0201a7e3b14cbc4849c8f675440e6a2f154c3d690a126",
+          "url": "https://github.com/RhythmicWave/NovelForge/blob/a485814411546b3980df0a1696a0fb6a043d56ce/backend/app/services/workflow/engine/async_executor.py"
+        }
+      ]
+    }
+  ]
+}

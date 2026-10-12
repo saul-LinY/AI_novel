@@ -20,5 +20,8 @@
     "言灵·梦貘"
   ],
   "speech": "措辞华丽而锋利，情绪越深越显得从容。",
-  "image": null
+  "image": {
+    "src": "/assets/portraits/dragon-raja/gen-chinu.png",
+    "alt": "源稚女的人物立绘"
+  }
 }

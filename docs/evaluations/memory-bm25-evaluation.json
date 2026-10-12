@@ -1,0 +1,2929 @@
+{
+  "runId": "bm25-6e36202a-337",
+  "evaluatedAt": "2026-09-29T10:30:56.665Z",
+  "backend": "bm25",
+  "parameters": {
+    "k1": 1.2,
+    "b": 0.75,
+    "chineseBigramWeight": 0.2,
+    "explicitAliasesOnly": true
+  },
+  "dataset": {
+    "turns": 80,
+    "cards": 403,
+    "queries": 48,
+    "synthetic": true
+  },
+  "results": {
+    "all": {
+      "queries": 48,
+      "hits": 44,
+      "recallAt5": 0.9166666666666666,
+      "mrrAt5": 0.7940972222222222,
+      "previousKeywordRecallAt5": 0.9166666666666666,
+      "legacyContextAvailability": 0.16666666666666666
+    },
+    "long": {
+      "queries": 40,
+      "hits": 36,
+      "recallAt5": 0.9,
+      "mrrAt5": 0.8104166666666666,
+      "previousKeywordRecallAt5": 0.9,
+      "legacyContextAvailability": 0
+    },
+    "recent": {
+      "queries": 8,
+      "hits": 8,
+      "recallAt5": 1,
+      "mrrAt5": 0.7125,
+      "previousKeywordRecallAt5": 1,
+      "legacyContextAvailability": 1
+    }
+  },
+  "performance": {
+    "indexMs": 9.050833000000011,
+    "idempotentMs": 3.2181249999999864,
+    "searchP50Ms": 0.07129199999999969,
+    "searchP95Ms": 1.1779999999999973,
+    "fiveViewRoundP50Ms": 1,
+    "fiveViewRoundP95Ms": 3
+  },
+  "networkRequests": 0,
+  "isolation": {
+    "checks": 15,
+    "leaks": 0
+  },
+  "persistenceVerified": true,
+  "misses": [
+    {
+      "query": "林舟要在什么时间归还首饰？",
+      "evidence": "林舟答应苏月，在落日前将银色项链送回钟楼。这件约定尚未兑现。"
+    },
+    {
+      "query": "如何用声音通知林舟终止买卖？",
+      "evidence": "林舟读过一份密信，信上约定三声长哨代表取消交易，两声短哨代表安全。"
+    },
+    {
+      "query": "林舟手里的地图还缺什么？",
+      "evidence": "林舟在书页夹缝发现半张航线图，缺失的另一半据说由港口守卫保管。"
+    },
+    {
+      "query": "哪个地方有易燃气体聚集的危险？",
+      "evidence": "废弃磨坊的地下室积满沼气，进入时点火可能引发爆炸。"
+    }
+  ],
+  "limitations": [
+    "Lexical retrieval can miss paraphrases and implicit causal relationships.",
+    "No test-specific synonym rules were added after inspecting missed queries.",
+    "Recall@5 measures whether the annotated source event appears among the first five results.",
+    "Per-view term indexes are reused, but query answers are not cached.",
+    "No claims are made about final novel prose quality."
+  ],
+  "samples": [
+    {
+      "query": "苏月为什么拒绝坐船渡河？",
+      "view": "character:su",
+      "expectedEventId": "event-001",
+      "evidence": "苏月小时候在春渡落水，是林舟把她救上岸。她此后一直害怕深水。",
+      "horizon": "long",
+      "rank": 4,
+      "hit": true,
+      "reciprocalRank": 0.25,
+      "durationMs": 4.279458000000005,
+      "degraded": false,
+      "legacyHit": false,
+      "baselineAvailable": false,
+      "retrieved": [
+        {
+          "sourceEventId": "event-006",
+          "text": "阿岚曾冒充药师骗走苏月的银币。苏月因这次欺骗不愿再借钱给他。",
+          "score": 4.568456717598642,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-003",
+          "text": "苏月吃桂花后会起疹子。上次她吃了桂花糕，手臂红肿了整晚。",
+          "score": 3.7793596481952405,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-008",
+          "text": "苏月一直以为红披风客人是父亲的朋友，因为那人拿着父亲的旧怀表。",
+          "score": 3.7118710830488966,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-001",
+          "text": "苏月小时候在春渡落水，是林舟把她救上岸。她此后一直害怕深水。",
+          "score": 3.6467505377322498,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-080",
+          "text": "苏月刚收到妹妹的纸条：她在西门粮仓等待，暗号是两下轻敲再一下重敲。",
+          "score": 3.5838755284610038,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "苏月"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "是谁在苏月溺水时救了她？",
+      "view": "character:su",
+      "expectedEventId": "event-001",
+      "evidence": "苏月小时候在春渡落水，是林舟把她救上岸。她此后一直害怕深水。",
+      "horizon": "long",
+      "rank": 1,
+      "hit": true,
+      "reciprocalRank": 1,
+      "durationMs": 0.13329100000001404,
+      "degraded": false,
+      "legacyHit": true,
+      "baselineAvailable": false,
+      "retrieved": [
+        {
+          "sourceEventId": "event-001",
+          "text": "苏月小时候在春渡落水，是林舟把她救上岸。她此后一直害怕深水。",
+          "score": 7.11549317026845,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "救",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-011",
+          "text": "苏月将母亲留下的蓝色丝巾交给阿岚保管，约好离城时取回。",
+          "score": 6.8742900119542645,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "时",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-006",
+          "text": "阿岚曾冒充药师骗走苏月的银币。苏月因这次欺骗不愿再借钱给他。",
+          "score": 4.568456717598642,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-003",
+          "text": "苏月吃桂花后会起疹子。上次她吃了桂花糕，手臂红肿了整晚。",
+          "score": 3.7793596481952405,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-008",
+          "text": "苏月一直以为红披风客人是父亲的朋友，因为那人拿着父亲的旧怀表。",
+          "score": 3.7118710830488966,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "苏月"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "林舟要在什么时间归还首饰？",
+      "view": "character:lin",
+      "expectedEventId": "event-002",
+      "evidence": "林舟答应苏月，在落日前将银色项链送回钟楼。这件约定尚未兑现。",
+      "horizon": "long",
+      "rank": 0,
+      "hit": false,
+      "reciprocalRank": 0,
+      "durationMs": 1.399833000000001,
+      "degraded": false,
+      "legacyHit": true,
+      "baselineAvailable": false,
+      "retrieved": [
+        {
+          "sourceEventId": "event-010",
+          "text": "林舟左肩被箭擦伤，伤口尚未愈合。他不能用左臂举起沉重的石板。",
+          "score": 4.113105041528369,
+          "matchedTerms": [
+            "林",
+            "舟",
+            "林舟"
+          ]
+        },
+        {
+          "sourceEventId": "event-033",
+          "text": "林舟害怕高处，却仍答应替苏月爬上屋顶修复风向标。",
+          "score": 4.038529118232857,
+          "matchedTerms": [
+            "林",
+            "舟",
+            "林舟"
+          ]
+        },
+        {
+          "sourceEventId": "event-015",
+          "text": "林舟知道商会账本第三页被人替换，真正的金额记录刻在箱底的铜片上。",
+          "score": 4.038529118232857,
+          "matchedTerms": [
+            "林",
+            "舟",
+            "林舟"
+          ]
+        },
+        {
+          "sourceEventId": "event-004",
+          "text": "林舟把开启地窖的铜钥匙放进旧井旁的空酒坛。这件事只有他知道。",
+          "score": 3.9666093515940206,
+          "matchedTerms": [
+            "林",
+            "舟",
+            "林舟"
+          ]
+        },
+        {
+          "sourceEventId": "event-079",
+          "text": "林舟刚在墙上发现苏月留下的白粉笔箭头，箭头指向一家关闭的茶馆。",
+          "score": 3.8972063187612767,
+          "matchedTerms": [
+            "林",
+            "舟",
+            "林舟"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "谁还欠苏月一件银色的东西？",
+      "view": "character:lin",
+      "expectedEventId": "event-002",
+      "evidence": "林舟答应苏月，在落日前将银色项链送回钟楼。这件约定尚未兑现。",
+      "horizon": "long",
+      "rank": 1,
+      "hit": true,
+      "reciprocalRank": 1,
+      "durationMs": 0.07583299999998871,
+      "degraded": false,
+      "legacyHit": true,
+      "baselineAvailable": false,
+      "retrieved": [
+        {
+          "sourceEventId": "event-002",
+          "text": "林舟答应苏月，在落日前将银色项链送回钟楼。这件约定尚未兑现。",
+          "score": 9.813962474346216,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "银色",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-031",
+          "text": "林舟把假账本交给追兵，让他们误以为原件已经落入自己手中。真正的账本还在苏月手里。",
+          "score": 9.324514536931368,
+          "matchedTerms": [
+            "还",
+            "苏",
+            "月",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-033",
+          "text": "林舟害怕高处，却仍答应替苏月爬上屋顶修复风向标。",
+          "score": 6.662785547474167,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-079",
+          "text": "林舟刚在墙上发现苏月留下的白粉笔箭头，箭头指向一家关闭的茶馆。",
+          "score": 6.429630485747177,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "苏月"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "给苏月准备点心应该避开什么？",
+      "view": "character:su",
+      "expectedEventId": "event-003",
+      "evidence": "苏月吃桂花后会起疹子。上次她吃了桂花糕，手臂红肿了整晚。",
+      "horizon": "long",
+      "rank": 2,
+      "hit": true,
+      "reciprocalRank": 0.5,
+      "durationMs": 0.07774999999998045,
+      "degraded": false,
+      "legacyHit": false,
+      "baselineAvailable": false,
+      "retrieved": [
+        {
+          "sourceEventId": "event-006",
+          "text": "阿岚曾冒充药师骗走苏月的银币。苏月因这次欺骗不愿再借钱给他。",
+          "score": 7.809740816853781,
+          "matchedTerms": [
+            "给",
+            "苏",
+            "月",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-003",
+          "text": "苏月吃桂花后会起疹子。上次她吃了桂花糕，手臂红肿了整晚。",
+          "score": 3.7793596481952405,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-008",
+          "text": "苏月一直以为红披风客人是父亲的朋友，因为那人拿着父亲的旧怀表。",
+          "score": 3.7118710830488966,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-001",
+          "text": "苏月小时候在春渡落水，是林舟把她救上岸。她此后一直害怕深水。",
+          "score": 3.6467505377322498,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-080",
+          "text": "苏月刚收到妹妹的纸条：她在西门粮仓等待，暗号是两下轻敲再一下重敲。",
+          "score": 3.5838755284610038,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "苏月"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "苏月上次吃糕点后身体出了什么问题？",
+      "view": "character:su",
+      "expectedEventId": "event-003",
+      "evidence": "苏月吃桂花后会起疹子。上次她吃了桂花糕，手臂红肿了整晚。",
+      "horizon": "long",
+      "rank": 1,
+      "hit": true,
+      "reciprocalRank": 1,
+      "durationMs": 0.0928339999999821,
+      "degraded": false,
+      "legacyHit": true,
+      "baselineAvailable": false,
+      "retrieved": [
+        {
+          "sourceEventId": "event-003",
+          "text": "苏月吃桂花后会起疹子。上次她吃了桂花糕，手臂红肿了整晚。",
+          "score": 11.426044099346171,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "上次",
+            "吃",
+            "后",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-006",
+          "text": "阿岚曾冒充药师骗走苏月的银币。苏月因这次欺骗不愿再借钱给他。",
+          "score": 4.568456717598642,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-008",
+          "text": "苏月一直以为红披风客人是父亲的朋友，因为那人拿着父亲的旧怀表。",
+          "score": 3.7118710830488966,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-001",
+          "text": "苏月小时候在春渡落水，是林舟把她救上岸。她此后一直害怕深水。",
+          "score": 3.6467505377322498,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-080",
+          "text": "苏月刚收到妹妹的纸条：她在西门粮仓等待，暗号是两下轻敲再一下重敲。",
+          "score": 3.5838755284610038,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "苏月"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "开启地下室的东西被林舟放在哪里？",
+      "view": "character:lin",
+      "expectedEventId": "event-004",
+      "evidence": "林舟把开启地窖的铜钥匙放进旧井旁的空酒坛。这件事只有他知道。",
+      "horizon": "long",
+      "rank": 2,
+      "hit": true,
+      "reciprocalRank": 0.5,
+      "durationMs": 0.07012499999999022,
+      "degraded": false,
+      "legacyHit": true,
+      "baselineAvailable": false,
+      "retrieved": [
+        {
+          "sourceEventId": "event-010",
+          "text": "林舟左肩被箭擦伤，伤口尚未愈合。他不能用左臂举起沉重的石板。",
+          "score": 7.684923371366478,
+          "matchedTerms": [
+            "被",
+            "林",
+            "舟",
+            "林舟"
+          ]
+        },
+        {
+          "sourceEventId": "event-004",
+          "text": "林舟把开启地窖的铜钥匙放进旧井旁的空酒坛。这件事只有他知道。",
+          "score": 7.411210898669066,
+          "matchedTerms": [
+            "开启",
+            "林",
+            "舟",
+            "林舟"
+          ]
+        },
+        {
+          "sourceEventId": "event-033",
+          "text": "林舟害怕高处，却仍答应替苏月爬上屋顶修复风向标。",
+          "score": 4.038529118232857,
+          "matchedTerms": [
+            "林",
+            "舟",
+            "林舟"
+          ]
+        },
+        {
+          "sourceEventId": "event-015",
+          "text": "林舟知道商会账本第三页被人替换，真正的金额记录刻在箱底的铜片上。",
+          "score": 4.038529118232857,
+          "matchedTerms": [
+            "林",
+            "舟",
+            "林舟"
+          ]
+        },
+        {
+          "sourceEventId": "event-079",
+          "text": "林舟刚在墙上发现苏月留下的白粉笔箭头，箭头指向一家关闭的茶馆。",
+          "score": 3.8972063187612767,
+          "matchedTerms": [
+            "林",
+            "舟",
+            "林舟"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "林舟在井边的容器里藏了什么？",
+      "view": "character:lin",
+      "expectedEventId": "event-004",
+      "evidence": "林舟把开启地窖的铜钥匙放进旧井旁的空酒坛。这件事只有他知道。",
+      "horizon": "long",
+      "rank": 1,
+      "hit": true,
+      "reciprocalRank": 1,
+      "durationMs": 0.0831670000000031,
+      "degraded": false,
+      "legacyHit": true,
+      "baselineAvailable": false,
+      "retrieved": [
+        {
+          "sourceEventId": "event-004",
+          "text": "林舟把开启地窖的铜钥匙放进旧井旁的空酒坛。这件事只有他知道。",
+          "score": 7.411210898669066,
+          "matchedTerms": [
+            "林",
+            "舟",
+            "井",
+            "林舟"
+          ]
+        },
+        {
+          "sourceEventId": "event-010",
+          "text": "林舟左肩被箭擦伤，伤口尚未愈合。他不能用左臂举起沉重的石板。",
+          "score": 4.113105041528369,
+          "matchedTerms": [
+            "林",
+            "舟",
+            "林舟"
+          ]
+        },
+        {
+          "sourceEventId": "event-033",
+          "text": "林舟害怕高处，却仍答应替苏月爬上屋顶修复风向标。",
+          "score": 4.038529118232857,
+          "matchedTerms": [
+            "林",
+            "舟",
+            "林舟"
+          ]
+        },
+        {
+          "sourceEventId": "event-015",
+          "text": "林舟知道商会账本第三页被人替换，真正的金额记录刻在箱底的铜片上。",
+          "score": 4.038529118232857,
+          "matchedTerms": [
+            "林",
+            "舟",
+            "林舟"
+          ]
+        },
+        {
+          "sourceEventId": "event-079",
+          "text": "林舟刚在墙上发现苏月留下的白粉笔箭头，箭头指向一家关闭的茶馆。",
+          "score": 3.8972063187612767,
+          "matchedTerms": [
+            "林",
+            "舟",
+            "林舟"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "为什么现在不能从木桥去东岸？",
+      "view": "environment",
+      "expectedEventId": "event-005",
+      "evidence": "通往东岸的木桥在暴雨中断裂，中间桥板全部落入河里。",
+      "horizon": "long",
+      "rank": 1,
+      "hit": true,
+      "reciprocalRank": 1,
+      "durationMs": 1.1779999999999973,
+      "degraded": false,
+      "legacyHit": true,
+      "baselineAvailable": false,
+      "retrieved": [
+        {
+          "sourceEventId": "event-005",
+          "text": "通往东岸的木桥在暴雨中断裂，中间桥板全部落入河里。",
+          "score": 10.709224102350689,
+          "matchedTerms": [
+            "木",
+            "桥",
+            "东岸"
+          ]
+        },
+        {
+          "sourceEventId": "event-009",
+          "text": "药铺后门每晚亥时上锁，窗台下面留有一扇可以推开的低矮木窗。",
+          "score": 2.7241951220019427,
+          "matchedTerms": [
+            "木"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "暴雨破坏了哪一条过河通道？",
+      "view": "environment",
+      "expectedEventId": "event-005",
+      "evidence": "通往东岸的木桥在暴雨中断裂，中间桥板全部落入河里。",
+      "horizon": "long",
+      "rank": 1,
+      "hit": true,
+      "reciprocalRank": 1,
+      "durationMs": 0.1248340000000212,
+      "degraded": false,
+      "legacyHit": true,
+      "baselineAvailable": false,
+      "retrieved": [
+        {
+          "sourceEventId": "event-005",
+          "text": "通往东岸的木桥在暴雨中断裂，中间桥板全部落入河里。",
+          "score": 6.92859281956733,
+          "matchedTerms": [
+            "暴雨",
+            "河"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "苏月为什么不肯再资助阿岚？",
+      "view": "character:su",
+      "expectedEventId": "event-006",
+      "evidence": "阿岚曾冒充药师骗走苏月的银币。苏月因这次欺骗不愿再借钱给他。",
+      "horizon": "long",
+      "rank": 1,
+      "hit": true,
+      "reciprocalRank": 1,
+      "durationMs": 0.07933299999999122,
+      "degraded": false,
+      "legacyHit": true,
+      "baselineAvailable": false,
+      "retrieved": [
+        {
+          "sourceEventId": "event-006",
+          "text": "阿岚曾冒充药师骗走苏月的银币。苏月因这次欺骗不愿再借钱给他。",
+          "score": 10.726321586572489,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "阿",
+            "岚",
+            "阿岚",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-077",
+          "text": "苏月刚刚从门卫口中得知，阿岚已经买好明晨驶往西岛的船票。",
+          "score": 9.889737926409198,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "阿",
+            "岚",
+            "阿岚",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-016",
+          "text": "苏月见过阿岚在清晨向穷孩子分发面包，因此开始怀疑他并非只会骗人。",
+          "score": 9.889737926409198,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "阿",
+            "岚",
+            "阿岚",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-011",
+          "text": "苏月将母亲留下的蓝色丝巾交给阿岚保管，约好离城时取回。",
+          "score": 9.889737926409198,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "阿",
+            "岚",
+            "阿岚",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-080",
+          "text": "苏月刚收到妹妹的纸条：她在西门粮仓等待，暗号是两下轻敲再一下重敲。",
+          "score": 6.992812253539683,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "再",
+            "苏月"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "谁用假身份骗走过苏月的钱？",
+      "view": "character:su",
+      "expectedEventId": "event-006",
+      "evidence": "阿岚曾冒充药师骗走苏月的银币。苏月因这次欺骗不愿再借钱给他。",
+      "horizon": "long",
+      "rank": 1,
+      "hit": true,
+      "reciprocalRank": 1,
+      "durationMs": 0.06720799999999372,
+      "degraded": false,
+      "legacyHit": true,
+      "baselineAvailable": false,
+      "retrieved": [
+        {
+          "sourceEventId": "event-006",
+          "text": "阿岚曾冒充药师骗走苏月的银币。苏月因这次欺骗不愿再借钱给他。",
+          "score": 7.80974081685378,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "钱",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-003",
+          "text": "苏月吃桂花后会起疹子。上次她吃了桂花糕，手臂红肿了整晚。",
+          "score": 3.7793596481952405,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-008",
+          "text": "苏月一直以为红披风客人是父亲的朋友，因为那人拿着父亲的旧怀表。",
+          "score": 3.7118710830488966,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-001",
+          "text": "苏月小时候在春渡落水，是林舟把她救上岸。她此后一直害怕深水。",
+          "score": 3.6467505377322498,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-080",
+          "text": "苏月刚收到妹妹的纸条：她在西门粮仓等待，暗号是两下轻敲再一下重敲。",
+          "score": 3.5838755284610038,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "苏月"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "如何用声音通知林舟终止买卖？",
+      "view": "character:lin",
+      "expectedEventId": "event-007",
+      "evidence": "林舟读过一份密信，信上约定三声长哨代表取消交易，两声短哨代表安全。",
+      "horizon": "long",
+      "rank": 0,
+      "hit": false,
+      "reciprocalRank": 0,
+      "durationMs": 0.06545800000000668,
+      "degraded": false,
+      "legacyHit": false,
+      "baselineAvailable": false,
+      "retrieved": [
+        {
+          "sourceEventId": "event-010",
+          "text": "林舟左肩被箭擦伤，伤口尚未愈合。他不能用左臂举起沉重的石板。",
+          "score": 7.684923371366478,
+          "matchedTerms": [
+            "用",
+            "林",
+            "舟",
+            "林舟"
+          ]
+        },
+        {
+          "sourceEventId": "event-033",
+          "text": "林舟害怕高处，却仍答应替苏月爬上屋顶修复风向标。",
+          "score": 4.038529118232857,
+          "matchedTerms": [
+            "林",
+            "舟",
+            "林舟"
+          ]
+        },
+        {
+          "sourceEventId": "event-015",
+          "text": "林舟知道商会账本第三页被人替换，真正的金额记录刻在箱底的铜片上。",
+          "score": 4.038529118232857,
+          "matchedTerms": [
+            "林",
+            "舟",
+            "林舟"
+          ]
+        },
+        {
+          "sourceEventId": "event-004",
+          "text": "林舟把开启地窖的铜钥匙放进旧井旁的空酒坛。这件事只有他知道。",
+          "score": 3.9666093515940206,
+          "matchedTerms": [
+            "林",
+            "舟",
+            "林舟"
+          ]
+        },
+        {
+          "sourceEventId": "event-079",
+          "text": "林舟刚在墙上发现苏月留下的白粉笔箭头，箭头指向一家关闭的茶馆。",
+          "score": 3.8972063187612767,
+          "matchedTerms": [
+            "林",
+            "舟",
+            "林舟"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "林舟知道哪种哨声表示没有危险？",
+      "view": "character:lin",
+      "expectedEventId": "event-007",
+      "evidence": "林舟读过一份密信，信上约定三声长哨代表取消交易，两声短哨代表安全。",
+      "horizon": "long",
+      "rank": 1,
+      "hit": true,
+      "reciprocalRank": 1,
+      "durationMs": 0.19216700000001197,
+      "degraded": false,
+      "legacyHit": true,
+      "baselineAvailable": false,
+      "retrieved": [
+        {
+          "sourceEventId": "event-007",
+          "text": "林舟读过一份密信，信上约定三声长哨代表取消交易，两声短哨代表安全。",
+          "score": 12.039277141081056,
+          "matchedTerms": [
+            "林",
+            "舟",
+            "哨",
+            "声",
+            "林舟"
+          ]
+        },
+        {
+          "sourceEventId": "event-015",
+          "text": "林舟知道商会账本第三页被人替换，真正的金额记录刻在箱底的铜片上。",
+          "score": 6.947570234052751,
+          "matchedTerms": [
+            "林",
+            "舟",
+            "知道",
+            "林舟"
+          ]
+        },
+        {
+          "sourceEventId": "event-004",
+          "text": "林舟把开启地窖的铜钥匙放进旧井旁的空酒坛。这件事只有他知道。",
+          "score": 6.823845081822418,
+          "matchedTerms": [
+            "林",
+            "舟",
+            "知道",
+            "林舟"
+          ]
+        },
+        {
+          "sourceEventId": "event-010",
+          "text": "林舟左肩被箭擦伤，伤口尚未愈合。他不能用左臂举起沉重的石板。",
+          "score": 4.113105041528369,
+          "matchedTerms": [
+            "林",
+            "舟",
+            "林舟"
+          ]
+        },
+        {
+          "sourceEventId": "event-033",
+          "text": "林舟害怕高处，却仍答应替苏月爬上屋顶修复风向标。",
+          "score": 4.038529118232857,
+          "matchedTerms": [
+            "林",
+            "舟",
+            "林舟"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "苏月为何相信那个披着红衣的陌生人？",
+      "view": "character:su",
+      "expectedEventId": "event-008",
+      "evidence": "苏月一直以为红披风客人是父亲的朋友，因为那人拿着父亲的旧怀表。",
+      "horizon": "long",
+      "rank": 1,
+      "hit": true,
+      "reciprocalRank": 1,
+      "durationMs": 0.1058749999999975,
+      "degraded": false,
+      "legacyHit": true,
+      "baselineAvailable": false,
+      "retrieved": [
+        {
+          "sourceEventId": "event-008",
+          "text": "苏月一直以为红披风客人是父亲的朋友，因为那人拿着父亲的旧怀表。",
+          "score": 7.2425555483089585,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "着",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-006",
+          "text": "阿岚曾冒充药师骗走苏月的银币。苏月因这次欺骗不愿再借钱给他。",
+          "score": 4.568456717598642,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-003",
+          "text": "苏月吃桂花后会起疹子。上次她吃了桂花糕，手臂红肿了整晚。",
+          "score": 3.7793596481952405,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-001",
+          "text": "苏月小时候在春渡落水，是林舟把她救上岸。她此后一直害怕深水。",
+          "score": 3.6467505377322498,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-080",
+          "text": "苏月刚收到妹妹的纸条：她在西门粮仓等待，暗号是两下轻敲再一下重敲。",
+          "score": 3.5838755284610038,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "苏月"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "什么物件让苏月把客人当成父亲的熟人？",
+      "view": "character:su",
+      "expectedEventId": "event-008",
+      "evidence": "苏月一直以为红披风客人是父亲的朋友，因为那人拿着父亲的旧怀表。",
+      "horizon": "long",
+      "rank": 1,
+      "hit": true,
+      "reciprocalRank": 1,
+      "durationMs": 0.28549999999998477,
+      "degraded": false,
+      "legacyHit": true,
+      "baselineAvailable": false,
+      "retrieved": [
+        {
+          "sourceEventId": "event-008",
+          "text": "苏月一直以为红披风客人是父亲的朋友，因为那人拿着父亲的旧怀表。",
+          "score": 11.840656247252294,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "客人",
+            "父亲",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-001",
+          "text": "苏月小时候在春渡落水，是林舟把她救上岸。她此后一直害怕深水。",
+          "score": 7.11549317026845,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "把",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-006",
+          "text": "阿岚曾冒充药师骗走苏月的银币。苏月因这次欺骗不愿再借钱给他。",
+          "score": 4.568456717598642,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-003",
+          "text": "苏月吃桂花后会起疹子。上次她吃了桂花糕，手臂红肿了整晚。",
+          "score": 3.7793596481952405,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-080",
+          "text": "苏月刚收到妹妹的纸条：她在西门粮仓等待，暗号是两下轻敲再一下重敲。",
+          "score": 3.5838755284610038,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "苏月"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "药铺夜间锁门后还可能从哪进入？",
+      "view": "environment",
+      "expectedEventId": "event-009",
+      "evidence": "药铺后门每晚亥时上锁，窗台下面留有一扇可以推开的低矮木窗。",
+      "horizon": "long",
+      "rank": 2,
+      "hit": true,
+      "reciprocalRank": 0.5,
+      "durationMs": 0.19425000000001091,
+      "degraded": false,
+      "legacyHit": true,
+      "baselineAvailable": false,
+      "retrieved": [
+        {
+          "sourceEventId": "event-013",
+          "text": "废弃磨坊的地下室积满沼气，进入时点火可能引发爆炸。",
+          "score": 7.340172706782877,
+          "matchedTerms": [
+            "可能",
+            "进入"
+          ]
+        },
+        {
+          "sourceEventId": "event-009",
+          "text": "药铺后门每晚亥时上锁，窗台下面留有一扇可以推开的低矮木窗。",
+          "score": 6.678924665045538,
+          "matchedTerms": [
+            "药",
+            "铺"
+          ]
+        },
+        {
+          "sourceEventId": "event-075",
+          "text": "第75次巡查，街角摊贩仍在整理普通杂货，路人谈论今天的天气。众人沿着熟悉的街道慢慢行走，确认没有新的阻碍，然后继续等待后续消息。",
+          "score": 0.2467998844574906,
+          "matchedTerms": [
+            "后"
+          ]
+        },
+        {
+          "sourceEventId": "event-072",
+          "text": "第72次巡查，街角摊贩仍在整理普通杂货，路人谈论今天的天气。众人沿着熟悉的街道慢慢行走，确认没有新的阻碍，然后继续等待后续消息。",
+          "score": 0.2467998844574906,
+          "matchedTerms": [
+            "后"
+          ]
+        },
+        {
+          "sourceEventId": "event-069",
+          "text": "第69次巡查，街角摊贩仍在整理普通杂货，路人谈论今天的天气。众人沿着熟悉的街道慢慢行走，确认没有新的阻碍，然后继续等待后续消息。",
+          "score": 0.2467998844574906,
+          "matchedTerms": [
+            "后"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "低矮的入口位于药铺什么位置？",
+      "view": "environment",
+      "expectedEventId": "event-009",
+      "evidence": "药铺后门每晚亥时上锁，窗台下面留有一扇可以推开的低矮木窗。",
+      "horizon": "long",
+      "rank": 1,
+      "hit": true,
+      "reciprocalRank": 1,
+      "durationMs": 0.07129199999999969,
+      "degraded": false,
+      "legacyHit": true,
+      "baselineAvailable": false,
+      "retrieved": [
+        {
+          "sourceEventId": "event-009",
+          "text": "药铺后门每晚亥时上锁，窗台下面留有一扇可以推开的低矮木窗。",
+          "score": 10.018386997568307,
+          "matchedTerms": [
+            "低矮",
+            "药",
+            "铺"
+          ]
+        },
+        {
+          "sourceEventId": "event-078",
+          "text": "集市入口刚刚开始实行宵禁，守卫只允许持红色通行证的人通过。",
+          "score": 3.339462332522769,
+          "matchedTerms": [
+            "入口"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "林舟为什么搬不动那块沉重石头？",
+      "view": "character:lin",
+      "expectedEventId": "event-010",
+      "evidence": "林舟左肩被箭擦伤，伤口尚未愈合。他不能用左臂举起沉重的石板。",
+      "horizon": "long",
+      "rank": 1,
+      "hit": true,
+      "reciprocalRank": 1,
+      "durationMs": 0.08091600000000199,
+      "degraded": false,
+      "legacyHit": true,
+      "baselineAvailable": false,
+      "retrieved": [
+        {
+          "sourceEventId": "event-010",
+          "text": "林舟左肩被箭擦伤，伤口尚未愈合。他不能用左臂举起沉重的石板。",
+          "score": 7.68492337136648,
+          "matchedTerms": [
+            "林",
+            "舟",
+            "沉重",
+            "林舟"
+          ]
+        },
+        {
+          "sourceEventId": "event-033",
+          "text": "林舟害怕高处，却仍答应替苏月爬上屋顶修复风向标。",
+          "score": 4.038529118232857,
+          "matchedTerms": [
+            "林",
+            "舟",
+            "林舟"
+          ]
+        },
+        {
+          "sourceEventId": "event-015",
+          "text": "林舟知道商会账本第三页被人替换，真正的金额记录刻在箱底的铜片上。",
+          "score": 4.038529118232857,
+          "matchedTerms": [
+            "林",
+            "舟",
+            "林舟"
+          ]
+        },
+        {
+          "sourceEventId": "event-004",
+          "text": "林舟把开启地窖的铜钥匙放进旧井旁的空酒坛。这件事只有他知道。",
+          "score": 3.9666093515940206,
+          "matchedTerms": [
+            "林",
+            "舟",
+            "林舟"
+          ]
+        },
+        {
+          "sourceEventId": "event-079",
+          "text": "林舟刚在墙上发现苏月留下的白粉笔箭头，箭头指向一家关闭的茶馆。",
+          "score": 3.8972063187612767,
+          "matchedTerms": [
+            "林",
+            "舟",
+            "林舟"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "林舟哪一侧的手臂需要避免用力？",
+      "view": "character:lin",
+      "expectedEventId": "event-010",
+      "evidence": "林舟左肩被箭擦伤，伤口尚未愈合。他不能用左臂举起沉重的石板。",
+      "horizon": "long",
+      "rank": 1,
+      "hit": true,
+      "reciprocalRank": 1,
+      "durationMs": 0.07450000000000045,
+      "degraded": false,
+      "legacyHit": true,
+      "baselineAvailable": false,
+      "retrieved": [
+        {
+          "sourceEventId": "event-010",
+          "text": "林舟左肩被箭擦伤，伤口尚未愈合。他不能用左臂举起沉重的石板。",
+          "score": 4.113105041528369,
+          "matchedTerms": [
+            "林",
+            "舟",
+            "林舟"
+          ]
+        },
+        {
+          "sourceEventId": "event-033",
+          "text": "林舟害怕高处，却仍答应替苏月爬上屋顶修复风向标。",
+          "score": 4.038529118232857,
+          "matchedTerms": [
+            "林",
+            "舟",
+            "林舟"
+          ]
+        },
+        {
+          "sourceEventId": "event-015",
+          "text": "林舟知道商会账本第三页被人替换，真正的金额记录刻在箱底的铜片上。",
+          "score": 4.038529118232857,
+          "matchedTerms": [
+            "林",
+            "舟",
+            "林舟"
+          ]
+        },
+        {
+          "sourceEventId": "event-004",
+          "text": "林舟把开启地窖的铜钥匙放进旧井旁的空酒坛。这件事只有他知道。",
+          "score": 3.9666093515940206,
+          "matchedTerms": [
+            "林",
+            "舟",
+            "林舟"
+          ]
+        },
+        {
+          "sourceEventId": "event-079",
+          "text": "林舟刚在墙上发现苏月留下的白粉笔箭头，箭头指向一家关闭的茶馆。",
+          "score": 3.8972063187612767,
+          "matchedTerms": [
+            "林",
+            "舟",
+            "林舟"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "离开这座城之前苏月要向阿岚拿回什么？",
+      "view": "character:su",
+      "expectedEventId": "event-011",
+      "evidence": "苏月将母亲留下的蓝色丝巾交给阿岚保管，约好离城时取回。",
+      "horizon": "long",
+      "rank": 1,
+      "hit": true,
+      "reciprocalRank": 1,
+      "durationMs": 0.08333400000000779,
+      "degraded": false,
+      "legacyHit": true,
+      "baselineAvailable": false,
+      "retrieved": [
+        {
+          "sourceEventId": "event-011",
+          "text": "苏月将母亲留下的蓝色丝巾交给阿岚保管，约好离城时取回。",
+          "score": 13.240896062927222,
+          "matchedTerms": [
+            "城",
+            "苏",
+            "月",
+            "阿",
+            "岚",
+            "阿岚",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-016",
+          "text": "苏月见过阿岚在清晨向穷孩子分发面包，因此开始怀疑他并非只会骗人。",
+          "score": 12.669464009222894,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "向",
+            "阿",
+            "岚",
+            "阿岚",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-006",
+          "text": "阿岚曾冒充药师骗走苏月的银币。苏月因这次欺骗不愿再借钱给他。",
+          "score": 10.726321586572489,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "阿",
+            "岚",
+            "阿岚",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-077",
+          "text": "苏月刚刚从门卫口中得知，阿岚已经买好明晨驶往西岛的船票。",
+          "score": 9.889737926409198,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "阿",
+            "岚",
+            "阿岚",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-014",
+          "text": "苏月曾在雪夜向失散的妹妹许诺，每年冬至都会到南门挂一盏红灯。",
+          "score": 6.411527923047349,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "向",
+            "苏月"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "谁保管着苏月母亲留下的遗物？",
+      "view": "character:su",
+      "expectedEventId": "event-011",
+      "evidence": "苏月将母亲留下的蓝色丝巾交给阿岚保管，约好离城时取回。",
+      "horizon": "long",
+      "rank": 1,
+      "hit": true,
+      "reciprocalRank": 1,
+      "durationMs": 0.07450000000000045,
+      "degraded": false,
+      "legacyHit": true,
+      "baselineAvailable": false,
+      "retrieved": [
+        {
+          "sourceEventId": "event-011",
+          "text": "苏月将母亲留下的蓝色丝巾交给阿岚保管，约好离城时取回。",
+          "score": 13.576606284990312,
+          "matchedTerms": [
+            "保管",
+            "苏",
+            "月",
+            "母亲",
+            "留下",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-008",
+          "text": "苏月一直以为红披风客人是父亲的朋友，因为那人拿着父亲的旧怀表。",
+          "score": 7.2425555483089585,
+          "matchedTerms": [
+            "着",
+            "苏",
+            "月",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-006",
+          "text": "阿岚曾冒充药师骗走苏月的银币。苏月因这次欺骗不愿再借钱给他。",
+          "score": 4.568456717598642,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-003",
+          "text": "苏月吃桂花后会起疹子。上次她吃了桂花糕，手臂红肿了整晚。",
+          "score": 3.7793596481952405,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-001",
+          "text": "苏月小时候在春渡落水，是林舟把她救上岸。她此后一直害怕深水。",
+          "score": 3.6467505377322498,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "苏月"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "林舟手里的地图还缺什么？",
+      "view": "character:lin",
+      "expectedEventId": "event-012",
+      "evidence": "林舟在书页夹缝发现半张航线图，缺失的另一半据说由港口守卫保管。",
+      "horizon": "long",
+      "rank": 0,
+      "hit": false,
+      "reciprocalRank": 0,
+      "durationMs": 0.06412499999999,
+      "degraded": false,
+      "legacyHit": true,
+      "baselineAvailable": false,
+      "retrieved": [
+        {
+          "sourceEventId": "event-031",
+          "text": "林舟把假账本交给追兵，让他们误以为原件已经落入自己手中。真正的账本还在苏月手里。",
+          "score": 10.133935490753228,
+          "matchedTerms": [
+            "林",
+            "舟",
+            "手里",
+            "还",
+            "林舟"
+          ]
+        },
+        {
+          "sourceEventId": "event-010",
+          "text": "林舟左肩被箭擦伤，伤口尚未愈合。他不能用左臂举起沉重的石板。",
+          "score": 4.113105041528369,
+          "matchedTerms": [
+            "林",
+            "舟",
+            "林舟"
+          ]
+        },
+        {
+          "sourceEventId": "event-033",
+          "text": "林舟害怕高处，却仍答应替苏月爬上屋顶修复风向标。",
+          "score": 4.038529118232857,
+          "matchedTerms": [
+            "林",
+            "舟",
+            "林舟"
+          ]
+        },
+        {
+          "sourceEventId": "event-015",
+          "text": "林舟知道商会账本第三页被人替换，真正的金额记录刻在箱底的铜片上。",
+          "score": 4.038529118232857,
+          "matchedTerms": [
+            "林",
+            "舟",
+            "林舟"
+          ]
+        },
+        {
+          "sourceEventId": "event-004",
+          "text": "林舟把开启地窖的铜钥匙放进旧井旁的空酒坛。这件事只有他知道。",
+          "score": 3.9666093515940206,
+          "matchedTerms": [
+            "林",
+            "舟",
+            "林舟"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "为了补全航线，应该去找哪个人？",
+      "view": "character:lin",
+      "expectedEventId": "event-012",
+      "evidence": "林舟在书页夹缝发现半张航线图，缺失的另一半据说由港口守卫保管。",
+      "horizon": "long",
+      "rank": 1,
+      "hit": true,
+      "reciprocalRank": 1,
+      "durationMs": 0.047291000000001304,
+      "degraded": false,
+      "legacyHit": true,
+      "baselineAvailable": false,
+      "retrieved": [
+        {
+          "sourceEventId": "event-012",
+          "text": "林舟在书页夹缝发现半张航线图，缺失的另一半据说由港口守卫保管。",
+          "score": 3.384331988599039,
+          "matchedTerms": [
+            "航线"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "进入磨坊下面时为什么不能举火把？",
+      "view": "environment",
+      "expectedEventId": "event-013",
+      "evidence": "废弃磨坊的地下室积满沼气，进入时点火可能引发爆炸。",
+      "horizon": "long",
+      "rank": 1,
+      "hit": true,
+      "reciprocalRank": 1,
+      "durationMs": 0.05370800000000031,
+      "degraded": false,
+      "legacyHit": true,
+      "baselineAvailable": false,
+      "retrieved": [
+        {
+          "sourceEventId": "event-013",
+          "text": "废弃磨坊的地下室积满沼气，进入时点火可能引发爆炸。",
+          "score": 9.88868762416531,
+          "matchedTerms": [
+            "进入",
+            "磨坊",
+            "时"
+          ]
+        },
+        {
+          "sourceEventId": "event-009",
+          "text": "药铺后门每晚亥时上锁，窗台下面留有一扇可以推开的低矮木窗。",
+          "score": 5.658391303391946,
+          "matchedTerms": [
+            "下面",
+            "时"
+          ]
+        },
+        {
+          "sourceEventId": "event-030",
+          "text": "钟楼北墙的石缝在涨潮时渗入海水，那里通向地下排水沟。",
+          "score": 2.405613990638011,
+          "matchedTerms": [
+            "时"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "哪个地方有易燃气体聚集的危险？",
+      "view": "environment",
+      "expectedEventId": "event-013",
+      "evidence": "废弃磨坊的地下室积满沼气，进入时点火可能引发爆炸。",
+      "horizon": "long",
+      "rank": 0,
+      "hit": false,
+      "reciprocalRank": 0,
+      "durationMs": 0.043500000000022965,
+      "degraded": false,
+      "legacyHit": false,
+      "baselineAvailable": false,
+      "retrieved": []
+    },
+    {
+      "query": "冬至那天苏月必须完成什么约定？",
+      "view": "character:su",
+      "expectedEventId": "event-014",
+      "evidence": "苏月曾在雪夜向失散的妹妹许诺，每年冬至都会到南门挂一盏红灯。",
+      "horizon": "long",
+      "rank": 1,
+      "hit": true,
+      "reciprocalRank": 1,
+      "durationMs": 0.06645800000001145,
+      "degraded": false,
+      "legacyHit": true,
+      "baselineAvailable": false,
+      "retrieved": [
+        {
+          "sourceEventId": "event-014",
+          "text": "苏月曾在雪夜向失散的妹妹许诺，每年冬至都会到南门挂一盏红灯。",
+          "score": 6.992812253539683,
+          "matchedTerms": [
+            "冬至",
+            "苏",
+            "月",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-006",
+          "text": "阿岚曾冒充药师骗走苏月的银币。苏月因这次欺骗不愿再借钱给他。",
+          "score": 4.568456717598642,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-003",
+          "text": "苏月吃桂花后会起疹子。上次她吃了桂花糕，手臂红肿了整晚。",
+          "score": 3.7793596481952405,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-008",
+          "text": "苏月一直以为红披风客人是父亲的朋友，因为那人拿着父亲的旧怀表。",
+          "score": 3.7118710830488966,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-001",
+          "text": "苏月小时候在春渡落水，是林舟把她救上岸。她此后一直害怕深水。",
+          "score": 3.6467505377322498,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "苏月"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "苏月用什么方式向失散亲人传递消息？",
+      "view": "character:su",
+      "expectedEventId": "event-014",
+      "evidence": "苏月曾在雪夜向失散的妹妹许诺，每年冬至都会到南门挂一盏红灯。",
+      "horizon": "long",
+      "rank": 1,
+      "hit": true,
+      "reciprocalRank": 1,
+      "durationMs": 0.08866699999998673,
+      "degraded": false,
+      "legacyHit": true,
+      "baselineAvailable": false,
+      "retrieved": [
+        {
+          "sourceEventId": "event-014",
+          "text": "苏月曾在雪夜向失散的妹妹许诺，每年冬至都会到南门挂一盏红灯。",
+          "score": 9.820464648126029,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "向",
+            "失散",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-016",
+          "text": "苏月见过阿岚在清晨向穷孩子分发面包，因此开始怀疑他并非只会骗人。",
+          "score": 6.302857958249936,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "向",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-006",
+          "text": "阿岚曾冒充药师骗走苏月的银币。苏月因这次欺骗不愿再借钱给他。",
+          "score": 4.568456717598642,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-003",
+          "text": "苏月吃桂花后会起疹子。上次她吃了桂花糕，手臂红肿了整晚。",
+          "score": 3.7793596481952405,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-008",
+          "text": "苏月一直以为红披风客人是父亲的朋友，因为那人拿着父亲的旧怀表。",
+          "score": 3.7118710830488966,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "苏月"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "要核实商会真正的账目应该查看哪里？",
+      "view": "character:lin",
+      "expectedEventId": "event-015",
+      "evidence": "林舟知道商会账本第三页被人替换，真正的金额记录刻在箱底的铜片上。",
+      "horizon": "long",
+      "rank": 1,
+      "hit": true,
+      "reciprocalRank": 1,
+      "durationMs": 0.05750000000000455,
+      "degraded": false,
+      "legacyHit": true,
+      "baselineAvailable": false,
+      "retrieved": [
+        {
+          "sourceEventId": "event-015",
+          "text": "林舟知道商会账本第三页被人替换，真正的金额记录刻在箱底的铜片上。",
+          "score": 6.41609775173041,
+          "matchedTerms": [
+            "商会",
+            "真正"
+          ]
+        },
+        {
+          "sourceEventId": "event-031",
+          "text": "林舟把假账本交给追兵，让他们误以为原件已经落入自己手中。真正的账本还在苏月手里。",
+          "score": 2.6672386536450565,
+          "matchedTerms": [
+            "真正"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "商会记录中哪一页存在伪造？",
+      "view": "character:lin",
+      "expectedEventId": "event-015",
+      "evidence": "林舟知道商会账本第三页被人替换，真正的金额记录刻在箱底的铜片上。",
+      "horizon": "long",
+      "rank": 1,
+      "hit": true,
+      "reciprocalRank": 1,
+      "durationMs": 0.04662500000000591,
+      "degraded": false,
+      "legacyHit": true,
+      "baselineAvailable": false,
+      "retrieved": [
+        {
+          "sourceEventId": "event-015",
+          "text": "林舟知道商会账本第三页被人替换，真正的金额记录刻在箱底的铜片上。",
+          "score": 9.923154387640926,
+          "matchedTerms": [
+            "商会",
+            "记录",
+            "页"
+          ]
+        },
+        {
+          "sourceEventId": "event-012",
+          "text": "林舟在书页夹缝发现半张航线图，缺失的另一半据说由港口守卫保管。",
+          "score": 2.8072432032062338,
+          "matchedTerms": [
+            "页"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "苏月为什么对阿岚有了一点改观？",
+      "view": "character:su",
+      "expectedEventId": "event-016",
+      "evidence": "苏月见过阿岚在清晨向穷孩子分发面包，因此开始怀疑他并非只会骗人。",
+      "horizon": "long",
+      "rank": 3,
+      "hit": true,
+      "reciprocalRank": 0.3333333333333333,
+      "durationMs": 0.06991700000000378,
+      "degraded": false,
+      "legacyHit": true,
+      "baselineAvailable": false,
+      "retrieved": [
+        {
+          "sourceEventId": "event-006",
+          "text": "阿岚曾冒充药师骗走苏月的银币。苏月因这次欺骗不愿再借钱给他。",
+          "score": 10.726321586572489,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "阿",
+            "岚",
+            "阿岚",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-077",
+          "text": "苏月刚刚从门卫口中得知，阿岚已经买好明晨驶往西岛的船票。",
+          "score": 9.889737926409198,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "阿",
+            "岚",
+            "阿岚",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-016",
+          "text": "苏月见过阿岚在清晨向穷孩子分发面包，因此开始怀疑他并非只会骗人。",
+          "score": 9.889737926409198,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "阿",
+            "岚",
+            "阿岚",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-011",
+          "text": "苏月将母亲留下的蓝色丝巾交给阿岚保管，约好离城时取回。",
+          "score": 9.889737926409198,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "阿",
+            "岚",
+            "阿岚",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-003",
+          "text": "苏月吃桂花后会起疹子。上次她吃了桂花糕，手臂红肿了整晚。",
+          "score": 3.7793596481952405,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "苏月"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "苏月看见阿岚做过什么善事？",
+      "view": "character:su",
+      "expectedEventId": "event-016",
+      "evidence": "苏月见过阿岚在清晨向穷孩子分发面包，因此开始怀疑他并非只会骗人。",
+      "horizon": "long",
+      "rank": 3,
+      "hit": true,
+      "reciprocalRank": 0.3333333333333333,
+      "durationMs": 0.08150000000000546,
+      "degraded": false,
+      "legacyHit": true,
+      "baselineAvailable": false,
+      "retrieved": [
+        {
+          "sourceEventId": "event-006",
+          "text": "阿岚曾冒充药师骗走苏月的银币。苏月因这次欺骗不愿再借钱给他。",
+          "score": 10.726321586572489,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "阿",
+            "岚",
+            "阿岚",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-077",
+          "text": "苏月刚刚从门卫口中得知，阿岚已经买好明晨驶往西岛的船票。",
+          "score": 9.889737926409198,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "阿",
+            "岚",
+            "阿岚",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-016",
+          "text": "苏月见过阿岚在清晨向穷孩子分发面包，因此开始怀疑他并非只会骗人。",
+          "score": 9.889737926409198,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "阿",
+            "岚",
+            "阿岚",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-011",
+          "text": "苏月将母亲留下的蓝色丝巾交给阿岚保管，约好离城时取回。",
+          "score": 9.889737926409198,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "阿",
+            "岚",
+            "阿岚",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-003",
+          "text": "苏月吃桂花后会起疹子。上次她吃了桂花糕，手臂红肿了整晚。",
+          "score": 3.7793596481952405,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "苏月"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "寻找地下排水道可以从钟楼哪一侧入手？",
+      "view": "environment",
+      "expectedEventId": "event-030",
+      "evidence": "钟楼北墙的石缝在涨潮时渗入海水，那里通向地下排水沟。",
+      "horizon": "long",
+      "rank": 1,
+      "hit": true,
+      "reciprocalRank": 1,
+      "durationMs": 0.06795900000000188,
+      "degraded": false,
+      "legacyHit": true,
+      "baselineAvailable": false,
+      "retrieved": [
+        {
+          "sourceEventId": "event-030",
+          "text": "钟楼北墙的石缝在涨潮时渗入海水，那里通向地下排水沟。",
+          "score": 10.392889229350995,
+          "matchedTerms": [
+            "地下",
+            "排水",
+            "钟楼"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "北墙的裂缝为什么在特定时段漏水？",
+      "view": "environment",
+      "expectedEventId": "event-030",
+      "evidence": "钟楼北墙的石缝在涨潮时渗入海水，那里通向地下排水沟。",
+      "horizon": "long",
+      "rank": 1,
+      "hit": true,
+      "reciprocalRank": 1,
+      "durationMs": 0.0595000000000141,
+      "degraded": false,
+      "legacyHit": true,
+      "baselineAvailable": false,
+      "retrieved": [
+        {
+          "sourceEventId": "event-030",
+          "text": "钟楼北墙的石缝在涨潮时渗入海水，那里通向地下排水沟。",
+          "score": 9.334206810205341,
+          "matchedTerms": [
+            "北",
+            "墙",
+            "时"
+          ]
+        },
+        {
+          "sourceEventId": "event-013",
+          "text": "废弃磨坊的地下室积满沼气，进入时点火可能引发爆炸。",
+          "score": 2.548514917382435,
+          "matchedTerms": [
+            "时"
+          ]
+        },
+        {
+          "sourceEventId": "event-009",
+          "text": "药铺后门每晚亥时上锁，窗台下面留有一扇可以推开的低矮木窗。",
+          "score": 2.3189289708691767,
+          "matchedTerms": [
+            "时"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "追兵拿到的账簿是真的吗？",
+      "view": "character:lin",
+      "expectedEventId": "event-031",
+      "evidence": "林舟把假账本交给追兵，让他们误以为原件已经落入自己手中。真正的账本还在苏月手里。",
+      "horizon": "long",
+      "rank": 1,
+      "hit": true,
+      "reciprocalRank": 1,
+      "durationMs": 0.04550000000000409,
+      "degraded": false,
+      "legacyHit": true,
+      "baselineAvailable": false,
+      "retrieved": [
+        {
+          "sourceEventId": "event-031",
+          "text": "林舟把假账本交给追兵，让他们误以为原件已经落入自己手中。真正的账本还在苏月手里。",
+          "score": 3.2155465142631754,
+          "matchedTerms": [
+            "追兵"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "林舟用什么办法让追赶者停止寻找原件？",
+      "view": "character:lin",
+      "expectedEventId": "event-031",
+      "evidence": "林舟把假账本交给追兵，让他们误以为原件已经落入自己手中。真正的账本还在苏月手里。",
+      "horizon": "long",
+      "rank": 1,
+      "hit": true,
+      "reciprocalRank": 1,
+      "durationMs": 0.0695840000000203,
+      "degraded": false,
+      "legacyHit": true,
+      "baselineAvailable": false,
+      "retrieved": [
+        {
+          "sourceEventId": "event-031",
+          "text": "林舟把假账本交给追兵，让他们误以为原件已经落入自己手中。真正的账本还在苏月手里。",
+          "score": 10.133935490753228,
+          "matchedTerms": [
+            "林",
+            "舟",
+            "让",
+            "原件",
+            "林舟"
+          ]
+        },
+        {
+          "sourceEventId": "event-010",
+          "text": "林舟左肩被箭擦伤，伤口尚未愈合。他不能用左臂举起沉重的石板。",
+          "score": 7.68492337136648,
+          "matchedTerms": [
+            "林",
+            "舟",
+            "用",
+            "林舟"
+          ]
+        },
+        {
+          "sourceEventId": "event-033",
+          "text": "林舟害怕高处，却仍答应替苏月爬上屋顶修复风向标。",
+          "score": 4.038529118232857,
+          "matchedTerms": [
+            "林",
+            "舟",
+            "林舟"
+          ]
+        },
+        {
+          "sourceEventId": "event-015",
+          "text": "林舟知道商会账本第三页被人替换，真正的金额记录刻在箱底的铜片上。",
+          "score": 4.038529118232857,
+          "matchedTerms": [
+            "林",
+            "舟",
+            "林舟"
+          ]
+        },
+        {
+          "sourceEventId": "event-004",
+          "text": "林舟把开启地窖的铜钥匙放进旧井旁的空酒坛。这件事只有他知道。",
+          "score": 3.9666093515940206,
+          "matchedTerms": [
+            "林",
+            "舟",
+            "林舟"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "苏月知道什么草药能缓解林舟的疼痛？",
+      "view": "character:su",
+      "expectedEventId": "event-032",
+      "evidence": "苏月从药师处得知，银叶草能暂时减轻林舟的箭伤疼痛，但无法解毒。",
+      "horizon": "long",
+      "rank": 1,
+      "hit": true,
+      "reciprocalRank": 1,
+      "durationMs": 0.07699999999999818,
+      "degraded": false,
+      "legacyHit": true,
+      "baselineAvailable": false,
+      "retrieved": [
+        {
+          "sourceEventId": "event-032",
+          "text": "苏月从药师处得知，银叶草能暂时减轻林舟的箭伤疼痛，但无法解毒。",
+          "score": 17.666338022869184,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "能",
+            "林",
+            "舟",
+            "疼痛",
+            "林舟",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-001",
+          "text": "苏月小时候在春渡落水，是林舟把她救上岸。她此后一直害怕深水。",
+          "score": 12.278531531732671,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "林",
+            "舟",
+            "林舟",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-006",
+          "text": "阿岚曾冒充药师骗走苏月的银币。苏月因这次欺骗不愿再借钱给他。",
+          "score": 4.568456717598642,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-003",
+          "text": "苏月吃桂花后会起疹子。上次她吃了桂花糕，手臂红肿了整晚。",
+          "score": 3.7793596481952405,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-008",
+          "text": "苏月一直以为红披风客人是父亲的朋友，因为那人拿着父亲的旧怀表。",
+          "score": 3.7118710830488966,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "苏月"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "为什么使用银叶草后仍然需要寻找解毒药？",
+      "view": "character:su",
+      "expectedEventId": "event-032",
+      "evidence": "苏月从药师处得知，银叶草能暂时减轻林舟的箭伤疼痛，但无法解毒。",
+      "horizon": "long",
+      "rank": 1,
+      "hit": true,
+      "reciprocalRank": 1,
+      "durationMs": 0.07270799999997735,
+      "degraded": false,
+      "legacyHit": true,
+      "baselineAvailable": false,
+      "retrieved": [
+        {
+          "sourceEventId": "event-032",
+          "text": "苏月从药师处得知，银叶草能暂时减轻林舟的箭伤疼痛，但无法解毒。",
+          "score": 15.401244501681642,
+          "matchedTerms": [
+            "银",
+            "叶",
+            "草",
+            "解毒",
+            "药"
+          ]
+        },
+        {
+          "sourceEventId": "event-006",
+          "text": "阿岚曾冒充药师骗走苏月的银币。苏月因这次欺骗不愿再借钱给他。",
+          "score": 2.6885875227214435,
+          "matchedTerms": [
+            "药"
+          ]
+        },
+        {
+          "sourceEventId": "event-003",
+          "text": "苏月吃桂花后会起疹子。上次她吃了桂花糕，手臂红肿了整晚。",
+          "score": 0.4569269946213515,
+          "matchedTerms": [
+            "后"
+          ]
+        },
+        {
+          "sourceEventId": "event-073",
+          "text": "第73次巡查，街角摊贩仍在整理普通杂货，路人谈论今天的天气。众人沿着熟悉的街道慢慢行走，确认没有新的阻碍，然后继续等待后续消息。",
+          "score": 0.35901406720249046,
+          "matchedTerms": [
+            "后"
+          ]
+        },
+        {
+          "sourceEventId": "event-071",
+          "text": "第71次巡查，街角摊贩仍在整理普通杂货，路人谈论今天的天气。众人沿着熟悉的街道慢慢行走，确认没有新的阻碍，然后继续等待后续消息。",
+          "score": 0.35901406720249046,
+          "matchedTerms": [
+            "后"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "林舟为了修理屋顶的东西需要克服什么？",
+      "view": "character:lin",
+      "expectedEventId": "event-033",
+      "evidence": "林舟害怕高处，却仍答应替苏月爬上屋顶修复风向标。",
+      "horizon": "long",
+      "rank": 1,
+      "hit": true,
+      "reciprocalRank": 1,
+      "durationMs": 0.0679580000000044,
+      "degraded": false,
+      "legacyHit": true,
+      "baselineAvailable": false,
+      "retrieved": [
+        {
+          "sourceEventId": "event-033",
+          "text": "林舟害怕高处，却仍答应替苏月爬上屋顶修复风向标。",
+          "score": 7.545585754143371,
+          "matchedTerms": [
+            "林",
+            "舟",
+            "屋顶",
+            "林舟"
+          ]
+        },
+        {
+          "sourceEventId": "event-010",
+          "text": "林舟左肩被箭擦伤，伤口尚未愈合。他不能用左臂举起沉重的石板。",
+          "score": 4.113105041528369,
+          "matchedTerms": [
+            "林",
+            "舟",
+            "林舟"
+          ]
+        },
+        {
+          "sourceEventId": "event-015",
+          "text": "林舟知道商会账本第三页被人替换，真正的金额记录刻在箱底的铜片上。",
+          "score": 4.038529118232857,
+          "matchedTerms": [
+            "林",
+            "舟",
+            "林舟"
+          ]
+        },
+        {
+          "sourceEventId": "event-004",
+          "text": "林舟把开启地窖的铜钥匙放进旧井旁的空酒坛。这件事只有他知道。",
+          "score": 3.9666093515940206,
+          "matchedTerms": [
+            "林",
+            "舟",
+            "林舟"
+          ]
+        },
+        {
+          "sourceEventId": "event-079",
+          "text": "林舟刚在墙上发现苏月留下的白粉笔箭头，箭头指向一家关闭的茶馆。",
+          "score": 3.8972063187612767,
+          "matchedTerms": [
+            "林",
+            "舟",
+            "林舟"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "林舟答应替苏月修好哪个装置？",
+      "view": "character:lin",
+      "expectedEventId": "event-033",
+      "evidence": "林舟害怕高处，却仍答应替苏月爬上屋顶修复风向标。",
+      "horizon": "long",
+      "rank": 1,
+      "hit": true,
+      "reciprocalRank": 1,
+      "durationMs": 0.07679200000001174,
+      "degraded": false,
+      "legacyHit": true,
+      "baselineAvailable": false,
+      "retrieved": [
+        {
+          "sourceEventId": "event-033",
+          "text": "林舟害怕高处，却仍答应替苏月爬上屋顶修复风向标。",
+          "score": 17.117412417437436,
+          "matchedTerms": [
+            "林",
+            "舟",
+            "答应",
+            "替",
+            "苏",
+            "月",
+            "林舟",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-002",
+          "text": "林舟答应苏月，在落日前将银色项链送回钟楼。这件约定尚未兑现。",
+          "score": 13.134080007714687,
+          "matchedTerms": [
+            "林",
+            "舟",
+            "答应",
+            "苏",
+            "月",
+            "林舟",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-079",
+          "text": "林舟刚在墙上发现苏月留下的白粉笔箭头，箭头指向一家关闭的茶馆。",
+          "score": 10.326836804508453,
+          "matchedTerms": [
+            "林",
+            "舟",
+            "苏",
+            "月",
+            "林舟",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-031",
+          "text": "林舟把假账本交给追兵，让他们误以为原件已经落入自己手中。真正的账本还在苏月手里。",
+          "score": 9.81181048489507,
+          "matchedTerms": [
+            "林",
+            "舟",
+            "苏",
+            "月",
+            "林舟",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-010",
+          "text": "林舟左肩被箭擦伤，伤口尚未愈合。他不能用左臂举起沉重的石板。",
+          "score": 4.113105041528369,
+          "matchedTerms": [
+            "林",
+            "舟",
+            "林舟"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "阿岚准备什么时候离开？",
+      "view": "character:su",
+      "expectedEventId": "event-077",
+      "evidence": "苏月刚刚从门卫口中得知，阿岚已经买好明晨驶往西岛的船票。",
+      "horizon": "recent",
+      "rank": 1,
+      "hit": true,
+      "reciprocalRank": 1,
+      "durationMs": 0.04929200000000833,
+      "degraded": false,
+      "legacyHit": true,
+      "baselineAvailable": true,
+      "retrieved": [
+        {
+          "sourceEventId": "event-077",
+          "text": "苏月刚刚从门卫口中得知，阿岚已经买好明晨驶往西岛的船票。",
+          "score": 6.3666060509729565,
+          "matchedTerms": [
+            "阿",
+            "岚",
+            "阿岚"
+          ]
+        },
+        {
+          "sourceEventId": "event-016",
+          "text": "苏月见过阿岚在清晨向穷孩子分发面包，因此开始怀疑他并非只会骗人。",
+          "score": 6.3666060509729565,
+          "matchedTerms": [
+            "阿",
+            "岚",
+            "阿岚"
+          ]
+        },
+        {
+          "sourceEventId": "event-011",
+          "text": "苏月将母亲留下的蓝色丝巾交给阿岚保管，约好离城时取回。",
+          "score": 6.3666060509729565,
+          "matchedTerms": [
+            "阿",
+            "岚",
+            "阿岚"
+          ]
+        },
+        {
+          "sourceEventId": "event-006",
+          "text": "阿岚曾冒充药师骗走苏月的银币。苏月因这次欺骗不愿再借钱给他。",
+          "score": 6.157864868973844,
+          "matchedTerms": [
+            "阿",
+            "岚",
+            "阿岚"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "苏月最新获知阿岚要去哪里？",
+      "view": "character:su",
+      "expectedEventId": "event-077",
+      "evidence": "苏月刚刚从门卫口中得知，阿岚已经买好明晨驶往西岛的船票。",
+      "horizon": "recent",
+      "rank": 2,
+      "hit": true,
+      "reciprocalRank": 0.5,
+      "durationMs": 0.07083399999999074,
+      "degraded": false,
+      "legacyHit": true,
+      "baselineAvailable": true,
+      "retrieved": [
+        {
+          "sourceEventId": "event-006",
+          "text": "阿岚曾冒充药师骗走苏月的银币。苏月因这次欺骗不愿再借钱给他。",
+          "score": 10.726321586572489,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "阿",
+            "岚",
+            "阿岚",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-077",
+          "text": "苏月刚刚从门卫口中得知，阿岚已经买好明晨驶往西岛的船票。",
+          "score": 9.889737926409198,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "阿",
+            "岚",
+            "阿岚",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-016",
+          "text": "苏月见过阿岚在清晨向穷孩子分发面包，因此开始怀疑他并非只会骗人。",
+          "score": 9.889737926409198,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "阿",
+            "岚",
+            "阿岚",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-011",
+          "text": "苏月将母亲留下的蓝色丝巾交给阿岚保管，约好离城时取回。",
+          "score": 9.889737926409198,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "阿",
+            "岚",
+            "阿岚",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-003",
+          "text": "苏月吃桂花后会起疹子。上次她吃了桂花糕，手臂红肿了整晚。",
+          "score": 3.7793596481952405,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "苏月"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "现在通过集市关卡需要出示什么？",
+      "view": "environment",
+      "expectedEventId": "event-078",
+      "evidence": "集市入口刚刚开始实行宵禁，守卫只允许持红色通行证的人通过。",
+      "horizon": "recent",
+      "rank": 1,
+      "hit": true,
+      "reciprocalRank": 1,
+      "durationMs": 0.04550000000000409,
+      "degraded": false,
+      "legacyHit": true,
+      "baselineAvailable": true,
+      "retrieved": [
+        {
+          "sourceEventId": "event-078",
+          "text": "集市入口刚刚开始实行宵禁，守卫只允许持红色通行证的人通过。",
+          "score": 10.018386997568307,
+          "matchedTerms": [
+            "通过",
+            "集",
+            "市"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "为什么普通行人此刻无法进入集市？",
+      "view": "environment",
+      "expectedEventId": "event-078",
+      "evidence": "集市入口刚刚开始实行宵禁，守卫只允许持红色通行证的人通过。",
+      "horizon": "recent",
+      "rank": 1,
+      "hit": true,
+      "reciprocalRank": 1,
+      "durationMs": 0.0619999999999834,
+      "degraded": false,
+      "legacyHit": true,
+      "baselineAvailable": true,
+      "retrieved": [
+        {
+          "sourceEventId": "event-078",
+          "text": "集市入口刚刚开始实行宵禁，守卫只允许持红色通行证的人通过。",
+          "score": 6.678924665045538,
+          "matchedTerms": [
+            "集",
+            "市"
+          ]
+        },
+        {
+          "sourceEventId": "event-013",
+          "text": "废弃磨坊的地下室积满沼气，进入时点火可能引发爆炸。",
+          "score": 3.6700863533914383,
+          "matchedTerms": [
+            "进入"
+          ]
+        },
+        {
+          "sourceEventId": "event-075",
+          "text": "第75次巡查，街角摊贩仍在整理普通杂货，路人谈论今天的天气。众人沿着熟悉的街道慢慢行走，确认没有新的阻碍，然后继续等待后续消息。",
+          "score": 0.2467998844574906,
+          "matchedTerms": [
+            "普通"
+          ]
+        },
+        {
+          "sourceEventId": "event-072",
+          "text": "第72次巡查，街角摊贩仍在整理普通杂货，路人谈论今天的天气。众人沿着熟悉的街道慢慢行走，确认没有新的阻碍，然后继续等待后续消息。",
+          "score": 0.2467998844574906,
+          "matchedTerms": [
+            "普通"
+          ]
+        },
+        {
+          "sourceEventId": "event-069",
+          "text": "第69次巡查，街角摊贩仍在整理普通杂货，路人谈论今天的天气。众人沿着熟悉的街道慢慢行走，确认没有新的阻碍，然后继续等待后续消息。",
+          "score": 0.2467998844574906,
+          "matchedTerms": [
+            "普通"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "林舟现在该循着标记往哪里走？",
+      "view": "character:lin",
+      "expectedEventId": "event-079",
+      "evidence": "林舟刚在墙上发现苏月留下的白粉笔箭头，箭头指向一家关闭的茶馆。",
+      "horizon": "recent",
+      "rank": 5,
+      "hit": true,
+      "reciprocalRank": 0.2,
+      "durationMs": 0.06116699999998332,
+      "degraded": false,
+      "legacyHit": true,
+      "baselineAvailable": true,
+      "retrieved": [
+        {
+          "sourceEventId": "event-010",
+          "text": "林舟左肩被箭擦伤，伤口尚未愈合。他不能用左臂举起沉重的石板。",
+          "score": 4.113105041528369,
+          "matchedTerms": [
+            "林",
+            "舟",
+            "林舟"
+          ]
+        },
+        {
+          "sourceEventId": "event-033",
+          "text": "林舟害怕高处，却仍答应替苏月爬上屋顶修复风向标。",
+          "score": 4.038529118232857,
+          "matchedTerms": [
+            "林",
+            "舟",
+            "林舟"
+          ]
+        },
+        {
+          "sourceEventId": "event-015",
+          "text": "林舟知道商会账本第三页被人替换，真正的金额记录刻在箱底的铜片上。",
+          "score": 4.038529118232857,
+          "matchedTerms": [
+            "林",
+            "舟",
+            "林舟"
+          ]
+        },
+        {
+          "sourceEventId": "event-004",
+          "text": "林舟把开启地窖的铜钥匙放进旧井旁的空酒坛。这件事只有他知道。",
+          "score": 3.9666093515940206,
+          "matchedTerms": [
+            "林",
+            "舟",
+            "林舟"
+          ]
+        },
+        {
+          "sourceEventId": "event-079",
+          "text": "林舟刚在墙上发现苏月留下的白粉笔箭头，箭头指向一家关闭的茶馆。",
+          "score": 3.8972063187612767,
+          "matchedTerms": [
+            "林",
+            "舟",
+            "林舟"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "苏月刚用什么方式为林舟留下方向？",
+      "view": "character:lin",
+      "expectedEventId": "event-079",
+      "evidence": "林舟刚在墙上发现苏月留下的白粉笔箭头，箭头指向一家关闭的茶馆。",
+      "horizon": "recent",
+      "rank": 1,
+      "hit": true,
+      "reciprocalRank": 1,
+      "durationMs": 0.07204199999998195,
+      "degraded": false,
+      "legacyHit": true,
+      "baselineAvailable": true,
+      "retrieved": [
+        {
+          "sourceEventId": "event-079",
+          "text": "林舟刚在墙上发现苏月留下的白粉笔箭头，箭头指向一家关闭的茶馆。",
+          "score": 17.09550078170653,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "刚",
+            "林",
+            "舟",
+            "留下",
+            "林舟",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-033",
+          "text": "林舟害怕高处，却仍答应替苏月爬上屋顶修复风向标。",
+          "score": 10.701314665707022,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "林",
+            "舟",
+            "林舟",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-002",
+          "text": "林舟答应苏月，在落日前将银色项链送回钟楼。这件约定尚未兑现。",
+          "score": 10.326836804508453,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "林",
+            "舟",
+            "林舟",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-031",
+          "text": "林舟把假账本交给追兵，让他们误以为原件已经落入自己手中。真正的账本还在苏月手里。",
+          "score": 9.811810484895068,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "林",
+            "舟",
+            "林舟",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-010",
+          "text": "林舟左肩被箭擦伤，伤口尚未愈合。他不能用左臂举起沉重的石板。",
+          "score": 7.684923371366478,
+          "matchedTerms": [
+            "用",
+            "林",
+            "舟",
+            "林舟"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "苏月与妹妹见面时应该怎样敲门？",
+      "view": "character:su",
+      "expectedEventId": "event-080",
+      "evidence": "苏月刚收到妹妹的纸条：她在西门粮仓等待，暗号是两下轻敲再一下重敲。",
+      "horizon": "recent",
+      "rank": 2,
+      "hit": true,
+      "reciprocalRank": 0.5,
+      "durationMs": 0.06262499999999704,
+      "degraded": false,
+      "legacyHit": true,
+      "baselineAvailable": true,
+      "retrieved": [
+        {
+          "sourceEventId": "event-011",
+          "text": "苏月将母亲留下的蓝色丝巾交给阿岚保管，约好离城时取回。",
+          "score": 6.8742900119542645,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "时",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-080",
+          "text": "苏月刚收到妹妹的纸条：她在西门粮仓等待，暗号是两下轻敲再一下重敲。",
+          "score": 6.411527923047349,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "妹妹",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-014",
+          "text": "苏月曾在雪夜向失散的妹妹许诺，每年冬至都会到南门挂一盏红灯。",
+          "score": 6.411527923047349,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "妹妹",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-006",
+          "text": "阿岚曾冒充药师骗走苏月的银币。苏月因这次欺骗不愿再借钱给他。",
+          "score": 4.568456717598642,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-003",
+          "text": "苏月吃桂花后会起疹子。上次她吃了桂花糕，手臂红肿了整晚。",
+          "score": 3.7793596481952405,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "苏月"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "妹妹最新约苏月在哪里碰面？",
+      "view": "character:su",
+      "expectedEventId": "event-080",
+      "evidence": "苏月刚收到妹妹的纸条：她在西门粮仓等待，暗号是两下轻敲再一下重敲。",
+      "horizon": "recent",
+      "rank": 2,
+      "hit": true,
+      "reciprocalRank": 0.5,
+      "durationMs": 0.06337499999997931,
+      "degraded": false,
+      "legacyHit": true,
+      "baselineAvailable": true,
+      "retrieved": [
+        {
+          "sourceEventId": "event-011",
+          "text": "苏月将母亲留下的蓝色丝巾交给阿岚保管，约好离城时取回。",
+          "score": 6.8742900119542645,
+          "matchedTerms": [
+            "约",
+            "苏",
+            "月",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-080",
+          "text": "苏月刚收到妹妹的纸条：她在西门粮仓等待，暗号是两下轻敲再一下重敲。",
+          "score": 6.411527923047349,
+          "matchedTerms": [
+            "妹妹",
+            "苏",
+            "月",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-014",
+          "text": "苏月曾在雪夜向失散的妹妹许诺，每年冬至都会到南门挂一盏红灯。",
+          "score": 6.411527923047349,
+          "matchedTerms": [
+            "妹妹",
+            "苏",
+            "月",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-006",
+          "text": "阿岚曾冒充药师骗走苏月的银币。苏月因这次欺骗不愿再借钱给他。",
+          "score": 4.568456717598642,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "苏月"
+          ]
+        },
+        {
+          "sourceEventId": "event-003",
+          "text": "苏月吃桂花后会起疹子。上次她吃了桂花糕，手臂红肿了整晚。",
+          "score": 3.7793596481952405,
+          "matchedTerms": [
+            "苏",
+            "月",
+            "苏月"
+          ]
+        }
+      ]
+    }
+  ],
+  "acceptance": {
+    "recallAt5": true,
+    "notWorseThanOldKeyword": true,
+    "zeroNetwork": true,
+    "zeroLeaks": true,
+    "persistence": true,
+    "roundLatency": true
+  }
+}

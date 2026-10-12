@@ -20,5 +20,8 @@
     "情报与行动协调"
   ],
   "speech": "简短准确，不用情绪替代事实。",
-  "image": null
+  "image": {
+    "src": "/assets/portraits/dragon-raja/sakura-yabuki.png",
+    "alt": "矢吹樱的人物立绘"
+  }
 }

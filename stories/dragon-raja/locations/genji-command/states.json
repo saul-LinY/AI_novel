@@ -13,6 +13,15 @@
         "src": "/assets/scenes/dragon-raja/genji-command.png",
         "alt": "源氏重工指挥层的环境画面"
       }
+    },
+    {
+      "id": "alert",
+      "title": "红色警戒",
+      "description": "指挥层亮起红色警戒，整面监控墙上的城市地图闪着追踪光点，长桌边已经空了。",
+      "image": {
+        "src": "/assets/scenes/dragon-raja/genji-command-alert.png",
+        "alt": "源氏重工指挥层：红色警戒"
+      }
     }
   ]
 }

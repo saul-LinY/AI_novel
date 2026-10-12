@@ -20,5 +20,8 @@
     "医学与血统研究知识"
   ],
   "speech": "语气平稳慈祥，习惯用家族责任包装命令。",
-  "image": null
+  "image": {
+    "src": "/assets/portraits/dragon-raja/tachibana-masamune.png",
+    "alt": "橘政宗的人物立绘"
+  }
 }

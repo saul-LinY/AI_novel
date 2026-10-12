@@ -61,3 +61,21 @@ test("质量校验允许隔回合回到相同的行动集合", () => {
 test("质量校验接受有新后果和新选项的回合", () => {
   assert.doesNotThrow(() => validateTurnQuality({ action: "继续检查", prose, proposal, recentEvents: [] }));
 });
+
+test("正文评估：整段重复自动折叠，过短与重复上一回合只记录问题", async () => {
+  const { assessProse } = await import("../src/story-quality.js");
+  const repeated = assessProse({ prose: prose.repeat(2), min: 10, max: 520 });
+  assert.equal(repeated.prose, prose);
+  assert.deepEqual(repeated.issues.map((issue) => issue.code), ["collapsed_repeat"]);
+  const short = assessProse({ prose, min: 300, max: 520 });
+  assert.equal(short.issues[0].code, "too_short");
+  const duplicate = assessProse({ prose, previousProse: prose, min: 10, max: 520 });
+  assert.ok(duplicate.issues.some((issue) => issue.code === "duplicate_previous"));
+});
+
+test("选项质量在工具循环内拦截重复项与整组重复，结局回合跳过", async () => {
+  const { validateChoiceQuality } = await import("../src/story-quality.js");
+  assert.throws(() => validateChoiceQuality({ proposal: { choices: [proposal.choices[0], proposal.choices[0]] } }), /重复选项/);
+  assert.throws(() => validateChoiceQuality({ proposal, recentEvents: [{ choices: proposal.choices }] }), /完全重复/);
+  assert.doesNotThrow(() => validateChoiceQuality({ proposal: { ...proposal, ending: {}, choices: [] } }));
+});

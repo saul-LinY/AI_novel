@@ -1,0 +1,1234 @@
+{
+  "note": "序幕漫画分镜脚本（唯一事实源）。scripts/build-comic.js 由此生成 comic/pages.json、background/beats.json 和 art/manifest.json 中的 comic 任务。scene 为中文分镜说明（对玩家可见），shot 为英文画面指令（仅用于生图）。绘梨衣的台词以她手中笔记本上的方框字呈现。",
+  "acts": [
+    {
+      "title": "第一幕 · 入境与戒备",
+      "pages": [
+        1,
+        5
+      ]
+    },
+    {
+      "title": "第二幕 · 任务崩塌",
+      "pages": [
+        6,
+        8
+      ]
+    },
+    {
+      "title": "第三幕 · 出走与相遇",
+      "pages": [
+        9,
+        13
+      ]
+    },
+    {
+      "title": "第四幕 · 借来的日常",
+      "pages": [
+        14,
+        18
+      ]
+    }
+  ],
+  "pages": [
+    {
+      "id": "comic-tokyo-arrival",
+      "title": "风雨入境",
+      "location": "东京上空与羽田机场",
+      "time": "台风夜",
+      "characters": [
+        "lu-mingfei",
+        "caesar",
+        "chu-zihang",
+        "gen-chisei"
+      ],
+      "caption": "台风夜，卡塞尔学院的三人行动组降落东京。接机的是蛇岐八家少主源稚生——礼貌周到，也寸步不让。",
+      "continuity": "三人穿便装外套登机；源稚生黑西装黑风衣、撑黑伞。暴雨贯穿全页。",
+      "cause": "卡塞尔学院派路明非、凯撒、楚子航前往东京，与日本分部蛇岐八家联合执行深海任务。",
+      "effect": "三人被黑色车队直接接往源氏重工，还没落脚就进入了家族的规则。",
+      "panels": [
+        {
+          "scene": "客机穿过台风云层，下方东京灯海",
+          "shot": "Wide shot: an airliner descending through dark typhoon clouds, lightning, the glittering grid of Tokyo far below.",
+          "lines": [
+            {
+              "speaker": "旁白",
+              "text": "台风夜，东京在云层下发亮。"
+            }
+          ]
+        },
+        {
+          "scene": "机舱内，凯撒合上任务简报，路明非缩在座位里",
+          "shot": "Airplane cabin interior: Caesar (blond) closes a black mission folder with a confident smirk; Lu Mingfei slumps in the next seat looking nervous.",
+          "lines": [
+            {
+              "speaker": "凯撒",
+              "text": "落地以后，学院的简报先信一半。"
+            },
+            {
+              "speaker": "路明非",
+              "text": "剩下一半够我们活着回去吗？"
+            }
+          ]
+        },
+        {
+          "scene": "楚子航望向满是雨痕的舷窗",
+          "shot": "Close-up: Chu Zihang in profile beside a rain-streaked airplane window, calm sharp eyes.",
+          "lines": [
+            {
+              "speaker": "楚子航",
+              "text": "日本分部没有确认接机人。"
+            }
+          ]
+        },
+        {
+          "scene": "机场到达口，一排黑色轿车停在暴雨里，源稚生撑伞等候",
+          "shot": "Airport arrival curb at night in heavy rain: a row of identical black sedans, black-suited men holding umbrellas; Gen Chisei in front under a black umbrella, facing the three arriving students.",
+          "lines": [
+            {
+              "speaker": "源稚生",
+              "text": "欢迎来到东京。在这里，请遵守家族的规则。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "comic-genji-meeting",
+      "title": "源氏重工",
+      "location": "源氏重工大厦",
+      "time": "同一夜",
+      "characters": [
+        "lu-mingfei",
+        "caesar",
+        "chu-zihang",
+        "gen-chisei"
+      ],
+      "caption": "车队把他们送进源氏重工。会议桌两端，学院要完整资料，家族只给必要部分——戒心比雨更早落下。",
+      "continuity": "承接上一页的黑色车队与雨夜；三人外套仍是湿的。",
+      "cause": "黑色车队把三人直接接往源氏重工。",
+      "effect": "会谈不欢而散，大厦深处一个不在简报上的楼层引起了注意。",
+      "panels": [
+        {
+          "scene": "黑色车队驶入源氏重工楼下，两列黑衣成员列队",
+          "shot": "The black sedans arrive at the foot of a towering black skyscraper in the rain; two long rows of black-suited family members bow. Lu Mingfei steps out looking uneasy.",
+          "lines": [
+            {
+              "speaker": "路明非",
+              "text": "这不像接待，像把我们送进刀鞘。"
+            }
+          ]
+        },
+        {
+          "scene": "会议桌两端，凯撒与源稚生对视",
+          "shot": "Long dark conference table, city lights through glass wall: Caesar on one end leaning forward, Gen Chisei on the other end, sitting straight and cold.",
+          "lines": [
+            {
+              "speaker": "凯撒",
+              "text": "学院需要完整的资料。"
+            },
+            {
+              "speaker": "源稚生",
+              "text": "家族只交出任务必需的部分。"
+            }
+          ]
+        },
+        {
+          "scene": "楚子航抬眼看向天花板上的监控探头",
+          "shot": "Chu Zihang glancing up at a ceiling security camera with a small red light; reflection of keycard locks on doors.",
+          "lines": [
+            {
+              "speaker": "楚子航",
+              "text": "每扇门都要内部权限。"
+            }
+          ]
+        },
+        {
+          "scene": "电梯按键面板上，一个楼层按键亮着红色锁标",
+          "shot": "Close-up of an elegant brass elevator button panel; one high-floor button is covered by a small red lock symbol and glows faintly. No readable numbers.",
+          "lines": [
+            {
+              "speaker": "旁白",
+              "text": "这栋楼里还有一个名字，不在任何简报上。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "comic-erii-room",
+      "title": "高楼里的女孩",
+      "location": "源氏重工深处·绘梨衣的房间",
+      "time": "同一夜",
+      "characters": [
+        "erii",
+        "gen-chisei"
+      ],
+      "caption": "那个上锁的楼层里住着上杉家主绘梨衣。家族称她家主，她的生活却被房门、药物和监控划得很小。",
+      "continuity": "绘梨衣穿白衣绯袴巫女服；房间有游戏机、玩偶和装着栏杆的落地窗，窗外是雨夜东京。",
+      "cause": "上一页上锁的楼层。",
+      "effect": "源稚生许诺了“下一次”，绘梨衣独自望着窗外的城市。",
+      "panels": [
+        {
+          "scene": "安静的房间里，绘梨衣独自打游戏",
+          "shot": "Erii in her white-and-red miko outfit sits alone in a dim luxurious room playing a video game on a large screen with a controller; plush toys and game boxes around.",
+          "lines": [
+            {
+              "speaker": "旁白",
+              "text": "上锁的楼层里，上杉家主正在打游戏。"
+            }
+          ]
+        },
+        {
+          "scene": "源稚生带着药盒推门进来",
+          "shot": "Gen Chisei opening the door, holding a small black medicine case, his face softer than before.",
+          "lines": [
+            {
+              "speaker": "源稚生",
+              "text": "今天感觉怎么样？"
+            }
+          ]
+        },
+        {
+          "scene": "绘梨衣举起笔记本给哥哥看",
+          "shot": "Erii holds up her small notebook toward her brother; her line appears as handwritten words in a square note box beside the notebook.",
+          "lines": [
+            {
+              "speaker": "绘梨衣",
+              "text": "还想再玩一局。"
+            }
+          ]
+        },
+        {
+          "scene": "源稚生站在装着栏杆的窗边递出药",
+          "shot": "Gen Chisei by a tall barred window with rainy Tokyo skyline, holding out the medicine case.",
+          "lines": [
+            {
+              "speaker": "源稚生",
+              "text": "先吃药。下次给你带新游戏。"
+            }
+          ]
+        },
+        {
+          "scene": "门重新合上，绘梨衣独自望着窗外，墙角监控亮着红点",
+          "shot": "Back view: Erii alone at the barred window looking at the rainy city; the door closed behind her; a security camera red dot in the corner.",
+          "lines": [
+            {
+              "speaker": "旁白",
+              "text": "他答应了下一次，却没说下一次是哪天。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "comic-judgment",
+      "title": "言灵·审判",
+      "location": "源氏重工地下训练场",
+      "time": "次日",
+      "characters": [
+        "erii",
+        "gen-chisei"
+      ],
+      "caption": "次日，地下训练场的隔离门被撞开。绘梨衣不能随意开口——她的言灵会把一句话变成死亡命令。",
+      "continuity": "绘梨衣仍穿巫女服，手持长刀；源稚生黑西装、持刀挡在众人前。红色警报灯。",
+      "cause": "家族需要在任务前确认绘梨衣的状态。",
+      "effect": "危机被一瞬间解除，所有人更加畏惧她，她只想回房间。",
+      "panels": [
+        {
+          "scene": "红色警报中，失控的死侍撞破隔离门",
+          "shot": "Underground training hall under red alarm lights: a feral dark scaled humanoid creature smashing through a heavy steel isolation door, debris flying.",
+          "lines": [
+            {
+              "speaker": "警报",
+              "text": "隔离失效！"
+            }
+          ]
+        },
+        {
+          "scene": "家族成员后退，源稚生持刀挡在最前",
+          "shot": "Black-suited family members backing away in fear; Gen Chisei steps forward with a drawn katana, arm out to hold others back.",
+          "lines": [
+            {
+              "speaker": "源稚生",
+              "text": "所有人，退出她的领域。"
+            }
+          ]
+        },
+        {
+          "scene": "绘梨衣握刀，瞳色加深，嘴唇将启",
+          "shot": "Extreme close-up of Erii's face: rose-red eyes deepening to glowing crimson, lips just parting, strands of crimson hair floating.",
+          "lines": [
+            {
+              "speaker": "旁白",
+              "text": "她只需要说一个字。"
+            }
+          ]
+        },
+        {
+          "scene": "无形的切线划过空间，怪物骤然静止",
+          "shot": "Dynamic wide shot: thin luminous invisible cutting lines slice across the hall; the creature freezes mid-leap. Tasteful, no gore.",
+          "lines": [
+            {
+              "speaker": "旁白",
+              "text": "她没有提高声音，世界却服从了。"
+            }
+          ]
+        },
+        {
+          "scene": "战斗结束，绘梨衣放下刀，举起笔记本",
+          "shot": "Aftermath: Erii lowers her sword and lifts her notebook toward Gen Chisei with an innocent expression; her line in a square note box.",
+          "lines": [
+            {
+              "speaker": "绘梨衣",
+              "text": "可以回房间了吗？"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "comic-siblings",
+      "title": "哥哥与家主",
+      "location": "源氏重工医疗室",
+      "time": "同日",
+      "characters": [
+        "erii",
+        "gen-chisei",
+        "tachibana-masamune"
+      ],
+      "caption": "使用言灵之后照例要采血。源稚生想把妹妹留在安全处，家族却需要上杉家主的力量；爱与职责在他身上从未真正分开。",
+      "continuity": "承接训练场之后；绘梨衣换回干净的巫女服坐在医疗室玻璃后。橘政宗穿深色和服羽织。",
+      "cause": "言灵使用后的例行检查。",
+      "effect": "治疗记录里留下了一段没有解释的空白。",
+      "panels": [
+        {
+          "scene": "医疗室里，医生从绘梨衣手臂采血，源稚生在旁看着",
+          "shot": "Clean white-and-black medical room: a masked doctor draws blood from Erii's arm into several vials; Gen Chisei stands watching, frowning.",
+          "lines": [
+            {
+              "speaker": "源稚生",
+              "text": "采血量为什么又增加了？"
+            }
+          ]
+        },
+        {
+          "scene": "橘政宗合上记录夹，神情慈和",
+          "shot": "Tachibana Masamune, grey-haired elder in a dark haori, gently closes a medical file folder with a kind grandfatherly smile.",
+          "lines": [
+            {
+              "speaker": "橘政宗",
+              "text": "为了让她稳定，这是必要的。"
+            }
+          ]
+        },
+        {
+          "scene": "绘梨衣隔着玻璃看着两人争执",
+          "shot": "Through a glass partition: Erii watches the two men talking on the other side; her notebook note in a square box.",
+          "lines": [
+            {
+              "speaker": "绘梨衣",
+              "text": "哥哥在生气。"
+            }
+          ]
+        },
+        {
+          "scene": "源稚生回到妹妹身边，恢复平静",
+          "shot": "Gen Chisei crouches beside Erii, composing a calm face for her.",
+          "lines": [
+            {
+              "speaker": "源稚生",
+              "text": "没有。只是工作。"
+            }
+          ]
+        },
+        {
+          "scene": "特写：记录表上几行空白，一只手按在上面",
+          "shot": "Close-up: a medical log sheet with several blank rows (no readable text) and an elderly hand resting on it.",
+          "lines": [
+            {
+              "speaker": "旁白",
+              "text": "有些问题，被家族的礼节轻轻盖住了。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "comic-underwater-mission",
+      "title": "海底任务",
+      "location": "东京湾外海与指挥船",
+      "time": "三日后·风暴夜",
+      "characters": [
+        "lu-mingfei",
+        "caesar",
+        "chu-zihang",
+        "gen-chisei",
+        "erii"
+      ],
+      "caption": "联合行动当夜，三人乘潜水器潜入黑水；指挥船上，源稚生坐镇，绘梨衣作为最后的保险在场。",
+      "continuity": "三人换上深色潜水作业服；指挥船上的绘梨衣巫女服外披透明雨衣。",
+      "cause": "卡塞尔与蛇岐八家按计划执行深海任务，但双方都没有交出全部情报。",
+      "effect": "海底的东西比情报多得多；绘梨衣第一次在屏幕上记住了路明非的脸。",
+      "panels": [
+        {
+          "scene": "风暴海面上，母船吊放潜水器",
+          "shot": "Night storm at sea: a large support ship lowering a small deep-sea submersible on a crane into black waves, floodlights.",
+          "lines": [
+            {
+              "speaker": "旁白",
+              "text": "联合行动那晚，台风还没有走远。"
+            }
+          ]
+        },
+        {
+          "scene": "潜水器舱内，凯撒、路明非、楚子航身穿潜水作业服",
+          "shot": "Cramped submersible cabin lit by instruments: Caesar, Lu Mingfei and Chu Zihang in dark diving work suits; Caesar speaks into a headset.",
+          "lines": [
+            {
+              "speaker": "凯撒",
+              "text": "保持通信，有异常立刻上报。"
+            }
+          ]
+        },
+        {
+          "scene": "路明非盯着声呐屏幕上越来越多的光点",
+          "shot": "Lu Mingfei staring at a green sonar screen covered with dozens of blips, sweating.",
+          "lines": [
+            {
+              "speaker": "路明非",
+              "text": "下面的东西……是不是太多了？"
+            }
+          ]
+        },
+        {
+          "scene": "楚子航核对读数，眼神一沉",
+          "shot": "Chu Zihang checking instrument readings, eyes narrowing.",
+          "lines": [
+            {
+              "speaker": "楚子航",
+              "text": "不是噪点。它们在靠近。"
+            }
+          ]
+        },
+        {
+          "scene": "指挥船监控室，源稚生下令；绘梨衣盯着屏幕上路明非的脸",
+          "shot": "Ship command room full of monitors: Gen Chisei (24-year-old, short BLACK hair swept back, black suit and long black coat — NOT grey-haired, NOT old) shouting an order into a headset; beside him Erii in her miko outfit with a clear raincoat, gazing at a monitor showing Lu Mingfei's face while writing in her notebook.",
+          "lines": [
+            {
+              "speaker": "源稚生",
+              "text": "切换备用线路！"
+            },
+            {
+              "speaker": "旁白",
+              "text": "绘梨衣在本子上，给屏幕里的男生写下一个名字。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "comic-mission-collapse",
+      "title": "计划崩塌",
+      "location": "风暴海面与指挥船甲板",
+      "time": "同一夜",
+      "characters": [
+        "erii",
+        "gen-chisei",
+        "caesar",
+        "lu-mingfei"
+      ],
+      "caption": "尸守群包围了潜水器。绘梨衣没有等命令——她救下了所有人，联合行动也在互相指责中失去最后的信任。",
+      "continuity": "承接上一页的声呐光点；暴雨甲板，绘梨衣持刀站在船舷。",
+      "cause": "海底聚集的尸守远超双方共享的情报。",
+      "effect": "众人生还，但卡塞尔与家族公开互相指责对方隐瞒风险。",
+      "panels": [
+        {
+          "scene": "尸守群从黑暗中涌向潜水器的探照灯",
+          "shot": "Underwater: swarms of pale, skeletal dragon-like undead shapes rushing out of darkness toward the submersible's searchlights.",
+          "lines": [
+            {
+              "speaker": "凯撒",
+              "text": "准备弃艇！"
+            }
+          ]
+        },
+        {
+          "scene": "暴雨甲板上，绘梨衣持刀站在船舷，源稚生在后方",
+          "shot": "Storm-lashed ship deck at night: Erii in miko outfit stands at the railing gripping a katana, hair whipping; Gen Chisei behind her reaching out.",
+          "lines": [
+            {
+              "speaker": "源稚生",
+              "text": "等我的命令。"
+            }
+          ]
+        },
+        {
+          "scene": "绘梨衣眼中倒映着求救信号的红光",
+          "shot": "Close-up of Erii's eyes reflecting a blinking red distress beacon.",
+          "lines": [
+            {
+              "speaker": "旁白",
+              "text": "她没有等。"
+            }
+          ]
+        },
+        {
+          "scene": "审判掠过海面，尸守的影子被齐齐切断",
+          "shot": "Epic wide shot: a luminous horizontal line sweeps across the stormy sea surface; dark silhouettes below the waves are cut and scattered. No gore.",
+          "lines": [
+            {
+              "speaker": "旁白",
+              "text": "她救下了所有人，也让所有人想起她能毁掉什么。"
+            }
+          ]
+        },
+        {
+          "scene": "分格对峙：救生艇上浑身湿透的凯撒与通讯另一端的源稚生",
+          "shot": "Split diagonal panel: left, soaked Caesar on a rescue boat shouting into a radio with Lu Mingfei behind him; right, Gen Chisei in the command room answering coldly.",
+          "lines": [
+            {
+              "speaker": "凯撒",
+              "text": "你们隐瞒了风险。"
+            },
+            {
+              "speaker": "源稚生",
+              "text": "学院也一样。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "comic-break-with-family",
+      "title": "合作破裂",
+      "location": "源氏重工会议室与东京街头",
+      "time": "次日夜",
+      "characters": [
+        "lu-mingfei",
+        "caesar",
+        "chu-zihang",
+        "gen-chisei"
+      ],
+      "caption": "任务结束没有带来安全。卡塞尔小组与日本分部公开决裂，昔日接机的车队变成了搜捕者。",
+      "continuity": "回到第二页的会议室，同一张长桌；三人换回便装外套。结尾三人在雨夜街口分散。",
+      "cause": "失败的任务让双方都在追查对方隐瞒了什么。",
+      "effect": "三人冲出大厦后在雨夜中失散，路明非独自逃亡。",
+      "panels": [
+        {
+          "scene": "会议室里，行动记录被锁进保险柜",
+          "shot": "The same long conference room as before: black-suited staff locking stacks of files into a steel safe; Chu Zihang watching from the doorway.",
+          "lines": [
+            {
+              "speaker": "楚子航",
+              "text": "他们在销毁行动记录。"
+            }
+          ]
+        },
+        {
+          "scene": "凯撒把文件推回桌面",
+          "shot": "Caesar slams a file back across the table toward Gen Chisei.",
+          "lines": [
+            {
+              "speaker": "凯撒",
+              "text": "到此为止。我们自己查。"
+            }
+          ]
+        },
+        {
+          "scene": "源稚生下令封锁出口",
+          "shot": "Gen Chisei standing, issuing an order; armed men moving to block the doors.",
+          "lines": [
+            {
+              "speaker": "源稚生",
+              "text": "没有家族许可，谁也不能离开。"
+            }
+          ]
+        },
+        {
+          "scene": "电梯门打开，双方同时拔出武器，路明非夹在中间",
+          "shot": "Elevator doors slide open: family guards and Caesar/Chu draw weapons at the same time; Lu Mingfei caught in the middle with hands half-raised.",
+          "lines": [
+            {
+              "speaker": "路明非",
+              "text": "我就知道接机车队不是福利。"
+            }
+          ]
+        },
+        {
+          "scene": "三人冲进东京雨夜，在路口被追兵冲散",
+          "shot": "Wide high-angle shot: three small figures running out into a neon-lit rainy Tokyo intersection, black sedans with headlights closing in, the three splitting in different directions.",
+          "lines": [
+            {
+              "speaker": "旁白",
+              "text": "合作结束了。东京却没有出口。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "comic-erii-leaves",
+      "title": "小怪兽出走",
+      "location": "绘梨衣的房间与电梯",
+      "time": "同一夜",
+      "characters": [
+        "erii"
+      ],
+      "caption": "绘梨衣从监控里看见那个男生被追捕。她第一次没有等哥哥回来，而是自己打开了门。",
+      "continuity": "回到第三页的房间；本页中段起绘梨衣换上白色连衣裙和米色短外套，背小背包——此后一直保持这身打扮。",
+      "cause": "监控画面里，路明非正在雨夜中被家族追捕。",
+      "effect": "绘梨衣带着药、本子和小黄鸭离开了源氏重工。",
+      "panels": [
+        {
+          "scene": "房间屏幕上闪过路明非在雨中奔逃的监控画面",
+          "shot": "Erii (miko outfit) in her dim room facing a monitor showing grainy surveillance footage of Lu Mingfei running in the rain; her notebook note in a square box.",
+          "lines": [
+            {
+              "speaker": "绘梨衣",
+              "text": "他被追了。"
+            }
+          ]
+        },
+        {
+          "scene": "她换上白裙，把药盒、本子和小黄鸭装进背包",
+          "shot": "Erii now wearing a simple white dress and short beige jacket, packing a small backpack: a black medicine case, her notebook, and a yellow rubber duck.",
+          "lines": [
+            {
+              "speaker": "旁白",
+              "text": "她只带上自己认为重要的东西。"
+            }
+          ]
+        },
+        {
+          "scene": "守卫拦在电梯前",
+          "shot": "A nervous black-suited guard bowing but blocking the elevator door in a corridor.",
+          "lines": [
+            {
+              "speaker": "守卫",
+              "text": "家主，请回房间。"
+            }
+          ]
+        },
+        {
+          "scene": "绘梨衣举起本子，守卫冷汗涔涔地让开",
+          "shot": "Erii holds up her notebook firmly; the guard sweats and steps aside.",
+          "lines": [
+            {
+              "speaker": "绘梨衣",
+              "text": "我要出去。"
+            }
+          ]
+        },
+        {
+          "scene": "电梯下行，她手机上亮着哥哥的未接来电",
+          "shot": "Inside a descending elevator: Erii hugging her backpack, her phone screen glowing with a missed-call icon.",
+          "lines": [
+            {
+              "speaker": "旁白",
+              "text": "这是她第一次离开家，不是为了执行命令。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "comic-rain-encounter",
+      "title": "雨夜相遇",
+      "location": "东京街区·便利店前",
+      "time": "同一夜",
+      "characters": [
+        "lu-mingfei",
+        "erii"
+      ],
+      "caption": "与同伴失散的路明非躲在便利店檐下，却在雨幕对面看见了离家出走的绘梨衣。",
+      "continuity": "路明非湿透的深蓝连帽夹克；绘梨衣白裙米色外套、背小背包。霓虹雨夜。",
+      "cause": "路明非与同伴失散；绘梨衣循着监控画面找到了他。",
+      "effect": "追兵逼近，两人一起逃进人群。",
+      "panels": [
+        {
+          "scene": "路明非躲在便利店檐下查看没有信号的手机",
+          "shot": "Soaked Lu Mingfei crouching under a glowing convenience-store awning at night, staring at his phone with no signal.",
+          "lines": [
+            {
+              "speaker": "路明非",
+              "text": "没信号、没钱、被黑道追。东京旅游项目真全。"
+            }
+          ]
+        },
+        {
+          "scene": "雨幕对面，白裙的绘梨衣静静站着",
+          "shot": "Across a rainy neon street, Erii in her white dress and beige jacket stands still in the rain looking at him; Lu looks up, stunned.",
+          "lines": [
+            {
+              "speaker": "路明非",
+              "text": "……你怎么在这里？"
+            }
+          ]
+        },
+        {
+          "scene": "她把本子举到胸前",
+          "shot": "Close-up: Erii holding her notebook against her chest, raindrops on her hair; her note in a square box.",
+          "lines": [
+            {
+              "speaker": "绘梨衣",
+              "text": "来找 Sakura。"
+            }
+          ]
+        },
+        {
+          "scene": "路明非愣住；远处黑色轿车拐入街口",
+          "shot": "Lu Mingfei pointing at himself, bewildered; in the background black sedans with headlights turn into the street.",
+          "lines": [
+            {
+              "speaker": "路明非",
+              "text": "Sakura？……是在叫我？"
+            }
+          ]
+        },
+        {
+          "scene": "他拉住她的手腕，两人挤进伞海般的人群",
+          "shot": "Lu grabs Erii's wrist and the two run into a dense crowd of umbrellas under neon signs.",
+          "lines": [
+            {
+              "speaker": "路明非",
+              "text": "先走！解释等我喘过气再说。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "comic-hotel-hiding",
+      "title": "临时藏身处",
+      "location": "东京主题旅馆",
+      "time": "深夜",
+      "characters": [
+        "lu-mingfei",
+        "erii"
+      ],
+      "caption": "主题旅馆隔开了追捕，却隔不开尴尬和责任。路明非开始意识到，绘梨衣把选择交给了自己。",
+      "continuity": "两人仍湿着；旅馆房间装饰俗艳可爱（星空灯、鸭子形台灯），窗外雨。",
+      "cause": "逃亡中两人需要一个不用证件的落脚处。",
+      "effect": "绘梨衣毫无保留地信任路明非，他却无处可逃。",
+      "panels": [
+        {
+          "scene": "旅馆前台，路明非局促地办理入住",
+          "shot": "Small kitschy themed hotel front desk with a tiny window; Lu Mingfei awkwardly paying with crumpled bills, Erii looking around curiously behind him.",
+          "lines": [
+            {
+              "speaker": "路明非",
+              "text": "一间房。我们……只是躲雨。"
+            }
+          ]
+        },
+        {
+          "scene": "房间里，绘梨衣认真研究陌生的设施",
+          "shot": "Colorful kitschy hotel room with starry ceiling lights and a duck-shaped lamp; Erii pressing buttons curiously; her note in a square box.",
+          "lines": [
+            {
+              "speaker": "绘梨衣",
+              "text": "这里不是家。"
+            }
+          ]
+        },
+        {
+          "scene": "路明非把一袋薯条推到她面前",
+          "shot": "Lu Mingfei sitting on the floor pushing a paper bag of fries toward her with a lopsided grin.",
+          "lines": [
+            {
+              "speaker": "路明非",
+              "text": "不是家更好，家里不送薯条。"
+            }
+          ]
+        },
+        {
+          "scene": "绘梨衣在本子上写下一句话",
+          "shot": "Erii writing in her notebook and turning it to show him; her note in a square box.",
+          "lines": [
+            {
+              "speaker": "绘梨衣",
+              "text": "Sakura 是好人。"
+            }
+          ]
+        },
+        {
+          "scene": "路明非看着那行字沉默，窗外雨声不停",
+          "shot": "Lu Mingfei silent, looking at the notebook, rain streaming down the window behind him.",
+          "lines": [
+            {
+              "speaker": "旁白",
+              "text": "被人相信，比被人追捕更让他无处可逃。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "comic-conflicting-orders",
+      "title": "两边的命令",
+      "location": "主题旅馆·卡塞尔安全屋·源氏重工指挥层",
+      "time": "同一深夜",
+      "characters": [
+        "lu-mingfei",
+        "erii",
+        "caesar",
+        "gen-chisei"
+      ],
+      "caption": "凯撒要路明非把绘梨衣带离日本，源稚生在全城寻找妹妹。双方都在说保护，给出的方向却完全相反。",
+      "continuity": "同一旅馆房间；凯撒在安全屋（裸露砖墙、地图）；源稚生在指挥层大屏前。",
+      "cause": "路明非用加密手机联系上凯撒。",
+      "effect": "路明非没有把电话内容告诉绘梨衣。",
+      "panels": [
+        {
+          "scene": "路明非躲在浴室压低声音打电话；凯撒在安全屋",
+          "shot": "Split panel: Lu Mingfei whispering into an encrypted phone in a small hotel bathroom; Caesar in a brick-walled safehouse with maps on the wall.",
+          "lines": [
+            {
+              "speaker": "凯撒",
+              "text": "带她来会合点，学院安排离境。"
+            }
+          ]
+        },
+        {
+          "scene": "路明非压低声音反问",
+          "shot": "Close-up of Lu Mingfei's worried face lit by the phone screen.",
+          "lines": [
+            {
+              "speaker": "路明非",
+              "text": "她离不开家族的药。你的计划里有药吗？"
+            }
+          ]
+        },
+        {
+          "scene": "源氏重工指挥层，源稚生在大屏地图上圈出搜索区",
+          "shot": "Command floor with a giant screen city map: Gen Chisei marking search zones, staff behind him.",
+          "lines": [
+            {
+              "speaker": "源稚生",
+              "text": "找到她以后不准动武。先把血清送过去。"
+            }
+          ]
+        },
+        {
+          "scene": "浴室门外，绘梨衣举着本子",
+          "shot": "Erii standing just outside the half-open bathroom door, holding up her notebook; her note in a square box.",
+          "lines": [
+            {
+              "speaker": "绘梨衣",
+              "text": "哥哥要我回去吗？"
+            }
+          ]
+        },
+        {
+          "scene": "路明非握着挂断的手机，没有回答",
+          "shot": "Lu Mingfei holding the dark phone, not answering, eyes lowered.",
+          "lines": [
+            {
+              "speaker": "旁白",
+              "text": "隐瞒能换来几分钟平静，也会花掉一点信任。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "comic-serum-countdown",
+      "title": "药物倒计时",
+      "location": "主题旅馆",
+      "time": "黎明",
+      "characters": [
+        "lu-mingfei",
+        "erii"
+      ],
+      "caption": "最后一支血清把浪漫变成了可以计算的时间。无论去哪里，都必须先承认绘梨衣身体的边界。",
+      "continuity": "同一旅馆房间，窗外天色发青；药盒是第九页带出的黑色药盒。",
+      "cause": "离开家族后，药效开始减弱。",
+      "effect": "绘梨衣决定把最后一支药留到明天，先过一个普通的今天。",
+      "panels": [
+        {
+          "scene": "清晨，绘梨衣握本子的手指轻轻颤抖",
+          "shot": "Pale dawn light: close-up of Erii's fingers trembling slightly as she holds her notebook; Lu Mingfei noticing.",
+          "lines": [
+            {
+              "speaker": "路明非",
+              "text": "你不舒服？"
+            }
+          ]
+        },
+        {
+          "scene": "药盒打开，只剩一支针剂",
+          "shot": "The black medicine case open on the bed, foam slots empty except for a single glass ampoule; Erii's note in a square box.",
+          "lines": [
+            {
+              "speaker": "绘梨衣",
+              "text": "还能走。"
+            }
+          ]
+        },
+        {
+          "scene": "路明非盯着说明书和时间",
+          "shot": "Lu Mingfei holding the instruction leaflet, looking at the clock with a serious face.",
+          "lines": [
+            {
+              "speaker": "路明非",
+              "text": "能走和该走，不是一回事。"
+            }
+          ]
+        },
+        {
+          "scene": "绘梨衣把针剂推回药盒",
+          "shot": "Erii gently pushing the ampoule back into the case and closing it; her note in a square box.",
+          "lines": [
+            {
+              "speaker": "绘梨衣",
+              "text": "今天以后再用。"
+            }
+          ]
+        },
+        {
+          "scene": "窗外第一班电车驶过",
+          "shot": "Through the window: the first morning train passing over an elevated track at dawn, the two silhouettes inside the room.",
+          "lines": [
+            {
+              "speaker": "旁白",
+              "text": "她想把最后的安全留给明天，先拥有一个今天。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "comic-ordinary-morning",
+      "title": "普通的早晨",
+      "location": "早高峰电车与快餐店",
+      "time": "早晨",
+      "characters": [
+        "lu-mingfei",
+        "erii"
+      ],
+      "caption": "他们混进上班人群，像两个没有任务、也没有家族的人。普通生活的细节第一次成为故事本身。",
+      "continuity": "承接上一页的早班电车；两人同样服装，绘梨衣背小背包。",
+      "cause": "绘梨衣想先拥有一个普通的今天。",
+      "effect": "两人度过了一个平凡的早晨，追捕暂时远去。",
+      "panels": [
+        {
+          "scene": "拥挤的电车里，路明非护住绘梨衣",
+          "shot": "Packed rush-hour Tokyo train: Lu Mingfei bracing an arm to give Erii space, holding her notebook safe.",
+          "lines": [
+            {
+              "speaker": "路明非",
+              "text": "别松手，下错站我可找不到你。"
+            }
+          ]
+        },
+        {
+          "scene": "绘梨衣抓住他的袖口",
+          "shot": "Close-up: Erii's hand gripping Lu's jacket sleeve; her note in a square box.",
+          "lines": [
+            {
+              "speaker": "绘梨衣",
+              "text": "不会丢。"
+            }
+          ]
+        },
+        {
+          "scene": "快餐店里，她认真研究菜单图片",
+          "shot": "Bright fast-food restaurant counter: Erii studying a picture menu (pictures only, no readable text) with wide eyes; her note in a square box.",
+          "lines": [
+            {
+              "speaker": "绘梨衣",
+              "text": "每个都可以选？"
+            }
+          ]
+        },
+        {
+          "scene": "路明非数着手心里的零钱",
+          "shot": "Lu Mingfei counting a few coins in his palm with a pained smile.",
+          "lines": [
+            {
+              "speaker": "路明非",
+              "text": "理论上可以，经济上只能两个。"
+            }
+          ]
+        },
+        {
+          "scene": "两人在窗边分享一个餐盘",
+          "shot": "The two sitting by a sunny window sharing one tray of burgers and fries, Erii taking a careful bite.",
+          "lines": [
+            {
+              "speaker": "旁白",
+              "text": "世界没有因此变好，但他们暂时不用拯救世界。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "comic-arcade",
+      "title": "游戏厅",
+      "location": "东京街区·游戏厅",
+      "time": "午后",
+      "characters": [
+        "lu-mingfei",
+        "erii"
+      ],
+      "caption": "绘梨衣熟悉游戏规则，却不熟悉赢了以后该怎样庆祝。路明非第一次看见她不作为武器的胜负心。",
+      "continuity": "同一天午后；同样服装。结尾门外出现黑西装搜索者。",
+      "cause": "两人在街头闲逛，走进一家游戏厅。",
+      "effect": "绘梨衣第一次明显地笑了；门外，搜索者正从人群中经过。",
+      "panels": [
+        {
+          "scene": "街机屏幕亮起，两人并肩握着摇杆",
+          "shot": "Colorful arcade full of glowing cabinets: Lu Mingfei and Erii side by side at a fighting-game cabinet gripping joysticks.",
+          "lines": [
+            {
+              "speaker": "路明非",
+              "text": "先说好，输了不准用言灵。"
+            }
+          ]
+        },
+        {
+          "scene": "绘梨衣连续取胜",
+          "shot": "Erii focused and winning, a victory flash on the screen (no text); her note in a square box.",
+          "lines": [
+            {
+              "speaker": "绘梨衣",
+              "text": "Sakura 很弱。"
+            }
+          ]
+        },
+        {
+          "scene": "路明非故作严肃",
+          "shot": "Lu Mingfei with a mock-serious face, finger raised as if lecturing.",
+          "lines": [
+            {
+              "speaker": "路明非",
+              "text": "这是照顾新手的战略性失误。"
+            }
+          ]
+        },
+        {
+          "scene": "绘梨衣第一次明显地笑了",
+          "shot": "Close-up: Erii smiling openly for the first time, warm arcade lights on her face.",
+          "lines": [
+            {
+              "speaker": "旁白",
+              "text": "她的笑没有触发任何危险。"
+            }
+          ]
+        },
+        {
+          "scene": "门外，黑西装的搜索者从人群中经过",
+          "shot": "View through the arcade's glass front door: black-suited searchers with earpieces walking past in the crowd outside.",
+          "lines": [
+            {
+              "speaker": "旁白",
+              "text": "普通的一天，终究是借来的。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "comic-city-lights",
+      "title": "城市灯火",
+      "location": "东京高空展望台",
+      "time": "夜晚",
+      "characters": [
+        "lu-mingfei",
+        "erii"
+      ],
+      "caption": "在东京高处，绘梨衣把未完成的愿望写满一页。她没有要求永远，只要求下一步不再由别人替她决定。",
+      "continuity": "同日夜晚；巨大落地窗外是东京灯海。结尾警灯沿街接近。",
+      "cause": "躲开游戏厅外的搜索者后，两人登上展望台。",
+      "effect": "路明非没能写下承诺；警灯逼近，他们必须离开。",
+      "panels": [
+        {
+          "scene": "高空展望台，东京灯海铺在脚下",
+          "shot": "Panoramic observation deck at night: Erii with her palms on the huge glass window, the endless glittering Tokyo cityscape below; her note in a square box.",
+          "lines": [
+            {
+              "speaker": "绘梨衣",
+              "text": "世界很大。"
+            }
+          ]
+        },
+        {
+          "scene": "愿望清单上还有许多空格",
+          "shot": "Close-up of Erii's notebook page: a hand-drawn wish list with small doodles (duck, train, game controller) and many empty checkboxes; no readable words.",
+          "lines": [
+            {
+              "speaker": "路明非",
+              "text": "以后还能再来。"
+            }
+          ]
+        },
+        {
+          "scene": "绘梨衣看着他，写下回答",
+          "shot": "Erii looking up at Lu, holding her notebook toward him; her note in a square box.",
+          "lines": [
+            {
+              "speaker": "绘梨衣",
+              "text": "以后是一起吗？"
+            }
+          ]
+        },
+        {
+          "scene": "路明非握着笔，迟迟没有落下",
+          "shot": "Lu Mingfei holding the pen above the notebook, hesitating, city lights reflected in the glass.",
+          "lines": [
+            {
+              "speaker": "旁白",
+              "text": "承诺只需要几个字，后果却比东京更大。"
+            }
+          ]
+        },
+        {
+          "scene": "远处警灯沿街道接近",
+          "shot": "Looking down from the deck: red and blue police lights snaking along the streets toward the tower.",
+          "lines": [
+            {
+              "speaker": "路明非",
+              "text": "我们先离开这里。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "comic-truth-gaps",
+      "title": "被遮住的真相",
+      "location": "源氏重工·卡塞尔安全屋",
+      "time": "同一夜",
+      "characters": [
+        "gen-chisei",
+        "tachibana-masamune",
+        "caesar",
+        "chu-zihang"
+      ],
+      "caption": "源稚生发现治疗记录有缺口，凯撒也无法证明学院的撤离能提供长期治疗。两套保护方案都开始露出裂缝。",
+      "continuity": "源氏重工的书房（和风、昏暗）与第十二页的砖墙安全屋交替出现。",
+      "cause": "绘梨衣出走后，双方都在为她准备“保护方案”。",
+      "effect": "所有追踪路线开始指向同一个会合区域。",
+      "panels": [
+        {
+          "scene": "源稚生调出采血记录，质问对面的人",
+          "shot": "Dim Japanese-style study: Gen Chisei holding a printed record, confronting someone across a low table.",
+          "lines": [
+            {
+              "speaker": "源稚生",
+              "text": "这些样本，去了哪里？"
+            }
+          ]
+        },
+        {
+          "scene": "橘政宗避开视线",
+          "shot": "Tachibana Masamune turning his face toward a paper screen window, calm, avoiding the question.",
+          "lines": [
+            {
+              "speaker": "橘政宗",
+              "text": "现在最重要的，是把她带回来。"
+            }
+          ]
+        },
+        {
+          "scene": "安全屋里，凯撒对着通讯器追问学院",
+          "shot": "Brick-walled safehouse: Caesar arguing into a satellite phone, fist on the table.",
+          "lines": [
+            {
+              "speaker": "凯撒",
+              "text": "没有医疗保障，我不会把这叫撤离。"
+            }
+          ]
+        },
+        {
+          "scene": "楚子航在两份记录上标出同一段空白",
+          "shot": "Chu Zihang laying two documents side by side and circling the same blank section with a red pen.",
+          "lines": [
+            {
+              "speaker": "楚子航",
+              "text": "两边都在隐瞒同一段时间。"
+            }
+          ]
+        },
+        {
+          "scene": "三处屏幕上的定位同时指向同一区域",
+          "shot": "Three different screens (command floor, safehouse laptop, a phone) all showing a map with a pulsing dot on the same city block.",
+          "lines": [
+            {
+              "speaker": "旁白",
+              "text": "所有路线，正在同一个地方相撞。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "comic-choice-handoff",
+      "title": "选择之前",
+      "location": "主题旅馆",
+      "time": "深夜",
+      "characters": [
+        "lu-mingfei",
+        "erii"
+      ],
+      "caption": "血清只剩最后一支，旅馆位置即将暴露。现在轮到你决定：离开日本、返回家族、继续藏匿，还是追查治疗记录背后的真相。",
+      "continuity": "回到第十一页的旅馆房间；桌上摆着药盒、愿望清单和加密手机。",
+      "cause": "所有路线都指向旅馆周边。",
+      "effect": "故事交到玩家手中。",
+      "panels": [
+        {
+          "scene": "旅馆桌面：最后一支血清、愿望清单和加密手机",
+          "shot": "Still-life on the hotel table under a warm lamp: the open medicine case with one ampoule, Erii's notebook open to the wish list, and a black encrypted phone.",
+          "lines": [
+            {
+              "speaker": "旁白",
+              "text": "能争取的时间，已经可以用一支针剂来衡量。"
+            }
+          ]
+        },
+        {
+          "scene": "加密手机亮起凯撒发来的坐标",
+          "shot": "The encrypted phone lighting up with a map pin notification (no readable text); Lu Mingfei's hand reaching for it.",
+          "lines": [
+            {
+              "speaker": "凯撒",
+              "text": "撤离窗口只剩一次。"
+            }
+          ]
+        },
+        {
+          "scene": "另一条私人消息来自源稚生",
+          "shot": "Lu Mingfei reading a second message on his own phone, conflicted face lit by the screen.",
+          "lines": [
+            {
+              "speaker": "源稚生",
+              "text": "先给她用药。回不回来，让她自己回答。"
+            }
+          ]
+        },
+        {
+          "scene": "绘梨衣把本子推到桌子中央",
+          "shot": "Erii sliding her open notebook to the center of the table, looking straight at Lu with resolve; her note in a square box.",
+          "lines": [
+            {
+              "speaker": "绘梨衣",
+              "text": "这次，我想一起决定。"
+            }
+          ]
+        },
+        {
+          "scene": "门外电梯停下，脚步声靠近",
+          "shot": "Hotel corridor seen from inside the room's door peephole: elevator doors opening, shadows of approaching footsteps.",
+          "lines": [
+            {
+              "speaker": "旁白",
+              "text": "故事从这里，不再只有一种结局。"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

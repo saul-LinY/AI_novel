@@ -1,0 +1,48 @@
+{
+  "verifiedAt": "2026-09-29T10:34:14.418727+00:00",
+  "activeBackend": "bm25",
+  "requiresEmbedding": false,
+  "regressionTests": {
+    "passed": 105,
+    "failed": 0
+  },
+  "retrievalEvaluation": {
+    "hits": 44,
+    "queries": 48,
+    "recallAt5": 0.9166666666666666,
+    "fiveViewP95Ms": 3,
+    "externalRequests": 0,
+    "isolation": {
+      "checks": 15,
+      "leaks": 0
+    }
+  },
+  "memoryAtVerification": {
+    "cards": 163,
+    "indexed": 163,
+    "healthy": true
+  },
+  "storyPreservation": {
+    "originalEventFiles": 3,
+    "originalEventsUnchanged": true,
+    "newUserTurnsPreserved": true,
+    "note": "The user completed new turns during verification; live state files correctly advanced. No story reset or rollback was performed."
+  },
+  "liveCompletedTurn": {
+    "eventId": "e98c1764-516b-423f-a63a-ebfc52c2ebd4",
+    "backend": "bm25",
+    "elapsedMs": 21,
+    "degraded": false,
+    "count": 25
+  },
+  "removedDependencies": [
+    "mem0ai",
+    "@qdrant/js-client-rest"
+  ],
+  "retiredPortsClosed": {
+    "4567": true,
+    "6335": true
+  },
+  "retiredContainerAbsent": true,
+  "recoveryDirectory": "/Users/saul/Documents/ChatGPT/AI_novel-backups/cleanup-local-bm25-20260929-182747"
+}

@@ -1,5 +1,6 @@
 import { createHash, randomUUID } from "node:crypto";
 import { applyTurnProposal, createInitialState, isRejectedProposal } from "./story-engine.js";
+import { applyTurnRecord } from "./story-narrative.js";
 import { publicStoryMetadata } from "./story-package.js";
 
 export function formatStoryTime(timeMinutes) {
@@ -68,6 +69,10 @@ export function appendTurn(
     piEntryIds = {},
     agentReports = null,
     sharedContext = null,
+    telemetry = null,
+    record = null,
+    beatSheet = null,
+    gate = null,
     storyPackage,
   },
 ) {
@@ -79,6 +84,8 @@ export function appendTurn(
   }
   const parentEvent = store.events[branch.headEventId];
   const nextState = applyTurnProposal(parentEvent.stateAfter, proposal, storyPackage, eventId);
+  // The continuity record lands in the same atomic transition as the world delta.
+  if (record) applyTurnRecord(nextState, record, { eventId, playerCharacterId: storyPackage.playerCharacterId });
   const event = {
     id: eventId,
     type: "turn",
@@ -92,6 +99,10 @@ export function appendTurn(
     piEntryIds: structuredClone(piEntryIds),
     agentReports: agentReports ? structuredClone(agentReports) : null,
     sharedContext: sharedContext ? structuredClone(sharedContext) : null,
+    ...(record ? { continuityRecord: structuredClone(record) } : {}),
+    ...(beatSheet ? { beatSheet: structuredClone(beatSheet) } : {}),
+    ...(gate ? { proposalGate: structuredClone(gate) } : {}),
+    ...(telemetry ? { telemetry: structuredClone(telemetry) } : {}),
     createdAt: new Date().toISOString(),
   };
   store.events[eventId] = event;
@@ -114,7 +125,7 @@ function compactLines(lines, maxChars) {
   return kept.join("\n");
 }
 
-function updateBranchMemory(branch, event) {
+export function updateBranchMemory(branch, event) {
   const outcome = event.turnResult?.outcome?.summary;
   const turnLine = `- ${event.action}${outcome ? ` -> ${outcome}` : ""}`;
   const prior = branch.memory && branch.memory !== "尚未开始正式互动。" ? branch.memory.split("\n") : [];
@@ -191,6 +202,16 @@ export function serializeStore(store, storyPackage) {
   const selectedPlayerCharacterId = store.story.selectedPlayerCharacterId ?? null;
   const locations = Object.fromEntries(storyPackage.locations.map((location) => [location.id, location]));
   const items = Object.fromEntries(storyPackage.items.map((item) => [item.id, item]));
+  // Public, historical scenery for the reader timeline; never send stateAfter itself.
+  const publicScene = (snapshot) => {
+    const location = locations[snapshot.locationId];
+    const visual = location?.states.find((item) => item.id === snapshot.sceneStateId)
+      ?? location?.states.find((item) => item.id === location.defaultStateId);
+    return location && visual ? {
+      locationId: location.id, locationName: location.name, stateId: visual.id,
+      title: visual.title, image: visual.image, fallbackImage: location.fallbackImage,
+    } : null;
+  };
   const knownFacts = player.knowledgeFactIds
     .map((factId) => serializeKnownFact(factId, state, storyPackage))
     .filter(Boolean);
@@ -258,6 +279,10 @@ export function serializeStore(store, storyPackage) {
         choices: event.choices,
         turn: index,
         createdAt: event.createdAt,
+        time: formatStoryTime(event.stateAfter.timeMinutes),
+        location: locations[event.stateAfter.locationId]
+          ? { id: event.stateAfter.locationId, name: locations[event.stateAfter.locationId].name } : null,
+        scene: publicScene(event.stateAfter),
         isHead: event.id === branch.headEventId,
       };
     }),

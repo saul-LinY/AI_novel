@@ -1,0 +1,79 @@
+{
+  "checkedAt": "2026-09-29T10:11:53.986Z",
+  "freshBM25IndexPerAttempt": true,
+  "networkRequests": 0,
+  "vectorServiceStopped": true,
+  "originalHead": "0a893cb3-ff8c-4a4e-ba05-8c027d215394",
+  "saveHeadUnchanged": true,
+  "samples": [
+    {
+      "attempt": 1,
+      "backend": "bm25",
+      "sameQuery": true,
+      "degraded": false,
+      "elapsedMs": 13,
+      "counts": {
+        "global": 5,
+        "environment": 3,
+        "character:lu-mingfei": 4,
+        "character:gen-chisei": 5,
+        "character:tachibana-masamune": 5,
+        "character:sakura-yabuki": 4
+      },
+      "matchedTerms": [
+        "绘",
+        "梨",
+        "路",
+        "明",
+        "非",
+        "路明非"
+      ]
+    },
+    {
+      "attempt": 2,
+      "backend": "bm25",
+      "sameQuery": true,
+      "degraded": false,
+      "elapsedMs": 4,
+      "counts": {
+        "global": 5,
+        "environment": 3,
+        "character:lu-mingfei": 4,
+        "character:gen-chisei": 5,
+        "character:tachibana-masamune": 5,
+        "character:sakura-yabuki": 4
+      },
+      "matchedTerms": [
+        "绘",
+        "梨",
+        "路",
+        "明",
+        "非",
+        "路明非"
+      ]
+    },
+    {
+      "attempt": 3,
+      "backend": "bm25",
+      "sameQuery": true,
+      "degraded": false,
+      "elapsedMs": 3,
+      "counts": {
+        "global": 5,
+        "environment": 3,
+        "character:lu-mingfei": 4,
+        "character:gen-chisei": 5,
+        "character:tachibana-masamune": 5,
+        "character:sakura-yabuki": 4
+      },
+      "matchedTerms": [
+        "绘",
+        "梨",
+        "路",
+        "明",
+        "非",
+        "路明非"
+      ]
+    }
+  ]
+}

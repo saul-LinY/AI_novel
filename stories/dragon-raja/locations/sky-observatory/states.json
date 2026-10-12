@@ -13,6 +13,15 @@
         "src": "/assets/scenes/dragon-raja/sky-observatory.png",
         "alt": "东京高空展望台的环境画面"
       }
+    },
+    {
+      "id": "dawn",
+      "title": "黎明展望台",
+      "description": "黎明的展望台空无一人，城市在淡金与雾蓝里醒来，远处能看见富士山的轮廓。",
+      "image": {
+        "src": "/assets/scenes/dragon-raja/sky-observatory-dawn.png",
+        "alt": "东京高空展望台：黎明展望台"
+      }
     }
   ]
 }

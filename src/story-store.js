@@ -146,6 +146,7 @@ export class StoryStore {
 
     const headState = data.events[branch.headEventId].stateAfter;
     await atomicJson(join(branchDir, "plot-state.json"), headState.storyProgress);
+    if (headState.narrative) await atomicJson(join(branchDir, "narrative-state.json"), headState.narrative);
     await atomicJson(join(branchDir, "environment-state.json"), {
       locationId: headState.locationId,
       sceneStateId: headState.sceneStateId,

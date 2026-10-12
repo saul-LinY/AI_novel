@@ -20,5 +20,8 @@
     "非常规领域干预"
   ],
   "speech": "亲昵、从容，像早已知道回答，关键条件从不含糊。",
-  "image": null
+  "image": {
+    "src": "/assets/portraits/dragon-raja/lu-mingze.png",
+    "alt": "路鸣泽的人物立绘"
+  }
 }

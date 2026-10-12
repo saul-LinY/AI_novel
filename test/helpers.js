@@ -34,6 +34,19 @@ export function proposal(overrides = {}) {
   };
 }
 
+export const DRAMATURGY = Object.freeze({
+  beat: "complication",
+  tension: 5,
+  valueShift: { axis: "安全", from: "暂时安稳", to: "被迫行动" },
+  turningPoint: "检查结果暴露出比预想更近的危险。",
+  hook: "门外的脚步声停了下来。",
+});
+
+// A proposal that also satisfies the pacing gate.
+export function dramaticProposal(overrides = {}) {
+  return proposal({ dramaturgy: structuredClone(DRAMATURGY), ...overrides });
+}
+
 export function rejectedProposal(summary = "玩家不能直接命令 NPC 行动。") {
   return proposal({
     normalizedAction: {

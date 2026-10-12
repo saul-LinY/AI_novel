@@ -13,6 +13,15 @@
         "src": "/assets/scenes/dragon-raja/cassell-safehouse.png",
         "alt": "卡塞尔安全屋的环境画面"
       }
+    },
+    {
+      "id": "night",
+      "title": "深夜安全屋",
+      "description": "深夜的安全屋只亮着一盏吊灯，地图、卫星电话和刀袋摆在桌边，窗外的雨被遮光帘挡住。",
+      "image": {
+        "src": "/assets/scenes/dragon-raja/cassell-safehouse-night.png",
+        "alt": "卡塞尔安全屋：深夜安全屋"
+      }
     }
   ]
 }

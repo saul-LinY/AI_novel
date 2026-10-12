@@ -53,6 +53,18 @@ export class TurnJobManager {
     return [...this.jobs.values()].filter((job) => !TERMINAL_STATUSES.has(job.status));
   }
 
+  // p50/p95 over the most recent completed turns, for /api/health.
+  latencySummary(limit = 20) {
+    const totals = [...this.jobs.values()]
+      .filter((job) => job.status === "complete" && Number.isFinite(job.telemetry?.totalMs))
+      .sort((a, b) => b.createdAt.localeCompare(a.createdAt))
+      .slice(0, limit)
+      .map((job) => job.telemetry.totalMs)
+      .sort((a, b) => a - b);
+    const pick = (q) => totals.length ? totals[Math.min(totals.length - 1, Math.floor(q * totals.length))] : null;
+    return { count: totals.length, p50Ms: pick(0.5), p95Ms: pick(0.95) };
+  }
+
   get(turnId) {
     return this.jobs.get(turnId) ?? null;
   }
@@ -117,6 +129,11 @@ export class TurnJobManager {
   async setPrepared(job, prepared) {
     job.status = "prepared";
     job.prepared = structuredClone(prepared);
+    await this.persist(job);
+  }
+
+  async setChoices(job, choices) {
+    job.prepared = { ...job.prepared, choices: structuredClone(choices) };
     await this.persist(job);
   }
 

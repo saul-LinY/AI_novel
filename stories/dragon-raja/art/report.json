@@ -1,0 +1,442 @@
+{
+  "sheet-chu-zihang": {
+    "id": "sheet-chu-zihang",
+    "status": "generated",
+    "output": "stories/dragon-raja/art/model-sheets/chu-zihang.png",
+    "attempt": 1,
+    "seconds": 43.8,
+    "at": "2026-10-08T07:33:41.834Z"
+  },
+  "sheet-tachibana": {
+    "id": "sheet-tachibana",
+    "status": "generated",
+    "output": "stories/dragon-raja/art/model-sheets/tachibana-masamune.png",
+    "attempt": 1,
+    "seconds": 47.2,
+    "at": "2026-10-08T07:33:45.235Z"
+  },
+  "sheet-gen-chisei": {
+    "id": "sheet-gen-chisei",
+    "status": "generated",
+    "output": "stories/dragon-raja/art/model-sheets/gen-chisei.png",
+    "attempt": 1,
+    "seconds": 59.7,
+    "at": "2026-10-08T07:33:57.741Z"
+  },
+  "sheet-lu-mingfei": {
+    "id": "sheet-lu-mingfei",
+    "status": "generated",
+    "output": "stories/dragon-raja/art/model-sheets/lu-mingfei.png",
+    "attempt": 1,
+    "seconds": 69.6,
+    "at": "2026-10-08T07:34:07.644Z"
+  },
+  "sheet-erii": {
+    "id": "sheet-erii",
+    "status": "generated",
+    "output": "stories/dragon-raja/art/model-sheets/erii.png",
+    "attempt": 1,
+    "seconds": 114.3,
+    "at": "2026-10-08T07:34:52.283Z"
+  },
+  "sheet-caesar": {
+    "id": "sheet-caesar",
+    "status": "generated",
+    "output": "stories/dragon-raja/art/model-sheets/caesar.png",
+    "attempt": 2,
+    "seconds": 84.3,
+    "at": "2026-10-08T07:34:58.254Z"
+  },
+  "comic-01": {
+    "id": "comic-01",
+    "status": "generated",
+    "output": "public/assets/comic/dragon-raja/page-01.png",
+    "attempt": 1,
+    "seconds": 150.1,
+    "at": "2026-10-08T07:43:07.028Z"
+  },
+  "cover-tall": {
+    "id": "cover-tall",
+    "status": "generated",
+    "output": "public/assets/covers/dragon-raja-tall.png",
+    "attempt": 1,
+    "seconds": 88.5,
+    "at": "2026-10-08T07:46:08.547Z"
+  },
+  "cover-wide": {
+    "id": "cover-wide",
+    "status": "generated",
+    "output": "public/assets/covers/dragon-raja-wide.png",
+    "attempt": 1,
+    "seconds": 89.8,
+    "at": "2026-10-08T07:46:09.932Z"
+  },
+  "key-lu-mingfei": {
+    "id": "key-lu-mingfei",
+    "status": "generated",
+    "output": "public/assets/roles/dragon-raja/lu-mingfei-key.png",
+    "attempt": 1,
+    "seconds": 104.1,
+    "at": "2026-10-08T07:46:24.189Z"
+  },
+  "key-gen-chisei": {
+    "id": "key-gen-chisei",
+    "status": "generated",
+    "output": "public/assets/roles/dragon-raja/gen-chisei-key.png",
+    "attempt": 1,
+    "seconds": 58.8,
+    "at": "2026-10-08T07:47:08.722Z"
+  },
+  "key-erii": {
+    "id": "key-erii",
+    "status": "generated",
+    "output": "public/assets/roles/dragon-raja/erii-key.png",
+    "attempt": 1,
+    "seconds": 65.4,
+    "at": "2026-10-08T07:47:13.978Z"
+  },
+  "key-caesar": {
+    "id": "key-caesar",
+    "status": "generated",
+    "output": "public/assets/roles/dragon-raja/caesar-key.png",
+    "attempt": 1,
+    "seconds": 125.7,
+    "at": "2026-10-08T07:48:29.882Z"
+  },
+  "portrait-chu-zihang": {
+    "id": "portrait-chu-zihang",
+    "status": "generated",
+    "output": "public/assets/portraits/dragon-raja/chu-zihang.png",
+    "attempt": 1,
+    "seconds": 91.2,
+    "at": "2026-10-08T07:48:39.924Z"
+  },
+  "portrait-tachibana-masamune": {
+    "id": "portrait-tachibana-masamune",
+    "status": "generated",
+    "output": "public/assets/portraits/dragon-raja/tachibana-masamune.png",
+    "attempt": 1,
+    "seconds": 92.1,
+    "at": "2026-10-08T07:48:46.101Z"
+  },
+  "portrait-uesugi-yue": {
+    "id": "portrait-uesugi-yue",
+    "status": "generated",
+    "output": "public/assets/portraits/dragon-raja/uesugi-yue.png",
+    "attempt": 1,
+    "seconds": 67.7,
+    "at": "2026-10-08T07:49:53.755Z"
+  },
+  "portrait-gen-chinu": {
+    "id": "portrait-gen-chinu",
+    "status": "generated",
+    "output": "public/assets/portraits/dragon-raja/gen-chinu.png",
+    "attempt": 1,
+    "seconds": 74.7,
+    "at": "2026-10-08T07:49:54.632Z"
+  },
+  "portrait-lu-mingze": {
+    "id": "portrait-lu-mingze",
+    "status": "generated",
+    "output": "public/assets/portraits/dragon-raja/lu-mingze.png",
+    "attempt": 1,
+    "seconds": 30.7,
+    "at": "2026-10-08T07:59:17.129Z"
+  },
+  "portrait-mai-sakatoku": {
+    "id": "portrait-mai-sakatoku",
+    "status": "generated",
+    "output": "public/assets/portraits/dragon-raja/mai-sakatoku.png",
+    "attempt": 1,
+    "seconds": 42.8,
+    "at": "2026-10-08T07:50:37.420Z"
+  },
+  "portrait-sakura-yabuki": {
+    "id": "portrait-sakura-yabuki",
+    "status": "generated",
+    "output": "public/assets/portraits/dragon-raja/sakura-yabuki.png",
+    "attempt": 1,
+    "seconds": 51.2,
+    "at": "2026-10-08T07:50:44.987Z"
+  },
+  "portrait-sue-enxi": {
+    "id": "portrait-sue-enxi",
+    "status": "generated",
+    "output": "public/assets/portraits/dragon-raja/sue-enxi.png",
+    "attempt": 1,
+    "seconds": 83.1,
+    "at": "2026-10-08T07:51:35.611Z"
+  },
+  "scene-theme-hotel-night": {
+    "id": "scene-theme-hotel-night",
+    "status": "generated",
+    "output": "public/assets/scenes/dragon-raja/theme-hotel-night.png",
+    "attempt": 1,
+    "seconds": 61.2,
+    "at": "2026-10-08T07:51:38.625Z"
+  },
+  "scene-theme-hotel-crisis": {
+    "id": "scene-theme-hotel-crisis",
+    "status": "generated",
+    "output": "public/assets/scenes/dragon-raja/theme-hotel-crisis.png",
+    "attempt": 1,
+    "seconds": 62.9,
+    "at": "2026-10-08T07:51:47.852Z"
+  },
+  "scene-sky-observatory-dawn": {
+    "id": "scene-sky-observatory-dawn",
+    "status": "generated",
+    "output": "public/assets/scenes/dragon-raja/sky-observatory-dawn.png",
+    "attempt": 1,
+    "seconds": 52.5,
+    "at": "2026-10-08T07:52:40.364Z"
+  },
+  "scene-tokyo-street-night": {
+    "id": "scene-tokyo-street-night",
+    "status": "generated",
+    "output": "public/assets/scenes/dragon-raja/tokyo-street-night.png",
+    "attempt": 1,
+    "seconds": 69.1,
+    "at": "2026-10-08T07:52:44.681Z"
+  },
+  "scene-tokyo-street-search": {
+    "id": "scene-tokyo-street-search",
+    "status": "generated",
+    "output": "public/assets/scenes/dragon-raja/tokyo-street-search.png",
+    "attempt": 1,
+    "seconds": 74.6,
+    "at": "2026-10-08T07:52:53.221Z"
+  },
+  "scene-genji-command-alert": {
+    "id": "scene-genji-command-alert",
+    "status": "generated",
+    "output": "public/assets/scenes/dragon-raja/genji-command-alert.png",
+    "attempt": 1,
+    "seconds": 34.1,
+    "at": "2026-10-08T07:53:14.432Z"
+  },
+  "scene-rendezvous-ambush": {
+    "id": "scene-rendezvous-ambush",
+    "status": "generated",
+    "output": "public/assets/scenes/dragon-raja/rendezvous-ambush.png",
+    "attempt": 1,
+    "seconds": 58.6,
+    "at": "2026-10-08T07:53:51.843Z"
+  },
+  "scene-red-well-awakened": {
+    "id": "scene-red-well-awakened",
+    "status": "generated",
+    "output": "public/assets/scenes/dragon-raja/red-well-awakened.png",
+    "attempt": 1,
+    "seconds": 45.1,
+    "at": "2026-10-08T07:53:59.563Z"
+  },
+  "scene-rendezvous-dawn": {
+    "id": "scene-rendezvous-dawn",
+    "status": "generated",
+    "output": "public/assets/scenes/dragon-raja/rendezvous-dawn.png",
+    "attempt": 1,
+    "seconds": 33.5,
+    "at": "2026-10-08T07:54:25.328Z"
+  },
+  "ending-normal": {
+    "id": "ending-normal",
+    "status": "generated",
+    "output": "public/assets/endings/dragon-raja/normal.png",
+    "attempt": 1,
+    "seconds": 59.8,
+    "at": "2026-10-08T07:54:59.341Z"
+  },
+  "scene-cassell-safehouse-night": {
+    "id": "scene-cassell-safehouse-night",
+    "status": "generated",
+    "output": "public/assets/scenes/dragon-raja/cassell-safehouse-night.png",
+    "attempt": 1,
+    "seconds": 143,
+    "at": "2026-10-08T07:55:07.698Z"
+  },
+  "ending-deviation": {
+    "id": "ending-deviation",
+    "status": "generated",
+    "output": "public/assets/endings/dragon-raja/deviation.png",
+    "attempt": 1,
+    "seconds": 60.8,
+    "at": "2026-10-08T07:55:26.099Z"
+  },
+  "ending-failure": {
+    "id": "ending-failure",
+    "status": "generated",
+    "output": "public/assets/endings/dragon-raja/failure.png",
+    "attempt": 1,
+    "seconds": 34.2,
+    "at": "2026-10-08T07:55:33.586Z"
+  },
+  "ui-dossier": {
+    "id": "ui-dossier",
+    "status": "generated",
+    "output": "public/assets/ui/dossier.png",
+    "attempt": 1,
+    "seconds": 29.5,
+    "at": "2026-10-08T07:56:03.097Z"
+  },
+  "ui-paper": {
+    "id": "ui-paper",
+    "status": "generated",
+    "output": "public/assets/ui/paper.png",
+    "attempt": 1,
+    "seconds": 44.8,
+    "at": "2026-10-08T07:56:10.948Z"
+  },
+  "ending-early": {
+    "id": "ending-early",
+    "status": "generated",
+    "output": "public/assets/endings/dragon-raja/early.png",
+    "attempt": 1,
+    "seconds": 66.5,
+    "at": "2026-10-08T07:56:14.169Z"
+  },
+  "ui-ink": {
+    "id": "ui-ink",
+    "status": "generated",
+    "output": "public/assets/ui/ink-wash.png",
+    "attempt": 1,
+    "seconds": 64.3,
+    "at": "2026-10-08T07:57:07.443Z"
+  },
+  "comic-02": {
+    "id": "comic-02",
+    "status": "generated",
+    "output": "public/assets/comic/dragon-raja/page-02.png",
+    "attempt": 1,
+    "seconds": 195.4,
+    "at": "2026-10-08T07:46:41.805Z"
+  },
+  "comic-03": {
+    "id": "comic-03",
+    "status": "generated",
+    "output": "public/assets/comic/dragon-raja/page-03.png",
+    "attempt": 1,
+    "seconds": 167.8,
+    "at": "2026-10-08T07:49:29.646Z"
+  },
+  "comic-04": {
+    "id": "comic-04",
+    "status": "generated",
+    "output": "public/assets/comic/dragon-raja/page-04.png",
+    "attempt": 1,
+    "seconds": 206.5,
+    "at": "2026-10-08T07:52:56.158Z"
+  },
+  "comic-05": {
+    "id": "comic-05",
+    "status": "generated",
+    "output": "public/assets/comic/dragon-raja/page-05.png",
+    "attempt": 1,
+    "seconds": 165.4,
+    "at": "2026-10-08T07:55:41.582Z"
+  },
+  "comic-06": {
+    "id": "comic-06",
+    "status": "generated",
+    "output": "public/assets/comic/dragon-raja/page-06.png",
+    "attempt": 1,
+    "seconds": 250.7,
+    "at": "2026-10-08T08:40:51.177Z"
+  },
+  "comic-07": {
+    "id": "comic-07",
+    "status": "generated",
+    "output": "public/assets/comic/dragon-raja/page-07.png",
+    "attempt": 1,
+    "seconds": 227.4,
+    "at": "2026-10-08T08:01:56.578Z"
+  },
+  "comic-08": {
+    "id": "comic-08",
+    "status": "generated",
+    "output": "public/assets/comic/dragon-raja/page-08.png",
+    "attempt": 1,
+    "seconds": 260.6,
+    "at": "2026-10-08T08:06:17.180Z"
+  },
+  "comic-09": {
+    "id": "comic-09",
+    "status": "generated",
+    "output": "public/assets/comic/dragon-raja/page-09.png",
+    "attempt": 1,
+    "seconds": 235.5,
+    "at": "2026-10-08T08:10:12.724Z"
+  },
+  "comic-10": {
+    "id": "comic-10",
+    "status": "generated",
+    "output": "public/assets/comic/dragon-raja/page-10.png",
+    "attempt": 1,
+    "seconds": 207.6,
+    "at": "2026-10-08T08:13:40.330Z"
+  },
+  "comic-11": {
+    "id": "comic-11",
+    "status": "generated",
+    "output": "public/assets/comic/dragon-raja/page-11.png",
+    "attempt": 1,
+    "seconds": 127.3,
+    "at": "2026-10-08T08:15:47.636Z"
+  },
+  "comic-12": {
+    "id": "comic-12",
+    "status": "generated",
+    "output": "public/assets/comic/dragon-raja/page-12.png",
+    "attempt": 1,
+    "seconds": 130.3,
+    "at": "2026-10-08T08:17:57.914Z"
+  },
+  "comic-13": {
+    "id": "comic-13",
+    "status": "generated",
+    "output": "public/assets/comic/dragon-raja/page-13.png",
+    "attempt": 1,
+    "seconds": 158.2,
+    "at": "2026-10-08T08:20:36.150Z"
+  },
+  "comic-14": {
+    "id": "comic-14",
+    "status": "generated",
+    "output": "public/assets/comic/dragon-raja/page-14.png",
+    "attempt": 1,
+    "seconds": 160,
+    "at": "2026-10-08T08:23:16.161Z"
+  },
+  "comic-15": {
+    "id": "comic-15",
+    "status": "generated",
+    "output": "public/assets/comic/dragon-raja/page-15.png",
+    "attempt": 1,
+    "seconds": 183.7,
+    "at": "2026-10-08T08:26:19.845Z"
+  },
+  "comic-16": {
+    "id": "comic-16",
+    "status": "generated",
+    "output": "public/assets/comic/dragon-raja/page-16.png",
+    "attempt": 1,
+    "seconds": 159.9,
+    "at": "2026-10-08T08:28:59.759Z"
+  },
+  "comic-17": {
+    "id": "comic-17",
+    "status": "generated",
+    "output": "public/assets/comic/dragon-raja/page-17.png",
+    "attempt": 1,
+    "seconds": 134.9,
+    "at": "2026-10-08T08:31:14.673Z"
+  },
+  "comic-18": {
+    "id": "comic-18",
+    "status": "generated",
+    "output": "public/assets/comic/dragon-raja/page-18.png",
+    "attempt": 1,
+    "seconds": 149.8,
+    "at": "2026-10-08T08:33:44.439Z"
+  }
+}

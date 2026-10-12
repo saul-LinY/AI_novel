@@ -3,98 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <meta name="theme-color" content="#eee9dd" />
-    <meta name="description" content="龙族 · 东京出走，一部由你的选择续写的互动小说。" />
+    <meta name="theme-color" content="#0f0e0c" />
+    <meta name="description" content="龙族 · 东京出走，由你的选择续写的互动小说。" />
     <link rel="icon" href="data:," />
     <title>龙族 · 东京出走</title>
-    <link rel="stylesheet" href="/styles.css" />
-    <script src="/vendor/lucide.js" defer></script>
-    <script src="/ambient.js" defer></script>
-    <script src="/app.js" type="module"></script>
+    <script type="module" crossorigin src="/ui/assets/index-C47VBB-Q.js"></script>
+    <link rel="stylesheet" crossorigin href="/ui/assets/index-CPG9CqKN.css">
   </head>
-  <body data-view="gateway" data-mood="rain">
-    <div class="world" aria-hidden="true">
-      <img class="world-image visible" id="world-image-a" src="/assets/tokyo-departure.png" alt="" fetchpriority="high" />
-      <img class="world-image" id="world-image-b" alt="" />
-      <canvas id="weather"></canvas>
-      <div class="world-shade"></div>
-    </div>
-    <section class="gateway" id="gateway" aria-label="东京出走">
-      <header class="gateway-header">
-        <span class="edition"><span class="edition-seal" aria-hidden="true">異</span><strong>异闻录</strong><span class="edition-divider"></span><small>可入场的故事 / VOL. 01</small></span>
-        <button class="text-button" id="gateway-prelude" type="button" disabled>翻开序幕<i data-lucide="arrow-up-right"></i></button>
-      </header>
-      <figure class="gateway-art" aria-hidden="true"><img src="/assets/tokyo-departure.png" alt="" fetchpriority="high" /><div class="art-registration"><span>DRAGON RAJA</span><span>東京 · 未完待续</span></div><span class="art-caption">世界很大。<br />我们可以去任何地方。</span><span class="art-stamp">今夜<br />出走</span></figure>
-      <main class="gateway-content">
-        <p class="eyebrow"><span class="red-rule"></span>龙族 · 一场关于自由的冒险</p>
-        <div class="gateway-title-lockup"><h1 id="gateway-title">东京<span>出走</span></h1><span class="title-side" aria-hidden="true">命运之外，还有一条路。</span></div>
-        <p class="gateway-roman" aria-hidden="true">TOKYO <span>ESCAPE</span><i data-lucide="move-up-right"></i></p>
-        <p class="gateway-quote">天亮之前，<br />把故事带向你选择的那一边。</p>
-        <div class="gateway-actions">
-          <button class="departure-ticket" id="gateway-enter" type="button" disabled><span class="ticket-main"><small>东京 → 未知的明天</small><strong id="gateway-enter-label">正在抵达</strong><span class="ticket-print" aria-hidden="true"><span class="barcode"></span>ONE WAY / 单程</span></span><span class="ticket-stub"><i data-lucide="arrow-up-right"></i><small>入场券</small></span></button>
-        </div>
-        <p class="gateway-save" id="gateway-save">东京的天亮之前，还有一次选择。</p>
-      </main>
-      <footer class="gateway-footer">
-        <button class="prologue-link" id="gateway-chapter" type="button" disabled><span class="film-thumb"><img src="/assets/onboarding/dragon-raja/comic-01.png" alt="" /><span>01 / 18</span></span><span><small>故事之前 / PROLOGUE</small><strong>东京，在黎明之前</strong></span><i data-lucide="arrow-up-right"></i></button>
-        <button class="cast-link" id="gateway-cast" type="button" disabled><span class="cast-faces" aria-hidden="true"><img src="/assets/onboarding/dragon-raja/lu-mingfei.png" alt="" /><img src="/assets/onboarding/dragon-raja/erii.png" alt="" /><img src="/assets/onboarding/dragon-raja/gen-chisei.png" alt="" /><img src="/assets/onboarding/dragon-raja/caesar.png" alt="" /></span><span><small>四个身份，四种立场</small><strong>这一次，你是谁？<i data-lucide="arrow-up-right"></i></strong></span></button>
-        <span class="edition-number" aria-hidden="true">未完<span>TO BE CONTINUED ↗</span></span>
-      </footer>
-    </section>
-    <section class="onboarding" id="onboarding" aria-label="故事序幕与身份" hidden>
-      <header class="onboarding-header">
-        <button class="icon-button" id="onboarding-home" type="button" aria-label="返回封面" title="返回封面"><i data-lucide="arrow-left"></i></button>
-        <div class="onboarding-heading"><strong id="onboarding-story-title">龙族</strong><span id="onboarding-progress-label"></span></div>
-        <button class="text-button" id="onboarding-skip" type="button">进入选角<i data-lucide="arrow-up-right"></i></button>
-      </header>
-      <nav class="onboarding-chapters" id="onboarding-chapters" aria-label="序幕章节"></nav>
-      <main class="onboarding-stage" id="onboarding-stage" hidden><figure class="onboarding-media"><img id="onboarding-image" alt="" /></figure><article class="onboarding-copy"><span class="eyebrow" id="onboarding-kicker"></span><h1 id="onboarding-title"></h1><p id="onboarding-body"></p></article></main>
-      <main class="immersive-onboarding" id="immersive-onboarding" hidden></main>
-      <div class="role-dock" id="role-dock" hidden></div>
-      <footer class="onboarding-controls"><button class="icon-button" id="onboarding-previous" type="button" aria-label="上一页" title="上一页"><i data-lucide="arrow-left"></i></button><div class="onboarding-dots" id="onboarding-dots" aria-label="前情进度"></div><button class="text-button" id="onboarding-next" type="button"><span id="onboarding-next-label">继续</span><i data-lucide="arrow-right"></i></button></footer>
-    </section>
-
-    <div class="app-shell" id="app-shell" hidden>
-      <header class="app-header">
-        <button class="brand" id="story-home" type="button" title="返回封面" aria-label="返回封面"><strong>龙族</strong><span id="story-subtitle">东京出走</span></button>
-        <div class="chapter-indicator"><span class="live-dot"></span><span id="turn-counter">序章</span><span class="header-divider"></span><span id="player-name"></span></div>
-        <nav class="header-actions" aria-label="故事工具">
-          <button class="icon-button" id="onboarding-replay" type="button" aria-label="回看故事序幕" title="回看故事序幕"><i data-lucide="images"></i><span>前情</span></button>
-          <button class="icon-button" id="settings-toggle" type="button" aria-label="阅读设置" title="阅读设置"><i data-lucide="sliders-horizontal"></i><span>阅读</span></button>
-          <button class="icon-button" id="state-toggle" type="button" aria-label="人物与线索" title="人物与线索" aria-expanded="false" aria-controls="state-panel"><i data-lucide="notebook-tabs"></i><span>手记</span></button>
-        </nav>
-      </header>
-      <main class="workspace">
-        <section class="story-panel" id="reading-panel" aria-label="故事正文">
-          <div class="story-scroll" id="story-scroll" tabindex="0" aria-label="阅读正文">
-            <header class="story-heading"><div class="story-running-head"><span>东京出走 / 现场</span><span id="story-page-number">序</span></div><span class="eyebrow" id="story-location">东京</span><h1 id="story-title">借来的安全</h1><span class="chapter-rule"></span></header>
-            <div class="story-timeline" id="story-timeline" aria-live="polite"><div class="loading-state">正在抵达东京…</div></div>
-            <section class="choices-section" id="choices-section" aria-label="下一步行动"><div class="section-heading"><span class="red-rule"></span><span>接下来，由你落笔</span><small>YOUR MOVE</small></div><div class="choice-list" id="choice-list"></div></section>
-            <section class="story-ending" id="story-ending" aria-label="故事结局" hidden><span class="ending-seal" aria-hidden="true">完</span><div><p class="eyebrow" id="ending-route"></p><h2>这段旅程，至此落幕。</h2><p id="ending-summary"></p><small>全篇已保存，可以随时回看。</small></div></section>
-          </div>
-          <form class="composer" id="action-form"><i class="composer-pen" data-lucide="pen-line" aria-hidden="true"></i><div class="composer-field"><textarea id="action-input" rows="1" maxlength="300" placeholder="我有另一个想法…" aria-label="下一步行动"></textarea><span class="composer-count" id="composer-count">0 / 300</span></div><button class="send-button" id="send-action" type="submit" aria-label="继续故事" title="继续故事"><i data-lucide="arrow-up-right"></i></button><button class="stop-button" id="stop-action" type="button" aria-label="停止生成" title="停止生成" hidden><i data-lucide="square"></i></button></form>
-          <div class="reading-footer"><span id="reading-status"><i data-lucide="cloud-check"></i>已保存</span><button class="text-button" id="latest-turn" type="button" hidden>回到此刻<i data-lucide="arrow-down"></i></button></div>
-        </section>
-        <section class="scene-presence" aria-label="当前场景"><div class="scene-topline"><span class="scene-frame-label">東京 / FIELD NOTES</span><span class="live-dot"></span><span>此时，此地</span></div><div class="scene-kanji" aria-hidden="true">物語</div><div class="scene-bottom"><figure class="scene-visual" id="scene-visual" hidden><img id="scene-image" alt="" hidden /><figcaption><span id="scene-eyebrow">东京主题旅馆</span><strong id="scene-title">借来的安全</strong><span class="scene-cast" id="scene-cast"></span></figcaption></figure><button class="icon-button scene-reveal" id="scene-reveal" type="button" aria-label="欣赏场景" title="欣赏场景" aria-pressed="false"><i data-lucide="scan"></i></button></div></section>
-        <aside class="side-panel state-panel" id="state-panel" aria-label="人物与线索" role="dialog" aria-modal="true" aria-hidden="true" inert>
-          <div class="panel-heading"><div><span class="eyebrow">YOUR SIDE OF THE STORY</span><h2>随行手记</h2></div><button class="icon-button" data-close-panel type="button" aria-label="关闭人物与线索" title="关闭"><i data-lucide="x"></i></button></div>
-          <section class="state-block state-overview"><div class="state-row"><span><i data-lucide="map-pin"></i>地点</span><strong id="state-location"></strong></div><div class="state-row"><span><i data-lucide="clock-3"></i>时间</span><strong id="state-time"></strong></div></section>
-          <section class="state-block"><div class="state-title"><span>故事中的人</span><span class="state-count" id="character-count">0</span></div><div class="character-list" id="character-list"></div></section>
-          <section class="state-block"><div class="state-title"><span>人物关系</span><i data-lucide="network"></i></div><div class="relationship-list" id="relationship-list"></div></section>
-          <section class="state-block"><div class="state-title"><span>随身物品</span><i data-lucide="briefcase-business"></i></div><div class="tag-list" id="inventory-list"></div></section>
-          <section class="state-block"><div class="state-title"><span>已知线索</span><i data-lucide="search"></i></div><div class="clue-list" id="clue-list"></div></section>
-          <section class="state-block"><div class="state-title"><span>未解之事</span><i data-lucide="circle-help"></i></div><div class="thread-list" id="thread-list"></div></section>
-        </aside>
-      </main>
-    </div>
-    <button class="panel-scrim" id="panel-scrim" type="button" aria-label="关闭侧栏" hidden tabindex="-1"></button>
-    <dialog class="settings-dialog" id="settings-dialog" aria-labelledby="settings-title">
-      <div class="panel-heading"><h2 id="settings-title">阅读设置</h2><button class="icon-button" id="settings-close" type="button" aria-label="关闭阅读设置" title="关闭"><i data-lucide="x"></i></button></div>
-      <label class="setting-row" for="reading-size"><span>正文字号</span><output id="reading-size-value">18</output></label><input id="reading-size" type="range" min="16" max="24" step="1" value="18" />
-      <fieldset class="reading-modes"><legend>阅读视图</legend><div class="segmented-control"><button type="button" data-reading-mode="cinematic" aria-pressed="true"><i data-lucide="panels-top-left"></i>剧场</button><button type="button" data-reading-mode="focus" aria-pressed="false"><i data-lucide="book-open"></i>专注</button></div></fieldset>
-      <label class="setting-row" for="motion-reduced"><span>减弱动态</span><input id="motion-reduced" type="checkbox" role="switch" /></label>
-      <button class="text-button reset-button" id="reset-story" type="button"><i data-lucide="rotate-ccw"></i>重新开始故事</button>
-    </dialog>
-    <div class="toast" id="toast" role="status" aria-live="polite"></div>
-  </body>
+  <body><div id="root"></div></body>
 </html>
