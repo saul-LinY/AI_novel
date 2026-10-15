@@ -1,0 +1,2055 @@
+{
+  "registeredAt": "2026-10-15T01:50:00.937Z",
+  "scope": "novel-faf891e511f9529e485a559b3f4084b2",
+  "head": "a59944eb-a7ab-4cf6-9f21-c64d4a994737",
+  "cases": [
+    {
+      "name": "撤离期限·直问",
+      "family": "撤离期限",
+      "type": "literal",
+      "query": "凯撒给的安全点和最晚到达时间是什么？",
+      "aspects": [
+        [
+          "旧公寓"
+        ],
+        [
+          "十点以前",
+          "十点前"
+        ]
+      ],
+      "evidence": [
+        [
+          {
+            "id": "8387558560ca7e6e697ac58239091320d46519fa59598e1e240043b8ba8f0919",
+            "source": "prose",
+            "sourceEventId": "ca2f68bc-d908-41f9-a43b-b7719e80897a"
+          },
+          {
+            "id": "1a0ea3743aed66cd51e53a53e20829d5d016c52c8d9757acd560668e6ba6ee65",
+            "source": "ledger:L1-2",
+            "sourceEventId": "ca2f68bc-d908-41f9-a43b-b7719e80897a"
+          },
+          {
+            "id": "df369feb166187f0df4ec687e972cf84d370d71cf025cc6a3352ffde65dca79a",
+            "source": "loop:Q1-1",
+            "sourceEventId": "ca2f68bc-d908-41f9-a43b-b7719e80897a"
+          }
+        ],
+        [
+          {
+            "id": "8387558560ca7e6e697ac58239091320d46519fa59598e1e240043b8ba8f0919",
+            "source": "prose",
+            "sourceEventId": "ca2f68bc-d908-41f9-a43b-b7719e80897a"
+          },
+          {
+            "id": "b483c6e315d7e31a2dff4f63fbef159301d97e9f5e43edb461bece47a58f2df8",
+            "source": "outcome",
+            "sourceEventId": "ca2f68bc-d908-41f9-a43b-b7719e80897a"
+          },
+          {
+            "id": "82e8f06d6eea6bafe069c48ecdb4a57bd71138aa6a94fe550e3af40e4406322b",
+            "source": "narrator-note:0",
+            "sourceEventId": "ca2f68bc-d908-41f9-a43b-b7719e80897a"
+          },
+          {
+            "id": "1a0ea3743aed66cd51e53a53e20829d5d016c52c8d9757acd560668e6ba6ee65",
+            "source": "ledger:L1-2",
+            "sourceEventId": "ca2f68bc-d908-41f9-a43b-b7719e80897a"
+          },
+          {
+            "id": "df369feb166187f0df4ec687e972cf84d370d71cf025cc6a3352ffde65dca79a",
+            "source": "loop:Q1-1",
+            "sourceEventId": "ca2f68bc-d908-41f9-a43b-b7719e80897a"
+          },
+          {
+            "id": "5150db3376bd1f58261ffc6f2e9545c5637e5680d8ede60b77a536094877a8ec",
+            "source": "environment-note:1",
+            "sourceEventId": "ca2f68bc-d908-41f9-a43b-b7719e80897a"
+          },
+          {
+            "id": "515267ada332b6973ce070b1cf64f763a91f12b8c46764619cdfd73f63df52c1",
+            "source": "narrator-note:2",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "324a2832123df5fe66a59c72b2ae045e78b75c897684308d1ff97eb3d8ba3125",
+            "source": "environment-note:2",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "de02f91398b9093e7b9d5c03054a53fe2653a56d74f8c598057cacf69689b1f3",
+            "source": "environment-note:2",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "撤离期限·改述",
+      "family": "撤离期限",
+      "type": "paraphrase",
+      "query": "接应的人会一直等我们吗，应该去什么地方碰头？",
+      "aspects": [
+        [
+          "旧公寓"
+        ],
+        [
+          "十点以前",
+          "十点前"
+        ]
+      ],
+      "evidence": [
+        [
+          {
+            "id": "8387558560ca7e6e697ac58239091320d46519fa59598e1e240043b8ba8f0919",
+            "source": "prose",
+            "sourceEventId": "ca2f68bc-d908-41f9-a43b-b7719e80897a"
+          },
+          {
+            "id": "1a0ea3743aed66cd51e53a53e20829d5d016c52c8d9757acd560668e6ba6ee65",
+            "source": "ledger:L1-2",
+            "sourceEventId": "ca2f68bc-d908-41f9-a43b-b7719e80897a"
+          },
+          {
+            "id": "df369feb166187f0df4ec687e972cf84d370d71cf025cc6a3352ffde65dca79a",
+            "source": "loop:Q1-1",
+            "sourceEventId": "ca2f68bc-d908-41f9-a43b-b7719e80897a"
+          }
+        ],
+        [
+          {
+            "id": "8387558560ca7e6e697ac58239091320d46519fa59598e1e240043b8ba8f0919",
+            "source": "prose",
+            "sourceEventId": "ca2f68bc-d908-41f9-a43b-b7719e80897a"
+          },
+          {
+            "id": "b483c6e315d7e31a2dff4f63fbef159301d97e9f5e43edb461bece47a58f2df8",
+            "source": "outcome",
+            "sourceEventId": "ca2f68bc-d908-41f9-a43b-b7719e80897a"
+          },
+          {
+            "id": "82e8f06d6eea6bafe069c48ecdb4a57bd71138aa6a94fe550e3af40e4406322b",
+            "source": "narrator-note:0",
+            "sourceEventId": "ca2f68bc-d908-41f9-a43b-b7719e80897a"
+          },
+          {
+            "id": "1a0ea3743aed66cd51e53a53e20829d5d016c52c8d9757acd560668e6ba6ee65",
+            "source": "ledger:L1-2",
+            "sourceEventId": "ca2f68bc-d908-41f9-a43b-b7719e80897a"
+          },
+          {
+            "id": "df369feb166187f0df4ec687e972cf84d370d71cf025cc6a3352ffde65dca79a",
+            "source": "loop:Q1-1",
+            "sourceEventId": "ca2f68bc-d908-41f9-a43b-b7719e80897a"
+          },
+          {
+            "id": "5150db3376bd1f58261ffc6f2e9545c5637e5680d8ede60b77a536094877a8ec",
+            "source": "environment-note:1",
+            "sourceEventId": "ca2f68bc-d908-41f9-a43b-b7719e80897a"
+          },
+          {
+            "id": "515267ada332b6973ce070b1cf64f763a91f12b8c46764619cdfd73f63df52c1",
+            "source": "narrator-note:2",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "324a2832123df5fe66a59c72b2ae045e78b75c897684308d1ff97eb3d8ba3125",
+            "source": "environment-note:2",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "de02f91398b9093e7b9d5c03054a53fe2653a56d74f8c598057cacf69689b1f3",
+            "source": "environment-note:2",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "缺药原因·直问",
+      "family": "缺药原因",
+      "type": "literal",
+      "query": "凯撒为什么无法提供稳定血统的药？",
+      "aspects": [
+        [
+          "没库存",
+          "没有蛇岐八家的血清库存"
+        ],
+        [
+          "没配方"
+        ]
+      ],
+      "evidence": [
+        [
+          {
+            "id": "8387558560ca7e6e697ac58239091320d46519fa59598e1e240043b8ba8f0919",
+            "source": "prose",
+            "sourceEventId": "ca2f68bc-d908-41f9-a43b-b7719e80897a"
+          },
+          {
+            "id": "b483c6e315d7e31a2dff4f63fbef159301d97e9f5e43edb461bece47a58f2df8",
+            "source": "outcome",
+            "sourceEventId": "ca2f68bc-d908-41f9-a43b-b7719e80897a"
+          },
+          {
+            "id": "c03fdcc174b96c8cfe72e92c252a439d44d00132707d1d144227a46a710df61b",
+            "source": "ledger:L1-3",
+            "sourceEventId": "ca2f68bc-d908-41f9-a43b-b7719e80897a"
+          }
+        ],
+        [
+          {
+            "id": "8387558560ca7e6e697ac58239091320d46519fa59598e1e240043b8ba8f0919",
+            "source": "prose",
+            "sourceEventId": "ca2f68bc-d908-41f9-a43b-b7719e80897a"
+          },
+          {
+            "id": "c03fdcc174b96c8cfe72e92c252a439d44d00132707d1d144227a46a710df61b",
+            "source": "ledger:L1-3",
+            "sourceEventId": "ca2f68bc-d908-41f9-a43b-b7719e80897a"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "缺药原因·改述",
+      "family": "缺药原因",
+      "type": "paraphrase",
+      "query": "接应者能把人带走，为什么却解决不了她的治疗？",
+      "aspects": [
+        [
+          "没库存",
+          "没有蛇岐八家的血清库存"
+        ],
+        [
+          "没配方"
+        ]
+      ],
+      "evidence": [
+        [
+          {
+            "id": "8387558560ca7e6e697ac58239091320d46519fa59598e1e240043b8ba8f0919",
+            "source": "prose",
+            "sourceEventId": "ca2f68bc-d908-41f9-a43b-b7719e80897a"
+          },
+          {
+            "id": "b483c6e315d7e31a2dff4f63fbef159301d97e9f5e43edb461bece47a58f2df8",
+            "source": "outcome",
+            "sourceEventId": "ca2f68bc-d908-41f9-a43b-b7719e80897a"
+          },
+          {
+            "id": "c03fdcc174b96c8cfe72e92c252a439d44d00132707d1d144227a46a710df61b",
+            "source": "ledger:L1-3",
+            "sourceEventId": "ca2f68bc-d908-41f9-a43b-b7719e80897a"
+          }
+        ],
+        [
+          {
+            "id": "8387558560ca7e6e697ac58239091320d46519fa59598e1e240043b8ba8f0919",
+            "source": "prose",
+            "sourceEventId": "ca2f68bc-d908-41f9-a43b-b7719e80897a"
+          },
+          {
+            "id": "c03fdcc174b96c8cfe72e92c252a439d44d00132707d1d144227a46a710df61b",
+            "source": "ledger:L1-3",
+            "sourceEventId": "ca2f68bc-d908-41f9-a43b-b7719e80897a"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "保护条款·直问",
+      "family": "保护条款",
+      "type": "literal",
+      "query": "凯撒怎样回答学院要求绘梨衣离开日本的原因？",
+      "aspects": [
+        [
+          "保护条款"
+        ]
+      ],
+      "evidence": [
+        [
+          {
+            "id": "8387558560ca7e6e697ac58239091320d46519fa59598e1e240043b8ba8f0919",
+            "source": "prose",
+            "sourceEventId": "ca2f68bc-d908-41f9-a43b-b7719e80897a"
+          },
+          {
+            "id": "f2ab24348fed02c94bd94274d0fe9e7919dd43c68354fa12c4619cb57ce75724",
+            "source": "ledger:L1-4",
+            "sourceEventId": "ca2f68bc-d908-41f9-a43b-b7719e80897a"
+          },
+          {
+            "id": "e9e5ce75a86db785298dd07cb86d64eaa215f2cf348bfb58f7c6e84d41d2f6b1",
+            "source": "loop:Q1-3",
+            "sourceEventId": "ca2f68bc-d908-41f9-a43b-b7719e80897a"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "保护条款·改述",
+      "family": "保护条款",
+      "type": "paraphrase",
+      "query": "追问撤离的真正用意时，电话那端沉默后用了什么说辞？",
+      "aspects": [
+        [
+          "保护条款"
+        ]
+      ],
+      "evidence": [
+        [
+          {
+            "id": "8387558560ca7e6e697ac58239091320d46519fa59598e1e240043b8ba8f0919",
+            "source": "prose",
+            "sourceEventId": "ca2f68bc-d908-41f9-a43b-b7719e80897a"
+          },
+          {
+            "id": "f2ab24348fed02c94bd94274d0fe9e7919dd43c68354fa12c4619cb57ce75724",
+            "source": "ledger:L1-4",
+            "sourceEventId": "ca2f68bc-d908-41f9-a43b-b7719e80897a"
+          },
+          {
+            "id": "e9e5ce75a86db785298dd07cb86d64eaa215f2cf348bfb58f7c6e84d41d2f6b1",
+            "source": "loop:Q1-3",
+            "sourceEventId": "ca2f68bc-d908-41f9-a43b-b7719e80897a"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "包装痕迹·直问",
+      "family": "包装痕迹",
+      "type": "literal",
+      "query": "最后一支药的塑封有什么痕迹？",
+      "aspects": [
+        [
+          "起了毛",
+          "塑封起毛"
+        ]
+      ],
+      "evidence": [
+        [
+          {
+            "id": "8387558560ca7e6e697ac58239091320d46519fa59598e1e240043b8ba8f0919",
+            "source": "prose",
+            "sourceEventId": "ca2f68bc-d908-41f9-a43b-b7719e80897a"
+          },
+          {
+            "id": "cd00a082e6e0ab1764ea6008db1030659372879af8ac90f51506da7f7cd90935",
+            "source": "ledger:L1-6",
+            "sourceEventId": "ca2f68bc-d908-41f9-a43b-b7719e80897a"
+          },
+          {
+            "id": "5691677cc11d9017185d9566a0b4dbdab21d328dddd724201e75521d7f47a051",
+            "source": "prose",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "b9029bd29de5e6ae3e2c657776280c7466a80701feea8421e039cd8ad30b83b0",
+            "source": "ledger:L2-1",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "包装痕迹·改述",
+      "family": "包装痕迹",
+      "type": "paraphrase",
+      "query": "救命针剂的外包装上，有什么被反复触摸留下的细节？",
+      "aspects": [
+        [
+          "起了毛",
+          "塑封起毛"
+        ]
+      ],
+      "evidence": [
+        [
+          {
+            "id": "8387558560ca7e6e697ac58239091320d46519fa59598e1e240043b8ba8f0919",
+            "source": "prose",
+            "sourceEventId": "ca2f68bc-d908-41f9-a43b-b7719e80897a"
+          },
+          {
+            "id": "cd00a082e6e0ab1764ea6008db1030659372879af8ac90f51506da7f7cd90935",
+            "source": "ledger:L1-6",
+            "sourceEventId": "ca2f68bc-d908-41f9-a43b-b7719e80897a"
+          },
+          {
+            "id": "5691677cc11d9017185d9566a0b4dbdab21d328dddd724201e75521d7f47a051",
+            "source": "prose",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "b9029bd29de5e6ae3e2c657776280c7466a80701feea8421e039cd8ad30b83b0",
+            "source": "ledger:L2-1",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "号码载体·直问",
+      "family": "号码载体",
+      "type": "literal",
+      "query": "最后一支药的批次号被记录在哪里？",
+      "aspects": [
+        [
+          "手机便笺"
+        ]
+      ],
+      "evidence": [
+        [
+          {
+            "id": "5691677cc11d9017185d9566a0b4dbdab21d328dddd724201e75521d7f47a051",
+            "source": "prose",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "85d9255431d1dc6d0657179930107fa50bc6d2d91bebcbf7646fa1af10b2e2d2",
+            "source": "outcome",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "b9029bd29de5e6ae3e2c657776280c7466a80701feea8421e039cd8ad30b83b0",
+            "source": "ledger:L2-1",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "f50e2832b2f62d69cbd31b43f971beda260e369799dfae6861dc6195ead99255",
+            "source": "environment-note:0",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "81bb1b377c9a14e97d44a9f861c56ba7d20ba97febaaf29b064398baf4450797",
+            "source": "narrator-note:3",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "ebc51a90e54806ccfe10b41729ca6639d22087e23eee9c9a6ea43fbfe0a7982e",
+            "source": "environment-note:1",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "号码载体·改述",
+      "family": "号码载体",
+      "type": "paraphrase",
+      "query": "我们把那串用来追溯药物来历的编号保存到了什么地方？",
+      "aspects": [
+        [
+          "手机便笺"
+        ]
+      ],
+      "evidence": [
+        [
+          {
+            "id": "5691677cc11d9017185d9566a0b4dbdab21d328dddd724201e75521d7f47a051",
+            "source": "prose",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "85d9255431d1dc6d0657179930107fa50bc6d2d91bebcbf7646fa1af10b2e2d2",
+            "source": "outcome",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "b9029bd29de5e6ae3e2c657776280c7466a80701feea8421e039cd8ad30b83b0",
+            "source": "ledger:L2-1",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "f50e2832b2f62d69cbd31b43f971beda260e369799dfae6861dc6195ead99255",
+            "source": "environment-note:0",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "81bb1b377c9a14e97d44a9f861c56ba7d20ba97febaaf29b064398baf4450797",
+            "source": "narrator-note:3",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "ebc51a90e54806ccfe10b41729ca6639d22087e23eee9c9a6ea43fbfe0a7982e",
+            "source": "environment-note:1",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "取药路径·直问",
+      "family": "取药路径",
+      "type": "literal",
+      "query": "绘梨衣记得的取药路线经过哪里？",
+      "aspects": [
+        [
+          "地下车库"
+        ],
+        [
+          "电梯"
+        ]
+      ],
+      "evidence": [
+        [
+          {
+            "id": "5691677cc11d9017185d9566a0b4dbdab21d328dddd724201e75521d7f47a051",
+            "source": "prose",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "85d9255431d1dc6d0657179930107fa50bc6d2d91bebcbf7646fa1af10b2e2d2",
+            "source": "outcome",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "82dfca10feed00fc38314c832a4dd744f05bcb67cc75295a8fb3c9f9f2740936",
+            "source": "narrator-note:1",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "a1c7cd8d915e0fee2a7c662c7dde4102dae0aa53889a6aa9f92b9940e68ab083",
+            "source": "ledger:L2-3",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "66deabd567ba3158e4ff13ca7a87a05271ff0ff993e9dcd6653f89a7d2dd0819",
+            "source": "environment-note:1",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "32545f41662ad4fa5f79e497618ee4a46bfb328a39b7db657954bfb728a3494b",
+            "source": "prose",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "2d65a3c80b2282855a95e298ba84da88d83e99ca68b407d8bd2725bde19e573a",
+            "source": "outcome",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "803cce99d45a2f66dc5b52876da953d00b386ce92dd51a734112d30570f3face",
+            "source": "narrator-note:1",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "3a9b3f0b094ffaac8daf8e77c135fe503811ab95e05271a8da40eb041d2be4f2",
+            "source": "ledger:L3-6",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "f8f37237843d1117806d50f6544da3916da1efbcc458ab313d0b929c0c9810f9",
+            "source": "ledger:L3-7",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "59d4fc10597d83c7f913ee8d6a47a644a1adae59519dc33e4792e8961531597e",
+            "source": "loop:Q3-2",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "2c2276a493105939820c0a2b26d6cd031d85073c9e9141be17348a0f068aef74",
+            "source": "environment-note:0",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          }
+        ],
+        [
+          {
+            "id": "61afce2567dd1bb649064c03200f53a47da9d5a4dd59b908ee6925273a2ba7bf",
+            "source": "prose",
+            "sourceEventId": "33c6df40-ec50-4129-8885-5c9f732c535f"
+          },
+          {
+            "id": "8387558560ca7e6e697ac58239091320d46519fa59598e1e240043b8ba8f0919",
+            "source": "prose",
+            "sourceEventId": "ca2f68bc-d908-41f9-a43b-b7719e80897a"
+          },
+          {
+            "id": "83470583543235df00777b376018d5037d19bb376d6f552fc159f77a9d490b83",
+            "source": "environment-note:2",
+            "sourceEventId": "ca2f68bc-d908-41f9-a43b-b7719e80897a"
+          },
+          {
+            "id": "5691677cc11d9017185d9566a0b4dbdab21d328dddd724201e75521d7f47a051",
+            "source": "prose",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "85d9255431d1dc6d0657179930107fa50bc6d2d91bebcbf7646fa1af10b2e2d2",
+            "source": "outcome",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "82dfca10feed00fc38314c832a4dd744f05bcb67cc75295a8fb3c9f9f2740936",
+            "source": "narrator-note:1",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "a1c7cd8d915e0fee2a7c662c7dde4102dae0aa53889a6aa9f92b9940e68ab083",
+            "source": "ledger:L2-3",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "66deabd567ba3158e4ff13ca7a87a05271ff0ff993e9dcd6653f89a7d2dd0819",
+            "source": "environment-note:1",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "32545f41662ad4fa5f79e497618ee4a46bfb328a39b7db657954bfb728a3494b",
+            "source": "prose",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "f8f37237843d1117806d50f6544da3916da1efbcc458ab313d0b929c0c9810f9",
+            "source": "ledger:L3-7",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "取药路径·改述",
+      "family": "取药路径",
+      "type": "paraphrase",
+      "query": "她过去接受治疗时，车怎么进楼，人又怎么上去？",
+      "aspects": [
+        [
+          "地下车库"
+        ],
+        [
+          "电梯"
+        ]
+      ],
+      "evidence": [
+        [
+          {
+            "id": "5691677cc11d9017185d9566a0b4dbdab21d328dddd724201e75521d7f47a051",
+            "source": "prose",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "85d9255431d1dc6d0657179930107fa50bc6d2d91bebcbf7646fa1af10b2e2d2",
+            "source": "outcome",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "82dfca10feed00fc38314c832a4dd744f05bcb67cc75295a8fb3c9f9f2740936",
+            "source": "narrator-note:1",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "a1c7cd8d915e0fee2a7c662c7dde4102dae0aa53889a6aa9f92b9940e68ab083",
+            "source": "ledger:L2-3",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "66deabd567ba3158e4ff13ca7a87a05271ff0ff993e9dcd6653f89a7d2dd0819",
+            "source": "environment-note:1",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "32545f41662ad4fa5f79e497618ee4a46bfb328a39b7db657954bfb728a3494b",
+            "source": "prose",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "2d65a3c80b2282855a95e298ba84da88d83e99ca68b407d8bd2725bde19e573a",
+            "source": "outcome",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "803cce99d45a2f66dc5b52876da953d00b386ce92dd51a734112d30570f3face",
+            "source": "narrator-note:1",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "3a9b3f0b094ffaac8daf8e77c135fe503811ab95e05271a8da40eb041d2be4f2",
+            "source": "ledger:L3-6",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "f8f37237843d1117806d50f6544da3916da1efbcc458ab313d0b929c0c9810f9",
+            "source": "ledger:L3-7",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "59d4fc10597d83c7f913ee8d6a47a644a1adae59519dc33e4792e8961531597e",
+            "source": "loop:Q3-2",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "2c2276a493105939820c0a2b26d6cd031d85073c9e9141be17348a0f068aef74",
+            "source": "environment-note:0",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          }
+        ],
+        [
+          {
+            "id": "61afce2567dd1bb649064c03200f53a47da9d5a4dd59b908ee6925273a2ba7bf",
+            "source": "prose",
+            "sourceEventId": "33c6df40-ec50-4129-8885-5c9f732c535f"
+          },
+          {
+            "id": "8387558560ca7e6e697ac58239091320d46519fa59598e1e240043b8ba8f0919",
+            "source": "prose",
+            "sourceEventId": "ca2f68bc-d908-41f9-a43b-b7719e80897a"
+          },
+          {
+            "id": "83470583543235df00777b376018d5037d19bb376d6f552fc159f77a9d490b83",
+            "source": "environment-note:2",
+            "sourceEventId": "ca2f68bc-d908-41f9-a43b-b7719e80897a"
+          },
+          {
+            "id": "5691677cc11d9017185d9566a0b4dbdab21d328dddd724201e75521d7f47a051",
+            "source": "prose",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "85d9255431d1dc6d0657179930107fa50bc6d2d91bebcbf7646fa1af10b2e2d2",
+            "source": "outcome",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "82dfca10feed00fc38314c832a4dd744f05bcb67cc75295a8fb3c9f9f2740936",
+            "source": "narrator-note:1",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "a1c7cd8d915e0fee2a7c662c7dde4102dae0aa53889a6aa9f92b9940e68ab083",
+            "source": "ledger:L2-3",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "66deabd567ba3158e4ff13ca7a87a05271ff0ff993e9dcd6653f89a7d2dd0819",
+            "source": "environment-note:1",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "32545f41662ad4fa5f79e497618ee4a46bfb328a39b7db657954bfb728a3494b",
+            "source": "prose",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "f8f37237843d1117806d50f6544da3916da1efbcc458ab313d0b929c0c9810f9",
+            "source": "ledger:L3-7",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "经手人行为·直问",
+      "family": "经手人行为",
+      "type": "literal",
+      "query": "绘梨衣取药时总共几个人，其中戴手套的人做什么？",
+      "aspects": [
+        [
+          "两个",
+          "两人"
+        ],
+        [
+          "手套"
+        ],
+        [
+          "按次数数"
+        ]
+      ],
+      "evidence": [
+        [
+          {
+            "id": "5691677cc11d9017185d9566a0b4dbdab21d328dddd724201e75521d7f47a051",
+            "source": "prose",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "85d9255431d1dc6d0657179930107fa50bc6d2d91bebcbf7646fa1af10b2e2d2",
+            "source": "outcome",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "82dfca10feed00fc38314c832a4dd744f05bcb67cc75295a8fb3c9f9f2740936",
+            "source": "narrator-note:1",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "515267ada332b6973ce070b1cf64f763a91f12b8c46764619cdfd73f63df52c1",
+            "source": "narrator-note:2",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "a1c7cd8d915e0fee2a7c662c7dde4102dae0aa53889a6aa9f92b9940e68ab083",
+            "source": "ledger:L2-3",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          }
+        ],
+        [
+          {
+            "id": "5691677cc11d9017185d9566a0b4dbdab21d328dddd724201e75521d7f47a051",
+            "source": "prose",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "85d9255431d1dc6d0657179930107fa50bc6d2d91bebcbf7646fa1af10b2e2d2",
+            "source": "outcome",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "82dfca10feed00fc38314c832a4dd744f05bcb67cc75295a8fb3c9f9f2740936",
+            "source": "narrator-note:1",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "a1c7cd8d915e0fee2a7c662c7dde4102dae0aa53889a6aa9f92b9940e68ab083",
+            "source": "ledger:L2-3",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "66deabd567ba3158e4ff13ca7a87a05271ff0ff993e9dcd6653f89a7d2dd0819",
+            "source": "environment-note:1",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          }
+        ],
+        [
+          {
+            "id": "5691677cc11d9017185d9566a0b4dbdab21d328dddd724201e75521d7f47a051",
+            "source": "prose",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "85d9255431d1dc6d0657179930107fa50bc6d2d91bebcbf7646fa1af10b2e2d2",
+            "source": "outcome",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "82dfca10feed00fc38314c832a4dd744f05bcb67cc75295a8fb3c9f9f2740936",
+            "source": "narrator-note:1",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "a1c7cd8d915e0fee2a7c662c7dde4102dae0aa53889a6aa9f92b9940e68ab083",
+            "source": "ledger:L2-3",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "经手人行为·改述",
+      "family": "经手人行为",
+      "type": "paraphrase",
+      "query": "她回忆那些来送药的人时，有什么沉默和分发药量的细节？",
+      "aspects": [
+        [
+          "两个",
+          "两人"
+        ],
+        [
+          "手套"
+        ],
+        [
+          "按次数数"
+        ]
+      ],
+      "evidence": [
+        [
+          {
+            "id": "5691677cc11d9017185d9566a0b4dbdab21d328dddd724201e75521d7f47a051",
+            "source": "prose",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "85d9255431d1dc6d0657179930107fa50bc6d2d91bebcbf7646fa1af10b2e2d2",
+            "source": "outcome",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "82dfca10feed00fc38314c832a4dd744f05bcb67cc75295a8fb3c9f9f2740936",
+            "source": "narrator-note:1",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "515267ada332b6973ce070b1cf64f763a91f12b8c46764619cdfd73f63df52c1",
+            "source": "narrator-note:2",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "a1c7cd8d915e0fee2a7c662c7dde4102dae0aa53889a6aa9f92b9940e68ab083",
+            "source": "ledger:L2-3",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          }
+        ],
+        [
+          {
+            "id": "5691677cc11d9017185d9566a0b4dbdab21d328dddd724201e75521d7f47a051",
+            "source": "prose",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "85d9255431d1dc6d0657179930107fa50bc6d2d91bebcbf7646fa1af10b2e2d2",
+            "source": "outcome",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "82dfca10feed00fc38314c832a4dd744f05bcb67cc75295a8fb3c9f9f2740936",
+            "source": "narrator-note:1",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "a1c7cd8d915e0fee2a7c662c7dde4102dae0aa53889a6aa9f92b9940e68ab083",
+            "source": "ledger:L2-3",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "66deabd567ba3158e4ff13ca7a87a05271ff0ff993e9dcd6653f89a7d2dd0819",
+            "source": "environment-note:1",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          }
+        ],
+        [
+          {
+            "id": "5691677cc11d9017185d9566a0b4dbdab21d328dddd724201e75521d7f47a051",
+            "source": "prose",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "85d9255431d1dc6d0657179930107fa50bc6d2d91bebcbf7646fa1af10b2e2d2",
+            "source": "outcome",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "82dfca10feed00fc38314c832a4dd744f05bcb67cc75295a8fb3c9f9f2740936",
+            "source": "narrator-note:1",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "a1c7cd8d915e0fee2a7c662c7dde4102dae0aa53889a6aa9f92b9940e68ab083",
+            "source": "ledger:L2-3",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "未知姓名地址·直问",
+      "family": "未知姓名地址",
+      "type": "literal",
+      "query": "绘梨衣能说出取药地点的地址和经手人的姓名吗？",
+      "aspects": [
+        [
+          "地址她写不出",
+          "给不出地址",
+          "地址与姓名",
+          "地址与姓名全缺"
+        ],
+        [
+          "名字也想不起",
+          "给不出名字",
+          "地址与姓名",
+          "地址与姓名全缺"
+        ]
+      ],
+      "evidence": [
+        [
+          {
+            "id": "5691677cc11d9017185d9566a0b4dbdab21d328dddd724201e75521d7f47a051",
+            "source": "prose",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "85d9255431d1dc6d0657179930107fa50bc6d2d91bebcbf7646fa1af10b2e2d2",
+            "source": "outcome",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "82dfca10feed00fc38314c832a4dd744f05bcb67cc75295a8fb3c9f9f2740936",
+            "source": "narrator-note:1",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "a1c7cd8d915e0fee2a7c662c7dde4102dae0aa53889a6aa9f92b9940e68ab083",
+            "source": "ledger:L2-3",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "66deabd567ba3158e4ff13ca7a87a05271ff0ff993e9dcd6653f89a7d2dd0819",
+            "source": "environment-note:1",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          }
+        ],
+        [
+          {
+            "id": "85d9255431d1dc6d0657179930107fa50bc6d2d91bebcbf7646fa1af10b2e2d2",
+            "source": "outcome",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "82dfca10feed00fc38314c832a4dd744f05bcb67cc75295a8fb3c9f9f2740936",
+            "source": "narrator-note:1",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "a1c7cd8d915e0fee2a7c662c7dde4102dae0aa53889a6aa9f92b9940e68ab083",
+            "source": "ledger:L2-3",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "66deabd567ba3158e4ff13ca7a87a05271ff0ff993e9dcd6653f89a7d2dd0819",
+            "source": "environment-note:1",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "未知姓名地址·改述",
+      "family": "未知姓名地址",
+      "type": "paraphrase",
+      "query": "她的回忆是否足够让我们按姓名或门牌找到送药的人？",
+      "aspects": [
+        [
+          "地址她写不出",
+          "给不出地址",
+          "地址与姓名",
+          "地址与姓名全缺"
+        ],
+        [
+          "名字也想不起",
+          "给不出名字",
+          "地址与姓名",
+          "地址与姓名全缺"
+        ]
+      ],
+      "evidence": [
+        [
+          {
+            "id": "5691677cc11d9017185d9566a0b4dbdab21d328dddd724201e75521d7f47a051",
+            "source": "prose",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "85d9255431d1dc6d0657179930107fa50bc6d2d91bebcbf7646fa1af10b2e2d2",
+            "source": "outcome",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "82dfca10feed00fc38314c832a4dd744f05bcb67cc75295a8fb3c9f9f2740936",
+            "source": "narrator-note:1",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "a1c7cd8d915e0fee2a7c662c7dde4102dae0aa53889a6aa9f92b9940e68ab083",
+            "source": "ledger:L2-3",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "66deabd567ba3158e4ff13ca7a87a05271ff0ff993e9dcd6653f89a7d2dd0819",
+            "source": "environment-note:1",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          }
+        ],
+        [
+          {
+            "id": "85d9255431d1dc6d0657179930107fa50bc6d2d91bebcbf7646fa1af10b2e2d2",
+            "source": "outcome",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "82dfca10feed00fc38314c832a4dd744f05bcb67cc75295a8fb3c9f9f2740936",
+            "source": "narrator-note:1",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "a1c7cd8d915e0fee2a7c662c7dde4102dae0aa53889a6aa9f92b9940e68ab083",
+            "source": "ledger:L2-3",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "66deabd567ba3158e4ff13ca7a87a05271ff0ff993e9dcd6653f89a7d2dd0819",
+            "source": "environment-note:1",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "车辆之前·直问",
+      "family": "车辆之前",
+      "type": "literal",
+      "query": "第二轮时，街对面的车处于什么状态？",
+      "aspects": [
+        [
+          "停了很久",
+          "长时间"
+        ],
+        [
+          "没熄",
+          "未熄火"
+        ]
+      ],
+      "evidence": [
+        [
+          {
+            "id": "5691677cc11d9017185d9566a0b4dbdab21d328dddd724201e75521d7f47a051",
+            "source": "prose",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "515267ada332b6973ce070b1cf64f763a91f12b8c46764619cdfd73f63df52c1",
+            "source": "narrator-note:2",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "54080899d08f3145adb2f9499f7a68d1367563c3107e10a8fe63a7d74abe844c",
+            "source": "ledger:L2-7",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "324a2832123df5fe66a59c72b2ae045e78b75c897684308d1ff97eb3d8ba3125",
+            "source": "environment-note:2",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "2c2276a493105939820c0a2b26d6cd031d85073c9e9141be17348a0f068aef74",
+            "source": "environment-note:0",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          }
+        ],
+        [
+          {
+            "id": "5691677cc11d9017185d9566a0b4dbdab21d328dddd724201e75521d7f47a051",
+            "source": "prose",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "515267ada332b6973ce070b1cf64f763a91f12b8c46764619cdfd73f63df52c1",
+            "source": "narrator-note:2",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "54080899d08f3145adb2f9499f7a68d1367563c3107e10a8fe63a7d74abe844c",
+            "source": "ledger:L2-7",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "324a2832123df5fe66a59c72b2ae045e78b75c897684308d1ff97eb3d8ba3125",
+            "source": "environment-note:2",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "2c2276a493105939820c0a2b26d6cd031d85073c9e9141be17348a0f068aef74",
+            "source": "environment-note:0",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "车辆之前·改述",
+      "family": "车辆之前",
+      "type": "paraphrase",
+      "query": "那辆车挪动之前，有什么不寻常的停留表现？",
+      "aspects": [
+        [
+          "停了很久",
+          "长时间"
+        ],
+        [
+          "没熄",
+          "未熄火"
+        ]
+      ],
+      "evidence": [
+        [
+          {
+            "id": "5691677cc11d9017185d9566a0b4dbdab21d328dddd724201e75521d7f47a051",
+            "source": "prose",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "515267ada332b6973ce070b1cf64f763a91f12b8c46764619cdfd73f63df52c1",
+            "source": "narrator-note:2",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "54080899d08f3145adb2f9499f7a68d1367563c3107e10a8fe63a7d74abe844c",
+            "source": "ledger:L2-7",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "324a2832123df5fe66a59c72b2ae045e78b75c897684308d1ff97eb3d8ba3125",
+            "source": "environment-note:2",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "2c2276a493105939820c0a2b26d6cd031d85073c9e9141be17348a0f068aef74",
+            "source": "environment-note:0",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          }
+        ],
+        [
+          {
+            "id": "5691677cc11d9017185d9566a0b4dbdab21d328dddd724201e75521d7f47a051",
+            "source": "prose",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "515267ada332b6973ce070b1cf64f763a91f12b8c46764619cdfd73f63df52c1",
+            "source": "narrator-note:2",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "54080899d08f3145adb2f9499f7a68d1367563c3107e10a8fe63a7d74abe844c",
+            "source": "ledger:L2-7",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "324a2832123df5fe66a59c72b2ae045e78b75c897684308d1ff97eb3d8ba3125",
+            "source": "environment-note:2",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "2c2276a493105939820c0a2b26d6cd031d85073c9e9141be17348a0f068aef74",
+            "source": "environment-note:0",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "车辆现在·直问",
+      "family": "车辆现在",
+      "type": "literal",
+      "query": "第三轮时街对面的车去了哪里？",
+      "aspects": [
+        [
+          "后巷"
+        ],
+        [
+          "地下车库"
+        ]
+      ],
+      "evidence": [
+        [
+          {
+            "id": "32545f41662ad4fa5f79e497618ee4a46bfb328a39b7db657954bfb728a3494b",
+            "source": "prose",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "2d65a3c80b2282855a95e298ba84da88d83e99ca68b407d8bd2725bde19e573a",
+            "source": "outcome",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "803cce99d45a2f66dc5b52876da953d00b386ce92dd51a734112d30570f3face",
+            "source": "narrator-note:1",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "3a9b3f0b094ffaac8daf8e77c135fe503811ab95e05271a8da40eb041d2be4f2",
+            "source": "ledger:L3-6",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "59d4fc10597d83c7f913ee8d6a47a644a1adae59519dc33e4792e8961531597e",
+            "source": "loop:Q3-2",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "2c2276a493105939820c0a2b26d6cd031d85073c9e9141be17348a0f068aef74",
+            "source": "environment-note:0",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          }
+        ],
+        [
+          {
+            "id": "5691677cc11d9017185d9566a0b4dbdab21d328dddd724201e75521d7f47a051",
+            "source": "prose",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "85d9255431d1dc6d0657179930107fa50bc6d2d91bebcbf7646fa1af10b2e2d2",
+            "source": "outcome",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "82dfca10feed00fc38314c832a4dd744f05bcb67cc75295a8fb3c9f9f2740936",
+            "source": "narrator-note:1",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "a1c7cd8d915e0fee2a7c662c7dde4102dae0aa53889a6aa9f92b9940e68ab083",
+            "source": "ledger:L2-3",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "66deabd567ba3158e4ff13ca7a87a05271ff0ff993e9dcd6653f89a7d2dd0819",
+            "source": "environment-note:1",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "32545f41662ad4fa5f79e497618ee4a46bfb328a39b7db657954bfb728a3494b",
+            "source": "prose",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "2d65a3c80b2282855a95e298ba84da88d83e99ca68b407d8bd2725bde19e573a",
+            "source": "outcome",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "803cce99d45a2f66dc5b52876da953d00b386ce92dd51a734112d30570f3face",
+            "source": "narrator-note:1",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "3a9b3f0b094ffaac8daf8e77c135fe503811ab95e05271a8da40eb041d2be4f2",
+            "source": "ledger:L3-6",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "f8f37237843d1117806d50f6544da3916da1efbcc458ab313d0b929c0c9810f9",
+            "source": "ledger:L3-7",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "59d4fc10597d83c7f913ee8d6a47a644a1adae59519dc33e4792e8961531597e",
+            "source": "loop:Q3-2",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "2c2276a493105939820c0a2b26d6cd031d85073c9e9141be17348a0f068aef74",
+            "source": "environment-note:0",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "车辆现在·改述",
+      "family": "车辆现在",
+      "type": "paraphrase",
+      "query": "那辆一直候着的车后来是离开了，还是绕到我们楼下？",
+      "aspects": [
+        [
+          "后巷"
+        ],
+        [
+          "地下车库"
+        ]
+      ],
+      "evidence": [
+        [
+          {
+            "id": "32545f41662ad4fa5f79e497618ee4a46bfb328a39b7db657954bfb728a3494b",
+            "source": "prose",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "2d65a3c80b2282855a95e298ba84da88d83e99ca68b407d8bd2725bde19e573a",
+            "source": "outcome",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "803cce99d45a2f66dc5b52876da953d00b386ce92dd51a734112d30570f3face",
+            "source": "narrator-note:1",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "3a9b3f0b094ffaac8daf8e77c135fe503811ab95e05271a8da40eb041d2be4f2",
+            "source": "ledger:L3-6",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "59d4fc10597d83c7f913ee8d6a47a644a1adae59519dc33e4792e8961531597e",
+            "source": "loop:Q3-2",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "2c2276a493105939820c0a2b26d6cd031d85073c9e9141be17348a0f068aef74",
+            "source": "environment-note:0",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          }
+        ],
+        [
+          {
+            "id": "5691677cc11d9017185d9566a0b4dbdab21d328dddd724201e75521d7f47a051",
+            "source": "prose",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "85d9255431d1dc6d0657179930107fa50bc6d2d91bebcbf7646fa1af10b2e2d2",
+            "source": "outcome",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "82dfca10feed00fc38314c832a4dd744f05bcb67cc75295a8fb3c9f9f2740936",
+            "source": "narrator-note:1",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "a1c7cd8d915e0fee2a7c662c7dde4102dae0aa53889a6aa9f92b9940e68ab083",
+            "source": "ledger:L2-3",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "66deabd567ba3158e4ff13ca7a87a05271ff0ff993e9dcd6653f89a7d2dd0819",
+            "source": "environment-note:1",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "32545f41662ad4fa5f79e497618ee4a46bfb328a39b7db657954bfb728a3494b",
+            "source": "prose",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "2d65a3c80b2282855a95e298ba84da88d83e99ca68b407d8bd2725bde19e573a",
+            "source": "outcome",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "803cce99d45a2f66dc5b52876da953d00b386ce92dd51a734112d30570f3face",
+            "source": "narrator-note:1",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "3a9b3f0b094ffaac8daf8e77c135fe503811ab95e05271a8da40eb041d2be4f2",
+            "source": "ledger:L3-6",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "f8f37237843d1117806d50f6544da3916da1efbcc458ab313d0b929c0c9810f9",
+            "source": "ledger:L3-7",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "59d4fc10597d83c7f913ee8d6a47a644a1adae59519dc33e4792e8961531597e",
+            "source": "loop:Q3-2",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "2c2276a493105939820c0a2b26d6cd031d85073c9e9141be17348a0f068aef74",
+            "source": "environment-note:0",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "正规渠道核对·直问",
+      "family": "正规渠道核对",
+      "type": "literal",
+      "query": "凯撒在学院的正规序列和供应清单中查到批次号了吗？",
+      "aspects": [
+        [
+          "正规序列"
+        ],
+        [
+          "查不到",
+          "没有它"
+        ]
+      ],
+      "evidence": [
+        [
+          {
+            "id": "32545f41662ad4fa5f79e497618ee4a46bfb328a39b7db657954bfb728a3494b",
+            "source": "prose",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "2d65a3c80b2282855a95e298ba84da88d83e99ca68b407d8bd2725bde19e573a",
+            "source": "outcome",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "6f4f6652b03b7f1251b4a68e4936193ca7859f94b11682ff239a20dbc9e4c807",
+            "source": "narrator-note:0",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "0651cd4ce82ba61cf84e2994723ea9f788784eb3ab133004fd422a5b0e40615c",
+            "source": "ledger:L3-2",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "8087004f091bc16fd8787ffd762dfc82df5df355f175ec8e9da6bbac1be99b0d",
+            "source": "loop:Q3-1",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          }
+        ],
+        [
+          {
+            "id": "32545f41662ad4fa5f79e497618ee4a46bfb328a39b7db657954bfb728a3494b",
+            "source": "prose",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "2d65a3c80b2282855a95e298ba84da88d83e99ca68b407d8bd2725bde19e573a",
+            "source": "outcome",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "6f4f6652b03b7f1251b4a68e4936193ca7859f94b11682ff239a20dbc9e4c807",
+            "source": "narrator-note:0",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "0651cd4ce82ba61cf84e2994723ea9f788784eb3ab133004fd422a5b0e40615c",
+            "source": "ledger:L3-2",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "8087004f091bc16fd8787ffd762dfc82df5df355f175ec8e9da6bbac1be99b0d",
+            "source": "loop:Q3-1",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "0d7efc48ffbd8f4b4f2f98b3661abdea9545e5e00992284171419580f62568cb",
+            "source": "character-report:0",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "正规渠道核对·改述",
+      "family": "正规渠道核对",
+      "type": "paraphrase",
+      "query": "通过校方正式的采购记录，能确认这支针剂属于哪批货吗？",
+      "aspects": [
+        [
+          "正规序列"
+        ],
+        [
+          "查不到",
+          "没有它"
+        ]
+      ],
+      "evidence": [
+        [
+          {
+            "id": "32545f41662ad4fa5f79e497618ee4a46bfb328a39b7db657954bfb728a3494b",
+            "source": "prose",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "2d65a3c80b2282855a95e298ba84da88d83e99ca68b407d8bd2725bde19e573a",
+            "source": "outcome",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "6f4f6652b03b7f1251b4a68e4936193ca7859f94b11682ff239a20dbc9e4c807",
+            "source": "narrator-note:0",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "0651cd4ce82ba61cf84e2994723ea9f788784eb3ab133004fd422a5b0e40615c",
+            "source": "ledger:L3-2",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "8087004f091bc16fd8787ffd762dfc82df5df355f175ec8e9da6bbac1be99b0d",
+            "source": "loop:Q3-1",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          }
+        ],
+        [
+          {
+            "id": "32545f41662ad4fa5f79e497618ee4a46bfb328a39b7db657954bfb728a3494b",
+            "source": "prose",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "2d65a3c80b2282855a95e298ba84da88d83e99ca68b407d8bd2725bde19e573a",
+            "source": "outcome",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "6f4f6652b03b7f1251b4a68e4936193ca7859f94b11682ff239a20dbc9e4c807",
+            "source": "narrator-note:0",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "0651cd4ce82ba61cf84e2994723ea9f788784eb3ab133004fd422a5b0e40615c",
+            "source": "ledger:L3-2",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "8087004f091bc16fd8787ffd762dfc82df5df355f175ec8e9da6bbac1be99b0d",
+            "source": "loop:Q3-1",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "0d7efc48ffbd8f4b4f2f98b3661abdea9545e5e00992284171419580f62568cb",
+            "source": "character-report:0",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "外部渠道未兑现·直问",
+      "family": "外部渠道未兑现",
+      "type": "literal",
+      "query": "凯撒改试学院外的渠道，多久有结果，是否保证查到？",
+      "aspects": [
+        [
+          "学院外"
+        ],
+        [
+          "几个小时"
+        ],
+        [
+          "什么等不回来",
+          "什么都不回来"
+        ]
+      ],
+      "evidence": [
+        [
+          {
+            "id": "32545f41662ad4fa5f79e497618ee4a46bfb328a39b7db657954bfb728a3494b",
+            "source": "prose",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "2d65a3c80b2282855a95e298ba84da88d83e99ca68b407d8bd2725bde19e573a",
+            "source": "outcome",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "6f4f6652b03b7f1251b4a68e4936193ca7859f94b11682ff239a20dbc9e4c807",
+            "source": "narrator-note:0",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "0651cd4ce82ba61cf84e2994723ea9f788784eb3ab133004fd422a5b0e40615c",
+            "source": "ledger:L3-2",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "8087004f091bc16fd8787ffd762dfc82df5df355f175ec8e9da6bbac1be99b0d",
+            "source": "loop:Q3-1",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          }
+        ],
+        [
+          {
+            "id": "32545f41662ad4fa5f79e497618ee4a46bfb328a39b7db657954bfb728a3494b",
+            "source": "prose",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "2d65a3c80b2282855a95e298ba84da88d83e99ca68b407d8bd2725bde19e573a",
+            "source": "outcome",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "0651cd4ce82ba61cf84e2994723ea9f788784eb3ab133004fd422a5b0e40615c",
+            "source": "ledger:L3-2",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "8087004f091bc16fd8787ffd762dfc82df5df355f175ec8e9da6bbac1be99b0d",
+            "source": "loop:Q3-1",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          }
+        ],
+        [
+          {
+            "id": "32545f41662ad4fa5f79e497618ee4a46bfb328a39b7db657954bfb728a3494b",
+            "source": "prose",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "2d65a3c80b2282855a95e298ba84da88d83e99ca68b407d8bd2725bde19e573a",
+            "source": "outcome",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "0651cd4ce82ba61cf84e2994723ea9f788784eb3ab133004fd422a5b0e40615c",
+            "source": "ledger:L3-2",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "外部渠道未兑现·改述",
+      "family": "外部渠道未兑现",
+      "type": "paraphrase",
+      "query": "电话里承诺另找关系打听，这件事已经办成了吗，等待是否一定有收获？",
+      "aspects": [
+        [
+          "学院外"
+        ],
+        [
+          "几个小时"
+        ],
+        [
+          "什么等不回来",
+          "什么都不回来"
+        ]
+      ],
+      "evidence": [
+        [
+          {
+            "id": "32545f41662ad4fa5f79e497618ee4a46bfb328a39b7db657954bfb728a3494b",
+            "source": "prose",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "2d65a3c80b2282855a95e298ba84da88d83e99ca68b407d8bd2725bde19e573a",
+            "source": "outcome",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "6f4f6652b03b7f1251b4a68e4936193ca7859f94b11682ff239a20dbc9e4c807",
+            "source": "narrator-note:0",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "0651cd4ce82ba61cf84e2994723ea9f788784eb3ab133004fd422a5b0e40615c",
+            "source": "ledger:L3-2",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "8087004f091bc16fd8787ffd762dfc82df5df355f175ec8e9da6bbac1be99b0d",
+            "source": "loop:Q3-1",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          }
+        ],
+        [
+          {
+            "id": "32545f41662ad4fa5f79e497618ee4a46bfb328a39b7db657954bfb728a3494b",
+            "source": "prose",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "2d65a3c80b2282855a95e298ba84da88d83e99ca68b407d8bd2725bde19e573a",
+            "source": "outcome",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "0651cd4ce82ba61cf84e2994723ea9f788784eb3ab133004fd422a5b0e40615c",
+            "source": "ledger:L3-2",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "8087004f091bc16fd8787ffd762dfc82df5df355f175ec8e9da6bbac1be99b0d",
+            "source": "loop:Q3-1",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          }
+        ],
+        [
+          {
+            "id": "32545f41662ad4fa5f79e497618ee4a46bfb328a39b7db657954bfb728a3494b",
+            "source": "prose",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "2d65a3c80b2282855a95e298ba84da88d83e99ca68b407d8bd2725bde19e573a",
+            "source": "outcome",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "0651cd4ce82ba61cf84e2994723ea9f788784eb3ab133004fd422a5b0e40615c",
+            "source": "ledger:L3-2",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "身体迹象·直问",
+      "family": "身体迹象",
+      "type": "literal",
+      "query": "最新一轮绘梨衣握笔时出现什么异常？",
+      "aspects": [
+        [
+          "笔尖在轻轻发抖",
+          "握笔的指尖在发抖"
+        ]
+      ],
+      "evidence": [
+        [
+          {
+            "id": "32545f41662ad4fa5f79e497618ee4a46bfb328a39b7db657954bfb728a3494b",
+            "source": "prose",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "81bb1b377c9a14e97d44a9f861c56ba7d20ba97febaaf29b064398baf4450797",
+            "source": "narrator-note:3",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "13b42680ddd0512ef740f872a39951fd94bcab82a41c50d3ecb9baf0850213ed",
+            "source": "ledger:L3-8",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "身体迹象·改述",
+      "family": "身体迹象",
+      "type": "paraphrase",
+      "query": "最后回头看她时，有什么小动作暴露了身体的不适？",
+      "aspects": [
+        [
+          "笔尖在轻轻发抖",
+          "握笔的指尖在发抖"
+        ]
+      ],
+      "evidence": [
+        [
+          {
+            "id": "32545f41662ad4fa5f79e497618ee4a46bfb328a39b7db657954bfb728a3494b",
+            "source": "prose",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "81bb1b377c9a14e97d44a9f861c56ba7d20ba97febaaf29b064398baf4450797",
+            "source": "narrator-note:3",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "13b42680ddd0512ef740f872a39951fd94bcab82a41c50d3ecb9baf0850213ed",
+            "source": "ledger:L3-8",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "跨回合·入口呼应",
+      "family": "跨回合",
+      "type": "multi",
+      "query": "现在那辆车的去向，与她之前回忆的取药过程有什么共同线索？",
+      "aspects": [
+        [
+          "来的人总是两个",
+          "两人上门",
+          "车直接开进地下车库，电梯上到某一层"
+        ],
+        [
+          "拐进旅馆后巷",
+          "绕进旅馆后巷"
+        ]
+      ],
+      "evidence": [
+        [
+          {
+            "id": "5691677cc11d9017185d9566a0b4dbdab21d328dddd724201e75521d7f47a051",
+            "source": "prose",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "82dfca10feed00fc38314c832a4dd744f05bcb67cc75295a8fb3c9f9f2740936",
+            "source": "narrator-note:1",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "a1c7cd8d915e0fee2a7c662c7dde4102dae0aa53889a6aa9f92b9940e68ab083",
+            "source": "ledger:L2-3",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "32545f41662ad4fa5f79e497618ee4a46bfb328a39b7db657954bfb728a3494b",
+            "source": "prose",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "f8f37237843d1117806d50f6544da3916da1efbcc458ab313d0b929c0c9810f9",
+            "source": "ledger:L3-7",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          }
+        ],
+        [
+          {
+            "id": "32545f41662ad4fa5f79e497618ee4a46bfb328a39b7db657954bfb728a3494b",
+            "source": "prose",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "2d65a3c80b2282855a95e298ba84da88d83e99ca68b407d8bd2725bde19e573a",
+            "source": "outcome",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "803cce99d45a2f66dc5b52876da953d00b386ce92dd51a734112d30570f3face",
+            "source": "narrator-note:1",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "3a9b3f0b094ffaac8daf8e77c135fe503811ab95e05271a8da40eb041d2be4f2",
+            "source": "ledger:L3-6",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "59d4fc10597d83c7f913ee8d6a47a644a1adae59519dc33e4792e8961531597e",
+            "source": "loop:Q3-2",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "跨回合·药物困境",
+      "family": "跨回合",
+      "type": "multi",
+      "query": "为什么拿到了撤离安排和药品编号，我们仍然不能确认能让她继续接受治疗？",
+      "aspects": [
+        [
+          "接人接得下来，接药接不下来",
+          "接得了人，接不了药"
+        ],
+        [
+          "学院外"
+        ],
+        [
+          "什么等不回来",
+          "什么都不回来"
+        ]
+      ],
+      "evidence": [
+        [
+          {
+            "id": "8387558560ca7e6e697ac58239091320d46519fa59598e1e240043b8ba8f0919",
+            "source": "prose",
+            "sourceEventId": "ca2f68bc-d908-41f9-a43b-b7719e80897a"
+          },
+          {
+            "id": "b483c6e315d7e31a2dff4f63fbef159301d97e9f5e43edb461bece47a58f2df8",
+            "source": "outcome",
+            "sourceEventId": "ca2f68bc-d908-41f9-a43b-b7719e80897a"
+          },
+          {
+            "id": "c03fdcc174b96c8cfe72e92c252a439d44d00132707d1d144227a46a710df61b",
+            "source": "ledger:L1-3",
+            "sourceEventId": "ca2f68bc-d908-41f9-a43b-b7719e80897a"
+          },
+          {
+            "id": "5691677cc11d9017185d9566a0b4dbdab21d328dddd724201e75521d7f47a051",
+            "source": "prose",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          }
+        ],
+        [
+          {
+            "id": "32545f41662ad4fa5f79e497618ee4a46bfb328a39b7db657954bfb728a3494b",
+            "source": "prose",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "2d65a3c80b2282855a95e298ba84da88d83e99ca68b407d8bd2725bde19e573a",
+            "source": "outcome",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "6f4f6652b03b7f1251b4a68e4936193ca7859f94b11682ff239a20dbc9e4c807",
+            "source": "narrator-note:0",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "0651cd4ce82ba61cf84e2994723ea9f788784eb3ab133004fd422a5b0e40615c",
+            "source": "ledger:L3-2",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "8087004f091bc16fd8787ffd762dfc82df5df355f175ec8e9da6bbac1be99b0d",
+            "source": "loop:Q3-1",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          }
+        ],
+        [
+          {
+            "id": "32545f41662ad4fa5f79e497618ee4a46bfb328a39b7db657954bfb728a3494b",
+            "source": "prose",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "2d65a3c80b2282855a95e298ba84da88d83e99ca68b407d8bd2725bde19e573a",
+            "source": "outcome",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "0651cd4ce82ba61cf84e2994723ea9f788784eb3ab133004fd422a5b0e40615c",
+            "source": "ledger:L3-2",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "跨回合·留白与病情",
+      "family": "跨回合",
+      "type": "multi",
+      "query": "她关于去向的态度和身体状态，分别有哪些尚未解决的信号？",
+      "aspects": [
+        [
+          "最后一行还空着",
+          "那行空白",
+          "最后那行空白"
+        ],
+        [
+          "笔尖在轻轻发抖",
+          "握笔的指尖在发抖"
+        ]
+      ],
+      "evidence": [
+        [
+          {
+            "id": "5691677cc11d9017185d9566a0b4dbdab21d328dddd724201e75521d7f47a051",
+            "source": "prose",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "30b3557c4aae8645d33c979026d0c4777f44ed0d76d04e395a68fcbba355d3ff",
+            "source": "ledger:L2-6",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "848a1470fe0fd09225946b41625f36a07b1c2c27f7048dbf1535499a249da490",
+            "source": "loop:Q2-2",
+            "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f"
+          },
+          {
+            "id": "32545f41662ad4fa5f79e497618ee4a46bfb328a39b7db657954bfb728a3494b",
+            "source": "prose",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "13b42680ddd0512ef740f872a39951fd94bcab82a41c50d3ecb9baf0850213ed",
+            "source": "ledger:L3-8",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "1c558d715d0609fd12c5a95df1e2eb74cc33051d8af93da271158c5520905c4e",
+            "source": "character-report:1",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          }
+        ],
+        [
+          {
+            "id": "32545f41662ad4fa5f79e497618ee4a46bfb328a39b7db657954bfb728a3494b",
+            "source": "prose",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "81bb1b377c9a14e97d44a9f861c56ba7d20ba97febaaf29b064398baf4450797",
+            "source": "narrator-note:3",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          },
+          {
+            "id": "13b42680ddd0512ef740f872a39951fd94bcab82a41c50d3ecb9baf0850213ed",
+            "source": "ledger:L3-8",
+            "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+          }
+        ]
+      ]
+    }
+  ]
+}

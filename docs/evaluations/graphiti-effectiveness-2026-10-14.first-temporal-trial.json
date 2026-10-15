@@ -1,0 +1,86 @@
+{
+  "scope": "novel-fe076a17d17a7d0b4983acd5bd6cbd8b",
+  "relations": [
+    {
+      "source": "沈禾",
+      "relation": "HANDS_OVER_TO",
+      "target": "许川",
+      "fact": "沈禾将青梧钥匙交给许川。",
+      "validAt": null,
+      "invalidAt": null
+    },
+    {
+      "source": "许川",
+      "relation": "IS_SOLE_HOLDER_OF",
+      "target": "青梧钥匙",
+      "fact": "交接结束时，许川是青梧钥匙唯一的持有人。",
+      "validAt": null,
+      "invalidAt": null
+    },
+    {
+      "source": "青梧钥匙",
+      "relation": "HAS_ATTACHED",
+      "target": "紫色短绳",
+      "fact": "青梧钥匙上系着紫色短绳。",
+      "validAt": null,
+      "invalidAt": null
+    },
+    {
+      "source": "沈禾",
+      "relation": "PARTICIPATES_IN",
+      "target": "青梧钥匙交接",
+      "fact": "沈禾参与青梧钥匙交接，将青梧钥匙交给许川。",
+      "validAt": null,
+      "invalidAt": null
+    },
+    {
+      "source": "许川",
+      "relation": "PARTICIPATES_IN",
+      "target": "青梧钥匙交接",
+      "fact": "许川参与青梧钥匙交接，接收青梧钥匙。",
+      "validAt": null,
+      "invalidAt": null
+    },
+    {
+      "source": "青梧钥匙",
+      "relation": "INVOLVED_IN",
+      "target": "青梧钥匙交接",
+      "fact": "青梧钥匙是青梧钥匙交接的标的物。",
+      "validAt": null,
+      "invalidAt": null
+    },
+    {
+      "source": "许川",
+      "relation": "HANDS_OVER",
+      "target": "顾宁",
+      "fact": "许川把青梧钥匙交给顾宁。",
+      "validAt": "2000-01-01T00:05:00Z",
+      "invalidAt": null
+    },
+    {
+      "source": "顾宁",
+      "relation": "SOLELY_KEEPS",
+      "target": "青梧钥匙",
+      "fact": "交接结束后，青梧钥匙由顾宁独自保管。",
+      "validAt": "2000-01-01T00:05:00Z",
+      "invalidAt": null
+    },
+    {
+      "source": "许川",
+      "relation": "NO_LONGER_HOLDS",
+      "target": "青梧钥匙",
+      "fact": "许川已不再持有青梧钥匙。",
+      "validAt": "2000-01-01T00:05:00Z",
+      "invalidAt": null
+    },
+    {
+      "source": "青梧钥匙",
+      "relation": "HANDED_OVER_TO",
+      "target": "顾宁",
+      "fact": "青梧钥匙被许川交给顾宁。",
+      "validAt": "2000-01-01T00:05:00Z",
+      "invalidAt": null
+    }
+  ],
+  "note": "First fresh trial completed ingestion and recall; report generation initially failed because the evaluation script built an HTTP URL incorrectly. These Neo4j results are retained independently."
+}

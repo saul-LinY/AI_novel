@@ -1,0 +1,47 @@
+{
+  "scope": "novel-c0fbe1404067622ea404b6a6b9076b0e",
+  "checks": {
+    "putDownEndsCustody": true,
+    "locationTracked": true,
+    "planDoesNotMoveItem": true
+  },
+  "steps": [
+    {
+      "eventId": "transfer-3",
+      "states": [
+        {
+          "id": "aa506e84-efcc-50d3-a353-44d2ae38f647",
+          "property": "location",
+          "subject": "青梧钥匙",
+          "value": "木匣",
+          "validAt": "2000-01-01T00:15:00+00:00",
+          "invalidAt": null,
+          "turn": 3,
+          "sequence": 0,
+          "sourceEventIds": [
+            "transfer-3"
+          ]
+        }
+      ]
+    },
+    {
+      "eventId": "transfer-4",
+      "states": [
+        {
+          "id": "aa506e84-efcc-50d3-a353-44d2ae38f647",
+          "property": "location",
+          "subject": "青梧钥匙",
+          "value": "木匣",
+          "validAt": "2000-01-01T00:15:00+00:00",
+          "invalidAt": null,
+          "turn": 3,
+          "sequence": 0,
+          "sourceEventIds": [
+            "transfer-4",
+            "transfer-3"
+          ]
+        }
+      ]
+    }
+  ]
+}

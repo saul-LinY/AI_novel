@@ -148,9 +148,17 @@ export async function createAppServer(options = {}) {
       };
       // A prepared job must keep its original context during stream recovery.
       if (!job.prepared && !job.completedTurn) {
-        try { context.longTermMemory = await memory.recall({ store, storyPackage, branchId: job.branchId, action: job.action }); }
-        catch (error) { logger.warn?.('[AI novel memory] recall unavailable:', error.message); }
+        jobs.emit(job, { type: "phase", phase: "recalling" });
+        try {
+          context.longTermMemory = await memory.recall({ store, storyPackage, branchId: job.branchId, action: job.action });
+          job.memoryRecall = { result: context.longTermMemory, status: context.longTermMemory ? "complete" : "disabled" };
+        } catch (error) {
+          logger.warn?.('[AI novel memory] recall unavailable:', error.message);
+          job.memoryRecall = { result: null, status: "degraded" };
+        }
+        await jobs.persist(job);
       }
+      if (job.status === "cancelled") return;
       let firstProse = !jobs.prosePrefix(job);
       const handlers = {
         telemetry,
@@ -222,6 +230,8 @@ export async function createAppServer(options = {}) {
       await storyStore.save(nextStore);
       job.telemetry = committedTelemetry;
       memory.enqueue(nextStore, storyPackage, job.branchId);
+      const memoryStatus = memory.status();
+      job.memoryUpdate = { enabled: memoryStatus.enabled, graphiti: Boolean(memoryStatus.graphiti?.enabled), enqueuedAt: new Date().toISOString() };
       jobs.emit(job, { type: "complete", story: serializeStore(nextStore, storyPackage) });
       await jobs.persist(job);
     } catch (error) {
@@ -265,6 +275,7 @@ export async function createAppServer(options = {}) {
       }
 
       if (request.method === "GET" && pathname === "/api/memory/status") {
+        await memory.graph?.refreshStatus?.();
         sendJson(response, 200, memory.status());
         return;
       }
@@ -305,7 +316,8 @@ export async function createAppServer(options = {}) {
           sendJson(response, 409, { error: "正文已经锁定，不能再取消" });
           return;
         }
-        const cancelled = await runtime.abort();
+        const recalling = job.events.findLast((event) => event.type === 'phase')?.phase === 'recalling';
+        const cancelled = recalling || await runtime.abort();
         if (!cancelled) {
           sendJson(response, 409, { error: "正文已经锁定，不能再取消" });
           return;
@@ -413,7 +425,8 @@ export async function createAppServer(options = {}) {
           sendJson(response, 409, { error: "正文已经锁定，不能再取消" });
           return;
         }
-        const cancelled = await runtime.abort();
+        const recalling = job.events.findLast((event) => event.type === 'phase')?.phase === 'recalling';
+        const cancelled = recalling || await runtime.abort();
         if (!cancelled) {
           sendJson(response, 409, { error: "正文已经锁定，不能再取消" });
           return;

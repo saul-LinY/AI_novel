@@ -62,6 +62,19 @@ test('recoverable failure retains locked text; completion uses server-authored e
   applyTurnEvent(s,{turnId:'a',seq:3,type:'complete',story:response});
   assert.equal(s.terminal,true); assert.deepEqual(mapSave(s.complete).ending,response.state.ending);
 });
+test('action rejection is distinguished from technical failure and cannot resume a terminal turn', () => {
+  const s = newSession({ mode: 'do', text: '指定 NPC 取出不存在的物品' }, null);
+  applyTurnEvent(s, { turnId: 'a', seq: 1, type: 'error', recoverable: true, message: '断线' });
+  applyTurnEvent(s, { turnId: 'a', seq: 2, type: 'rejected', message: '当前没有这件物品' });
+  assert.equal(s.rejected, true);
+  assert.equal(s.terminal, true);
+  assert.equal(s.recoverable, false);
+  assert.equal(s.text, '');
+  assert.equal(s.complete, null);
+  const failed = newSession({ mode: 'do', text: '正常行动' }, null);
+  applyTurnEvent(failed, { turnId: 'b', seq: 1, type: 'failed', message: '模型服务异常' });
+  assert.equal(failed.rejected, false);
+});
 test('NDJSON decoder handles split UTF-8 bytes and a final line without newline', async () => {
   const encoder = new TextEncoder();
   const bytes=encoder.encode(JSON.stringify({turnId:'a',seq:1,type:'prose_delta',text:'东京的雨。'})+'\n'+JSON.stringify({turnId:'a',seq:2,type:'prepared'}));

@@ -326,6 +326,61 @@ test("主创收到明确错误后可修正通过，下一次请求重新计算�
   assert.equal(fake.counts().calls, 3);
 });
 
+test("拒绝行动的缺失空字段、零步骤及多余变化在 Pi 校验前规范化，首轮即可返回拒绝", async () => {
+  const { applyTurnProposal } = await import("../src/story-engine.js");
+  const minimal = {
+    normalizedAction: { intent: "让绘梨衣掏出不存在的武器", steps: ["要求 NPC 取出武器"], stoppedAtStep: 1, stopReason: "玩家没有取得该物品，也不能直接指定 NPC 动作" },
+    outcome: { type: "action_not_allowed", summary: "目前没有这件物品，无法执行。", reasons: ["已提交的物品中没有该武器"] },
+  };
+  const withChanges = {
+    ...proposal(), ...minimal,
+    normalizedAction: { ...minimal.normalizedAction, stoppedAtStep: 0 },
+    delta: { timeAdvanceMinutes: 1, addItemIds: ["erii-notebook"] },
+    npcIntents: [{ characterId: "erii", intent: "执行被拒绝的动作", reason: "不应发生" }],
+    memoryNotes: ["不应记住被拒绝的动作"],
+    storyProgress: { evidence: "不应推进" },
+    foreshadowing: { plant: [] },
+  };
+  for (const raw of [minimal, withChanges]) {
+    const before = structuredClone(raw);
+    const fake = await structuredLoop([raw]);
+    const result = await fake.runtime.requestStructured("main", "提交拒绝结果");
+    assert.deepEqual(fake.counts(), { calls: 1, executions: 1 });
+    assert.deepEqual(result, { ...minimal, choices: [], delta: {}, npcIntents: [], memoryNotes: [] });
+    assert.deepEqual(raw, before);
+    const state = createInitialState(storyPackage);
+    assert.deepEqual(applyTurnProposal(state, result, storyPackage), state);
+    fake.runtime.activeState = state;
+    assert.doesNotThrow(() => fake.runtime.validateMainProposal(result));
+  }
+});
+
+test("拒绝仍须解释原因，普通成功提案的必填字段不会被补造", async () => {
+  const missingChoices = proposal();
+  delete missingChoices.choices;
+  for (const raw of [{ outcome: { type: "action_not_allowed" } }, missingChoices]) {
+    const fake = await structuredLoop([raw]);
+    await assert.rejects(fake.runtime.requestStructured("main", "提交提案"), /连续 3 次校验失败/);
+    assert.deepEqual(fake.counts(), { calls: 3, executions: 0 });
+  }
+});
+
+test("规范化的行动拒绝不会进入正文、记录员或 prepared 阶段", async () => {
+  const { prepareMainArguments } = await import("../src/pi-story-runtime.js");
+  const fake = runtimeWithFakeSessions();
+  const original = context();
+  fake.runtime.requestStructured = async (role) => role === "main" ? prepareMainArguments({
+    normalizedAction: { intent: original.action, steps: [original.action], stoppedAtStep: 0, stopReason: "缺少执行条件" },
+    outcome: { type: "action_not_allowed", summary: "缺少执行条件", reasons: ["没有对应物品"] },
+  }) : reports(role);
+  fake.session("main").prompt = async () => { assert.fail("拒绝行动不应写正文"); };
+  fake.runtime.recordTurn = async () => { assert.fail("拒绝行动不应记录事实"); };
+  const result = await fake.runtime.generateTurn(original, { onPrepared: () => assert.fail("拒绝行动不应准备提交") });
+  assert.equal(result.rejected, true);
+  assert.equal(result.prose, undefined);
+  assert.deepEqual(result.piEntryIds, original.piEntryIds);
+});
+
 function addHelperSession(fake, role) {
   let listener = null;
   const session = {

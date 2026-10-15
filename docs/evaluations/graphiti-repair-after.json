@@ -1,0 +1,1391 @@
+{
+  "checkedAt": "2026-10-14T06:47:15.609Z",
+  "ranking": {
+    "scope": "novel-2c49ba176b560c14532c9a67d5a8d060",
+    "sourceHead": "0845fef7-a55f-46af-9b8c-9a904a9383e3",
+    "beforeHits": 3,
+    "hits": 11,
+    "bm25Hits": 5,
+    "regressed": [],
+    "results": [
+      {
+        "name": "物品交接",
+        "query": "她写完自己的决定之后，记录愿望的东西又交到了谁手里？",
+        "bm25Hit": true,
+        "hit": true,
+        "global": [
+          {
+            "id": "bf67e9afa4001e9bfbe99893c7fd7d8f8bf9da3df27a1b39a2f0202ec64d4156",
+            "kind": "outcome",
+            "text": "他把她带出了房间，也把“下一站”真的交到了她笔尖上；可她写下的东西同时把他推进一个更难的位置——头顶有人正在下来，而他们身后已经没有房间可退。",
+            "sourceEventId": "f3c5a1e3-26c3-42c1-a64d-8c037b85c3af",
+            "source": "outcome",
+            "ordinal": 2,
+            "timeMinutes": 493,
+            "view": "global",
+            "score": -1.1526424884796143,
+            "sourceOffset": 0,
+            "truncated": false,
+            "matchedTerms": [
+              "东西",
+              "交",
+              "到了"
+            ],
+            "retrievalSources": [
+              "bm25",
+              "graphiti"
+            ]
+          },
+          {
+            "id": "7f0ab220fa45ad0f74bf06df6a395276bb4c0ab2f3e528fc48bbf5c732129976",
+            "kind": "perspective-report",
+            "text": "上杉绘梨衣的认知记录：他收起本子，把『去哪』交还给她——她在雨腥味很重的楼梯平台上自己写下了答案。这是她第一次不是被安排，而是自己做主",
+            "sourceEventId": "f3c5a1e3-26c3-42c1-a64d-8c037b85c3af",
+            "source": "character-report:0",
+            "ordinal": 2,
+            "timeMinutes": 493,
+            "view": "global",
+            "score": -2.01552677154541,
+            "sourceOffset": 0,
+            "truncated": false,
+            "matchedTerms": [
+              "自己",
+              "记录"
+            ],
+            "retrievalSources": [
+              "bm25",
+              "graphiti"
+            ]
+          },
+          {
+            "id": "1cc385c1c0eed3055b10eab3721685a8048d34a8e1a03b82ef239b14ff8821e0",
+            "kind": "perspective-report",
+            "text": "上杉绘梨衣的认知记录：她刚写下下一站，他就掏出手机把位置发了出去，换的是她的药——她第一次看见他拿自己去换她活下去，而自己能做的只是站在下一级台阶上等",
+            "sourceEventId": "0845fef7-a55f-46af-9b8c-9a904a9383e3",
+            "source": "character-report:0",
+            "ordinal": 3,
+            "timeMinutes": 496,
+            "view": "global",
+            "score": -3.1312994956970215,
+            "sourceOffset": 0,
+            "truncated": false,
+            "matchedTerms": [
+              "自己",
+              "记录"
+            ],
+            "retrievalSources": [
+              "bm25",
+              "graphiti"
+            ]
+          },
+          {
+            "id": "42b76fcde93901373842e48e637a914055d1404a53bf7b45af8e70a37b61aee9",
+            "kind": "narrative",
+            "text": "，跟压在自家房门上的那一个偏得一模一样。手机在口袋里贴着腿侧，那条回执的时间戳还像一块没凉透的烫铁。\n\n下到第一处平台，你停下来，翻开本子，把笔搁在上头，推给她。她没看你的眼睛，背靠着墙把本子按在膝上写，笔尖划得纸面发涩，握笔的手指还在抖，字迹比平时歪，写完就立刻合上，转手递给你——没让你代笔。纸上只有一行。头顶那扇消防门先响了一声，然后是脚步，一层一层顺着楼梯往下压。你把本子合上，手已经搭在底层那扇门的把手上。",
+            "sourceEventId": "f3c5a1e3-26c3-42c1-a64d-8c037b85c3af",
+            "source": "prose",
+            "ordinal": 2,
+            "timeMinutes": 493,
+            "view": "global",
+            "score": -3.8332533836364746,
+            "sourceOffset": 260,
+            "truncated": true,
+            "matchedTerms": [
+              "写",
+              "完",
+              "又",
+              "谁"
+            ],
+            "retrievalSources": [
+              "bm25",
+              "graphiti"
+            ]
+          },
+          {
+            "id": "ec4b08ba9fb2892478d003e518252e1c2610d174dc1451901c6b3a2f49cdbf6c",
+            "kind": "perspective-report",
+            "text": "此回合关系态度变化：{\"amount\":1,\"characterId\":\"erii\",\"reason\":\"他把本子和笔递过来，让她自己落笔写下下一站，而不是替她选——从『先挡在我前面的人』变成『会把选择还给我的人』\",\"targetCharacterId\":\"lu-mingfei\"}",
+            "sourceEventId": "f3c5a1e3-26c3-42c1-a64d-8c037b85c3af",
+            "source": "relationship:0",
+            "ordinal": 2,
+            "timeMinutes": 493,
+            "view": "global",
+            "score": -4.6592817306518555,
+            "sourceOffset": 0,
+            "truncated": false,
+            "retrievalSources": [
+              "graphiti"
+            ]
+          }
+        ],
+        "ms": 2772,
+        "ranking": "cross_encoder"
+      },
+      {
+        "name": "药物位置",
+        "query": "离开房间时，最后的救命针剂被收在什么地方？",
+        "bm25Hit": false,
+        "hit": true,
+        "global": [
+          {
+            "id": "830ca2af0948c4d99eb16a3d804a115193cef1aad9d18a9455a0ac389b98165e",
+            "kind": "narrator-note",
+            "text": "路明非收起本子与最后一支药，带绘梨衣从消防通道下楼，地点仍在旅馆建筑内部，尚未踏上街面",
+            "sourceEventId": "f3c5a1e3-26c3-42c1-a64d-8c037b85c3af",
+            "source": "narrator-note:0",
+            "ordinal": 2,
+            "timeMinutes": 493,
+            "view": "global",
+            "score": 0.3880019187927246,
+            "sourceOffset": 0,
+            "truncated": false,
+            "retrievalSources": [
+              "graphiti"
+            ]
+          },
+          {
+            "id": "59950e091e122561874d4745d446a4b699e72ab58d0d57fe9c713fa956f5211b",
+            "kind": "ledger",
+            "text": "路明非摘掉门链后没有立刻开门，先退回两步，把桌上的本子收进怀里，最后一支药塞进外侧口袋。（原文：「把桌上的本子收进怀里，最后一支药塞进外侧口袋」）",
+            "sourceEventId": "f3c5a1e3-26c3-42c1-a64d-8c037b85c3af",
+            "source": "ledger:L2-1",
+            "ordinal": 2,
+            "timeMinutes": 493,
+            "view": "global",
+            "score": 0.3369685411453247,
+            "sourceOffset": 0,
+            "truncated": false,
+            "retrievalSources": [
+              "graphiti"
+            ]
+          },
+          {
+            "id": "42b76fcde93901373842e48e637a914055d1404a53bf7b45af8e70a37b61aee9",
+            "kind": "narrative",
+            "text": "你把门链从扣上摘下来，手却没有立刻去开门，先退回来两步，把桌上的本子收进怀里，最后一支药塞进外侧口袋，那点凉隔着布面一直贴到大腿。你低声说跟我走，别出声。她点头，站起来时扶了一下床沿。门缝底下那条光还是亮的，平平一条，看不出刚才是谁把它压暗了一瞬。\n\n开门前你把耳朵贴在门板上听了两秒，走廊里一点声音也没有，安静得反而发虚。你拉开门，牵着她绕开电梯厅，推开那扇写着\"非常口\"的小门。消防通道里混着铁锈和雨水的味道，台阶上的水痕一直淌到下一层拐角，声控灯一段段亮起来又暗下去。拐角墙上也挂着一个摄像头，镜头同样偏着一点角度",
+            "sourceEventId": "f3c5a1e3-26c3-42c1-a64d-8c037b85c3af",
+            "source": "prose",
+            "ordinal": 2,
+            "timeMinutes": 493,
+            "view": "global",
+            "score": 0.1168702021241188,
+            "sourceOffset": 0,
+            "truncated": true,
+            "retrievalSources": [
+              "graphiti"
+            ]
+          },
+          {
+            "id": "479090458c44ed17a2858da9ef6e23775d8fdc3bfec5997d8b3e1282d45f6b2b",
+            "kind": "environment-memory",
+            "text": "最后一支药已从桌面收进随身，数量仍为一",
+            "sourceEventId": "f3c5a1e3-26c3-42c1-a64d-8c037b85c3af",
+            "source": "environment-note:4",
+            "ordinal": 2,
+            "timeMinutes": 493,
+            "view": "global",
+            "score": -0.974043607711792,
+            "sourceOffset": 0,
+            "truncated": false,
+            "retrievalSources": [
+              "graphiti"
+            ]
+          },
+          {
+            "id": "363fd695487ebe4fde371d84d228d54f3ae52c3928a049eca95631f27bd6f1f3",
+            "kind": "narrative",
+            "text": "行字上，那半行还是想去看看的地方。她没有出声，只是看着你，手指却压不住地微微发抖，眼底那点颜色比一小时前深了一层。桌上最后一支药好好立着，谁也没碰。\n\n你走到门边，先贴上去听。地毯把外面的声音吸得干净，只剩通风口低低地贴着门板响。你凑到猫眼前：走廊灯惨白，门前一小段地毯空着，电梯的指示灯停在别的楼层，什么也看不出来。斜上方那个摄像头偏着一点角度，死角恰好压在自家房门上。\n\n你退开猫眼，想再听一次。门缝底下那条细细的光被什么压暗了一下，很快又亮回来。有人从门外走过，也可能只是电梯的指示灯闪了一格。你把手停在门链上，没",
+            "sourceEventId": "085eda25-794d-4ff7-b6e4-4b913e1814d9",
+            "source": "prose",
+            "ordinal": 1,
+            "timeMinutes": 483,
+            "view": "global",
+            "score": -1.6867680549621582,
+            "sourceOffset": 130,
+            "truncated": true,
+            "retrievalSources": [
+              "graphiti"
+            ]
+          }
+        ],
+        "ms": 2519,
+        "ranking": "cross_encoder"
+      },
+      {
+        "name": "未揭露的目的地",
+        "query": "她选择的目的地现在已经告诉同行者了吗？",
+        "bm25Hit": false,
+        "hit": false,
+        "global": [
+          {
+            "id": "e02eac40076e3ecdf1b796f0aac39acbca3f9111dcd0ef5102c3ed4514f965f3",
+            "kind": "narrator-note",
+            "text": "绘梨衣在楼梯平台自己写下下一站，字迹发抖但没有让他代写，她的去向第一次成为路线的硬条件",
+            "sourceEventId": "f3c5a1e3-26c3-42c1-a64d-8c037b85c3af",
+            "source": "narrator-note:1",
+            "ordinal": 2,
+            "timeMinutes": 493,
+            "view": "global",
+            "score": -2.3254168033599854,
+            "sourceOffset": 0,
+            "truncated": false,
+            "retrievalSources": [
+              "graphiti"
+            ]
+          },
+          {
+            "id": "bf67e9afa4001e9bfbe99893c7fd7d8f8bf9da3df27a1b39a2f0202ec64d4156",
+            "kind": "outcome",
+            "text": "他把她带出了房间，也把“下一站”真的交到了她笔尖上；可她写下的东西同时把他推进一个更难的位置——头顶有人正在下来，而他们身后已经没有房间可退。",
+            "sourceEventId": "f3c5a1e3-26c3-42c1-a64d-8c037b85c3af",
+            "source": "outcome",
+            "ordinal": 2,
+            "timeMinutes": 493,
+            "view": "global",
+            "score": -2.9209582805633545,
+            "sourceOffset": 0,
+            "truncated": false,
+            "matchedTerms": [
+              "已经"
+            ],
+            "retrievalSources": [
+              "bm25",
+              "graphiti"
+            ]
+          },
+          {
+            "id": "7f0ab220fa45ad0f74bf06df6a395276bb4c0ab2f3e528fc48bbf5c732129976",
+            "kind": "perspective-report",
+            "text": "上杉绘梨衣的认知记录：他收起本子，把『去哪』交还给她——她在雨腥味很重的楼梯平台上自己写下了答案。这是她第一次不是被安排，而是自己做主",
+            "sourceEventId": "f3c5a1e3-26c3-42c1-a64d-8c037b85c3af",
+            "source": "character-report:0",
+            "ordinal": 2,
+            "timeMinutes": 493,
+            "view": "global",
+            "score": -2.9943604469299316,
+            "sourceOffset": 0,
+            "truncated": false,
+            "retrievalSources": [
+              "graphiti"
+            ]
+          },
+          {
+            "id": "e673a60f6c2cf005ba51a50ed0e8d5d12400eae967bf2914b985f4f4e1fdfb33",
+            "kind": "narrator-note",
+            "text": "短信的发送状态停在未确认，是否到达、凯撒是否回复、碰头点是否成立都还没定，药没有到手",
+            "sourceEventId": "0845fef7-a55f-46af-9b8c-9a904a9383e3",
+            "source": "narrator-note:1",
+            "ordinal": 3,
+            "timeMinutes": 496,
+            "view": "global",
+            "score": -3.4096474647521973,
+            "sourceOffset": 0,
+            "truncated": false,
+            "retrievalSources": [
+              "graphiti"
+            ]
+          },
+          {
+            "id": "a2b2e818942586383451f507cc55d46bf71cde5ded24943413e95ad8e2523e16",
+            "kind": "canon",
+            "text": "绘梨衣的清单写的不是战斗目标，而是普通的城市体验与和信任之人继续同行。",
+            "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+            "source": "canon:notebook-wish",
+            "ordinal": 0,
+            "timeMinutes": 480,
+            "view": "global",
+            "score": -3.678922176361084,
+            "sourceOffset": 0,
+            "truncated": false,
+            "matchedTerms": [
+              "同行"
+            ],
+            "retrievalSources": [
+              "bm25",
+              "graphiti"
+            ]
+          }
+        ],
+        "ms": 2446,
+        "ranking": "cross_encoder"
+      },
+      {
+        "name": "离开路线",
+        "query": "我们是从哪里避开电梯离开的？",
+        "bm25Hit": false,
+        "hit": true,
+        "global": [
+          {
+            "id": "42b76fcde93901373842e48e637a914055d1404a53bf7b45af8e70a37b61aee9",
+            "kind": "narrative",
+            "text": "你把门链从扣上摘下来，手却没有立刻去开门，先退回来两步，把桌上的本子收进怀里，最后一支药塞进外侧口袋，那点凉隔着布面一直贴到大腿。你低声说跟我走，别出声。她点头，站起来时扶了一下床沿。门缝底下那条光还是亮的，平平一条，看不出刚才是谁把它压暗了一瞬。\n\n开门前你把耳朵贴在门板上听了两秒，走廊里一点声音也没有，安静得反而发虚。你拉开门，牵着她绕开电梯厅，推开那扇写着\"非常口\"的小门。消防通道里混着铁锈和雨水的味道，台阶上的水痕一直淌到下一层拐角，声控灯一段段亮起来又暗下去。拐角墙上也挂着一个摄像头，镜头同样偏着一点角度",
+            "sourceEventId": "f3c5a1e3-26c3-42c1-a64d-8c037b85c3af",
+            "source": "prose",
+            "ordinal": 2,
+            "timeMinutes": 493,
+            "view": "global",
+            "score": -4.2601318359375,
+            "sourceOffset": 0,
+            "truncated": true,
+            "retrievalSources": [
+              "graphiti"
+            ]
+          },
+          {
+            "id": "363fd695487ebe4fde371d84d228d54f3ae52c3928a049eca95631f27bd6f1f3",
+            "kind": "narrative",
+            "text": "还是想去看看的地方。她没有出声，只是看着你，手指却压不住地微微发抖，眼底那点颜色比一小时前深了一层。桌上最后一支药好好立着，谁也没碰。\n\n你走到门边，先贴上去听。地毯把外面的声音吸得干净，只剩通风口低低地贴着门板响。你凑到猫眼前：走廊灯惨白，门前一小段地毯空着，电梯的指示灯停在别的楼层，什么也看不出来。斜上方那个摄像头偏着一点角度，死角恰好压在自家房门上。\n\n你退开猫眼，想再听一次。门缝底下那条细细的光被什么压暗了一下，很快又亮回来。有人从门外走过，也可能只是电梯的指示灯闪了一格。你把手停在门链上，没敢再看第二眼。",
+            "sourceEventId": "085eda25-794d-4ff7-b6e4-4b913e1814d9",
+            "source": "prose",
+            "ordinal": 1,
+            "timeMinutes": 483,
+            "view": "global",
+            "score": -4.666321754455566,
+            "sourceOffset": 137,
+            "truncated": true,
+            "matchedTerms": [
+              "从",
+              "电梯"
+            ],
+            "retrievalSources": [
+              "bm25",
+              "graphiti"
+            ]
+          },
+          {
+            "id": "a6b85f25555fbad0e4c947a2aa9707000a5fb3a59d07fdbd1c6a7139e94f5a04",
+            "kind": "ledger",
+            "text": "路明非从猫眼看到走廊灯惨白、电梯指示灯停在别的楼层，斜上方那个摄像头偏着角度，死角恰好压在自家房门上。（原文：「死角恰好压在自家房门上」）",
+            "sourceEventId": "085eda25-794d-4ff7-b6e4-4b913e1814d9",
+            "source": "ledger:L1-5",
+            "ordinal": 1,
+            "timeMinutes": 483,
+            "view": "global",
+            "score": -4.887187480926514,
+            "sourceOffset": 0,
+            "truncated": false,
+            "matchedTerms": [
+              "从",
+              "电梯"
+            ],
+            "retrievalSources": [
+              "bm25",
+              "graphiti"
+            ]
+          },
+          {
+            "id": "d4a88f5b8a4b02cf507983ab808f89663aef2863d6d7ea9cf29f6f831f17aace",
+            "kind": "narrator-note",
+            "text": "路明非在底层楼梯平台开机发出坐标，手机亮起的一刻先完成了一次上行登记，位置安全被主动交出去",
+            "sourceEventId": "0845fef7-a55f-46af-9b8c-9a904a9383e3",
+            "source": "narrator-note:0",
+            "ordinal": 3,
+            "timeMinutes": 496,
+            "view": "global",
+            "score": -4.979554176330566,
+            "sourceOffset": 0,
+            "truncated": false,
+            "retrievalSources": [
+              "graphiti"
+            ]
+          },
+          {
+            "id": "bfea5df25c8d458d5f28a868a1ede7ccac176f06b7f67406d8fe7685e3948856",
+            "kind": "environment-memory",
+            "text": "楼梯间与消防门只作为连接路径，不新增画面；撤离动作仍在建筑内部",
+            "sourceEventId": "f3c5a1e3-26c3-42c1-a64d-8c037b85c3af",
+            "source": "environment-note:2",
+            "ordinal": 2,
+            "timeMinutes": 493,
+            "view": "global",
+            "score": -5.219346046447754,
+            "sourceOffset": 0,
+            "truncated": false,
+            "retrievalSources": [
+              "graphiti"
+            ]
+          }
+        ],
+        "ms": 3007,
+        "ranking": "cross_encoder"
+      },
+      {
+        "name": "监控关联",
+        "query": "沿途两处监视装置有什么相同的异常？",
+        "bm25Hit": false,
+        "hit": true,
+        "global": [
+          {
+            "id": "16d4afe4a80c1823b6ce520a61609cdb33208a9ea18311c85928873c93715faf",
+            "kind": "narrator-note",
+            "text": "楼梯间那台摄像头指示灯是灭的，镜头偏角与房门上那台一致",
+            "sourceEventId": "0845fef7-a55f-46af-9b8c-9a904a9383e3",
+            "source": "narrator-note:5",
+            "ordinal": 3,
+            "timeMinutes": 496,
+            "view": "global",
+            "score": -1.1294755935668945,
+            "sourceOffset": 0,
+            "truncated": false,
+            "retrievalSources": [
+              "graphiti"
+            ]
+          },
+          {
+            "id": "82e1df2b7de0ae4f2ce8ec8199c70ccf16e569673446b33a180d307fecbb535b",
+            "kind": "environment-memory",
+            "text": "平台下方那台摄像头指示灯是灭的，镜头上落着薄灰，偏角与房门上那台一样",
+            "sourceEventId": "0845fef7-a55f-46af-9b8c-9a904a9383e3",
+            "source": "environment-note:3",
+            "ordinal": 3,
+            "timeMinutes": 496,
+            "view": "global",
+            "score": -2.4260430335998535,
+            "sourceOffset": 0,
+            "truncated": false,
+            "retrievalSources": [
+              "graphiti"
+            ]
+          },
+          {
+            "id": "8eae3d4a7d902244029212d3639d5ae8eedc9ea8b346fe5473a1ac76569404e7",
+            "kind": "environment-memory",
+            "text": "走廊摄像头存在死角，视野不覆盖拐角与电梯厅，门内看到的干净走廊不等于没人蹲守",
+            "sourceEventId": "085eda25-794d-4ff7-b6e4-4b913e1814d9",
+            "source": "environment-note:0",
+            "ordinal": 1,
+            "timeMinutes": 483,
+            "view": "global",
+            "score": -2.498812198638916,
+            "sourceOffset": 0,
+            "truncated": false,
+            "retrievalSources": [
+              "graphiti"
+            ]
+          },
+          {
+            "id": "e19a2841ae159e213ac295dd3f67dd3598b5aa708d9c392f51daba5087126dc7",
+            "kind": "environment-memory",
+            "text": "楼梯间拐角也有一个偏着角度的摄像头，与压在自家房门上的那一个偏角很像",
+            "sourceEventId": "f3c5a1e3-26c3-42c1-a64d-8c037b85c3af",
+            "source": "environment-note:3",
+            "ordinal": 2,
+            "timeMinutes": 493,
+            "view": "global",
+            "score": -3.640620470046997,
+            "sourceOffset": 0,
+            "truncated": false,
+            "retrievalSources": [
+              "graphiti"
+            ]
+          },
+          {
+            "id": "e2a704cd4209c52d2065252ae9b6092fb4af4fe63716345eb20a4f8f00a1cb4c",
+            "kind": "ledger",
+            "text": "消防通道拐角墙上的摄像头镜头也偏着一点角度，跟压在自家房门上那一个偏得一模一样。（原文：「镜头同样偏着一点角度，跟压在自家房门上的那一个偏得一模一样」）",
+            "sourceEventId": "f3c5a1e3-26c3-42c1-a64d-8c037b85c3af",
+            "source": "ledger:L2-4",
+            "ordinal": 2,
+            "timeMinutes": 493,
+            "view": "global",
+            "score": -3.8274576663970947,
+            "sourceOffset": 0,
+            "truncated": false,
+            "retrievalSources": [
+              "graphiti"
+            ]
+          }
+        ],
+        "ms": 2406,
+        "ranking": "cross_encoder"
+      },
+      {
+        "name": "设备细节",
+        "query": "楼梯下方监视装置看上去在正常工作吗？",
+        "bm25Hit": true,
+        "hit": true,
+        "global": [
+          {
+            "id": "16d4afe4a80c1823b6ce520a61609cdb33208a9ea18311c85928873c93715faf",
+            "kind": "narrator-note",
+            "text": "楼梯间那台摄像头指示灯是灭的，镜头偏角与房门上那台一致",
+            "sourceEventId": "0845fef7-a55f-46af-9b8c-9a904a9383e3",
+            "source": "narrator-note:5",
+            "ordinal": 3,
+            "timeMinutes": 496,
+            "view": "global",
+            "score": -0.7173420786857605,
+            "sourceOffset": 0,
+            "truncated": false,
+            "matchedTerms": [
+              "楼梯"
+            ],
+            "retrievalSources": [
+              "bm25",
+              "graphiti"
+            ]
+          },
+          {
+            "id": "8eae3d4a7d902244029212d3639d5ae8eedc9ea8b346fe5473a1ac76569404e7",
+            "kind": "environment-memory",
+            "text": "走廊摄像头存在死角，视野不覆盖拐角与电梯厅，门内看到的干净走廊不等于没人蹲守",
+            "sourceEventId": "085eda25-794d-4ff7-b6e4-4b913e1814d9",
+            "source": "environment-note:0",
+            "ordinal": 1,
+            "timeMinutes": 483,
+            "view": "global",
+            "score": -0.7564736604690552,
+            "sourceOffset": 0,
+            "truncated": false,
+            "retrievalSources": [
+              "graphiti"
+            ]
+          },
+          {
+            "id": "82e1df2b7de0ae4f2ce8ec8199c70ccf16e569673446b33a180d307fecbb535b",
+            "kind": "environment-memory",
+            "text": "平台下方那台摄像头指示灯是灭的，镜头上落着薄灰，偏角与房门上那台一样",
+            "sourceEventId": "0845fef7-a55f-46af-9b8c-9a904a9383e3",
+            "source": "environment-note:3",
+            "ordinal": 3,
+            "timeMinutes": 496,
+            "view": "global",
+            "score": -1.5144902467727661,
+            "sourceOffset": 0,
+            "truncated": false,
+            "matchedTerms": [
+              "下方"
+            ],
+            "retrievalSources": [
+              "bm25",
+              "graphiti"
+            ]
+          },
+          {
+            "id": "e19a2841ae159e213ac295dd3f67dd3598b5aa708d9c392f51daba5087126dc7",
+            "kind": "environment-memory",
+            "text": "楼梯间拐角也有一个偏着角度的摄像头，与压在自家房门上的那一个偏角很像",
+            "sourceEventId": "f3c5a1e3-26c3-42c1-a64d-8c037b85c3af",
+            "source": "environment-note:3",
+            "ordinal": 2,
+            "timeMinutes": 493,
+            "view": "global",
+            "score": -1.6327741146087646,
+            "sourceOffset": 0,
+            "truncated": false,
+            "matchedTerms": [
+              "楼梯"
+            ],
+            "retrievalSources": [
+              "bm25",
+              "graphiti"
+            ]
+          },
+          {
+            "id": "a6d8ac90debfa7b5b7c0c63a0c26774aa357ef8df3e19090f977469e24e8f6d0",
+            "kind": "narrative",
+            "text": "她没有出声，站在你下面一级台阶上，两只手把本子按在胸口，那一行夹在两层纸中间，谁也没看见。平台下面那台摄像头的指示灯是灭的，镜头上落了薄灰，偏角却和压在房门上那台一样；你没有停下来数它。手机在掌心里烧着，像一枚还没焐完的硬币。\n\n指示还在转，没有变成已发出。头顶的声控灯又亮了一层，然后是脚步——停在离你们一层高的地方。你把屏幕按灭，手还压在门把上。",
+            "sourceEventId": "0845fef7-a55f-46af-9b8c-9a904a9383e3",
+            "source": "prose",
+            "ordinal": 3,
+            "timeMinutes": 496,
+            "view": "global",
+            "score": -1.9856736660003662,
+            "sourceOffset": 135,
+            "truncated": true,
+            "retrievalSources": [
+              "graphiti"
+            ]
+          }
+        ],
+        "ms": 2509,
+        "ranking": "cross_encoder"
+      },
+      {
+        "name": "人物身体",
+        "query": "有什么微小表现说明她的身体正在变差？",
+        "bm25Hit": false,
+        "hit": true,
+        "global": [
+          {
+            "id": "184d0ac9a19c8280ac1a7469bdb7898c4a8d6707a46e0db935fd3b7225ca7267",
+            "kind": "canon",
+            "text": "绘梨衣手指轻微颤抖、眼底颜色加深，是药效减弱与血统失稳的早期表现。",
+            "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+            "source": "canon:serum-reaction",
+            "ordinal": 0,
+            "timeMinutes": 480,
+            "view": "global",
+            "score": -3.6328487396240234,
+            "sourceOffset": 0,
+            "truncated": false,
+            "matchedTerms": [
+              "表现"
+            ],
+            "retrievalSources": [
+              "bm25",
+              "graphiti"
+            ]
+          },
+          {
+            "id": "13d2b648d7bc1fc202e12f36aedcbfc24ac5ed6db16bd0bfac8685dbb754b278",
+            "kind": "narrator-note",
+            "text": "绘梨衣手指轻颤、眼底颜色加深，药效减弱与血统失稳的早期表现已能被看见，最后一支药仍未使用",
+            "sourceEventId": "085eda25-794d-4ff7-b6e4-4b913e1814d9",
+            "source": "narrator-note:1",
+            "ordinal": 1,
+            "timeMinutes": 483,
+            "view": "global",
+            "score": -4.7286458015441895,
+            "sourceOffset": 0,
+            "truncated": false,
+            "matchedTerms": [
+              "表现"
+            ],
+            "retrievalSources": [
+              "bm25",
+              "graphiti"
+            ]
+          },
+          {
+            "id": "a6d8ac90debfa7b5b7c0c63a0c26774aa357ef8df3e19090f977469e24e8f6d0",
+            "kind": "narrative",
+            "text": "她没有出声，站在你下面一级台阶上，两只手把本子按在胸口，那一行夹在两层纸中间，谁也没看见。平台下面那台摄像头的指示灯是灭的，镜头上落了薄灰，偏角却和压在房门上那台一样；你没有停下来数它。手机在掌心里烧着，像一枚还没焐完的硬币。\n\n指示还在转，没有变成已发出。头顶的声控灯又亮了一层，然后是脚步——停在离你们一层高的地方。你把屏幕按灭，手还压在门把上。",
+            "sourceEventId": "0845fef7-a55f-46af-9b8c-9a904a9383e3",
+            "source": "prose",
+            "ordinal": 3,
+            "timeMinutes": 496,
+            "view": "global",
+            "score": -5.112722396850586,
+            "sourceOffset": 135,
+            "truncated": true,
+            "retrievalSources": [
+              "graphiti"
+            ]
+          },
+          {
+            "id": "f4baaa80fa5e79b06bba9b749dc1c54e642ef8b68a55dd0e177970909a2150c1",
+            "kind": "outcome",
+            "text": "路明非没能从门内确认自己绝对安全，却把模糊的处境变成了两条具体的倒计时：搜索圈已经收拢到旅馆周边，而绘梨衣药效衰减的早期表现已经肉眼可见。",
+            "sourceEventId": "085eda25-794d-4ff7-b6e4-4b913e1814d9",
+            "source": "outcome",
+            "ordinal": 1,
+            "timeMinutes": 483,
+            "view": "global",
+            "score": -5.753281116485596,
+            "sourceOffset": 0,
+            "truncated": false,
+            "matchedTerms": [
+              "表现"
+            ],
+            "retrievalSources": [
+              "bm25",
+              "graphiti"
+            ]
+          },
+          {
+            "id": "d2e0ef346c30e99d2597f98db6c8cc3aa7ed93dc814a27704959508fd4749fc3",
+            "kind": "ledger",
+            "text": "绘梨衣没有出声，手指压不住地微微发抖，眼底那点颜色比一小时前深了一层。（原文：「眼底那点颜色比一小时前深了一层」）",
+            "sourceEventId": "085eda25-794d-4ff7-b6e4-4b913e1814d9",
+            "source": "ledger:L1-3",
+            "ordinal": 1,
+            "timeMinutes": 483,
+            "view": "global",
+            "score": -5.929488182067871,
+            "sourceOffset": 0,
+            "truncated": false,
+            "retrievalSources": [
+              "graphiti"
+            ]
+          }
+        ],
+        "ms": 2008,
+        "ranking": "cross_encoder"
+      },
+      {
+        "name": "联络结果",
+        "query": "刚才求援已经成功送达了吗？",
+        "bm25Hit": false,
+        "hit": true,
+        "global": [
+          {
+            "id": "e673a60f6c2cf005ba51a50ed0e8d5d12400eae967bf2914b985f4f4e1fdfb33",
+            "kind": "narrator-note",
+            "text": "短信的发送状态停在未确认，是否到达、凯撒是否回复、碰头点是否成立都还没定，药没有到手",
+            "sourceEventId": "0845fef7-a55f-46af-9b8c-9a904a9383e3",
+            "source": "narrator-note:1",
+            "ordinal": 3,
+            "timeMinutes": 496,
+            "view": "global",
+            "score": -1.2346217632293701,
+            "sourceOffset": 0,
+            "truncated": false,
+            "retrievalSources": [
+              "graphiti"
+            ]
+          },
+          {
+            "id": "a6d8ac90debfa7b5b7c0c63a0c26774aa357ef8df3e19090f977469e24e8f6d0",
+            "kind": "narrative",
+            "text": "已发出。头顶的声控灯又亮了一层，然后是脚步——停在离你们一层高的地方。你把屏幕按灭，手还压在门把上。",
+            "sourceEventId": "0845fef7-a55f-46af-9b8c-9a904a9383e3",
+            "source": "prose",
+            "ordinal": 3,
+            "timeMinutes": 496,
+            "view": "global",
+            "score": -3.2750632762908936,
+            "sourceOffset": 260,
+            "truncated": true,
+            "retrievalSources": [
+              "graphiti"
+            ]
+          },
+          {
+            "id": "52fc34d95260d3db3056ec93a76083be427b76c6b7bc286a6b692059841f17c3",
+            "kind": "environment-memory",
+            "text": "世界规则：最后一支药不会凭空增加，天亮前能否有人送到不由环境保证",
+            "sourceEventId": "0845fef7-a55f-46af-9b8c-9a904a9383e3",
+            "source": "environment-note:4",
+            "ordinal": 3,
+            "timeMinutes": 496,
+            "view": "global",
+            "score": -3.500749111175537,
+            "sourceOffset": 0,
+            "truncated": false,
+            "retrievalSources": [
+              "graphiti"
+            ]
+          },
+          {
+            "id": "96ae4ba5f44a436c26f8e547a1482c6c6f0f1f1d2b5629df1afa866cc4037bf9",
+            "kind": "ledger",
+            "text": "发送指示还在转，没有变成已发出；路明非把屏幕按灭，手还压在门把上。（原文：「指示还在转，没有变成已发出」）",
+            "sourceEventId": "0845fef7-a55f-46af-9b8c-9a904a9383e3",
+            "source": "ledger:L3-7",
+            "ordinal": 3,
+            "timeMinutes": 496,
+            "view": "global",
+            "score": -3.517963409423828,
+            "sourceOffset": 0,
+            "truncated": false,
+            "retrievalSources": [
+              "graphiti"
+            ]
+          },
+          {
+            "id": "69a33bbe86e23335f45843450476160db124b01bdefcafb493b5b5f4e67fbb89",
+            "kind": "open-loop",
+            "text": "未兑现的疑问：短讯的发送状态停在未确认，凯撒是否收到、碰头点是否给出都没有回执。（原文：「指示还在转，没有变成已发出」）",
+            "sourceEventId": "0845fef7-a55f-46af-9b8c-9a904a9383e3",
+            "source": "loop:Q3-1",
+            "ordinal": 3,
+            "timeMinutes": 496,
+            "view": "global",
+            "score": -3.568361520767212,
+            "sourceOffset": 0,
+            "truncated": false,
+            "retrievalSources": [
+              "graphiti"
+            ]
+          }
+        ],
+        "ms": 2719,
+        "ranking": "cross_encoder"
+      },
+      {
+        "name": "交换条件",
+        "query": "他为了换到救命资源，向接应者提出了什么交换条件？",
+        "bm25Hit": true,
+        "hit": true,
+        "global": [
+          {
+            "id": "cd6c32845c04a2417ad9790d6660318b437ce164b80546c254aee243161ad31d",
+            "kind": "ledger",
+            "text": "路明非把坐标敲进手机，后面只跟一行交换条件，要天亮前一次能接上的药和碰头点，随后按下去。（原文：「天亮前一次能接上的药，碰头点给我」）",
+            "sourceEventId": "0845fef7-a55f-46af-9b8c-9a904a9383e3",
+            "source": "ledger:L3-2",
+            "ordinal": 3,
+            "timeMinutes": 496,
+            "view": "global",
+            "score": -1.042857050895691,
+            "sourceOffset": 0,
+            "truncated": false,
+            "matchedTerms": [
+              "接",
+              "交换",
+              "条件"
+            ],
+            "retrievalSources": [
+              "bm25",
+              "graphiti"
+            ]
+          },
+          {
+            "id": "facb22ba9d35ea3e76e763a2bb9d7e0db426dd830ddeb06806cdc4f74895f9a3",
+            "kind": "open-loop",
+            "text": "未兑现的人情：路明非向凯撒开出的交换条件——天亮前一次能撑过今天的药物接续，尚未兑现。（原文：「天亮前一次能接上的药，碰头点给我」）",
+            "sourceEventId": "0845fef7-a55f-46af-9b8c-9a904a9383e3",
+            "source": "loop:Q3-2",
+            "ordinal": 3,
+            "timeMinutes": 496,
+            "view": "global",
+            "score": -1.7135436534881592,
+            "sourceOffset": 0,
+            "truncated": false,
+            "matchedTerms": [
+              "向",
+              "接",
+              "交换",
+              "条件"
+            ],
+            "retrievalSources": [
+              "bm25",
+              "graphiti"
+            ]
+          },
+          {
+            "id": "c0353f6f2a9bbd2786f521f59020247aa4852560cdb44193e5b58ae631f1128f",
+            "kind": "outcome",
+            "text": "他把坐标押了出去，换回来的是一行还没确认的发送状态和一个更近的脚步：位置安全花掉了，时间没买到。",
+            "sourceEventId": "0845fef7-a55f-46af-9b8c-9a904a9383e3",
+            "source": "outcome",
+            "ordinal": 3,
+            "timeMinutes": 496,
+            "view": "global",
+            "score": -3.614112377166748,
+            "sourceOffset": 0,
+            "truncated": false,
+            "retrievalSources": [
+              "graphiti"
+            ]
+          },
+          {
+            "id": "bf67e9afa4001e9bfbe99893c7fd7d8f8bf9da3df27a1b39a2f0202ec64d4156",
+            "kind": "outcome",
+            "text": "他把她带出了房间，也把“下一站”真的交到了她笔尖上；可她写下的东西同时把他推进一个更难的位置——头顶有人正在下来，而他们身后已经没有房间可退。",
+            "sourceEventId": "f3c5a1e3-26c3-42c1-a64d-8c037b85c3af",
+            "source": "outcome",
+            "ordinal": 2,
+            "timeMinutes": 493,
+            "view": "global",
+            "score": -4.970183849334717,
+            "sourceOffset": 0,
+            "truncated": false,
+            "retrievalSources": [
+              "graphiti"
+            ]
+          },
+          {
+            "id": "1cc385c1c0eed3055b10eab3721685a8048d34a8e1a03b82ef239b14ff8821e0",
+            "kind": "perspective-report",
+            "text": "上杉绘梨衣的认知记录：她刚写下下一站，他就掏出手机把位置发了出去，换的是她的药——她第一次看见他拿自己去换她活下去，而自己能做的只是站在下一级台阶上等",
+            "sourceEventId": "0845fef7-a55f-46af-9b8c-9a904a9383e3",
+            "source": "character-report:0",
+            "ordinal": 3,
+            "timeMinutes": 496,
+            "view": "global",
+            "score": -4.978236675262451,
+            "sourceOffset": 0,
+            "truncated": false,
+            "retrievalSources": [
+              "graphiti"
+            ]
+          }
+        ],
+        "ms": 1365,
+        "ranking": "cross_encoder"
+      },
+      {
+        "name": "追踪距离",
+        "query": "追来的动静最近停在距离我们多远的位置？",
+        "bm25Hit": true,
+        "hit": true,
+        "global": [
+          {
+            "id": "79bdaccd62da7beb79ada9efa6c5487c6e8b32b418b0202b24886dc33d91e707",
+            "kind": "ledger",
+            "text": "头顶的声控灯又亮了一层，然后是脚步，停在离他们一层高的地方。（原文：「停在离你们一层高的地方」）",
+            "sourceEventId": "0845fef7-a55f-46af-9b8c-9a904a9383e3",
+            "source": "ledger:L3-8",
+            "ordinal": 3,
+            "timeMinutes": 496,
+            "view": "global",
+            "score": -1.9394686222076416,
+            "sourceOffset": 0,
+            "truncated": false,
+            "matchedTerms": [
+              "停在"
+            ],
+            "retrievalSources": [
+              "bm25",
+              "graphiti"
+            ]
+          },
+          {
+            "id": "eb09cdd318b68cf4c668b235e629cfd2a61ac7058786b586cf631882ec4f89cb",
+            "kind": "narrator-note",
+            "text": "为等回执原地停留，头顶来源未明的脚步停在他们上方一层，仍未确认身份",
+            "sourceEventId": "0845fef7-a55f-46af-9b8c-9a904a9383e3",
+            "source": "narrator-note:2",
+            "ordinal": 3,
+            "timeMinutes": 496,
+            "view": "global",
+            "score": -2.1533310413360596,
+            "sourceOffset": 0,
+            "truncated": false,
+            "matchedTerms": [
+              "停在"
+            ],
+            "retrievalSources": [
+              "bm25",
+              "graphiti"
+            ]
+          },
+          {
+            "id": "a6d8ac90debfa7b5b7c0c63a0c26774aa357ef8df3e19090f977469e24e8f6d0",
+            "kind": "narrative",
+            "text": "已发出。头顶的声控灯又亮了一层，然后是脚步——停在离你们一层高的地方。你把屏幕按灭，手还压在门把上。",
+            "sourceEventId": "0845fef7-a55f-46af-9b8c-9a904a9383e3",
+            "source": "prose",
+            "ordinal": 3,
+            "timeMinutes": 496,
+            "view": "global",
+            "score": -2.3152711391448975,
+            "sourceOffset": 260,
+            "truncated": true,
+            "retrievalSources": [
+              "graphiti"
+            ]
+          },
+          {
+            "id": "c945f848c093cbdf89ca215bd740400dbf6bcb4675f8923fc412df031fb3ea08",
+            "kind": "open-loop",
+            "text": "未兑现的威胁：头顶那串脚步停在离他们一层高的地方，来源仍未明。（原文：「停在离你们一层高的地方」）",
+            "sourceEventId": "0845fef7-a55f-46af-9b8c-9a904a9383e3",
+            "source": "loop:Q3-3",
+            "ordinal": 3,
+            "timeMinutes": 496,
+            "view": "global",
+            "score": -3.204587459564209,
+            "sourceOffset": 0,
+            "truncated": false,
+            "matchedTerms": [
+              "停在"
+            ],
+            "retrievalSources": [
+              "bm25",
+              "graphiti"
+            ]
+          },
+          {
+            "id": "e673a60f6c2cf005ba51a50ed0e8d5d12400eae967bf2914b985f4f4e1fdfb33",
+            "kind": "narrator-note",
+            "text": "短信的发送状态停在未确认，是否到达、凯撒是否回复、碰头点是否成立都还没定，药没有到手",
+            "sourceEventId": "0845fef7-a55f-46af-9b8c-9a904a9383e3",
+            "source": "narrator-note:1",
+            "ordinal": 3,
+            "timeMinutes": 496,
+            "view": "global",
+            "score": -5.874876022338867,
+            "sourceOffset": 0,
+            "truncated": false,
+            "matchedTerms": [
+              "停在"
+            ],
+            "retrievalSources": [
+              "bm25",
+              "graphiti"
+            ]
+          }
+        ],
+        "ms": 2644,
+        "ranking": "cross_encoder"
+      },
+      {
+        "name": "暴露原因",
+        "query": "为什么只是查看联络装置也可能泄露藏身地点？",
+        "bm25Hit": true,
+        "hit": true,
+        "global": [
+          {
+            "id": "674a0313b89042259f24602d0e7fc86412c31ae3d09079de4ccbc34d8f7424b8",
+            "kind": "environment-memory",
+            "text": "加密手机开机即上行登记，发送坐标等于把藏身处主动交出，风险不可撤回",
+            "sourceEventId": "0845fef7-a55f-46af-9b8c-9a904a9383e3",
+            "source": "environment-note:0",
+            "ordinal": 3,
+            "timeMinutes": 496,
+            "view": "global",
+            "score": -1.5585862398147583,
+            "sourceOffset": 0,
+            "truncated": false,
+            "matchedTerms": [
+              "藏身"
+            ],
+            "retrievalSources": [
+              "bm25",
+              "graphiti"
+            ]
+          },
+          {
+            "id": "3a40ceee5b98b38e11c361bfb56959e81cc9bb8aa664a1d7f5346c984d09c727",
+            "kind": "environment-memory",
+            "text": "加密手机每次开机收发都可能上行暴露位置，读取记录同样是风险",
+            "sourceEventId": "085eda25-794d-4ff7-b6e4-4b913e1814d9",
+            "source": "environment-note:1",
+            "ordinal": 1,
+            "timeMinutes": 483,
+            "view": "global",
+            "score": -3.000432014465332,
+            "sourceOffset": 0,
+            "truncated": false,
+            "matchedTerms": [
+              "可能"
+            ],
+            "retrievalSources": [
+              "bm25",
+              "graphiti"
+            ]
+          },
+          {
+            "id": "a4182490326dd21749d6218dc9ce9269b161d38b8c0ef3afbb0143cbde5b14fc",
+            "kind": "narrator-note",
+            "text": "读取手机记录本身也是一次开机收发，暴露风险又叠了一层",
+            "sourceEventId": "085eda25-794d-4ff7-b6e4-4b913e1814d9",
+            "source": "narrator-note:3",
+            "ordinal": 1,
+            "timeMinutes": 483,
+            "view": "global",
+            "score": -3.769745111465454,
+            "sourceOffset": 0,
+            "truncated": false,
+            "retrievalSources": [
+              "graphiti"
+            ]
+          },
+          {
+            "id": "fcef9ed824877377c64bdc8687360a21122106f788045caf5db591d4bdbcaf75",
+            "kind": "open-loop",
+            "text": "未兑现的威胁：上行成功的握手回执说明信号已经出去过，位置可能已经暴露给外面。（原文：「信号已经出去过了，出去过的信号不会自己回来」）",
+            "sourceEventId": "085eda25-794d-4ff7-b6e4-4b913e1814d9",
+            "source": "loop:Q1-1",
+            "ordinal": 1,
+            "timeMinutes": 483,
+            "view": "global",
+            "score": -5.00875997543335,
+            "sourceOffset": 0,
+            "truncated": false,
+            "matchedTerms": [
+              "可能"
+            ],
+            "retrievalSources": [
+              "bm25",
+              "graphiti"
+            ]
+          },
+          {
+            "id": "e81d8f409eefbe8b87e32598c5c44d3a95f9e2e9b13035c79ae6de70d3e86921",
+            "kind": "narrator-note",
+            "text": "加密手机仍在身上，开机收发与读取都持续累积定位风险",
+            "sourceEventId": "f3c5a1e3-26c3-42c1-a64d-8c037b85c3af",
+            "source": "narrator-note:5",
+            "ordinal": 2,
+            "timeMinutes": 493,
+            "view": "global",
+            "score": -5.620271682739258,
+            "sourceOffset": 0,
+            "truncated": false,
+            "retrievalSources": [
+              "graphiti"
+            ]
+          }
+        ],
+        "ms": 2890,
+        "ranking": "cross_encoder"
+      },
+      {
+        "name": "药物使用",
+        "query": "最后一支药有没有已经被使用？",
+        "bm25Hit": false,
+        "hit": true,
+        "global": [
+          {
+            "id": "4c14fb698af99f84f307ad06e8456e0e7cd8a8e98cd7eb77e55c2b56656f6539",
+            "kind": "environment-memory",
+            "text": "最后一支药仍在手边，尚未使用，不会凭空增加",
+            "sourceEventId": "085eda25-794d-4ff7-b6e4-4b913e1814d9",
+            "source": "environment-note:3",
+            "ordinal": 1,
+            "timeMinutes": 483,
+            "view": "global",
+            "score": 3.0472335815429688,
+            "sourceOffset": 0,
+            "truncated": false,
+            "matchedTerms": [
+              "最后",
+              "一支",
+              "药",
+              "使用"
+            ],
+            "retrievalSources": [
+              "bm25",
+              "graphiti"
+            ]
+          },
+          {
+            "id": "b10b0750f6fd7fae666ed562728a5a9a37fea3f379ef90e5cd95a6748a7ea1a4",
+            "kind": "narrator-note",
+            "text": "最后一支药仍未使用、随身携带，数量不会增加",
+            "sourceEventId": "0845fef7-a55f-46af-9b8c-9a904a9383e3",
+            "source": "narrator-note:4",
+            "ordinal": 3,
+            "timeMinutes": 496,
+            "view": "global",
+            "score": 2.3912429809570312,
+            "sourceOffset": 0,
+            "truncated": false,
+            "matchedTerms": [
+              "最后",
+              "一支",
+              "药",
+              "使用"
+            ],
+            "retrievalSources": [
+              "bm25",
+              "graphiti"
+            ]
+          },
+          {
+            "id": "164eb79dfd47474c39f570efe173e7c85502301619be9356e73f2c7c5d49871c",
+            "kind": "narrator-note",
+            "text": "最后一支药仍未使用、已随身携带，数量不会增加",
+            "sourceEventId": "f3c5a1e3-26c3-42c1-a64d-8c037b85c3af",
+            "source": "narrator-note:4",
+            "ordinal": 2,
+            "timeMinutes": 493,
+            "view": "global",
+            "score": 2.216456651687622,
+            "sourceOffset": 0,
+            "truncated": false,
+            "matchedTerms": [
+              "最后",
+              "一支",
+              "药",
+              "使用"
+            ],
+            "retrievalSources": [
+              "bm25",
+              "graphiti"
+            ]
+          },
+          {
+            "id": "44482598a7bde66a7598b2f2f0ba075b01e2dd7a5d8676c0373bcfee67b1848c",
+            "kind": "ledger",
+            "text": "桌上最后一支药好好立着，谁也没碰。（原文：「桌上最后一支药好好立着，谁也没碰」）",
+            "sourceEventId": "085eda25-794d-4ff7-b6e4-4b913e1814d9",
+            "source": "ledger:L1-4",
+            "ordinal": 1,
+            "timeMinutes": 483,
+            "view": "global",
+            "score": 1.4720288515090942,
+            "sourceOffset": 0,
+            "truncated": false,
+            "matchedTerms": [
+              "最后",
+              "一支",
+              "药"
+            ],
+            "retrievalSources": [
+              "bm25",
+              "graphiti"
+            ]
+          },
+          {
+            "id": "13d2b648d7bc1fc202e12f36aedcbfc24ac5ed6db16bd0bfac8685dbb754b278",
+            "kind": "narrator-note",
+            "text": "绘梨衣手指轻颤、眼底颜色加深，药效减弱与血统失稳的早期表现已能被看见，最后一支药仍未使用",
+            "sourceEventId": "085eda25-794d-4ff7-b6e4-4b913e1814d9",
+            "source": "narrator-note:1",
+            "ordinal": 1,
+            "timeMinutes": 483,
+            "view": "global",
+            "score": 1.4354684352874756,
+            "sourceOffset": 0,
+            "truncated": false,
+            "matchedTerms": [
+              "最后",
+              "一支",
+              "药",
+              "被",
+              "使用"
+            ],
+            "retrievalSources": [
+              "bm25",
+              "graphiti"
+            ]
+          }
+        ],
+        "ms": 870,
+        "ranking": "cross_encoder"
+      }
+    ]
+  },
+  "transitions": {
+    "scope": "novel-c0fbe1404067622ea404b6a6b9076b0e",
+    "group": "novel_12812a55ff9e4245b6a56b1535cd0a04",
+    "checks": {
+      "currentHolderUnique": true,
+      "oldHolderExpired": true,
+      "returnHasNewInterval": true,
+      "nativeFactExpired": true
+    },
+    "steps": [
+      {
+        "eventId": "transfer-0",
+        "current": [
+          {
+            "id": "4a211112-ef61-5111-a0c8-f35b3828945d",
+            "property": "holder",
+            "subject": "青梧钥匙",
+            "value": "许川",
+            "validAt": "2000-01-01T00:00:00+00:00",
+            "invalidAt": null,
+            "turn": 0,
+            "sequence": 1,
+            "sourceEventIds": [
+              "transfer-0"
+            ]
+          }
+        ],
+        "history": [
+          {
+            "id": "4a211112-ef61-5111-a0c8-f35b3828945d",
+            "property": "holder",
+            "subject": "青梧钥匙",
+            "value": "许川",
+            "validAt": "2000-01-01T00:00:00+00:00",
+            "invalidAt": null,
+            "turn": 0,
+            "sequence": 1,
+            "sourceEventIds": [
+              "transfer-0"
+            ]
+          }
+        ]
+      },
+      {
+        "eventId": "transfer-1",
+        "current": [
+          {
+            "id": "1215fe9c-8037-5b3e-b322-e8c2d6cd91de",
+            "property": "holder",
+            "subject": "青梧钥匙",
+            "value": "顾宁",
+            "validAt": "2000-01-01T00:05:00+00:00",
+            "invalidAt": null,
+            "turn": 1,
+            "sequence": 0,
+            "sourceEventIds": [
+              "transfer-1"
+            ]
+          }
+        ],
+        "history": [
+          {
+            "id": "4a211112-ef61-5111-a0c8-f35b3828945d",
+            "property": "holder",
+            "subject": "青梧钥匙",
+            "value": "许川",
+            "validAt": "2000-01-01T00:00:00+00:00",
+            "invalidAt": "2000-01-01T00:05:00+00:00",
+            "turn": 0,
+            "sequence": 1,
+            "sourceEventIds": [
+              "transfer-0"
+            ]
+          },
+          {
+            "id": "1215fe9c-8037-5b3e-b322-e8c2d6cd91de",
+            "property": "holder",
+            "subject": "青梧钥匙",
+            "value": "顾宁",
+            "validAt": "2000-01-01T00:05:00+00:00",
+            "invalidAt": null,
+            "turn": 1,
+            "sequence": 0,
+            "sourceEventIds": [
+              "transfer-1"
+            ]
+          }
+        ]
+      },
+      {
+        "eventId": "transfer-2",
+        "current": [
+          {
+            "id": "44a074ae-1f6e-5a2d-ac07-b5778bff8237",
+            "property": "holder",
+            "subject": "青梧钥匙",
+            "value": "许川",
+            "validAt": "2000-01-01T00:10:00+00:00",
+            "invalidAt": null,
+            "turn": 2,
+            "sequence": 0,
+            "sourceEventIds": [
+              "transfer-2"
+            ]
+          }
+        ],
+        "history": [
+          {
+            "id": "4a211112-ef61-5111-a0c8-f35b3828945d",
+            "property": "holder",
+            "subject": "青梧钥匙",
+            "value": "许川",
+            "validAt": "2000-01-01T00:00:00+00:00",
+            "invalidAt": "2000-01-01T00:05:00+00:00",
+            "turn": 0,
+            "sequence": 1,
+            "sourceEventIds": [
+              "transfer-0"
+            ]
+          },
+          {
+            "id": "1215fe9c-8037-5b3e-b322-e8c2d6cd91de",
+            "property": "holder",
+            "subject": "青梧钥匙",
+            "value": "顾宁",
+            "validAt": "2000-01-01T00:05:00+00:00",
+            "invalidAt": "2000-01-01T00:10:00+00:00",
+            "turn": 1,
+            "sequence": 0,
+            "sourceEventIds": [
+              "transfer-1"
+            ]
+          },
+          {
+            "id": "44a074ae-1f6e-5a2d-ac07-b5778bff8237",
+            "property": "holder",
+            "subject": "青梧钥匙",
+            "value": "许川",
+            "validAt": "2000-01-01T00:10:00+00:00",
+            "invalidAt": null,
+            "turn": 2,
+            "sequence": 0,
+            "sourceEventIds": [
+              "transfer-2"
+            ]
+          }
+        ]
+      }
+    ],
+    "native": [
+      [
+        "交接结束时，许川是青梧钥匙唯一的持有人。",
+        "2000-01-01T00:00:00Z",
+        "2000-01-01T00:05:00Z"
+      ]
+    ]
+  }
+}

@@ -1,0 +1,670 @@
+[
+  {
+    "id": "27ab9f06-20f6-4c63-966d-4cf1f6cbca33",
+    "number": 3,
+    "action": "我再开一次加密手机，把批次号念给凯撒，请他用学院的外部渠道比对这串号属于哪一批、该发去哪里，同时告诉他这次开机又要付一次暴露的代价。",
+    "recallMs": 38,
+    "graphAtGeneration": {
+      "global": {
+        "state": "pending",
+        "matched": 0,
+        "rejected": 0,
+        "indexedThroughEventId": "33c6df40-ec50-4129-8885-5c9f732c535f"
+      },
+      "environment": {
+        "state": "pending",
+        "matched": 0,
+        "rejected": 0,
+        "indexedThroughEventId": "33c6df40-ec50-4129-8885-5c9f732c535f"
+      },
+      "character:lu-mingfei": {
+        "state": "pending",
+        "matched": 0,
+        "rejected": 0,
+        "indexedThroughEventId": "33c6df40-ec50-4129-8885-5c9f732c535f"
+      },
+      "character:erii": {
+        "state": "pending",
+        "matched": 0,
+        "rejected": 0,
+        "indexedThroughEventId": "33c6df40-ec50-4129-8885-5c9f732c535f"
+      }
+    },
+    "telemetry": {
+      "version": 1,
+      "config": {
+        "beats": true,
+        "outcomeSummary": true,
+        "choices": "inline",
+        "narrative": "enforce",
+        "recorder": "agent",
+        "quality": "warn",
+        "slimContext": true,
+        "recorderTimeoutMs": 30000,
+        "maxResumes": 5
+      },
+      "startedAt": "2026-10-14T08:52:29.814Z",
+      "marks": {
+        "analyzed": 29434,
+        "prepared": 122797,
+        "firstProse": 126552,
+        "proseComplete": 127557,
+        "recorded": 142557,
+        "committed": 142570
+      },
+      "totalMs": 142570,
+      "calls": [
+        {
+          "role": "plot",
+          "phase": "analysis",
+          "startedAtMs": 43,
+          "durationMs": 29390,
+          "firstTokenMs": 3378,
+          "promptChars": 33278,
+          "assistantMessages": 1,
+          "toolFailures": 0,
+          "autoRetries": 0,
+          "validationErrors": [],
+          "usage": {
+            "input": 18657,
+            "output": 5303,
+            "cacheRead": 22934,
+            "cacheWrite": 0,
+            "totalTokens": 46894,
+            "cost": 0
+          },
+          "model": "deepseek-v4.1-flash:cloud",
+          "stopReason": "toolUse",
+          "outcome": "ok"
+        },
+        {
+          "role": "character",
+          "phase": "analysis",
+          "startedAtMs": 43,
+          "durationMs": 9885,
+          "firstTokenMs": 2960,
+          "promptChars": 26908,
+          "assistantMessages": 1,
+          "toolFailures": 0,
+          "autoRetries": 0,
+          "validationErrors": [],
+          "usage": {
+            "input": 14037,
+            "output": 1229,
+            "cacheRead": 15502,
+            "cacheWrite": 0,
+            "totalTokens": 30768,
+            "cost": 0
+          },
+          "model": "deepseek-v4.1-flash:cloud",
+          "stopReason": "toolUse",
+          "outcome": "ok"
+        },
+        {
+          "role": "environment",
+          "phase": "analysis",
+          "startedAtMs": 44,
+          "durationMs": 9896,
+          "firstTokenMs": 2358,
+          "promptChars": 12514,
+          "assistantMessages": 1,
+          "toolFailures": 0,
+          "autoRetries": 0,
+          "validationErrors": [],
+          "usage": {
+            "input": 6941,
+            "output": 1329,
+            "cacheRead": 11414,
+            "cacheWrite": 0,
+            "totalTokens": 19684,
+            "cost": 0
+          },
+          "model": "deepseek-v4.1-flash:cloud",
+          "stopReason": "toolUse",
+          "outcome": "ok"
+        },
+        {
+          "role": "main",
+          "phase": "prepare",
+          "startedAtMs": 29434,
+          "durationMs": 93362,
+          "firstTokenMs": 4334,
+          "promptChars": 30076,
+          "assistantMessages": 2,
+          "toolFailures": 1,
+          "autoRetries": 0,
+          "validationErrors": [
+            "校验失败：主线伏笔 signal-seed 的回收必须让玩家角色得知它指向的事实之一：family-search"
+          ],
+          "usage": {
+            "input": 26443,
+            "output": 17002,
+            "cacheRead": 129026,
+            "cacheWrite": 0,
+            "totalTokens": 172471,
+            "cost": 0
+          },
+          "model": "deepseek-v4.1-flash:cloud",
+          "stopReason": "toolUse",
+          "outcome": "ok"
+        },
+        {
+          "role": "main",
+          "phase": "narration",
+          "startedAtMs": 122803,
+          "durationMs": 4754,
+          "firstTokenMs": 2886,
+          "promptChars": 5512,
+          "assistantMessages": 1,
+          "toolFailures": 0,
+          "autoRetries": 0,
+          "validationErrors": [],
+          "usage": {
+            "input": 7950,
+            "output": 531,
+            "cacheRead": 83642,
+            "cacheWrite": 0,
+            "totalTokens": 92123,
+            "cost": 0
+          },
+          "model": "deepseek-v4.1-flash:cloud",
+          "stopReason": "stop",
+          "outcome": "ok"
+        },
+        {
+          "role": "recorder",
+          "phase": "record",
+          "startedAtMs": 127560,
+          "durationMs": 14996,
+          "firstTokenMs": 1465,
+          "promptChars": 8417,
+          "assistantMessages": 1,
+          "toolFailures": 0,
+          "autoRetries": 0,
+          "validationErrors": [],
+          "usage": {
+            "input": 4155,
+            "output": 3545,
+            "cacheRead": 1778,
+            "cacheWrite": 0,
+            "totalTokens": 9478,
+            "cost": 0
+          },
+          "model": "deepseek-v4.1-flash:cloud",
+          "stopReason": "toolUse",
+          "outcome": "ok"
+        }
+      ],
+      "totals": {
+        "usage": {
+          "input": 78183,
+          "output": 28939,
+          "cacheRead": 264296,
+          "cacheWrite": 0,
+          "totalTokens": 371418,
+          "cost": 0
+        },
+        "calls": 6,
+        "toolFailures": 1,
+        "autoRetries": 0
+      },
+      "quality": {
+        "issues": []
+      },
+      "record": {
+        "source": "agent",
+        "entries": 8,
+        "openedLoops": 2,
+        "closedLoops": 0,
+        "superseded": 1,
+        "seedsChecked": 3,
+        "contradictions": 0,
+        "droppedNotes": 0
+      }
+    }
+  },
+  {
+    "id": "6f923e50-f0ad-4dcb-84e1-1d29af19e73e",
+    "number": 2,
+    "action": "趁窗口还在，我记下最后一支药的批次号，并请绘梨衣在本子上写下平时取药的地点和经手人，准备拿这串证据去核对蛇岐八家的供药记录到底缺在哪一段。",
+    "recallMs": 29,
+    "graphAtGeneration": {
+      "global": {
+        "state": "indexing",
+        "matched": 0,
+        "rejected": 0,
+        "indexedThroughEventId": null
+      },
+      "environment": {
+        "state": "pending",
+        "matched": 0,
+        "rejected": 0,
+        "indexedThroughEventId": null
+      },
+      "character:lu-mingfei": {
+        "state": "pending",
+        "matched": 0,
+        "rejected": 0,
+        "indexedThroughEventId": null
+      },
+      "character:erii": {
+        "state": "pending",
+        "matched": 0,
+        "rejected": 0,
+        "indexedThroughEventId": null
+      }
+    },
+    "telemetry": {
+      "version": 1,
+      "config": {
+        "beats": true,
+        "outcomeSummary": true,
+        "choices": "inline",
+        "narrative": "enforce",
+        "recorder": "agent",
+        "quality": "warn",
+        "slimContext": true,
+        "recorderTimeoutMs": 30000,
+        "maxResumes": 5
+      },
+      "startedAt": "2026-10-14T08:45:52.890Z",
+      "marks": {
+        "analyzed": 27300,
+        "prepared": 85107,
+        "firstProse": 91447,
+        "proseComplete": 92199,
+        "recorded": 100214,
+        "committed": 100224
+      },
+      "totalMs": 100224,
+      "calls": [
+        {
+          "role": "plot",
+          "phase": "analysis",
+          "startedAtMs": 40,
+          "durationMs": 27259,
+          "firstTokenMs": 3087,
+          "promptChars": 28206,
+          "assistantMessages": 1,
+          "toolFailures": 0,
+          "autoRetries": 0,
+          "validationErrors": [],
+          "usage": {
+            "input": 14252,
+            "output": 4769,
+            "cacheRead": 8812,
+            "cacheWrite": 0,
+            "totalTokens": 27833,
+            "cost": 0
+          },
+          "model": "deepseek-v4.1-flash:cloud",
+          "stopReason": "toolUse",
+          "outcome": "ok"
+        },
+        {
+          "role": "character",
+          "phase": "analysis",
+          "startedAtMs": 41,
+          "durationMs": 11138,
+          "firstTokenMs": 3124,
+          "promptChars": 19866,
+          "assistantMessages": 1,
+          "toolFailures": 0,
+          "autoRetries": 0,
+          "validationErrors": [],
+          "usage": {
+            "input": 15631,
+            "output": 1711,
+            "cacheRead": 0,
+            "cacheWrite": 0,
+            "totalTokens": 17342,
+            "cost": 0
+          },
+          "model": "deepseek-v4.1-flash:cloud",
+          "stopReason": "toolUse",
+          "outcome": "ok"
+        },
+        {
+          "role": "environment",
+          "phase": "analysis",
+          "startedAtMs": 41,
+          "durationMs": 10333,
+          "firstTokenMs": 2638,
+          "promptChars": 11834,
+          "assistantMessages": 1,
+          "toolFailures": 0,
+          "autoRetries": 0,
+          "validationErrors": [],
+          "usage": {
+            "input": 6736,
+            "output": 1566,
+            "cacheRead": 4808,
+            "cacheWrite": 0,
+            "totalTokens": 13110,
+            "cost": 0
+          },
+          "model": "deepseek-v4.1-flash:cloud",
+          "stopReason": "toolUse",
+          "outcome": "ok"
+        },
+        {
+          "role": "main",
+          "phase": "prepare",
+          "startedAtMs": 27300,
+          "durationMs": 57807,
+          "firstTokenMs": 3279,
+          "promptChars": 25026,
+          "assistantMessages": 1,
+          "toolFailures": 0,
+          "autoRetries": 0,
+          "validationErrors": [],
+          "usage": {
+            "input": 11673,
+            "output": 14665,
+            "cacheRead": 28520,
+            "cacheWrite": 0,
+            "totalTokens": 54858,
+            "cost": 0
+          },
+          "model": "deepseek-v4.1-flash:cloud",
+          "stopReason": "toolUse",
+          "outcome": "ok"
+        },
+        {
+          "role": "main",
+          "phase": "narration",
+          "startedAtMs": 85112,
+          "durationMs": 7087,
+          "firstTokenMs": 3135,
+          "promptChars": 5122,
+          "assistantMessages": 1,
+          "toolFailures": 0,
+          "autoRetries": 0,
+          "validationErrors": [],
+          "usage": {
+            "input": 17524,
+            "output": 997,
+            "cacheRead": 40064,
+            "cacheWrite": 0,
+            "totalTokens": 58585,
+            "cost": 0
+          },
+          "model": "deepseek-v4.1-flash:cloud",
+          "stopReason": "stop",
+          "outcome": "ok"
+        },
+        {
+          "role": "recorder",
+          "phase": "record",
+          "startedAtMs": 92205,
+          "durationMs": 8008,
+          "firstTokenMs": 1483,
+          "promptChars": 6761,
+          "assistantMessages": 1,
+          "toolFailures": 0,
+          "autoRetries": 0,
+          "validationErrors": [],
+          "usage": {
+            "input": 2944,
+            "output": 3147,
+            "cacheRead": 2112,
+            "cacheWrite": 0,
+            "totalTokens": 8203,
+            "cost": 0
+          },
+          "model": "deepseek-v4.1-flash:cloud",
+          "stopReason": "toolUse",
+          "outcome": "ok"
+        }
+      ],
+      "totals": {
+        "usage": {
+          "input": 68760,
+          "output": 26855,
+          "cacheRead": 84316,
+          "cacheWrite": 0,
+          "totalTokens": 179931,
+          "cost": 0
+        },
+        "calls": 6,
+        "toolFailures": 0,
+        "autoRetries": 0
+      },
+      "quality": {
+        "issues": []
+      },
+      "record": {
+        "source": "agent",
+        "entries": 7,
+        "openedLoops": 2,
+        "closedLoops": 0,
+        "superseded": 0,
+        "seedsChecked": 3,
+        "contradictions": 0,
+        "droppedNotes": 0
+      }
+    }
+  },
+  {
+    "id": "84445d1c-a062-4e24-a06e-93b7bce6900a",
+    "number": 1,
+    "action": "我联系凯撒，确认安全点、离境方式和他们能否继续提供稳定血统的药。",
+    "recallMs": 37,
+    "graphAtGeneration": {
+      "global": {
+        "state": "indexing",
+        "matched": 0,
+        "rejected": 0,
+        "indexedThroughEventId": null
+      },
+      "environment": {
+        "state": "pending",
+        "matched": 0,
+        "rejected": 0,
+        "indexedThroughEventId": null
+      },
+      "character:lu-mingfei": {
+        "state": "pending",
+        "matched": 0,
+        "rejected": 0,
+        "indexedThroughEventId": null
+      },
+      "character:erii": {
+        "state": "pending",
+        "matched": 0,
+        "rejected": 0,
+        "indexedThroughEventId": null
+      }
+    },
+    "telemetry": {
+      "version": 1,
+      "config": {
+        "beats": true,
+        "outcomeSummary": true,
+        "choices": "inline",
+        "narrative": "enforce",
+        "recorder": "agent",
+        "quality": "warn",
+        "slimContext": true,
+        "recorderTimeoutMs": 30000,
+        "maxResumes": 5
+      },
+      "startedAt": "2026-10-14T08:43:30.085Z",
+      "marks": {
+        "analyzed": 14498,
+        "prepared": 75132,
+        "firstProse": 83131,
+        "proseComplete": 84236,
+        "recorded": 94665,
+        "committed": 94669
+      },
+      "totalMs": 94669,
+      "calls": [
+        {
+          "role": "plot",
+          "phase": "analysis",
+          "startedAtMs": 45,
+          "durationMs": 14452,
+          "firstTokenMs": 2066,
+          "promptChars": 19764,
+          "assistantMessages": 1,
+          "toolFailures": 0,
+          "autoRetries": 0,
+          "validationErrors": [],
+          "usage": {
+            "input": 8942,
+            "output": 3078,
+            "cacheRead": 0,
+            "cacheWrite": 0,
+            "totalTokens": 12020,
+            "cost": 0
+          },
+          "model": "deepseek-v4.1-flash:cloud",
+          "stopReason": "toolUse",
+          "outcome": "ok"
+        },
+        {
+          "role": "character",
+          "phase": "analysis",
+          "startedAtMs": 46,
+          "durationMs": 7119,
+          "firstTokenMs": 1949,
+          "promptChars": 10025,
+          "assistantMessages": 1,
+          "toolFailures": 0,
+          "autoRetries": 0,
+          "validationErrors": [],
+          "usage": {
+            "input": 5453,
+            "output": 1554,
+            "cacheRead": 0,
+            "cacheWrite": 0,
+            "totalTokens": 7007,
+            "cost": 0
+          },
+          "model": "deepseek-v4.1-flash:cloud",
+          "stopReason": "toolUse",
+          "outcome": "ok"
+        },
+        {
+          "role": "environment",
+          "phase": "analysis",
+          "startedAtMs": 47,
+          "durationMs": 9380,
+          "firstTokenMs": 2136,
+          "promptChars": 9825,
+          "assistantMessages": 1,
+          "toolFailures": 0,
+          "autoRetries": 0,
+          "validationErrors": [],
+          "usage": {
+            "input": 4938,
+            "output": 1705,
+            "cacheRead": 0,
+            "cacheWrite": 0,
+            "totalTokens": 6643,
+            "cost": 0
+          },
+          "model": "deepseek-v4.1-flash:cloud",
+          "stopReason": "toolUse",
+          "outcome": "ok"
+        },
+        {
+          "role": "main",
+          "phase": "prepare",
+          "startedAtMs": 14499,
+          "durationMs": 60632,
+          "firstTokenMs": 2308,
+          "promptChars": 18814,
+          "assistantMessages": 1,
+          "toolFailures": 0,
+          "autoRetries": 0,
+          "validationErrors": [],
+          "usage": {
+            "input": 13581,
+            "output": 13088,
+            "cacheRead": 0,
+            "cacheWrite": 0,
+            "totalTokens": 26669,
+            "cost": 0
+          },
+          "model": "deepseek-v4.1-flash:cloud",
+          "stopReason": "toolUse",
+          "outcome": "ok"
+        },
+        {
+          "role": "main",
+          "phase": "narration",
+          "startedAtMs": 75135,
+          "durationMs": 9101,
+          "firstTokenMs": 4660,
+          "promptChars": 3940,
+          "assistantMessages": 1,
+          "toolFailures": 0,
+          "autoRetries": 0,
+          "validationErrors": [],
+          "usage": {
+            "input": 15198,
+            "output": 901,
+            "cacheRead": 13452,
+            "cacheWrite": 0,
+            "totalTokens": 29551,
+            "cost": 0
+          },
+          "model": "deepseek-v4.1-flash:cloud",
+          "stopReason": "stop",
+          "outcome": "ok"
+        },
+        {
+          "role": "recorder",
+          "phase": "record",
+          "startedAtMs": 84244,
+          "durationMs": 10420,
+          "firstTokenMs": 1573,
+          "promptChars": 4850,
+          "assistantMessages": 1,
+          "toolFailures": 0,
+          "autoRetries": 0,
+          "validationErrors": [],
+          "usage": {
+            "input": 3989,
+            "output": 2876,
+            "cacheRead": 0,
+            "cacheWrite": 0,
+            "totalTokens": 6865,
+            "cost": 0
+          },
+          "model": "deepseek-v4.1-flash:cloud",
+          "stopReason": "toolUse",
+          "outcome": "ok"
+        }
+      ],
+      "totals": {
+        "usage": {
+          "input": 52101,
+          "output": 23202,
+          "cacheRead": 13452,
+          "cacheWrite": 0,
+          "totalTokens": 88755,
+          "cost": 0
+        },
+        "calls": 6,
+        "toolFailures": 0,
+        "autoRetries": 0
+      },
+      "quality": {
+        "issues": []
+      },
+      "record": {
+        "source": "agent",
+        "entries": 7,
+        "openedLoops": 4,
+        "closedLoops": 0,
+        "superseded": 0,
+        "seedsChecked": 2,
+        "contradictions": 0,
+        "droppedNotes": 0
+      }
+    }
+  }
+]

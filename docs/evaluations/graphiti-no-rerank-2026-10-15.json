@@ -1,0 +1,869 @@
+{
+  "head": "a59944eb-a7ab-4cf6-9f21-c64d4a994737",
+  "config": {
+    "enabled": true,
+    "url": "http://127.0.0.1:4320",
+    "timeoutMs": 30000,
+    "readyWaitMs": 60000,
+    "topK": 5
+  },
+  "rows": [
+    {
+      "query": "凯撒为什么无法提供稳定血统的药？",
+      "ms": 575,
+      "graph": {
+        "global": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 559,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+        },
+        "environment": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 375,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+        },
+        "character:lu-mingfei": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 457,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+        },
+        "character:erii": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 383,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+        }
+      },
+      "global": [
+        {
+          "id": "ca62f90040a3e4f07021306b18a6f1b7613cf0e5228584ae3603c2f56845dfbc",
+          "kind": "world-rule",
+          "text": "绘梨衣的血统长期依赖蛇岐八家提供的药物稳定，最后一支药不会凭空增加",
+          "sourceEventId": "33c6df40-ec50-4129-8885-5c9f732c535f",
+          "source": "world-rule:3",
+          "ordinal": 0,
+          "timeMinutes": 480,
+          "view": "global",
+          "score": 14.380209349293457,
+          "matchedTerms": [
+            "提供",
+            "稳定",
+            "血统",
+            "药"
+          ],
+          "retrievalSources": [
+            "bm25",
+            "graphiti"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "82e8f06d6eea6bafe069c48ecdb4a57bd71138aa6a94fe550e3af40e4406322b",
+          "kind": "narrator-note",
+          "text": "凯撒只能接人不能接药：安全屋与十点前的撤离窗口可用，血清无解，治疗线必须另找来源。",
+          "sourceEventId": "ca2f68bc-d908-41f9-a43b-b7719e80897a",
+          "source": "narrator-note:0",
+          "ordinal": 1,
+          "timeMinutes": 492,
+          "view": "global",
+          "score": 3.757400223968413,
+          "matchedTerms": [
+            "凯",
+            "撒",
+            "药"
+          ],
+          "retrievalSources": [
+            "bm25",
+            "graphiti"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "c03fdcc174b96c8cfe72e92c252a439d44d00132707d1d144227a46a710df61b",
+          "kind": "ledger",
+          "text": "凯撒说学院的医疗线接不进蛇岐八家的东西，没库存也没配方，接人接得下来，接药接不下来。（原文：「接人接得下来，接药接不下来」）",
+          "sourceEventId": "ca2f68bc-d908-41f9-a43b-b7719e80897a",
+          "source": "ledger:L1-3",
+          "ordinal": 1,
+          "timeMinutes": 492,
+          "view": "global",
+          "score": 3.623609123154241,
+          "matchedTerms": [
+            "凯",
+            "撒",
+            "药"
+          ],
+          "retrievalSources": [
+            "bm25",
+            "graphiti"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "b483c6e315d7e31a2dff4f63fbef159301d97e9f5e43edb461bece47a58f2df8",
+          "kind": "outcome",
+          "text": "凯撒给了安全屋坐标和十点前的撤离窗口，也把话说死：卡塞尔没有蛇岐八家的血清库存，接得了人，接不了药。挂断前他补了一句警告——上一次握手已经把搜索范围收到旅馆周边，这通电话又把暴露窗口拉长了一截。路明非拿到的是半张网，退路有了，活命的药还得自己找。",
+          "sourceEventId": "ca2f68bc-d908-41f9-a43b-b7719e80897a",
+          "source": "outcome",
+          "ordinal": 1,
+          "timeMinutes": 492,
+          "view": "global",
+          "score": 2.7079461088767074,
+          "matchedTerms": [
+            "凯",
+            "撒",
+            "药"
+          ],
+          "retrievalSources": [
+            "bm25",
+            "graphiti"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "5150db3376bd1f58261ffc6f2e9545c5637e5680d8ede60b77a536094877a8ec",
+          "kind": "environment-memory",
+          "text": "凯撒给出的安全屋会合点与十点前的撤离窗口成为可用选项，但不附带任何可立即到手的药物。",
+          "sourceEventId": "ca2f68bc-d908-41f9-a43b-b7719e80897a",
+          "source": "environment-note:1",
+          "ordinal": 1,
+          "timeMinutes": 492,
+          "view": "global",
+          "score": 2.684743456605249,
+          "matchedTerms": [
+            "凯",
+            "撒"
+          ],
+          "retrievalSources": [
+            "bm25",
+            "graphiti"
+          ],
+          "truncated": false
+        }
+      ]
+    },
+    {
+      "query": "最后一支药的批次号被记录在哪里？",
+      "ms": 171,
+      "graph": {
+        "global": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 169,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+        },
+        "environment": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 148,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+        },
+        "character:lu-mingfei": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 155,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+        },
+        "character:erii": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 150,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+        }
+      },
+      "global": [
+        {
+          "id": "b3607775fe1e1ffd212cb5b3c75c38de670b3f3cef06355169eb5e1923374aae",
+          "kind": "narrator-note",
+          "text": "路明非抄下最后一支药的批次号；一支药的号只能对上蛇岐八家自家记录，无法当场证明供药链断在哪一段。",
+          "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f",
+          "source": "narrator-note:0",
+          "ordinal": 2,
+          "timeMinutes": 500,
+          "view": "global",
+          "score": 13.04797000182648,
+          "matchedTerms": [
+            "最后",
+            "一支",
+            "药",
+            "批次",
+            "号",
+            "记录"
+          ],
+          "retrievalSources": [
+            "bm25",
+            "graphiti"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "f50e2832b2f62d69cbd31b43f971beda260e369799dfae6861dc6195ead99255",
+          "kind": "environment-memory",
+          "text": "桌上那盒药仍开着，最后一支的批次号已被抄进手机便笺，药物本身未被动用。",
+          "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f",
+          "source": "environment-note:0",
+          "ordinal": 2,
+          "timeMinutes": 500,
+          "view": "global",
+          "score": 13.026344343019147,
+          "matchedTerms": [
+            "最后",
+            "一支",
+            "药",
+            "批次",
+            "号",
+            "被"
+          ],
+          "retrievalSources": [
+            "bm25",
+            "graphiti"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "ebc51a90e54806ccfe10b41729ca6639d22087e23eee9c9a6ea43fbfe0a7982e",
+          "kind": "environment-memory",
+          "text": "桌上那盒药仍开着，最后一支未被动用；批次号仍留在手机便笺里。",
+          "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737",
+          "source": "environment-note:1",
+          "ordinal": 3,
+          "timeMinutes": 507,
+          "view": "global",
+          "score": 10.561616791310517,
+          "matchedTerms": [
+            "最后",
+            "一支",
+            "药",
+            "批次",
+            "号"
+          ],
+          "retrievalSources": [
+            "bm25",
+            "graphiti"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "3d20f3524844786a0497ddba4c5b2d3325bb5abc397df92d364d30324069e5de",
+          "kind": "open-loop",
+          "text": "未兑现的疑问：路明非手里这支药的批次号只能对上蛇岐八家自己那份记录，而那份记录在正在找绘梨衣的人手里，供药链断在哪一段仍无法核对。（原文：「能对上这串号的，只有蛇岐八家自己那份记录。」）",
+          "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f",
+          "source": "loop:Q2-1",
+          "ordinal": 2,
+          "timeMinutes": 500,
+          "view": "global",
+          "score": 7.67709553191929,
+          "matchedTerms": [
+            "药",
+            "批次",
+            "号",
+            "记录"
+          ],
+          "retrievalSources": [
+            "bm25",
+            "graphiti"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "8de281d19d29ca64c6517c31b9b1183c8aa9024476c9096cdf27b751ef9a2cdb",
+          "kind": "perspective-report",
+          "text": "路明非的认知记录：他记下批次号，问出她的取药方式；这药没有医院这一环，真要查下去就得往蛇岐八家那头走。",
+          "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f",
+          "source": "character-report:0",
+          "ordinal": 2,
+          "timeMinutes": 500,
+          "view": "global",
+          "score": 7.347872179077824,
+          "matchedTerms": [
+            "药",
+            "批次",
+            "号",
+            "记录"
+          ],
+          "retrievalSources": [
+            "bm25",
+            "graphiti"
+          ],
+          "truncated": false
+        }
+      ]
+    },
+    {
+      "query": "那辆一直候着的车后来是离开了，还是绕到我们楼下？",
+      "ms": 121,
+      "graph": {
+        "global": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 120,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+        },
+        "environment": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 106,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+        },
+        "character:lu-mingfei": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 111,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+        },
+        "character:erii": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 108,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+        }
+      },
+      "global": [
+        {
+          "id": "f8f37237843d1117806d50f6544da3916da1efbcc458ab313d0b929c0c9810f9",
+          "kind": "ledger",
+          "text": "路明非想起本子上那几行字：车直接开进地下车库，电梯上到某一层，而车拐进的正是同一处地下车库。（原文：「车直接开进地下车库，电梯上到某一层」）",
+          "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737",
+          "source": "ledger:L3-7",
+          "ordinal": 3,
+          "timeMinutes": 507,
+          "view": "global",
+          "score": 4.627552228857451,
+          "matchedTerms": [
+            "车"
+          ],
+          "retrievalSources": [
+            "bm25",
+            "graphiti"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "92c7c164c8f99ece6884cd5bec1e8610c96277b3411a250392980cbb41e6b9a4",
+          "kind": "ledger",
+          "text": "挂断前凯撒补了一句：上次那个握手已经把搜索收到他们那片街区，这一通又亮了一会儿，别一直开着。（原文：「别一直开着」）",
+          "sourceEventId": "ca2f68bc-d908-41f9-a43b-b7719e80897a",
+          "source": "ledger:L1-5",
+          "ordinal": 1,
+          "timeMinutes": 492,
+          "view": "global",
+          "score": 6.275953768342113,
+          "matchedTerms": [
+            "一直",
+            "着"
+          ],
+          "retrievalSources": [
+            "bm25",
+            "graphiti"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "54080899d08f3145adb2f9499f7a68d1367563c3107e10a8fe63a7d74abe844c",
+          "kind": "ledger",
+          "text": "帘缝外街对面那辆车停了很久，引擎一直没熄。（原文：「街对面那辆车停了很久，引擎一直没熄。」）",
+          "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f",
+          "source": "ledger:L2-7",
+          "ordinal": 2,
+          "timeMinutes": 500,
+          "view": "global",
+          "score": 4.102610258783595,
+          "matchedTerms": [
+            "一直"
+          ],
+          "retrievalSources": [
+            "bm25",
+            "graphiti"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "3a9b3f0b094ffaac8daf8e77c135fe503811ab95e05271a8da40eb041d2be4f2",
+          "kind": "ledger",
+          "text": "路明非从帘缝里看见街对面那辆车动了：没有往前开，而是拐进旅馆后巷，压着坡道往地下车库去，引擎声从街上挪到楼底。（原文：「是拐进旅馆后巷，压着坡道往下走，往地下车库去」）",
+          "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737",
+          "source": "ledger:L3-6",
+          "ordinal": 3,
+          "timeMinutes": 507,
+          "view": "global",
+          "score": 2.2039171532235815,
+          "matchedTerms": [
+            "着"
+          ],
+          "retrievalSources": [
+            "bm25",
+            "graphiti"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "2c2276a493105939820c0a2b26d6cd031d85073c9e9141be17348a0f068aef74",
+          "kind": "environment-memory",
+          "text": "加密手机第二次开机通话约七分钟，暴露窗口再次被拉长；街对面那辆长时间未熄火的车已从街面移到旅馆后巷的地下车库坡道。",
+          "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737",
+          "source": "environment-note:0",
+          "ordinal": 3,
+          "timeMinutes": 507,
+          "view": "global",
+          "score": 7.553621946586114,
+          "matchedTerms": [
+            "那辆",
+            "车"
+          ],
+          "truncated": false
+        }
+      ]
+    },
+    {
+      "query": "她过去接受治疗时，车怎么进楼，人又怎么上去？",
+      "ms": 119,
+      "graph": {
+        "global": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 118,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+        },
+        "environment": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 101,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+        },
+        "character:lu-mingfei": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 108,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+        },
+        "character:erii": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 103,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+        }
+      },
+      "global": [
+        {
+          "id": "82e8f06d6eea6bafe069c48ecdb4a57bd71138aa6a94fe550e3af40e4406322b",
+          "kind": "narrator-note",
+          "text": "凯撒只能接人不能接药：安全屋与十点前的撤离窗口可用，血清无解，治疗线必须另找来源。",
+          "sourceEventId": "ca2f68bc-d908-41f9-a43b-b7719e80897a",
+          "source": "narrator-note:0",
+          "ordinal": 1,
+          "timeMinutes": 492,
+          "view": "global",
+          "score": 4.466117010024236,
+          "matchedTerms": [
+            "治疗",
+            "人"
+          ],
+          "retrievalSources": [
+            "bm25",
+            "graphiti"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "5691677cc11d9017185d9566a0b4dbdab21d328dddd724201e75521d7f47a051",
+          "kind": "narrative",
+          "text": "你没先答她。你把药盒翻过来对着帘缝那道光，让最后那一支的标签角朝向自己——塑封的边角被反复摸得起了毛，你顺着磨花的地方念出那串号，手指在手机便笺上敲了一遍，又核对了一遍。那行字躺在屏幕上，像一根总算摸到了头的线。\n\n然后你把笔和本子一起推回去。“你平时拿药是谁经手的？”你说，“这串号我得记住，总得有人对得上。”\n\n她接过去，写得很慢。写了几个字，划掉一半，再写。最后交回来的只有这些：她从没在医院拿过药。是一辆车直接开进地下车库，电梯上到某一层；来的人总是两个，一个从头到尾不说话，另一个戴着手套，把盒子里的药按次数数出来给她，从不让她看整盒。地址她写不出，名字她也想不起。\n\n你盯着那几行小字看了一会儿，才慢慢明白手里攥着的到底是什么。凯撒那句“接人接得下来，接药接不下来”忽然有了另一层意思——这药不走医院，也不走任何一条能打电话去问的渠道；能对上这串号的，只有蛇岐八家自己那份记录。而那份记录，正锁在找她的那一边。\n\n本子转回来时，最后一行还空着。她把笔按在纸边，没催你。帘缝外，街对面那辆车停了很久，引擎一直没熄。",
+          "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f",
+          "source": "prose",
+          "ordinal": 2,
+          "timeMinutes": 500,
+          "view": "global",
+          "score": 4.1035659818242065,
+          "matchedTerms": [
+            "过去",
+            "时",
+            "进",
+            "人",
+            "又"
+          ],
+          "retrievalSources": [
+            "bm25",
+            "graphiti"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "8387558560ca7e6e697ac58239091320d46519fa59598e1e240043b8ba8f0919",
+          "kind": "narrative",
+          "text": "你把那盒药推到石桌中间，起身走到窗帘和床之间那块地毯上，把加密手机贴上耳朵。另一只手在裤缝上蹭了两下，你才发现自己在蹭。凯撒接得很快，声音里没有睡意，像是一直握着电话等这一响。他报了地址：旧公寓，进门报一个号码；报了时间：十点以前，过了点人就得挪地方。你问药。那头静了半秒，他说学院的医疗线接不进蛇岐八家的东西，没库存，也没配方——接人接得下来，接药接不下来。你追了一句，为什么学院非要她离开日本。这回整整两秒什么都没说，然后才答，命令里写的是保护条款。挂断前他补了一句：上次那个握手已经把搜索收到你们那片街区，这一通又亮了一会儿，别一直开着。\n\n你按下关机键，房间里静得能听见远处电车的闷响，走廊那头电梯缆绳也响过一声，又安静下去。桌上的药盒还开着，最后一支躺在那儿，塑封的边角被反复摸得起了毛。\n\n回头时，绘梨衣已经把本子从窗边抱到了胸前。笔尖在纸上悬了半天，写的不是\"去哪里\"。她抬眼看你，视线在你握手机的那只手上停了一会儿，然后把本子转过来，推过石桌，推到你面前。\n\n上面只有一行字：药，接不上的，对不对。",
+          "sourceEventId": "ca2f68bc-d908-41f9-a43b-b7719e80897a",
+          "source": "prose",
+          "ordinal": 1,
+          "timeMinutes": 492,
+          "view": "global",
+          "score": 3.5228004825332664,
+          "matchedTerms": [
+            "时",
+            "进",
+            "人",
+            "又"
+          ],
+          "retrievalSources": [
+            "bm25",
+            "graphiti"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "f8f37237843d1117806d50f6544da3916da1efbcc458ab313d0b929c0c9810f9",
+          "kind": "ledger",
+          "text": "路明非想起本子上那几行字：车直接开进地下车库，电梯上到某一层，而车拐进的正是同一处地下车库。（原文：「车直接开进地下车库，电梯上到某一层」）",
+          "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737",
+          "source": "ledger:L3-7",
+          "ordinal": 3,
+          "timeMinutes": 507,
+          "view": "global",
+          "score": 7.517027759895578,
+          "matchedTerms": [
+            "车",
+            "进"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "1ca5765d257eb5482d691f1e2be8c2c37e74d4139f0d92ad382424295799be97",
+          "kind": "ledger",
+          "text": "路明非请绘梨衣写下取药来路，把她当作能一起查事的人，而不是需要瞒着的行李；绘梨衣接过去写得很慢，写了几个字又划掉一半。（原文：「她接过去，写得很慢。写了几个字，划掉一半，再写。」）",
+          "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f",
+          "source": "ledger:L2-5",
+          "ordinal": 2,
+          "timeMinutes": 500,
+          "view": "global",
+          "score": 6.969437475864892,
+          "matchedTerms": [
+            "过去",
+            "人",
+            "又"
+          ],
+          "truncated": false
+        }
+      ]
+    },
+    {
+      "query": "最后回头看她时，有什么小动作暴露了身体的不适？",
+      "ms": 133,
+      "graph": {
+        "global": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 131,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+        },
+        "environment": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 108,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+        },
+        "character:lu-mingfei": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 115,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+        },
+        "character:erii": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 110,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+        }
+      },
+      "global": [
+        {
+          "id": "1160e06a5767454ea434142377a4b2adc2a5d3a2d19c7719c2c5413b98837402",
+          "kind": "perspective-report",
+          "text": "此回合关系态度变化：{\"amount\":1,\"characterId\":\"erii\",\"reason\":\"她看着他为她打电话追问药的接续，确认他不只是带她逃\",\"targetCharacterId\":\"lu-mingfei\"}",
+          "sourceEventId": "ca2f68bc-d908-41f9-a43b-b7719e80897a",
+          "source": "relationship:0",
+          "ordinal": 1,
+          "timeMinutes": 492,
+          "view": "global",
+          "score": 2.8146621425360996,
+          "matchedTerms": [
+            "看"
+          ],
+          "retrievalSources": [
+            "bm25",
+            "graphiti"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "30b3557c4aae8645d33c979026d0c4777f44ed0d76d04e395a68fcbba355d3ff",
+          "kind": "ledger",
+          "text": "本子转回来时最后一行还空着，绘梨衣把笔按在纸边，没有催路明非。（原文：「本子转回来时，最后一行还空着。她把笔按在纸边，没催你。」）",
+          "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f",
+          "source": "ledger:L2-6",
+          "ordinal": 2,
+          "timeMinutes": 500,
+          "view": "global",
+          "score": 6.896971654559611,
+          "matchedTerms": [
+            "最后",
+            "时"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "81bb1b377c9a14e97d44a9f861c56ba7d20ba97febaaf29b064398baf4450797",
+          "kind": "narrator-note",
+          "text": "绘梨衣握笔的指尖在发抖，眼底颜色比清晨更深；桌上最后一支药未被动用，批次号仍在手机便笺里。",
+          "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737",
+          "source": "narrator-note:3",
+          "ordinal": 3,
+          "timeMinutes": 507,
+          "view": "global",
+          "score": 0.4461001320668947,
+          "retrievalSources": [
+            "graphiti"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "5f100d9a62f3c51bd7006368b42a3e97d92fb2f20f44e7dbe9cae9843f936200",
+          "kind": "world-rule",
+          "text": "混血种的言灵能力有明确边界，不能随意创造新能力",
+          "sourceEventId": "33c6df40-ec50-4129-8885-5c9f732c535f",
+          "source": "world-rule:1",
+          "ordinal": 0,
+          "timeMinutes": 480,
+          "view": "global",
+          "score": 4.901503852086111,
+          "matchedTerms": [
+            "有"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "85d9255431d1dc6d0657179930107fa50bc6d2d91bebcbf7646fa1af10b2e2d2",
+          "kind": "outcome",
+          "text": "路明非把最后一支药的批次号抄进了手机便笺。绘梨衣写得又慢又迟疑，划掉一半，只写出她能确定的：她从没在医院拿过药，车开进地下车库，电梯直达某一层，来的两个人里有一个戴着手套，把盒子里的药按次数数给她，从不让她看整盒。她给不出地址，也给不出名字。于是那条想顺下去的线断在半空——这药本来就不走任何能查的渠道，能对上号的那份记录在蛇岐八家自己手里，也就是正在找她的人那一侧。",
+          "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f",
+          "source": "outcome",
+          "ordinal": 2,
+          "timeMinutes": 500,
+          "view": "global",
+          "score": 4.506175442698124,
+          "matchedTerms": [
+            "最后",
+            "看",
+            "有"
+          ],
+          "truncated": false
+        }
+      ]
+    },
+    {
+      "query": "现在那辆车的去向，与她之前回忆的取药过程有什么共同线索？",
+      "ms": 161,
+      "graph": {
+        "global": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 159,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+        },
+        "environment": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 142,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+        },
+        "character:lu-mingfei": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 147,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+        },
+        "character:erii": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 145,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+        }
+      },
+      "global": [
+        {
+          "id": "66deabd567ba3158e4ff13ca7a87a05271ff0ff993e9dcd6653f89a7d2dd0819",
+          "kind": "environment-memory",
+          "text": "交流本上新增绘梨衣的取药线索：地下车库、电梯直达、戴手套数药的人；地址与姓名均缺。",
+          "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f",
+          "source": "environment-note:1",
+          "ordinal": 2,
+          "timeMinutes": 500,
+          "view": "global",
+          "score": 9.197876758875303,
+          "matchedTerms": [
+            "取",
+            "药",
+            "线索"
+          ],
+          "retrievalSources": [
+            "bm25",
+            "graphiti"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "5015a521dc2f4e1949790dc3055a1372746f760de3d0a97fc3f1fbc9272004f2",
+          "kind": "perspective-report",
+          "text": "上杉绘梨衣的认知记录：她第一次被要求回忆自己用药的来路，才发现从没记过谁在管这药；她把“要去哪”那行空着等他先答完药的事。",
+          "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f",
+          "source": "character-report:1",
+          "ordinal": 2,
+          "timeMinutes": 500,
+          "view": "global",
+          "score": 5.570109477661866,
+          "matchedTerms": [
+            "回忆",
+            "药"
+          ],
+          "retrievalSources": [
+            "bm25",
+            "graphiti"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "82dfca10feed00fc38314c832a4dd744f05bcb67cc75295a8fb3c9f9f2740936",
+          "kind": "narrator-note",
+          "text": "绘梨衣写下她记得的取药方式：不经医院、地下车库电梯直达、两人上门其中一个戴手套按次数数药；地址与姓名全缺。",
+          "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f",
+          "source": "narrator-note:1",
+          "ordinal": 2,
+          "timeMinutes": 500,
+          "view": "global",
+          "score": 4.091459479590762,
+          "matchedTerms": [
+            "取",
+            "药"
+          ],
+          "retrievalSources": [
+            "bm25",
+            "graphiti"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "10a052583534a8d147a4e16d4cf8f666616208cbf6799913a3a271e05a0013e3",
+          "kind": "perspective-report",
+          "text": "此回合关系态度变化：{\"amount\":1,\"characterId\":\"erii\",\"reason\":\"他请她写下取药来路，把她当能一起查事的人而不是需要瞒着的行李\",\"targetCharacterId\":\"lu-mingfei\"}",
+          "sourceEventId": "7861b332-5795-41fe-8d26-359ce21a962f",
+          "source": "relationship:0",
+          "ordinal": 2,
+          "timeMinutes": 500,
+          "view": "global",
+          "score": 3.5924217873470408,
+          "matchedTerms": [
+            "取",
+            "药"
+          ],
+          "retrievalSources": [
+            "bm25",
+            "graphiti"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "803cce99d45a2f66dc5b52876da953d00b386ce92dd51a734112d30570f3face",
+          "kind": "narrator-note",
+          "text": "凯撒点明收进他们那片街区的搜索来自蛇岐八家自己，源稚生要找回妹妹——一半为治疗，一半怕她失控；同时那辆车拐进旅馆后巷的地下车库坡道，正是绘梨衣写下的取药路线会用的入口。",
+          "sourceEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737",
+          "source": "narrator-note:1",
+          "ordinal": 3,
+          "timeMinutes": 507,
+          "view": "global",
+          "score": 5.959859964223799,
+          "matchedTerms": [
+            "那辆车",
+            "取",
+            "药",
+            "那辆",
+            "辆车"
+          ],
+          "truncated": false
+        }
+      ]
+    }
+  ]
+}

@@ -11,7 +11,7 @@ export type Gen =
   | { status: 'idle' }
   | { status: 'thinking'; phase: number; action: Action; live: Live }
   | { status: 'writing'; turn: Turn; shown: number; total: number; action: Action; live: Live }
-  | { status: 'error'; action: Action; message: string; recoverable: boolean }
+  | { status: 'error'; action: Action; message: string; recoverable: boolean; rejected: boolean }
 type Active = { turnId: string; status: string; branchId: string } | null
 const SET_KEY = 'ai-novel:reading:v2'
 function loadSettings(): Settings {
@@ -73,7 +73,7 @@ export function useGame() {
       draft = { id: s.turnId ?? 'pending', action: s.action, place: s.scene?.locationName ?? last?.location?.name ?? '故事现场', time: last?.time ?? '', img: s.scene?.image.src ?? FALLBACK_IMAGE, fallback: s.scene?.fallbackImage ?? FALLBACK_IMAGE, imagePosition: s.scene?.image.position, title: s.scene?.title ?? '', paras: paragraphs(s.text), choices: [] }
     }
     setLiveTurn(draft)
-    if (s.message) setGen({ status: 'error', action: s.action, message: s.message, recoverable: s.recoverable || !s.terminal })
+    if (s.message) setGen({ status: 'error', action: s.action, message: s.message, recoverable: s.recoverable || !s.terminal, rejected: s.rejected })
     else if (draft) setGen({ status: 'writing', turn: draft, shown: s.text.length, total: s.text.length, action: s.action, live })
     else setGen({ status: 'thinking', phase: s.phase, action: s.action, live })
   }, [])

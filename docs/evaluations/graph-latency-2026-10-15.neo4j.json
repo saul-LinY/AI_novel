@@ -1,0 +1,90 @@
+{
+  "scope": "novel-faf891e511f9529e485a559b3f4084b2",
+  "group": "novel_a2b6e4fe814b41d481ae145b095cc76e",
+  "description": "Neo4j HTTP one-hop entity/fact reads; excludes embeddings and source evidence hydration",
+  "samples": [
+    {
+      "ms": 40.95,
+      "rows": 22
+    },
+    {
+      "ms": 19.71,
+      "rows": 23
+    },
+    {
+      "ms": 6.39,
+      "rows": 50
+    },
+    {
+      "ms": 4.59,
+      "rows": 16
+    },
+    {
+      "ms": 5.18,
+      "rows": 22
+    },
+    {
+      "ms": 4.66,
+      "rows": 23
+    },
+    {
+      "ms": 6.09,
+      "rows": 50
+    },
+    {
+      "ms": 5.01,
+      "rows": 16
+    },
+    {
+      "ms": 4.23,
+      "rows": 22
+    },
+    {
+      "ms": 4.39,
+      "rows": 23
+    },
+    {
+      "ms": 3.65,
+      "rows": 50
+    },
+    {
+      "ms": 3.64,
+      "rows": 16
+    },
+    {
+      "ms": 3.47,
+      "rows": 22
+    },
+    {
+      "ms": 3.64,
+      "rows": 23
+    },
+    {
+      "ms": 5.16,
+      "rows": 50
+    },
+    {
+      "ms": 3.15,
+      "rows": 16
+    },
+    {
+      "ms": 3.23,
+      "rows": 22
+    },
+    {
+      "ms": 3.29,
+      "rows": 23
+    },
+    {
+      "ms": 3.68,
+      "rows": 50
+    },
+    {
+      "ms": 3.42,
+      "rows": 16
+    }
+  ],
+  "medianMs": 4.23,
+  "p95Ms": 19.71,
+  "maxMs": 40.95
+}

@@ -70,6 +70,28 @@ test("failed attempts remain visible without claiming output or state was commit
   assert.deepEqual(detail.steps[1].attempts, []);
 });
 
+test("console preserves historical recall evidence without inventing graph indexing completion", async (t) => {
+  const { dataDir, root, save } = await fixture(t);
+  const path = 'branches/main/turns/turn/event.json';
+  const event = JSON.parse(await readFile(join(root, path), 'utf8'));
+  event.sharedContext.memoryTrace = { backend: 'bm25+graphiti', query: '找钥匙', graphiti: { global: { state: 'updating', matched: 0 } } };
+  event.sharedContext.domainContexts.plot.longTermMemory = [{ text: '钥匙交给了同伴。', sourceEventId: 'opening' }];
+  await save(path, event);
+  const detail = await createConsoleReader({ dataDir }).detail('job');
+  assert.equal(detail.memoryRecall.result.trace.graphiti.global.state, 'updating');
+  assert.equal(detail.memoryRecall.result.global[0].sourceEventId, 'opening');
+  assert.equal(detail.memoryUpdate, null, 'a committed turn alone is not evidence of indexing completion');
+});
+
+test("console shows persisted recall even when generation fails before sharing context", async (t) => {
+  const { dataDir, save } = await fixture(t);
+  const memoryRecall = { status: 'degraded', result: null };
+  await save('turn-jobs/failed/job.json', { turnId: 'failed', eventId: 'absent', headEventId: 'turn', branchId: 'main', action: '下一步', status: 'failed', memoryRecall, createdAt: '2026-09-11T02:00:00.000Z' });
+  const detail = await createConsoleReader({ dataDir }).detail('failed');
+  assert.deepEqual(detail.memoryRecall, memoryRecall);
+  assert.equal(detail.memoryUpdate, null);
+});
+
 test("standalone HTTP console is read only and handles an empty data directory", async (t) => {
   const { dataDir, root } = await fixture(t);
   const before = await readFile(join(root, "index.json"), "utf8");

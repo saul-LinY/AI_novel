@@ -13,3 +13,7 @@ frontend/node_modules/
 # Local QA screenshots and design hand-offs
 dogfood-output/
 *.zip
+
+# Local Python service bytecode
+__pycache__/
+*.pyc

@@ -1,0 +1,1126 @@
+{
+  "date": "2026-10-15",
+  "startedAt": "2026-10-15T04:02:04.329Z",
+  "sourceHead": "c293dcad-ba68-42b7-b944-b734a1f078af",
+  "action": "我拿着绘梨衣写好的那页纸从消防通道下去，到后巷地下车库找到那辆车，把她的条件当面交给他们：要药，拿完就走，人会跟我一起出来，谁也不把她扣下。",
+  "choiceId": "lu-deliver-terms",
+  "pipeline": {
+    "beats": true,
+    "outcomeSummary": true,
+    "choices": "inline",
+    "narrative": "enforce",
+    "recorder": "agent",
+    "quality": "warn",
+    "slimContext": true,
+    "recorderTimeoutMs": 30000,
+    "maxResumes": 5
+  },
+  "methodology": "Two sequential live generations from identical copied story and Pi session snapshots; current memory recall read-only, no enqueue; actual runtime and appendTurn/StoryStore.save; HTTP/UI job persistence excluded; initialization measured separately.",
+  "trials": [
+    {
+      "trial": 1,
+      "events": [
+        {
+          "atMs": 0,
+          "type": "started",
+          "action": "我拿着绘梨衣写好的那页纸从消防通道下去，到后巷地下车库找到那辆车，把她的条件当面交给他们：要药，拿完就走，人会跟我一起出来，谁也不把她扣下。"
+        },
+        {
+          "atMs": 304,
+          "type": "recalled",
+          "ms": 303.467083,
+          "degraded": false
+        },
+        {
+          "atMs": 310,
+          "type": "phase",
+          "phase": "analyzing"
+        },
+        {
+          "atMs": 312,
+          "type": "progress",
+          "role": "plot",
+          "status": "started"
+        },
+        {
+          "atMs": 313,
+          "type": "progress",
+          "role": "character",
+          "status": "started"
+        },
+        {
+          "atMs": 313,
+          "type": "progress",
+          "role": "environment",
+          "status": "started"
+        },
+        {
+          "atMs": 9734,
+          "type": "model_message_end",
+          "role": "character",
+          "stopReason": "toolUse"
+        },
+        {
+          "atMs": 9783,
+          "type": "progress",
+          "role": "character",
+          "status": "done",
+          "durationMs": 9470
+        },
+        {
+          "atMs": 13747,
+          "type": "model_message_end",
+          "role": "environment",
+          "stopReason": "toolUse"
+        },
+        {
+          "atMs": 13786,
+          "type": "progress",
+          "role": "environment",
+          "status": "done",
+          "durationMs": 13473
+        },
+        {
+          "atMs": 28757,
+          "type": "model_message_end",
+          "role": "plot",
+          "stopReason": "toolUse"
+        },
+        {
+          "atMs": 28801,
+          "type": "progress",
+          "role": "plot",
+          "status": "done",
+          "durationMs": 28489
+        },
+        {
+          "atMs": 28802,
+          "type": "phase",
+          "phase": "synthesizing"
+        },
+        {
+          "atMs": 28802,
+          "type": "progress",
+          "role": "main",
+          "status": "started"
+        },
+        {
+          "atMs": 102538,
+          "type": "model_message_end",
+          "role": "main",
+          "stopReason": "toolUse"
+        },
+        {
+          "atMs": 102583,
+          "type": "gate",
+          "ms": 1.5901670000021113,
+          "error": "NPC不存在：counter-hand"
+        },
+        {
+          "atMs": 102583,
+          "type": "progress",
+          "role": "main",
+          "status": "retrying",
+          "attempt": 2
+        },
+        {
+          "atMs": 115650,
+          "type": "model_message_end",
+          "role": "main",
+          "stopReason": "toolUse"
+        },
+        {
+          "atMs": 115693,
+          "type": "gate",
+          "ms": 2.6332499999989523,
+          "error": null
+        },
+        {
+          "atMs": 115694,
+          "type": "progress",
+          "role": "main",
+          "status": "done",
+          "durationMs": 86892
+        },
+        {
+          "atMs": 115694,
+          "type": "prepared"
+        },
+        {
+          "atMs": 115694,
+          "type": "phase",
+          "phase": "narrating"
+        },
+        {
+          "atMs": 122648,
+          "type": "first_prose"
+        },
+        {
+          "atMs": 123583,
+          "type": "model_message_end",
+          "role": "main",
+          "stopReason": "stop"
+        },
+        {
+          "atMs": 123622,
+          "type": "progress",
+          "role": "recorder",
+          "status": "started"
+        },
+        {
+          "atMs": 123623,
+          "type": "phase",
+          "phase": "recording"
+        },
+        {
+          "atMs": 151698,
+          "type": "model_message_end",
+          "role": "recorder",
+          "stopReason": "toolUse"
+        },
+        {
+          "atMs": 151706,
+          "type": "progress",
+          "role": "recorder",
+          "status": "done",
+          "durationMs": 28084
+        },
+        {
+          "atMs": 151772,
+          "type": "complete",
+          "totalMs": 151772,
+          "commitMs": 64.86712499998976
+        }
+      ],
+      "validation": [
+        {
+          "atMs": 102583,
+          "ms": 1.5901670000021113,
+          "error": "NPC不存在：counter-hand"
+        },
+        {
+          "atMs": 115693,
+          "ms": 2.6332499999989523,
+          "error": null
+        }
+      ],
+      "modelMessages": [
+        {
+          "role": "character",
+          "startMs": 3792,
+          "endMs": 9734,
+          "stopReason": "toolUse",
+          "usage": {
+            "input": 65988,
+            "output": 1862,
+            "cacheRead": 0,
+            "cacheWrite": 0,
+            "reasoning": 0,
+            "totalTokens": 67850,
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0,
+              "total": 0
+            }
+          }
+        },
+        {
+          "role": "environment",
+          "startMs": 3182,
+          "endMs": 13747,
+          "stopReason": "toolUse",
+          "usage": {
+            "input": 32513,
+            "output": 2493,
+            "cacheRead": 0,
+            "cacheWrite": 0,
+            "reasoning": 0,
+            "totalTokens": 35006,
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0,
+              "total": 0
+            }
+          }
+        },
+        {
+          "role": "plot",
+          "startMs": 3985,
+          "endMs": 28757,
+          "stopReason": "toolUse",
+          "usage": {
+            "input": 85323,
+            "output": 7006,
+            "cacheRead": 0,
+            "cacheWrite": 0,
+            "reasoning": 0,
+            "totalTokens": 92329,
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0,
+              "total": 0
+            }
+          }
+        },
+        {
+          "role": "main",
+          "startMs": 31662,
+          "endMs": 102538,
+          "stopReason": "toolUse",
+          "usage": {
+            "input": 62851,
+            "output": 15925,
+            "cacheRead": 0,
+            "cacheWrite": 0,
+            "reasoning": 0,
+            "totalTokens": 78776,
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0,
+              "total": 0
+            }
+          }
+        },
+        {
+          "role": "main",
+          "startMs": 106756,
+          "endMs": 115650,
+          "stopReason": "toolUse",
+          "usage": {
+            "input": 15946,
+            "output": 3170,
+            "cacheRead": 62848,
+            "cacheWrite": 0,
+            "reasoning": 0,
+            "totalTokens": 81964,
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0,
+              "total": 0
+            }
+          }
+        },
+        {
+          "role": "main",
+          "startMs": 119609,
+          "endMs": 123583,
+          "stopReason": "stop",
+          "usage": {
+            "input": 6331,
+            "output": 970,
+            "cacheRead": 78720,
+            "cacheWrite": 0,
+            "reasoning": 0,
+            "totalTokens": 86021,
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0,
+              "total": 0
+            }
+          }
+        },
+        {
+          "role": "recorder",
+          "startMs": 125622,
+          "endMs": 151698,
+          "stopReason": "toolUse",
+          "usage": {
+            "input": 6822,
+            "output": 11461,
+            "cacheRead": 0,
+            "cacheWrite": 0,
+            "reasoning": 0,
+            "totalTokens": 18283,
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0,
+              "total": 0
+            }
+          }
+        }
+      ],
+      "initializeMs": 13.886624999999981,
+      "recallMs": 303.467083,
+      "memoryTrace": {
+        "backend": "bm25+graphiti",
+        "degraded": false,
+        "elapsedMs": 303,
+        "recalledAt": "2026-10-15T04:02:04.662Z",
+        "failures": [],
+        "retrievalBudgetMs": 10000,
+        "rejectedHits": 0,
+        "query": "我拿着绘梨衣写好的那页纸从消防通道下去，到后巷地下车库找到那辆车，把她的条件当面交给他们：要药，拿完就走，人会跟我一起出来，谁也不把她扣下。",
+        "scope": "novel-faf891e511f9529e485a559b3f4084b2",
+        "sourceHeadEventId": "c293dcad-ba68-42b7-b944-b734a1f078af",
+        "counts": {
+          "global": 5,
+          "environment": 5,
+          "character:lu-mingfei": 5,
+          "character:erii": 5
+        },
+        "graphiti": {
+          "global": {
+            "state": "ready",
+            "ranking": "embedding",
+            "waitedForIndex": false,
+            "elapsedMs": 283,
+            "matched": 5,
+            "rejected": 0,
+            "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+          },
+          "environment": {
+            "state": "ready",
+            "ranking": "embedding",
+            "waitedForIndex": false,
+            "elapsedMs": 275,
+            "matched": 5,
+            "rejected": 0,
+            "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+          },
+          "character:lu-mingfei": {
+            "state": "ready",
+            "ranking": "embedding",
+            "waitedForIndex": false,
+            "elapsedMs": 275,
+            "matched": 5,
+            "rejected": 0,
+            "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+          },
+          "character:erii": {
+            "state": "ready",
+            "ranking": "embedding",
+            "waitedForIndex": false,
+            "elapsedMs": 274,
+            "matched": 5,
+            "rejected": 0,
+            "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+          }
+        }
+      },
+      "rejected": false,
+      "commitMs": 64.86712499998976,
+      "proseChars": 392,
+      "status": "complete",
+      "totalMs": 151772,
+      "telemetry": {
+        "version": 1,
+        "config": {
+          "beats": true,
+          "outcomeSummary": true,
+          "choices": "inline",
+          "narrative": "enforce",
+          "recorder": "agent",
+          "quality": "warn",
+          "slimContext": true,
+          "recorderTimeoutMs": 30000,
+          "maxResumes": 5
+        },
+        "startedAt": "2026-10-15T04:02:04.358Z",
+        "marks": {
+          "analyzed": 28802,
+          "prepared": 115694,
+          "firstProse": 122648,
+          "proseComplete": 123619,
+          "recorded": 151706,
+          "committed": 151771
+        },
+        "totalMs": 151771,
+        "calls": [
+          {
+            "role": "plot",
+            "phase": "analysis",
+            "startedAtMs": 312,
+            "durationMs": 28489,
+            "firstTokenMs": 3673,
+            "promptChars": 39278,
+            "assistantMessages": 1,
+            "toolFailures": 0,
+            "autoRetries": 0,
+            "validationErrors": [],
+            "usage": {
+              "input": 85323,
+              "output": 7006,
+              "cacheRead": 0,
+              "cacheWrite": 0,
+              "totalTokens": 92329,
+              "cost": 0
+            },
+            "model": "deepseek-v4.1-flash:cloud",
+            "stopReason": "toolUse",
+            "outcome": "ok"
+          },
+          {
+            "role": "character",
+            "phase": "analysis",
+            "startedAtMs": 313,
+            "durationMs": 9470,
+            "firstTokenMs": 3479,
+            "promptChars": 39761,
+            "assistantMessages": 1,
+            "toolFailures": 0,
+            "autoRetries": 0,
+            "validationErrors": [],
+            "usage": {
+              "input": 65988,
+              "output": 1862,
+              "cacheRead": 0,
+              "cacheWrite": 0,
+              "totalTokens": 67850,
+              "cost": 0
+            },
+            "model": "deepseek-v4.1-flash:cloud",
+            "stopReason": "toolUse",
+            "outcome": "ok"
+          },
+          {
+            "role": "environment",
+            "phase": "analysis",
+            "startedAtMs": 313,
+            "durationMs": 13473,
+            "firstTokenMs": 2870,
+            "promptChars": 13224,
+            "assistantMessages": 1,
+            "toolFailures": 0,
+            "autoRetries": 0,
+            "validationErrors": [],
+            "usage": {
+              "input": 32513,
+              "output": 2493,
+              "cacheRead": 0,
+              "cacheWrite": 0,
+              "totalTokens": 35006,
+              "cost": 0
+            },
+            "model": "deepseek-v4.1-flash:cloud",
+            "stopReason": "toolUse",
+            "outcome": "ok"
+          },
+          {
+            "role": "main",
+            "phase": "prepare",
+            "startedAtMs": 28802,
+            "durationMs": 86892,
+            "firstTokenMs": 2861,
+            "promptChars": 36143,
+            "assistantMessages": 2,
+            "toolFailures": 1,
+            "autoRetries": 0,
+            "validationErrors": [
+              "校验失败：NPC不存在：counter-hand"
+            ],
+            "usage": {
+              "input": 78797,
+              "output": 19095,
+              "cacheRead": 62848,
+              "cacheWrite": 0,
+              "totalTokens": 160740,
+              "cost": 0
+            },
+            "model": "deepseek-v4.1-flash:cloud",
+            "stopReason": "toolUse",
+            "outcome": "ok"
+          },
+          {
+            "role": "main",
+            "phase": "narration",
+            "startedAtMs": 115694,
+            "durationMs": 7925,
+            "firstTokenMs": 3915,
+            "promptChars": 6068,
+            "assistantMessages": 1,
+            "toolFailures": 0,
+            "autoRetries": 0,
+            "validationErrors": [],
+            "usage": {
+              "input": 6331,
+              "output": 970,
+              "cacheRead": 78720,
+              "cacheWrite": 0,
+              "totalTokens": 86021,
+              "cost": 0
+            },
+            "model": "deepseek-v4.1-flash:cloud",
+            "stopReason": "stop",
+            "outcome": "ok"
+          },
+          {
+            "role": "recorder",
+            "phase": "record",
+            "startedAtMs": 123622,
+            "durationMs": 28084,
+            "firstTokenMs": 2000,
+            "promptChars": 10110,
+            "assistantMessages": 1,
+            "toolFailures": 0,
+            "autoRetries": 0,
+            "validationErrors": [],
+            "usage": {
+              "input": 6822,
+              "output": 11461,
+              "cacheRead": 0,
+              "cacheWrite": 0,
+              "totalTokens": 18283,
+              "cost": 0
+            },
+            "model": "deepseek-v4.1-flash:cloud",
+            "stopReason": "toolUse",
+            "outcome": "ok"
+          }
+        ],
+        "totals": {
+          "usage": {
+            "input": 275774,
+            "output": 42887,
+            "cacheRead": 141568,
+            "cacheWrite": 0,
+            "totalTokens": 460229,
+            "cost": 0
+          },
+          "calls": 6,
+          "toolFailures": 1,
+          "autoRetries": 0
+        },
+        "quality": {
+          "issues": [
+            {
+              "code": "continuity_conflict",
+              "severity": "major",
+              "detail": "prepared_turn 的 counter-sheet 设定对方手里有一张按日期记数、写着她的名字的折过的表，正文里完全没有出现这张表。"
+            }
+          ]
+        },
+        "record": {
+          "source": "agent",
+          "entries": 8,
+          "openedLoops": 3,
+          "closedLoops": 2,
+          "superseded": 0,
+          "seedsChecked": 2,
+          "contradictions": 1,
+          "droppedNotes": 0
+        }
+      }
+    },
+    {
+      "trial": 2,
+      "events": [
+        {
+          "atMs": 0,
+          "type": "started",
+          "action": "我拿着绘梨衣写好的那页纸从消防通道下去，到后巷地下车库找到那辆车，把她的条件当面交给他们：要药，拿完就走，人会跟我一起出来，谁也不把她扣下。"
+        },
+        {
+          "atMs": 190,
+          "type": "recalled",
+          "ms": 188.85791700001573,
+          "degraded": false
+        },
+        {
+          "atMs": 192,
+          "type": "phase",
+          "phase": "analyzing"
+        },
+        {
+          "atMs": 193,
+          "type": "progress",
+          "role": "plot",
+          "status": "started"
+        },
+        {
+          "atMs": 193,
+          "type": "progress",
+          "role": "character",
+          "status": "started"
+        },
+        {
+          "atMs": 193,
+          "type": "progress",
+          "role": "environment",
+          "status": "started"
+        },
+        {
+          "atMs": 9330,
+          "type": "model_message_end",
+          "role": "environment",
+          "stopReason": "toolUse"
+        },
+        {
+          "atMs": 9368,
+          "type": "progress",
+          "role": "environment",
+          "status": "done",
+          "durationMs": 9175
+        },
+        {
+          "atMs": 10946,
+          "type": "model_message_end",
+          "role": "character",
+          "stopReason": "toolUse"
+        },
+        {
+          "atMs": 10952,
+          "type": "progress",
+          "role": "character",
+          "status": "done",
+          "durationMs": 10759
+        },
+        {
+          "atMs": 27756,
+          "type": "model_message_end",
+          "role": "plot",
+          "stopReason": "toolUse"
+        },
+        {
+          "atMs": 27798,
+          "type": "progress",
+          "role": "plot",
+          "status": "done",
+          "durationMs": 27605
+        },
+        {
+          "atMs": 27798,
+          "type": "phase",
+          "phase": "synthesizing"
+        },
+        {
+          "atMs": 27798,
+          "type": "progress",
+          "role": "main",
+          "status": "started"
+        },
+        {
+          "atMs": 96663,
+          "type": "model_message_end",
+          "role": "main",
+          "stopReason": "toolUse"
+        },
+        {
+          "atMs": 96706,
+          "type": "progress",
+          "role": "main",
+          "status": "retrying",
+          "attempt": 2
+        },
+        {
+          "atMs": 106996,
+          "type": "model_message_end",
+          "role": "main",
+          "stopReason": "toolUse"
+        },
+        {
+          "atMs": 107035,
+          "type": "gate",
+          "ms": 1.5114590000011958,
+          "error": "NPC不存在：gloved-dispenser"
+        },
+        {
+          "atMs": 107035,
+          "type": "progress",
+          "role": "main",
+          "status": "retrying",
+          "attempt": 3
+        },
+        {
+          "atMs": 116674,
+          "type": "model_message_end",
+          "role": "main",
+          "stopReason": "toolUse"
+        },
+        {
+          "atMs": 116713,
+          "type": "gate",
+          "ms": 1.2880839999997988,
+          "error": "NPC不存在：gloved-dispenser"
+        },
+        {
+          "atMs": 116713,
+          "type": "progress",
+          "role": "main",
+          "status": "retrying",
+          "attempt": 4
+        },
+        {
+          "atMs": 116715,
+          "type": "progress",
+          "role": "main",
+          "status": "failed"
+        }
+      ],
+      "validation": [
+        {
+          "atMs": 107035,
+          "ms": 1.5114590000011958,
+          "error": "NPC不存在：gloved-dispenser"
+        },
+        {
+          "atMs": 116713,
+          "ms": 1.2880839999997988,
+          "error": "NPC不存在：gloved-dispenser"
+        }
+      ],
+      "modelMessages": [
+        {
+          "role": "environment",
+          "startMs": 2410,
+          "endMs": 9330,
+          "stopReason": "toolUse",
+          "usage": {
+            "input": 129,
+            "output": 2093,
+            "cacheRead": 32384,
+            "cacheWrite": 0,
+            "reasoning": 0,
+            "totalTokens": 34606,
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0,
+              "total": 0
+            }
+          }
+        },
+        {
+          "role": "character",
+          "startMs": 3544,
+          "endMs": 10946,
+          "stopReason": "toolUse",
+          "usage": {
+            "input": 65987,
+            "output": 1741,
+            "cacheRead": 0,
+            "cacheWrite": 0,
+            "reasoning": 0,
+            "totalTokens": 67728,
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0,
+              "total": 0
+            }
+          }
+        },
+        {
+          "role": "plot",
+          "startMs": 2341,
+          "endMs": 27756,
+          "stopReason": "toolUse",
+          "usage": {
+            "input": 75,
+            "output": 5818,
+            "cacheRead": 85248,
+            "cacheWrite": 0,
+            "reasoning": 0,
+            "totalTokens": 91141,
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0,
+              "total": 0
+            }
+          }
+        },
+        {
+          "role": "main",
+          "startMs": 30452,
+          "endMs": 96663,
+          "stopReason": "toolUse",
+          "usage": {
+            "input": 15730,
+            "output": 15542,
+            "cacheRead": 46976,
+            "cacheWrite": 0,
+            "reasoning": 0,
+            "totalTokens": 78248,
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0,
+              "total": 0
+            }
+          }
+        },
+        {
+          "role": "main",
+          "startMs": 99543,
+          "endMs": 106996,
+          "stopReason": "toolUse",
+          "usage": {
+            "input": 18810,
+            "output": 3182,
+            "cacheRead": 62592,
+            "cacheWrite": 0,
+            "reasoning": 0,
+            "totalTokens": 84584,
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0,
+              "total": 0
+            }
+          }
+        },
+        {
+          "role": "main",
+          "startMs": 109625,
+          "endMs": 116674,
+          "stopReason": "toolUse",
+          "usage": {
+            "input": 3330,
+            "output": 3291,
+            "cacheRead": 81280,
+            "cacheWrite": 0,
+            "reasoning": 0,
+            "totalTokens": 87901,
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0,
+              "total": 0
+            }
+          }
+        }
+      ],
+      "initializeMs": 14.683958999987226,
+      "recallMs": 188.85791700001573,
+      "memoryTrace": {
+        "backend": "bm25+graphiti",
+        "degraded": false,
+        "elapsedMs": 189,
+        "recalledAt": "2026-10-15T04:04:36.377Z",
+        "failures": [],
+        "retrievalBudgetMs": 10000,
+        "rejectedHits": 0,
+        "query": "我拿着绘梨衣写好的那页纸从消防通道下去，到后巷地下车库找到那辆车，把她的条件当面交给他们：要药，拿完就走，人会跟我一起出来，谁也不把她扣下。",
+        "scope": "novel-faf891e511f9529e485a559b3f4084b2",
+        "sourceHeadEventId": "c293dcad-ba68-42b7-b944-b734a1f078af",
+        "counts": {
+          "global": 5,
+          "environment": 5,
+          "character:lu-mingfei": 5,
+          "character:erii": 5
+        },
+        "graphiti": {
+          "global": {
+            "state": "ready",
+            "ranking": "embedding",
+            "waitedForIndex": false,
+            "elapsedMs": 175,
+            "matched": 5,
+            "rejected": 0,
+            "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+          },
+          "environment": {
+            "state": "ready",
+            "ranking": "embedding",
+            "waitedForIndex": false,
+            "elapsedMs": 167,
+            "matched": 5,
+            "rejected": 0,
+            "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+          },
+          "character:lu-mingfei": {
+            "state": "ready",
+            "ranking": "embedding",
+            "waitedForIndex": false,
+            "elapsedMs": 168,
+            "matched": 5,
+            "rejected": 0,
+            "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+          },
+          "character:erii": {
+            "state": "ready",
+            "ranking": "embedding",
+            "waitedForIndex": false,
+            "elapsedMs": 165,
+            "matched": 5,
+            "rejected": 0,
+            "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+          }
+        }
+      },
+      "status": "error",
+      "error": "准备最终故事回合连续 3 次校验失败，已停止本轮。最近一次错误：校验失败：NPC不存在：gloved-dispenser",
+      "telemetry": {
+        "version": 1,
+        "config": {
+          "beats": true,
+          "outcomeSummary": true,
+          "choices": "inline",
+          "narrative": "enforce",
+          "recorder": "agent",
+          "quality": "warn",
+          "slimContext": true,
+          "recorderTimeoutMs": 30000,
+          "maxResumes": 5
+        },
+        "startedAt": "2026-10-15T04:04:36.187Z",
+        "marks": {
+          "analyzed": 27798
+        },
+        "totalMs": null,
+        "calls": [
+          {
+            "role": "plot",
+            "phase": "analysis",
+            "startedAtMs": 193,
+            "durationMs": 27605,
+            "firstTokenMs": 2148,
+            "promptChars": 39278,
+            "assistantMessages": 1,
+            "toolFailures": 0,
+            "autoRetries": 0,
+            "validationErrors": [],
+            "usage": {
+              "input": 75,
+              "output": 5818,
+              "cacheRead": 85248,
+              "cacheWrite": 0,
+              "totalTokens": 91141,
+              "cost": 0
+            },
+            "model": "deepseek-v4.1-flash:cloud",
+            "stopReason": "toolUse",
+            "outcome": "ok"
+          },
+          {
+            "role": "character",
+            "phase": "analysis",
+            "startedAtMs": 193,
+            "durationMs": 10759,
+            "firstTokenMs": 3351,
+            "promptChars": 39761,
+            "assistantMessages": 1,
+            "toolFailures": 0,
+            "autoRetries": 0,
+            "validationErrors": [],
+            "usage": {
+              "input": 65987,
+              "output": 1741,
+              "cacheRead": 0,
+              "cacheWrite": 0,
+              "totalTokens": 67728,
+              "cost": 0
+            },
+            "model": "deepseek-v4.1-flash:cloud",
+            "stopReason": "toolUse",
+            "outcome": "ok"
+          },
+          {
+            "role": "environment",
+            "phase": "analysis",
+            "startedAtMs": 193,
+            "durationMs": 9175,
+            "firstTokenMs": 2217,
+            "promptChars": 13224,
+            "assistantMessages": 1,
+            "toolFailures": 0,
+            "autoRetries": 0,
+            "validationErrors": [],
+            "usage": {
+              "input": 129,
+              "output": 2093,
+              "cacheRead": 32384,
+              "cacheWrite": 0,
+              "totalTokens": 34606,
+              "cost": 0
+            },
+            "model": "deepseek-v4.1-flash:cloud",
+            "stopReason": "toolUse",
+            "outcome": "ok"
+          },
+          {
+            "role": "main",
+            "phase": "prepare",
+            "startedAtMs": 27798,
+            "durationMs": 88917,
+            "firstTokenMs": 2654,
+            "promptChars": 36009,
+            "assistantMessages": 3,
+            "toolFailures": 3,
+            "autoRetries": 0,
+            "validationErrors": [
+              "Validation failed for tool \"prepare_story_turn\":\n  - dramaturgy.valueShift.to: must not have more than 30 characters",
+              "校验失败：NPC不存在：gloved-dispenser",
+              "校验失败：NPC不存在：gloved-dispenser"
+            ],
+            "usage": {
+              "input": 37870,
+              "output": 22015,
+              "cacheRead": 190848,
+              "cacheWrite": 0,
+              "totalTokens": 250733,
+              "cost": 0
+            },
+            "model": "deepseek-v4.1-flash:cloud",
+            "stopReason": "toolUse",
+            "outcome": "error",
+            "error": "准备最终故事回合连续 3 次校验失败，已停止本轮。最近一次错误：校验失败：NPC不存在：gloved-dispenser"
+          }
+        ],
+        "totals": {
+          "usage": {
+            "input": 104061,
+            "output": 31667,
+            "cacheRead": 308480,
+            "cacheWrite": 0,
+            "totalTokens": 444208,
+            "cost": 0
+          },
+          "calls": 4,
+          "toolFailures": 3,
+          "autoRetries": 0
+        },
+        "quality": {
+          "issues": []
+        },
+        "record": null
+      }
+    }
+  ],
+  "liveFilesUnchanged": true,
+  "finishedAt": "2026-10-15T04:06:32.909Z",
+  "summary": [
+    {
+      "trial": 1,
+      "status": "complete",
+      "elapsedToTerminalMs": 151772,
+      "parallelAnalysisMs": 28489,
+      "mainPrepareMs": 86892,
+      "initialMainResponseMs": 73736,
+      "afterInitialMainResponseMs": 13156,
+      "gateValidationMeasuredMs": 4.223417000001064,
+      "note": "Gate measurement covers validateMainProposal only; SDK schema checks excluded. After-initial-response duration includes validation, retry requests and overhead."
+    },
+    {
+      "trial": 2,
+      "status": "error",
+      "elapsedToTerminalMs": 116715,
+      "parallelAnalysisMs": 27605,
+      "mainPrepareMs": 88917,
+      "initialMainResponseMs": 68865,
+      "afterInitialMainResponseMs": 20052,
+      "gateValidationMeasuredMs": 2.7995430000009947,
+      "note": "Gate measurement covers validateMainProposal only; SDK schema checks excluded. After-initial-response duration includes validation, retry requests and overhead."
+    }
+  ]
+}

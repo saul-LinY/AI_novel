@@ -1,0 +1,2615 @@
+{
+  "cases": [
+    {
+      "name": "物品交接",
+      "query": "她写完自己的决定之后，记录愿望的东西又交到了谁手里？",
+      "bm25Hit": true,
+      "combinedHit": false,
+      "bm25Ms": 17,
+      "combinedMs": 142,
+      "graphState": "ready",
+      "graphCandidates": 5,
+      "changedTop5": true,
+      "graphOnlyAdditions": [
+        {
+          "id": "7f0ab220fa45ad0f74bf06df6a395276bb4c0ab2f3e528fc48bbf5c732129976",
+          "sourceEventId": "f3c5a1e3-26c3-42c1-a64d-8c037b85c3af",
+          "text": "上杉绘梨衣的认知记录：他收起本子，把『去哪』交还给她——她在雨腥味很重的楼梯平台上自己写下了答案。这是她第一次不是被安排，而是自己做主",
+          "evidenceMatch": false,
+          "retrievalSources": [
+            "bm25",
+            "graphiti"
+          ]
+        },
+        {
+          "id": "9d06c9427519264a799295a7f7618bc647492908eb3601a9bf8500a770363788",
+          "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+          "text": "绘梨衣坐在窗边，把一张画着东京灯火的纸推给你。她相信你会明白。手机里，凯撒要你带她去安全点；走廊外的电梯刚刚停过一次，可能是普通客人，也可能是蛇岐八家的搜索者。桌上最后一支药让所有浪漫都带着期限。",
+          "evidenceMatch": false,
+          "retrievalSources": [
+            "graphiti"
+          ]
+        }
+      ],
+      "bm25": [
+        {
+          "id": "e8476bfb04a313ad63d98f7fb19b5d01732ff5fcf7f48ccda170dca92a7c0985",
+          "kind": "canon",
+          "text": "橘政宗控制的治疗记录缺少多次采血去向，血清批次也与家族医疗库存对不上。",
+          "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+          "source": "canon:medical-record-gap",
+          "ordinal": 0,
+          "timeMinutes": 480,
+          "view": "global",
+          "score": 11.975820678244265,
+          "matchedTerms": [
+            "记录",
+            "采",
+            "血"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "a4c633c4cb79e5c50364d4292bc0369ab9a268c907f8035e6e3a5c99ca14a291",
+          "kind": "perspective-report",
+          "text": "上杉绘梨衣的认知记录：他让她别出声、自己去看门外的动静——这是他第一次把她放进『等他回来』的位置，而不是『替她决定』的位置",
+          "sourceEventId": "085eda25-794d-4ff7-b6e4-4b913e1814d9",
+          "source": "character-report:0",
+          "ordinal": 1,
+          "timeMinutes": 483,
+          "view": "global",
+          "score": 11.593828119704938,
+          "matchedTerms": [
+            "自己",
+            "决定",
+            "记录",
+            "让"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "bf67e9afa4001e9bfbe99893c7fd7d8f8bf9da3df27a1b39a2f0202ec64d4156",
+          "kind": "outcome",
+          "text": "他把她带出了房间，也把“下一站”真的交到了她笔尖上；可她写下的东西同时把他推进一个更难的位置——头顶有人正在下来，而他们身后已经没有房间可退。",
+          "sourceEventId": "f3c5a1e3-26c3-42c1-a64d-8c037b85c3af",
+          "source": "outcome",
+          "ordinal": 2,
+          "timeMinutes": 493,
+          "view": "global",
+          "score": 11.579371044873374,
+          "matchedTerms": [
+            "东西",
+            "交",
+            "到了"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "9dc681b72164b39a634ac68e8db22cdd63dd5adb50b98958cdd3e66546e05403",
+          "kind": "ledger",
+          "text": "绘梨衣背靠着墙把本子按在膝上写，握笔的手指还在抖，字迹比平时歪，写完就立刻合上转手递给他，没让他代笔。（原文：「写完就立刻合上，转手递给你——没让你代笔」）",
+          "sourceEventId": "f3c5a1e3-26c3-42c1-a64d-8c037b85c3af",
+          "source": "ledger:L2-7",
+          "ordinal": 2,
+          "timeMinutes": 493,
+          "view": "global",
+          "score": 9.770088677546834,
+          "matchedTerms": [
+            "写",
+            "完",
+            "让"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "a4182490326dd21749d6218dc9ce9269b161d38b8c0ef3afbb0143cbde5b14fc",
+          "kind": "narrator-note",
+          "text": "读取手机记录本身也是一次开机收发，暴露风险又叠了一层",
+          "sourceEventId": "085eda25-794d-4ff7-b6e4-4b913e1814d9",
+          "source": "narrator-note:3",
+          "ordinal": 1,
+          "timeMinutes": 483,
+          "view": "global",
+          "score": 9.618301937842691,
+          "matchedTerms": [
+            "记录",
+            "又",
+            "风险"
+          ],
+          "truncated": false
+        }
+      ],
+      "combined": [
+        {
+          "id": "7f0ab220fa45ad0f74bf06df6a395276bb4c0ab2f3e528fc48bbf5c732129976",
+          "kind": "perspective-report",
+          "text": "上杉绘梨衣的认知记录：他收起本子，把『去哪』交还给她——她在雨腥味很重的楼梯平台上自己写下了答案。这是她第一次不是被安排，而是自己做主",
+          "sourceEventId": "f3c5a1e3-26c3-42c1-a64d-8c037b85c3af",
+          "source": "character-report:0",
+          "ordinal": 2,
+          "timeMinutes": 493,
+          "view": "global",
+          "score": 8.066755261099406,
+          "matchedTerms": [
+            "自己",
+            "记录",
+            "被"
+          ],
+          "retrievalSources": [
+            "bm25",
+            "graphiti"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "e8476bfb04a313ad63d98f7fb19b5d01732ff5fcf7f48ccda170dca92a7c0985",
+          "kind": "canon",
+          "text": "橘政宗控制的治疗记录缺少多次采血去向，血清批次也与家族医疗库存对不上。",
+          "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+          "source": "canon:medical-record-gap",
+          "ordinal": 0,
+          "timeMinutes": 480,
+          "view": "global",
+          "score": 11.975820678244265,
+          "matchedTerms": [
+            "记录",
+            "采",
+            "血"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "9d06c9427519264a799295a7f7618bc647492908eb3601a9bf8500a770363788",
+          "kind": "narrative",
+          "text": "绘梨衣坐在窗边，把一张画着东京灯火的纸推给你。她相信你会明白。手机里，凯撒要你带她去安全点；走廊外的电梯刚刚停过一次，可能是普通客人，也可能是蛇岐八家的搜索者。桌上最后一支药让所有浪漫都带着期限。",
+          "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+          "source": "prose",
+          "ordinal": 0,
+          "timeMinutes": 480,
+          "view": "global",
+          "score": 0.5814666710619723,
+          "retrievalSources": [
+            "graphiti"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "a4c633c4cb79e5c50364d4292bc0369ab9a268c907f8035e6e3a5c99ca14a291",
+          "kind": "perspective-report",
+          "text": "上杉绘梨衣的认知记录：他让她别出声、自己去看门外的动静——这是他第一次把她放进『等他回来』的位置，而不是『替她决定』的位置",
+          "sourceEventId": "085eda25-794d-4ff7-b6e4-4b913e1814d9",
+          "source": "character-report:0",
+          "ordinal": 1,
+          "timeMinutes": 483,
+          "view": "global",
+          "score": 11.593828119704938,
+          "matchedTerms": [
+            "自己",
+            "决定",
+            "记录",
+            "让"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "bf67e9afa4001e9bfbe99893c7fd7d8f8bf9da3df27a1b39a2f0202ec64d4156",
+          "kind": "outcome",
+          "text": "他把她带出了房间，也把“下一站”真的交到了她笔尖上；可她写下的东西同时把他推进一个更难的位置——头顶有人正在下来，而他们身后已经没有房间可退。",
+          "sourceEventId": "f3c5a1e3-26c3-42c1-a64d-8c037b85c3af",
+          "source": "outcome",
+          "ordinal": 2,
+          "timeMinutes": 493,
+          "view": "global",
+          "score": 11.579371044873374,
+          "matchedTerms": [
+            "东西",
+            "交",
+            "到了"
+          ],
+          "truncated": false
+        }
+      ]
+    },
+    {
+      "name": "药物位置",
+      "query": "离开房间时，最后的救命针剂被收在什么地方？",
+      "bm25Hit": false,
+      "combinedHit": false,
+      "bm25Ms": 1,
+      "combinedMs": 102,
+      "graphState": "ready",
+      "graphCandidates": 5,
+      "changedTop5": true,
+      "graphOnlyAdditions": [
+        {
+          "id": "9d06c9427519264a799295a7f7618bc647492908eb3601a9bf8500a770363788",
+          "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+          "text": "绘梨衣坐在窗边，把一张画着东京灯火的纸推给你。她相信你会明白。手机里，凯撒要你带她去安全点；走廊外的电梯刚刚停过一次，可能是普通客人，也可能是蛇岐八家的搜索者。桌上最后一支药让所有浪漫都带着期限。",
+          "evidenceMatch": false,
+          "retrievalSources": [
+            "bm25",
+            "graphiti"
+          ]
+        },
+        {
+          "id": "830ca2af0948c4d99eb16a3d804a115193cef1aad9d18a9455a0ac389b98165e",
+          "sourceEventId": "f3c5a1e3-26c3-42c1-a64d-8c037b85c3af",
+          "text": "路明非收起本子与最后一支药，带绘梨衣从消防通道下楼，地点仍在旅馆建筑内部，尚未踏上街面",
+          "evidenceMatch": false,
+          "retrievalSources": [
+            "bm25",
+            "graphiti"
+          ]
+        }
+      ],
+      "bm25": [
+        {
+          "id": "63a6325c60b8daf2134e48c77a547271a7b24f5a49f1f5b7b42ede5a101dad3a",
+          "kind": "canon",
+          "text": "绘梨衣的血统极不稳定，需要蛇岐八家长期提供专用药物压制，离开治疗越久失控风险越高。",
+          "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+          "source": "canon:serum-limit",
+          "ordinal": 0,
+          "timeMinutes": 480,
+          "view": "global",
+          "score": 11.548215997037515,
+          "matchedTerms": [
+            "离开",
+            "药物",
+            "风险"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "e8476bfb04a313ad63d98f7fb19b5d01732ff5fcf7f48ccda170dca92a7c0985",
+          "kind": "canon",
+          "text": "橘政宗控制的治疗记录缺少多次采血去向，血清批次也与家族医疗库存对不上。",
+          "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+          "source": "canon:medical-record-gap",
+          "ordinal": 0,
+          "timeMinutes": 480,
+          "view": "global",
+          "score": 9.12122500108886,
+          "matchedTerms": [
+            "采",
+            "血"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "f4baaa80fa5e79b06bba9b749dc1c54e642ef8b68a55dd0e177970909a2150c1",
+          "kind": "outcome",
+          "text": "路明非没能从门内确认自己绝对安全，却把模糊的处境变成了两条具体的倒计时：搜索圈已经收拢到旅馆周边，而绘梨衣药效衰减的早期表现已经肉眼可见。",
+          "sourceEventId": "085eda25-794d-4ff7-b6e4-4b913e1814d9",
+          "source": "outcome",
+          "ordinal": 1,
+          "timeMinutes": 483,
+          "view": "global",
+          "score": 8.205544128486281,
+          "matchedTerms": [
+            "时",
+            "收",
+            "旅馆"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "e81d8f409eefbe8b87e32598c5c44d3a95f9e2e9b13035c79ae6de70d3e86921",
+          "kind": "narrator-note",
+          "text": "加密手机仍在身上，开机收发与读取都持续累积定位风险",
+          "sourceEventId": "f3c5a1e3-26c3-42c1-a64d-8c037b85c3af",
+          "source": "narrator-note:5",
+          "ordinal": 2,
+          "timeMinutes": 493,
+          "view": "global",
+          "score": 7.027001987204496,
+          "matchedTerms": [
+            "收",
+            "风险"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "a4182490326dd21749d6218dc9ce9269b161d38b8c0ef3afbb0143cbde5b14fc",
+          "kind": "narrator-note",
+          "text": "读取手机记录本身也是一次开机收发，暴露风险又叠了一层",
+          "sourceEventId": "085eda25-794d-4ff7-b6e4-4b913e1814d9",
+          "source": "narrator-note:3",
+          "ordinal": 1,
+          "timeMinutes": 483,
+          "view": "global",
+          "score": 6.905425221244288,
+          "matchedTerms": [
+            "收",
+            "风险"
+          ],
+          "truncated": false
+        }
+      ],
+      "combined": [
+        {
+          "id": "f4baaa80fa5e79b06bba9b749dc1c54e642ef8b68a55dd0e177970909a2150c1",
+          "kind": "outcome",
+          "text": "路明非没能从门内确认自己绝对安全，却把模糊的处境变成了两条具体的倒计时：搜索圈已经收拢到旅馆周边，而绘梨衣药效衰减的早期表现已经肉眼可见。",
+          "sourceEventId": "085eda25-794d-4ff7-b6e4-4b913e1814d9",
+          "source": "outcome",
+          "ordinal": 1,
+          "timeMinutes": 483,
+          "view": "global",
+          "score": 8.205544128486281,
+          "matchedTerms": [
+            "时",
+            "收",
+            "旅馆"
+          ],
+          "retrievalSources": [
+            "bm25",
+            "graphiti"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "9d06c9427519264a799295a7f7618bc647492908eb3601a9bf8500a770363788",
+          "kind": "narrative",
+          "text": "绘梨衣坐在窗边，把一张画着东京灯火的纸推给你。她相信你会明白。手机里，凯撒要你带她去安全点；走廊外的电梯刚刚停过一次，可能是普通客人，也可能是蛇岐八家的搜索者。桌上最后一支药让所有浪漫都带着期限。",
+          "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+          "source": "prose",
+          "ordinal": 0,
+          "timeMinutes": 480,
+          "view": "global",
+          "score": 6.125335777677074,
+          "matchedTerms": [
+            "最后",
+            "东京",
+            "让"
+          ],
+          "retrievalSources": [
+            "bm25",
+            "graphiti"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "830ca2af0948c4d99eb16a3d804a115193cef1aad9d18a9455a0ac389b98165e",
+          "kind": "narrator-note",
+          "text": "路明非收起本子与最后一支药，带绘梨衣从消防通道下楼，地点仍在旅馆建筑内部，尚未踏上街面",
+          "sourceEventId": "f3c5a1e3-26c3-42c1-a64d-8c037b85c3af",
+          "source": "narrator-note:0",
+          "ordinal": 2,
+          "timeMinutes": 493,
+          "view": "global",
+          "score": 5.393801143429204,
+          "matchedTerms": [
+            "最后",
+            "旅馆"
+          ],
+          "retrievalSources": [
+            "bm25",
+            "graphiti"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "63a6325c60b8daf2134e48c77a547271a7b24f5a49f1f5b7b42ede5a101dad3a",
+          "kind": "canon",
+          "text": "绘梨衣的血统极不稳定，需要蛇岐八家长期提供专用药物压制，离开治疗越久失控风险越高。",
+          "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+          "source": "canon:serum-limit",
+          "ordinal": 0,
+          "timeMinutes": 480,
+          "view": "global",
+          "score": 11.548215997037515,
+          "matchedTerms": [
+            "离开",
+            "药物",
+            "风险"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "e8476bfb04a313ad63d98f7fb19b5d01732ff5fcf7f48ccda170dca92a7c0985",
+          "kind": "canon",
+          "text": "橘政宗控制的治疗记录缺少多次采血去向，血清批次也与家族医疗库存对不上。",
+          "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+          "source": "canon:medical-record-gap",
+          "ordinal": 0,
+          "timeMinutes": 480,
+          "view": "global",
+          "score": 9.12122500108886,
+          "matchedTerms": [
+            "采",
+            "血"
+          ],
+          "truncated": false
+        }
+      ]
+    },
+    {
+      "name": "未揭露的目的地",
+      "query": "她选择的目的地现在已经告诉同行者了吗？",
+      "bm25Hit": false,
+      "combinedHit": false,
+      "bm25Ms": 1,
+      "combinedMs": 100,
+      "graphState": "ready",
+      "graphCandidates": 5,
+      "changedTop5": true,
+      "graphOnlyAdditions": [
+        {
+          "id": "a2b2e818942586383451f507cc55d46bf71cde5ded24943413e95ad8e2523e16",
+          "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+          "text": "绘梨衣的清单写的不是战斗目标，而是普通的城市体验与和信任之人继续同行。",
+          "evidenceMatch": false,
+          "retrievalSources": [
+            "bm25",
+            "graphiti"
+          ]
+        },
+        {
+          "id": "f4baaa80fa5e79b06bba9b749dc1c54e642ef8b68a55dd0e177970909a2150c1",
+          "sourceEventId": "085eda25-794d-4ff7-b6e4-4b913e1814d9",
+          "text": "路明非没能从门内确认自己绝对安全，却把模糊的处境变成了两条具体的倒计时：搜索圈已经收拢到旅馆周边，而绘梨衣药效衰减的早期表现已经肉眼可见。",
+          "evidenceMatch": false,
+          "retrievalSources": [
+            "bm25",
+            "graphiti"
+          ]
+        },
+        {
+          "id": "c04c026d47e14f31319fc81ed148876aca687659a6bbc5a0214295c75513ae3d",
+          "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+          "text": "现代东京的公共交通、监控和城市秩序正常运行",
+          "evidenceMatch": false,
+          "retrievalSources": [
+            "bm25",
+            "graphiti"
+          ]
+        }
+      ],
+      "bm25": [
+        {
+          "id": "37c71c8647ecbec9e99dfcb9f3daeb8d84a8018595ad6c8622bc10e42ee48bfb",
+          "kind": "world-rule",
+          "text": "任何人都不能直接控制另一名角色的选择或内心",
+          "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+          "source": "world-rule:5",
+          "ordinal": 0,
+          "timeMinutes": 480,
+          "view": "global",
+          "score": 10.848766090122714,
+          "matchedTerms": [
+            "选择",
+            "或"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "414d2eb3505a003b3110ab29bf5b2956bb7acd7966a8c809ca6cb649a8cf39f8",
+          "kind": "canon",
+          "text": "加密手机一次短暂握手已经让蛇岐八家把搜索范围缩小到旅馆周边。",
+          "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+          "source": "canon:tracking-ping",
+          "ordinal": 0,
+          "timeMinutes": 480,
+          "view": "global",
+          "score": 9.929784065814719,
+          "matchedTerms": [
+            "已经",
+            "旅馆",
+            "让"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "e8476bfb04a313ad63d98f7fb19b5d01732ff5fcf7f48ccda170dca92a7c0985",
+          "kind": "canon",
+          "text": "橘政宗控制的治疗记录缺少多次采血去向，血清批次也与家族医疗库存对不上。",
+          "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+          "source": "canon:medical-record-gap",
+          "ordinal": 0,
+          "timeMinutes": 480,
+          "view": "global",
+          "score": 9.12122500108886,
+          "matchedTerms": [
+            "采",
+            "血"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "9d06c9427519264a799295a7f7618bc647492908eb3601a9bf8500a770363788",
+          "kind": "narrative",
+          "text": "绘梨衣坐在窗边，把一张画着东京灯火的纸推给你。她相信你会明白。手机里，凯撒要你带她去安全点；走廊外的电梯刚刚停过一次，可能是普通客人，也可能是蛇岐八家的搜索者。桌上最后一支药让所有浪漫都带着期限。",
+          "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+          "source": "prose",
+          "ordinal": 0,
+          "timeMinutes": 480,
+          "view": "global",
+          "score": 7.135406175306047,
+          "matchedTerms": [
+            "者",
+            "东京",
+            "让"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "63a6325c60b8daf2134e48c77a547271a7b24f5a49f1f5b7b42ede5a101dad3a",
+          "kind": "canon",
+          "text": "绘梨衣的血统极不稳定，需要蛇岐八家长期提供专用药物压制，离开治疗越久失控风险越高。",
+          "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+          "source": "canon:serum-limit",
+          "ordinal": 0,
+          "timeMinutes": 480,
+          "view": "global",
+          "score": 6.769125496094003,
+          "matchedTerms": [
+            "药物",
+            "风险"
+          ],
+          "truncated": false
+        }
+      ],
+      "combined": [
+        {
+          "id": "9d06c9427519264a799295a7f7618bc647492908eb3601a9bf8500a770363788",
+          "kind": "narrative",
+          "text": "绘梨衣坐在窗边，把一张画着东京灯火的纸推给你。她相信你会明白。手机里，凯撒要你带她去安全点；走廊外的电梯刚刚停过一次，可能是普通客人，也可能是蛇岐八家的搜索者。桌上最后一支药让所有浪漫都带着期限。",
+          "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+          "source": "prose",
+          "ordinal": 0,
+          "timeMinutes": 480,
+          "view": "global",
+          "score": 7.135406175306047,
+          "matchedTerms": [
+            "者",
+            "东京",
+            "让"
+          ],
+          "retrievalSources": [
+            "bm25",
+            "graphiti"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "a2b2e818942586383451f507cc55d46bf71cde5ded24943413e95ad8e2523e16",
+          "kind": "canon",
+          "text": "绘梨衣的清单写的不是战斗目标，而是普通的城市体验与和信任之人继续同行。",
+          "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+          "source": "canon:notebook-wish",
+          "ordinal": 0,
+          "timeMinutes": 480,
+          "view": "global",
+          "score": 5.185483427004962,
+          "matchedTerms": [
+            "同行"
+          ],
+          "retrievalSources": [
+            "bm25",
+            "graphiti"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "f4baaa80fa5e79b06bba9b749dc1c54e642ef8b68a55dd0e177970909a2150c1",
+          "kind": "outcome",
+          "text": "路明非没能从门内确认自己绝对安全，却把模糊的处境变成了两条具体的倒计时：搜索圈已经收拢到旅馆周边，而绘梨衣药效衰减的早期表现已经肉眼可见。",
+          "sourceEventId": "085eda25-794d-4ff7-b6e4-4b913e1814d9",
+          "source": "outcome",
+          "ordinal": 1,
+          "timeMinutes": 483,
+          "view": "global",
+          "score": 5.646192783861904,
+          "matchedTerms": [
+            "已经",
+            "旅馆"
+          ],
+          "retrievalSources": [
+            "bm25",
+            "graphiti"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "c04c026d47e14f31319fc81ed148876aca687659a6bbc5a0214295c75513ae3d",
+          "kind": "world-rule",
+          "text": "现代东京的公共交通、监控和城市秩序正常运行",
+          "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+          "source": "world-rule:0",
+          "ordinal": 0,
+          "timeMinutes": 480,
+          "view": "global",
+          "score": 5.074010782273737,
+          "matchedTerms": [
+            "东京"
+          ],
+          "retrievalSources": [
+            "bm25",
+            "graphiti"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "37c71c8647ecbec9e99dfcb9f3daeb8d84a8018595ad6c8622bc10e42ee48bfb",
+          "kind": "world-rule",
+          "text": "任何人都不能直接控制另一名角色的选择或内心",
+          "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+          "source": "world-rule:5",
+          "ordinal": 0,
+          "timeMinutes": 480,
+          "view": "global",
+          "score": 10.848766090122714,
+          "matchedTerms": [
+            "选择",
+            "或"
+          ],
+          "truncated": false
+        }
+      ]
+    },
+    {
+      "name": "离开路线",
+      "query": "我们是从哪里避开电梯离开的？",
+      "bm25Hit": false,
+      "combinedHit": false,
+      "bm25Ms": 3,
+      "combinedMs": 91,
+      "graphState": "ready",
+      "graphCandidates": 5,
+      "changedTop5": true,
+      "graphOnlyAdditions": [
+        {
+          "id": "9d06c9427519264a799295a7f7618bc647492908eb3601a9bf8500a770363788",
+          "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+          "text": "绘梨衣坐在窗边，把一张画着东京灯火的纸推给你。她相信你会明白。手机里，凯撒要你带她去安全点；走廊外的电梯刚刚停过一次，可能是普通客人，也可能是蛇岐八家的搜索者。桌上最后一支药让所有浪漫都带着期限。",
+          "evidenceMatch": false,
+          "retrievalSources": [
+            "bm25",
+            "graphiti"
+          ]
+        },
+        {
+          "id": "3daceb9558eddbbb04018c64808d13b6dacb110eed1b3605922b7d5e78101f25",
+          "sourceEventId": "f3c5a1e3-26c3-42c1-a64d-8c037b85c3af",
+          "text": "楼梯间上方传来开门声与一串脚步，来源未确认，可能是退房客人也可能是搜救者",
+          "evidenceMatch": false,
+          "retrievalSources": [
+            "graphiti"
+          ]
+        },
+        {
+          "id": "989864f6a79530dba31e7a3f92cca5b4b9be5371773820e31b4515de9e8141c9",
+          "sourceEventId": "f3c5a1e3-26c3-42c1-a64d-8c037b85c3af",
+          "text": "未兑现的计划：在推开底层那扇门之前，得先决定怎么走。（原文：「手已经搭在底层那扇门的把手上」）",
+          "evidenceMatch": false,
+          "retrievalSources": [
+            "graphiti"
+          ]
+        }
+      ],
+      "bm25": [
+        {
+          "id": "63a6325c60b8daf2134e48c77a547271a7b24f5a49f1f5b7b42ede5a101dad3a",
+          "kind": "canon",
+          "text": "绘梨衣的血统极不稳定，需要蛇岐八家长期提供专用药物压制，离开治疗越久失控风险越高。",
+          "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+          "source": "canon:serum-limit",
+          "ordinal": 0,
+          "timeMinutes": 480,
+          "view": "global",
+          "score": 11.548215997037515,
+          "matchedTerms": [
+            "离开",
+            "药物",
+            "风险"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "e8476bfb04a313ad63d98f7fb19b5d01732ff5fcf7f48ccda170dca92a7c0985",
+          "kind": "canon",
+          "text": "橘政宗控制的治疗记录缺少多次采血去向，血清批次也与家族医疗库存对不上。",
+          "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+          "source": "canon:medical-record-gap",
+          "ordinal": 0,
+          "timeMinutes": 480,
+          "view": "global",
+          "score": 9.12122500108886,
+          "matchedTerms": [
+            "采",
+            "血"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "8eae3d4a7d902244029212d3639d5ae8eedc9ea8b346fe5473a1ac76569404e7",
+          "kind": "environment-memory",
+          "text": "走廊摄像头存在死角，视野不覆盖拐角与电梯厅，门内看到的干净走廊不等于没人蹲守",
+          "sourceEventId": "085eda25-794d-4ff7-b6e4-4b913e1814d9",
+          "source": "environment-note:0",
+          "ordinal": 1,
+          "timeMinutes": 483,
+          "view": "global",
+          "score": 7.47182720126926,
+          "matchedTerms": [
+            "电梯",
+            "存在"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "ed91272f5dbe24087db891bb178a32c814346350a0a214a457659da68da76db2",
+          "kind": "open-loop",
+          "text": "未兑现的疑问：门缝底下的光被压暗一下，究竟是有人从门外走过，还是电梯指示灯闪了一格，尚未确认。（原文：「也可能只是电梯的指示灯闪了一格」）",
+          "sourceEventId": "085eda25-794d-4ff7-b6e4-4b913e1814d9",
+          "source": "loop:Q1-2",
+          "ordinal": 1,
+          "timeMinutes": 483,
+          "view": "global",
+          "score": 7.415884205860962,
+          "matchedTerms": [
+            "从",
+            "电梯",
+            "被"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "d6ada7be0617e5fb18b33c1a327bbea8676135de9dd5db11d6a4d29fcefaf602",
+          "kind": "ledger",
+          "text": "门缝底下那条细细的光被什么压暗了一下，很快又亮回来，有人从门外走过，也可能只是电梯的指示灯闪了一格。（原文：「也可能只是电梯的指示灯闪了一格」）",
+          "sourceEventId": "085eda25-794d-4ff7-b6e4-4b913e1814d9",
+          "source": "ledger:L1-6",
+          "ordinal": 1,
+          "timeMinutes": 483,
+          "view": "global",
+          "score": 7.175344658710715,
+          "matchedTerms": [
+            "从",
+            "电梯",
+            "被"
+          ],
+          "truncated": false
+        }
+      ],
+      "combined": [
+        {
+          "id": "ed91272f5dbe24087db891bb178a32c814346350a0a214a457659da68da76db2",
+          "kind": "open-loop",
+          "text": "未兑现的疑问：门缝底下的光被压暗一下，究竟是有人从门外走过，还是电梯指示灯闪了一格，尚未确认。（原文：「也可能只是电梯的指示灯闪了一格」）",
+          "sourceEventId": "085eda25-794d-4ff7-b6e4-4b913e1814d9",
+          "source": "loop:Q1-2",
+          "ordinal": 1,
+          "timeMinutes": 483,
+          "view": "global",
+          "score": 7.415884205860962,
+          "matchedTerms": [
+            "从",
+            "电梯",
+            "被"
+          ],
+          "retrievalSources": [
+            "bm25",
+            "graphiti"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "9d06c9427519264a799295a7f7618bc647492908eb3601a9bf8500a770363788",
+          "kind": "narrative",
+          "text": "绘梨衣坐在窗边，把一张画着东京灯火的纸推给你。她相信你会明白。手机里，凯撒要你带她去安全点；走廊外的电梯刚刚停过一次，可能是普通客人，也可能是蛇岐八家的搜索者。桌上最后一支药让所有浪漫都带着期限。",
+          "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+          "source": "prose",
+          "ordinal": 0,
+          "timeMinutes": 480,
+          "view": "global",
+          "score": 6.471489623585654,
+          "matchedTerms": [
+            "电梯",
+            "东京",
+            "让"
+          ],
+          "retrievalSources": [
+            "bm25",
+            "graphiti"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "3daceb9558eddbbb04018c64808d13b6dacb110eed1b3605922b7d5e78101f25",
+          "kind": "narrator-note",
+          "text": "楼梯间上方传来开门声与一串脚步，来源未确认，可能是退房客人也可能是搜救者",
+          "sourceEventId": "f3c5a1e3-26c3-42c1-a64d-8c037b85c3af",
+          "source": "narrator-note:3",
+          "ordinal": 2,
+          "timeMinutes": 493,
+          "view": "global",
+          "score": 0.5726299637179262,
+          "retrievalSources": [
+            "graphiti"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "63a6325c60b8daf2134e48c77a547271a7b24f5a49f1f5b7b42ede5a101dad3a",
+          "kind": "canon",
+          "text": "绘梨衣的血统极不稳定，需要蛇岐八家长期提供专用药物压制，离开治疗越久失控风险越高。",
+          "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+          "source": "canon:serum-limit",
+          "ordinal": 0,
+          "timeMinutes": 480,
+          "view": "global",
+          "score": 11.548215997037515,
+          "matchedTerms": [
+            "离开",
+            "药物",
+            "风险"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "989864f6a79530dba31e7a3f92cca5b4b9be5371773820e31b4515de9e8141c9",
+          "kind": "open-loop",
+          "text": "未兑现的计划：在推开底层那扇门之前，得先决定怎么走。（原文：「手已经搭在底层那扇门的把手上」）",
+          "sourceEventId": "f3c5a1e3-26c3-42c1-a64d-8c037b85c3af",
+          "source": "loop:Q2-3",
+          "ordinal": 2,
+          "timeMinutes": 493,
+          "view": "global",
+          "score": 0.5523083444235568,
+          "retrievalSources": [
+            "graphiti"
+          ],
+          "truncated": false
+        }
+      ]
+    },
+    {
+      "name": "监控关联",
+      "query": "沿途两处监视装置有什么相同的异常？",
+      "bm25Hit": false,
+      "combinedHit": false,
+      "bm25Ms": 2,
+      "combinedMs": 92,
+      "graphState": "ready",
+      "graphCandidates": 5,
+      "changedTop5": true,
+      "graphOnlyAdditions": [
+        {
+          "id": "c04c026d47e14f31319fc81ed148876aca687659a6bbc5a0214295c75513ae3d",
+          "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+          "text": "现代东京的公共交通、监控和城市秩序正常运行",
+          "evidenceMatch": false,
+          "retrievalSources": [
+            "bm25",
+            "graphiti"
+          ]
+        },
+        {
+          "id": "f4baaa80fa5e79b06bba9b749dc1c54e642ef8b68a55dd0e177970909a2150c1",
+          "sourceEventId": "085eda25-794d-4ff7-b6e4-4b913e1814d9",
+          "text": "路明非没能从门内确认自己绝对安全，却把模糊的处境变成了两条具体的倒计时：搜索圈已经收拢到旅馆周边，而绘梨衣药效衰减的早期表现已经肉眼可见。",
+          "evidenceMatch": false,
+          "retrievalSources": [
+            "bm25",
+            "graphiti"
+          ]
+        },
+        {
+          "id": "9d06c9427519264a799295a7f7618bc647492908eb3601a9bf8500a770363788",
+          "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+          "text": "绘梨衣坐在窗边，把一张画着东京灯火的纸推给你。她相信你会明白。手机里，凯撒要你带她去安全点；走廊外的电梯刚刚停过一次，可能是普通客人，也可能是蛇岐八家的搜索者。桌上最后一支药让所有浪漫都带着期限。",
+          "evidenceMatch": false,
+          "retrievalSources": [
+            "bm25",
+            "graphiti"
+          ]
+        }
+      ],
+      "bm25": [
+        {
+          "id": "e8476bfb04a313ad63d98f7fb19b5d01732ff5fcf7f48ccda170dca92a7c0985",
+          "kind": "canon",
+          "text": "橘政宗控制的治疗记录缺少多次采血去向，血清批次也与家族医疗库存对不上。",
+          "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+          "source": "canon:medical-record-gap",
+          "ordinal": 0,
+          "timeMinutes": 480,
+          "view": "global",
+          "score": 9.12122500108886,
+          "matchedTerms": [
+            "采",
+            "血"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "674a0313b89042259f24602d0e7fc86412c31ae3d09079de4ccbc34d8f7424b8",
+          "kind": "environment-memory",
+          "text": "加密手机开机即上行登记，发送坐标等于把藏身处主动交出，风险不可撤回",
+          "sourceEventId": "0845fef7-a55f-46af-9b8c-9a904a9383e3",
+          "source": "environment-note:0",
+          "ordinal": 3,
+          "timeMinutes": 496,
+          "view": "global",
+          "score": 7.103134502827567,
+          "matchedTerms": [
+            "处",
+            "风险"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "414d2eb3505a003b3110ab29bf5b2956bb7acd7966a8c809ca6cb649a8cf39f8",
+          "kind": "canon",
+          "text": "加密手机一次短暂握手已经让蛇岐八家把搜索范围缩小到旅馆周边。",
+          "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+          "source": "canon:tracking-ping",
+          "ordinal": 0,
+          "timeMinutes": 480,
+          "view": "global",
+          "score": 6.880994536965979,
+          "matchedTerms": [
+            "旅馆",
+            "让"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "63a6325c60b8daf2134e48c77a547271a7b24f5a49f1f5b7b42ede5a101dad3a",
+          "kind": "canon",
+          "text": "绘梨衣的血统极不稳定，需要蛇岐八家长期提供专用药物压制，离开治疗越久失控风险越高。",
+          "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+          "source": "canon:serum-limit",
+          "ordinal": 0,
+          "timeMinutes": 480,
+          "view": "global",
+          "score": 6.769125496094003,
+          "matchedTerms": [
+            "药物",
+            "风险"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "2325686521b124eb9334943f3a9ef1a5a4bd481906426e981c673a9e9286eecc",
+          "kind": "canon",
+          "text": "橘政宗即赫尔佐格，长期把绘梨衣培养为抽取并承载白王之血的容器，送回其控制范围会把她推向真正的死亡风险。",
+          "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+          "source": "canon:white-king-vessel",
+          "ordinal": 0,
+          "timeMinutes": 480,
+          "view": "global",
+          "score": 5.940619743870889,
+          "matchedTerms": [
+            "血",
+            "风险"
+          ],
+          "truncated": false
+        }
+      ],
+      "combined": [
+        {
+          "id": "c04c026d47e14f31319fc81ed148876aca687659a6bbc5a0214295c75513ae3d",
+          "kind": "world-rule",
+          "text": "现代东京的公共交通、监控和城市秩序正常运行",
+          "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+          "source": "world-rule:0",
+          "ordinal": 0,
+          "timeMinutes": 480,
+          "view": "global",
+          "score": 5.074010782273737,
+          "matchedTerms": [
+            "东京"
+          ],
+          "retrievalSources": [
+            "bm25",
+            "graphiti"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "f4baaa80fa5e79b06bba9b749dc1c54e642ef8b68a55dd0e177970909a2150c1",
+          "kind": "outcome",
+          "text": "路明非没能从门内确认自己绝对安全，却把模糊的处境变成了两条具体的倒计时：搜索圈已经收拢到旅馆周边，而绘梨衣药效衰减的早期表现已经肉眼可见。",
+          "sourceEventId": "085eda25-794d-4ff7-b6e4-4b913e1814d9",
+          "source": "outcome",
+          "ordinal": 1,
+          "timeMinutes": 483,
+          "view": "global",
+          "score": 5.0831012276087035,
+          "matchedTerms": [
+            "两",
+            "旅馆"
+          ],
+          "retrievalSources": [
+            "bm25",
+            "graphiti"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "9d06c9427519264a799295a7f7618bc647492908eb3601a9bf8500a770363788",
+          "kind": "narrative",
+          "text": "绘梨衣坐在窗边，把一张画着东京灯火的纸推给你。她相信你会明白。手机里，凯撒要你带她去安全点；走廊外的电梯刚刚停过一次，可能是普通客人，也可能是蛇岐八家的搜索者。桌上最后一支药让所有浪漫都带着期限。",
+          "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+          "source": "prose",
+          "ordinal": 0,
+          "timeMinutes": 480,
+          "view": "global",
+          "score": 4.61955269734515,
+          "matchedTerms": [
+            "东京",
+            "让"
+          ],
+          "retrievalSources": [
+            "bm25",
+            "graphiti"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "e8476bfb04a313ad63d98f7fb19b5d01732ff5fcf7f48ccda170dca92a7c0985",
+          "kind": "canon",
+          "text": "橘政宗控制的治疗记录缺少多次采血去向，血清批次也与家族医疗库存对不上。",
+          "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+          "source": "canon:medical-record-gap",
+          "ordinal": 0,
+          "timeMinutes": 480,
+          "view": "global",
+          "score": 9.12122500108886,
+          "matchedTerms": [
+            "采",
+            "血"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "674a0313b89042259f24602d0e7fc86412c31ae3d09079de4ccbc34d8f7424b8",
+          "kind": "environment-memory",
+          "text": "加密手机开机即上行登记，发送坐标等于把藏身处主动交出，风险不可撤回",
+          "sourceEventId": "0845fef7-a55f-46af-9b8c-9a904a9383e3",
+          "source": "environment-note:0",
+          "ordinal": 3,
+          "timeMinutes": 496,
+          "view": "global",
+          "score": 7.103134502827567,
+          "matchedTerms": [
+            "处",
+            "风险"
+          ],
+          "truncated": false
+        }
+      ]
+    },
+    {
+      "name": "设备细节",
+      "query": "楼梯下方监视装置看上去在正常工作吗？",
+      "bm25Hit": false,
+      "combinedHit": false,
+      "bm25Ms": 3,
+      "combinedMs": 90,
+      "graphState": "ready",
+      "graphCandidates": 5,
+      "changedTop5": true,
+      "graphOnlyAdditions": [
+        {
+          "id": "d4a88f5b8a4b02cf507983ab808f89663aef2863d6d7ea9cf29f6f831f17aace",
+          "sourceEventId": "0845fef7-a55f-46af-9b8c-9a904a9383e3",
+          "text": "路明非在底层楼梯平台开机发出坐标，手机亮起的一刻先完成了一次上行登记，位置安全被主动交出去",
+          "evidenceMatch": false,
+          "retrievalSources": [
+            "bm25",
+            "graphiti"
+          ]
+        },
+        {
+          "id": "8eae3d4a7d902244029212d3639d5ae8eedc9ea8b346fe5473a1ac76569404e7",
+          "sourceEventId": "085eda25-794d-4ff7-b6e4-4b913e1814d9",
+          "text": "走廊摄像头存在死角，视野不覆盖拐角与电梯厅，门内看到的干净走廊不等于没人蹲守",
+          "evidenceMatch": false,
+          "retrievalSources": [
+            "bm25",
+            "graphiti"
+          ]
+        },
+        {
+          "id": "3daceb9558eddbbb04018c64808d13b6dacb110eed1b3605922b7d5e78101f25",
+          "sourceEventId": "f3c5a1e3-26c3-42c1-a64d-8c037b85c3af",
+          "text": "楼梯间上方传来开门声与一串脚步，来源未确认，可能是退房客人也可能是搜救者",
+          "evidenceMatch": false,
+          "retrievalSources": [
+            "graphiti"
+          ]
+        }
+      ],
+      "bm25": [
+        {
+          "id": "c04c026d47e14f31319fc81ed148876aca687659a6bbc5a0214295c75513ae3d",
+          "kind": "world-rule",
+          "text": "现代东京的公共交通、监控和城市秩序正常运行",
+          "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+          "source": "world-rule:0",
+          "ordinal": 0,
+          "timeMinutes": 480,
+          "view": "global",
+          "score": 10.848766090122714,
+          "matchedTerms": [
+            "正常",
+            "东京"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "e8476bfb04a313ad63d98f7fb19b5d01732ff5fcf7f48ccda170dca92a7c0985",
+          "kind": "canon",
+          "text": "橘政宗控制的治疗记录缺少多次采血去向，血清批次也与家族医疗库存对不上。",
+          "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+          "source": "canon:medical-record-gap",
+          "ordinal": 0,
+          "timeMinutes": 480,
+          "view": "global",
+          "score": 9.12122500108886,
+          "matchedTerms": [
+            "采",
+            "血"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "414d2eb3505a003b3110ab29bf5b2956bb7acd7966a8c809ca6cb649a8cf39f8",
+          "kind": "canon",
+          "text": "加密手机一次短暂握手已经让蛇岐八家把搜索范围缩小到旅馆周边。",
+          "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+          "source": "canon:tracking-ping",
+          "ordinal": 0,
+          "timeMinutes": 480,
+          "view": "global",
+          "score": 6.880994536965979,
+          "matchedTerms": [
+            "旅馆",
+            "让"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "63a6325c60b8daf2134e48c77a547271a7b24f5a49f1f5b7b42ede5a101dad3a",
+          "kind": "canon",
+          "text": "绘梨衣的血统极不稳定，需要蛇岐八家长期提供专用药物压制，离开治疗越久失控风险越高。",
+          "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+          "source": "canon:serum-limit",
+          "ordinal": 0,
+          "timeMinutes": 480,
+          "view": "global",
+          "score": 6.769125496094003,
+          "matchedTerms": [
+            "药物",
+            "风险"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "2325686521b124eb9334943f3a9ef1a5a4bd481906426e981c673a9e9286eecc",
+          "kind": "canon",
+          "text": "橘政宗即赫尔佐格，长期把绘梨衣培养为抽取并承载白王之血的容器，送回其控制范围会把她推向真正的死亡风险。",
+          "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+          "source": "canon:white-king-vessel",
+          "ordinal": 0,
+          "timeMinutes": 480,
+          "view": "global",
+          "score": 5.940619743870889,
+          "matchedTerms": [
+            "血",
+            "风险"
+          ],
+          "truncated": false
+        }
+      ],
+      "combined": [
+        {
+          "id": "d4a88f5b8a4b02cf507983ab808f89663aef2863d6d7ea9cf29f6f831f17aace",
+          "kind": "narrator-note",
+          "text": "路明非在底层楼梯平台开机发出坐标，手机亮起的一刻先完成了一次上行登记，位置安全被主动交出去",
+          "sourceEventId": "0845fef7-a55f-46af-9b8c-9a904a9383e3",
+          "source": "narrator-note:0",
+          "ordinal": 3,
+          "timeMinutes": 496,
+          "view": "global",
+          "score": 5.06241320858261,
+          "matchedTerms": [
+            "楼梯",
+            "被"
+          ],
+          "retrievalSources": [
+            "bm25",
+            "graphiti"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "8eae3d4a7d902244029212d3639d5ae8eedc9ea8b346fe5473a1ac76569404e7",
+          "kind": "environment-memory",
+          "text": "走廊摄像头存在死角，视野不覆盖拐角与电梯厅，门内看到的干净走廊不等于没人蹲守",
+          "sourceEventId": "085eda25-794d-4ff7-b6e4-4b913e1814d9",
+          "source": "environment-note:0",
+          "ordinal": 1,
+          "timeMinutes": 483,
+          "view": "global",
+          "score": 4.705337839703622,
+          "matchedTerms": [
+            "存在"
+          ],
+          "retrievalSources": [
+            "bm25",
+            "graphiti"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "3daceb9558eddbbb04018c64808d13b6dacb110eed1b3605922b7d5e78101f25",
+          "kind": "narrator-note",
+          "text": "楼梯间上方传来开门声与一串脚步，来源未确认，可能是退房客人也可能是搜救者",
+          "sourceEventId": "f3c5a1e3-26c3-42c1-a64d-8c037b85c3af",
+          "source": "narrator-note:3",
+          "ordinal": 2,
+          "timeMinutes": 493,
+          "view": "global",
+          "score": 0.5904612533307975,
+          "retrievalSources": [
+            "graphiti"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "c04c026d47e14f31319fc81ed148876aca687659a6bbc5a0214295c75513ae3d",
+          "kind": "world-rule",
+          "text": "现代东京的公共交通、监控和城市秩序正常运行",
+          "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+          "source": "world-rule:0",
+          "ordinal": 0,
+          "timeMinutes": 480,
+          "view": "global",
+          "score": 10.848766090122714,
+          "matchedTerms": [
+            "正常",
+            "东京"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "e8476bfb04a313ad63d98f7fb19b5d01732ff5fcf7f48ccda170dca92a7c0985",
+          "kind": "canon",
+          "text": "橘政宗控制的治疗记录缺少多次采血去向，血清批次也与家族医疗库存对不上。",
+          "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+          "source": "canon:medical-record-gap",
+          "ordinal": 0,
+          "timeMinutes": 480,
+          "view": "global",
+          "score": 9.12122500108886,
+          "matchedTerms": [
+            "采",
+            "血"
+          ],
+          "truncated": false
+        }
+      ]
+    },
+    {
+      "name": "人物身体",
+      "query": "有什么微小表现说明她的身体正在变差？",
+      "bm25Hit": false,
+      "combinedHit": false,
+      "bm25Ms": 3,
+      "combinedMs": 92,
+      "graphState": "ready",
+      "graphCandidates": 5,
+      "changedTop5": true,
+      "graphOnlyAdditions": [
+        {
+          "id": "f4baaa80fa5e79b06bba9b749dc1c54e642ef8b68a55dd0e177970909a2150c1",
+          "sourceEventId": "085eda25-794d-4ff7-b6e4-4b913e1814d9",
+          "text": "路明非没能从门内确认自己绝对安全，却把模糊的处境变成了两条具体的倒计时：搜索圈已经收拢到旅馆周边，而绘梨衣药效衰减的早期表现已经肉眼可见。",
+          "evidenceMatch": false,
+          "retrievalSources": [
+            "bm25",
+            "graphiti"
+          ]
+        },
+        {
+          "id": "c04c026d47e14f31319fc81ed148876aca687659a6bbc5a0214295c75513ae3d",
+          "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+          "text": "现代东京的公共交通、监控和城市秩序正常运行",
+          "evidenceMatch": false,
+          "retrievalSources": [
+            "bm25",
+            "graphiti"
+          ]
+        }
+      ],
+      "bm25": [
+        {
+          "id": "e8476bfb04a313ad63d98f7fb19b5d01732ff5fcf7f48ccda170dca92a7c0985",
+          "kind": "canon",
+          "text": "橘政宗控制的治疗记录缺少多次采血去向，血清批次也与家族医疗库存对不上。",
+          "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+          "source": "canon:medical-record-gap",
+          "ordinal": 0,
+          "timeMinutes": 480,
+          "view": "global",
+          "score": 9.12122500108886,
+          "matchedTerms": [
+            "采",
+            "血"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "414d2eb3505a003b3110ab29bf5b2956bb7acd7966a8c809ca6cb649a8cf39f8",
+          "kind": "canon",
+          "text": "加密手机一次短暂握手已经让蛇岐八家把搜索范围缩小到旅馆周边。",
+          "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+          "source": "canon:tracking-ping",
+          "ordinal": 0,
+          "timeMinutes": 480,
+          "view": "global",
+          "score": 6.880994536965979,
+          "matchedTerms": [
+            "旅馆",
+            "让"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "63a6325c60b8daf2134e48c77a547271a7b24f5a49f1f5b7b42ede5a101dad3a",
+          "kind": "canon",
+          "text": "绘梨衣的血统极不稳定，需要蛇岐八家长期提供专用药物压制，离开治疗越久失控风险越高。",
+          "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+          "source": "canon:serum-limit",
+          "ordinal": 0,
+          "timeMinutes": 480,
+          "view": "global",
+          "score": 6.769125496094003,
+          "matchedTerms": [
+            "药物",
+            "风险"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "e02eac40076e3ecdf1b796f0aac39acbca3f9111dcd0ef5102c3ed4514f965f3",
+          "kind": "narrator-note",
+          "text": "绘梨衣在楼梯平台自己写下下一站，字迹发抖但没有让他代写，她的去向第一次成为路线的硬条件",
+          "sourceEventId": "f3c5a1e3-26c3-42c1-a64d-8c037b85c3af",
+          "source": "narrator-note:1",
+          "ordinal": 2,
+          "timeMinutes": 493,
+          "view": "global",
+          "score": 6.425598747422647,
+          "matchedTerms": [
+            "她的",
+            "让"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "13d2b648d7bc1fc202e12f36aedcbfc24ac5ed6db16bd0bfac8685dbb754b278",
+          "kind": "narrator-note",
+          "text": "绘梨衣手指轻颤、眼底颜色加深，药效减弱与血统失稳的早期表现已能被看见，最后一支药仍未使用",
+          "sourceEventId": "085eda25-794d-4ff7-b6e4-4b913e1814d9",
+          "source": "narrator-note:1",
+          "ordinal": 1,
+          "timeMinutes": 483,
+          "view": "global",
+          "score": 6.057363731094442,
+          "matchedTerms": [
+            "表现",
+            "被"
+          ],
+          "truncated": false
+        }
+      ],
+      "combined": [
+        {
+          "id": "f4baaa80fa5e79b06bba9b749dc1c54e642ef8b68a55dd0e177970909a2150c1",
+          "kind": "outcome",
+          "text": "路明非没能从门内确认自己绝对安全，却把模糊的处境变成了两条具体的倒计时：搜索圈已经收拢到旅馆周边，而绘梨衣药效衰减的早期表现已经肉眼可见。",
+          "sourceEventId": "085eda25-794d-4ff7-b6e4-4b913e1814d9",
+          "source": "outcome",
+          "ordinal": 1,
+          "timeMinutes": 483,
+          "view": "global",
+          "score": 5.464653724744316,
+          "matchedTerms": [
+            "表现",
+            "旅馆"
+          ],
+          "retrievalSources": [
+            "bm25",
+            "graphiti"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "13d2b648d7bc1fc202e12f36aedcbfc24ac5ed6db16bd0bfac8685dbb754b278",
+          "kind": "narrator-note",
+          "text": "绘梨衣手指轻颤、眼底颜色加深，药效减弱与血统失稳的早期表现已能被看见，最后一支药仍未使用",
+          "sourceEventId": "085eda25-794d-4ff7-b6e4-4b913e1814d9",
+          "source": "narrator-note:1",
+          "ordinal": 1,
+          "timeMinutes": 483,
+          "view": "global",
+          "score": 6.057363731094442,
+          "matchedTerms": [
+            "表现",
+            "被"
+          ],
+          "retrievalSources": [
+            "bm25",
+            "graphiti"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "c04c026d47e14f31319fc81ed148876aca687659a6bbc5a0214295c75513ae3d",
+          "kind": "world-rule",
+          "text": "现代东京的公共交通、监控和城市秩序正常运行",
+          "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+          "source": "world-rule:0",
+          "ordinal": 0,
+          "timeMinutes": 480,
+          "view": "global",
+          "score": 5.074010782273737,
+          "matchedTerms": [
+            "东京"
+          ],
+          "retrievalSources": [
+            "bm25",
+            "graphiti"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "e8476bfb04a313ad63d98f7fb19b5d01732ff5fcf7f48ccda170dca92a7c0985",
+          "kind": "canon",
+          "text": "橘政宗控制的治疗记录缺少多次采血去向，血清批次也与家族医疗库存对不上。",
+          "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+          "source": "canon:medical-record-gap",
+          "ordinal": 0,
+          "timeMinutes": 480,
+          "view": "global",
+          "score": 9.12122500108886,
+          "matchedTerms": [
+            "采",
+            "血"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "414d2eb3505a003b3110ab29bf5b2956bb7acd7966a8c809ca6cb649a8cf39f8",
+          "kind": "canon",
+          "text": "加密手机一次短暂握手已经让蛇岐八家把搜索范围缩小到旅馆周边。",
+          "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+          "source": "canon:tracking-ping",
+          "ordinal": 0,
+          "timeMinutes": 480,
+          "view": "global",
+          "score": 6.880994536965979,
+          "matchedTerms": [
+            "旅馆",
+            "让"
+          ],
+          "truncated": false
+        }
+      ]
+    },
+    {
+      "name": "联络结果",
+      "query": "刚才求援已经成功送达了吗？",
+      "bm25Hit": false,
+      "combinedHit": true,
+      "bm25Ms": 3,
+      "combinedMs": 92,
+      "graphState": "ready",
+      "graphCandidates": 5,
+      "changedTop5": true,
+      "graphOnlyAdditions": [
+        {
+          "id": "c04c026d47e14f31319fc81ed148876aca687659a6bbc5a0214295c75513ae3d",
+          "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+          "text": "现代东京的公共交通、监控和城市秩序正常运行",
+          "evidenceMatch": false,
+          "retrievalSources": [
+            "bm25",
+            "graphiti"
+          ]
+        },
+        {
+          "id": "9d06c9427519264a799295a7f7618bc647492908eb3601a9bf8500a770363788",
+          "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+          "text": "绘梨衣坐在窗边，把一张画着东京灯火的纸推给你。她相信你会明白。手机里，凯撒要你带她去安全点；走廊外的电梯刚刚停过一次，可能是普通客人，也可能是蛇岐八家的搜索者。桌上最后一支药让所有浪漫都带着期限。",
+          "evidenceMatch": false,
+          "retrievalSources": [
+            "bm25",
+            "graphiti"
+          ]
+        },
+        {
+          "id": "e673a60f6c2cf005ba51a50ed0e8d5d12400eae967bf2914b985f4f4e1fdfb33",
+          "sourceEventId": "0845fef7-a55f-46af-9b8c-9a904a9383e3",
+          "text": "短信的发送状态停在未确认，是否到达、凯撒是否回复、碰头点是否成立都还没定，药没有到手",
+          "evidenceMatch": true,
+          "retrievalSources": [
+            "graphiti"
+          ]
+        }
+      ],
+      "bm25": [
+        {
+          "id": "414d2eb3505a003b3110ab29bf5b2956bb7acd7966a8c809ca6cb649a8cf39f8",
+          "kind": "canon",
+          "text": "加密手机一次短暂握手已经让蛇岐八家把搜索范围缩小到旅馆周边。",
+          "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+          "source": "canon:tracking-ping",
+          "ordinal": 0,
+          "timeMinutes": 480,
+          "view": "global",
+          "score": 9.929784065814719,
+          "matchedTerms": [
+            "已经",
+            "旅馆",
+            "让"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "2325686521b124eb9334943f3a9ef1a5a4bd481906426e981c673a9e9286eecc",
+          "kind": "canon",
+          "text": "橘政宗即赫尔佐格，长期把绘梨衣培养为抽取并承载白王之血的容器，送回其控制范围会把她推向真正的死亡风险。",
+          "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+          "source": "canon:white-king-vessel",
+          "ordinal": 0,
+          "timeMinutes": 480,
+          "view": "global",
+          "score": 9.910737909262107,
+          "matchedTerms": [
+            "送",
+            "血",
+            "风险"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "e8476bfb04a313ad63d98f7fb19b5d01732ff5fcf7f48ccda170dca92a7c0985",
+          "kind": "canon",
+          "text": "橘政宗控制的治疗记录缺少多次采血去向，血清批次也与家族医疗库存对不上。",
+          "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+          "source": "canon:medical-record-gap",
+          "ordinal": 0,
+          "timeMinutes": 480,
+          "view": "global",
+          "score": 9.12122500108886,
+          "matchedTerms": [
+            "采",
+            "血"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "fcef9ed824877377c64bdc8687360a21122106f788045caf5db591d4bdbcaf75",
+          "kind": "open-loop",
+          "text": "未兑现的威胁：上行成功的握手回执说明信号已经出去过，位置可能已经暴露给外面。（原文：「信号已经出去过了，出去过的信号不会自己回来」）",
+          "sourceEventId": "085eda25-794d-4ff7-b6e4-4b913e1814d9",
+          "source": "loop:Q1-1",
+          "ordinal": 1,
+          "timeMinutes": 483,
+          "view": "global",
+          "score": 7.151152501413954,
+          "matchedTerms": [
+            "已经",
+            "成功"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "63a6325c60b8daf2134e48c77a547271a7b24f5a49f1f5b7b42ede5a101dad3a",
+          "kind": "canon",
+          "text": "绘梨衣的血统极不稳定，需要蛇岐八家长期提供专用药物压制，离开治疗越久失控风险越高。",
+          "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+          "source": "canon:serum-limit",
+          "ordinal": 0,
+          "timeMinutes": 480,
+          "view": "global",
+          "score": 6.769125496094003,
+          "matchedTerms": [
+            "药物",
+            "风险"
+          ],
+          "truncated": false
+        }
+      ],
+      "combined": [
+        {
+          "id": "c04c026d47e14f31319fc81ed148876aca687659a6bbc5a0214295c75513ae3d",
+          "kind": "world-rule",
+          "text": "现代东京的公共交通、监控和城市秩序正常运行",
+          "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+          "source": "world-rule:0",
+          "ordinal": 0,
+          "timeMinutes": 480,
+          "view": "global",
+          "score": 5.074010782273737,
+          "matchedTerms": [
+            "东京"
+          ],
+          "retrievalSources": [
+            "bm25",
+            "graphiti"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "9d06c9427519264a799295a7f7618bc647492908eb3601a9bf8500a770363788",
+          "kind": "narrative",
+          "text": "绘梨衣坐在窗边，把一张画着东京灯火的纸推给你。她相信你会明白。手机里，凯撒要你带她去安全点；走廊外的电梯刚刚停过一次，可能是普通客人，也可能是蛇岐八家的搜索者。桌上最后一支药让所有浪漫都带着期限。",
+          "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+          "source": "prose",
+          "ordinal": 0,
+          "timeMinutes": 480,
+          "view": "global",
+          "score": 4.61955269734515,
+          "matchedTerms": [
+            "东京",
+            "让"
+          ],
+          "retrievalSources": [
+            "bm25",
+            "graphiti"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "e673a60f6c2cf005ba51a50ed0e8d5d12400eae967bf2914b985f4f4e1fdfb33",
+          "kind": "narrator-note",
+          "text": "短信的发送状态停在未确认，是否到达、凯撒是否回复、碰头点是否成立都还没定，药没有到手",
+          "sourceEventId": "0845fef7-a55f-46af-9b8c-9a904a9383e3",
+          "source": "narrator-note:1",
+          "ordinal": 3,
+          "timeMinutes": 496,
+          "view": "global",
+          "score": 0.5583013659968104,
+          "retrievalSources": [
+            "graphiti"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "414d2eb3505a003b3110ab29bf5b2956bb7acd7966a8c809ca6cb649a8cf39f8",
+          "kind": "canon",
+          "text": "加密手机一次短暂握手已经让蛇岐八家把搜索范围缩小到旅馆周边。",
+          "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+          "source": "canon:tracking-ping",
+          "ordinal": 0,
+          "timeMinutes": 480,
+          "view": "global",
+          "score": 9.929784065814719,
+          "matchedTerms": [
+            "已经",
+            "旅馆",
+            "让"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "2325686521b124eb9334943f3a9ef1a5a4bd481906426e981c673a9e9286eecc",
+          "kind": "canon",
+          "text": "橘政宗即赫尔佐格，长期把绘梨衣培养为抽取并承载白王之血的容器，送回其控制范围会把她推向真正的死亡风险。",
+          "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+          "source": "canon:white-king-vessel",
+          "ordinal": 0,
+          "timeMinutes": 480,
+          "view": "global",
+          "score": 9.910737909262107,
+          "matchedTerms": [
+            "送",
+            "血",
+            "风险"
+          ],
+          "truncated": false
+        }
+      ]
+    },
+    {
+      "name": "交换条件",
+      "query": "他为了换到救命资源，向接应者提出了什么交换条件？",
+      "bm25Hit": true,
+      "combinedHit": true,
+      "bm25Ms": 2,
+      "combinedMs": 108,
+      "graphState": "ready",
+      "graphCandidates": 5,
+      "changedTop5": true,
+      "graphOnlyAdditions": [
+        {
+          "id": "c0353f6f2a9bbd2786f521f59020247aa4852560cdb44193e5b58ae631f1128f",
+          "sourceEventId": "0845fef7-a55f-46af-9b8c-9a904a9383e3",
+          "text": "他把坐标押了出去，换回来的是一行还没确认的发送状态和一个更近的脚步：位置安全花掉了，时间没买到。",
+          "evidenceMatch": false,
+          "retrievalSources": [
+            "graphiti"
+          ]
+        }
+      ],
+      "bm25": [
+        {
+          "id": "facb22ba9d35ea3e76e763a2bb9d7e0db426dd830ddeb06806cdc4f74895f9a3",
+          "kind": "open-loop",
+          "text": "未兑现的人情：路明非向凯撒开出的交换条件——天亮前一次能撑过今天的药物接续，尚未兑现。（原文：「天亮前一次能接上的药，碰头点给我」）",
+          "sourceEventId": "0845fef7-a55f-46af-9b8c-9a904a9383e3",
+          "source": "loop:Q3-2",
+          "ordinal": 3,
+          "timeMinutes": 496,
+          "view": "global",
+          "score": 16.54082027772483,
+          "matchedTerms": [
+            "向",
+            "接",
+            "交换",
+            "条件",
+            "药物"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "cd6c32845c04a2417ad9790d6660318b437ce164b80546c254aee243161ad31d",
+          "kind": "ledger",
+          "text": "路明非把坐标敲进手机，后面只跟一行交换条件，要天亮前一次能接上的药和碰头点，随后按下去。（原文：「天亮前一次能接上的药，碰头点给我」）",
+          "sourceEventId": "0845fef7-a55f-46af-9b8c-9a904a9383e3",
+          "source": "ledger:L3-2",
+          "ordinal": 3,
+          "timeMinutes": 496,
+          "view": "global",
+          "score": 10.38576515681189,
+          "matchedTerms": [
+            "接",
+            "交换",
+            "条件"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "58ab96564294d214d8be71cfd25ff683696b538aa20541e256f2703fae883180",
+          "kind": "canon",
+          "text": "凯撒和楚子航希望路明非把绘梨衣带离日本，既为了保护她，也为了阻止她成为白王计划的关键。",
+          "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+          "source": "canon:cassell-order",
+          "ordinal": 0,
+          "timeMinutes": 480,
+          "view": "global",
+          "score": 10.185814353855823,
+          "matchedTerms": [
+            "为了",
+            "保护"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "e8476bfb04a313ad63d98f7fb19b5d01732ff5fcf7f48ccda170dca92a7c0985",
+          "kind": "canon",
+          "text": "橘政宗控制的治疗记录缺少多次采血去向，血清批次也与家族医疗库存对不上。",
+          "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+          "source": "canon:medical-record-gap",
+          "ordinal": 0,
+          "timeMinutes": 480,
+          "view": "global",
+          "score": 9.12122500108886,
+          "matchedTerms": [
+            "采",
+            "血"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "9d06c9427519264a799295a7f7618bc647492908eb3601a9bf8500a770363788",
+          "kind": "narrative",
+          "text": "绘梨衣坐在窗边，把一张画着东京灯火的纸推给你。她相信你会明白。手机里，凯撒要你带她去安全点；走廊外的电梯刚刚停过一次，可能是普通客人，也可能是蛇岐八家的搜索者。桌上最后一支药让所有浪漫都带着期限。",
+          "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+          "source": "prose",
+          "ordinal": 0,
+          "timeMinutes": 480,
+          "view": "global",
+          "score": 7.135406175306047,
+          "matchedTerms": [
+            "者",
+            "东京",
+            "让"
+          ],
+          "truncated": false
+        }
+      ],
+      "combined": [
+        {
+          "id": "facb22ba9d35ea3e76e763a2bb9d7e0db426dd830ddeb06806cdc4f74895f9a3",
+          "kind": "open-loop",
+          "text": "未兑现的人情：路明非向凯撒开出的交换条件——天亮前一次能撑过今天的药物接续，尚未兑现。（原文：「天亮前一次能接上的药，碰头点给我」）",
+          "sourceEventId": "0845fef7-a55f-46af-9b8c-9a904a9383e3",
+          "source": "loop:Q3-2",
+          "ordinal": 3,
+          "timeMinutes": 496,
+          "view": "global",
+          "score": 16.54082027772483,
+          "matchedTerms": [
+            "向",
+            "接",
+            "交换",
+            "条件",
+            "药物"
+          ],
+          "retrievalSources": [
+            "bm25",
+            "graphiti"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "9d06c9427519264a799295a7f7618bc647492908eb3601a9bf8500a770363788",
+          "kind": "narrative",
+          "text": "绘梨衣坐在窗边，把一张画着东京灯火的纸推给你。她相信你会明白。手机里，凯撒要你带她去安全点；走廊外的电梯刚刚停过一次，可能是普通客人，也可能是蛇岐八家的搜索者。桌上最后一支药让所有浪漫都带着期限。",
+          "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+          "source": "prose",
+          "ordinal": 0,
+          "timeMinutes": 480,
+          "view": "global",
+          "score": 7.135406175306047,
+          "matchedTerms": [
+            "者",
+            "东京",
+            "让"
+          ],
+          "retrievalSources": [
+            "bm25",
+            "graphiti"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "c0353f6f2a9bbd2786f521f59020247aa4852560cdb44193e5b58ae631f1128f",
+          "kind": "outcome",
+          "text": "他把坐标押了出去，换回来的是一行还没确认的发送状态和一个更近的脚步：位置安全花掉了，时间没买到。",
+          "sourceEventId": "0845fef7-a55f-46af-9b8c-9a904a9383e3",
+          "source": "outcome",
+          "ordinal": 3,
+          "timeMinutes": 496,
+          "view": "global",
+          "score": 0.5559796838925045,
+          "retrievalSources": [
+            "graphiti"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "cd6c32845c04a2417ad9790d6660318b437ce164b80546c254aee243161ad31d",
+          "kind": "ledger",
+          "text": "路明非把坐标敲进手机，后面只跟一行交换条件，要天亮前一次能接上的药和碰头点，随后按下去。（原文：「天亮前一次能接上的药，碰头点给我」）",
+          "sourceEventId": "0845fef7-a55f-46af-9b8c-9a904a9383e3",
+          "source": "ledger:L3-2",
+          "ordinal": 3,
+          "timeMinutes": 496,
+          "view": "global",
+          "score": 10.38576515681189,
+          "matchedTerms": [
+            "接",
+            "交换",
+            "条件"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "58ab96564294d214d8be71cfd25ff683696b538aa20541e256f2703fae883180",
+          "kind": "canon",
+          "text": "凯撒和楚子航希望路明非把绘梨衣带离日本，既为了保护她，也为了阻止她成为白王计划的关键。",
+          "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+          "source": "canon:cassell-order",
+          "ordinal": 0,
+          "timeMinutes": 480,
+          "view": "global",
+          "score": 10.185814353855823,
+          "matchedTerms": [
+            "为了",
+            "保护"
+          ],
+          "truncated": false
+        }
+      ]
+    },
+    {
+      "name": "追踪距离",
+      "query": "追来的动静最近停在距离我们多远的位置？",
+      "bm25Hit": false,
+      "combinedHit": false,
+      "bm25Ms": 2,
+      "combinedMs": 86,
+      "graphState": "ready",
+      "graphCandidates": 5,
+      "changedTop5": true,
+      "graphOnlyAdditions": [
+        {
+          "id": "c04c026d47e14f31319fc81ed148876aca687659a6bbc5a0214295c75513ae3d",
+          "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+          "text": "现代东京的公共交通、监控和城市秩序正常运行",
+          "evidenceMatch": false,
+          "retrievalSources": [
+            "bm25",
+            "graphiti"
+          ]
+        },
+        {
+          "id": "9d06c9427519264a799295a7f7618bc647492908eb3601a9bf8500a770363788",
+          "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+          "text": "绘梨衣坐在窗边，把一张画着东京灯火的纸推给你。她相信你会明白。手机里，凯撒要你带她去安全点；走廊外的电梯刚刚停过一次，可能是普通客人，也可能是蛇岐八家的搜索者。桌上最后一支药让所有浪漫都带着期限。",
+          "evidenceMatch": false,
+          "retrievalSources": [
+            "bm25",
+            "graphiti"
+          ]
+        }
+      ],
+      "bm25": [
+        {
+          "id": "a4c633c4cb79e5c50364d4292bc0369ab9a268c907f8035e6e3a5c99ca14a291",
+          "kind": "perspective-report",
+          "text": "上杉绘梨衣的认知记录：他让她别出声、自己去看门外的动静——这是他第一次把她放进『等他回来』的位置，而不是『替她决定』的位置",
+          "sourceEventId": "085eda25-794d-4ff7-b6e4-4b913e1814d9",
+          "source": "character-report:0",
+          "ordinal": 1,
+          "timeMinutes": 483,
+          "view": "global",
+          "score": 10.202520068457277,
+          "matchedTerms": [
+            "动静",
+            "位置",
+            "让"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "e8476bfb04a313ad63d98f7fb19b5d01732ff5fcf7f48ccda170dca92a7c0985",
+          "kind": "canon",
+          "text": "橘政宗控制的治疗记录缺少多次采血去向，血清批次也与家族医疗库存对不上。",
+          "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+          "source": "canon:medical-record-gap",
+          "ordinal": 0,
+          "timeMinutes": 480,
+          "view": "global",
+          "score": 9.12122500108886,
+          "matchedTerms": [
+            "采",
+            "血"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "eb09cdd318b68cf4c668b235e629cfd2a61ac7058786b586cf631882ec4f89cb",
+          "kind": "narrator-note",
+          "text": "为等回执原地停留，头顶来源未明的脚步停在他们上方一层，仍未确认身份",
+          "sourceEventId": "0845fef7-a55f-46af-9b8c-9a904a9383e3",
+          "source": "narrator-note:2",
+          "ordinal": 3,
+          "timeMinutes": 496,
+          "view": "global",
+          "score": 7.840634273602844,
+          "matchedTerms": [
+            "停在",
+            "身份"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "414d2eb3505a003b3110ab29bf5b2956bb7acd7966a8c809ca6cb649a8cf39f8",
+          "kind": "canon",
+          "text": "加密手机一次短暂握手已经让蛇岐八家把搜索范围缩小到旅馆周边。",
+          "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+          "source": "canon:tracking-ping",
+          "ordinal": 0,
+          "timeMinutes": 480,
+          "view": "global",
+          "score": 6.880994536965979,
+          "matchedTerms": [
+            "旅馆",
+            "让"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "63a6325c60b8daf2134e48c77a547271a7b24f5a49f1f5b7b42ede5a101dad3a",
+          "kind": "canon",
+          "text": "绘梨衣的血统极不稳定，需要蛇岐八家长期提供专用药物压制，离开治疗越久失控风险越高。",
+          "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+          "source": "canon:serum-limit",
+          "ordinal": 0,
+          "timeMinutes": 480,
+          "view": "global",
+          "score": 6.769125496094003,
+          "matchedTerms": [
+            "药物",
+            "风险"
+          ],
+          "truncated": false
+        }
+      ],
+      "combined": [
+        {
+          "id": "c04c026d47e14f31319fc81ed148876aca687659a6bbc5a0214295c75513ae3d",
+          "kind": "world-rule",
+          "text": "现代东京的公共交通、监控和城市秩序正常运行",
+          "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+          "source": "world-rule:0",
+          "ordinal": 0,
+          "timeMinutes": 480,
+          "view": "global",
+          "score": 5.074010782273737,
+          "matchedTerms": [
+            "东京"
+          ],
+          "retrievalSources": [
+            "bm25",
+            "graphiti"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "9d06c9427519264a799295a7f7618bc647492908eb3601a9bf8500a770363788",
+          "kind": "narrative",
+          "text": "绘梨衣坐在窗边，把一张画着东京灯火的纸推给你。她相信你会明白。手机里，凯撒要你带她去安全点；走廊外的电梯刚刚停过一次，可能是普通客人，也可能是蛇岐八家的搜索者。桌上最后一支药让所有浪漫都带着期限。",
+          "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+          "source": "prose",
+          "ordinal": 0,
+          "timeMinutes": 480,
+          "view": "global",
+          "score": 4.61955269734515,
+          "matchedTerms": [
+            "东京",
+            "让"
+          ],
+          "retrievalSources": [
+            "bm25",
+            "graphiti"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "a4c633c4cb79e5c50364d4292bc0369ab9a268c907f8035e6e3a5c99ca14a291",
+          "kind": "perspective-report",
+          "text": "上杉绘梨衣的认知记录：他让她别出声、自己去看门外的动静——这是他第一次把她放进『等他回来』的位置，而不是『替她决定』的位置",
+          "sourceEventId": "085eda25-794d-4ff7-b6e4-4b913e1814d9",
+          "source": "character-report:0",
+          "ordinal": 1,
+          "timeMinutes": 483,
+          "view": "global",
+          "score": 10.202520068457277,
+          "matchedTerms": [
+            "动静",
+            "位置",
+            "让"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "e8476bfb04a313ad63d98f7fb19b5d01732ff5fcf7f48ccda170dca92a7c0985",
+          "kind": "canon",
+          "text": "橘政宗控制的治疗记录缺少多次采血去向，血清批次也与家族医疗库存对不上。",
+          "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+          "source": "canon:medical-record-gap",
+          "ordinal": 0,
+          "timeMinutes": 480,
+          "view": "global",
+          "score": 9.12122500108886,
+          "matchedTerms": [
+            "采",
+            "血"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "eb09cdd318b68cf4c668b235e629cfd2a61ac7058786b586cf631882ec4f89cb",
+          "kind": "narrator-note",
+          "text": "为等回执原地停留，头顶来源未明的脚步停在他们上方一层，仍未确认身份",
+          "sourceEventId": "0845fef7-a55f-46af-9b8c-9a904a9383e3",
+          "source": "narrator-note:2",
+          "ordinal": 3,
+          "timeMinutes": 496,
+          "view": "global",
+          "score": 7.840634273602844,
+          "matchedTerms": [
+            "停在",
+            "身份"
+          ],
+          "truncated": false
+        }
+      ]
+    },
+    {
+      "name": "暴露原因",
+      "query": "为什么只是查看联络装置也可能泄露藏身地点？",
+      "bm25Hit": false,
+      "combinedHit": true,
+      "bm25Ms": 2,
+      "combinedMs": 111,
+      "graphState": "ready",
+      "graphCandidates": 5,
+      "changedTop5": true,
+      "graphOnlyAdditions": [
+        {
+          "id": "3a40ceee5b98b38e11c361bfb56959e81cc9bb8aa664a1d7f5346c984d09c727",
+          "sourceEventId": "085eda25-794d-4ff7-b6e4-4b913e1814d9",
+          "text": "加密手机每次开机收发都可能上行暴露位置，读取记录同样是风险",
+          "evidenceMatch": true,
+          "retrievalSources": [
+            "bm25",
+            "graphiti"
+          ]
+        },
+        {
+          "id": "9d06c9427519264a799295a7f7618bc647492908eb3601a9bf8500a770363788",
+          "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+          "text": "绘梨衣坐在窗边，把一张画着东京灯火的纸推给你。她相信你会明白。手机里，凯撒要你带她去安全点；走廊外的电梯刚刚停过一次，可能是普通客人，也可能是蛇岐八家的搜索者。桌上最后一支药让所有浪漫都带着期限。",
+          "evidenceMatch": false,
+          "retrievalSources": [
+            "bm25",
+            "graphiti"
+          ]
+        }
+      ],
+      "bm25": [
+        {
+          "id": "d6ada7be0617e5fb18b33c1a327bbea8676135de9dd5db11d6a4d29fcefaf602",
+          "kind": "ledger",
+          "text": "门缝底下那条细细的光被什么压暗了一下，很快又亮回来，有人从门外走过，也可能只是电梯的指示灯闪了一格。（原文：「也可能只是电梯的指示灯闪了一格」）",
+          "sourceEventId": "085eda25-794d-4ff7-b6e4-4b913e1814d9",
+          "source": "ledger:L1-6",
+          "ordinal": 1,
+          "timeMinutes": 483,
+          "view": "global",
+          "score": 12.772287340801928,
+          "matchedTerms": [
+            "只是",
+            "也",
+            "可能",
+            "被"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "e8476bfb04a313ad63d98f7fb19b5d01732ff5fcf7f48ccda170dca92a7c0985",
+          "kind": "canon",
+          "text": "橘政宗控制的治疗记录缺少多次采血去向，血清批次也与家族医疗库存对不上。",
+          "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+          "source": "canon:medical-record-gap",
+          "ordinal": 0,
+          "timeMinutes": 480,
+          "view": "global",
+          "score": 11.732108040373982,
+          "matchedTerms": [
+            "也",
+            "采",
+            "血"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "ed91272f5dbe24087db891bb178a32c814346350a0a214a457659da68da76db2",
+          "kind": "open-loop",
+          "text": "未兑现的疑问：门缝底下的光被压暗一下，究竟是有人从门外走过，还是电梯指示灯闪了一格，尚未确认。（原文：「也可能只是电梯的指示灯闪了一格」）",
+          "sourceEventId": "085eda25-794d-4ff7-b6e4-4b913e1814d9",
+          "source": "loop:Q1-2",
+          "ordinal": 1,
+          "timeMinutes": 483,
+          "view": "global",
+          "score": 10.017500753641425,
+          "matchedTerms": [
+            "只是",
+            "也",
+            "可能",
+            "被"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "674a0313b89042259f24602d0e7fc86412c31ae3d09079de4ccbc34d8f7424b8",
+          "kind": "environment-memory",
+          "text": "加密手机开机即上行登记，发送坐标等于把藏身处主动交出，风险不可撤回",
+          "sourceEventId": "0845fef7-a55f-46af-9b8c-9a904a9383e3",
+          "source": "environment-note:0",
+          "ordinal": 3,
+          "timeMinutes": 496,
+          "view": "global",
+          "score": 8.11250891257921,
+          "matchedTerms": [
+            "藏身",
+            "风险"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "414d2eb3505a003b3110ab29bf5b2956bb7acd7966a8c809ca6cb649a8cf39f8",
+          "kind": "canon",
+          "text": "加密手机一次短暂握手已经让蛇岐八家把搜索范围缩小到旅馆周边。",
+          "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+          "source": "canon:tracking-ping",
+          "ordinal": 0,
+          "timeMinutes": 480,
+          "view": "global",
+          "score": 6.880994536965979,
+          "matchedTerms": [
+            "旅馆",
+            "让"
+          ],
+          "truncated": false
+        }
+      ],
+      "combined": [
+        {
+          "id": "674a0313b89042259f24602d0e7fc86412c31ae3d09079de4ccbc34d8f7424b8",
+          "kind": "environment-memory",
+          "text": "加密手机开机即上行登记，发送坐标等于把藏身处主动交出，风险不可撤回",
+          "sourceEventId": "0845fef7-a55f-46af-9b8c-9a904a9383e3",
+          "source": "environment-note:0",
+          "ordinal": 3,
+          "timeMinutes": 496,
+          "view": "global",
+          "score": 8.11250891257921,
+          "matchedTerms": [
+            "藏身",
+            "风险"
+          ],
+          "retrievalSources": [
+            "bm25",
+            "graphiti"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "3a40ceee5b98b38e11c361bfb56959e81cc9bb8aa664a1d7f5346c984d09c727",
+          "kind": "environment-memory",
+          "text": "加密手机每次开机收发都可能上行暴露位置，读取记录同样是风险",
+          "sourceEventId": "085eda25-794d-4ff7-b6e4-4b913e1814d9",
+          "source": "environment-note:1",
+          "ordinal": 1,
+          "timeMinutes": 483,
+          "view": "global",
+          "score": 6.67447025370049,
+          "matchedTerms": [
+            "可能",
+            "风险"
+          ],
+          "retrievalSources": [
+            "bm25",
+            "graphiti"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "9d06c9427519264a799295a7f7618bc647492908eb3601a9bf8500a770363788",
+          "kind": "narrative",
+          "text": "绘梨衣坐在窗边，把一张画着东京灯火的纸推给你。她相信你会明白。手机里，凯撒要你带她去安全点；走廊外的电梯刚刚停过一次，可能是普通客人，也可能是蛇岐八家的搜索者。桌上最后一支药让所有浪漫都带着期限。",
+          "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+          "source": "prose",
+          "ordinal": 0,
+          "timeMinutes": 480,
+          "view": "global",
+          "score": 6.313379514656597,
+          "matchedTerms": [
+            "也",
+            "东京",
+            "让"
+          ],
+          "retrievalSources": [
+            "bm25",
+            "graphiti"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "d6ada7be0617e5fb18b33c1a327bbea8676135de9dd5db11d6a4d29fcefaf602",
+          "kind": "ledger",
+          "text": "门缝底下那条细细的光被什么压暗了一下，很快又亮回来，有人从门外走过，也可能只是电梯的指示灯闪了一格。（原文：「也可能只是电梯的指示灯闪了一格」）",
+          "sourceEventId": "085eda25-794d-4ff7-b6e4-4b913e1814d9",
+          "source": "ledger:L1-6",
+          "ordinal": 1,
+          "timeMinutes": 483,
+          "view": "global",
+          "score": 12.772287340801928,
+          "matchedTerms": [
+            "只是",
+            "也",
+            "可能",
+            "被"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "e8476bfb04a313ad63d98f7fb19b5d01732ff5fcf7f48ccda170dca92a7c0985",
+          "kind": "canon",
+          "text": "橘政宗控制的治疗记录缺少多次采血去向，血清批次也与家族医疗库存对不上。",
+          "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+          "source": "canon:medical-record-gap",
+          "ordinal": 0,
+          "timeMinutes": 480,
+          "view": "global",
+          "score": 11.732108040373982,
+          "matchedTerms": [
+            "也",
+            "采",
+            "血"
+          ],
+          "truncated": false
+        }
+      ]
+    },
+    {
+      "name": "药物使用",
+      "query": "最后一支药有没有已经被使用？",
+      "bm25Hit": false,
+      "combinedHit": false,
+      "bm25Ms": 3,
+      "combinedMs": 109,
+      "graphState": "ready",
+      "graphCandidates": 5,
+      "changedTop5": true,
+      "graphOnlyAdditions": [
+        {
+          "id": "52fc34d95260d3db3056ec93a76083be427b76c6b7bc286a6b692059841f17c3",
+          "sourceEventId": "0845fef7-a55f-46af-9b8c-9a904a9383e3",
+          "text": "世界规则：最后一支药不会凭空增加，天亮前能否有人送到不由环境保证",
+          "evidenceMatch": false,
+          "retrievalSources": [
+            "bm25",
+            "graphiti"
+          ]
+        },
+        {
+          "id": "479090458c44ed17a2858da9ef6e23775d8fdc3bfec5997d8b3e1282d45f6b2b",
+          "sourceEventId": "f3c5a1e3-26c3-42c1-a64d-8c037b85c3af",
+          "text": "最后一支药已从桌面收进随身，数量仍为一",
+          "evidenceMatch": false,
+          "retrievalSources": [
+            "bm25",
+            "graphiti"
+          ]
+        }
+      ],
+      "bm25": [
+        {
+          "id": "13d2b648d7bc1fc202e12f36aedcbfc24ac5ed6db16bd0bfac8685dbb754b278",
+          "kind": "narrator-note",
+          "text": "绘梨衣手指轻颤、眼底颜色加深，药效减弱与血统失稳的早期表现已能被看见，最后一支药仍未使用",
+          "sourceEventId": "085eda25-794d-4ff7-b6e4-4b913e1814d9",
+          "source": "narrator-note:1",
+          "ordinal": 1,
+          "timeMinutes": 483,
+          "view": "global",
+          "score": 11.946546860641172,
+          "matchedTerms": [
+            "最后",
+            "一支",
+            "药",
+            "被",
+            "使用"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "b10b0750f6fd7fae666ed562728a5a9a37fea3f379ef90e5cd95a6748a7ea1a4",
+          "kind": "narrator-note",
+          "text": "最后一支药仍未使用、随身携带，数量不会增加",
+          "sourceEventId": "0845fef7-a55f-46af-9b8c-9a904a9383e3",
+          "source": "narrator-note:4",
+          "ordinal": 3,
+          "timeMinutes": 496,
+          "view": "global",
+          "score": 11.635920718075472,
+          "matchedTerms": [
+            "最后",
+            "一支",
+            "药",
+            "使用"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "164eb79dfd47474c39f570efe173e7c85502301619be9356e73f2c7c5d49871c",
+          "kind": "narrator-note",
+          "text": "最后一支药仍未使用、已随身携带，数量不会增加",
+          "sourceEventId": "f3c5a1e3-26c3-42c1-a64d-8c037b85c3af",
+          "source": "narrator-note:4",
+          "ordinal": 2,
+          "timeMinutes": 493,
+          "view": "global",
+          "score": 11.419635196972848,
+          "matchedTerms": [
+            "最后",
+            "一支",
+            "药",
+            "使用"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "4c14fb698af99f84f307ad06e8456e0e7cd8a8e98cd7eb77e55c2b56656f6539",
+          "kind": "environment-memory",
+          "text": "最后一支药仍在手边，尚未使用，不会凭空增加",
+          "sourceEventId": "085eda25-794d-4ff7-b6e4-4b913e1814d9",
+          "source": "environment-note:3",
+          "ordinal": 1,
+          "timeMinutes": 483,
+          "view": "global",
+          "score": 11.419635196972848,
+          "matchedTerms": [
+            "最后",
+            "一支",
+            "药",
+            "使用"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "4c3401314f473f2ba30c2568f44575ddae99c3a16920dff174b8b8e28f70de00",
+          "kind": "world-rule",
+          "text": "绘梨衣的血统长期依赖蛇岐八家提供的药物稳定，最后一支药不会凭空增加",
+          "sourceEventId": "2a55991e-7645-4e07-88f8-6b4c432c6a41",
+          "source": "world-rule:3",
+          "ordinal": 0,
+          "timeMinutes": 480,
+          "view": "global",
+          "score": 10.64329426485395,
+          "matchedTerms": [
+            "最后",
+            "一支",
+            "药",
+            "药物"
+          ],
+          "truncated": false
+        }
+      ],
+      "combined": [
+        {
+          "id": "164eb79dfd47474c39f570efe173e7c85502301619be9356e73f2c7c5d49871c",
+          "kind": "narrator-note",
+          "text": "最后一支药仍未使用、已随身携带，数量不会增加",
+          "sourceEventId": "f3c5a1e3-26c3-42c1-a64d-8c037b85c3af",
+          "source": "narrator-note:4",
+          "ordinal": 2,
+          "timeMinutes": 493,
+          "view": "global",
+          "score": 11.419635196972848,
+          "matchedTerms": [
+            "最后",
+            "一支",
+            "药",
+            "使用"
+          ],
+          "retrievalSources": [
+            "bm25",
+            "graphiti"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "b10b0750f6fd7fae666ed562728a5a9a37fea3f379ef90e5cd95a6748a7ea1a4",
+          "kind": "narrator-note",
+          "text": "最后一支药仍未使用、随身携带，数量不会增加",
+          "sourceEventId": "0845fef7-a55f-46af-9b8c-9a904a9383e3",
+          "source": "narrator-note:4",
+          "ordinal": 3,
+          "timeMinutes": 496,
+          "view": "global",
+          "score": 11.635920718075472,
+          "matchedTerms": [
+            "最后",
+            "一支",
+            "药",
+            "使用"
+          ],
+          "retrievalSources": [
+            "bm25",
+            "graphiti"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "4c14fb698af99f84f307ad06e8456e0e7cd8a8e98cd7eb77e55c2b56656f6539",
+          "kind": "environment-memory",
+          "text": "最后一支药仍在手边，尚未使用，不会凭空增加",
+          "sourceEventId": "085eda25-794d-4ff7-b6e4-4b913e1814d9",
+          "source": "environment-note:3",
+          "ordinal": 1,
+          "timeMinutes": 483,
+          "view": "global",
+          "score": 11.419635196972848,
+          "matchedTerms": [
+            "最后",
+            "一支",
+            "药",
+            "使用"
+          ],
+          "retrievalSources": [
+            "bm25",
+            "graphiti"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "52fc34d95260d3db3056ec93a76083be427b76c6b7bc286a6b692059841f17c3",
+          "kind": "environment-memory",
+          "text": "世界规则：最后一支药不会凭空增加，天亮前能否有人送到不由环境保证",
+          "sourceEventId": "0845fef7-a55f-46af-9b8c-9a904a9383e3",
+          "source": "environment-note:4",
+          "ordinal": 3,
+          "timeMinutes": 496,
+          "view": "global",
+          "score": 6.863542011981858,
+          "matchedTerms": [
+            "最后",
+            "一支",
+            "药"
+          ],
+          "retrievalSources": [
+            "bm25",
+            "graphiti"
+          ],
+          "truncated": false
+        },
+        {
+          "id": "479090458c44ed17a2858da9ef6e23775d8fdc3bfec5997d8b3e1282d45f6b2b",
+          "kind": "environment-memory",
+          "text": "最后一支药已从桌面收进随身，数量仍为一",
+          "sourceEventId": "f3c5a1e3-26c3-42c1-a64d-8c037b85c3af",
+          "source": "environment-note:4",
+          "ordinal": 2,
+          "timeMinutes": 493,
+          "view": "global",
+          "score": 7.364540638132725,
+          "matchedTerms": [
+            "最后",
+            "一支",
+            "药"
+          ],
+          "retrievalSources": [
+            "bm25",
+            "graphiti"
+          ],
+          "truncated": false
+        }
+      ]
+    }
+  ],
+  "checks": {
+    "actualStoredAgentContext": true,
+    "characterIsolation": true,
+    "historicalCutoff": true,
+    "failureFallsBackToBM25": true
+  },
+  "actualContext": {
+    "eventId": "0845fef7-a55f-46af-9b8c-9a904a9383e3",
+    "savedGraphCardCounts": {
+      "plot": 5,
+      "environment": 4,
+      "lu-mingfei": 5,
+      "erii": 5
+    },
+    "elapsedMs": 199
+  },
+  "summary": {
+    "questions": 12,
+    "bm25Hits": 2,
+    "combinedHits": 3,
+    "improved": [
+      "联络结果",
+      "暴露原因"
+    ],
+    "regressed": [
+      "物品交接"
+    ],
+    "changedTop5": 12
+  }
+}

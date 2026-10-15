@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url';
 import { DEFAULT_MEMORY_CONFIG, readMemoryConfig, createStoryMemory } from '../src/memory/story-memory.js';
 import { loadStoryPackage, resolvePlayableRole } from '../src/story-package.js';
 import { StoryStore } from '../src/story-store.js';
+import { readGraphitiConfig } from '../src/memory/graphiti-memory.js';
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const dataDir = process.env.AI_NOVEL_DATA_DIR ?? join(root, '.ai-novel');
 const configPath = join(dataDir, 'memory', 'config.json');
@@ -16,7 +17,8 @@ if (action === 'setup') {
   console.log(JSON.stringify({ configured: true, configPath, retriever: 'bm25', networkRequired: false }, null, 2));
 } else if (action === 'status') {
   const config = await readMemoryConfig(dataDir);
-  console.log(JSON.stringify({ enabled: config.enabled, retriever: 'bm25', networkRequired: false, indexDirectory: join(dataDir, 'memory', 'bm25'), configPath }, null, 2));
+  const graphiti = await readGraphitiConfig(dataDir);
+  console.log(JSON.stringify({ enabled: config.enabled, retriever: 'bm25', networkRequired: config.enabled && graphiti.enabled, graphiti: { enabled: config.enabled && graphiti.enabled, url: graphiti.url }, indexDirectory: join(dataDir, 'memory', 'bm25'), configPath }, null, 2));
 } else if (action === 'probe') {
   const { BM25Index } = await import('../src/memory/bm25.js');
   console.log(JSON.stringify({ retriever: 'bm25', ok: new BM25Index([{ id: 'probe', text: '本地记忆检索', ordinal: 0 }]).search('记忆', 1).length === 1, remoteRequests: 0 }));

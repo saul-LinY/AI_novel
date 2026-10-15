@@ -1,0 +1,146 @@
+{
+  "description": "Standalone global Graphiti path, 20 distinct queries without external BM25 candidates; existing loaded model/cache retained",
+  "head": "c293dcad-ba68-42b7-b944-b734a1f078af",
+  "rows": [
+    {
+      "query": "请从已经发生的故事里查找关于救命药的剩余数量的原始记忆。",
+      "ms": 96.1,
+      "state": "ready",
+      "hits": 5,
+      "ranking": "embedding"
+    },
+    {
+      "query": "请从已经发生的故事里查找关于凯撒安排的接应地点的原始记忆。",
+      "ms": 58.76,
+      "state": "ready",
+      "hits": 5,
+      "ranking": "embedding"
+    },
+    {
+      "query": "请从已经发生的故事里查找关于供药人的外貌与动作的原始记忆。",
+      "ms": 45.81,
+      "state": "ready",
+      "hits": 5,
+      "ranking": "embedding"
+    },
+    {
+      "query": "请从已经发生的故事里查找关于地下车库的取药路线的原始记忆。",
+      "ms": 40.51,
+      "state": "ready",
+      "hits": 5,
+      "ranking": "embedding"
+    },
+    {
+      "query": "请从已经发生的故事里查找关于可疑车辆的去向的原始记忆。",
+      "ms": 42.57,
+      "state": "ready",
+      "hits": 5,
+      "ranking": "embedding"
+    },
+    {
+      "query": "请从已经发生的故事里查找关于绘梨衣没有填上的愿望的原始记忆。",
+      "ms": 49.67,
+      "state": "ready",
+      "hits": 5,
+      "ranking": "embedding"
+    },
+    {
+      "query": "请从已经发生的故事里查找关于血统失稳的早期表现的原始记忆。",
+      "ms": 43.39,
+      "state": "ready",
+      "hits": 5,
+      "ranking": "embedding"
+    },
+    {
+      "query": "请从已经发生的故事里查找关于手机信号的暴露风险的原始记忆。",
+      "ms": 38.99,
+      "state": "ready",
+      "hits": 5,
+      "ranking": "embedding"
+    },
+    {
+      "query": "请从已经发生的故事里查找关于批次号核对的结果的原始记忆。",
+      "ms": 49.37,
+      "state": "ready",
+      "hits": 5,
+      "ranking": "embedding"
+    },
+    {
+      "query": "请从已经发生的故事里查找关于纸笔交流的内容的原始记忆。",
+      "ms": 42.95,
+      "state": "ready",
+      "hits": 5,
+      "ranking": "embedding"
+    },
+    {
+      "query": "请从已经发生的故事里查找关于未兑现的外部调查的原始记忆。",
+      "ms": 44.26,
+      "state": "ready",
+      "hits": 5,
+      "ranking": "embedding"
+    },
+    {
+      "query": "请从已经发生的故事里查找关于源稚生搜索妹妹的原因的原始记忆。",
+      "ms": 48.61,
+      "state": "ready",
+      "hits": 5,
+      "ranking": "embedding"
+    },
+    {
+      "query": "请从已经发生的故事里查找关于学院的血清库存的原始记忆。",
+      "ms": 42.37,
+      "state": "ready",
+      "hits": 5,
+      "ranking": "embedding"
+    },
+    {
+      "query": "请从已经发生的故事里查找关于药品配方是否已知的原始记忆。",
+      "ms": 42.41,
+      "state": "ready",
+      "hits": 5,
+      "ranking": "embedding"
+    },
+    {
+      "query": "请从已经发生的故事里查找关于旧公寓的接应时限的原始记忆。",
+      "ms": 43.6,
+      "state": "ready",
+      "hits": 5,
+      "ranking": "embedding"
+    },
+    {
+      "query": "请从已经发生的故事里查找关于包装边缘的触摸痕迹的原始记忆。",
+      "ms": 43.44,
+      "state": "ready",
+      "hits": 5,
+      "ranking": "embedding"
+    },
+    {
+      "query": "请从已经发生的故事里查找关于走廊里的声音的原始记忆。",
+      "ms": 42.36,
+      "state": "ready",
+      "hits": 5,
+      "ranking": "embedding"
+    },
+    {
+      "query": "请从已经发生的故事里查找关于批次号的保存位置的原始记忆。",
+      "ms": 42.29,
+      "state": "ready",
+      "hits": 5,
+      "ranking": "embedding"
+    },
+    {
+      "query": "请从已经发生的故事里查找关于药物线索与追踪者的关系的原始记忆。",
+      "ms": 43.11,
+      "state": "ready",
+      "hits": 5,
+      "ranking": "embedding"
+    },
+    {
+      "query": "请从已经发生的故事里查找关于重新开机的次数的原始记忆。",
+      "ms": 41.51,
+      "state": "ready",
+      "hits": 5,
+      "ranking": "embedding"
+    }
+  ]
+}

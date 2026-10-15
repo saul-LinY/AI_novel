@@ -1,0 +1,167 @@
+{
+  "sourceHeadEventId": "0845fef7-a55f-46af-9b8c-9a904a9383e3",
+  "scope": "novel-c598e524020dc51766815ec28b1d0fb2",
+  "metric": "Evidence occurs in an authorized top-5 global card and survives the writer context budget",
+  "cases": [
+    {
+      "name": "物品交接",
+      "query": "她写完自己的决定之后，记录愿望的东西又交到了谁手里？",
+      "anchors": [
+        "转手递给你",
+        "转手递给他",
+        "没让他代笔"
+      ],
+      "expectedCardIds": [
+        "42b76fcde93901373842e48e637a914055d1404a53bf7b45af8e70a37b61aee9",
+        "9dc681b72164b39a634ac68e8db22cdd63dd5adb50b98958cdd3e66546e05403"
+      ]
+    },
+    {
+      "name": "药物位置",
+      "query": "离开房间时，最后的救命针剂被收在什么地方？",
+      "anchors": [
+        "外侧口袋"
+      ],
+      "expectedCardIds": [
+        "42b76fcde93901373842e48e637a914055d1404a53bf7b45af8e70a37b61aee9",
+        "59950e091e122561874d4745d446a4b699e72ab58d0d57fe9c713fa956f5211b"
+      ]
+    },
+    {
+      "name": "未揭露的目的地",
+      "query": "她选择的目的地现在已经告诉同行者了吗？",
+      "anchors": [
+        "那一行夹在两层纸",
+        "内容还没念出来",
+        "内容尚未被念出"
+      ],
+      "expectedCardIds": [
+        "fc9d530c4afe7382c85851cf2896fed183924f326de34bb2711cd2297a0e264d",
+        "aa07588306bb8fb4525ed3825149b7994cd7794a739f50c4f3222082c71e5638",
+        "a6d8ac90debfa7b5b7c0c63a0c26774aa357ef8df3e19090f977469e24e8f6d0",
+        "3176822dd8a7af8193cc1e712e07ac9d7d35b769cdc0f521541913b8ade8e3fb"
+      ]
+    },
+    {
+      "name": "离开路线",
+      "query": "我们是从哪里避开电梯离开的？",
+      "anchors": [
+        "非常口",
+        "绕开电梯厅"
+      ],
+      "expectedCardIds": [
+        "42b76fcde93901373842e48e637a914055d1404a53bf7b45af8e70a37b61aee9",
+        "4cc49186b5603f9bbcc36ea832630a6199706c71a857e2748cf854c6331422c2"
+      ]
+    },
+    {
+      "name": "监控关联",
+      "query": "沿途两处监视装置有什么相同的异常？",
+      "anchors": [
+        "偏得一模一样",
+        "镜头同样偏着一点角度",
+        "偏角却和压在房门上那台一样"
+      ],
+      "expectedCardIds": [
+        "42b76fcde93901373842e48e637a914055d1404a53bf7b45af8e70a37b61aee9",
+        "e2a704cd4209c52d2065252ae9b6092fb4af4fe63716345eb20a4f8f00a1cb4c",
+        "a6d8ac90debfa7b5b7c0c63a0c26774aa357ef8df3e19090f977469e24e8f6d0",
+        "94dba2ff73fe60396a5fa3031b1105e6acba3346106a494620885b17d0a89076"
+      ]
+    },
+    {
+      "name": "设备细节",
+      "query": "楼梯下方监视装置看上去在正常工作吗？",
+      "anchors": [
+        "指示灯是灭的",
+        "镜头上落了薄灰"
+      ],
+      "expectedCardIds": [
+        "a6d8ac90debfa7b5b7c0c63a0c26774aa357ef8df3e19090f977469e24e8f6d0",
+        "16d4afe4a80c1823b6ce520a61609cdb33208a9ea18311c85928873c93715faf",
+        "94dba2ff73fe60396a5fa3031b1105e6acba3346106a494620885b17d0a89076",
+        "82e1df2b7de0ae4f2ce8ec8199c70ccf16e569673446b33a180d307fecbb535b"
+      ]
+    },
+    {
+      "name": "人物身体",
+      "query": "有什么微小表现说明她的身体正在变差？",
+      "anchors": [
+        "微微发抖",
+        "眼底那点颜色比一小时前深",
+        "握笔的手指还在抖"
+      ],
+      "expectedCardIds": [
+        "363fd695487ebe4fde371d84d228d54f3ae52c3928a049eca95631f27bd6f1f3",
+        "d2e0ef346c30e99d2597f98db6c8cc3aa7ed93dc814a27704959508fd4749fc3",
+        "42b76fcde93901373842e48e637a914055d1404a53bf7b45af8e70a37b61aee9",
+        "9dc681b72164b39a634ac68e8db22cdd63dd5adb50b98958cdd3e66546e05403"
+      ]
+    },
+    {
+      "name": "联络结果",
+      "query": "刚才求援已经成功送达了吗？",
+      "anchors": [
+        "没有变成已发出",
+        "发送状态停在未确认"
+      ],
+      "expectedCardIds": [
+        "a6d8ac90debfa7b5b7c0c63a0c26774aa357ef8df3e19090f977469e24e8f6d0",
+        "e673a60f6c2cf005ba51a50ed0e8d5d12400eae967bf2914b985f4f4e1fdfb33",
+        "96ae4ba5f44a436c26f8e547a1482c6c6f0f1f1d2b5629df1afa866cc4037bf9",
+        "69a33bbe86e23335f45843450476160db124b01bdefcafb493b5b5f4e67fbb89"
+      ]
+    },
+    {
+      "name": "交换条件",
+      "query": "他为了换到救命资源，向接应者提出了什么交换条件？",
+      "anchors": [
+        "天亮前一次能接上的药",
+        "天亮前一次能撑过今天的药物接续"
+      ],
+      "expectedCardIds": [
+        "a6d8ac90debfa7b5b7c0c63a0c26774aa357ef8df3e19090f977469e24e8f6d0",
+        "cd6c32845c04a2417ad9790d6660318b437ce164b80546c254aee243161ad31d",
+        "facb22ba9d35ea3e76e763a2bb9d7e0db426dd830ddeb06806cdc4f74895f9a3"
+      ]
+    },
+    {
+      "name": "追踪距离",
+      "query": "追来的动静最近停在距离我们多远的位置？",
+      "anchors": [
+        "停在离他们一层高",
+        "停在离你们一层高"
+      ],
+      "expectedCardIds": [
+        "a6d8ac90debfa7b5b7c0c63a0c26774aa357ef8df3e19090f977469e24e8f6d0",
+        "79bdaccd62da7beb79ada9efa6c5487c6e8b32b418b0202b24886dc33d91e707",
+        "c945f848c093cbdf89ca215bd740400dbf6bcb4675f8923fc412df031fb3ea08"
+      ]
+    },
+    {
+      "name": "暴露原因",
+      "query": "为什么只是查看联络装置也可能泄露藏身地点？",
+      "anchors": [
+        "读取记录同样是风险",
+        "开机收发都可能上行暴露",
+        "先跳出来的不是界面，而是一次上行登记"
+      ],
+      "expectedCardIds": [
+        "3a40ceee5b98b38e11c361bfb56959e81cc9bb8aa664a1d7f5346c984d09c727",
+        "882ef6ee72f5b5dead606d0371bb4a9eb4a48a3408daccb714797868b574a9c3"
+      ]
+    },
+    {
+      "name": "药物使用",
+      "query": "最后一支药有没有已经被使用？",
+      "anchors": [
+        "最后一支药好好立着，谁也没碰",
+        "最后一支药未使用"
+      ],
+      "expectedCardIds": [
+        "363fd695487ebe4fde371d84d228d54f3ae52c3928a049eca95631f27bd6f1f3",
+        "44482598a7bde66a7598b2f2f0ba075b01e2dd7a5d8676c0373bcfee67b1848c"
+      ]
+    }
+  ]
+}

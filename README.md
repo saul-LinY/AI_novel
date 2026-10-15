@@ -69,7 +69,7 @@ npm run assets:optimize  # 为所有 PNG 生成 WebP，服务端按浏览器支�
 
 ## 三层长期记忆（本地 BM25）
 
-长期记忆统一使用本地 BM25：全局事件原文与事实、按角色隔离的认知记录，以及按当前行动/地点/目标选择的回忆。正文和状态仍由原有回合提交流程决定。检索包含中文分词、显式人物别名和词频/文档长度排序，无需外部服务、API 密钥或下载模型。
+长期记忆以本地 BM25 为基础：全局事件原文与事实、按角色隔离的认知记录，以及按当前行动/地点/目标选择的回忆。正文和状态仍由原有回合提交流程决定。BM25 本身无需外部服务、API 密钥或下载模型；可选的 Graphiti 扩展见下文。
 
 - 全局记录保留完整正文分段；角色视图来自明确的角色记忆和已知事实，同场出现不自动分享秘密。
 - 查询先限定故事、存档历史和角色，再评分并核对来源，排除另一分支、未来回合、旧版本内容或伪造结果。
@@ -86,9 +86,27 @@ npm run memory:index   # 为当前存档补齐索引
 npm run memory:eval    # 禁止网络访问，运行本地 BM25 量化评估
 ```
 
-运行状态：`GET /api/memory/status`。工作流控制台的共享上下文包含检索来源、角色分组及耗时。修改配置后重启服务；临时停用可设 `AI_NOVEL_MEMORY=off`。小说正文生成仍使用原有 Pi 模型配置，只有记忆链路完全在本地运行。
+运行状态：`GET /api/memory/status`。工作流控制台的共享上下文包含检索来源、角色分组及耗时。修改配置后重启服务；临时停用可设 `AI_NOVEL_MEMORY=off`。小说正文生成仍使用原有 Pi 模型配置。未启用 Graphiti 时，记忆链路完全在本地运行。
 
 详见[记忆层设计](docs/memory-design.md)和[BM25 量化评估](docs/evaluations/memory-bm25-evaluation.md)。
+
+## Graphiti + Neo4j 细节与历程记忆
+
+可选启用 Graphiti 0.30.2：回合提交后按全局、环境和各角色分别构图，跟踪物品流转、人物经历与时序关系；每次具体事件和原文来源独立保存，反复交出与归还不会被合成一条经历。下一回合把图谱关联候选与 BM25 合并，仍以本地原文和当前状态核验。图服务失败、尚未追上或查询历史回合时，保留本地记忆。
+
+需要已运行的 [Neo4j](docs/neo4j-local.md)、uv 与 Python 3.11。首次配置读取现有 Pi 模型网关；中文向量模型在本地 CPU 运行。
+
+```bash
+npm run graphiti:setup       # 安装锁定依赖并启用
+npm run graphiti:serve       # 运行本地服务 127.0.0.1:4320
+npm run graphiti:index       # 提交当前存档的后台补建任务
+npm run graphiti:status      # 健康状态与各视角进度
+npm run graphiti:history -- erii-notebook
+npm run test:graphiti        # 不调用模型的服务与恢复测试
+npm run graphiti:probe       # 显式真实模型验证，使用独立测试图
+```
+
+控制台“回合记忆”显示图谱同步、持有/位置有效期核对进度及关联召回标记。配置位于 `.ai-novel/graphiti/`，可用 `AI_NOVEL_GRAPHITI=off` 单独关闭。抽取与状态识别调用模型网关，查询使用本地向量和 INT8 中文重排；首次补建多个角色视角需要一定时间。归还会建立新的持有时间段，计划不提前改变实际位置。部署、恢复、Neo4j 查询及边界见 [Graphiti 使用说明](docs/graphiti-memory.md)。
 
 ## 工作流控制台
 

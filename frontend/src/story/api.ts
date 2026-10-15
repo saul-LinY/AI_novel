@@ -25,11 +25,11 @@ export type TurnEvent = {
 }
 export type StreamSession = {
   turnId: string | null; seq: number; prepared: boolean; action: Action; text: string; scene: Scene | null
-  phase: number; phaseKey: string; label: string; terminal: boolean; complete: StoryResponse | null; message: string; recoverable: boolean
+  phase: number; phaseKey: string; label: string; terminal: boolean; complete: StoryResponse | null; message: string; recoverable: boolean; rejected: boolean
   agents: Partial<Record<AgentRole, AgentStatus>>; beats: Beat[]; outcome: Outcome | null; startedAt: number
 }
 export function newSession(action: Action, scene: Scene | null): StreamSession {
-  return { turnId: null, seq: 0, prepared: false, action, text: '', scene, phase: 0, phaseKey: 'analyzing', label: PHASES.analyzing.label, terminal: false, complete: null, message: '', recoverable: false, agents: {}, beats: [], outcome: null, startedAt: Date.now() }
+  return { turnId: null, seq: 0, prepared: false, action, text: '', scene, phase: 0, phaseKey: 'analyzing', label: PHASES.analyzing.label, terminal: false, complete: null, message: '', recoverable: false, rejected: false, agents: {}, beats: [], outcome: null, startedAt: Date.now() }
 }
 // Event sequence numbers prevent replays from duplicating already-visible prose.
 export function applyTurnEvent(s: StreamSession, event: TurnEvent): boolean {
@@ -51,7 +51,7 @@ export function applyTurnEvent(s: StreamSession, event: TurnEvent): boolean {
   if (event.type === 'scene' && event.scene) s.scene = event.scene
   if (event.type === 'prose_delta') s.text += event.text ?? ''
   if (event.type === 'complete' && event.story) { s.complete = event.story; s.terminal = true }
-  if (['cancelled', 'rejected', 'failed'].includes(event.type)) { s.terminal = true; s.message = event.message ?? '本回合未保存' }
+  if (['cancelled', 'rejected', 'failed'].includes(event.type)) { s.terminal = true; s.rejected = event.type === 'rejected'; s.recoverable = false; s.message = event.message ?? '本回合未保存' }
   if (event.type === 'error') { s.message = event.message ?? '连接暂时中断，已显示的正文会保留'; s.recoverable = event.recoverable === true }
   return true
 }

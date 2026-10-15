@@ -60,6 +60,7 @@ export const TURN_RECORD_SCHEMA = Type.Object({
     text: text(160, 4),
     quote: text(80, 2),
     characterIds: Type.Array(referenceId, { maxItems: 6 }),
+    entityIds: Type.Optional(Type.Array(referenceId, { maxItems: 10 })),
     knownByIds: Type.Array(referenceId, { maxItems: 8 }),
     importance: Type.Integer({ minimum: 1, maximum: 3 }),
   }), { minItems: 1, maxItems: 10 }),
@@ -425,16 +426,18 @@ export function recordTargets(stateAfter, proposal) {
 
 // Every entry must be grounded in a verbatim quote: a memory that cannot point
 // at the published prose is not recorded.
-export function validateTurnRecord(record, { prose, stateAfter, proposal }) {
+export function validateTurnRecord(record, { prose, stateAfter, proposal, storyPackage }) {
   const [valid, schemaErrors] = recordValidator.Errors(record);
   if (!valid) throw new Error(`连续性记录结构不合法：${schemaErrors.slice(0, 4).map((error) => `${error.path || "/"}: ${error.message}`).join("；")}`);
   const narrative = stateAfter.narrative;
   const errors = [];
   const quoted = (quote, label) => { if (!quoteInProse(quote, prose)) errors.push(`${label} 的 quote 不在正文中：「${quote}」——引文必须从正文逐字摘录`); };
   const characters = (ids, label) => { for (const id of ids ?? []) if (!stateAfter.characters[id]) errors.push(`${label} 引用了不存在的人物：${id}`); };
+  const entityIds = new Set([...Object.keys(stateAfter.characters), ...(storyPackage?.items ?? []).map((x) => x.id), ...(storyPackage?.locations ?? []).map((x) => x.id)]);
   record.entries.forEach((entry, index) => {
     quoted(entry.quote, `entries[${index}]`);
     characters([...entry.characterIds, ...entry.knownByIds], `entries[${index}]`);
+    for (const id of entry.entityIds ?? []) if (!entityIds.has(id)) errors.push(`entries[${index}] 引用了不存在的实体：${id}`);
   });
   (record.openLoops ?? []).forEach((loop, index) => { quoted(loop.quote, `openLoops[${index}]`); characters(loop.ownerIds, `openLoops[${index}]`); });
   for (const item of record.closeLoops ?? []) {
@@ -492,6 +495,7 @@ export function applyTurnRecord(state, record, { eventId, playerCharacterId }) {
     narrative.ledger.push({
       id: `L${turn}-${index + 1}`, turn, eventId, kind: entry.kind, text: entry.text, quote: entry.quote ?? null,
       characterIds: characters(entry.characterIds), knownByIds: characters([playerCharacterId, ...entry.knownByIds]), importance: entry.importance ?? 1,
+      ...(entry.entityIds ? { entityIds: [...new Set(entry.entityIds.map(realId))] } : {}),
       status: "active", source,
     });
   });

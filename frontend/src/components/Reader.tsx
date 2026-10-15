@@ -232,11 +232,11 @@ export default function Reader({ g }: { g: Game }) {
             {gen.status === 'error' ? (
               <div className="glass soft-in rounded-[28px] p-6 text-center" role="alert">
                 <div className="mx-auto mb-4 size-8 rounded-full bg-[radial-gradient(circle,rgb(184_67_45/.9),transparent_70%)] [filter:url(#ink-soft)]" />
-                <div className="mb-2 font-serif text-lg">墨 断 了</div>
+                <div className="mb-2 font-serif text-lg">{gen.rejected ? '行 动 未 成 立' : '墨 断 了'}</div>
                 <p className="mb-5 text-sm leading-relaxed text-ink2">{gen.message}</p>
                 <div className="flex flex-wrap justify-center gap-3">
-                  <Btn onClick={() => void g.retry()}><Icon n="refresh" /> {gen.recoverable ? '接续当前回合' : '重新落笔'}</Btn>
-                  {!gen.recoverable && <Btn variant="ghost" onClick={() => { setText(gen.action.text); setMode(gen.action.mode); g.dismissError(); setTimeout(() => input.current?.focus()) }}>修改行动</Btn>}
+                  {!gen.rejected && <Btn onClick={() => void g.retry()}><Icon n="refresh" /> {gen.recoverable ? '接续当前回合' : '重新落笔'}</Btn>}
+                  {!gen.recoverable && <Btn variant={gen.rejected ? 'solid' : 'ghost'} onClick={() => { setText(gen.action.text); setMode(gen.action.mode); g.dismissError(); setTimeout(() => input.current?.focus()) }}>修改行动</Btn>}
                 </div>
               </div>
             ) : busy && live ? (

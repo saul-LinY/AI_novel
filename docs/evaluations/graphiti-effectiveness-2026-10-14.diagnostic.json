@@ -1,0 +1,141 @@
+{
+  "description": "Diagnostic only: remove the automatically appended location and current-stage objective; same questions, gold anchors, topK and 1500-character global budget. Production retrieval is unchanged.",
+  "bm25Hits": 4,
+  "combinedHits": 4,
+  "cases": [
+    {
+      "name": "物品交接",
+      "bm25Hit": false,
+      "combinedHit": false,
+      "graph": {
+        "state": "indexing",
+        "matched": 0,
+        "rejected": 0,
+        "indexedThroughEventId": "0845fef7-a55f-46af-9b8c-9a904a9383e3"
+      }
+    },
+    {
+      "name": "药物位置",
+      "bm25Hit": false,
+      "combinedHit": false,
+      "graph": {
+        "state": "indexing",
+        "matched": 0,
+        "rejected": 0,
+        "indexedThroughEventId": "0845fef7-a55f-46af-9b8c-9a904a9383e3"
+      }
+    },
+    {
+      "name": "未揭露的目的地",
+      "bm25Hit": false,
+      "combinedHit": false,
+      "graph": {
+        "state": "indexing",
+        "matched": 0,
+        "rejected": 0,
+        "indexedThroughEventId": "0845fef7-a55f-46af-9b8c-9a904a9383e3"
+      }
+    },
+    {
+      "name": "离开路线",
+      "bm25Hit": false,
+      "combinedHit": false,
+      "graph": {
+        "state": "indexing",
+        "matched": 0,
+        "rejected": 0,
+        "indexedThroughEventId": "0845fef7-a55f-46af-9b8c-9a904a9383e3"
+      }
+    },
+    {
+      "name": "监控关联",
+      "bm25Hit": false,
+      "combinedHit": false,
+      "graph": {
+        "state": "indexing",
+        "matched": 0,
+        "rejected": 0,
+        "indexedThroughEventId": "0845fef7-a55f-46af-9b8c-9a904a9383e3"
+      }
+    },
+    {
+      "name": "设备细节",
+      "bm25Hit": true,
+      "combinedHit": true,
+      "graph": {
+        "state": "indexing",
+        "matched": 0,
+        "rejected": 0,
+        "indexedThroughEventId": "0845fef7-a55f-46af-9b8c-9a904a9383e3"
+      }
+    },
+    {
+      "name": "人物身体",
+      "bm25Hit": false,
+      "combinedHit": false,
+      "graph": {
+        "state": "indexing",
+        "matched": 0,
+        "rejected": 0,
+        "indexedThroughEventId": "0845fef7-a55f-46af-9b8c-9a904a9383e3"
+      }
+    },
+    {
+      "name": "联络结果",
+      "bm25Hit": false,
+      "combinedHit": false,
+      "graph": {
+        "state": "indexing",
+        "matched": 0,
+        "rejected": 0,
+        "indexedThroughEventId": "0845fef7-a55f-46af-9b8c-9a904a9383e3"
+      }
+    },
+    {
+      "name": "交换条件",
+      "bm25Hit": true,
+      "combinedHit": true,
+      "graph": {
+        "state": "indexing",
+        "matched": 0,
+        "rejected": 0,
+        "indexedThroughEventId": "0845fef7-a55f-46af-9b8c-9a904a9383e3"
+      }
+    },
+    {
+      "name": "追踪距离",
+      "bm25Hit": true,
+      "combinedHit": true,
+      "graph": {
+        "state": "indexing",
+        "matched": 0,
+        "rejected": 0,
+        "indexedThroughEventId": "0845fef7-a55f-46af-9b8c-9a904a9383e3"
+      }
+    },
+    {
+      "name": "暴露原因",
+      "bm25Hit": true,
+      "combinedHit": true,
+      "graph": {
+        "state": "indexing",
+        "matched": 0,
+        "rejected": 0,
+        "indexedThroughEventId": "0845fef7-a55f-46af-9b8c-9a904a9383e3"
+      }
+    },
+    {
+      "name": "药物使用",
+      "bm25Hit": false,
+      "combinedHit": false,
+      "graph": {
+        "state": "indexing",
+        "matched": 0,
+        "rejected": 0,
+        "indexedThroughEventId": "0845fef7-a55f-46af-9b8c-9a904a9383e3"
+      }
+    }
+  ],
+  "validComparison": false,
+  "reason": "This additional diagnostic read a newer story head while its graph was indexing. It is excluded from the fixed-snapshot comparison; its 4/12 counts cannot be interpreted as an effect of removing query context."
+}

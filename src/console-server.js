@@ -188,7 +188,7 @@ export function createConsoleReader({ dataDir = join(projectRoot, ".ai-novel"), 
     }
     const mainMessages = traces.main.messages;
     const narrationStart = mainMessages.findIndex((m) => m.role === "user" && m.text.includes("<narration_contract>"));
-    const steps = [{ id: "shared", title: "信息共享", description: "这一轮分别给三个 agent 的资料", kind: "程序处理", output: shared?.domainContexts ?? null,
+    const steps = [{ id: "shared", title: "上下文与知识检查", description: "自由行动先检查角色是否使用了尚未知晓的秘密；通过后，结合当前状态、最近四段故事、分支摘要、检索记忆和叙事账本，按领域与人物视角裁剪资料。系统推荐行动跳过秘密词预检，仍需接受后续裁决。", kind: "程序处理", output: shared?.domainContexts ?? null,
       input: shared ? { action: run.action, worldState: shared.worldState ?? parent?.stateAfter ?? null, relevant: shared.relevant ?? null, unknowns: shared.unknowns ?? [], ...(shared.narrative ? { narrative: shared.narrative } : {}) } : null, inputNote: "保存的世界状态、筛选记录与叙事摘要（节奏指令、伏笔、未兑现事项、按人物裁剪的事实账本）", status: status(shared, phase === "analyzing"), attempts: [] }];
     for (const role of roles.slice(0, 3)) {
       const output = result.reports?.[role] ?? traces[role].attempts.findLast((a) => a.status === "accepted")?.output ?? null;
@@ -206,11 +206,11 @@ export function createConsoleReader({ dataDir = join(projectRoot, ".ai-novel"), 
       before: parent?.stateAfter?.narrative ?? null,
       after: event?.stateAfter?.narrative ?? null,
     };
-    steps.push({ id: "prose", title: "正文写作", description: "主创实际写出的小说正文", kind: "主创 agent", output: prose,
+    steps.push({ id: "prose", title: "写作与质量检查", description: "主创按简报逐句展示正文；程序检查重复与长度，必要时补写或记录质量警告。中断时保留已展示前缀续写。当前默认选项随提案生成；配置为 parallel 时由独立任务生成。", kind: "主创 agent", output: prose,
       input: narrationStart < 0 ? [] : mainMessages.slice(narrationStart).filter((m) => m.role === "user"), inputNote: "本轮实际写作与续写输入消息 · 来自会话存档", attempts: [], model: traces.main.model,
       status: result.prose ? "complete" : terminal.has(run.status) ? (prose ? "partial" : "stopped") : status(null, !!prose || ["narrating", "recovering"].includes(phase)) });
     steps.push({ id: "recorder", title: "连续性记录", description: "从已发布正文中逐字摘录事实、承诺与伏笔露面情况，写入事实账本", kind: "记录员 agent", output: narrative.record,
-      input: prose ? [{ text: prose }] : [], inputNote: "记录员只读取玩家实际看到的正文；它的会话不落盘，这里展示通过逐字引文校验后提交的记录。", attempts: [],
+      input: prose ? [{ text: prose }] : [], inputNote: "这里展示已发布正文；记录员还会收到提案、实体目录、待核对伏笔及已有账本。会话不落盘，新增事实必须有正文逐字引文支持。", attempts: [],
       status: narrative.record ? "complete" : terminal.has(run.status) ? (run.status === "complete" ? "missing" : "stopped") : status(null, phase === "recording") });
     steps.push({ id: "commit", title: "原子提交", description: "世界状态与叙事账本在同一次提交中写入存档", kind: "程序处理", output: event ? { changes: parent ? stateChanges(worldOnly(parent.stateAfter), worldOnly(event.stateAfter)) : null, stateAfter: worldOnly(event.stateAfter) } : null,
       input: proposal, inputNote: "主创提交的最终提案", attempts: [], status: status(event, phase === "committing") });
@@ -237,7 +237,10 @@ export function createConsoleReader({ dataDir = join(projectRoot, ".ai-novel"), 
     const catalog = traces.environment.messages.find((m) => m.role === "user")?.text.match(/<location_catalog>\n([\s\S]*?)\n<\/location_catalog>/);
     if (catalog) { try { collect(JSON.parse(catalog[1])); } catch { /* IDs remain readable without a catalog. */ } }
     const { event: _event, job: _job, ...meta } = run;
-    return { ...meta, story: data.story, steps, names, telemetry, narrative, error: stream.findLast((e) => ["failed", "error", "rejected", "cancelled"].includes(e.type))?.message ?? null,
+    const memoryRecall = job?.memoryRecall ?? (shared?.memoryTrace ? { status: "complete", result: { trace: shared.memoryTrace,
+      global: shared.domainContexts?.plot?.longTermMemory ?? [], environment: shared.domainContexts?.environment?.longTermMemory ?? [],
+      characters: shared.domainContexts?.character?.longTermMemoryByCharacter ?? {} } } : null);
+    return { ...meta, story: data.story, steps, names, telemetry, narrative, memoryRecall, memoryUpdate: job?.memoryUpdate ?? null, error: stream.findLast((e) => ["failed", "error", "rejected", "cancelled"].includes(e.type))?.message ?? null,
       timeline: stream.filter((e) => ["start", "phase", "prepared", "complete", "failed", "error", "rejected", "cancelled"].includes(e.type)).map(({ type, phase, createdAt, message }) => ({ type, phase, createdAt, message })) };
   }
   async function performance(limit = 30) {
@@ -267,19 +270,19 @@ export function createConsoleReader({ dataDir = join(projectRoot, ".ai-novel"), 
     const first = values("firstProseMs");
     return { turns, summary: { count: turns.length, totalP50: pct(total, 0.5), totalP95: pct(total, 0.95), firstProseP50: pct(first, 0.5), firstProseP95: pct(first, 0.95) } };
   }
-  async function memory(id = null) {
+  async function memory(id = null, graphQuery = null) {
     const data = await records();
     const head = data.branchRecords?.find((branch) => branch.id === data.currentBranchId)?.headEventId;
     const run = id ? data.runs.find((item) => item.id === id) : data.runs.find((item) => item.branchId === data.currentBranchId && item.event?.id === head) ?? null;
     if (id && !run) return null;
-    return inspectMemory(data, run);
+    return inspectMemory(data, run, graphQuery);
   }
   return { list, detail, memory, performance };
 }
 
 export function createConsoleServer(options = {}) {
   const reader = createConsoleReader(options);
-  const files = { "/": ["index.html", "text/html"], "/app.js": ["app.js", "text/javascript"], "/memory-view.js": ["memory-view.js", "text/javascript"], "/performance-view.js": ["performance-view.js", "text/javascript"], "/narrative-view.js": ["narrative-view.js", "text/javascript"], "/styles.css": ["styles.css", "text/css"] };
+  const files = { "/graph-browser.js": ["graph-browser.js", "text/javascript"], "/": ["index.html", "text/html"], "/app.js": ["app.js", "text/javascript"], "/memory-view.js": ["memory-view.js", "text/javascript"], "/performance-view.js": ["performance-view.js", "text/javascript"], "/narrative-view.js": ["narrative-view.js", "text/javascript"], "/styles.css": ["styles.css", "text/css"] };
   return createServer(async (request, response) => {
     const send = (code, data) => { response.writeHead(code, { "content-type": "application/json; charset=utf-8", "cache-control": "no-store" }); response.end(JSON.stringify(data)); };
     try {
@@ -287,6 +290,12 @@ export function createConsoleServer(options = {}) {
       const url = new URL(request.url, "http://localhost");
       if (url.pathname === "/api/console/runs") return send(200, await reader.list());
       if (url.pathname === "/api/console/memory") return send(200, await reader.memory());
+      if (url.pathname === "/api/console/graph/history") {
+        const entity = url.searchParams.get("entity");
+        if (!entity || entity.length > 160) return send(400, { error: "需要实体 ID" });
+        const result = await reader.memory(url.searchParams.get("runId"), { entity, view: url.searchParams.get("view") ?? "global" });
+        return send(result ? 200 : 404, result ?? { error: "找不到这一轮记录" });
+      }
       if (url.pathname === "/api/console/performance") return send(200, await reader.performance());
       if (url.pathname.startsWith("/api/console/memory/runs/")) {
         const result = await reader.memory(decodeURIComponent(url.pathname.slice("/api/console/memory/runs/".length)));

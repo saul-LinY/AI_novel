@@ -1,0 +1,134 @@
+{
+  "checkedAt": "2026-10-14T06:56:51.148Z",
+  "elapsedMs": 4424,
+  "graph": {
+    "global": {
+      "state": "ready",
+      "ranking": "cross_encoder",
+      "matched": 5,
+      "rejected": 0,
+      "indexedThroughEventId": "f17571ab-9793-4bde-9dbd-beed05e9872c"
+    },
+    "environment": {
+      "state": "ready",
+      "ranking": "cross_encoder",
+      "matched": 5,
+      "rejected": 0,
+      "indexedThroughEventId": "f17571ab-9793-4bde-9dbd-beed05e9872c"
+    },
+    "character:lu-mingfei": {
+      "state": "ready",
+      "ranking": "cross_encoder",
+      "matched": 5,
+      "rejected": 0,
+      "indexedThroughEventId": "f17571ab-9793-4bde-9dbd-beed05e9872c"
+    },
+    "character:erii": {
+      "state": "ready",
+      "ranking": "cross_encoder",
+      "matched": 5,
+      "rejected": 0,
+      "indexedThroughEventId": "f17571ab-9793-4bde-9dbd-beed05e9872c"
+    }
+  },
+  "sourceHead": "f17571ab-9793-4bde-9dbd-beed05e9872c",
+  "global": [
+    {
+      "id": "479090458c44ed17a2858da9ef6e23775d8fdc3bfec5997d8b3e1282d45f6b2b",
+      "kind": "environment-memory",
+      "text": "最后一支药已从桌面收进随身，数量仍为一",
+      "sourceEventId": "f3c5a1e3-26c3-42c1-a64d-8c037b85c3af",
+      "source": "environment-note:4",
+      "ordinal": 2,
+      "timeMinutes": 493,
+      "view": "global",
+      "score": -0.9075348377227783,
+      "sourceOffset": 0,
+      "truncated": false,
+      "matchedTerms": [
+        "从",
+        "收进"
+      ],
+      "retrievalSources": [
+        "bm25",
+        "graphiti"
+      ]
+    },
+    {
+      "id": "42b76fcde93901373842e48e637a914055d1404a53bf7b45af8e70a37b61aee9",
+      "kind": "narrative",
+      "text": "你把门链从扣上摘下来，手却没有立刻去开门，先退回来两步，把桌上的本子收进怀里，最后一支药塞进外侧口袋，那点凉隔着布面一直贴到大腿。你低声说跟我走，别出声。她点头，站起来时扶了一下床沿。门缝底下那条光还是亮的，平平一条，看不出刚才是谁把它压暗了一瞬。\n\n开门前你把耳朵贴在门板上听了两秒，走廊里一点声音也没有，安静得反而发虚。你拉开门，牵着她绕开电梯厅，推开那扇写着\"非常口\"的小门。消防通道里混着铁锈和雨水的味道，台阶上的水痕一直淌到下一层拐角，声控灯一段段亮起来又暗下去。拐角墙上也挂着一个摄像头，镜头同样偏着一点角度",
+      "sourceEventId": "f3c5a1e3-26c3-42c1-a64d-8c037b85c3af",
+      "source": "prose",
+      "ordinal": 2,
+      "timeMinutes": 493,
+      "view": "global",
+      "score": -1.087289571762085,
+      "sourceOffset": 0,
+      "truncated": true,
+      "matchedTerms": [
+        "从",
+        "楼梯",
+        "平台",
+        "时",
+        "收进"
+      ],
+      "retrievalSources": [
+        "bm25",
+        "graphiti"
+      ]
+    },
+    {
+      "id": "59950e091e122561874d4745d446a4b699e72ab58d0d57fe9c713fa956f5211b",
+      "kind": "ledger",
+      "text": "路明非摘掉门链后没有立刻开门，先退回两步，把桌上的本子收进怀里，最后一支药塞进外侧口袋。（原文：「把桌上的本子收进怀里，最后一支药塞进外侧口袋」）",
+      "sourceEventId": "f3c5a1e3-26c3-42c1-a64d-8c037b85c3af",
+      "source": "ledger:L2-1",
+      "ordinal": 2,
+      "timeMinutes": 493,
+      "view": "global",
+      "score": -1.9824471473693848,
+      "sourceOffset": 0,
+      "truncated": false,
+      "matchedTerms": [
+        "收进"
+      ],
+      "retrievalSources": [
+        "bm25",
+        "graphiti"
+      ]
+    },
+    {
+      "id": "830ca2af0948c4d99eb16a3d804a115193cef1aad9d18a9455a0ac389b98165e",
+      "kind": "narrator-note",
+      "text": "路明非收起本子与最后一支药，带绘梨衣从消防通道下楼，地点仍在旅馆建筑内部，尚未踏上街面",
+      "sourceEventId": "f3c5a1e3-26c3-42c1-a64d-8c037b85c3af",
+      "source": "narrator-note:0",
+      "ordinal": 2,
+      "timeMinutes": 493,
+      "view": "global",
+      "score": -2.006438732147217,
+      "sourceOffset": 0,
+      "truncated": false,
+      "retrievalSources": [
+        "graphiti"
+      ]
+    },
+    {
+      "id": "eb09cdd318b68cf4c668b235e629cfd2a61ac7058786b586cf631882ec4f89cb",
+      "kind": "narrator-note",
+      "text": "为等回执原地停留，头顶来源未明的脚步停在他们上方一层，仍未确认身份",
+      "sourceEventId": "0845fef7-a55f-46af-9b8c-9a904a9383e3",
+      "source": "narrator-note:2",
+      "ordinal": 3,
+      "timeMinutes": 496,
+      "view": "global",
+      "score": -2.6658883094787598,
+      "sourceOffset": 0,
+      "truncated": false,
+      "retrievalSources": [
+        "graphiti"
+      ]
+    }
+  ]
+}

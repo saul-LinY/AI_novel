@@ -1,0 +1,51 @@
+{
+  "date": "2026-10-14",
+  "graphitiVersion": "0.30.2",
+  "neo4jVersion": "5.26.32",
+  "embeddingModel": "BAAI/bge-small-zh-v1.5",
+  "embeddingDimensions": 512,
+  "automatedTests": {
+    "javascript": 149,
+    "python": 11
+  },
+  "liveChecks": {
+    "graphitiIngestion": true,
+    "semanticEvidence": true,
+    "characterIsolation": true,
+    "separateOccurrences": true,
+    "historicalCutoff": true,
+    "idempotentEnqueue": true
+  },
+  "afterServiceRestart": true,
+  "currentStoryRecall": {
+    "elapsedMs": 412,
+    "backend": "bm25+graphiti",
+    "perspectives": {
+      "global": {
+        "state": "ready",
+        "matched": 5,
+        "rejected": 0
+      },
+      "environment": {
+        "state": "ready",
+        "matched": 5,
+        "rejected": 0
+      },
+      "character:lu-mingfei": {
+        "state": "ready",
+        "matched": 5,
+        "rejected": 0
+      },
+      "character:erii": {
+        "state": "ready",
+        "matched": 5,
+        "rejected": 0
+      }
+    }
+  },
+  "notes": [
+    "单次当前存档查询的耗时，不是基准性能承诺。",
+    "模型网关曾短暂返回503，任务重试后完成；不合格JSON通过schema校验与重试处理。",
+    "原始细节记录与Graphiti推导关系分别保存；召回只返回本地核验的原文。"
+  ]
+}

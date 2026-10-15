@@ -155,6 +155,13 @@ test('记忆只在正文和状态保存后入库，读取发生在新回合生�
   runtimes.at(-1).releaseProse();
   while (true) { const item = await reader.read(); if (item.done) break; text += decoder.decode(item.value); }
   assert.equal(parseNdjson(text).at(-1).type, 'complete');
+  const job = [...app.jobs.jobs.values()].at(-1);
+  assert.equal(job.memoryRecall.status, 'complete');
+  assert.equal(job.memoryRecall.result.trace.backend, 'bm25');
+  assert.equal(job.memoryUpdate.enabled, true);
+  assert.equal(job.memoryUpdate.graphiti, false);
+  assert.ok(job.memoryUpdate.enqueuedAt);
+  assert.equal(Object.hasOwn(job.memoryUpdate, 'completedAt'), false);
   assert.equal(memory.snapshots.at(-1).branches.main.eventIds.length, 2);
   assert.equal((await app.storyStore.load()).branches.main.eventIds.length, 2);
   assert.deepEqual(await fetch(baseUrl + '/api/memory/status').then((r) => r.json()), { enabled: true, backend: 'bm25', healthy: true });
@@ -168,6 +175,24 @@ test('拒绝行动不会进入长期记忆', async (t) => {
   const response = await fetch(baseUrl + '/api/turn', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ action: '拒绝' }) });
   assert.equal(parseNdjson(await response.text()).at(-1).type, 'rejected');
   assert.equal(memory.snapshots.length, before);
+});
+
+test('等待图索引时可以取消，检索完成后不会继续生成', async (t) => {
+  const memory = new RecordingMemory();
+  let release;
+  memory.recall = () => new Promise(resolve => { release = resolve; });
+  const { app, baseUrl, runtimes } = await startTestServer(t, { memory });
+  await selectRole(baseUrl);
+  const response = await fetch(baseUrl + '/api/turn', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ action: '等待记忆' }) });
+  while (!release) await new Promise(resolve => setTimeout(resolve, 5));
+  const job = app.jobs.activeJob();
+  const cancelled = await fetch(baseUrl + '/api/turns/' + job.turnId + '/cancel', { method: 'POST' });
+  assert.equal(cancelled.status, 200);
+  assert.equal(parseNdjson(await response.text()).at(-1).type, 'cancelled');
+  release(null);
+  await new Promise(resolve => setTimeout(resolve, 30));
+  assert.equal(runtimes.at(-1).contexts.length, 0);
+  assert.equal((await app.storyStore.load()).branches.main.eventIds.length, 1);
 });
 
 test('记忆服务异常不破坏流式生成及正常存档', async (t) => {

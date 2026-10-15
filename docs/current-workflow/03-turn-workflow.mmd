@@ -1,33 +1,41 @@
 flowchart LR
-  suggestion["选择当前建议行动"] --> trusted["允许尝试；仍可能失败或付出代价"]
-  free["自由输入角色行动"] --> knowledge{"命中尚未知晓的秘密词"}
-  knowledge -->|"是"| reject["说明行动不成立；不新增剧情与状态"]
-  knowledge -->|"否"| context["读取当前路线的状态与相关记忆"]
-  trusted --> context
-  memory["上下文：分支摘要、最近四轮、相关人物、场景与邻近剧情"] --> context
-  subgraph specialists["三种视角并行分析"]
-    plot["情节：行动因果、目标推进、绕路与回归"]
-    character["人物：人格、动机、关系、知识与反应"]
-    environment["环境：地点、时间、物品与场景"]
+  action["玩家行动：推荐选项或自由输入"] --> recall["历史证据检索：先按分支、回合与人物视角过滤"]
+  recall --> hybrid["BM25 候选 + Graphiti 图与语义候选 → 基础名次融合与来源校验"]
+  hybrid --> knowledge{"自由行动的知识边界预检"}
+  knowledge -->|"尚未知晓的秘密"| reject["行动不成立：说明原因，不新增剧情或状态"]
+  knowledge -->|"通过 / 推荐选项跳过预检"| context["上下文：当前状态、最近四段故事、分支摘要、检索证据、节奏指令与账本"]
+  subgraph specialists["三领域并行分析：候选变化尚未生效"]
+    plot["情节：因果、目标、支线与节奏"]
+    character["人物：自身知识、记忆、动机与关系"]
+    environment["环境：地点、时间、物品与限制"]
   end
   context --> plot & character & environment
-  plot & character & environment --> main["主创整合冲突，确定行动尝试与实际结果"]
-  main --> proposal["形成提案：结果、状态变化、后续选项与记忆"]
-  proposal --> valid{"提案有效且行动成立"}
+  plot & character & environment --> main["主创裁决：结果、状态变化、节拍、伏笔与选项"]
+  main --> valid{"提案校验"}
   valid -->|"行动不成立"| reject
-  valid -->|"校验失败"| correction["反馈问题；未获有效提案则结束本轮"]
-  valid -->|"是"| lock["确定本轮结果与场景"]
-  lock --> writing["唯一主创续写；逐句向读者展示"]
-  writing --> save["全文完成后保存剧情与状态"]
-  save --> next["进入下一轮或结局"]
-  plot -.-> detour["合理阻止原定事件：记录被阻止，转兼容后续或偏离结局"]
-  main -.-> agency["只决定尝试的后果；不替玩家决定内心和下一步"]
-  style specialists fill:#F2F7FF,stroke:#A9C5E8
-  classDef user fill:#C2E5FF,stroke:#3DADFF
-  classDef warn fill:#FFECBD,stroke:#FFC943
-  classDef fail fill:#FFCDC2,stroke:#FF7556
-  classDef good fill:#CDF4D3,stroke:#66D575
-  class suggestion,free,next user
-  class knowledge,valid,agency,detour warn
-  class reject,correction fail
-  class lock,save good
+  valid -->|"结构或因果错误：反馈重试"| main
+  valid -->|"节奏或伏笔问题：退回一次后可警告放行"| main
+  valid -->|"通过"| lock["保存 prepared：锁定结果与场景"]
+  lock --> brief["写作简报：节拍、转折、表面伏笔"]
+  brief --> writing["主创写作：逐句展示，保留前缀续写"]
+  writing --> quality["正文质量检查：重复、长度、补写或警告"]
+  quality --> recorder["连续性记录：以正文逐字引文校验事实与伏笔；失败则确定性兜底"]
+  recorder --> save["复核分支 → 原子保存正文、世界状态、记忆与叙事账本"]
+  save --> next["确认保存 → 下一轮或结局"]
+  next --> action
+  save --> ledger["更新后的叙事账本"]
+  ledger -.->|"下一轮节奏指令与账本摘要"| context
+  subgraph background["提交后异步更新：不等待图索引完成"]
+    snapshot["按分支与视角生成已提交记忆快照"]
+    bm25["BM25 本地索引"]
+    queue["Graphiti 持久队列：实体关系抽取、向量、持有与位置时间投影"]
+    neo4j["Neo4j：证据、实体、关系、有效时间与历史流转"]
+    snapshot -.-> bm25
+    snapshot -.-> queue
+    queue -.-> neo4j
+  end
+  save -.-> snapshot
+  bm25 -.->|"下一轮候选；图不可用时兜底"| recall
+  neo4j -.->|"经 Graphiti 服务检索；快照必须匹配"| recall
+  failure["技术异常独立处理：结构化连续 3 次校验失败则停止；已准备的正文可在限额内恢复"]
+  failure -.->|"保留原始失败步骤，不视为行动不成立"| stopped["停止 / 恢复；失败不提交新事实"]

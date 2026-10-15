@@ -4,6 +4,8 @@ import { buildMemoryCorpus, lexicalSearch, memoryExcerpt } from './cards.js';
 import { memoryFailure } from './errors.js';
 import { BM25Backend } from './bm25-backend.js';
 import { buildAliasGroups } from './bm25.js';
+import { buildGraphSnapshot, createGraphitiMemory } from './graphiti-memory.js';
+import { graphLifecycle } from './graphiti-projection.js';
 
 export const DEFAULT_MEMORY_CONFIG = Object.freeze({
   enabled: false, retriever: 'bm25', searchTimeoutMs: 10000, topK: 5, maxContextChars: 6000,
@@ -35,14 +37,16 @@ async function bounded(promise, timeoutMs) {
 }
 
 export class StoryMemory {
-  constructor({ dataDir, config = {}, backend, logger = console }) {
+  constructor({ dataDir, config = {}, backend, graph = null, logger = console }) {
     this.dataDir = dataDir;
     this.instanceId = resolve(dataDir);
     this.config = validateConfig(config);
     this.backend = backend ?? (this.config.enabled ? new BM25Backend(dataDir) : null);
     this.logger = logger;
+    this.graph = graph;
     this.indexed = new Map();
     this.pending = null;
+    this.latestInput = null;
     this.running = null;
     this.retryTimer = null;
     this.closed = false;
@@ -55,7 +59,7 @@ export class StoryMemory {
     corpus.aliasGroups = buildAliasGroups(input.storyPackage, input.store.events[branch.headEventId]?.stateAfter);
     return corpus;
   }
-  status() { return { ...this.stats }; }
+  status() { return { ...this.stats, ...(this.graph ? { graphiti: this.graph.status() } : {}) }; }
   refreshHealth() {
     this.stats.healthy = this.stats.indexHealthy === null && this.stats.recallHealthy === null ? null : this.stats.indexHealthy !== false && this.stats.recallHealthy !== false;
     this.stats.lastError = this.stats.lastRecallError ?? this.stats.lastIndexError;
@@ -63,7 +67,12 @@ export class StoryMemory {
 
   enqueue(store, storyPackage, branchId = store.currentBranchId) {
     if (!this.config.enabled || this.closed) return;
+    if (this.graph) this.graph.enqueue({
+      ...buildGraphSnapshot(this.corpus({ store, storyPackage, branchId }), { store, storyPackage, branchId }),
+      ...graphLifecycle({ store, storyPackage, instanceId: this.instanceId }),
+    });
     this.pending = { store: structuredClone(store), storyPackage, branchId };
+    this.latestInput = this.pending;
     clearTimeout(this.retryTimer);
     if (!this.running) {
       this.running = this.runQueue().finally(() => {
@@ -84,7 +93,9 @@ export class StoryMemory {
         this.stats.lastIndexError = memoryFailure(error, 'index').message;
         this.refreshHealth();
         this.logger.warn?.('[AI novel memory] indexing deferred:', JSON.stringify({ at: new Date().toISOString(), ...memoryFailure(error, 'index') }));
-        this.retryTimer = setTimeout(() => this.enqueue(input.store, input.storyPackage, input.branchId), 15000);
+        this.retryTimer = setTimeout(() => {
+          if (this.latestInput === input && !this.closed) this.enqueue(input.store, input.storyPackage, input.branchId);
+        }, 15000);
         this.retryTimer.unref();
         if (!this.pending) return;
       }
@@ -125,7 +136,7 @@ export class StoryMemory {
     }
   }
 
-  async searchView(corpus, view, query, { limit = this.config.topK, state } = {}) {
+  async searchView(corpus, view, query, { limit = this.config.topK, state, graphStream } = {}) {
     const allowed = corpus.records.filter((record) => record.view === view && (!record.factId || !view.startsWith('character:') || !state || state.characters[view.slice(10)]?.knowledgeFactIds?.includes(record.factId)));
     const byId = new Map(allowed.map((record) => [record.id, record]));
     const matched = new Map();
@@ -150,8 +161,21 @@ export class StoryMemory {
     for (const [rank, hit] of lexicalSearch(fallback, query, limit).entries()) {
       if (!matched.has(hit.record.id)) matched.set(hit.record.id, { record: hit.record, rankScore: 1 / (60 + rank + 1), score: null });
     }
-    const hits = [...matched.values()].sort((a, b) => b.rankScore - a.rankScore || b.record.ordinal - a.record.ordinal).slice(0, limit).map((hit) => ({ ...memoryExcerpt(hit.record, hit.score), ...(hit.matchedTerms ? { matchedTerms: hit.matchedTerms } : {}) }));
-    return { hits, degraded, rejected, failure };
+    const graph = this.graph && graphStream ? await this.graph.recall(graphStream, allowed, query, [...matched.keys()].slice(0, 60)) : null;
+    if (graph) {
+      rejected += graph.rejected;
+      for (const [rank, hit] of graph.hits.entries()) {
+        const existing = matched.get(hit.record.id);
+        if (existing) { existing.rankScore += 1 / (60 + rank + 1); existing.retrievalSources = ['bm25', 'graphiti']; }
+        else matched.set(hit.record.id, { ...hit, rankScore: 1 / (60 + rank + 1), retrievalSources: ['graphiti'] });
+      }
+    }
+    const ordered = [...matched.values()].sort((a, b) => b.rankScore - a.rankScore || b.record.ordinal - a.record.ordinal);
+    const selected = ordered;
+    const hits = selected.slice(0, limit).map((hit) => ({ ...memoryExcerpt(hit.record, hit.score),
+      ...(hit.excerpt ? { text: hit.excerpt.text, sourceOffset: hit.excerpt.offset, truncated: hit.excerpt.text.length < hit.record.text.length } : {}),
+      ...(hit.matchedTerms ? { matchedTerms: hit.matchedTerms } : {}), ...(hit.retrievalSources ? { retrievalSources: hit.retrievalSources } : {}) }));
+    return { hits, degraded, rejected, failure, ...(graph ? { graph: { state: graph.state, ranking: graph.ranking, waitedForIndex: graph.waitedForIndex ?? false, elapsedMs: graph.elapsedMs ?? null, matched: graph.hits.length, rejected: graph.rejected, indexedThroughEventId: graph.indexedThroughEventId ?? null, ...(graph.error ? { error: graph.error } : {}) } } : {}) };
   }
 
   async recall({ store, storyPackage, branchId = store.currentBranchId, action, characterIds }) {
@@ -163,9 +187,12 @@ export class StoryMemory {
     const location = storyPackage.locations?.find((item) => item.id === state.locationId)?.name ?? state.locationId;
     const currentStage = storyPackage.stages?.find((item) => item.id === state.storyProgress?.currentStageId);
     const ids = (characterIds ?? Object.values(state.characters).filter((character) => character.id === storyPackage.playerCharacterId || (character.status === 'active' && character.locationId === state.locationId) || [character.name, ...(character.aliases ?? [])].some((name) => name && action.includes(name))).map((character) => character.id)).filter((id) => state.characters[id]).slice(0, 8);
-    const query = [action, `地点：${location}`, `当前目标：${currentStage?.purpose ?? currentStage?.title ?? ''}`].join('；');
+    // The player's immediate question/action drives relevance. A long stage
+    // objective otherwise dominates short questions about a concrete detail.
+    const query = action.trim() || [location, currentStage?.purpose ?? currentStage?.title ?? ''].join('；');
     const views = ['global', 'environment', ...ids.map((id) => `character:${id}`)];
-    const results = await Promise.all(views.map((view) => this.searchView(corpus, view, query, { state })));
+    const graphSnapshot = this.graph ? buildGraphSnapshot(corpus, { store, storyPackage, branchId }) : null;
+    const results = await Promise.all(views.map((view) => this.searchView(corpus, view, query, { state, graphStream: graphSnapshot?.streams.find((s) => s.view === view) })));
     const share = Math.floor(this.config.maxContextChars / views.length);
     const boundedHits = results.map(({ hits }) => {
       let remaining = share;
@@ -173,7 +200,7 @@ export class StoryMemory {
         if (remaining <= 0) return [];
         const text = hit.text.slice(0, remaining);
         remaining -= text.length;
-        return [{ ...hit, text, truncated: text.length < hit.text.length }];
+        return [{ ...hit, text, truncated: Boolean(hit.truncated) || text.length < hit.text.length }];
       });
     });
     const elapsedMs = Math.round(performance.now() - started);
@@ -192,14 +219,19 @@ export class StoryMemory {
     return {
       global: boundedHits[0], environment: boundedHits[1],
       characters: Object.fromEntries(ids.map((id, i) => [id, boundedHits[i + 2]])),
-      trace: { backend: this.config.retriever, degraded, elapsedMs, recalledAt, failures, retrievalBudgetMs: this.config.searchTimeoutMs, rejectedHits: rejected, query, scope: corpus.scope, sourceHeadEventId: branch.headEventId, counts: Object.fromEntries(views.map((view, i) => [view, boundedHits[i].length])) },
+      trace: { backend: this.graph ? 'bm25+graphiti' : this.config.retriever, degraded, elapsedMs, recalledAt, failures, retrievalBudgetMs: this.config.searchTimeoutMs, rejectedHits: rejected, query, scope: corpus.scope, sourceHeadEventId: branch.headEventId, counts: Object.fromEntries(views.map((view, i) => [view, boundedHits[i].length])), ...(this.graph ? { graphiti: Object.fromEntries(views.map((view, i) => [view, results[i].graph ?? { state: 'empty' }])) } : {}) },
     };
   }
 
-  async drain() { while (this.running) await this.running; }
-  close() { this.closed = true; this.pending = null; clearTimeout(this.retryTimer); this.backend?.close?.(); }
+  async drain() { while (this.running) await this.running; await this.graph?.drain(); }
+  close() { this.closed = true; this.pending = null; clearTimeout(this.retryTimer); this.backend?.close?.(); this.graph?.close(); }
 }
 
-export async function createStoryMemory({ dataDir, logger, config, backend }) {
-  return new StoryMemory({ dataDir, logger, backend, config: config ?? await readMemoryConfig(dataDir) });
+export async function createStoryMemory({ dataDir, logger, config, backend, graph }) {
+  config ??= await readMemoryConfig(dataDir);
+  if (graph === undefined && config.enabled) {
+    try { graph = await createGraphitiMemory({ dataDir, logger }); }
+    catch { logger?.warn?.('[AI novel graphiti] configuration unavailable; retaining local memory'); }
+  }
+  return new StoryMemory({ dataDir, logger, backend, graph, config });
 }

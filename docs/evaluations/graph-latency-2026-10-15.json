@@ -1,0 +1,3274 @@
+{
+  "date": "2026-10-15",
+  "head": "c293dcad-ba68-42b7-b944-b734a1f078af",
+  "turns": 4,
+  "cards": 249,
+  "globalCards": 105,
+  "scope": "novel-faf891e511f9529e485a559b3f4084b2",
+  "config": {
+    "enabled": true,
+    "url": "http://127.0.0.1:4320",
+    "timeoutMs": 10000,
+    "readyWaitMs": 10000,
+    "topK": 5
+  },
+  "health": {
+    "ok": true,
+    "version": "0.30.2",
+    "embedder": "BAAI/bge-small-zh-v1.5",
+    "reranker": null,
+    "stateProjectionVersion": 1,
+    "cleanupPending": 0,
+    "lastError": null
+  },
+  "initial": [
+    {
+      "view": "global",
+      "status": "ready",
+      "indexed": 5,
+      "total": 5
+    },
+    {
+      "view": "environment",
+      "status": "indexing",
+      "indexed": 4,
+      "total": 5
+    },
+    {
+      "view": "character:lu-mingfei",
+      "status": "pending",
+      "indexed": 4,
+      "total": 5
+    },
+    {
+      "view": "character:erii",
+      "status": "pending",
+      "indexed": 4,
+      "total": 5
+    }
+  ],
+  "live": {
+    "mode": "indexing",
+    "query": "回想刚刚的经历：药品、电话和楼下车辆有哪些新线索？",
+    "ms": 10018.8,
+    "ready": false,
+    "graph": {
+      "global": {
+        "state": "ready",
+        "ranking": "embedding",
+        "waitedForIndex": false,
+        "elapsedMs": 124,
+        "matched": 5,
+        "rejected": 0,
+        "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+      },
+      "environment": {
+        "state": "indexing",
+        "waitedForIndex": true,
+        "elapsedMs": 10002,
+        "matched": 0,
+        "rejected": 0,
+        "indexedThroughEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+      },
+      "character:lu-mingfei": {
+        "state": "pending",
+        "waitedForIndex": true,
+        "elapsedMs": 10001,
+        "matched": 0,
+        "rejected": 0,
+        "indexedThroughEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+      },
+      "character:erii": {
+        "state": "pending",
+        "waitedForIndex": true,
+        "elapsedMs": 10001,
+        "matched": 0,
+        "rejected": 0,
+        "indexedThroughEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+      }
+    },
+    "hits": {
+      "global": 5,
+      "environment": 3,
+      "character:lu-mingfei": 5,
+      "character:erii": 3
+    }
+  },
+  "indexPreparationMs": 607192,
+  "statusLog": [
+    {
+      "at": 1792031377927,
+      "views": [
+        {
+          "view": "global",
+          "status": "ready",
+          "indexed": 5,
+          "total": 5
+        },
+        {
+          "view": "environment",
+          "status": "indexing",
+          "indexed": 4,
+          "total": 5
+        },
+        {
+          "view": "character:lu-mingfei",
+          "status": "pending",
+          "indexed": 4,
+          "total": 5
+        },
+        {
+          "view": "character:erii",
+          "status": "pending",
+          "indexed": 4,
+          "total": 5
+        }
+      ]
+    },
+    {
+      "at": 1792031397992,
+      "views": [
+        {
+          "view": "global",
+          "status": "ready",
+          "indexed": 5,
+          "total": 5
+        },
+        {
+          "view": "environment",
+          "status": "ready",
+          "indexed": 5,
+          "total": 5
+        },
+        {
+          "view": "character:lu-mingfei",
+          "status": "indexing",
+          "indexed": 4,
+          "total": 5
+        },
+        {
+          "view": "character:erii",
+          "status": "pending",
+          "indexed": 4,
+          "total": 5
+        }
+      ]
+    },
+    {
+      "at": 1792031428084,
+      "views": [
+        {
+          "view": "global",
+          "status": "ready",
+          "indexed": 5,
+          "total": 5
+        },
+        {
+          "view": "environment",
+          "status": "ready",
+          "indexed": 5,
+          "total": 5
+        },
+        {
+          "view": "character:lu-mingfei",
+          "status": "indexing",
+          "indexed": 4,
+          "total": 5
+        },
+        {
+          "view": "character:erii",
+          "status": "pending",
+          "indexed": 4,
+          "total": 5
+        }
+      ]
+    },
+    {
+      "at": 1792031458177,
+      "views": [
+        {
+          "view": "global",
+          "status": "ready",
+          "indexed": 5,
+          "total": 5
+        },
+        {
+          "view": "environment",
+          "status": "ready",
+          "indexed": 5,
+          "total": 5
+        },
+        {
+          "view": "character:lu-mingfei",
+          "status": "indexing",
+          "indexed": 4,
+          "total": 5
+        },
+        {
+          "view": "character:erii",
+          "status": "pending",
+          "indexed": 4,
+          "total": 5
+        }
+      ]
+    },
+    {
+      "at": 1792031488278,
+      "views": [
+        {
+          "view": "global",
+          "status": "ready",
+          "indexed": 5,
+          "total": 5
+        },
+        {
+          "view": "environment",
+          "status": "ready",
+          "indexed": 5,
+          "total": 5
+        },
+        {
+          "view": "character:lu-mingfei",
+          "status": "indexing",
+          "indexed": 4,
+          "total": 5
+        },
+        {
+          "view": "character:erii",
+          "status": "pending",
+          "indexed": 4,
+          "total": 5
+        }
+      ]
+    },
+    {
+      "at": 1792031518377,
+      "views": [
+        {
+          "view": "global",
+          "status": "ready",
+          "indexed": 5,
+          "total": 5
+        },
+        {
+          "view": "environment",
+          "status": "ready",
+          "indexed": 5,
+          "total": 5
+        },
+        {
+          "view": "character:lu-mingfei",
+          "status": "indexing",
+          "indexed": 4,
+          "total": 5
+        },
+        {
+          "view": "character:erii",
+          "status": "pending",
+          "indexed": 4,
+          "total": 5
+        }
+      ]
+    },
+    {
+      "at": 1792031548488,
+      "views": [
+        {
+          "view": "global",
+          "status": "ready",
+          "indexed": 5,
+          "total": 5
+        },
+        {
+          "view": "environment",
+          "status": "ready",
+          "indexed": 5,
+          "total": 5
+        },
+        {
+          "view": "character:lu-mingfei",
+          "status": "indexing",
+          "indexed": 4,
+          "total": 5
+        },
+        {
+          "view": "character:erii",
+          "status": "pending",
+          "indexed": 4,
+          "total": 5
+        }
+      ]
+    },
+    {
+      "at": 1792031578592,
+      "views": [
+        {
+          "view": "global",
+          "status": "ready",
+          "indexed": 5,
+          "total": 5
+        },
+        {
+          "view": "environment",
+          "status": "ready",
+          "indexed": 5,
+          "total": 5
+        },
+        {
+          "view": "character:lu-mingfei",
+          "status": "indexing",
+          "indexed": 4,
+          "total": 5
+        },
+        {
+          "view": "character:erii",
+          "status": "pending",
+          "indexed": 4,
+          "total": 5
+        }
+      ]
+    },
+    {
+      "at": 1792031608712,
+      "views": [
+        {
+          "view": "global",
+          "status": "ready",
+          "indexed": 5,
+          "total": 5
+        },
+        {
+          "view": "environment",
+          "status": "ready",
+          "indexed": 5,
+          "total": 5
+        },
+        {
+          "view": "character:lu-mingfei",
+          "status": "indexing",
+          "indexed": 4,
+          "total": 5
+        },
+        {
+          "view": "character:erii",
+          "status": "pending",
+          "indexed": 4,
+          "total": 5
+        }
+      ]
+    },
+    {
+      "at": 1792031638822,
+      "views": [
+        {
+          "view": "global",
+          "status": "ready",
+          "indexed": 5,
+          "total": 5
+        },
+        {
+          "view": "environment",
+          "status": "ready",
+          "indexed": 5,
+          "total": 5
+        },
+        {
+          "view": "character:lu-mingfei",
+          "status": "indexing",
+          "indexed": 4,
+          "total": 5
+        },
+        {
+          "view": "character:erii",
+          "status": "pending",
+          "indexed": 4,
+          "total": 5
+        }
+      ]
+    },
+    {
+      "at": 1792031668923,
+      "views": [
+        {
+          "view": "global",
+          "status": "ready",
+          "indexed": 5,
+          "total": 5
+        },
+        {
+          "view": "environment",
+          "status": "ready",
+          "indexed": 5,
+          "total": 5
+        },
+        {
+          "view": "character:lu-mingfei",
+          "status": "indexing",
+          "indexed": 4,
+          "total": 5
+        },
+        {
+          "view": "character:erii",
+          "status": "pending",
+          "indexed": 4,
+          "total": 5
+        }
+      ]
+    },
+    {
+      "at": 1792031699039,
+      "views": [
+        {
+          "view": "global",
+          "status": "ready",
+          "indexed": 5,
+          "total": 5
+        },
+        {
+          "view": "environment",
+          "status": "ready",
+          "indexed": 5,
+          "total": 5
+        },
+        {
+          "view": "character:lu-mingfei",
+          "status": "indexing",
+          "indexed": 4,
+          "total": 5
+        },
+        {
+          "view": "character:erii",
+          "status": "pending",
+          "indexed": 4,
+          "total": 5
+        }
+      ]
+    },
+    {
+      "at": 1792031729159,
+      "views": [
+        {
+          "view": "global",
+          "status": "ready",
+          "indexed": 5,
+          "total": 5
+        },
+        {
+          "view": "environment",
+          "status": "ready",
+          "indexed": 5,
+          "total": 5
+        },
+        {
+          "view": "character:lu-mingfei",
+          "status": "ready",
+          "indexed": 5,
+          "total": 5
+        },
+        {
+          "view": "character:erii",
+          "status": "indexing",
+          "indexed": 4,
+          "total": 5
+        }
+      ]
+    },
+    {
+      "at": 1792031759272,
+      "views": [
+        {
+          "view": "global",
+          "status": "ready",
+          "indexed": 5,
+          "total": 5
+        },
+        {
+          "view": "environment",
+          "status": "ready",
+          "indexed": 5,
+          "total": 5
+        },
+        {
+          "view": "character:lu-mingfei",
+          "status": "ready",
+          "indexed": 5,
+          "total": 5
+        },
+        {
+          "view": "character:erii",
+          "status": "indexing",
+          "indexed": 4,
+          "total": 5
+        }
+      ]
+    },
+    {
+      "at": 1792031789378,
+      "views": [
+        {
+          "view": "global",
+          "status": "ready",
+          "indexed": 5,
+          "total": 5
+        },
+        {
+          "view": "environment",
+          "status": "ready",
+          "indexed": 5,
+          "total": 5
+        },
+        {
+          "view": "character:lu-mingfei",
+          "status": "ready",
+          "indexed": 5,
+          "total": 5
+        },
+        {
+          "view": "character:erii",
+          "status": "indexing",
+          "indexed": 4,
+          "total": 5
+        }
+      ]
+    },
+    {
+      "at": 1792031819494,
+      "views": [
+        {
+          "view": "global",
+          "status": "ready",
+          "indexed": 5,
+          "total": 5
+        },
+        {
+          "view": "environment",
+          "status": "ready",
+          "indexed": 5,
+          "total": 5
+        },
+        {
+          "view": "character:lu-mingfei",
+          "status": "ready",
+          "indexed": 5,
+          "total": 5
+        },
+        {
+          "view": "character:erii",
+          "status": "indexing",
+          "indexed": 4,
+          "total": 5
+        }
+      ]
+    },
+    {
+      "at": 1792031849622,
+      "views": [
+        {
+          "view": "global",
+          "status": "ready",
+          "indexed": 5,
+          "total": 5
+        },
+        {
+          "view": "environment",
+          "status": "ready",
+          "indexed": 5,
+          "total": 5
+        },
+        {
+          "view": "character:lu-mingfei",
+          "status": "ready",
+          "indexed": 5,
+          "total": 5
+        },
+        {
+          "view": "character:erii",
+          "status": "indexing",
+          "indexed": 4,
+          "total": 5
+        }
+      ]
+    },
+    {
+      "at": 1792031879738,
+      "views": [
+        {
+          "view": "global",
+          "status": "ready",
+          "indexed": 5,
+          "total": 5
+        },
+        {
+          "view": "environment",
+          "status": "ready",
+          "indexed": 5,
+          "total": 5
+        },
+        {
+          "view": "character:lu-mingfei",
+          "status": "ready",
+          "indexed": 5,
+          "total": 5
+        },
+        {
+          "view": "character:erii",
+          "status": "indexing",
+          "indexed": 4,
+          "total": 5
+        }
+      ]
+    },
+    {
+      "at": 1792031909840,
+      "views": [
+        {
+          "view": "global",
+          "status": "ready",
+          "indexed": 5,
+          "total": 5
+        },
+        {
+          "view": "environment",
+          "status": "ready",
+          "indexed": 5,
+          "total": 5
+        },
+        {
+          "view": "character:lu-mingfei",
+          "status": "ready",
+          "indexed": 5,
+          "total": 5
+        },
+        {
+          "view": "character:erii",
+          "status": "indexing",
+          "indexed": 4,
+          "total": 5
+        }
+      ]
+    },
+    {
+      "at": 1792031939959,
+      "views": [
+        {
+          "view": "global",
+          "status": "ready",
+          "indexed": 5,
+          "total": 5
+        },
+        {
+          "view": "environment",
+          "status": "ready",
+          "indexed": 5,
+          "total": 5
+        },
+        {
+          "view": "character:lu-mingfei",
+          "status": "ready",
+          "indexed": 5,
+          "total": 5
+        },
+        {
+          "view": "character:erii",
+          "status": "indexing",
+          "indexed": 4,
+          "total": 5
+        }
+      ]
+    },
+    {
+      "at": 1792031970050,
+      "views": [
+        {
+          "view": "global",
+          "status": "ready",
+          "indexed": 5,
+          "total": 5
+        },
+        {
+          "view": "environment",
+          "status": "ready",
+          "indexed": 5,
+          "total": 5
+        },
+        {
+          "view": "character:lu-mingfei",
+          "status": "ready",
+          "indexed": 5,
+          "total": 5
+        },
+        {
+          "view": "character:erii",
+          "status": "indexing",
+          "indexed": 4,
+          "total": 5
+        }
+      ]
+    },
+    {
+      "at": 1792031985100,
+      "views": [
+        {
+          "view": "global",
+          "status": "ready",
+          "indexed": 5,
+          "total": 5
+        },
+        {
+          "view": "environment",
+          "status": "ready",
+          "indexed": 5,
+          "total": 5
+        },
+        {
+          "view": "character:lu-mingfei",
+          "status": "ready",
+          "indexed": 5,
+          "total": 5
+        },
+        {
+          "view": "character:erii",
+          "status": "ready",
+          "indexed": 5,
+          "total": 5
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "fourViewsFirst": {
+      "count": 20,
+      "minMs": 86.33,
+      "medianMs": 97.92,
+      "p95Ms": 136.28,
+      "maxMs": 158.44,
+      "meanMs": 105.4645,
+      "sequentialQueriesPerSecond": 9.481863565465156,
+      "ready": 20,
+      "overBudget": 0
+    },
+    "fourViewsRepeat": {
+      "count": 20,
+      "minMs": 87.62,
+      "medianMs": 94.11,
+      "p95Ms": 121.85,
+      "maxMs": 144.08,
+      "meanMs": 100.98249999999999,
+      "sequentialQueriesPerSecond": 9.902705914391108,
+      "ready": 20,
+      "overBudget": 0
+    },
+    "singleGlobalWarm": {
+      "count": 20,
+      "minMs": 38.57,
+      "medianMs": 40.4,
+      "p95Ms": 46.91,
+      "maxMs": 47.2,
+      "meanMs": 41.570499999999996,
+      "sequentialQueriesPerSecond": 24.055520140484237,
+      "ready": 20,
+      "overBudget": 0
+    },
+    "bm25": {
+      "count": 20,
+      "minMs": 0.83,
+      "medianMs": 1.32,
+      "p95Ms": 3.28,
+      "maxMs": 12.83,
+      "meanMs": 1.9859999999999995,
+      "sequentialQueriesPerSecond": 503.52467270896284,
+      "ready": 20,
+      "overBudget": 0
+    }
+  },
+  "storyHeadUnchanged": true,
+  "rows": [
+    {
+      "mode": "indexing",
+      "query": "回想刚刚的经历：药品、电话和楼下车辆有哪些新线索？",
+      "ms": 10018.8,
+      "ready": false,
+      "graph": {
+        "global": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 124,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "environment": {
+          "state": "indexing",
+          "waitedForIndex": true,
+          "elapsedMs": 10002,
+          "matched": 0,
+          "rejected": 0,
+          "indexedThroughEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+        },
+        "character:lu-mingfei": {
+          "state": "pending",
+          "waitedForIndex": true,
+          "elapsedMs": 10001,
+          "matched": 0,
+          "rejected": 0,
+          "indexedThroughEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+        },
+        "character:erii": {
+          "state": "pending",
+          "waitedForIndex": true,
+          "elapsedMs": 10001,
+          "matched": 0,
+          "rejected": 0,
+          "indexedThroughEventId": "a59944eb-a7ab-4cf6-9f21-c64d4a994737"
+        }
+      },
+      "hits": {
+        "global": 5,
+        "environment": 3,
+        "character:lu-mingfei": 5,
+        "character:erii": 3
+      }
+    },
+    {
+      "mode": "fourViewsFirst",
+      "query": "现在我们有哪些能核查药源的证据，哪些还只是猜测？",
+      "ms": 158.44,
+      "ready": true,
+      "graph": {
+        "global": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 149,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "environment": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 128,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:lu-mingfei": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 145,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:erii": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 142,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        }
+      },
+      "hits": {
+        "global": 5,
+        "environment": 5,
+        "character:lu-mingfei": 5,
+        "character:erii": 5
+      }
+    },
+    {
+      "mode": "fourViewsFirst",
+      "query": "凯撒答应的外部调查有没有确定回音？",
+      "ms": 136.28,
+      "ready": true,
+      "graph": {
+        "global": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 126,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "environment": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 112,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:lu-mingfei": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 116,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:erii": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 115,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        }
+      },
+      "hits": {
+        "global": 5,
+        "environment": 5,
+        "character:lu-mingfei": 5,
+        "character:erii": 5
+      }
+    },
+    {
+      "mode": "fourViewsFirst",
+      "query": "她过去取药时，车辆、电梯和送药人怎样衔接？",
+      "ms": 97.05,
+      "ready": true,
+      "graph": {
+        "global": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 89,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "environment": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 74,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:lu-mingfei": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 79,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:erii": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 76,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        }
+      },
+      "hits": {
+        "global": 5,
+        "environment": 5,
+        "character:lu-mingfei": 5,
+        "character:erii": 5
+      }
+    },
+    {
+      "mode": "fourViewsFirst",
+      "query": "记录药品编号时用的是什么工具？",
+      "ms": 94.74,
+      "ready": true,
+      "graph": {
+        "global": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 87,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "environment": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 75,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:lu-mingfei": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 79,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:erii": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 77,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        }
+      },
+      "hits": {
+        "global": 5,
+        "environment": 5,
+        "character:lu-mingfei": 5,
+        "character:erii": 5
+      }
+    },
+    {
+      "mode": "fourViewsFirst",
+      "query": "联系学院的人之前，药盒被挪到了哪里？",
+      "ms": 105.41,
+      "ready": true,
+      "graph": {
+        "global": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 98,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "environment": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 85,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:lu-mingfei": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 88,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:erii": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 86,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        }
+      },
+      "hits": {
+        "global": 5,
+        "environment": 5,
+        "character:lu-mingfei": 5,
+        "character:erii": 5
+      }
+    },
+    {
+      "mode": "fourViewsFirst",
+      "query": "最初的安全点允许我们等到几点？",
+      "ms": 100.22,
+      "ready": true,
+      "graph": {
+        "global": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 92,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "environment": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 78,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:lu-mingfei": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 82,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:erii": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 80,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        }
+      },
+      "hits": {
+        "global": 5,
+        "environment": 5,
+        "character:lu-mingfei": 5,
+        "character:erii": 5
+      }
+    },
+    {
+      "mode": "fourViewsFirst",
+      "query": "卡塞尔为什么能安排撤离，却接不上她的用药？",
+      "ms": 105.7,
+      "ready": true,
+      "graph": {
+        "global": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 98,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "environment": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 86,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:lu-mingfei": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 88,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:erii": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 87,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        }
+      },
+      "hits": {
+        "global": 5,
+        "environment": 5,
+        "character:lu-mingfei": 5,
+        "character:erii": 5
+      }
+    },
+    {
+      "mode": "fourViewsFirst",
+      "query": "手机的再次开机给藏身地点带来什么风险？",
+      "ms": 97.92,
+      "ready": true,
+      "graph": {
+        "global": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 91,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "environment": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 77,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:lu-mingfei": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 81,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:erii": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 80,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        }
+      },
+      "hits": {
+        "global": 5,
+        "environment": 5,
+        "character:lu-mingfei": 5,
+        "character:erii": 5
+      }
+    },
+    {
+      "mode": "fourViewsFirst",
+      "query": "街对面那辆车最初为什么令人警觉？",
+      "ms": 97.6,
+      "ready": true,
+      "graph": {
+        "global": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 94,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "environment": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 79,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:lu-mingfei": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 84,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:erii": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 83,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        }
+      },
+      "hits": {
+        "global": 5,
+        "environment": 5,
+        "character:lu-mingfei": 5,
+        "character:erii": 5
+      }
+    },
+    {
+      "mode": "fourViewsFirst",
+      "query": "那辆车后来绕行的方向有什么意义？",
+      "ms": 90.34,
+      "ready": true,
+      "graph": {
+        "global": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 86,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "environment": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 77,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:lu-mingfei": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 78,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:erii": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 74,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        }
+      },
+      "hits": {
+        "global": 5,
+        "environment": 5,
+        "character:lu-mingfei": 5,
+        "character:erii": 5
+      }
+    },
+    {
+      "mode": "fourViewsFirst",
+      "query": "本子最后一行的留白表达了什么未解决的问题？",
+      "ms": 134.88,
+      "ready": true,
+      "graph": {
+        "global": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 129,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "environment": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 114,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:lu-mingfei": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 119,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:erii": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 115,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        }
+      },
+      "hits": {
+        "global": 5,
+        "environment": 5,
+        "character:lu-mingfei": 5,
+        "character:erii": 5
+      }
+    },
+    {
+      "mode": "fourViewsFirst",
+      "query": "握笔时出现的细微异常与药效有什么关系？",
+      "ms": 98.76,
+      "ready": true,
+      "graph": {
+        "global": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 89,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "environment": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 72,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:lu-mingfei": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 78,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:erii": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 75,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        }
+      },
+      "hits": {
+        "global": 5,
+        "environment": 5,
+        "character:lu-mingfei": 5,
+        "character:erii": 5
+      }
+    },
+    {
+      "mode": "fourViewsFirst",
+      "query": "源稚生组织搜索的直接动机是什么？",
+      "ms": 109.54,
+      "ready": true,
+      "graph": {
+        "global": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 104,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "environment": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 91,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:lu-mingfei": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 93,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:erii": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 92,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        }
+      },
+      "hits": {
+        "global": 5,
+        "environment": 5,
+        "character:lu-mingfei": 5,
+        "character:erii": 5
+      }
+    },
+    {
+      "mode": "fourViewsFirst",
+      "query": "凯撒对学院保护命令的解释有过什么停顿？",
+      "ms": 119.62,
+      "ready": true,
+      "graph": {
+        "global": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 111,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "environment": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 96,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:lu-mingfei": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 100,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:erii": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 96,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        }
+      },
+      "hits": {
+        "global": 5,
+        "environment": 5,
+        "character:lu-mingfei": 5,
+        "character:erii": 5
+      }
+    },
+    {
+      "mode": "fourViewsFirst",
+      "query": "药品包装为什么难以看清批次号？",
+      "ms": 93.97,
+      "ready": true,
+      "graph": {
+        "global": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 88,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "environment": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 78,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:lu-mingfei": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 79,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:erii": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 76,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        }
+      },
+      "hits": {
+        "global": 5,
+        "environment": 5,
+        "character:lu-mingfei": 5,
+        "character:erii": 5
+      }
+    },
+    {
+      "mode": "fourViewsFirst",
+      "query": "她能不能提供送药人的真实姓名？",
+      "ms": 96.68,
+      "ready": true,
+      "graph": {
+        "global": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 90,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "environment": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 74,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:lu-mingfei": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 79,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:erii": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 77,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        }
+      },
+      "hits": {
+        "global": 5,
+        "environment": 5,
+        "character:lu-mingfei": 5,
+        "character:erii": 5
+      }
+    },
+    {
+      "mode": "fourViewsFirst",
+      "query": "学院供应清单核对出了什么结果？",
+      "ms": 93.97,
+      "ready": true,
+      "graph": {
+        "global": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 87,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "environment": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 72,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:lu-mingfei": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 75,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:erii": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 74,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        }
+      },
+      "hits": {
+        "global": 5,
+        "environment": 5,
+        "character:lu-mingfei": 5,
+        "character:erii": 5
+      }
+    },
+    {
+      "mode": "fourViewsFirst",
+      "query": "等待药物线索回拨还需要承担什么代价？",
+      "ms": 91.96,
+      "ready": true,
+      "graph": {
+        "global": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 88,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "environment": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 72,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:lu-mingfei": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 78,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:erii": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 75,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        }
+      },
+      "hits": {
+        "global": 5,
+        "environment": 5,
+        "character:lu-mingfei": 5,
+        "character:erii": 5
+      }
+    },
+    {
+      "mode": "fourViewsFirst",
+      "query": "有哪些承诺还没兑现，哪些只是接下来的打算？",
+      "ms": 86.33,
+      "ready": true,
+      "graph": {
+        "global": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 83,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "environment": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 69,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:lu-mingfei": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 73,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:erii": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 71,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        }
+      },
+      "hits": {
+        "global": 5,
+        "environment": 5,
+        "character:lu-mingfei": 5,
+        "character:erii": 5
+      }
+    },
+    {
+      "mode": "fourViewsFirst",
+      "query": "如果继续留在旅馆，现在最紧迫的两个问题是什么？",
+      "ms": 99.88,
+      "ready": true,
+      "graph": {
+        "global": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 94,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "environment": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 80,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:lu-mingfei": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 82,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:erii": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 80,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        }
+      },
+      "hits": {
+        "global": 5,
+        "environment": 5,
+        "character:lu-mingfei": 5,
+        "character:erii": 5
+      }
+    },
+    {
+      "mode": "fourViewsRepeat",
+      "query": "现在我们有哪些能核查药源的证据，哪些还只是猜测？",
+      "ms": 93.66,
+      "ready": true,
+      "graph": {
+        "global": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 87,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "environment": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 75,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:lu-mingfei": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 78,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:erii": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 75,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        }
+      },
+      "hits": {
+        "global": 5,
+        "environment": 5,
+        "character:lu-mingfei": 5,
+        "character:erii": 5
+      }
+    },
+    {
+      "mode": "fourViewsRepeat",
+      "query": "凯撒答应的外部调查有没有确定回音？",
+      "ms": 121.85,
+      "ready": true,
+      "graph": {
+        "global": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 117,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "environment": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 98,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:lu-mingfei": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 105,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:erii": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 103,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        }
+      },
+      "hits": {
+        "global": 5,
+        "environment": 5,
+        "character:lu-mingfei": 5,
+        "character:erii": 5
+      }
+    },
+    {
+      "mode": "fourViewsRepeat",
+      "query": "她过去取药时，车辆、电梯和送药人怎样衔接？",
+      "ms": 93.32,
+      "ready": true,
+      "graph": {
+        "global": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 87,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "environment": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 76,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:lu-mingfei": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 78,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:erii": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 76,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        }
+      },
+      "hits": {
+        "global": 5,
+        "environment": 5,
+        "character:lu-mingfei": 5,
+        "character:erii": 5
+      }
+    },
+    {
+      "mode": "fourViewsRepeat",
+      "query": "记录药品编号时用的是什么工具？",
+      "ms": 87.62,
+      "ready": true,
+      "graph": {
+        "global": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 84,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "environment": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 72,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:lu-mingfei": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 76,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:erii": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 74,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        }
+      },
+      "hits": {
+        "global": 5,
+        "environment": 5,
+        "character:lu-mingfei": 5,
+        "character:erii": 5
+      }
+    },
+    {
+      "mode": "fourViewsRepeat",
+      "query": "联系学院的人之前，药盒被挪到了哪里？",
+      "ms": 106.49,
+      "ready": true,
+      "graph": {
+        "global": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 100,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "environment": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 86,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:lu-mingfei": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 90,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:erii": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 87,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        }
+      },
+      "hits": {
+        "global": 5,
+        "environment": 5,
+        "character:lu-mingfei": 5,
+        "character:erii": 5
+      }
+    },
+    {
+      "mode": "fourViewsRepeat",
+      "query": "最初的安全点允许我们等到几点？",
+      "ms": 92.34,
+      "ready": true,
+      "graph": {
+        "global": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 86,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "environment": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 73,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:lu-mingfei": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 76,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:erii": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 74,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        }
+      },
+      "hits": {
+        "global": 5,
+        "environment": 5,
+        "character:lu-mingfei": 5,
+        "character:erii": 5
+      }
+    },
+    {
+      "mode": "fourViewsRepeat",
+      "query": "卡塞尔为什么能安排撤离，却接不上她的用药？",
+      "ms": 99.77,
+      "ready": true,
+      "graph": {
+        "global": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 93,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "environment": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 78,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:lu-mingfei": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 82,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:erii": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 82,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        }
+      },
+      "hits": {
+        "global": 5,
+        "environment": 5,
+        "character:lu-mingfei": 5,
+        "character:erii": 5
+      }
+    },
+    {
+      "mode": "fourViewsRepeat",
+      "query": "手机的再次开机给藏身地点带来什么风险？",
+      "ms": 92.88,
+      "ready": true,
+      "graph": {
+        "global": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 88,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "environment": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 72,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:lu-mingfei": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 78,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:erii": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 73,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        }
+      },
+      "hits": {
+        "global": 5,
+        "environment": 5,
+        "character:lu-mingfei": 5,
+        "character:erii": 5
+      }
+    },
+    {
+      "mode": "fourViewsRepeat",
+      "query": "街对面那辆车最初为什么令人警觉？",
+      "ms": 105.58,
+      "ready": true,
+      "graph": {
+        "global": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 100,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "environment": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 84,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:lu-mingfei": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 89,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:erii": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 89,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        }
+      },
+      "hits": {
+        "global": 5,
+        "environment": 5,
+        "character:lu-mingfei": 5,
+        "character:erii": 5
+      }
+    },
+    {
+      "mode": "fourViewsRepeat",
+      "query": "那辆车后来绕行的方向有什么意义？",
+      "ms": 97.74,
+      "ready": true,
+      "graph": {
+        "global": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 91,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "environment": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 80,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:lu-mingfei": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 82,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:erii": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 77,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        }
+      },
+      "hits": {
+        "global": 5,
+        "environment": 5,
+        "character:lu-mingfei": 5,
+        "character:erii": 5
+      }
+    },
+    {
+      "mode": "fourViewsRepeat",
+      "query": "本子最后一行的留白表达了什么未解决的问题？",
+      "ms": 107.78,
+      "ready": true,
+      "graph": {
+        "global": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 100,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "environment": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 87,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:lu-mingfei": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 91,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:erii": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 88,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        }
+      },
+      "hits": {
+        "global": 5,
+        "environment": 5,
+        "character:lu-mingfei": 5,
+        "character:erii": 5
+      }
+    },
+    {
+      "mode": "fourViewsRepeat",
+      "query": "握笔时出现的细微异常与药效有什么关系？",
+      "ms": 97.19,
+      "ready": true,
+      "graph": {
+        "global": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 89,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "environment": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 74,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:lu-mingfei": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 79,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:erii": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 75,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        }
+      },
+      "hits": {
+        "global": 5,
+        "environment": 5,
+        "character:lu-mingfei": 5,
+        "character:erii": 5
+      }
+    },
+    {
+      "mode": "fourViewsRepeat",
+      "query": "源稚生组织搜索的直接动机是什么？",
+      "ms": 144.08,
+      "ready": true,
+      "graph": {
+        "global": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 140,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "environment": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 129,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:lu-mingfei": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 128,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:erii": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 127,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        }
+      },
+      "hits": {
+        "global": 5,
+        "environment": 5,
+        "character:lu-mingfei": 5,
+        "character:erii": 5
+      }
+    },
+    {
+      "mode": "fourViewsRepeat",
+      "query": "凯撒对学院保护命令的解释有过什么停顿？",
+      "ms": 117.18,
+      "ready": true,
+      "graph": {
+        "global": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 110,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "environment": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 100,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:lu-mingfei": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 100,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:erii": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 97,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        }
+      },
+      "hits": {
+        "global": 5,
+        "environment": 5,
+        "character:lu-mingfei": 5,
+        "character:erii": 5
+      }
+    },
+    {
+      "mode": "fourViewsRepeat",
+      "query": "药品包装为什么难以看清批次号？",
+      "ms": 90.44,
+      "ready": true,
+      "graph": {
+        "global": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 83,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "environment": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 68,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:lu-mingfei": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 71,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:erii": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 69,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        }
+      },
+      "hits": {
+        "global": 5,
+        "environment": 5,
+        "character:lu-mingfei": 5,
+        "character:erii": 5
+      }
+    },
+    {
+      "mode": "fourViewsRepeat",
+      "query": "她能不能提供送药人的真实姓名？",
+      "ms": 101.67,
+      "ready": true,
+      "graph": {
+        "global": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 95,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "environment": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 80,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:lu-mingfei": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 83,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:erii": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 81,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        }
+      },
+      "hits": {
+        "global": 5,
+        "environment": 5,
+        "character:lu-mingfei": 5,
+        "character:erii": 5
+      }
+    },
+    {
+      "mode": "fourViewsRepeat",
+      "query": "学院供应清单核对出了什么结果？",
+      "ms": 92.35,
+      "ready": true,
+      "graph": {
+        "global": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 87,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "environment": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 76,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:lu-mingfei": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 77,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:erii": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 76,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        }
+      },
+      "hits": {
+        "global": 5,
+        "environment": 5,
+        "character:lu-mingfei": 5,
+        "character:erii": 5
+      }
+    },
+    {
+      "mode": "fourViewsRepeat",
+      "query": "等待药物线索回拨还需要承担什么代价？",
+      "ms": 90.59,
+      "ready": true,
+      "graph": {
+        "global": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 87,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "environment": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 71,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:lu-mingfei": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 76,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:erii": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 75,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        }
+      },
+      "hits": {
+        "global": 5,
+        "environment": 5,
+        "character:lu-mingfei": 5,
+        "character:erii": 5
+      }
+    },
+    {
+      "mode": "fourViewsRepeat",
+      "query": "有哪些承诺还没兑现，哪些只是接下来的打算？",
+      "ms": 94.11,
+      "ready": true,
+      "graph": {
+        "global": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 87,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "environment": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 76,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:lu-mingfei": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 76,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:erii": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 74,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        }
+      },
+      "hits": {
+        "global": 5,
+        "environment": 5,
+        "character:lu-mingfei": 5,
+        "character:erii": 5
+      }
+    },
+    {
+      "mode": "fourViewsRepeat",
+      "query": "如果继续留在旅馆，现在最紧迫的两个问题是什么？",
+      "ms": 93.01,
+      "ready": true,
+      "graph": {
+        "global": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 88,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "environment": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 74,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:lu-mingfei": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 78,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        },
+        "character:erii": {
+          "state": "ready",
+          "ranking": "embedding",
+          "waitedForIndex": false,
+          "elapsedMs": 74,
+          "matched": 5,
+          "rejected": 0,
+          "indexedThroughEventId": "c293dcad-ba68-42b7-b944-b734a1f078af"
+        }
+      },
+      "hits": {
+        "global": 5,
+        "environment": 5,
+        "character:lu-mingfei": 5,
+        "character:erii": 5
+      }
+    },
+    {
+      "mode": "singleGlobalWarm",
+      "query": "现在我们有哪些能核查药源的证据，哪些还只是猜测？",
+      "ms": 43.3,
+      "ready": true,
+      "state": "ready",
+      "ranking": "embedding",
+      "hits": 5
+    },
+    {
+      "mode": "singleGlobalWarm",
+      "query": "凯撒答应的外部调查有没有确定回音？",
+      "ms": 44.19,
+      "ready": true,
+      "state": "ready",
+      "ranking": "embedding",
+      "hits": 5
+    },
+    {
+      "mode": "singleGlobalWarm",
+      "query": "她过去取药时，车辆、电梯和送药人怎样衔接？",
+      "ms": 39.49,
+      "ready": true,
+      "state": "ready",
+      "ranking": "embedding",
+      "hits": 5
+    },
+    {
+      "mode": "singleGlobalWarm",
+      "query": "记录药品编号时用的是什么工具？",
+      "ms": 38.94,
+      "ready": true,
+      "state": "ready",
+      "ranking": "embedding",
+      "hits": 5
+    },
+    {
+      "mode": "singleGlobalWarm",
+      "query": "联系学院的人之前，药盒被挪到了哪里？",
+      "ms": 43.63,
+      "ready": true,
+      "state": "ready",
+      "ranking": "embedding",
+      "hits": 5
+    },
+    {
+      "mode": "singleGlobalWarm",
+      "query": "最初的安全点允许我们等到几点？",
+      "ms": 39.81,
+      "ready": true,
+      "state": "ready",
+      "ranking": "embedding",
+      "hits": 5
+    },
+    {
+      "mode": "singleGlobalWarm",
+      "query": "卡塞尔为什么能安排撤离，却接不上她的用药？",
+      "ms": 40.83,
+      "ready": true,
+      "state": "ready",
+      "ranking": "embedding",
+      "hits": 5
+    },
+    {
+      "mode": "singleGlobalWarm",
+      "query": "手机的再次开机给藏身地点带来什么风险？",
+      "ms": 43.49,
+      "ready": true,
+      "state": "ready",
+      "ranking": "embedding",
+      "hits": 5
+    },
+    {
+      "mode": "singleGlobalWarm",
+      "query": "街对面那辆车最初为什么令人警觉？",
+      "ms": 38.62,
+      "ready": true,
+      "state": "ready",
+      "ranking": "embedding",
+      "hits": 5
+    },
+    {
+      "mode": "singleGlobalWarm",
+      "query": "那辆车后来绕行的方向有什么意义？",
+      "ms": 38.57,
+      "ready": true,
+      "state": "ready",
+      "ranking": "embedding",
+      "hits": 5
+    },
+    {
+      "mode": "singleGlobalWarm",
+      "query": "本子最后一行的留白表达了什么未解决的问题？",
+      "ms": 44.61,
+      "ready": true,
+      "state": "ready",
+      "ranking": "embedding",
+      "hits": 5
+    },
+    {
+      "mode": "singleGlobalWarm",
+      "query": "握笔时出现的细微异常与药效有什么关系？",
+      "ms": 41.33,
+      "ready": true,
+      "state": "ready",
+      "ranking": "embedding",
+      "hits": 5
+    },
+    {
+      "mode": "singleGlobalWarm",
+      "query": "源稚生组织搜索的直接动机是什么？",
+      "ms": 46.91,
+      "ready": true,
+      "state": "ready",
+      "ranking": "embedding",
+      "hits": 5
+    },
+    {
+      "mode": "singleGlobalWarm",
+      "query": "凯撒对学院保护命令的解释有过什么停顿？",
+      "ms": 47.2,
+      "ready": true,
+      "state": "ready",
+      "ranking": "embedding",
+      "hits": 5
+    },
+    {
+      "mode": "singleGlobalWarm",
+      "query": "药品包装为什么难以看清批次号？",
+      "ms": 40.4,
+      "ready": true,
+      "state": "ready",
+      "ranking": "embedding",
+      "hits": 5
+    },
+    {
+      "mode": "singleGlobalWarm",
+      "query": "她能不能提供送药人的真实姓名？",
+      "ms": 40.92,
+      "ready": true,
+      "state": "ready",
+      "ranking": "embedding",
+      "hits": 5
+    },
+    {
+      "mode": "singleGlobalWarm",
+      "query": "学院供应清单核对出了什么结果？",
+      "ms": 39.71,
+      "ready": true,
+      "state": "ready",
+      "ranking": "embedding",
+      "hits": 5
+    },
+    {
+      "mode": "singleGlobalWarm",
+      "query": "等待药物线索回拨还需要承担什么代价？",
+      "ms": 39.02,
+      "ready": true,
+      "state": "ready",
+      "ranking": "embedding",
+      "hits": 5
+    },
+    {
+      "mode": "singleGlobalWarm",
+      "query": "有哪些承诺还没兑现，哪些只是接下来的打算？",
+      "ms": 40.29,
+      "ready": true,
+      "state": "ready",
+      "ranking": "embedding",
+      "hits": 5
+    },
+    {
+      "mode": "singleGlobalWarm",
+      "query": "如果继续留在旅馆，现在最紧迫的两个问题是什么？",
+      "ms": 40.15,
+      "ready": true,
+      "state": "ready",
+      "ranking": "embedding",
+      "hits": 5
+    },
+    {
+      "mode": "bm25",
+      "query": "现在我们有哪些能核查药源的证据，哪些还只是猜测？",
+      "ms": 12.83,
+      "ready": true,
+      "graph": null,
+      "hits": {
+        "global": 5,
+        "environment": 5,
+        "character:lu-mingfei": 5,
+        "character:erii": 5
+      }
+    },
+    {
+      "mode": "bm25",
+      "query": "凯撒答应的外部调查有没有确定回音？",
+      "ms": 1.97,
+      "ready": true,
+      "graph": null,
+      "hits": {
+        "global": 5,
+        "environment": 2,
+        "character:lu-mingfei": 5,
+        "character:erii": 5
+      }
+    },
+    {
+      "mode": "bm25",
+      "query": "她过去取药时，车辆、电梯和送药人怎样衔接？",
+      "ms": 3.28,
+      "ready": true,
+      "graph": null,
+      "hits": {
+        "global": 5,
+        "environment": 5,
+        "character:lu-mingfei": 5,
+        "character:erii": 5
+      }
+    },
+    {
+      "mode": "bm25",
+      "query": "记录药品编号时用的是什么工具？",
+      "ms": 1.38,
+      "ready": true,
+      "graph": null,
+      "hits": {
+        "global": 5,
+        "environment": 2,
+        "character:lu-mingfei": 5,
+        "character:erii": 5
+      }
+    },
+    {
+      "mode": "bm25",
+      "query": "联系学院的人之前，药盒被挪到了哪里？",
+      "ms": 1.33,
+      "ready": true,
+      "graph": null,
+      "hits": {
+        "global": 5,
+        "environment": 5,
+        "character:lu-mingfei": 5,
+        "character:erii": 5
+      }
+    },
+    {
+      "mode": "bm25",
+      "query": "最初的安全点允许我们等到几点？",
+      "ms": 1.35,
+      "ready": true,
+      "graph": null,
+      "hits": {
+        "global": 5,
+        "environment": 4,
+        "character:lu-mingfei": 5,
+        "character:erii": 1
+      }
+    },
+    {
+      "mode": "bm25",
+      "query": "卡塞尔为什么能安排撤离，却接不上她的用药？",
+      "ms": 1.84,
+      "ready": true,
+      "graph": null,
+      "hits": {
+        "global": 5,
+        "environment": 5,
+        "character:lu-mingfei": 5,
+        "character:erii": 5
+      }
+    },
+    {
+      "mode": "bm25",
+      "query": "手机的再次开机给藏身地点带来什么风险？",
+      "ms": 1.35,
+      "ready": true,
+      "graph": null,
+      "hits": {
+        "global": 5,
+        "environment": 5,
+        "character:lu-mingfei": 5,
+        "character:erii": 4
+      }
+    },
+    {
+      "mode": "bm25",
+      "query": "街对面那辆车最初为什么令人警觉？",
+      "ms": 1.19,
+      "ready": true,
+      "graph": null,
+      "hits": {
+        "global": 5,
+        "environment": 3,
+        "character:lu-mingfei": 5,
+        "character:erii": 5
+      }
+    },
+    {
+      "mode": "bm25",
+      "query": "那辆车后来绕行的方向有什么意义？",
+      "ms": 1.24,
+      "ready": true,
+      "graph": null,
+      "hits": {
+        "global": 5,
+        "environment": 2,
+        "character:lu-mingfei": 5,
+        "character:erii": 5
+      }
+    },
+    {
+      "mode": "bm25",
+      "query": "本子最后一行的留白表达了什么未解决的问题？",
+      "ms": 1.04,
+      "ready": true,
+      "graph": null,
+      "hits": {
+        "global": 5,
+        "environment": 5,
+        "character:lu-mingfei": 5,
+        "character:erii": 5
+      }
+    },
+    {
+      "mode": "bm25",
+      "query": "握笔时出现的细微异常与药效有什么关系？",
+      "ms": 1.07,
+      "ready": true,
+      "graph": null,
+      "hits": {
+        "global": 5,
+        "environment": 5,
+        "character:lu-mingfei": 5,
+        "character:erii": 5
+      }
+    },
+    {
+      "mode": "bm25",
+      "query": "源稚生组织搜索的直接动机是什么？",
+      "ms": 2.7,
+      "ready": true,
+      "graph": null,
+      "hits": {
+        "global": 5,
+        "environment": 2,
+        "character:lu-mingfei": 5,
+        "character:erii": 4
+      }
+    },
+    {
+      "mode": "bm25",
+      "query": "凯撒对学院保护命令的解释有过什么停顿？",
+      "ms": 1.05,
+      "ready": true,
+      "graph": null,
+      "hits": {
+        "global": 5,
+        "environment": 5,
+        "character:lu-mingfei": 5,
+        "character:erii": 5
+      }
+    },
+    {
+      "mode": "bm25",
+      "query": "药品包装为什么难以看清批次号？",
+      "ms": 0.87,
+      "ready": true,
+      "graph": null,
+      "hits": {
+        "global": 5,
+        "environment": 2,
+        "character:lu-mingfei": 5,
+        "character:erii": 1
+      }
+    },
+    {
+      "mode": "bm25",
+      "query": "她能不能提供送药人的真实姓名？",
+      "ms": 0.89,
+      "ready": true,
+      "graph": null,
+      "hits": {
+        "global": 5,
+        "environment": 5,
+        "character:lu-mingfei": 5,
+        "character:erii": 5
+      }
+    },
+    {
+      "mode": "bm25",
+      "query": "学院供应清单核对出了什么结果？",
+      "ms": 0.83,
+      "ready": true,
+      "graph": null,
+      "hits": {
+        "global": 5,
+        "environment": 1,
+        "character:lu-mingfei": 5,
+        "character:erii": 0
+      }
+    },
+    {
+      "mode": "bm25",
+      "query": "等待药物线索回拨还需要承担什么代价？",
+      "ms": 0.86,
+      "ready": true,
+      "graph": null,
+      "hits": {
+        "global": 5,
+        "environment": 5,
+        "character:lu-mingfei": 5,
+        "character:erii": 5
+      }
+    },
+    {
+      "mode": "bm25",
+      "query": "有哪些承诺还没兑现，哪些只是接下来的打算？",
+      "ms": 1.32,
+      "ready": true,
+      "graph": null,
+      "hits": {
+        "global": 5,
+        "environment": 1,
+        "character:lu-mingfei": 5,
+        "character:erii": 5
+      }
+    },
+    {
+      "mode": "bm25",
+      "query": "如果继续留在旅馆，现在最紧迫的两个问题是什么？",
+      "ms": 1.33,
+      "ready": true,
+      "graph": null,
+      "hits": {
+        "global": 5,
+        "environment": 5,
+        "character:lu-mingfei": 5,
+        "character:erii": 5
+      }
+    }
+  ]
+}

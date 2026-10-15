@@ -108,6 +108,7 @@ export function mapSave(s: StoryResponse, previous?: StoryResponse | null): Save
 }
 export const GEN_PHASES = ['正在理解你的行动', '人物与命运交汇', '故事正在继续', '正在保存这段经历']
 export const PHASES: Record<string, { index: number; label: string }> = {
+  recalling: { index: 0, label: '正在查阅故事记忆' },
   analyzing: { index: 0, label: GEN_PHASES[0] },
   synthesizing: { index: 1, label: GEN_PHASES[1] },
   narrating: { index: 2, label: GEN_PHASES[2] },
